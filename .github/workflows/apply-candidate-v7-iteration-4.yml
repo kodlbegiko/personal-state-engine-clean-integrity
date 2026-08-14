@@ -1,0 +1,33 @@
+name: Apply Candidate-v7 Iteration 4
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - 'scripts/apply_candidate_v7_iteration_4.py'
+      - '.github/workflows/apply-candidate-v7-iteration-4.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply self-verifying iteration-4 patch
+        run: python scripts/apply_candidate_v7_iteration_4.py
+      - name: Commit Candidate-v7 iteration 4
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/personal_state_engine/candidate_v7.py
+          git add results/candidate-v7/iteration-4-source-sha256.txt
+          git commit -m "research: candidate-v7 development iteration 4"
+          git push origin HEAD:research/candidate-v7-fresh-evidence
