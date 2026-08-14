@@ -1,0 +1,86 @@
+{
+  "schema_version": "candidate-v7-confirmatory-protocol-v1",
+  "status": "PREREGISTERED_AFTER_PROTECTED_PASS_BEFORE_CONFIRMATORY_MATERIALIZATION",
+  "candidate_freeze": {
+    "boundary_commit": "090e6201e5c5a6701d003cd51b048edc93133b9d",
+    "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+    "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+  },
+  "protected_evidence_prerequisite": {
+    "dataset_sha256": "a292ff7b64c08d62ede076bfe61a739b7ba9ca0dea263aaccd58168d06bc6017",
+    "formal_execution_count": 1,
+    "verdict": "PASS"
+  },
+  "benchmark": {
+    "name": "candidate-v7-confirmatory-v1",
+    "designation": "CONFIRMATORY",
+    "case_count": 140,
+    "answerable_count": 85,
+    "no_evidence_count": 55,
+    "seed": 20260815,
+    "namespace": "CV7CONF-",
+    "freshness_rules": [
+      "fresh namespace, entities, values, wording and temporal constructions",
+      "no copy or semantic reuse of development, development-stress, protected validation, Candidate-v5/v6 validation, clean Gate-E, old adversarial or retired Gate-F cases",
+      "retired Gate-F semantic payload remains unopened",
+      "Candidate-v7 remains frozen and may not change because of confirmatory results"
+    ],
+    "coverage": [
+      "heterogeneous natural-language factual evidence",
+      "first-person facts and preferences",
+      "implicit predicates and open-valued attributes",
+      "multi-clause and low-overlap paraphrase",
+      "multi-session and multiple relevant turns",
+      "temporal update, correction and supersession",
+      "work, education, health, media, device, travel, transport, relationship, membership, status and free-form state",
+      "wrong subject, wrong relation, wrong value, question-only, agenda, meta, no-value, uncertainty, contradiction, stale-only, query-copy and near-duplicate adversaries"
+    ]
+  },
+  "comparators": {
+    "required": [
+      "Candidate-v2 frozen retrieval backend",
+      "Candidate-v6 historical frozen",
+      "Candidate-v7 frozen",
+      "BM25 deterministic",
+      "TF-IDF deterministic",
+      "recency deterministic",
+      "deterministic random"
+    ],
+    "candidate_v6_source": {
+      "repository": "kodlbegiko/personal-state-engine-research",
+      "commit": "a5fcb252c37d0e7db8604a56ebd8aedbfb921ea0",
+      "path": "src/personal_state_engine/candidate_v6.py",
+      "expected_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+      "immutable": true
+    }
+  },
+  "candidate_v7_success_rule": {
+    "mrr_deficit_vs_candidate_v2_max": 0.03,
+    "r1_deficit_vs_candidate_v2_max": 0.03,
+    "r3_deficit_vs_candidate_v2_max": 0.02,
+    "r5_deficit_vs_candidate_v2_max": 0.02,
+    "answerable_recall_min": 0.95,
+    "false_abstention_max": 0.05,
+    "abstention_accuracy_min": 0.90,
+    "false_retrieval_max": 0.10,
+    "absolute_false_retrieval_reduction_vs_candidate_v2_min": 0.70,
+    "natural_language_support_min": 0.95
+  },
+  "paired_bootstrap": {
+    "metric": "answerable reciprocal-rank delta Candidate-v7 minus Candidate-v2",
+    "iterations": 10000,
+    "seed": 20260815,
+    "ci": "95% percentile",
+    "non_inferiority_margin": 0.03,
+    "pass_rule": "lower 95% CI >= -0.03"
+  },
+  "result_policy": {
+    "candidate_v7_post_result_change": false,
+    "benchmark_post_result_change": false,
+    "threshold_post_result_change": false,
+    "candidate_v7_claim": "bounded confirmatory evidence only; not universal superiority or algorithm parity",
+    "failure_terminal_state": "CANDIDATE_V7_CONFIRMATORY_FAIL",
+    "pass_next_action": "QUALIFY_GENUINELY_FRESH_FINAL_SURFACE"
+  },
+  "monetary_cost_usd": 0
+}
