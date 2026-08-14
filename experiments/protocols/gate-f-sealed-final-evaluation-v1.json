@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "gate-f-sealed-final-evaluation-v1",
+  "mission": "Personal State Engine Gate F formal sealed-final evaluation",
+  "status": "PREREGISTERED_BEFORE_SEALED_FINAL_EXPOSURE",
+  "authorization_record": "results/gate-f/authorization-record-v1.json",
+  "candidate": {
+    "name": "candidate-v6",
+    "source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+    "config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1",
+    "post_exposure_changes_allowed": false
+  },
+  "baseline": {
+    "primary": "candidate-v2",
+    "purpose": "frozen retrieval-backend comparison; not a tuning target"
+  },
+  "sealed_final_policy": {
+    "use_existing_repository_sealed_final_only": true,
+    "regeneration_allowed": false,
+    "editing_allowed": false,
+    "case_exclusion_allowed": false,
+    "formal_execution_count": 1,
+    "result_bearing_rerun_allowed": false,
+    "infrastructure_retry_allowed_only_if": [
+      "no case-level prediction or metric was produced",
+      "failure occurred before sealed-final selection output was observed",
+      "retry rationale and environment delta are recorded before retry"
+    ],
+    "exposure_rule": "No sealed-final listing, path resolution, fetch, read, hash, or execution occurs before this protocol commit exists. After freeze, access is limited to the minimum surfaces required for the single formal execution.",
+    "preserve_raw_evidence": true
+  },
+  "implementation_lock_policy": {
+    "candidate_v6_must_match_frozen_sha256": true,
+    "candidate_v2_must_be_existing_frozen_backend": true,
+    "prefer_existing_pre_result_frozen_evaluator": true,
+    "if_schema_adapter_is_required": "Adapter may be implemented only from schema/format information before any labels, answers, rankings, predictions, aggregate metrics, or selection-bearing outputs are observed; adapter must be tested on synthetic fixtures and committed before formal evaluation. No selection thresholds may change."
+  },
+  "metrics": {
+    "answerable": ["MRR", "R@1", "R@3", "R@5", "answerable_recall", "false_abstention"],
+    "no_evidence": ["false_retrieval_count", "false_retrieval_rate", "abstention_accuracy"],
+    "paired": ["delta_MRR_candidate_v6_minus_candidate_v2", "wins", "ties", "losses"],
+    "diagnostics": ["integrity_case_count", "missing", "duplicate", "invalid"]
+  },
+  "guardrails": {
+    "mrr_deficit_vs_candidate_v2_max": 0.03,
+    "r1_deficit_vs_candidate_v2_max": 0.03,
+    "r3_deficit_vs_candidate_v2_max": 0.02,
+    "r5_deficit_vs_candidate_v2_max": 0.02,
+    "answerable_recall_min": 0.95,
+    "false_abstention_max": 0.05,
+    "abstention_accuracy_min_if_no_evidence_cases_exist": 0.90,
+    "no_evidence_false_retrieval_max_if_no_evidence_cases_exist": 0.10,
+    "absolute_false_retrieval_reduction_vs_candidate_v2_min_if_no_evidence_cases_exist": 0.70
+  },
+  "statistics": {
+    "paired_bootstrap_metric": "answerable reciprocal rank",
+    "iterations": 10000,
+    "seed": 20260814,
+    "confidence_interval": "percentile_95",
+    "noninferiority_margin_mrr": 0.03,
+    "noninferiority_pass_rule": "lower_95_percent_CI_of_delta_MRR >= -0.03"
+  },
+  "schema_contingencies": {
+    "if_no_no_evidence_cases_exist": "No-evidence metrics are reported NOT_APPLICABLE and are not treated as failures; all answerable, integrity, and paired noninferiority criteria remain mandatory.",
+    "if_benchmark_contains_official_case_type_labels": "Use official labels without reinterpretation.",
+    "if_case_type_labels_are_absent": "Do not infer labels from model outputs. Use only benchmark-ground-truth answerability fields already encoded in the official schema; if answerability cannot be deterministically resolved without inspecting semantic answer content, stop with GATE_F_SCHEMA_NOT_EVALUABLE_UNDER_PREREGISTRATION."
+  },
+  "formal_gate_f_pass": {
+    "all_required": [
+      "authorization valid",
+      "protocol committed before sealed-final exposure",
+      "candidate-v6 source/config identity match",
+      "sealed-final benchmark byte identity recorded after authorized opening and not modified",
+      "single formal selection-bearing execution",
+      "all benchmark cases accounted for",
+      "missing = 0",
+      "duplicate = 0",
+      "invalid = 0",
+      "all applicable retrieval guardrails pass",
+      "all applicable answerability/safety guardrails pass",
+      "paired-bootstrap MRR noninferiority passes",
+      "no candidate change after exposure",
+      "no benchmark edit/regeneration",
+      "no result-driven metric/threshold/statistic change",
+      "new monetary cost = USD 0",
+      "negative evidence preserved"
+    ]
+  },
+  "claim_boundaries": {
+    "allowed_on_pass": [
+      "Candidate-v6 passed Gate F on the preregistered sealed-final benchmark",
+      "Gate F formal is COMPLETE in the clean-integrity research track"
+    ],
+    "prohibited_without_separate_protocol": [
+      "algorithm parity",
+      "universal superiority",
+      "Gate G independent reproduction",
+      "historical integrity incidents were cured"
+    ]
+  },
+  "terminal_states": [
+    "GATE_F_COMPLETE_READY_FOR_GATE_G_BOUNDARY",
+    "GATE_F_SELECTION_FAIL",
+    "GATE_F_INTEGRITY_FAIL",
+    "GATE_F_SCHEMA_NOT_EVALUABLE_UNDER_PREREGISTRATION",
+    "GATE_F_INFRASTRUCTURE_BLOCKED_BEFORE_SELECTION_OUTPUT"
+  ],
+  "gate_g": "NOT_STARTED_BY_THIS_PROTOCOL",
+  "monetary_cost_limit_usd": 0
+}
