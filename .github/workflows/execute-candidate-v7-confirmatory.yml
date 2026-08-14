@@ -1,0 +1,64 @@
+name: Execute Candidate-v7 Confirmatory Evaluation
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - '.github/workflows/execute-candidate-v7-confirmatory.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  confirmatory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch exact historical Candidate-v6 comparator
+        run: |
+          curl -fsSL 'https://raw.githubusercontent.com/kodlbegiko/personal-state-engine-research/a5fcb252c37d0e7db8604a56ebd8aedbfb921ea0/src/personal_state_engine/candidate_v6.py' \
+            -o src/personal_state_engine/candidate_v6_historical.py
+          test "$(sha256sum src/personal_state_engine/candidate_v6_historical.py | awk '{print $1}')" = "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325"
+      - name: Verify frozen confirmatory identities
+        run: |
+          test "$(sha256sum src/personal_state_engine/candidate_v7.py | awk '{print $1}')" = "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae"
+          test "$(sha256sum experiments/configs/candidate-v7-v1.json | awk '{print $1}')" = "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+          test "$(sha256sum experiments/benchmarks/candidate-v7-confirmatory-v1.json | awk '{print $1}')" = "8e54f75b7eae4058365e93fb809a47445df7415d02e28fae7dcdf5105cd76576"
+          test "$(sha256sum scripts/materialize_candidate_v7_confirmatory.py | awk '{print $1}')" = "05224fb6c249f27ab66dd7a35f9957ae5a803ef68604313ae026e3c3b1a8932b"
+          test "$(sha256sum scripts/evaluate_candidate_v7_confirmatory.py | awk '{print $1}')" = "6e86d9150820cf3117a917b09be11ce45c9284ae15ebaee0c3b7f0a5ba6dc094"
+      - name: Execute frozen confirmatory evaluation
+        run: |
+          set +e
+          python scripts/evaluate_candidate_v7_confirmatory.py
+          rc=$?
+          set -e
+          echo "CONFIRM_RC=$rc" >> "$GITHUB_ENV"
+          test -f results/candidate-v7/confirmatory-summary-v1.json
+          test -f results/candidate-v7/confirmatory-statistics-v1.json
+          exit 0
+      - name: Verify frozen Candidate-v7 after result exposure
+        run: |
+          test "$(sha256sum src/personal_state_engine/candidate_v7.py | awk '{print $1}')" = "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae"
+          test "$(sha256sum experiments/configs/candidate-v7-v1.json | awk '{print $1}')" = "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+      - name: Commit confirmatory evidence regardless of PASS or FAIL
+        run: |
+          rm -f src/personal_state_engine/candidate_v6_historical.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v7/confirmatory-summary-v1.json
+          git add results/candidate-v7/confirmatory-statistics-v1.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "2"
+          git commit -m "research: record confirmatory evidence"
+          git push origin HEAD:research/candidate-v7-fresh-evidence
+      - name: Enforce confirmatory verdict
+        run: |
+          if [ "$CONFIRM_RC" -ne 0 ]; then
+            echo "Confirmatory evaluation failed; Candidate-v7 must remain frozen and mission terminates." >&2
+            exit "$CONFIRM_RC"
+          fi
