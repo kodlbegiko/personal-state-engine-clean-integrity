@@ -19,7 +19,8 @@ QUESTION_START = re.compile(r"^\s*(?:what|which|who|where|when|how|does|do|did|i
 NO_VALUE = re.compile(
     r"\b(?:no\s+(?:recorded|known|confirmed|available|explicit|direct)?\s*(?:answer|value|fact|result|record|information)|"
     r"(?:answer|value|fact|result|record|information)\s+(?:is\s+)?(?:missing|absent|unknown|unavailable|not\s+recorded)|"
-    r"(?:do|does|did)\s+not\s+know|not\s+known|hasn['’]?t\s+been\s+decided|not\s+decided|cannot\s+determine)\b",
+    r"(?:do|does|did)\s+not\s+know|not\s+known|hasn['’]?t\s+been\s+decided|not\s+decided|cannot\s+determine|"
+    r"(?:is|are|remains?)\s+(?:unknown|unavailable|unspecified|unclear))\b",
     re.I,
 )
 AGENDA = re.compile(r"\b(?:agenda|action item|to discuss|discussion topic|review topic|review of)\b", re.I)
@@ -50,7 +51,8 @@ CUE_FAMILIES: dict[str, set[str]] = {
     "device": {"laptop", "computer", "phone", "device", "tablet", "macbook", "uses", "use", "carry", "carries", "carrying"},
     "goal": {"goal", "target", "aim", "training", "train", "working", "toward", "prepare", "preparing"},
     "transport": {"car", "drive", "drives", "driving", "bus", "route", "commute", "ride", "rides", "bike", "bicycle"},
-    "education": {"university", "college", "school", "course", "class", "study", "studies", "learning", "learn", "enrolled", "graduated", "degree"},
+    "education_institution": {"university", "college", "school", "campus", "attend", "attends", "student", "graduated", "degree", "studies"},
+    "education_course": {"course", "class", "module", "subject", "enrolled", "taking", "study", "studying", "learning", "learn"},
     "language": {"language", "speak", "speaks", "fluent", "learning", "learn", "study", "studies"},
     "identity_attribute": {"name", "called", "color", "colour", "size", "type", "kind", "version"},
     "membership": {"club", "team", "member", "membership", "join", "joined"},
@@ -151,7 +153,18 @@ def _relation_compatible(query: str, text: str) -> tuple[bool, set[str]]:
     if not qf:
         return True, set()
     shared = qf & mf
-    return bool(shared), shared
+    if shared:
+        return True, shared
+
+    # Open-valued attributes (colour/name/type/version/size) often omit the
+    # relation word in the evidence itself: "the backpack is cobalt blue".
+    # Permit that deterministic form only when there is no conflicting typed
+    # family, the entity/content anchor is strong, and the surface is copular.
+    if qf == {"identity_attribute"} and not mf:
+        copular = bool(re.search(r"\b(?:is|are|was|were|called|named)\b", text, re.I))
+        if copular and _anchor_coverage(query, text) >= 0.50:
+            return True, {"identity_attribute:implicit"}
+    return False, set()
 
 
 def _subject_compatible(query: str, text: str) -> bool:
