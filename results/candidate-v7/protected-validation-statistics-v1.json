@@ -1,0 +1,62 @@
+{
+  "schema_version": "candidate-v7-protected-validation-statistics-v1",
+  "formal_execution_count": 1,
+  "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "dataset_sha256": "a292ff7b64c08d62ede076bfe61a739b7ba9ca0dea263aaccd58168d06bc6017",
+  "generator_sha256": "5787349595c07cb865b73f4fdfcc7e676e73ba6018a4cd5c39b3461bbb895a82",
+  "evaluator_sha256": "f6e93318cb656a8c8bc774f7d6b8418e1e7355cb88ddeddbaeba9ba90b916e5b",
+  "candidate_v2": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_retrieval": 1.0
+  },
+  "candidate_v7": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0
+  },
+  "deficits_vs_candidate_v2": {
+    "MRR": 0.0,
+    "R@1": 0.0,
+    "R@3": 0.0,
+    "R@5": 0.0
+  },
+  "absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+  "paired_bootstrap": {
+    "metric": "answerable reciprocal-rank delta Candidate-v7 minus Candidate-v2",
+    "iterations": 10000,
+    "seed": 20260814,
+    "delta": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "non_inferiority_margin": 0.03,
+    "pass": true
+  },
+  "guardrails": {
+    "mrr_deficit": true,
+    "r1_deficit": true,
+    "r3_deficit": true,
+    "r5_deficit": true,
+    "answerable_recall": true,
+    "false_abstention": true,
+    "abstention_accuracy": true,
+    "false_retrieval": true,
+    "absolute_false_retrieval_reduction": true,
+    "natural_language_support": true,
+    "paired_bootstrap_non_inferiority": true
+  },
+  "verdict": "PASS"
+}
