@@ -1,0 +1,163 @@
+name: Finalize clean publication hygiene
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/finalize-clean-publication.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate frozen clean evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, sys
+
+          root = Path('.')
+          source = root / 'src/personal_state_engine/candidate_v6.py'
+          expected_source = 'c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325'
+          expected_config = '067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1'
+
+          required = [
+              root / 'results/candidate-v6-clean/terminal-snapshot.json',
+              root / 'results/candidate-v6-clean/gate-e-final-verdict.json',
+          ]
+          missing = [str(p) for p in required if not p.is_file()]
+          if missing:
+              raise SystemExit('missing required clean evidence: ' + ', '.join(missing))
+
+          if not source.is_file():
+              raise SystemExit('candidate-v6 source missing')
+          source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
+          if source_sha != expected_source:
+              raise SystemExit(f'candidate-v6 source mismatch: {source_sha}')
+
+          # Clean repository only: locate the already-published frozen config by exact content hash.
+          config_matches = []
+          for p in root.rglob('*'):
+              if not p.is_file() or '.git' in p.parts or 'bootstrap' in p.parts or 'bootstrap2' in p.parts:
+                  continue
+              try:
+                  if hashlib.sha256(p.read_bytes()).hexdigest() == expected_config:
+                      config_matches.append(str(p))
+              except OSError:
+                  pass
+          if not config_matches:
+              raise SystemExit('frozen Candidate-v6 config hash not found')
+          print('candidate source identity: PASS')
+          print('candidate config identity: PASS')
+          print('frozen evidence presence: PASS')
+          PY
+
+      - name: Remove transport-only bootstrap staging
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf bootstrap bootstrap2
+          if [ -d .github/workflows ]; then
+            find .github/workflows -maxdepth 1 -type f -iname '*bootstrap*' -delete
+          fi
+
+      - name: Write remote publication attestation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p provenance
+          cat > provenance/remote-publication-attestation.json <<'JSON'
+          {
+            "schema_version": "pse-clean-integrity-remote-publication-attestation-v1",
+            "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+            "publication_type": "clean_snapshot_remote_publication",
+            "original_git_history_imported": false,
+            "old_repository_lineage_cured": false,
+            "candidate": "candidate-v6",
+            "candidate_source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+            "candidate_config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1",
+            "clean_gate_e_formal": "COMPLETE",
+            "algorithm_parity": "NO",
+            "gate_f": "NOT_STARTED",
+            "gate_g": "NOT_COMPLETE",
+            "sealed_final_content_accessed_during_publication": false,
+            "sealed_final_path_operations_during_publication": false,
+            "paid_api": false,
+            "paid_gpu": false,
+            "monetary_cost_usd": 0,
+            "gate_e_evidence_package_sha256": "236db3800dbf02bc54ff0e4acf47c1907366c4f27a59a57aca73d5cab376c308",
+            "publication_snapshot_tar_sha256": "a6dddeb86688ec40231f5644b940ce81832dcbdaa58fad87507998e59ae51e47",
+            "publication_git_bundle_sha256": "b01bbed346986dfc480f198c12c664eb3f7572f5c1cb9c04e5b1f8e29def3459",
+            "clean_gate_e_terminal_local_head": "c11c431bce3e07fe90eeb4b783621046950296a0",
+            "publication_note": "Remote history is an independent clean publication commit series. It does not import or rewrite the original research repository history.",
+            "next_legal_boundary": "READY_FOR_GATE_F_AUTHORIZATION_PROTOCOL_ONLY"
+          }
+          JSON
+
+          cat > REMOTE_PUBLICATION_STATUS.md <<'MD'
+          # Remote Publication Status
+
+          Status: **PUBLISHED — CLEAN SNAPSHOT LINEAGE**
+
+          Repository: `kodlbegiko/personal-state-engine-clean-integrity`
+
+          This repository is the publication surface for the clean-integrity Candidate-v6 Gate E evidence. It uses an independent clean Git history and does **not** import the original research repository history.
+
+          ## Research boundary
+
+          - Candidate-v6 frozen identity: preserved
+          - Formal Gate E in clean lineage: **COMPLETE**
+          - Algorithm parity: **NO**
+          - Gate F: **NOT STARTED**
+          - Gate G: **NOT COMPLETE**
+          - New monetary cost: **USD 0**
+          - Sealed-final operations during publication: **none**
+
+          The historical integrity deviation in the original repository remains preserved in that original lineage. Publication here does not retroactively cure or rewrite it.
+
+          The next legal action is preparation of a separate **Gate F authorization/preregistration protocol**. This publication does not authorize or execute Gate F.
+          MD
+
+          cat > provenance/REMOTE_PUBLICATION_COMPLETE.json <<JSON
+          {
+            "status": "PUBLISHED_CLEAN_SNAPSHOT_LINEAGE",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "pre_finalize_commit": "${GITHUB_SHA}",
+            "transport_bootstrap_removed": true,
+            "candidate_or_frozen_evidence_modified": false,
+            "gate_e_formal": "COMPLETE",
+            "gate_f": "NOT_STARTED",
+            "algorithm_parity": "NO",
+            "monetary_cost_usd": 0
+          }
+          JSON
+
+      - name: Self-remove one-time finalizer
+        shell: bash
+        run: |
+          rm -f .github/workflows/finalize-clean-publication.yml
+
+      - name: Commit and push publication finalization
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No publication hygiene changes required.'
+            exit 0
+          fi
+          git commit -m 'chore: finalize clean remote publication'
+          git push origin HEAD:main
