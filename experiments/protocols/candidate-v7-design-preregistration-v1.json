@@ -1,0 +1,106 @@
+{
+  "schema_version": "candidate-v7-design-preregistration-v1",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+  "architecture": "HYBRID_TYPED_PLUS_GENERIC_LEXICAL_ENTAILMENT",
+  "candidate_dependencies": {
+    "candidate_v2": "frozen deterministic retrieval backend; ranking returned unchanged when evidence is supported",
+    "candidate_v6": {
+      "role": "immutable historical/strict-design reference only",
+      "source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+      "config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1"
+    }
+  },
+  "development_surfaces": [
+    "fresh deterministic synthetic natural-language DEVELOPMENT/NONSEALED/NONPROTECTED corpus",
+    "public zero-cost nonprotected sources only if separately pinned and decontaminated"
+  ],
+  "prohibited_surfaces": [
+    "retired Gate-F 99 semantic cases",
+    "Candidate-v5 protected validation",
+    "Candidate-v6 protected validation",
+    "clean Gate-E validation",
+    "old adversarial-v7",
+    "old clean adversarial",
+    "future protected/confirmatory/final payload before allowed boundary"
+  ],
+  "inference_input_allowlist": ["query", "memory text", "timestamps", "public structural metadata"],
+  "inference_input_denylist": ["question_id", "case id semantics", "_abs suffix", "has_answer", "answer", "answer_session_ids", "question_type"],
+  "decision_rule": {
+    "ranking": "pse_candidate_v2_rank(case, k)",
+    "strict_path": "high-precision typed/direct assertion compatibility",
+    "generic_path": "deterministic direct-factual lexical/semantic-cue compatibility",
+    "hard_rejects": ["explicit no-value", "question-only", "agenda", "review-only", "meta-only", "unresolved/inference-only", "explicit contradiction/negative", "wrong subject", "wrong relation where deterministically detectable", "stale-only for explicitly current queries"],
+    "supported_action": "return Candidate-v2 ranking unchanged",
+    "unsupported_action": "return []",
+    "rerank": false
+  },
+  "development_metrics_and_thresholds": {
+    "mrr_deficit_vs_candidate_v2_max": 0.03,
+    "r1_deficit_vs_candidate_v2_max": 0.03,
+    "r3_deficit_vs_candidate_v2_max": 0.02,
+    "r5_deficit_vs_candidate_v2_max": 0.02,
+    "answerable_recall_min": 0.95,
+    "false_abstention_max": 0.05,
+    "abstention_accuracy_min": 0.90,
+    "no_evidence_false_retrieval_max": 0.10,
+    "absolute_false_retrieval_reduction_vs_v2_min": 0.70,
+    "natural_language_coverage_min": 0.95,
+    "meta_rejection_min": 0.95,
+    "no_value_rejection_min": 0.95,
+    "contradiction_handling_min": 0.95,
+    "temporal_handling_min": 0.95,
+    "wrong_subject_rejection_min": 0.95,
+    "wrong_relation_rejection_min": 0.95
+  },
+  "protected_metrics_and_thresholds": {
+    "mrr_deficit_vs_candidate_v2_max": 0.03,
+    "r1_deficit_vs_candidate_v2_max": 0.03,
+    "r3_deficit_vs_candidate_v2_max": 0.02,
+    "r5_deficit_vs_candidate_v2_max": 0.02,
+    "answerable_recall_min": 0.95,
+    "false_abstention_max": 0.05,
+    "abstention_accuracy_min": 0.90,
+    "false_retrieval_max": 0.10,
+    "absolute_false_retrieval_reduction_vs_v2_min": 0.70,
+    "natural_language_support_min": 0.95
+  },
+  "bootstrap": {
+    "metric": "answerable reciprocal-rank delta Candidate-v7 minus Candidate-v2",
+    "iterations": 10000,
+    "seed": 20260814,
+    "ci": "95% percentile",
+    "non_inferiority_margin": 0.03,
+    "pass_rule": "lower 95% CI >= -0.03"
+  },
+  "random_seed": 20260814,
+  "freeze_rules": [
+    "Candidate-v7 may iterate only on development evidence",
+    "all development failures remain in append-only ledger",
+    "freeze only after every development guardrail passes",
+    "candidate source/config hashes are fixed at freeze",
+    "no Candidate-v7 source/config changes after freeze"
+  ],
+  "validation_rules": [
+    "fresh protected benchmark generated only after Candidate-v7 freeze",
+    "benchmark generator/schema/seed/hash/evaluator locked before one-shot execution",
+    "protected execution count exactly one",
+    "failed protected evaluation cannot be patched or rerun",
+    "fresh confirmatory follows only after protected PASS",
+    "confirmatory results cannot change Candidate-v7"
+  ],
+  "claim_boundaries": [
+    "Candidate-v6 Gate F remains historical FAIL",
+    "Candidate-v7 success does not retrospectively alter Gate F",
+    "non-inferiority is not equivalence",
+    "algorithm parity remains NO",
+    "Gate G not started"
+  ],
+  "failure_policy": {
+    "development": "CANDIDATE_V7_DEVELOPMENT_GUARDRAIL_FAIL if coverage+safety cannot both be recovered",
+    "protected": "CANDIDATE_V7_PROTECTED_VALIDATION_FAIL on one-shot failure",
+    "confirmatory": "CANDIDATE_V7_CONFIRMATORY_FAIL on failure",
+    "integrity": "CANDIDATE_V7_INTEGRITY_FAIL on leakage/post-freeze mutation/result-driven benchmark change",
+    "no_fresh_final": "BLOCKED_NEEDS_FRESH_FINAL_SURFACE"
+  },
+  "monetary_cost_limit_usd": 0
+}
