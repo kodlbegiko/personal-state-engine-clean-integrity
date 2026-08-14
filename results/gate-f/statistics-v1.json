@@ -1,0 +1,27 @@
+{
+  "schema_version": "gate-f-statistics-v1",
+  "comparison": "candidate-v6 minus candidate-v2 on answerable sealed-final cases",
+  "answerable_cases": 93,
+  "metric": "reciprocal_rank",
+  "paired_bootstrap": {
+    "iterations": 10000,
+    "seed": 20260814,
+    "noninferiority_margin": 0.03,
+    "point_delta_mrr": -0.19480286738351246,
+    "bootstrap_mean_delta_mrr": -0.1945758243727581,
+    "ci95": [
+      -0.2603942652329749,
+      -0.13279569892473117
+    ],
+    "fraction_delta_ge_minus_margin": 0.0,
+    "pass_rule": "lower_95_percent_CI >= -0.03",
+    "noninferiority_pass": false
+  },
+  "wins_ties_losses": {
+    "wins": 0,
+    "ties": 58,
+    "losses": 35,
+    "total": 93
+  },
+  "post_result_statistic_change": false
+}
