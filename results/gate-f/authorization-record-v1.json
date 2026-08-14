@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "mission": "Personal State Engine Gate F Sealed-Final Evaluation",
+  "authorization": {
+    "authorized": true,
+    "authorized_by": "repository owner / user",
+    "authorization_time_local": "2026-08-14T20:22:00+08:00",
+    "authorization_scope": [
+      "preregister Gate F before sealed-final exposure",
+      "perform one formal sealed-final evaluation execution",
+      "read only the sealed-final benchmark surfaces required for that execution after preregistration freeze",
+      "compute frozen metrics and statistics",
+      "persist immutable Gate F evidence and terminal verdict"
+    ],
+    "not_authorized": [
+      "modify Candidate-v6 after sealed-final exposure",
+      "edit or regenerate the sealed-final benchmark",
+      "rerun a completed selection-bearing Gate F execution",
+      "exclude inconvenient cases",
+      "change thresholds, metrics, bootstrap seed, or confidence procedure after exposure",
+      "claim algorithm parity without a separately preregistered equivalence protocol",
+      "claim Gate G independent reproduction"
+    ]
+  },
+  "candidate": {
+    "name": "candidate-v6",
+    "method": "Assertion-Structure Evidence Objects",
+    "source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+    "config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1",
+    "must_remain_frozen": true
+  },
+  "gate_e_formal_status_at_authorization": "COMPLETE_IN_CLEAN_LINEAGE",
+  "gate_f_status_at_authorization": "NOT_STARTED",
+  "gate_g_status_at_authorization": "NOT_COMPLETE",
+  "monetary_cost_limit_usd": 0
+}
