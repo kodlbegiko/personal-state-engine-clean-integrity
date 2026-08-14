@@ -12,7 +12,7 @@ VERDICT_INSUFFICIENT = "INSUFFICIENT"
 VERDICT_CONTRADICTED = "CONTRADICTED"
 
 CURRENT_CUES = {_stem(x) for x in {"current", "latest", "now", "currently", "still"}}
-STALE_CUES = {_stem(x) for x in {"old", "previous", "prior", "formerly", "used", "before", "stale", "superseded", "obsolete"}}
+STALE_CUES = {_stem(x) for x in {"old", "previous", "prior", "formerly", "stale", "superseded", "obsolete"}}
 UPDATE_CUES = {_stem(x) for x in {"updated", "changed", "corrected", "replaced", "moved", "switched", "rescheduled", "became", "now", "currently"}}
 
 QUESTION_START = re.compile(r"^\s*(?:what|which|who|where|when|how|does|do|did|is|are|can|could|would|should)\b", re.I)
@@ -39,12 +39,21 @@ CUE_FAMILIES: dict[str, set[str]] = {
     "schedule_time": {"when", "time", "date", "schedule", "scheduled", "appointment", "meeting", "morning", "afternoon", "evening", "weekday", "weekend", "day"},
     "contact": {"phone", "telephone", "mobile", "email", "e-mail", "contact", "address"},
     "possession": {"have", "has", "own", "owns", "adopt", "adopted", "pet", "car", "device", "carry", "uses", "use"},
-    "activity_hobby": {"hobby", "activity", "play", "plays", "practice", "practices", "train", "training", "read", "run", "hike", "climb", "swim", "paint", "cook"},
+    "activity_hobby": {"hobby", "activity", "play", "plays", "practice", "practices", "train", "training", "read", "run", "hike", "climb", "swim", "paint", "cook", "perform", "performs", "performing"},
     "travel": {"travel", "trip", "visit", "visited", "fly", "flight", "hotel", "destination", "vacation", "holiday"},
     "food_drink": {"food", "drink", "eat", "eats", "order", "orders", "tea", "coffee", "snack", "meal", "restaurant", "breakfast", "lunch", "dinner"},
-    "relationship": {"mother", "father", "sister", "brother", "partner", "spouse", "friend", "colleague", "child", "children", "family"},
+    "relationship": {"mother", "father", "sister", "brother", "partner", "spouse", "friend", "colleague", "child", "children", "family", "married", "marry"},
     "quantity_numeric": {"how many", "count", "quantity", "number", "amount", "budget", "price", "cost", "balance", "salary", "age"},
     "status_state": {"status", "state", "current", "latest", "now", "became", "changed", "updated", "completed", "active", "inactive"},
+    "music_media": {"music", "song", "songs", "listen", "listens", "listening", "album", "movie", "film", "watch", "watches", "book", "reading"},
+    "health": {"health", "allergy", "allergic", "medication", "medicine", "doctor", "condition", "takes", "taking"},
+    "device": {"laptop", "computer", "phone", "device", "tablet", "macbook", "uses", "use", "carry", "carries", "carrying"},
+    "goal": {"goal", "target", "aim", "training", "train", "working", "toward", "prepare", "preparing"},
+    "transport": {"car", "drive", "drives", "driving", "bus", "route", "commute", "ride", "rides", "bike", "bicycle"},
+    "education": {"university", "college", "school", "course", "class", "study", "studies", "learning", "learn", "enrolled", "graduated", "degree"},
+    "language": {"language", "speak", "speaks", "fluent", "learning", "learn", "study", "studies"},
+    "identity_attribute": {"name", "called", "color", "colour", "size", "type", "kind", "version"},
+    "membership": {"club", "team", "member", "membership", "join", "joined"},
 }
 CUE_STEMS = {
     family: {_stem(token) for cue in cues for token in re.findall(r"[A-Za-z0-9_-]+", cue.casefold())}
@@ -108,13 +117,16 @@ def _temporal_scope(text: str) -> str:
     stems = _stems(text)
     if stems & UPDATE_CUES:
         return "CURRENT"
-    if stems & STALE_CUES:
+    if stems & STALE_CUES or re.search(r"\b(?:used to|previously|formerly|no longer|before (?:that|the change|it was))\b", text, re.I):
         return "STALE"
     return "UNSPECIFIED"
 
 
 def _current_query(query: str) -> bool:
-    return bool(_stems(query) & CURRENT_CUES)
+    stems = _stems(query)
+    if stems & STALE_CUES or re.search(r"\b(?:used to|formerly|previously|historical|old|prior)\b", query, re.I):
+        return False
+    return bool(stems & CURRENT_CUES) or bool(re.search(r"\b(?:does|is|are|has|have)\b", query, re.I))
 
 
 def _hard_reject_text(text: str) -> bool:
