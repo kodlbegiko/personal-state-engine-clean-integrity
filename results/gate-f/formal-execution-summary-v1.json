@@ -1,0 +1,83 @@
+{
+  "schema_version": "gate-f-formal-execution-summary-v1",
+  "phase": "FORMAL_GATE_F_SINGLE_EXECUTION",
+  "compute_host_repository": "kodlbegiko/personal-state-engine-research",
+  "compute_host_role": "isolated execution host; does not cure historical lineage integrity deviations",
+  "workflow": {
+    "name": "Gate F Sealed-Final Single Execution",
+    "run_id": 31801039217,
+    "run_attempt": 1,
+    "job_id": 94768816797,
+    "head_sha": "8da87b2f8d1d3dbbfcc168a8f7c700e6f3bec4f8",
+    "conclusion": "success",
+    "selection_execution_count": 1,
+    "rerun": false
+  },
+  "artifact": {
+    "id": 9219287805,
+    "name": "gate-f-sealed-final-run1",
+    "digest": "sha256:43690c59bc90a151dd170e580590b8601f24bf9e73225f3226642133d2861137",
+    "formal_result_sha256": "566284023e198539f5560b3ce8da8e97ded64555b78895c178d36fdcab0a039f",
+    "execution_metadata_sha256": "e13d9436a96d834cc902c05a255a688f302356a500c7ed3c6bdd8742bf1e8498",
+    "evaluator_exit_code": 2
+  },
+  "candidate": {
+    "name": "candidate-v6",
+    "source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+    "config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1",
+    "modified_after_sealed_exposure": false
+  },
+  "sealed_final": {
+    "case_count": 99,
+    "answerable_count": 93,
+    "no_evidence_count": 6,
+    "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "split_file_sha256": "1f5cb377ce971931dffc0be97550240181ea9062d4ae1dd1251af432ca8f015f",
+    "case_ids_sha256": "1ca053112b634871d24addbb3982d4e417dc8f4acce10609554cc41b6ed8e987",
+    "missing": 0,
+    "duplicate": 0,
+    "invalid": 0
+  },
+  "metrics": {
+    "candidate_v2": {
+      "MRR": 0.19480286738351246,
+      "R@1": 0.06989247311827956,
+      "R@3": 0.1810035842293907,
+      "R@5": 0.27240143369175623,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval_count": 6,
+      "no_evidence_false_retrieval": 1.0,
+      "abstention_accuracy": 0.0
+    },
+    "candidate_v6": {
+      "MRR": 0.0,
+      "R@1": 0.0,
+      "R@3": 0.0,
+      "R@5": 0.0,
+      "answerable_recall": 0.0,
+      "false_abstention": 1.0,
+      "false_retrieval_count": 0,
+      "no_evidence_false_retrieval": 0.0,
+      "abstention_accuracy": 1.0
+    }
+  },
+  "retrieval_deficits_vs_candidate_v2": {
+    "MRR": 0.19480286738351246,
+    "R@1": 0.06989247311827956,
+    "R@3": 0.1810035842293907,
+    "R@5": 0.27240143369175623
+  },
+  "no_evidence_false_retrieval_absolute_reduction_vs_candidate_v2": 1.0,
+  "wins_ties_losses": {
+    "wins": 0,
+    "ties": 58,
+    "losses": 35,
+    "answerable_total": 93
+  },
+  "selection_guardrails_pass": false,
+  "new_monetary_cost_usd": 0,
+  "paid_api": false,
+  "paid_gpu": false,
+  "paid_inference": false
+}
