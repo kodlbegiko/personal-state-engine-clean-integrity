@@ -1,0 +1,1350 @@
+{
+  "schema_version": "candidate-v7-development-stress-v1",
+  "designation": "DEVELOPMENT",
+  "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS",
+  "case_count": 40,
+  "answerable_count": 20,
+  "no_evidence_count": 20,
+  "cases": [
+    {
+      "id": "CV7STRESS-A-000",
+      "category": "language",
+      "query": "What language does Alina speak?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-000-rel",
+          "text": "Alina speaks Portuguese fluently.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-000-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-000-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-000-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-000-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-000-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-001",
+      "category": "education",
+      "query": "Which university does Bram attend?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-001-rel",
+          "text": "Bram studies at Redwood University.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-001-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-001-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-001-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-001-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-001-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-002",
+      "category": "music",
+      "query": "What music does Cora listen to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-002-rel",
+          "text": "Cora listens to ambient jazz while working.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-002-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-002-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-002-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-002-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-002-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-003",
+      "category": "medication",
+      "query": "What medication does Dario take?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-003-rel",
+          "text": "Dario takes melatonin at night.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-003-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-003-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-003-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-003-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-003-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-004",
+      "category": "allergy",
+      "query": "What is Esme allergic to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-004-rel",
+          "text": "Esme is allergic to shellfish.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-004-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-004-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-004-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-004-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-004-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-005",
+      "category": "device",
+      "query": "What laptop does Farah use?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-005-rel",
+          "text": "Farah uses a ThinkPad X1 Carbon.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-005-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-005-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-005-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-005-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-005-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-006",
+      "category": "color",
+      "query": "What color is Gio's backpack?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-006-rel",
+          "text": "Gio's backpack is cobalt blue.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-006-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-006-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-006-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-006-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-006-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-007",
+      "category": "size",
+      "query": "What shoe size does Hana wear?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-007-rel",
+          "text": "Hana's shoe size is 38 EU.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-007-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-007-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-007-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-007-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-007-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-008",
+      "category": "relationship",
+      "query": "Who is Ivan married to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-008-rel",
+          "text": "Ivan is married to Noor.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-008-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-008-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-008-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-008-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-008-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-009",
+      "category": "pet_name",
+      "query": "What is Jules's dog's name?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-009-rel",
+          "text": "Jules has a dog called Mochi.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-009-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-009-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-009-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-009-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-009-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-010",
+      "category": "book",
+      "query": "What book is Kira reading?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-010-rel",
+          "text": "Kira is reading The Left Hand of Darkness.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-010-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-010-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-010-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-010-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-010-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-011",
+      "category": "course",
+      "query": "What course is Leon taking?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-011-rel",
+          "text": "Leon is enrolled in organic chemistry.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-011-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-011-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-011-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-011-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-011-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-012",
+      "category": "skill",
+      "query": "What skill does Mina practice?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-012-rel",
+          "text": "Mina practices conversational Japanese every morning.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-012-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-012-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-012-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-012-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-012-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-013",
+      "category": "goal",
+      "query": "What goal is Niko training toward?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-013-rel",
+          "text": "Niko is training toward a half marathon.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-013-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-013-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-013-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-013-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-013-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-014",
+      "category": "membership",
+      "query": "Which club did Orla join?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-014-rel",
+          "text": "Orla joined the astronomy club.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-014-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-014-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-014-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-014-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-014-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-015",
+      "category": "car",
+      "query": "What car does Pavel drive?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-015-rel",
+          "text": "Pavel drives a silver Corolla.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-015-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-015-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-015-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-015-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-015-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-016",
+      "category": "bus",
+      "query": "Which bus does Quinn take?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-016-rel",
+          "text": "Quinn rides bus 307 to work.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-016-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-016-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-016-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-016-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-016-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-017",
+      "category": "movie",
+      "query": "What movie does Rina watch often?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-017-rel",
+          "text": "Rina watches Arrival every winter.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-017-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-017-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-017-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-017-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-017-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-018",
+      "category": "game",
+      "query": "What game does Sami play?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-018-rel",
+          "text": "Sami plays Go with friends on Fridays.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-018-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-018-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-018-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-018-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-018-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-A-019",
+      "category": "perform",
+      "query": "What instrument does Tessa perform on?",
+      "memories": [
+        {
+          "id": "CV7STRESS-A-019-rel",
+          "text": "Tessa performs on the oboe in the community orchestra.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-019-d1",
+          "text": "Agenda item: discuss unrelated travel details.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-019-d2",
+          "text": "No confirmed answer is recorded for this unrelated topic.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-019-d3",
+          "text": "What should be reviewed at the next meeting?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-A-019-d4",
+          "text": "This unrelated issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7STRESS-A-019-rel"
+      ],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-000",
+      "category": "wrong_subject_language",
+      "query": "What language does Alina speak?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-000-x",
+          "text": "Bea speaks Portuguese fluently.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-000-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-000-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-000-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-001",
+      "category": "wrong_relation_education",
+      "query": "Which university does Bram attend?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-001-x",
+          "text": "Bram drives a blue sedan.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-001-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-001-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-001-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-002",
+      "category": "meta_music",
+      "query": "What music does Cora listen to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-002-x",
+          "text": "We discussed the query about Cora's music preference.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-002-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-002-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-002-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-003",
+      "category": "unresolved_medication",
+      "query": "What medication does Dario take?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-003-x",
+          "text": "Dario probably takes melatonin, but this remains uncertain.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-003-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-003-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-003-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-004",
+      "category": "no_value_allergy",
+      "query": "What is Esme allergic to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-004-x",
+          "text": "No confirmed information about Esme's allergy is available.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-004-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-004-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-004-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-005",
+      "category": "question_device",
+      "query": "What laptop does Farah use?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-005-x",
+          "text": "What laptop does Farah use?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-005-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-005-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-005-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-006",
+      "category": "wrong_subject_color",
+      "query": "What color is Gio's backpack?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-006-x",
+          "text": "Nora's backpack is cobalt blue.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-006-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-006-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-006-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-007",
+      "category": "wrong_subject_size",
+      "query": "What shoe size does Hana wear?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-007-x",
+          "text": "Mira's shoe size is 38 EU.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-007-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-007-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-007-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-008",
+      "category": "agenda_relationship",
+      "query": "Who is Ivan married to?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-008-x",
+          "text": "Agenda item: discuss whether Ivan is married.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-008-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-008-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-008-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-009",
+      "category": "no_value_pet",
+      "query": "What is Jules's dog's name?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-009-x",
+          "text": "The dog's name is not recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-009-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-009-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-009-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-010",
+      "category": "review_book",
+      "query": "What book is Kira reading?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-010-x",
+          "text": "Review topic: Kira's current book.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-010-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-010-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-010-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-011",
+      "category": "wrong_relation_course",
+      "query": "What course is Leon taking?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-011-x",
+          "text": "Leon lives near the university.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-011-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-011-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-011-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-012",
+      "category": "stale_skill",
+      "query": "What skill does Mina practice?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-012-x",
+          "text": "Mina used to practice conversational Japanese, but no longer does.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-012-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-012-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-012-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-013",
+      "category": "unresolved_goal",
+      "query": "What goal is Niko training toward?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-013-x",
+          "text": "Niko might train for a race; the target is unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-013-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-013-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-013-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-014",
+      "category": "meta_membership",
+      "query": "Which club did Orla join?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-014-x",
+          "text": "The prompt mentions Orla and an astronomy club.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-014-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-014-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-014-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-015",
+      "category": "wrong_subject_car",
+      "query": "What car does Pavel drive?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-015-x",
+          "text": "Iris drives a silver Corolla.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-015-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-015-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-015-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-016",
+      "category": "no_value_bus",
+      "query": "Which bus does Quinn take?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-016-x",
+          "text": "Quinn's bus route is unknown.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-016-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-016-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-016-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-017",
+      "category": "question_movie",
+      "query": "What movie does Rina watch often?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-017-x",
+          "text": "What movie does Rina watch often?",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-017-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-017-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-017-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-018",
+      "category": "wrong_subject_game",
+      "query": "What game does Sami play?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-018-x",
+          "text": "Tariq plays Go with friends.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-018-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-018-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-018-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    },
+    {
+      "id": "CV7STRESS-N-019",
+      "category": "stale_perform",
+      "query": "What instrument does Tessa perform on?",
+      "memories": [
+        {
+          "id": "CV7STRESS-N-019-x",
+          "text": "Tessa formerly performed on the oboe but no longer performs.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-019-d1",
+          "text": "Agenda: review an unrelated topic later.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-019-d2",
+          "text": "No confirmed answer is recorded.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        },
+        {
+          "id": "CV7STRESS-N-019-d3",
+          "text": "This issue remains unresolved.",
+          "timestamp": "2026-08-12T10:00:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "DEVELOPMENT",
+      "protection": "NONSEALED_NONPROTECTED_PRE_FREEZE_STRESS"
+    }
+  ]
+}

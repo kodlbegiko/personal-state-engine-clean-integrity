@@ -2,12 +2,16 @@
   "schema_version": "candidate-v7-decontamination-report-v1",
   "retired_count": 99,
   "development_count": 160,
+  "stress_development_count": 40,
   "intersection_count": 0,
   "retired_case_id_set_sha256": "1ca053112b634871d24addbb3982d4e417dc8f4acce10609554cc41b6ed8e987",
   "retired_id_manifest_git_blob_sha": "f57afa3ce75f8fbf46e22ebbd646dcf51cbf42c8",
   "retired_payload_accessed": false,
   "retired_id_only_manifest_accessed_for_overlap_exclusion": true,
-  "development_id_namespace": "CV7DEV-[AN]-NNN",
-  "proof": "Retired ID-only manifest uses 8-hex IDs (optionally _abs) or gpt4_ + 8-hex; development IDs start CV7DEV-, so exact intersection is empty.",
+  "development_id_namespaces": [
+    "CV7DEV-",
+    "CV7STRESS-"
+  ],
+  "proof": "Retired ID-only manifest uses 8-hex IDs (optionally _abs) or gpt4_ + 8-hex; development namespaces start CV7DEV-/CV7STRESS-, so exact ID intersection is empty.",
   "status": "PASS"
 }

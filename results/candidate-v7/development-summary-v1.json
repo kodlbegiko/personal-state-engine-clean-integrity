@@ -8,7 +8,7 @@
     "no_evidence_count": 60,
     "designation": "DEVELOPMENT/NONSEALED/NONPROTECTED"
   },
-  "candidate_v7_source_sha256": "e5bbeb105c18ace50f1de124d5888c31c0b68d9741a36c47876d45146f33b8c5",
+  "candidate_v7_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
   "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
   "candidate_v2_metrics": {
     "MRR": 1.0,
@@ -66,6 +66,12 @@
     "failed": 0,
     "total": 210
   },
+  "pre_freeze_stress": {
+    "benchmark_sha256": "1ed2b419b4dfa2f4fc74f8f3c2363c1d379db168eca8cf2a3686ad909f75aed9",
+    "answerable_rate": 1.0,
+    "negative_abstention_rate": 1.0,
+    "verdict": "PASS"
+  },
   "guardrails": {
     "mrr_deficit_le_0_03": true,
     "r1_deficit_le_0_03": true,
@@ -82,7 +88,9 @@
     "contradiction_handling_ge_0_95": true,
     "temporal_handling_ge_0_95": true,
     "wrong_subject_rejection_ge_0_95": true,
-    "wrong_relation_rejection_ge_0_95": true
+    "wrong_relation_rejection_ge_0_95": true,
+    "stress_answerable_ge_0_95": true,
+    "stress_negative_abstention_ge_0_95": true
   },
   "verdict": "PASS"
 }
