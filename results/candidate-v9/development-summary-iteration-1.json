@@ -1,0 +1,59 @@
+{
+  "schema_version": "candidate-v9-evaluation-v1",
+  "stage": "development",
+  "benchmark_name": "candidate-v9-development-v1",
+  "benchmark_sha256": "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704",
+  "candidate_v9_source_sha256": "40ba66492a2ee0d30d345ca84f96e09e1d9dc9909f1bf86bea6d442bf05bd784",
+  "candidate_v2": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_retrieval": 1.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 210,
+    "no_evidence_count": 150
+  },
+  "candidate_v9": {
+    "MRR": 0.9857142857142858,
+    "R@1": 0.9857142857142858,
+    "R@3": 0.9857142857142858,
+    "R@5": 0.9857142857142858,
+    "answerable_recall": 0.9857142857142858,
+    "false_abstention": 0.014285714285714285,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 210,
+    "no_evidence_count": 150
+  },
+  "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+  "paired_bootstrap": {
+    "iterations": 10000,
+    "seed": 2026081510,
+    "delta": -0.014285714285714285,
+    "ci95": [
+      -0.03333333333333333,
+      0.0
+    ],
+    "margin": -0.03,
+    "noninferiority": false
+  },
+  "checks": {
+    "mrr": true,
+    "r1": true,
+    "r3": false,
+    "r5": false,
+    "answerable_recall": true,
+    "false_abstention": true,
+    "false_retrieval": true,
+    "abstention_accuracy": true,
+    "order_preservation": true,
+    "paired_bootstrap_noninferiority": false
+  },
+  "verdict": "FAIL",
+  "monetary_cost_usd": 0
+}
