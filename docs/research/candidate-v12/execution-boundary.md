@@ -1,61 +1,102 @@
 # Candidate-v12 Execution Boundary
 
-## Status
+## Current status
+
+`FORMAL_PROTOCOL_RECOVERY_INVALID — PREREGISTRATION_CONFLICT`
+
+Operational mission classification:
+
+`CANDIDATE_V12_PROTECTED_INVALID — EVALUATION_INTEGRITY_FAILURE`
+
+Preregistered Candidate-v12 lineage classification:
+
+`CANDIDATE_V12_RESEARCH_INTEGRITY_FAILURE`
+
+No Candidate-v12 Protected evaluation occurred. This terminal integrity decision happened before formal freeze and before Protected materialization.
+
+## Prior valid boundary
+
+Before the recovered formal mission was supplied, the branch was correctly stopped at:
 
 `DEVELOPMENT_PASS — FORMAL_EXECUTION_NOT_STARTED`
 
-This is a non-terminal research status. It is not a Protected/Confirmatory/Final result and is not a Candidate-v12 terminal state.
+with pre-formal boundary HEAD:
 
-Formal execution counts:
+`963bdcc9ad23a60c5e6d594fb9b48217ab3577a4`
 
-- Protected: `0`
-- Confirmatory: `0`
-- Final: `0`
+That historical boundary remains valid evidence of the state before formal-protocol recovery.
 
-Candidate-v11 historical state remains unchanged:
+## Completed Development evidence
 
-`CANDIDATE_V11_PROTECTED_FAIL`
-
-## Completed safely
-
-- fresh Candidate-v12 branch created from the specified Candidate-v11 terminal commit;
-- preregistration committed before any new individual historical Protected inspection;
-- preregistration provenance recorded;
-- historical Candidate-v11 Protected diagnostic completed without formal rerun;
-- historical root cause decomposed;
-- four Development architectures compared;
-- Architecture C selected;
-- first Development failure decomposed without lowering thresholds;
-- general relation-frame ambiguity remediation implemented;
-- fresh 720-case Development surface passed every preregistered threshold;
+- fresh Candidate-v12 lineage from the Candidate-v11 terminal provenance;
+- preregistration committed before new historical Protected-case diagnosis;
+- Architecture C (`C_structured_semantic_frame`) selected on Development only;
+- fresh 720-case Development surface passed every preregistered Development threshold;
 - metadata firewall PASS;
 - Candidate-v2 candidate-source invariant PASS;
 - determinism PASS;
-- complete repository pytest regression PASS.
+- complete repository regression PASS.
 
-## Why formal execution is not started
+Development PASS is not a formal generalization PASS.
 
-The supplied mission source available to the execution agent ends at line 551, inside the Architecture-C structured-frame schema immediately after `answer_type`. Therefore the remainder of the mission—including any additional mandatory architecture details, Development/freeze requirements, Protected/Confirmatory/Final generation rules, formal runners, exact one-shot procedures, evidence manifests, or terminal-decision protocol—is not available in the supplied source.
+## Formal recovery finding
 
-Starting a formal Candidate-v12 Protected execution under an invented continuation would create an avoidable research-integrity risk. In particular, a one-shot Protected surface must not be materialized or executed until all governing rules are known and frozen.
+The frozen Candidate-v12 preregistration commit `afe9d358a337c2dd1a47710aa2212ed5ae672288` fixed the Protected design before Development, including:
 
-## Integrity-preserving boundary
+- Protected size `480 = 300 answerable + 180 no-evidence`;
+- seed `24043`;
+- MRR >= `0.97`;
+- R@1 >= `0.96`;
+- R@3 >= `0.99`;
+- R@5 >= `0.995`;
+- paired-bootstrap/noninferiority requirements;
+- one-shot formal execution rules.
 
-Accordingly:
+It also forbids post-Development threshold/protocol mutation within Candidate-v12.
 
-- Candidate-v12 is **not frozen** for formal evaluation;
-- no Candidate-v12 Protected payload has been materialized;
-- no Candidate-v12 Protected runner has been executed;
-- Confirmatory and Final have not been materialized or executed;
-- no formal execution ledger count has been incremented;
-- no terminal PASS/FAIL claim is made.
+The later recovered mission requires a different formal design, including Protected size `>=600`, MRR >= `0.98`, R@1 >= `0.97`, and additional structural floor requirements. Those values arrived after Candidate-v12 Development materialization and PASS.
 
-The current evidence supports only:
+Both rule sets cannot simultaneously govern Candidate-v12. Retrofitting the later design would invalidate the earlier preregistration; ignoring the later design would violate the recovered mission. This is a formal-validity conflict, not an implementation bug.
 
-`CANDIDATE_V12_DEVELOPMENT_PASS`
+## Formal execution counts
 
-This label is descriptive Development status, not a formal terminal state.
+```text
+Protected: 0
+Confirmatory: 0
+Final: 0
+```
 
-## Required continuation input
+These counts were not incremented.
 
-To proceed without inventing protocol, the missing mission text beginning immediately after the visible Architecture-C `answer_type` line is required. Once the complete mission tail is available, formal prerequisites can be reconciled against the existing preregistration before any freeze or one-shot execution occurs.
+## Protected boundary
+
+Candidate-v12 Protected:
+
+- formal protocol replacement committed: `NO`
+- formal freeze completed: `NO`
+- payload materialized: `NO`
+- individual cases inspected: `NO`
+- runner executed: `NO`
+- metrics observed: `NO`
+- rerun occurred: `NO`
+
+No formal-stage data entered development, tests, parser rules, or ranking logic.
+
+## Immutable history
+
+Candidate-v11 historical terminal state remains:
+
+`CANDIDATE_V11_PROTECTED_FAIL`
+
+Candidate-v11 was not modified or rerun.
+
+Candidate-v12 Development artifacts remain historical evidence and must not be rewritten to manufacture compatibility with the later formal mission.
+
+## Legal continuation
+
+Candidate-v12 is closed for formal execution under the conflicting recovered mission. A research continuation that adopts the later >=600-case Protected design or stricter thresholds requires a fresh lineage with those rules frozen before any new Development materialization.
+
+See:
+
+- `docs/research/candidate-v12/formal-protocol-recovery-audit.md`
+- `docs/research/candidate-v12/protected-terminal-decision.md`
