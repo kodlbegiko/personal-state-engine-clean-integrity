@@ -304,25 +304,33 @@ def _value_type_ok(
     if shared_types:
         return True, shared_types
 
-    # If evidence explicitly identifies another semantic type, do not infer
-    # compatibility merely from lexical proximity.
-    if ctypes and not shared_types:
-        return False, ctypes
-
     relation_evidence = set(relation_evidence or ())
+
+    # A monomorphic canonical relation defines the semantic range of its
+    # argument more reliably than incidental words elsewhere in the clause.
+    # Example: "preparing for a cycling brevet" is still a GOAL claim even
+    # though the value phrase contains an activity word.  Medication is kept
+    # out of this shortcut because generic take/taking is intentionally broad.
     for relation in relation_evidence:
         allowed = RELATION_TO_VALUE_TYPES.get(relation, set())
         if relation != "health_medication" and len(allowed) == 1 and allowed <= qtypes:
-            return True, {f"inferred:{next(iter(allowed))}"}
+            return True, {f"range:{next(iter(allowed))}"}
 
-    # Preference is deliberately polymorphic.  Permit an open-class value only
-    # when the clause exposes no contradictory typed signal; safety blockers,
-    # subject matching, relation matching, value-bearing, and temporal checks
-    # are still mandatory.
-    if "preference" in relation_evidence and len(qtypes) == 1 and not ctypes:
+    # Clause-level detectors can observe temporal/location adjuncts that are
+    # not the answer value (e.g. "during afternoon breaks").  They do not
+    # constitute a content-type contradiction for a polymorphic relation.
+    content_types = ctypes - {"schedule", "location", "status"}
+    if content_types and not (qtypes & content_types):
+        return False, content_types
+
+    # Preference is deliberately polymorphic.  If no competing content type
+    # is identified, retain the query's requested type as an open-class range.
+    # Hard blockers, subject, relation, value-bearing and temporal checks still
+    # have to pass independently.
+    if "preference" in relation_evidence and len(qtypes) == 1 and not content_types:
         return True, {f"open:{next(iter(qtypes))}"}
 
-    return False, ctypes
+    return False, content_types or ctypes
 
 
 def certify_clause_v9(query: str, clause: str, memory_text: str, req: SemanticRequirements | None = None) -> EvidenceClauseV9:

@@ -112,3 +112,23 @@ def test_polymorphic_preference_rejects_explicit_conflicting_type():
 def test_polymorphic_preference_accepts_open_value_without_conflicting_type():
     c=case("Which beverage does Noor normally prefer?",[m("rel","Noor normally orders saffron tonic during breaks.")])
     assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_goal_relation_range_overrides_incidental_activity_word():
+    c=case("What target is Noor preparing toward?",[m("rel","Noor is preparing for a cycling brevet.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_goal_relation_range_overrides_incidental_course_word():
+    c=case("What target is Noor preparing toward?",[m("rel","Noor is preparing for a wilderness course.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_preference_ignores_temporal_adjunct_as_value_type():
+    c=case("Which beverage does Noor favor on workdays?",[m("rel","Noor routinely selects saffron tonic during afternoon breaks.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_medication_query_does_not_accept_course_taking():
+    c=case("Which medication does Noor take?",[m("x","Noor is taking comparative hydrology this term.")])
+    assert pse_candidate_v9_rank(c,5)==[]
