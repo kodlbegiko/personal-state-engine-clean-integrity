@@ -9,6 +9,7 @@ on:
       - tests/test_candidate_v12.py
       - scripts/generate_candidate_v12_development.py
       - scripts/evaluate_candidate_v12_development.py
+      - scripts/diagnose_candidate_v12_development.py
       - .github/workflows/candidate-v12-development.yml
 
 permissions:
@@ -31,20 +32,18 @@ jobs:
         env:
           PYTHONPATH: src
         run: pytest -q tests/test_candidate_v12.py
-      - name: Generate preregistered fresh Development surface if generator exists
+      - name: Generate preregistered fresh Development surface
         env:
           PYTHONPATH: src
-        run: |
-          if [ -f scripts/generate_candidate_v12_development.py ]; then
-            python scripts/generate_candidate_v12_development.py
-          fi
-      - name: Run Development architecture comparison if evaluator exists
+        run: python scripts/generate_candidate_v12_development.py
+      - name: Run Development architecture comparison
         env:
           PYTHONPATH: src
-        run: |
-          if [ -f scripts/evaluate_candidate_v12_development.py ]; then
-            python scripts/evaluate_candidate_v12_development.py
-          fi
+        run: python scripts/evaluate_candidate_v12_development.py
+      - name: Run Development failure decomposition
+        env:
+          PYTHONPATH: src
+        run: python scripts/diagnose_candidate_v12_development.py
       - name: Persist Development-only generated artifacts
         run: |
           git config user.name "github-actions[bot]"
@@ -53,6 +52,7 @@ jobs:
             experiments/benchmarks/candidate-v12-development-v1.json
             results/candidate-v12/architecture-comparison-development-v1.json
             results/candidate-v12/development-summary-v1.json
+            results/candidate-v12/development-failure-taxonomy-v1.json
           )
           changed=0
           for p in "${paths[@]}"; do
