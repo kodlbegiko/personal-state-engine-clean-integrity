@@ -6,6 +6,7 @@ on:
       - research/candidate-v12-fresh-lineage
     paths:
       - scripts/diagnose_candidate_v11_protected_frame_failures.py
+      - .github/workflows/candidate-v12-historical-diagnostic.yml
 
 permissions:
   contents: write
