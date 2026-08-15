@@ -1,0 +1,18 @@
+{
+  "schema_version": "candidate-v9-historical-diagnostic-access-v1",
+  "classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+  "historical_candidate": "Candidate-v8",
+  "historical_stage": "protected_validation",
+  "opened_at": null,
+  "opened_by": "candidate-v9-research-agent",
+  "purpose": "Diagnose the four Candidate-v8 protected false abstentions only after preregistration, for generalizable root-cause taxonomy and architecture selection.",
+  "preregistration_commit": "86de8e1308a4c492edc54725cdb3c23127dd4749",
+  "historical_surface_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+  "historical_result_commit": "0539ec423c617f15f881f2d0b9009bc64d37bcb8",
+  "historical_terminal_commit": "86c440fc487c46a1e603144177e666d32a52e725",
+  "excluded_from_candidate_v9_formal_validation": true,
+  "excluded_from_candidate_v9_confirmatory": true,
+  "excluded_from_candidate_v9_final": true,
+  "case_specific_hardcoding_prohibited": true,
+  "retired_99_case_semantic_payload_opened": false
+}
