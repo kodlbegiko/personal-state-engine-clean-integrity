@@ -2,6 +2,6 @@
   "candidate": "v13",
   "confirmatory": 0,
   "final": 0,
-  "protected": 0,
+  "protected": 1,
   "terminal_state": null
 }
