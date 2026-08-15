@@ -53,7 +53,7 @@ def answerable(i: int, stage: str) -> tuple[str, str, list[dict]]:
     base = PEOPLE[(i * 5 + len(stage)) % len(PEOPLE)]
     surname = SURNAMES[(i // len(PEOPLE) + i * 7 + len(stage)) % len(SURNAMES)]
     p = f"{base} {surname}"
-    j = (i * 7 + STAGE_SPECS[stage]["seed"]) % 12
+    j = (i * 7 + i // 24 + STAGE_SPECS[stage]["seed"]) % 12
     mode = i % 24
     variants = {"development": 0, "protected": 1, "confirmatory": 2, "final": 3}
     v = (i + variants[stage]) % 3
