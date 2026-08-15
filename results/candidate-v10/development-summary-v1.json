@@ -3,7 +3,7 @@
   "stage": "development",
   "benchmark_name": "candidate-v10-development-v1",
   "benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
-  "candidate_v10_source_sha256": "8cc1c09b46c2530702204c94f60ef0da9c19a0adbf64adf456408b4c8bc5f60e",
+  "candidate_v10_source_sha256": "db40cb08db9da259fd38e66bb9bb15e921de7f43c80ba40fda45ca006408a20c",
   "candidate_v2": {
     "MRR": 0.6982142857142857,
     "R@1": 0.5107142857142857,
@@ -18,12 +18,12 @@
     "no_evidence_count": 200
   },
   "candidate_v10": {
-    "MRR": 0.8946428571428572,
-    "R@1": 0.8928571428571429,
-    "R@3": 0.8964285714285715,
-    "R@5": 0.8964285714285715,
-    "answerable_recall": 0.8964285714285715,
-    "false_abstention": 0.10357142857142858,
+    "MRR": 0.9982142857142857,
+    "R@1": 0.9964285714285714,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
     "abstention_accuracy": 1.0,
     "false_retrieval": 0.0,
     "order_preservation_violations": 0,
@@ -34,26 +34,26 @@
   "paired_bootstrap": {
     "iterations": 10000,
     "seed": 2026081525,
-    "delta": 0.19642857142857142,
+    "delta": 0.3,
     "ci95": [
-      0.14523809523809525,
-      0.24821428571428572
+      0.2630952380952381,
+      0.3366071428571429
     ],
     "margin": -0.03,
     "noninferiority": true
   },
   "checks": {
-    "mrr": false,
-    "r1": false,
-    "r3": false,
-    "r5": false,
-    "answerable_recall": false,
-    "false_abstention": false,
+    "mrr": true,
+    "r1": true,
+    "r3": true,
+    "r5": true,
+    "answerable_recall": true,
+    "false_abstention": true,
     "false_retrieval": true,
     "abstention_accuracy": true,
     "order_preservation": true,
     "paired_bootstrap_noninferiority": true
   },
-  "verdict": "FAIL",
+  "verdict": "PASS",
   "monetary_cost_usd": 0
 }
