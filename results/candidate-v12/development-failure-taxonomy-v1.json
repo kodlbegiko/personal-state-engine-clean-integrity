@@ -1,0 +1,72 @@
+{
+  "case_count": 720,
+  "designation": "DEVELOPMENT",
+  "false_retrieval_answerability": {
+    "answerable": 36
+  },
+  "false_retrieval_by_discourse": {
+    "D2": 36
+  },
+  "false_retrieval_by_grammar": {
+    "DE": 36
+  },
+  "false_retrieval_by_relation": {
+    "work_role": 36
+  },
+  "false_retrieval_case_count": 36,
+  "false_retrieval_memory_bucket": {
+    "wrong-relation": 36
+  },
+  "formal_execution": false,
+  "parse_invalid_by_relation": {},
+  "relation_confusion": {
+    "appointment": {
+      "appointment": 60
+    },
+    "communication_channel": {
+      "communication_channel": 60
+    },
+    "language": {
+      "language": 60
+    },
+    "membership": {
+      "education_course+membership": 36,
+      "goal+membership+status": 24
+    },
+    "project_ownership": {
+      "project_ownership": 60
+    },
+    "routine": {
+      "routine": 60
+    },
+    "software_tool": {
+      "software_tool": 60
+    },
+    "status": {
+      "status": 60
+    },
+    "subscription": {
+      "subscription": 60
+    },
+    "travel_plan": {
+      "travel_plan": 60
+    },
+    "volunteering": {
+      "volunteering": 60
+    },
+    "work_role": {
+      "education_course+work_role": 24,
+      "goal+status+work_role": 36
+    }
+  },
+  "relation_mismatch_by_discourse": {
+    "D2": 36,
+    "D4": 84
+  },
+  "relation_mismatch_by_grammar": {
+    "DC": 60,
+    "DE": 60
+  },
+  "relation_mismatch_count": 120,
+  "schema_version": "candidate-v12-development-failure-taxonomy-v1"
+}
