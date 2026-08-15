@@ -1,0 +1,82 @@
+{
+  "candidate": "v13",
+  "formal_ledger": {
+    "confirmatory": 1,
+    "final": 1,
+    "protected": 1
+  },
+  "last_stage": "final",
+  "last_stage_acceptance": "PASS",
+  "last_stage_anti_collapse": {
+    "abstain_count": 342,
+    "catastrophic_structural_families": [],
+    "near_universal_abstention": false,
+    "near_universal_retrieval": false,
+    "pass": true,
+    "retrieve_count": 558,
+    "single_class_prediction_collapse": false
+  },
+  "last_stage_integrity": {
+    "candidate_source_invariant": "PASS",
+    "candidate_source_violations": 0,
+    "determinism": "PASS",
+    "determinism_violations": 0,
+    "metadata_firewall": "PASS",
+    "metadata_firewall_violations": 0
+  },
+  "last_stage_metrics": {
+    "abstention_accuracy": 1.0,
+    "answerable_count": 558,
+    "answerable_recall": 1.0,
+    "case_count": 900,
+    "eligible_answerable_count": 558,
+    "eligible_rank1_accuracy": 1.0,
+    "false_abstention_rate": 0.0,
+    "false_retrieval_rate": 0.0,
+    "mrr": 1.0,
+    "no_evidence_count": 342,
+    "r_at_1": 1.0,
+    "r_at_3": 1.0,
+    "r_at_5": 1.0
+  },
+  "last_stage_noninferiority": null,
+  "last_stage_structural": {
+    "S1": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S2": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S3": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S4": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S5": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S6": {
+      "accuracy": 1.0,
+      "correct": 136,
+      "count": 136
+    },
+    "S7": {
+      "accuracy": 1.0,
+      "correct": 79,
+      "count": 79
+    }
+  },
+  "terminal_state": "CANDIDATE_V13_FINAL_GATE_F_PASS",
+  "utc": "2026-08-15T14:45:32.674223Z"
+}

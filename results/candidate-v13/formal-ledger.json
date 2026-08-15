@@ -3,5 +3,5 @@
   "confirmatory": 1,
   "final": 1,
   "protected": 1,
-  "terminal_state": null
+  "terminal_state": "CANDIDATE_V13_FINAL_GATE_F_PASS"
 }
