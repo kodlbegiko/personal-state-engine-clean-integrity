@@ -1,0 +1,49 @@
+name: Candidate v9 frozen formal mission
+
+on:
+  push:
+    branches: [research/candidate-v9-fresh-lineage]
+    paths: [.github/workflows/candidate-v9-formal-mission.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  formal-mission:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v9-fresh-lineage
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deterministic local dependencies
+        run: python -m pip install -e . pytest
+
+      - name: Fetch and verify Candidate-v8 immutable lineage
+        run: |
+          git fetch origin research/candidate-v8-fresh-lineage:refs/remotes/origin/research/candidate-v8-fresh-lineage
+          test "$(git rev-parse origin/research/candidate-v8-fresh-lineage)" = "86c440fc487c46a1e603144177e666d32a52e725"
+          test -z "$(git diff --name-only 86c440fc487c46a1e603144177e666d32a52e725 HEAD -- ':(glob)experiments/benchmarks/candidate-v8-*')"
+
+      - name: Full inherited plus Candidate-v9 test suite
+        run: |
+          set -o pipefail
+          python -m pytest -q | tee /tmp/candidate-v9-formal-freeze-tests.txt
+          {
+            echo 'CANDIDATE_V9_TEST_RECORD<<EOF'
+            cat /tmp/candidate-v9-formal-freeze-tests.txt
+            echo EOF
+          } >> "$GITHUB_ENV"
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name candidate-v9-research-bot
+          git config user.email candidate-v9-research-bot@users.noreply.github.com
+
+      - name: Freeze and execute one-shot formal mission
+        run: python scripts/run_candidate_v9_formal_mission.py
