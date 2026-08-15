@@ -280,13 +280,49 @@ def _relation_ok_v9(clause: str, req: SemanticRequirements) -> tuple[bool, set[s
     return bool(shared), shared
 
 
-def _value_type_ok(clause: str, req: SemanticRequirements) -> tuple[bool, set[str]]:
+def _value_type_ok(
+    clause: str,
+    req: SemanticRequirements,
+    relation_evidence: set[str] | None = None,
+) -> tuple[bool, set[str]]:
+    """Check value-type compatibility without requiring a closed entity lexicon.
+
+    Explicit typed evidence wins.  A detected conflicting type fails closed.
+    For canonical relations whose range is structurally single-typed, the
+    relation itself licenses the open-class value (e.g. ``serves as X`` ->
+    role, ``enrolled in X`` -> course, ``speaks X`` -> language).  The
+    polymorphic preference relation may use an unknown value only when no
+    contradictory type signal is present.  Generic ``take/taking`` is not
+    allowed to structurally prove medication type.
+    """
     qtypes = set(req.value_types)
     ctypes = _evidence_value_types(clause)
     if not qtypes:
         return True, ctypes
-    shared = qtypes & ctypes
-    return bool(shared), shared
+
+    shared_types = qtypes & ctypes
+    if shared_types:
+        return True, shared_types
+
+    # If evidence explicitly identifies another semantic type, do not infer
+    # compatibility merely from lexical proximity.
+    if ctypes and not shared_types:
+        return False, ctypes
+
+    relation_evidence = set(relation_evidence or ())
+    for relation in relation_evidence:
+        allowed = RELATION_TO_VALUE_TYPES.get(relation, set())
+        if relation != "health_medication" and len(allowed) == 1 and allowed <= qtypes:
+            return True, {f"inferred:{next(iter(allowed))}"}
+
+    # Preference is deliberately polymorphic.  Permit an open-class value only
+    # when the clause exposes no contradictory typed signal; safety blockers,
+    # subject matching, relation matching, value-bearing, and temporal checks
+    # are still mandatory.
+    if "preference" in relation_evidence and len(qtypes) == 1 and not ctypes:
+        return True, {f"open:{next(iter(qtypes))}"}
+
+    return False, ctypes
 
 
 def certify_clause_v9(query: str, clause: str, memory_text: str, req: SemanticRequirements | None = None) -> EvidenceClauseV9:
@@ -294,7 +330,7 @@ def certify_clause_v9(query: str, clause: str, memory_text: str, req: SemanticRe
     blocker = _blocker(clause, req.base)
     subject_ok = _subject_ok_v9(clause, memory_text, req)
     relation_ok, rel_evidence = _relation_ok_v9(clause, req)
-    value_type_ok, type_evidence = _value_type_ok(clause, req)
+    value_type_ok, type_evidence = _value_type_ok(clause, req, rel_evidence)
     value_bearing = _value_bearing(query, clause, req.base)
     direct = bool(DIRECT_ASSERTION.search(clause)) or bool(
         re.search(r"\b(?:attends?|enrolled|serves?|belongs?|commutes?|speaks?|owns?|happens?|carries?|selects?|picks?|takes?)\b", clause, re.I)

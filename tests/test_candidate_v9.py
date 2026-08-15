@@ -92,3 +92,23 @@ def test_query_intent_is_typed():
     req=semantic_requirements("At which institution is Noor pursuing studies?")
     assert "education_institution" in req.relations
     assert "institution" in req.value_types
+
+
+def test_open_class_role_is_licensed_by_typed_relation():
+    c=case("What profession does Noor hold?",[m("rel","Noor serves as a quantum archivist.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_open_class_course_is_licensed_by_typed_relation():
+    c=case("Which course is Noor taking this term?",[m("rel","Noor is enrolled in comparative hydrology this term.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
+
+
+def test_polymorphic_preference_rejects_explicit_conflicting_type():
+    c=case("Which beverage does Noor normally prefer?",[m("x","Noor's favorite pastime is origami.")])
+    assert pse_candidate_v9_rank(c,5)==[]
+
+
+def test_polymorphic_preference_accepts_open_value_without_conflicting_type():
+    c=case("Which beverage does Noor normally prefer?",[m("rel","Noor normally orders saffron tonic during breaks.")])
+    assert pse_candidate_v9_rank(c,5)==["rel"]
