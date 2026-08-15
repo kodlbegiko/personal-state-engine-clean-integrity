@@ -67,6 +67,7 @@ RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
     "project_ownership": (
         r"\b(?:project\s+ownership|project\s+owner|project\s+responsibility)\b",
         r"\bproject\b[^.;!?]{0,25}\bown(?:s|ed|ing|ership)?\b",
+        r"\bproject\b[^.;!?]{0,35}\bresponsible\s+for\b",
         r"\b(?:owns?|leads?|responsible\s+for)\b[^.;!?]{0,20}\bproject\b",
     ),
     "appointment": (r"\b(?:appointment|booking|reservation|scheduled\s+visit)\b",),
