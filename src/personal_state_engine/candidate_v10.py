@@ -26,8 +26,8 @@ RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
     "preference": (
         r"\bprefer(?:s|red|ring)?\b", r"\bfavou?r(?:s|ed|ing|ite)?\b", r"\bgo-?to\b",
         r"\b(?:choice|pick|selection)\b", r"\bpartial\s+to\b",
-        r"\b(?:regular|usual|default|typical)\b[^.;!?]{0,35}\b(?:breakfast|meal|drink|beverage|pick|choice|selection|music|genre|activity|option)\b",
-        r"\b(?:breakfast|meal|drink|beverage|pick|choice|selection|music|genre|activity|option)\b[^.;!?]{0,25}\b(?:regular|usual|default|typical)\b",
+        r"\b(?:regular|usual|default|typical)\b[^.;!?]{0,35}\b(?:breakfast|meal|drink|beverage|pick|choice|selection|music|genre|option)\b",
+        r"\b(?:breakfast|meal|drink|beverage|pick|choice|selection|music|genre|option)\b[^.;!?]{0,25}\b(?:regular|usual|default|typical)\b",
     ),
     "education_institution": (
         r"\b(?:university|college|school|campus|institution|academy|polytechnic)\b",
@@ -49,16 +49,26 @@ RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
     "media": (r"\b(?:music|genre|song|album|film|movie|book|listen|listens|watch|watches|read|reads)\b",),
     "health_medication": (r"\b(?:medication|medicine|drug|prescription)\b",),
     "attribute_color": (r"\b(?:color|colour|shade|hue)\b",),
-    "certification": (r"\b(?:certification|certificate|credential|licen[cs]e|qualification)\b",),
+    # Keep relation cues separate from open answer values: a goal answer may
+    # itself contain the noun "certificate", so the generic value noun is not
+    # sufficient to establish a certification relation.
+    "certification": (r"\b(?:certification|credential|licen[cs]e|qualification)\b",),
     "subscription": (r"\b(?:subscription|subscribed|service\s+plan|plan\s+tier|membership\s+tier)\b",),
     "travel_plan": (r"\b(?:travel\s+plan|trip|itinerary|destination|travelling|traveling|flying\s+to|visiting)\b",),
     "dietary_restriction": (r"\b(?:dietary|diet|food\s+restriction|allerg(?:y|ic)|intoleran(?:ce|t)|vegan|vegetarian|gluten[- ]free)\b",),
-    "sports_team": (r"\b(?:sports?\s+team|football\s+club|baseball\s+team|basketball\s+team|team\s+(?:supports?|follows?))\b",),
+    "sports_team": (
+        r"\b(?:sports?\s+team|football\s+club|baseball\s+team|basketball\s+team)\b",
+        r"\bteam\s+(?:support(?:s|ed|ing)?|follow(?:s|ed|ing)?)\b",
+    ),
     "volunteering": (r"\b(?:volunteer|volunteering|community\s+service|service\s+shift)\b",),
     "software_tool": (r"\b(?:software|software\s+tool|app|editor|ide|code\s+editor|design\s+tool)\b",),
     "communication_channel": (r"\b(?:communication\s+channel|contact\s+channel|contact\s+method|reach\s+.+\s+via|contact\s+.+\s+by)\b",),
     "routine": (r"\b(?:routine|habit|ritual|recurring\s+routine|daily\s+practice)\b",),
-    "project_ownership": (r"\b(?:project\s+ownership|project\s+owner|owns?\s+the\s+project|leads?\s+the\s+project|responsible\s+for\s+the\s+project)\b",),
+    "project_ownership": (
+        r"\b(?:project\s+ownership|project\s+owner|project\s+responsibility)\b",
+        r"\bproject\b[^.;!?]{0,25}\bown(?:s|ed|ing|ership)?\b",
+        r"\b(?:owns?|leads?|responsible\s+for)\b[^.;!?]{0,20}\bproject\b",
+    ),
     "appointment": (r"\b(?:appointment|booking|reservation|scheduled\s+visit)\b",),
     "accommodation": (r"\b(?:accommodation|lodging|hotel|hostel|guesthouse|place\s+to\s+stay)\b",),
 }
@@ -77,6 +87,7 @@ ASSIGNMENT = re.compile(
     re.I,
 )
 PRONOUN = re.compile(r"\b(?:he|she|they|his|her|their)\b", re.I)
+DISCOURSE_SUBJECT_ANCHORS = {"for", "regarding", "not", "as"}
 
 GENERIC_OBJECT_STOP = {
     _stem(x) for x in {
@@ -144,9 +155,6 @@ def _object_terms(query: str) -> set[str]:
     if "'s" not in q:
         return set()
     tail = q.split("'s", 1)[1]
-    # Temporal adjectives such as "current" are filtered as stop terms rather
-    # than cutting the possessed object phrase. This preserves open objects
-    # such as "permit" in "current permit status".
     tail = re.split(r"\b(?:in|on|at|for|with|now|today|these\s+days)\b", tail, maxsplit=1, flags=re.I)[0]
     out = set()
     for tok in tokens(tail):
@@ -157,8 +165,19 @@ def _object_terms(query: str) -> set[str]:
     return out
 
 
+def _clean_base_requirements(base: QueryRequirements) -> QueryRequirements:
+    return QueryRequirements(
+        subject_anchors=tuple(a for a in base.subject_anchors if a.casefold() not in DISCOURSE_SUBJECT_ANCHORS),
+        first_person=base.first_person,
+        relation_signals=base.relation_signals,
+        predicate_terms=base.predicate_terms,
+        object_anchors=base.object_anchors,
+        temporal_scope=base.temporal_scope,
+    )
+
+
 def semantic_requirements_v10(query: str) -> FrameRequirements:
-    base = query_requirements(query)
+    base = _clean_base_requirements(query_requirements(query))
     rels = _primary_relations(query)
     q = query.casefold()
     if not rels and re.search(r"\bwhere\b", q):
@@ -231,15 +250,7 @@ def certify_clause_v10(query: str, clause: str, memory_text: str, req: FrameRequ
         proof.add("assertion")
     if temporal_ok:
         proof.add("temporal")
-    supported = (
-        blocker is None
-        and subject_ok
-        and relation_ok
-        and value_type_ok
-        and value_bearing
-        and assertion_ok
-        and temporal_ok
-    )
+    supported = blocker is None and subject_ok and relation_ok and value_type_ok and value_bearing and assertion_ok and temporal_ok
     return EvidenceClauseV10(
         text=clause,
         subject_ok=subject_ok,
