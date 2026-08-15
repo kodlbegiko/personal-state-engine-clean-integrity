@@ -1,0 +1,35 @@
+name: Candidate v13 frozen formal mission
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-fresh-lineage
+    paths:
+      - docs/research/candidate-v13/freeze-manifest.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-formal-one-shot
+  cancel-in-progress: false
+
+jobs:
+  formal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure append-only evidence commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Execute frozen one-shot Protected to terminal sequence
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v13_formal_runner.py mission
