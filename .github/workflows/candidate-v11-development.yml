@@ -7,7 +7,7 @@ on:
     paths:
       - src/personal_state_engine/candidate_v11.py
       - tests/test_candidate_v11.py
-      - scripts/generate_candidate_v11_benchmark.py
+      - scripts/generate_candidate_v11_benchmark_v2.py
       - scripts/evaluate_candidate_v11.py
       - scripts/audit_candidate_v11_freshness.py
       - scripts/diagnose_candidate_v11_development.py
@@ -36,7 +36,7 @@ jobs:
         run: PYTHONPATH=src python -m pytest -q tests/test_candidate_v11.py | tee /tmp/candidate-v11-pytest.txt
       - name: Generate fresh Development iteration 2 surface only
         run: |
-          python scripts/generate_candidate_v11_benchmark.py \
+          python scripts/generate_candidate_v11_benchmark_v2.py \
             --stage development \
             --output experiments/benchmarks/candidate-v11-development-v2.json
       - name: Audit Development iteration 2 freshness
