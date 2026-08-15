@@ -1,0 +1,71 @@
+{
+  "architecture_selected": null,
+  "candidate": "v12",
+  "confirmatory_execution_count": 0,
+  "designation": "DEVELOPMENT",
+  "development_acceptance": "FAIL",
+  "final_execution_count": 0,
+  "formal_execution": false,
+  "frame_extraction": {
+    "discourse_intent_counts": {
+      "CONTEXT_PLUS_PROPOSITION": 480,
+      "DIRECT_PROPOSITION_QUERY": 240
+    },
+    "discourse_token_contamination_rate": 0.0,
+    "frame_case_count": 720,
+    "parse_valid_rate": 1.0,
+    "relation_frame_accuracy": 0.8333333333333334,
+    "subject_exact_span_accuracy": 1.0,
+    "subject_mandatory_anchor_precision": 1.0,
+    "subject_mandatory_anchor_recall": 1.0,
+    "temporal_scope_accuracy": 1.0
+  },
+  "historical_protected_used_for_development_evaluation": false,
+  "integrity": {
+    "candidate_source_invariant": "PASS",
+    "candidate_source_violations": 0,
+    "determinism": "PASS",
+    "determinism_violations": 0,
+    "metadata_firewall": "PASS",
+    "metadata_firewall_violations": 0
+  },
+  "protected_execution_count": 0,
+  "schema_version": "candidate-v12-development-summary-v1",
+  "selected_metrics": {
+    "abstention_accuracy": 1.0,
+    "answerable_count": 432,
+    "answerable_recall": 1.0,
+    "case_count": 720,
+    "eligible_answerable_count": 432,
+    "eligible_rank1_accuracy": 1.0,
+    "false_abstention_rate": 0.0,
+    "false_retrieval_rate": 0.05,
+    "mrr": 1.0,
+    "no_evidence_count": 288,
+    "nonrelevant_returned_evidence_count": 36,
+    "r_at_1": 1.0,
+    "r_at_3": 1.0,
+    "r_at_5": 1.0,
+    "returned_evidence_count": 468
+  },
+  "threshold_failures": [
+    "false_retrieval_rate>0.03",
+    "relation_frame_accuracy<0.98"
+  ],
+  "thresholds": {
+    "abstention_accuracy": 0.97,
+    "answerable_recall": 0.99,
+    "discourse_token_contamination_rate_max": 0.01,
+    "eligible_rank1_accuracy": 0.97,
+    "false_abstention_rate_max": 0.01,
+    "false_retrieval_rate_max": 0.03,
+    "mrr": 0.98,
+    "r_at_1": 0.97,
+    "r_at_3": 0.99,
+    "r_at_5": 0.995,
+    "relation_frame_accuracy": 0.98,
+    "subject_mandatory_anchor_precision": 0.99,
+    "subject_mandatory_anchor_recall": 0.99,
+    "temporal_scope_accuracy": 0.98
+  }
+}

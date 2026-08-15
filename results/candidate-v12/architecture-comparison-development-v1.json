@@ -1,0 +1,98 @@
+{
+  "architectures": {
+    "A_frozen_candidate_v11": {
+      "abstention_accuracy": 1.0,
+      "answerable_count": 432,
+      "answerable_recall": 0.3333333333333333,
+      "case_count": 720,
+      "eligible_answerable_count": 144,
+      "eligible_rank1_accuracy": 1.0,
+      "false_abstention_rate": 0.6666666666666666,
+      "false_retrieval_rate": 0.0,
+      "mrr": 0.3333333333333333,
+      "no_evidence_count": 288,
+      "nonrelevant_returned_evidence_count": 0,
+      "r_at_1": 0.3333333333333333,
+      "r_at_3": 0.3333333333333333,
+      "r_at_5": 0.3333333333333333,
+      "returned_evidence_count": 144
+    },
+    "B_bounded_discourse_stripping": {
+      "abstention_accuracy": 1.0,
+      "answerable_count": 432,
+      "answerable_recall": 0.6666666666666666,
+      "case_count": 720,
+      "eligible_answerable_count": 288,
+      "eligible_rank1_accuracy": 1.0,
+      "false_abstention_rate": 0.3333333333333333,
+      "false_retrieval_rate": 0.0,
+      "mrr": 0.6666666666666666,
+      "no_evidence_count": 288,
+      "nonrelevant_returned_evidence_count": 0,
+      "r_at_1": 0.6666666666666666,
+      "r_at_3": 0.6666666666666666,
+      "r_at_5": 0.6666666666666666,
+      "returned_evidence_count": 288
+    },
+    "C_structured_semantic_frame": {
+      "abstention_accuracy": 1.0,
+      "answerable_count": 432,
+      "answerable_recall": 1.0,
+      "case_count": 720,
+      "eligible_answerable_count": 432,
+      "eligible_rank1_accuracy": 1.0,
+      "false_abstention_rate": 0.0,
+      "false_retrieval_rate": 0.05,
+      "mrr": 1.0,
+      "no_evidence_count": 288,
+      "nonrelevant_returned_evidence_count": 36,
+      "r_at_1": 1.0,
+      "r_at_3": 1.0,
+      "r_at_5": 1.0,
+      "returned_evidence_count": 468
+    },
+    "D_clause_first_proposition_graph": {
+      "abstention_accuracy": 1.0,
+      "answerable_count": 432,
+      "answerable_recall": 1.0,
+      "case_count": 720,
+      "eligible_answerable_count": 432,
+      "eligible_rank1_accuracy": 1.0,
+      "false_abstention_rate": 0.0,
+      "false_retrieval_rate": 0.05,
+      "mrr": 1.0,
+      "no_evidence_count": 288,
+      "nonrelevant_returned_evidence_count": 36,
+      "r_at_1": 1.0,
+      "r_at_3": 1.0,
+      "r_at_5": 1.0,
+      "returned_evidence_count": 468
+    }
+  },
+  "benchmark": "experiments/benchmarks/candidate-v12-development-v1.json",
+  "designation": "DEVELOPMENT",
+  "formal_execution": false,
+  "frame_extraction": {
+    "discourse_intent_counts": {
+      "CONTEXT_PLUS_PROPOSITION": 480,
+      "DIRECT_PROPOSITION_QUERY": 240
+    },
+    "discourse_token_contamination_rate": 0.0,
+    "frame_case_count": 720,
+    "parse_valid_rate": 1.0,
+    "relation_frame_accuracy": 0.8333333333333334,
+    "subject_exact_span_accuracy": 1.0,
+    "subject_mandatory_anchor_precision": 1.0,
+    "subject_mandatory_anchor_recall": 1.0,
+    "temporal_scope_accuracy": 1.0
+  },
+  "integrity": {
+    "candidate_source_invariant": "PASS",
+    "candidate_source_violations": 0,
+    "determinism": "PASS",
+    "determinism_violations": 0,
+    "metadata_firewall": "PASS",
+    "metadata_firewall_violations": 0
+  },
+  "schema_version": "candidate-v12-development-architecture-comparison-v1"
+}
