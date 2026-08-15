@@ -1,0 +1,59 @@
+{
+  "schema_version": "candidate-v10-evaluation-v1",
+  "stage": "development",
+  "benchmark_name": "candidate-v10-development-v1",
+  "benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
+  "candidate_v10_source_sha256": "8cc1c09b46c2530702204c94f60ef0da9c19a0adbf64adf456408b4c8bc5f60e",
+  "candidate_v2": {
+    "MRR": 0.6982142857142857,
+    "R@1": 0.5107142857142857,
+    "R@3": 0.8714285714285714,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_retrieval": 1.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 280,
+    "no_evidence_count": 200
+  },
+  "candidate_v10": {
+    "MRR": 0.8946428571428572,
+    "R@1": 0.8928571428571429,
+    "R@3": 0.8964285714285715,
+    "R@5": 0.8964285714285715,
+    "answerable_recall": 0.8964285714285715,
+    "false_abstention": 0.10357142857142858,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 280,
+    "no_evidence_count": 200
+  },
+  "candidate_v10_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+  "paired_bootstrap": {
+    "iterations": 10000,
+    "seed": 2026081525,
+    "delta": 0.19642857142857142,
+    "ci95": [
+      0.14523809523809525,
+      0.24821428571428572
+    ],
+    "margin": -0.03,
+    "noninferiority": true
+  },
+  "checks": {
+    "mrr": false,
+    "r1": false,
+    "r3": false,
+    "r5": false,
+    "answerable_recall": false,
+    "false_abstention": false,
+    "false_retrieval": true,
+    "abstention_accuracy": true,
+    "order_preservation": true,
+    "paired_bootstrap_noninferiority": true
+  },
+  "verdict": "FAIL",
+  "monetary_cost_usd": 0
+}
