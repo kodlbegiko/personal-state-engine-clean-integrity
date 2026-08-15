@@ -2,13 +2,13 @@ from __future__ import annotations
 
 """Candidate-v12 discourse-robust semantic-frame extraction.
 
-Fresh lineage principles:
+Fresh-lineage constraints:
 - Candidate-v2 remains the exclusive candidate source.
 - Candidate-v10 evidence certification and Candidate-v11 Layer-2 proof ordering
   remain downstream safety/ranking mechanisms.
 - Candidate-v12 changes the upstream query frame only: discourse scaffold is
-  separated from proposition-bearing content and semantic subject spans are
-  bound conservatively.
+  separated from proposition-bearing content, then subject and relation slots
+  are conservatively bound.
 - No historical Protected prefix/token blacklist, benchmark ID, split label,
   gold answer, relevant-memory ID, or generator metadata is visible here.
 """
@@ -19,7 +19,12 @@ from typing import Any, Iterable
 
 from .candidate_v2 import pse_candidate_v2_rank
 from .candidate_v8 import QueryRequirements
-from .candidate_v10 import FrameRequirements, _primary_relations, semantic_requirements_v10
+from .candidate_v10 import (
+    FrameRequirements,
+    _primary_relations,
+    _raw_relation_signals,
+    semantic_requirements_v10,
+)
 from .candidate_v11 import EvidencePriorityProofV11, evidence_priority_proof_v11
 
 VERDICT_SUPPORTED = "SUPPORTED"
@@ -54,6 +59,8 @@ class StructuredQueryFrameV12:
     semantic_proposition_spans: tuple[str, ...]
     subject_entities: tuple[str, ...]
     subject_coreference: tuple[str, ...]
+    relation_candidates: tuple[str, ...]
+    relation_support: tuple[tuple[str, int], ...]
     relation_frame: tuple[str, ...]
     predicate_constraints: tuple[str, ...]
     object_constraints: tuple[str, ...]
@@ -61,6 +68,7 @@ class StructuredQueryFrameV12:
     modality: str
     answer_type: str
     subject_ambiguous: bool
+    relation_ambiguous: bool
     parse_valid: bool
 
 
@@ -107,25 +115,20 @@ def _clause_spans(query: str) -> tuple[str, ...]:
     return tuple(parts) if parts else (query.strip(),)
 
 
-def _semantic_clauses(query: str) -> tuple[str, ...]:
+def _provisional_semantic_clauses(query: str) -> tuple[str, ...]:
+    """Broad proposition candidates used only before relation disambiguation."""
     clauses = _clause_spans(query)
-    full_relations = _primary_relations(query)
-    selected: list[str] = []
-    for clause in clauses:
-        clause_relations = _primary_relations(clause)
-        if clause_relations & full_relations or _QUESTION_CUE.search(clause):
-            selected.append(clause)
-    if selected:
-        return tuple(selected)
-    # No identifiable proposition cue: keep the shortest clause as the most
-    # conservative proposition candidate, but parse_valid will remain false if
-    # relation/subject binding cannot be established.
-    return (min(clauses, key=len),)
+    selected = [
+        clause
+        for clause in clauses
+        if _QUESTION_CUE.search(clause) or _raw_relation_signals(clause)
+    ]
+    return tuple(selected) if selected else (min(clauses, key=len),)
 
 
 def _candidate_entity_spans(query: str, memories: Iterable[dict[str, Any]]) -> list[EntityCandidateV12]:
     memory_list = list(memories)
-    semantic_clauses = _semantic_clauses(query)
+    semantic_clauses = _provisional_semantic_clauses(query)
     out: list[EntityCandidateV12] = []
     seen: set[tuple[str, int]] = set()
 
@@ -157,8 +160,6 @@ def _candidate_entity_spans(query: str, memories: Iterable[dict[str, Any]]) -> l
             1 for clause in semantic_clauses if _contains_phrase(clause, raw)
         )
         token_count = len(anchors)
-        # Runtime evidence recurrence dominates orthographic shape. Multi-token
-        # spans and proposition overlap are secondary structural evidence only.
         score = (
             doc_frequency,
             occurrences,
@@ -190,13 +191,82 @@ def _resolve_subject(query: str, memories: Iterable[dict[str, Any]]) -> tuple[tu
 
     candidates.sort(key=lambda c: (c.score, -c.start), reverse=True)
     best = candidates[0]
-
-    # Fail closed when two distinct query spans have exactly the same semantic
-    # evidence strength. Position alone is not allowed to silently resolve a tie.
-    tied = [c for c in candidates if c.score == best.score and c.text.casefold() != best.text.casefold()]
+    tied = [
+        c
+        for c in candidates
+        if c.score == best.score and c.text.casefold() != best.text.casefold()
+    ]
     if tied:
         return tuple(), True
     return (best.text,), False
+
+
+def _subject_scoped_memories(
+    subjects: tuple[str, ...],
+    first_person: bool,
+    memories: Iterable[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    memory_list = list(memories)
+    if subjects:
+        subject = subjects[0]
+        return [m for m in memory_list if _contains_phrase(str(m["text"]), subject)]
+    if first_person:
+        return [m for m in memory_list if _FIRST_PERSON.search(str(m["text"]))]
+    return []
+
+
+def _relation_candidates(query: str) -> tuple[str, ...]:
+    return tuple(sorted(_raw_relation_signals(query)))
+
+
+def _resolve_relation(
+    query: str,
+    subjects: tuple[str, ...],
+    first_person: bool,
+    memories: Iterable[dict[str, Any]],
+) -> tuple[tuple[str, ...], tuple[tuple[str, int], ...], bool]:
+    """Resolve lexical relation ambiguity without discourse-token blacklists.
+
+    A query can contain words that are valid relation lexemes in one semantic
+    context but merely discourse/request scaffolding in another. When exactly
+    one relation signal is present, it is used directly. When several relation
+    signals compete, only memories tied to the already-bound subject are used
+    as runtime evidence for disambiguation. A tie or zero-support contest fails
+    closed instead of broadening eligibility.
+    """
+    candidates = _relation_candidates(query)
+    if not candidates:
+        return tuple(), tuple(), False
+    if len(candidates) == 1:
+        only = candidates[0]
+        return (only,), ((only, 0),), False
+
+    scoped = _subject_scoped_memories(subjects, first_person, memories)
+    support: dict[str, int] = {relation: 0 for relation in candidates}
+    for memory in scoped:
+        signals = _raw_relation_signals(str(memory["text"]))
+        for relation in candidates:
+            if relation in signals:
+                support[relation] += 1
+
+    ordered_support = tuple(sorted(support.items(), key=lambda item: (-item[1], item[0])))
+    top_relation, top_count = ordered_support[0]
+    second_count = ordered_support[1][1]
+    if top_count <= 0 or top_count == second_count:
+        return tuple(), ordered_support, True
+    return (top_relation,), ordered_support, False
+
+
+def _semantic_clauses(query: str, relation_frame: tuple[str, ...]) -> tuple[str, ...]:
+    clauses = _clause_spans(query)
+    if relation_frame:
+        target = relation_frame[0]
+        selected = [
+            clause for clause in clauses if target in _raw_relation_signals(clause)
+        ]
+        if selected:
+            return tuple(selected)
+    return _provisional_semantic_clauses(query)
 
 
 def _discourse_intent(query: str, semantic_spans: tuple[str, ...]) -> str:
@@ -212,12 +282,14 @@ def _discourse_intent(query: str, semantic_spans: tuple[str, ...]) -> str:
 
 def parse_query_frame_v12(query: str, memories: Iterable[dict[str, Any]]) -> StructuredQueryFrameV12:
     memory_list = list(memories)
-    semantic_spans = _semantic_clauses(query)
-    subjects, ambiguous = _resolve_subject(query, memory_list)
-    base = semantic_requirements_v10(query)
-    relations = tuple(sorted(_primary_relations(" ".join(semantic_spans)) or set(base.relations)))
-
+    subjects, subject_ambiguous = _resolve_subject(query, memory_list)
     first_person = bool(_FIRST_PERSON.search(query))
+    relations, relation_support, relation_ambiguous = _resolve_relation(
+        query, subjects, first_person, memory_list
+    )
+    semantic_spans = _semantic_clauses(query, relations)
+    base = semantic_requirements_v10(query)
+
     coreference: list[str] = []
     if subjects and any(_PRONOUN.search(span) for span in semantic_spans):
         coreference.append("PRONOUN_TO_BOUND_SUBJECT")
@@ -233,25 +305,37 @@ def parse_query_frame_v12(query: str, memories: Iterable[dict[str, Any]]) -> Str
 
     answer_type = "RELATION_VALUE" if relations else "UNKNOWN"
     has_subject = bool(subjects) or first_person
-    parse_valid = bool(relations) and has_subject and not ambiguous
+    parse_valid = (
+        bool(relations)
+        and has_subject
+        and not subject_ambiguous
+        and not relation_ambiguous
+    )
 
     return StructuredQueryFrameV12(
         discourse_intent=_discourse_intent(query, semantic_spans),
         semantic_proposition_spans=semantic_spans,
         subject_entities=subjects,
         subject_coreference=tuple(coreference),
+        relation_candidates=_relation_candidates(query),
+        relation_support=relation_support,
         relation_frame=relations,
         predicate_constraints=relations,
         object_constraints=tuple(base.object_terms),
         temporal_scope=base.base.temporal_scope,
         modality=modality,
         answer_type=answer_type,
-        subject_ambiguous=ambiguous,
+        subject_ambiguous=subject_ambiguous,
+        relation_ambiguous=relation_ambiguous,
         parse_valid=parse_valid,
     )
 
 
-def _requirements_from_frame(query: str, memories: Iterable[dict[str, Any]], frame: StructuredQueryFrameV12 | None = None) -> FrameRequirements | None:
+def _requirements_from_frame(
+    query: str,
+    memories: Iterable[dict[str, Any]],
+    frame: StructuredQueryFrameV12 | None = None,
+) -> FrameRequirements | None:
     memory_list = list(memories)
     frame = frame or parse_query_frame_v12(query, memory_list)
     if not frame.parse_valid:
@@ -260,7 +344,6 @@ def _requirements_from_frame(query: str, memories: Iterable[dict[str, Any]], fra
     original = semantic_requirements_v10(query)
     subject_anchors: tuple[str, ...] = tuple()
     if frame.subject_entities:
-        # Only the single conservatively bound entity enters mandatory anchors.
         subject_anchors = _entity_anchors(frame.subject_entities[0])
 
     base: QueryRequirements = replace(
@@ -282,9 +365,7 @@ def evidence_support_signature_v12(case: dict[str, Any]) -> dict[str, Any]:
     frame = parse_query_frame_v12(query, memories)
     req = _requirements_from_frame(query, memories, frame)
 
-    full_ranking = pse_candidate_v2_rank(
-        safe_case, max(5, len(memories))
-    )
+    full_ranking = pse_candidate_v2_rank(safe_case, max(5, len(memories)))
     if req is None:
         return {
             "verdict": VERDICT_INSUFFICIENT,
@@ -325,11 +406,7 @@ def pse_candidate_v12_rank(case: dict[str, Any], k: int = 5) -> list[str]:
 
 
 def _bounded_strip_query(query: str, memories: Iterable[dict[str, Any]]) -> str | None:
-    """Architecture B: bounded normalization baseline, not Candidate-v12 proper.
-
-    It drops only text before the strongest runtime-grounded capitalized entity
-    span. No historical discourse prefix/suffix token list is used.
-    """
+    """Architecture B: bounded normalization baseline, not Candidate-v12 proper."""
     candidates = [
         c for c in _candidate_entity_spans(query, memories)
         if c.memory_document_frequency > 0
@@ -338,7 +415,11 @@ def _bounded_strip_query(query: str, memories: Iterable[dict[str, Any]]) -> str 
         return None
     candidates.sort(key=lambda c: (c.score, -c.start), reverse=True)
     best = candidates[0]
-    if len(candidates) > 1 and candidates[1].score == best.score and candidates[1].text.casefold() != best.text.casefold():
+    if (
+        len(candidates) > 1
+        and candidates[1].score == best.score
+        and candidates[1].text.casefold() != best.text.casefold()
+    ):
         return None
     return query[best.start:].strip()
 
@@ -356,22 +437,15 @@ def pse_candidate_v12_arch_b_rank(case: dict[str, Any], k: int = 5) -> list[str]
 
 
 def pse_candidate_v12_arch_d_rank(case: dict[str, Any], k: int = 5) -> list[str]:
-    """Architecture D: clause-first conservative proposition graph.
-
-    Unlike Architecture C, D requires at least one proposition-bearing clause to
-    contain the requested relation cue. The subject may be bound from another
-    clause only after conservative runtime-grounded entity resolution.
-    """
+    """Architecture D: clause-first conservative proposition graph."""
     safe_case = _safe_case(case)
     query = safe_case["query"]
     memories = safe_case["memories"]
     frame = parse_query_frame_v12(query, memories)
     if not frame.parse_valid:
         return []
-    proposition_relations = set()
-    for span in frame.semantic_proposition_spans:
-        proposition_relations |= _primary_relations(span)
-    if not (proposition_relations & set(frame.relation_frame)):
+    target = frame.relation_frame[0]
+    if not any(target in _raw_relation_signals(span) for span in frame.semantic_proposition_spans):
         return []
     return pse_candidate_v12_rank(safe_case, k)
 
