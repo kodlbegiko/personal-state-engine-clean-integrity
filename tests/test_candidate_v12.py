@@ -53,7 +53,7 @@ def test_structured_frame_separates_discourse_from_subject() -> None:
     assert frame.parse_valid
     assert frame.subject_entities == ("Mira Solen",)
     assert "Administrative" not in frame.subject_entities
-    assert "language" in frame.relation_frame
+    assert frame.relation_frame == ("language",)
     assert frame.discourse_intent == "CONTEXT_PLUS_PROPOSITION"
 
 
@@ -79,6 +79,40 @@ def test_ambiguous_subject_binding_fails_closed() -> None:
     }
     frame = parse_query_frame_v12(case["query"], case["memories"])
     assert frame.subject_ambiguous
+    assert not frame.parse_valid
+    assert pse_candidate_v12_rank(case, 5) == []
+
+
+def test_relation_lexeme_in_discourse_does_not_become_requested_relation() -> None:
+    # Abstracted Development regression: a discourse clause contains lexemes
+    # that are valid semantic relations in other contexts. The requested relation
+    # is selected by bound-subject evidence support, not a token blacklist.
+    case = {
+        "query": "The status of this request is routine. Which work role is documented for Mira Solen?",
+        "memories": [
+            {"id": "gold", "text": "Mira Solen's work role is CartographyLead-X1.", "timestamp": None},
+            {"id": "support", "text": "Mira Solen's work role is perhaps CartographyLead-X2.", "timestamp": None},
+            {"id": "wrong-rel", "text": "Mira Solen's status is StateMarker-X3.", "timestamp": None},
+            {"id": "wrong-subject", "text": "Tarin Solen's work role is StateMarker-X4.", "timestamp": None},
+        ],
+    }
+    frame = parse_query_frame_v12(case["query"], case["memories"])
+    assert set(frame.relation_candidates) >= {"status", "routine", "work_role"}
+    assert frame.relation_frame == ("work_role",)
+    assert not frame.relation_ambiguous
+    assert pse_candidate_v12_rank(case, 5) == ["gold"]
+
+
+def test_relation_support_tie_fails_closed() -> None:
+    case = {
+        "query": "The status and language fields for Mira Solen are both in scope.",
+        "memories": [
+            {"id": "status", "text": "Mira Solen's status is Marker-A.", "timestamp": None},
+            {"id": "language", "text": "Mira Solen speaks Marker-B.", "timestamp": None},
+        ],
+    }
+    frame = parse_query_frame_v12(case["query"], case["memories"])
+    assert frame.relation_ambiguous
     assert not frame.parse_valid
     assert pse_candidate_v12_rank(case, 5) == []
 
