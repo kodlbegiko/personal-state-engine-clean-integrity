@@ -6,7 +6,7 @@
 - Candidate-v11 branch root / parent terminal commit: `f909c0da144ada1268145b2f42cf26571231818e`
 - Candidate-v11 preregistration commit: `bf6c0d2b1435a9af868f1c6c3faf8f2853a5078b`
 - Candidate-v11 freeze commit: `f75c2b249d74a5b63734a71bad9a1ca43a499b37`
-- Candidate-v11 terminal evidence commit: `TERMINAL_EVIDENCE_COMMIT_PENDING`
+- Candidate-v11 terminal evidence commit: `343586a5841b48733874a88043dc559244c82643`
 
 ## Historical diagnosis
 

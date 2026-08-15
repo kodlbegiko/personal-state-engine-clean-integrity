@@ -121,7 +121,7 @@
   "no_paid_api": true,
   "preregistration_commit": "bf6c0d2b1435a9af868f1c6c3faf8f2853a5078b",
   "schema_version": "candidate-v11-terminal-snapshot-v1",
-  "terminal_evidence_commit": "TERMINAL_EVIDENCE_COMMIT_PENDING",
+  "terminal_evidence_commit": "343586a5841b48733874a88043dc559244c82643",
   "terminal_state": "CANDIDATE_V11_PROTECTED_FAIL",
   "v10_terminal_commit": "f909c0da144ada1268145b2f42cf26571231818e"
 }
