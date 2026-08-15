@@ -1,0 +1,22 @@
+{
+  "schema_version": "candidate-v11-infrastructure-recovery-record-v1",
+  "freeze_commit": "f75c2b249d74a5b63734a71bad9a1ca43a499b37",
+  "freeze_completed": true,
+  "formal_execution_counts_before_recovery": {"protected": 0, "confirmatory": 0, "final": 0},
+  "formal_payloads_generated_before_recovery": false,
+  "blocker": "The development-freeze workflow pushed the freeze manifest with the repository GITHUB_TOKEN. GitHub Actions suppresses new push-triggered workflow runs caused by GITHUB_TOKEN-authenticated workflow pushes, so the already frozen formal push workflow did not start.",
+  "recovery": "Use a separate infrastructure-only push-triggered launcher. Before execution it must re-run the frozen hash verifier, confirm formal counts remain 0/0/0, verify historical terminal branch heads, run the frozen tests, and invoke the already frozen scripts/run_candidate_v11_formal.py exactly once.",
+  "frozen_formal_workflow_modified": false,
+  "frozen_algorithm_modified": false,
+  "frozen_generator_modified": false,
+  "frozen_evaluator_modified": false,
+  "frozen_config_modified": false,
+  "frozen_tests_modified": false,
+  "thresholds_changed": false,
+  "seeds_changed": false,
+  "benchmark_payload_inspected": false,
+  "post_freeze_tuning": false,
+  "recovery_launcher": ".github/workflows/candidate-v11-formal-launcher-infra-recovery.yml",
+  "evaluation_logic": "scripts/run_candidate_v11_formal.py frozen at freeze commit",
+  "monetary_cost_usd": 0
+}
