@@ -161,3 +161,74 @@ def test_hypothetical_future_intent_does_not_become_current_fact():
         [],
     )
     assert pse_candidate_v10_rank(c, 5) == []
+
+
+def test_regular_activity_stays_activity_not_preference():
+    c = case(
+        "Which weekend hobby does Sven Jensen have right now?",
+        ["Sven Jensen has glass painting recorded as the regular activity."],
+        ["m0"],
+    )
+    sig = evidence_support_signature_v10(c)
+    assert sig["requirements"]["relations"] == ["activity"]
+    assert sig["supporting_memory_ids"] == ["m0"]
+
+
+def test_project_responsibility_matches_project_ownership_frame():
+    c = case(
+        "Which project is Maya Young currently responsible for?",
+        ["Maya Young's project responsibility is Harbor Index."],
+        ["m0"],
+    )
+    assert pse_candidate_v10_rank(c, 5) == ["m0"]
+
+
+def test_project_currently_owned_matches_project_responsibility():
+    c = case(
+        "What is Luc Choi's current project currently owned?",
+        ["Luc Choi's project responsibility is Northwind Pilot."],
+        ["m0"],
+    )
+    assert pse_candidate_v10_rank(c, 5) == ["m0"]
+
+
+def test_team_supported_matches_sports_team_following():
+    c = case(
+        "Which sports team does Ina Evans follow?",
+        ["Ina Evans has Seaside Arrows recorded as the team supported."],
+        ["m0"],
+    )
+    assert pse_candidate_v10_rank(c, 5) == ["m0"]
+
+
+def test_goal_answer_value_certificate_does_not_override_goal_relation():
+    c = case(
+        "What is Dev Tanaka's current goal?",
+        ["Dev Tanaka's training target is a conservation certificate."],
+        ["m0"],
+    )
+    sig = evidence_support_signature_v10(c)
+    assert sig["requirements"]["relations"] == ["goal"]
+    assert sig["supporting_memory_ids"] == ["m0"]
+
+
+def test_regarding_discourse_marker_is_not_subject_anchor():
+    c = case(
+        "Regarding Tariq Moss, what currently fills the professional role field?",
+        ["Tariq Moss's profile shows the work role as field ecologist."],
+        ["m0"],
+    )
+    req = semantic_requirements_v10(c["query"])
+    assert "regarding" not in req.base.subject_anchors
+    assert pse_candidate_v10_rank(c, 5) == ["m0"]
+
+
+def test_contrastive_not_marker_is_not_subject_anchor():
+    c = case(
+        "Not the old record: which professional role applies to Tariq Moss now?",
+        ["After the update, Tariq Moss's work role is conservation analyst."],
+        ["m0"],
+    )
+    req = semantic_requirements_v10(c["query"])
+    assert "not" not in req.base.subject_anchors
+    assert pse_candidate_v10_rank(c, 5) == ["m0"]
