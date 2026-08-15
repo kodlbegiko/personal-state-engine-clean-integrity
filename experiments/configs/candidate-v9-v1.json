@@ -1,11 +1,18 @@
 {
   "schema_version": "candidate-v9-config-v1",
-  "architecture": "TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_HARD_SAFETY_BLOCKERS",
+  "architecture": "TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_RELATION_RANGE_VALUE_BINDING_PLUS_HARD_SAFETY_BLOCKERS",
   "ranker": "candidate-v2-only",
   "per_memory_certification": true,
   "order_preserving_subsequence": true,
-  "support_requirements": ["subject", "canonical_relation", "value_type", "value_bearing", "temporal_compatibility", "no_hard_blocker"],
+  "support_requirements": ["subject", "canonical_relation", "value_type_or_relation_range", "value_bearing", "temporal_compatibility", "no_hard_blocker"],
   "minimum_support_score": 5,
+  "value_binding_policy": {
+    "explicit_matching_type": "accept",
+    "monomorphic_relation_range": "accept open-class value before incidental lexical type conflict",
+    "polymorphic_preference": "accept open-class value only when no competing content type is detected",
+    "ignored_adjunct_types_for_preference": ["schedule", "location", "status"],
+    "health_medication_structural_shortcut": false
+  },
   "hard_blockers_inherited_from": "candidate-v8",
   "bounded_coreference": "same-memory canonical subject anchor plus explicit third-person pronoun",
   "paid_api_cost_usd": 0,
