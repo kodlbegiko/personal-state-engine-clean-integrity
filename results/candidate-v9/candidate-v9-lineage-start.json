@@ -1,0 +1,14 @@
+{
+  "schema_version": "candidate-v9-lineage-start-v1",
+  "parent_candidate": "Candidate-v8",
+  "parent_terminal_state": "CANDIDATE_V8_PROTECTED_VALIDATION_FAIL",
+  "parent_terminal_commit": "86c440fc487c46a1e603144177e666d32a52e725",
+  "candidate": "Candidate-v9",
+  "candidate_branch": "research/candidate-v9-fresh-lineage",
+  "created_at": "2026-08-15T11:00:17Z",
+  "candidate_v8_modified": false,
+  "pre_registration_complete": false,
+  "historical_v8_protected_semantic_payload_opened": false,
+  "retired_99_case_semantic_payload_opened": false,
+  "monetary_cost_usd": 0
+}
