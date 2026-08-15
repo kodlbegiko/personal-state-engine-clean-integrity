@@ -1,0 +1,813 @@
+{
+  "schema_version": "candidate-v10-historical-diagnostic-v1",
+  "classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+  "historical_candidate": "Candidate-v9",
+  "historical_stage": "confirmatory",
+  "historical_terminal_commit": "a5f627248064ab98fed9e23a1f5eb24707a74c22",
+  "preregistration_commit": "d31881019a3df1befbd7faa23df0f009e76485a9",
+  "formal_reuse_prohibited": true,
+  "case_specific_hardcoding_prohibited": true,
+  "failure_count": 10,
+  "cause_counts": {
+    "relation_abstraction": 10,
+    "typed_value_inference": 1
+  },
+  "failure_relation_distribution": {
+    "preference": 9,
+    "status": 1
+  },
+  "failure_value_type_distribution": {
+    "food": 9,
+    "status": 1
+  },
+  "failures": [
+    {
+      "case_id": "CV9-CONF-A-066",
+      "query": "Which morning meal is Gwen Mori's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-066-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-066-rel",
+          "text": "Gwen Mori's regular breakfast is fruit salad.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-066-rel",
+        "CV9-CONF-A-066-d2",
+        "CV9-CONF-A-066-d4",
+        "CV9-CONF-A-066-d1",
+        "CV9-CONF-A-066-d3"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "mori"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-066-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Mori's regular breakfast is fruit salad.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-131",
+      "query": "Which state is Umar Garcia's permit in now?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-131-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-131-rel",
+          "text": "Umar Garcia's permit is currently reviewing.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-131-rel",
+        "old-131",
+        "CV9-CONF-A-131-d2",
+        "CV9-CONF-A-131-d4",
+        "CV9-CONF-A-131-d3"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "garcia",
+            "umar"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "status"
+          ],
+          "predicate_terms": [
+            "permit",
+            "state"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "status"
+        ],
+        "value_types": [
+          "status"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction",
+        "typed_value_inference"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-131-rel",
+          "causes": [
+            "relation_abstraction",
+            "typed_value_inference"
+          ],
+          "clauses": [
+            {
+              "text": "Umar Garcia's permit is currently reviewing.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [],
+              "score": 4,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-162",
+      "query": "Which morning meal is Gwen Arden's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-162-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-162-rel",
+          "text": "Gwen Arden's regular breakfast is rye toast.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-162-rel",
+        "CV9-CONF-A-162-d2",
+        "CV9-CONF-A-162-d4",
+        "CV9-CONF-A-162-d3",
+        "CV9-CONF-A-162-d1"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "arden",
+            "gwen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-162-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Arden's regular breakfast is rye toast.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-114",
+      "query": "Which morning meal is Gwen Olsen's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-114-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-114-rel",
+          "text": "Gwen Olsen's regular breakfast is savory pancakes.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-114-rel",
+        "CV9-CONF-A-114-d2",
+        "CV9-CONF-A-114-d4",
+        "CV9-CONF-A-114-d1",
+        "CV9-CONF-A-114-d3"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "olsen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-114-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Olsen's regular breakfast is savory pancakes.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-018",
+      "query": "Which morning meal is Gwen Kovac's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-018-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-018-rel",
+          "text": "Gwen Kovac's regular breakfast is bean toast.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-018-rel",
+        "CV9-CONF-A-018-d2",
+        "CV9-CONF-A-018-d4",
+        "CV9-CONF-A-018-d1",
+        "CV9-CONF-A-018-d3"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "kovac"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-018-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Kovac's regular breakfast is bean toast.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-090",
+      "query": "Which morning meal is Gwen Fischer's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-090-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-090-rel",
+          "text": "Gwen Fischer's regular breakfast is corn porridge.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-090-rel",
+        "CV9-CONF-A-090-d2",
+        "CV9-CONF-A-090-d4",
+        "CV9-CONF-A-090-d3",
+        "CV9-CONF-A-090-d1"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "fischer",
+            "gwen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-090-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Fischer's regular breakfast is corn porridge.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-186",
+      "query": "Which morning meal is Gwen Jensen's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-186-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-186-rel",
+          "text": "Gwen Jensen's regular breakfast is fruit yogurt.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-186-rel",
+        "CV9-CONF-A-186-d2",
+        "CV9-CONF-A-186-d4",
+        "CV9-CONF-A-186-d1",
+        "CV9-CONF-A-186-d3"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "jensen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-186-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Jensen's regular breakfast is fruit yogurt.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-210",
+      "query": "Which morning meal is Gwen Costa's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-210-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-210-rel",
+          "text": "Gwen Costa's regular breakfast is rice porridge.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-210-rel",
+        "CV9-CONF-A-210-d2",
+        "CV9-CONF-A-210-d4",
+        "CV9-CONF-A-210-d3",
+        "CV9-CONF-A-210-d1"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "costa",
+            "gwen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-210-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Costa's regular breakfast is rice porridge.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-042",
+      "query": "Which morning meal is Gwen Dahl's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-042-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-042-rel",
+          "text": "Gwen Dahl's regular breakfast is noodle bowl.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-042-rel",
+        "CV9-CONF-A-042-d2",
+        "CV9-CONF-A-042-d4",
+        "CV9-CONF-A-042-d3",
+        "CV9-CONF-A-042-d1"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dahl",
+            "gwen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-042-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Dahl's regular breakfast is noodle bowl.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-CONF-A-138",
+      "query": "Which morning meal is Gwen Hale's regular choice?",
+      "relevant_memory_ids": [
+        "CV9-CONF-A-138-rel"
+      ],
+      "relevant_memories": [
+        {
+          "id": "CV9-CONF-A-138-rel",
+          "text": "Gwen Hale's regular breakfast is oatmeal.",
+          "timestamp": "2027-02-20T08:30:00+00:00",
+          "speaker": "user"
+        }
+      ],
+      "candidate_v2_rank": [
+        "CV9-CONF-A-138-rel",
+        "CV9-CONF-A-138-d2",
+        "CV9-CONF-A-138-d4",
+        "CV9-CONF-A-138-d3",
+        "CV9-CONF-A-138-d1"
+      ],
+      "candidate_v9_rank": [],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "hale"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink",
+            "schedule"
+          ],
+          "predicate_terms": [
+            "choice",
+            "meal",
+            "morn",
+            "regular"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "food"
+        ]
+      },
+      "root_causes": [
+        "relation_abstraction"
+      ],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV9-CONF-A-138-rel",
+          "causes": [
+            "relation_abstraction"
+          ],
+          "clauses": [
+            {
+              "text": "Gwen Hale's regular breakfast is oatmeal.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": true,
+              "value_bearing": true,
+              "direct_assertion": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "value_type_signals": [
+                "food"
+              ],
+              "score": 5,
+              "supported": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "monetary_cost_usd": 0
+}
