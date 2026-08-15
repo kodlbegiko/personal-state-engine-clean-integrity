@@ -1,0 +1,13 @@
+{
+  "schema_version": "candidate-v8-pre-freeze-local-smoke-contamination-v1",
+  "type": "INTEGRITY_DEVIATION_WITH_MITIGATION",
+  "description": "During pre-freeze implementation work, provisional local smoke datasets labeled protected and confirmatory were generated and inspected before the formal development freeze. They were never committed, locked, or treated as formal executions.",
+  "affected_provisional_dataset_seeds": {"protected":2026081501,"confirmatory":2026081502},
+  "formal_status_of_affected_surfaces": "PERMANENTLY_RETIRED_LOCAL_DIAGNOSTIC_ONLY",
+  "formal_execution_count": {"protected":0,"confirmatory":0},
+  "mitigation": {"formal_protected_dataset_seed":2026081511,"formal_confirmatory_dataset_seed":2026081522,"materialize_only_after_required_freeze":true,"no_provisional_payload_promoted":true},
+  "bootstrap_seeds_unchanged": {"protected":2026081501,"confirmatory":2026081502,"reason":"Bootstrap RNG seeds do not identify or regenerate semantic evaluation payloads."},
+  "research_result_impact": "NONE IF MITIGATION IS FOLLOWED",
+  "retired_gate_f_99_case_semantic_payload_opened": false,
+  "monetary_cost_usd": 0
+}

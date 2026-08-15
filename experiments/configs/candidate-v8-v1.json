@@ -1,0 +1,17 @@
+{
+  "schema_version":"candidate-v8-config-v1",
+  "architecture":"QUERY_REQUIREMENT_GRAPH_PLUS_CLAUSE_LEVEL_MULTI_SIGNAL_CERTIFIER",
+  "ranker":"candidate-v2-order-preserving-subsequence",
+  "source_path":"src/personal_state_engine/candidate_v8.py",
+  "source_sha256":"09d58cfb5c4b8ecfe8fcdb8cbc96b5fc85363ea155d8901ab54b42b92cd1322a",
+  "generator_path":"scripts/generate_candidate_v8_benchmark.py",
+  "generator_sha256":"238d78cf73d1726553c42098cd667c96055e20dd7e779d1ab252bd2b67866754",
+  "evaluator_path":"scripts/evaluate_candidate_v8.py",
+  "evaluator_sha256":"fae90a880803c1f7240a13aa51705ceb0d429e7c7fa1ad9a773c15ecdc83c9da",
+  "development_benchmark_path":"experiments/benchmarks/candidate-v8-development-v1.json",
+  "development_benchmark_sha256":"a2a72a6e12efbbbd7adb35b77698c3fa503d2b04f388588d252f88a899e1ab8b",
+  "formal_dataset_seeds":{"protected":2026081511,"confirmatory":2026081522},
+  "bootstrap_seeds":{"protected":2026081501,"confirmatory":2026081502},
+  "monetary_cost_usd":0,
+  "paid_api":false
+}

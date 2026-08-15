@@ -1,0 +1,28 @@
+{
+  "schema_version": "candidate-v8-historical-diagnostic-classification-v1",
+  "surface": "candidate-v7-confirmatory-v1",
+  "classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+  "access_preregistered_by_commit": "182eb1da70bf33952e2cdf3091f2c4e73fef05f3",
+  "access_log_path": "results/candidate-v8/historical-diagnostic-access-v1.json",
+  "candidate_v7_false_abstention": {
+    "observed_count": 7,
+    "classified_count": 7,
+    "classes": [
+      {"class":"RELATION_REALIZATION_MISMATCH_PREFERENCE_VS_DRINK","count":3,"case_ids":["CV7CONF-A-000","CV7CONF-A-022","CV7CONF-A-044"],"mechanism":"drink/reach-for query is not family-compatible with choose/preference evidence unless an accidental beverage cue repairs overlap"},
+      {"class":"TRANSPORT_PARAPHRASE_PLUS_LEXICAL_THRESHOLD","count":4,"case_ids":["CV7CONF-A-011","CV7CONF-A-033","CV7CONF-A-055","CV7CONF-A-077"],"mechanism":"take/public-transport query vs rides evidence misses strict direct/family path and generic anchor coverage remains below 0.34"}
+    ]
+  },
+  "candidate_v7_false_retrieval": {
+    "observed_count": 10,
+    "classified_count": 10,
+    "classes": [
+      {"class":"META_DISCUSSION_PARAPHRASE_ESCAPE","count":5,"case_ids":["CV7CONF-N-004","CV7CONF-N-015","CV7CONF-N-026","CV7CONF-N-037","CV7CONF-N-048"],"mechanism":"meta-discussion wording escapes finite META_ONLY regex and then satisfies coarse positive lexical signals"},
+      {"class":"NO_VALUE_PARAPHRASE_ESCAPE","count":5,"case_ids":["CV7CONF-N-005","CV7CONF-N-016","CV7CONF-N-027","CV7CONF-N-038","CV7CONF-N-049"],"mechanism":"No verified information ... is available escapes finite NO_VALUE grammar and appears assertion-like to positive path"}
+    ]
+  },
+  "structural_finding": {"confirmed":true,"name":"ANY_SUPPORT_UNLOCKS_FULL_CANDIDATE_V2_RANKING","candidate_v8_required_change":"per-memory clause-level evidence certification with query-requirement satisfaction and order-preserving filtering"},
+  "used_for_candidate_v8_gate": false,
+  "used_for_candidate_v8_threshold_tuning": false,
+  "eligible_for_protected_or_confirmatory": false,
+  "retired_99_case_semantic_payload_opened": false
+}
