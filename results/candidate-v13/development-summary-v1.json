@@ -1,14 +1,12 @@
 {
-  "acceptance": "FAIL",
+  "acceptance": "PASS",
   "anti_collapse": {
-    "abstain_count": 450,
-    "catastrophic_structural_families": [
-      "S1"
-    ],
+    "abstain_count": 360,
+    "catastrophic_structural_families": [],
     "near_universal_abstention": false,
     "near_universal_retrieval": false,
-    "pass": false,
-    "retrieve_count": 450,
+    "pass": true,
+    "retrieve_count": 540,
     "single_class_prediction_collapse": false
   },
   "benchmark_path": "experiments/benchmarks/candidate-v13-development-v1.json",
@@ -16,9 +14,9 @@
   "candidate": "v13",
   "formal_execution": false,
   "frame_metrics": {
-    "discourse_contamination_rate": 0.3333333333333333,
+    "discourse_contamination_rate": 0.0,
     "relation_binding_accuracy": 1.0,
-    "subject_binding_accuracy": 0.6666666666666666,
+    "subject_binding_accuracy": 1.0,
     "temporal_scope_accuracy": 1.0
   },
   "integrity": {
@@ -32,17 +30,17 @@
   "metrics": {
     "abstention_accuracy": 1.0,
     "answerable_count": 540,
-    "answerable_recall": 0.8333333333333334,
+    "answerable_recall": 1.0,
     "case_count": 900,
-    "eligible_answerable_count": 450,
+    "eligible_answerable_count": 540,
     "eligible_rank1_accuracy": 1.0,
-    "false_abstention_rate": 0.16666666666666666,
+    "false_abstention_rate": 0.0,
     "false_retrieval_rate": 0.0,
-    "mrr": 0.8333333333333334,
+    "mrr": 1.0,
     "no_evidence_count": 360,
-    "r_at_1": 0.8333333333333334,
-    "r_at_3": 0.8333333333333334,
-    "r_at_5": 0.8333333333333334
+    "r_at_1": 1.0,
+    "r_at_3": 1.0,
+    "r_at_5": 1.0
   },
   "no_formal_payload_exposure": true,
   "noninferiority": null,
@@ -50,8 +48,8 @@
   "stage": "development",
   "structural": {
     "S1": {
-      "accuracy": 0.37681159420289856,
-      "correct": 52,
+      "accuracy": 1.0,
+      "correct": 138,
       "count": 138
     },
     "S2": {
@@ -60,41 +58,32 @@
       "count": 137
     },
     "S3": {
-      "accuracy": 0.9051094890510949,
-      "correct": 124,
+      "accuracy": 1.0,
+      "correct": 137,
       "count": 137
     },
     "S4": {
-      "accuracy": 0.8102189781021898,
-      "correct": 111,
+      "accuracy": 1.0,
+      "correct": 137,
       "count": 137
     },
     "S5": {
-      "accuracy": 0.9124087591240876,
-      "correct": 125,
+      "accuracy": 1.0,
+      "correct": 137,
       "count": 137
     },
     "S6": {
-      "accuracy": 0.9051094890510949,
-      "correct": 124,
+      "accuracy": 1.0,
+      "correct": 137,
       "count": 137
     },
     "S7": {
-      "accuracy": 0.8311688311688312,
-      "correct": 64,
+      "accuracy": 1.0,
+      "correct": 77,
       "count": 77
     }
   },
-  "threshold_failures": [
-    "mrr<0.985",
-    "r_at_1<0.98",
-    "r_at_3<0.995",
-    "r_at_5<0.998",
-    "answerable_recall<0.995",
-    "false_abstention_rate",
-    "subject_binding_accuracy",
-    "discourse_contamination_rate"
-  ],
+  "threshold_failures": [],
   "thresholds": {
     "abstention_accuracy": 0.98,
     "answerable_recall": 0.995,
