@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate-v11-preregistration-record-v1",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v11-fresh-lineage",
+  "parent_terminal_commit": "f909c0da144ada1268145b2f42cf26571231818e",
+  "preregistration_commit_sha": "bf6c0d2b1435a9af868f1c6c3faf8f2853a5078b",
+  "preregistration_sha256": "0f2617cbce2a9067fca6d9563b33b1f431c70410a09f4c358c1cbb82375cb0b6",
+  "preregistered_at": "2026-08-15T19:59:00+08:00",
+  "individual_candidate_v10_final_payload_inspected_before_preregistration": false,
+  "integrity_status": "PASS"
+}
