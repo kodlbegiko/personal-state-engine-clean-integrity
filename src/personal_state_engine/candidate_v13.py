@@ -16,7 +16,7 @@ from dataclasses import asdict, dataclass, replace
 from typing import Any
 
 from .candidate_v2 import pse_candidate_v2_rank
-from .candidate_v10 import FrameRequirements, semantic_requirements_v10
+from .candidate_v10 import FrameRequirements, _raw_relation_signals, semantic_requirements_v10
 from .candidate_v11 import EvidencePriorityProofV11, evidence_priority_proof_v11
 from .candidate_v12 import StructuredQueryFrameV12, parse_query_frame_v12
 
@@ -34,6 +34,9 @@ _UNCERTAINTY = re.compile(
 )
 _ALIAS_CUE = re.compile(r"\b(?:also\s+known\s+as|aka|alias(?:ed)?\s+as)\b", re.I)
 _FIRST_PERSON = re.compile(r"\b(?:i|me|my|mine)\b", re.I)
+_CAPITALIZED_SEQUENCE = re.compile(
+    r"([A-Z][A-Za-z0-9_-]*(?:['’]s)?(?:\s+[A-Z][A-Za-z0-9_-]*(?:['’]s)?){0,5})"
+)
 
 
 @dataclass(frozen=True)
@@ -94,6 +97,100 @@ def _entity_anchors(span: str) -> tuple[str, ...]:
     return tuple(out)
 
 
+def _normalize_subject_text(text: str) -> str:
+    value = text.strip(" ,:;()[]{}")
+    value = re.sub(r"['’]s$", "", value, flags=re.I)
+    return value
+
+
+def _contains_phrase(text: str, phrase: str) -> bool:
+    return bool(re.search(
+        rf"(?<![A-Za-z0-9_-]){re.escape(phrase)}(?![A-Za-z0-9_-])",
+        text,
+        re.I,
+    ))
+
+
+def _recover_subject_v13(
+    query: str, memories: list[dict[str, Any]]
+) -> tuple[tuple[str, ...], bool]:
+    """Recover subjects without treating capitalized discourse as entity text."""
+    scored: dict[str, tuple[int, int, int]] = {}
+    for match in _CAPITALIZED_SEQUENCE.finditer(query):
+        raw_tokens = match.group(1).split()
+        for start in range(len(raw_tokens)):
+            candidate = _normalize_subject_text(" ".join(raw_tokens[start:]))
+            if not candidate:
+                continue
+            docs = 0
+            occurrences = 0
+            for memory in memories:
+                text = str(memory["text"])
+                count = len(re.findall(
+                    rf"(?<![A-Za-z0-9_-]){re.escape(candidate)}(?![A-Za-z0-9_-])",
+                    text,
+                    re.I,
+                ))
+                if count:
+                    docs += 1
+                    occurrences += count
+            if not docs:
+                continue
+            score = (docs, occurrences, len(candidate.split()))
+            if score > scored.get(candidate, (-1, -1, -1)):
+                scored[candidate] = score
+
+    if not scored:
+        return tuple(), False
+    ordered = sorted(scored.items(), key=lambda item: (item[1], item[0].casefold()), reverse=True)
+    best_name, best_score = ordered[0]
+    tied = [name for name, score in ordered[1:] if score == best_score and name.casefold() != best_name.casefold()]
+    if tied:
+        return tuple(), True
+    return (best_name,), False
+
+
+def _resolve_relation_v13(
+    query: str, subjects: tuple[str, ...], memories: list[dict[str, Any]]
+) -> tuple[tuple[str, ...], tuple[str, ...], bool]:
+    candidates = tuple(sorted(_raw_relation_signals(query)))
+    if not candidates:
+        return tuple(), tuple(), False
+    if len(candidates) == 1:
+        return (candidates[0],), candidates, False
+
+    scoped = memories
+    if subjects:
+        scoped = [m for m in memories if _contains_phrase(str(m["text"]), subjects[0])]
+    support = {relation: 0 for relation in candidates}
+    for memory in scoped:
+        signals = _raw_relation_signals(str(memory["text"]))
+        for relation in candidates:
+            support[relation] += int(relation in signals)
+    ordered = sorted(support.items(), key=lambda item: (-item[1], item[0]))
+    if not ordered or ordered[0][1] <= 0:
+        return tuple(), candidates, True
+    if len(ordered) > 1 and ordered[0][1] == ordered[1][1]:
+        return tuple(), candidates, True
+    return (ordered[0][0],), candidates, False
+
+
+def _semantic_spans_v13(
+    query: str, relation: tuple[str, ...], fallback: tuple[str, ...]
+) -> tuple[str, ...]:
+    clauses = tuple(
+        part.strip(" \t\n,:—-")
+        for part in re.split(r"(?<=[.!?;])\s+|;\s+|\s+[—–]\s+", query)
+        if part.strip(" \t\n,:—-")
+    )
+    if relation:
+        target = relation[0]
+        selected = tuple(c for c in clauses if target in _raw_relation_signals(c))
+        if selected:
+            return selected
+    return fallback or clauses or (query.strip(),)
+
+
 def _aliases_for_subject(
     subject: tuple[str, ...], memories: list[dict[str, Any]]
 ) -> tuple[str, ...]:
@@ -128,38 +225,60 @@ def parse_query_frame_v13(
 ) -> StructuredSemanticFrameV13:
     """Build the Candidate-v13 runtime frame from legitimate runtime input."""
     base: StructuredQueryFrameV12 = parse_query_frame_v12(query, memories)
-    aliases = _aliases_for_subject(base.subject_entities, memories)
 
-    relation_aliases: set[str] = set(base.relation_candidates)
-    relation_aliases.update(base.relation_frame)
+    subjects, subject_ambiguous = _recover_subject_v13(query, memories)
+    if not subjects and base.subject_entities:
+        subjects = tuple(_normalize_subject_text(x) for x in base.subject_entities)
+        subject_ambiguous = base.subject_ambiguous
 
-    if base.subject_ambiguous:
+    relations, relation_candidates, relation_ambiguous = _resolve_relation_v13(
+        query, subjects, memories
+    )
+    if not relations and base.relation_frame and not base.relation_ambiguous:
+        relations = base.relation_frame
+        relation_candidates = base.relation_candidates
+        relation_ambiguous = False
+
+    semantic_spans = _semantic_spans_v13(
+        query, relations, base.semantic_proposition_spans
+    )
+    aliases = _aliases_for_subject(subjects, memories)
+
+    if subject_ambiguous:
         ambiguity = "SUBJECT_AMBIGUOUS"
-    elif base.relation_ambiguous:
+    elif relation_ambiguous:
         ambiguity = "RELATION_AMBIGUOUS"
     else:
         ambiguity = "RESOLVED"
 
+    first_person = bool(_FIRST_PERSON.search(query))
+    parse_valid = (
+        bool(relations)
+        and (bool(subjects) or first_person)
+        and not subject_ambiguous
+        and not relation_ambiguous
+    )
+
     return StructuredSemanticFrameV13(
-        target_subject=base.subject_entities,
+        target_subject=subjects,
         subject_aliases=aliases,
         subject_coreference=base.subject_coreference,
-        target_relation=base.relation_frame,
-        relation_aliases=tuple(sorted(relation_aliases)),
-        requested_answer_type=base.answer_type,
-        predicate_constraints=base.predicate_constraints,
+        target_relation=relations,
+        relation_aliases=tuple(sorted(set(relation_candidates) | set(relations))),
+        requested_answer_type="RELATION_VALUE" if relations else "UNKNOWN",
+        predicate_constraints=relations,
         object_constraints=base.object_constraints,
         temporal_scope=base.temporal_scope,
         modality_status=base.modality,
-        negated_query=any(bool(_NEGATION.search(span)) for span in base.semantic_proposition_spans),
+        negated_query=any(bool(_NEGATION.search(span)) for span in semantic_spans),
         discourse_intent=base.discourse_intent,
-        semantic_proposition_spans=base.semantic_proposition_spans,
+        semantic_proposition_spans=semantic_spans,
         evidence_support_state="UNASSESSED",
         evidence_contradiction_state="UNASSESSED",
         evidence_ambiguity_state=ambiguity,
-        subject_ambiguous=base.subject_ambiguous,
-        relation_ambiguous=base.relation_ambiguous,
-        parse_valid=base.parse_valid,
+        subject_ambiguous=subject_ambiguous,
+        relation_ambiguous=relation_ambiguous,
+        parse_valid=parse_valid,
     )
 
 
@@ -237,29 +356,15 @@ def evidence_support_signature_v13(case: dict[str, Any]) -> dict[str, Any]:
         )
         if semantic is None:
             continue
-
         support, contradiction, ambiguity = _evidence_states(memory, semantic)
-
-        # Hard eligibility is non-compensatory: a contradiction or uncertainty
-        # cannot be rescued by a strong lexical or proof score.
         if support != "DIRECT_SUPPORTED" or contradiction != "NOT_CONTRADICTED":
             continue
-
-        priority = (
-            1,
-            1 if ambiguity == "UNAMBIGUOUS" else 0,
-            *semantic.priority_tuple,
-        )
-        proofs.append(
-            EvidenceProofV13(
-                memory_id=str(memory_id),
-                support_state=support,
-                contradiction_state=contradiction,
-                ambiguity_state=ambiguity,
-                semantic_proof=semantic,
-                priority_tuple=priority,
-            )
-        )
+        priority = (1, 1 if ambiguity == "UNAMBIGUOUS" else 0, *semantic.priority_tuple)
+        proofs.append(EvidenceProofV13(
+            memory_id=str(memory_id), support_state=support,
+            contradiction_state=contradiction, ambiguity_state=ambiguity,
+            semantic_proof=semantic, priority_tuple=priority,
+        ))
 
     proofs.sort(key=lambda p: p.priority_tuple, reverse=True)
     supporting = [proof.memory_id for proof in proofs]
@@ -288,9 +393,7 @@ def pse_candidate_v13_rank(case: dict[str, Any], k: int = 5) -> list[str]:
 
 def candidate_source_invariant_v13(case: dict[str, Any], k: int = 5) -> dict[str, Any]:
     safe_case = _safe_case(case)
-    full_v2 = pse_candidate_v2_rank(
-        safe_case, max(k, len(safe_case["memories"]))
-    )
+    full_v2 = pse_candidate_v2_rank(safe_case, max(k, len(safe_case["memories"])))
     v13 = pse_candidate_v13_rank(safe_case, k)
     v2_set = set(full_v2)
     no_injection = all(memory_id in v2_set for memory_id in v13)
