@@ -1,0 +1,16 @@
+{
+  "schema_version": "candidate-v9-config-v1",
+  "architecture": "TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_HARD_SAFETY_BLOCKERS",
+  "ranker": "candidate-v2-only",
+  "per_memory_certification": true,
+  "order_preserving_subsequence": true,
+  "support_requirements": ["subject", "canonical_relation", "value_type", "value_bearing", "temporal_compatibility", "no_hard_blocker"],
+  "minimum_support_score": 5,
+  "hard_blockers_inherited_from": "candidate-v8",
+  "bounded_coreference": "same-memory canonical subject anchor plus explicit third-person pronoun",
+  "paid_api_cost_usd": 0,
+  "development": {"cases": 360, "answerable": 210, "no_evidence": 150, "seed": 2026081509, "bootstrap_seed": 2026081510},
+  "protected": {"cases": 300, "answerable": 190, "no_evidence": 110, "seed": 2026081511, "bootstrap_seed": 2026081512},
+  "confirmatory": {"cases": 360, "answerable": 220, "no_evidence": 140, "seed": 2026081513, "bootstrap_seed": 2026081514},
+  "final": {"cases": 480, "answerable": 300, "no_evidence": 180, "seed": 2026081515, "bootstrap_seed": 2026081516}
+}
