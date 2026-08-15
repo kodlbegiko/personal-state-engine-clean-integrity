@@ -1,0 +1,25 @@
+{
+  "schema_version": "candidate-v10-predevelopment-failure-v1",
+  "workflow_run_id": 31882712107,
+  "workflow": "Candidate-v10 Development",
+  "head_commit": "84fb1e793a659c73bd8b531deacea3b545d0a498",
+  "classification": "PREDEVELOPMENT_GENERATOR_FRESHNESS_AUDIT_FAILURE",
+  "formal_execution": false,
+  "tests": "290/290 PASS",
+  "generated_cases": 480,
+  "generated_benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
+  "freshness_audit": {
+    "exact_surface_duplicate_count": 0,
+    "normalized_surface_duplicate_count": 95,
+    "question_skeleton_unique": 61,
+    "evidence_skeleton_unique": 138,
+    "grammar_families": {"A": 161, "B": 160, "C": 159}
+  },
+  "root_cause": "The v1 normalized-overlap function removed subject identities before duplicate detection, conflating legitimate entity substitutions with normalized surface duplication. Entity abstraction belongs in skeleton/family audit, not normalized exact-surface audit.",
+  "corrective_action": "Create generator audit v2 with conventional case/whitespace normalization while preserving separate entity-abstracted question/evidence skeleton checks and grammar-family separation.",
+  "benchmark_metrics_executed": false,
+  "protected_execution_count_impact": 0,
+  "confirmatory_execution_count_impact": 0,
+  "final_execution_count_impact": 0,
+  "monetary_cost_usd": 0
+}
