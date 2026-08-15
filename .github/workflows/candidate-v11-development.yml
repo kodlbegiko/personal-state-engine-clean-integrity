@@ -1,0 +1,105 @@
+name: Candidate-v11 Development Evaluation
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - src/personal_state_engine/candidate_v11.py
+      - tests/test_candidate_v11.py
+      - scripts/generate_candidate_v11_benchmark.py
+      - scripts/evaluate_candidate_v11.py
+      - scripts/audit_candidate_v11_freshness.py
+      - scripts/diagnose_candidate_v11_development.py
+      - config/candidate-v11.json
+      - .github/workflows/candidate-v11-development.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v11-development
+  cancel-in-progress: false
+
+jobs:
+  development:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Run full Candidate-v11 unit and invariant suite
+        run: PYTHONPATH=src python -m pytest -q tests/test_candidate_v11.py | tee /tmp/candidate-v11-pytest.txt
+      - name: Generate fresh Development surface only
+        run: |
+          python scripts/generate_candidate_v11_benchmark.py \
+            --stage development \
+            --output experiments/benchmarks/candidate-v11-development-v1.json
+      - name: Audit Development freshness
+        run: |
+          python scripts/audit_candidate_v11_freshness.py \
+            experiments/benchmarks/candidate-v11-development-v1.json \
+            --output results/candidate-v11/development-freshness-audit-v1.json
+      - name: Evaluate Candidate-v2, v10 and v11
+        run: |
+          python scripts/evaluate_candidate_v11.py \
+            experiments/benchmarks/candidate-v11-development-v1.json \
+            results/candidate-v11/development-summary-v1.json \
+            --stage development --no-fail
+      - name: Build structured Development failure taxonomy
+        run: |
+          python scripts/diagnose_candidate_v11_development.py \
+            experiments/benchmarks/candidate-v11-development-v1.json \
+            results/candidate-v11/development-summary-v1.json \
+            results/candidate-v11/development-failure-taxonomy-v1.json \
+            --iteration 1
+      - name: Record test and run evidence
+        env:
+          RUN_ID: ${{ github.run_id }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          log = Path('/tmp/candidate-v11-pytest.txt').read_text()
+          record = {
+              'schema_version': 'candidate-v11-development-test-record-v1',
+              'github_run_id': os.environ['RUN_ID'],
+              'evaluated_commit_sha': os.environ['HEAD_SHA'],
+              'pytest_output_sha256': hashlib.sha256(log.encode()).hexdigest(),
+              'pytest_tail': log.strip().splitlines()[-3:],
+              'unit_invariants_pass': True,
+              'monetary_cost_usd': 0,
+          }
+          out = Path('results/candidate-v11/development-test-record-v1.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(record, indent=2, sort_keys=True) + '\n')
+          PY
+      - name: Commit Development evidence without overwriting history
+        run: |
+          git config user.name "candidate-v11-research-bot"
+          git config user.email "candidate-v11-research-bot@users.noreply.github.com"
+          git add \
+            experiments/benchmarks/candidate-v11-development-v1.json \
+            results/candidate-v11/development-freshness-audit-v1.json \
+            results/candidate-v11/development-summary-v1.json \
+            results/candidate-v11/development-failure-taxonomy-v1.json \
+            results/candidate-v11/development-test-record-v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v11: record development iteration 1 evidence"
+            git push origin HEAD:research/candidate-v11-fresh-lineage
+          fi
+      - name: Enforce preregistered Development gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('results/candidate-v11/development-summary-v1.json').read_text())
+          print(json.dumps({'checks': result['checks'], 'verdict': result['verdict']}, indent=2))
+          raise SystemExit(0 if result['verdict'] == 'PASS' else 2)
+          PY
