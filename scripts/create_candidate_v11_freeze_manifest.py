@@ -9,7 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 FROZEN_COMPONENTS = [
+    "src/personal_state_engine/zero_cost_baselines.py",
     "src/personal_state_engine/candidate_v2.py",
+    "src/personal_state_engine/candidate_v8.py",
     "src/personal_state_engine/candidate_v10.py",
     "src/personal_state_engine/candidate_v11.py",
     "scripts/generate_candidate_v11_benchmark.py",
