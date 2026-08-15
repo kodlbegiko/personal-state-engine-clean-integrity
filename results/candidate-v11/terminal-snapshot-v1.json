@@ -1,0 +1,127 @@
+{
+  "development_freeze_manifest_sha256": "bb9a88c8b5da67507975d508500671d711a3e01f0a42fca334a81d3c8292bcb1",
+  "formal_execution_counts": {
+    "confirmatory": 0,
+    "final": 0,
+    "protected": 1
+  },
+  "formal_launch_path": ".github/workflows/candidate-v11-formal-launcher-infra-recovery.yml",
+  "formal_results": {
+    "protected": {
+      "benchmark_name": "candidate-v11-protected-v1",
+      "benchmark_sha256": "f3b2b5cfbfe855b878960cd1c2f556d5868c175b93e9aed0d02ba02d7eb68434",
+      "candidate_v10": {
+        "MRR": 0.0,
+        "R@1": 0.0,
+        "R@3": 0.0,
+        "R@5": 0.0,
+        "abstention_accuracy": 1.0,
+        "answerable_count": 260,
+        "answerable_recall": 0.0,
+        "candidate_source_invariant_violations": null,
+        "false_abstention": 1.0,
+        "false_retrieval": 0.0,
+        "no_evidence_count": 160
+      },
+      "candidate_v10_source_sha256": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "candidate_v11": {
+        "MRR": 0.0,
+        "R@1": 0.0,
+        "R@3": 0.0,
+        "R@5": 0.0,
+        "abstention_accuracy": 1.0,
+        "answerable_count": 260,
+        "answerable_recall": 0.0,
+        "candidate_source_invariant_violations": 0,
+        "false_abstention": 1.0,
+        "false_retrieval": 0.0,
+        "no_evidence_count": 160
+      },
+      "candidate_v11_source_sha256": "67afbab6daebbd94ea13242fe51c17319e81883f3aafbe3b6caf0f1d1d829f55",
+      "candidate_v2": {
+        "MRR": 0.5,
+        "R@1": 0.0,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.0,
+        "answerable_count": 260,
+        "answerable_recall": 1.0,
+        "candidate_source_invariant_violations": null,
+        "false_abstention": 0.0,
+        "false_retrieval": 1.0,
+        "no_evidence_count": 160
+      },
+      "candidate_v2_source_sha256": "1bc1f9f073a8cb5e7618fc8d3dcc3137cb7510f691e0d1c80bdc60fb84c29df6",
+      "checks": {
+        "abstention_accuracy": true,
+        "answerable_recall": false,
+        "candidate_source_invariant": true,
+        "determinism": true,
+        "false_abstention": false,
+        "false_retrieval": true,
+        "metadata_firewall": true,
+        "mrr": false,
+        "paired_r1_noninferiority_vs_v10": true,
+        "r1": false,
+        "r3": false,
+        "r5": false
+      },
+      "config_sha256": "20fa2f39d8e43310f5cfcca4c4faa14c01b833599d55a3a42c3bb22f14dee9cf",
+      "determinism": {
+        "pass": true,
+        "repetitions": 100,
+        "violations": 0
+      },
+      "eligible_rank1": {
+        "accuracy": 0.0,
+        "eligible_answerable_count": 0,
+        "rank1_hits": 0
+      },
+      "metadata_firewall": {
+        "checked": 40,
+        "pass": true,
+        "violations": 0
+      },
+      "monetary_cost_usd": 0,
+      "paired_bootstrap_r1": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "delta": 0.0,
+        "iterations": 10000,
+        "metric": "paired_R@1_candidate_v11_minus_candidate_v10",
+        "noninferiority": true,
+        "noninferiority_margin": -0.01,
+        "seed": 55109,
+        "strict_improvement_observed": false
+      },
+      "schema_version": "candidate-v11-evaluation-v1",
+      "stage": "protected",
+      "verdict": "FAIL"
+    }
+  },
+  "freeze_commit_sha": "f75c2b249d74a5b63734a71bad9a1ca43a499b37",
+  "frozen_candidate_v11_sha256": "67afbab6daebbd94ea13242fe51c17319e81883f3aafbe3b6caf0f1d1d829f55",
+  "generated_at": "2026-08-15T12:27:01.393512+00:00",
+  "infrastructure_recovery": {
+    "evaluation_logic_source": "frozen scripts/run_candidate_v11_formal.py",
+    "formal_counts_before_recovery_launch": {
+      "confirmatory": 0,
+      "final": 0,
+      "protected": 0
+    },
+    "freeze_commit": "f75c2b249d74a5b63734a71bad9a1ca43a499b37",
+    "frozen_components_modified_after_freeze": false,
+    "frozen_formal_workflow_modified": false,
+    "reason": "A freeze-workflow push authenticated with GITHUB_TOKEN does not trigger a second push-triggered workflow."
+  },
+  "integrity": "PASS \u2014 freeze verifier completed before formal runner",
+  "monetary_cost_usd": 0,
+  "no_paid_api": true,
+  "preregistration_commit": "bf6c0d2b1435a9af868f1c6c3faf8f2853a5078b",
+  "schema_version": "candidate-v11-terminal-snapshot-v1",
+  "terminal_evidence_commit": "TERMINAL_EVIDENCE_COMMIT_PENDING",
+  "terminal_state": "CANDIDATE_V11_PROTECTED_FAIL",
+  "v10_terminal_commit": "f909c0da144ada1268145b2f42cf26571231818e"
+}

@@ -1,0 +1,22 @@
+{
+  "actual": {
+    "research/candidate-v10-fresh-lineage": "f909c0da144ada1268145b2f42cf26571231818e",
+    "research/candidate-v7-fresh-evidence": "375754853d30075b48d092c79bc4024981efe46d",
+    "research/candidate-v8-fresh-lineage": "86c440fc487c46a1e603144177e666d32a52e725",
+    "research/candidate-v9-fresh-lineage": "a5f627248064ab98fed9e23a1f5eb24707a74c22"
+  },
+  "checks": {
+    "research/candidate-v10-fresh-lineage": true,
+    "research/candidate-v7-fresh-evidence": true,
+    "research/candidate-v8-fresh-lineage": true,
+    "research/candidate-v9-fresh-lineage": true
+  },
+  "expected": {
+    "research/candidate-v10-fresh-lineage": "f909c0da144ada1268145b2f42cf26571231818e",
+    "research/candidate-v7-fresh-evidence": "375754853d30075b48d092c79bc4024981efe46d",
+    "research/candidate-v8-fresh-lineage": "86c440fc487c46a1e603144177e666d32a52e725",
+    "research/candidate-v9-fresh-lineage": "a5f627248064ab98fed9e23a1f5eb24707a74c22"
+  },
+  "schema_version": "candidate-v11-historical-immutability-preformal-v1",
+  "verdict": "PASS"
+}
