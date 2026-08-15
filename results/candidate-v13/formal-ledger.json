@@ -1,6 +1,6 @@
 {
   "candidate": "v13",
-  "confirmatory": 0,
+  "confirmatory": 1,
   "final": 0,
   "protected": 1,
   "terminal_state": null
