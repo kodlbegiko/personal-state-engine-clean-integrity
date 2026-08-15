@@ -7,7 +7,7 @@
   "candidate_branch": "research/candidate-v9-fresh-lineage",
   "created_at": "2026-08-15T11:00:17Z",
   "candidate_v8_modified": false,
-  "pre_registration_complete": false,
+  "pre_registration_complete": true,
   "historical_v8_protected_semantic_payload_opened": false,
   "retired_99_case_semantic_payload_opened": false,
   "monetary_cost_usd": 0
