@@ -1,9 +1,9 @@
 {
-  "architecture_selected": null,
+  "architecture_selected": "C_structured_semantic_frame",
   "candidate": "v12",
   "confirmatory_execution_count": 0,
   "designation": "DEVELOPMENT",
-  "development_acceptance": "FAIL",
+  "development_acceptance": "PASS",
   "final_execution_count": 0,
   "formal_execution": false,
   "frame_extraction": {
@@ -14,7 +14,7 @@
     "discourse_token_contamination_rate": 0.0,
     "frame_case_count": 720,
     "parse_valid_rate": 1.0,
-    "relation_frame_accuracy": 0.8333333333333334,
+    "relation_frame_accuracy": 1.0,
     "subject_exact_span_accuracy": 1.0,
     "subject_mandatory_anchor_precision": 1.0,
     "subject_mandatory_anchor_recall": 1.0,
@@ -39,19 +39,16 @@
     "eligible_answerable_count": 432,
     "eligible_rank1_accuracy": 1.0,
     "false_abstention_rate": 0.0,
-    "false_retrieval_rate": 0.05,
+    "false_retrieval_rate": 0.0,
     "mrr": 1.0,
     "no_evidence_count": 288,
-    "nonrelevant_returned_evidence_count": 36,
+    "nonrelevant_returned_evidence_count": 0,
     "r_at_1": 1.0,
     "r_at_3": 1.0,
     "r_at_5": 1.0,
-    "returned_evidence_count": 468
+    "returned_evidence_count": 432
   },
-  "threshold_failures": [
-    "false_retrieval_rate>0.03",
-    "relation_frame_accuracy<0.98"
-  ],
+  "threshold_failures": [],
   "thresholds": {
     "abstention_accuracy": 0.97,
     "answerable_recall": 0.99,
