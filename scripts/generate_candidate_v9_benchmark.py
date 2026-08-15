@@ -14,6 +14,7 @@ STAGE_SPECS = {
 }
 
 PEOPLE = ["Adela","Bruno","Chiara","Dev","Elin","Farid","Gwen","Hugo","Ina","Jonas","Keiko","Luc","Maya","Nolan","Oksana","Pavel","Reina","Sven","Talia","Umar","Val","Wes","Yara","Zev"]
+SURNAMES = ["Arden","Bauer","Costa","Dahl","Evans","Fischer","Garcia","Hale","Ito","Jensen","Kovac","Lopez","Mori","Neri","Olsen","Petrov"]
 CITIES = ["Oslo","Utrecht","Adelaide","Valencia","Helsinki","Nagoya","Zurich","Bologna","Tallinn","Fukuoka","Malmo","Graz"]
 DRINKS = ["jasmine tea","sparkling water","cafe au lait","cocoa","lemon soda","matcha latte","black tea","apple juice","kombucha","iced coffee","mint tea","soy cocoa"]
 FOODS = ["oatmeal","rye toast","fruit yogurt","rice porridge","egg sandwich","miso soup","granola","bean toast","noodle bowl","fruit salad","corn porridge","savory pancakes"]
@@ -49,7 +50,9 @@ def noise(prefix: str) -> list[dict]:
 
 
 def answerable(i: int, stage: str) -> tuple[str, str, list[dict]]:
-    p = PEOPLE[(i * 5 + len(stage)) % len(PEOPLE)]
+    base = PEOPLE[(i * 5 + len(stage)) % len(PEOPLE)]
+    surname = SURNAMES[(i // len(PEOPLE) + i * 7 + len(stage)) % len(SURNAMES)]
+    p = f"{base} {surname}"
     j = (i * 7 + STAGE_SPECS[stage]["seed"]) % 12
     mode = i % 24
     variants = {"development": 0, "protected": 1, "confirmatory": 2, "final": 3}
@@ -137,8 +140,12 @@ NEGATIVE_MODES = ["wrong_subject","wrong_relation","question_only","no_value","a
 
 
 def negative(i: int, stage: str) -> tuple[str, str]:
-    p = PEOPLE[(i * 3 + len(stage)) % len(PEOPLE)]
-    other = PEOPLE[(i * 3 + len(stage) + 7) % len(PEOPLE)]
+    base = PEOPLE[(i * 3 + len(stage)) % len(PEOPLE)]
+    other_base = PEOPLE[(i * 3 + len(stage) + 7) % len(PEOPLE)]
+    surname = SURNAMES[(i // len(PEOPLE) + i * 5 + len(stage)) % len(SURNAMES)]
+    other_surname = SURNAMES[(i // len(PEOPLE) + i * 5 + len(stage) + 5) % len(SURNAMES)]
+    p = f"{base} {surname}"
+    other = f"{other_base} {other_surname}"
     j = (i * 5 + STAGE_SPECS[stage]["seed"]) % 12
     mode = NEGATIVE_MODES[i % len(NEGATIVE_MODES)]
     if mode == "wrong_subject": return f"Which beverage does {p} normally prefer?", f"{other} usually chooses {DRINKS[j]}."
