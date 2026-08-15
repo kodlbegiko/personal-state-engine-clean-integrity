@@ -19,8 +19,8 @@ VERDICT_SUPPORTED = "SUPPORTED"
 VERDICT_INSUFFICIENT = "INSUFFICIENT"
 
 # Candidate-v10 moves relation reasoning from closed value lexicons to bounded
-# predicate/slot frames.  Relation cues describe semantic slots; answer values
-# remain open-class.  No benchmark IDs, answers, split names, or generator-only
+# predicate/slot frames. Relation cues describe semantic slots; answer values
+# remain open-class. No benchmark IDs, answers, split names, or generator-only
 # metadata are visible to inference.
 RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
     "preference": (
@@ -33,21 +33,11 @@ RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
         r"\b(?:university|college|school|campus|institution|academy|polytechnic)\b",
         r"\b(?:attend|attends|attended|stud(?:y|ies|ied|ying)\s+at|enrolled\s+at)\b",
     ),
-    "education_course": (
-        r"\b(?:course|class|module|subject|seminar)\b", r"\benrolled\s+in\b",
-    ),
-    "location": (
-        r"\b(?:where|city|home|address|location|live|lives|living|reside|resides|based|located)\b",
-    ),
-    "work_role": (
-        r"\b(?:job|role|profession|occupation|career|position|works?\s+as|serves?\s+as)\b",
-    ),
-    "device_use": (
-        r"\b(?:device|computer|laptop|tablet|phone|workstation|machine|primary\s+computer)\b",
-    ),
-    "transport": (
-        r"\b(?:transport|transit|commute|commuting|route|bus|tram|metro|subway|train)\b",
-    ),
+    "education_course": (r"\b(?:course|class|module|subject|seminar)\b", r"\benrolled\s+in\b"),
+    "location": (r"\b(?:where|city|home|address|location|live|lives|living|reside|resides|based|located)\b",),
+    "work_role": (r"\b(?:job|role|profession|occupation|career|position|works?\s+as|serves?\s+as)\b",),
+    "device_use": (r"\b(?:device|computer|laptop|tablet|phone|workstation|machine|primary\s+computer)\b",),
+    "transport": (r"\b(?:transport|transit|commute|commuting|route|bus|tram|metro|subway|train)\b",),
     "language": (r"\b(?:language|speak|speaks|speaking|fluent|fluently)\b",),
     "activity": (r"\b(?:hobby|pastime|activity|for\s+fun|practice|practices|enjoys?)\b",),
     "goal": (r"\b(?:goal|target|aim|objective|training\s+for|preparing\s+for|working\s+toward)\b",),
@@ -73,7 +63,6 @@ RELATION_PATTERNS: dict[str, tuple[str, ...]] = {
     "accommodation": (r"\b(?:accommodation|lodging|hotel|hostel|guesthouse|place\s+to\s+stay)\b",),
 }
 
-# More specific semantic slots dominate broad overlapping domains.
 PRIMARY_PRIORITY = (
     "subscription", "sports_team", "volunteering", "software_tool", "communication_channel",
     "routine", "project_ownership", "appointment", "accommodation", "travel_plan",
@@ -88,7 +77,6 @@ ASSIGNMENT = re.compile(
     re.I,
 )
 PRONOUN = re.compile(r"\b(?:he|she|they|his|her|their)\b", re.I)
-CURRENTISH = re.compile(r"\b(?:current|currently|now|today|as\s+of\s+now|latest|these\s+days|still)\b", re.I)
 
 GENERIC_OBJECT_STOP = {
     _stem(x) for x in {
@@ -137,8 +125,6 @@ def _primary_relations(text: str) -> set[str]:
     raw = _raw_relation_signals(text)
     if not raw:
         return set()
-    # Preference and specialized relations must not be weakened by a broad
-    # domain signal such as media/activity/location.
     for rel in PRIMARY_PRIORITY:
         if rel in raw:
             if rel == "preference":
@@ -150,8 +136,6 @@ def _primary_relations(text: str) -> set[str]:
             }:
                 return {rel}
             break
-    # For ordinary relations retain all non-overlapping signals; intersection
-    # remains the proof rule.
     return raw
 
 
@@ -160,8 +144,10 @@ def _object_terms(query: str) -> set[str]:
     if "'s" not in q:
         return set()
     tail = q.split("'s", 1)[1]
-    # Stop at a preposition/question tail after the possessed object phrase.
-    tail = re.split(r"\b(?:in|on|at|for|with|now|currently|today|these\s+days)\b", tail, maxsplit=1, flags=re.I)[0]
+    # Temporal adjectives such as "current" are filtered as stop terms rather
+    # than cutting the possessed object phrase. This preserves open objects
+    # such as "permit" in "current permit status".
+    tail = re.split(r"\b(?:in|on|at|for|with|now|today|these\s+days)\b", tail, maxsplit=1, flags=re.I)[0]
     out = set()
     for tok in tokens(tail):
         s = _stem(tok)
@@ -174,8 +160,6 @@ def _object_terms(query: str) -> set[str]:
 def semantic_requirements_v10(query: str) -> FrameRequirements:
     base = query_requirements(query)
     rels = _primary_relations(query)
-    # Typed question-shape rules only establish abstract slots; they never
-    # enumerate answer values.
     q = query.casefold()
     if not rels and re.search(r"\bwhere\b", q):
         rels.add("location")
@@ -210,18 +194,12 @@ def _relation_ok(clause: str, req: FrameRequirements) -> tuple[bool, set[str], s
     shared = qrels & crels
     if shared:
         return True, crels, {f"relation:{x}" for x in sorted(shared)}
-
-    # Open attribute bridge: if a query explicitly targets an object-owned
-    # status/attribute and the evidence assigns a value to the same object,
-    # the object slot itself proves the predicate.  Conflicting semantic
-    # relations disable the bridge.
     if qrels in ({"status"}, {"attribute_color"}) and req.object_terms and ASSIGNMENT.search(clause):
         cstems = {_stem(t) for t in tokens(clause)}
         overlap = set(req.object_terms) & cstems
         conflicting = crels - qrels
         if overlap and not conflicting:
             return True, crels, {f"object-slot:{x}" for x in sorted(overlap)}
-
     return False, crels, set()
 
 
@@ -229,8 +207,6 @@ def _value_type_ok(req: FrameRequirements, relation_ok: bool, evidence_relations
     if not req.relations:
         return False, set()
     if relation_ok:
-        # Candidate-v10 treats the proven semantic relation/slot as the type
-        # license. The answer value itself is open-class.
         return True, {f"range:{x}" for x in req.relations}
     if set(req.relations) & evidence_relations:
         return True, {f"range:{x}" for x in set(req.relations) & evidence_relations}
@@ -308,12 +284,7 @@ def evidence_support_signature_v10(case: dict[str, Any], ranking: list[str] | No
 
 
 def pse_candidate_v10_rank(case: dict[str, Any], k: int = 5) -> list[str]:
-    """Candidate-v10 frame/constraint verifier over Candidate-v2 ranking.
-
-    Candidate-v2 is the sole ranker. Candidate-v10 ignores labels, case IDs,
-    relevant IDs, answer strings, split names, provenance, and generator-only
-    metadata, and only returns an order-preserving subsequence.
-    """
+    """Frame/constraint verifier over Candidate-v2's order-preserving ranking."""
     safe_case = {
         "query": str(case["query"]),
         "memories": [
