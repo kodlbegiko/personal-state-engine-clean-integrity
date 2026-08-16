@@ -15,6 +15,8 @@ WORKFLOW = ROOT / ".github/workflows/candidate-v13-external-validity-v4.yml"
 CANDIDATE = ROOT / "src/personal_state_engine/candidate_v13.py"
 EXPECTED = "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838"
 FILES = [
+    ROOT / "scripts/bootstrap_candidate_v13_external_validity_v4.py",
+    ROOT / "scripts/candidate_v13_external_validity_v4_fix_names.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_core.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_materializer.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_contamination.py",
