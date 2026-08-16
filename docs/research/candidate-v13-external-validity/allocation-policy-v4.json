@@ -1,0 +1,145 @@
+{
+  "schema_version": "candidate-v13-external-validity-allocation-policy-v4",
+  "status": "FINAL_ALLOCATION_LOCK_PRE_CANDIDATE_EXTERNAL_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "supersedes": "allocation-policy.json v3",
+  "source_activation": "source-activation-v3.json",
+  "adapter_policy": "adapter-policy-v3.json",
+  "stage_source_targets": {
+    "ev_a": {
+      "total": 384,
+      "personamem-v2": 96,
+      "locomo": 77,
+      "sgd-carryover": 96,
+      "longmemeval-cleaned": 38,
+      "evermembench-dynamic": 77
+    },
+    "ev_b": {
+      "total": 1440,
+      "personamem-v2": 360,
+      "locomo": 288,
+      "sgd-carryover": 360,
+      "longmemeval-cleaned": 144,
+      "evermembench-dynamic": 288
+    },
+    "ev_c": {
+      "total": 1920,
+      "personamem-v2": 480,
+      "locomo": 384,
+      "sgd-carryover": 480,
+      "longmemeval-cleaned": 192,
+      "evermembench-dynamic": 384
+    }
+  },
+  "source_share_checks": {
+    "ev_a": {
+      "personamem-v2": 0.25,
+      "locomo": 0.2005208333,
+      "sgd-carryover": 0.25,
+      "longmemeval-cleaned": 0.0989583333,
+      "evermembench-dynamic": 0.2005208333
+    },
+    "ev_b": {
+      "personamem-v2": 0.25,
+      "locomo": 0.20,
+      "sgd-carryover": 0.25,
+      "longmemeval-cleaned": 0.10,
+      "evermembench-dynamic": 0.20
+    },
+    "ev_c": {
+      "personamem-v2": 0.25,
+      "locomo": 0.20,
+      "sgd-carryover": 0.25,
+      "longmemeval-cleaned": 0.10,
+      "evermembench-dynamic": 0.20
+    }
+  },
+  "all_stage_source_totals": {
+    "personamem-v2": 936,
+    "locomo": 749,
+    "sgd-carryover": 936,
+    "longmemeval-cleaned": 374,
+    "evermembench-dynamic": 749
+  },
+  "domain_targets": {
+    "ev_a": {"D1": 48, "D2": 48, "D3": 48, "D4": 48, "D5": 48, "D6": 48, "D7": 48, "D8": 48},
+    "ev_b": {"D1": 180, "D2": 180, "D3": 180, "D4": 180, "D5": 180, "D6": 180, "D7": 180, "D8": 180},
+    "ev_c": {"D1": 240, "D2": 240, "D3": 240, "D4": 240, "D5": 240, "D6": 240, "D7": 240, "D8": 240}
+  },
+  "structural_family_targets": {
+    "ev_a": {"N1": 32, "N2": 32, "N3": 32, "N4": 32, "N5": 32, "N6": 32, "N7": 32, "N8": 32, "N9": 32, "N10": 32, "N11": 32, "N12": 32},
+    "ev_b": {"N1": 120, "N2": 120, "N3": 120, "N4": 120, "N5": 120, "N6": 120, "N7": 120, "N8": 120, "N9": 120, "N10": 120, "N11": 120, "N12": 120},
+    "ev_c": {"N1": 160, "N2": 160, "N3": 160, "N4": 160, "N5": 160, "N6": 160, "N7": 160, "N8": 160, "N9": 160, "N10": 160, "N11": 160, "N12": 160}
+  },
+  "answerability_targets": {
+    "ev_a": {"answerable": 240, "no_evidence": 144},
+    "ev_b": {"answerable": 864, "no_evidence": 576},
+    "ev_c": {"answerable": 1152, "no_evidence": 768}
+  },
+  "stage_order": ["ev_a", "ev_b", "ev_c"],
+  "stage_seeds": {"ev_a": 42018, "ev_b": 42019, "ev_c": 42020},
+  "global_disjointness": {
+    "base_item_reuse": false,
+    "exact_runtime_query_reuse": false,
+    "normalized_runtime_query_reuse": false,
+    "source_item_reuse": false,
+    "allocation_order": "EV-A first, then EV-B from remaining unique bases, then EV-C from remaining unique bases"
+  },
+  "source_domain_transport": {
+    "method": "deterministic integer max-flow",
+    "graph": "source -> source-family nodes with exact stage source capacities -> D1-D8 domain nodes through available source-domain capacity edges -> sink with exact domain targets",
+    "success_condition": "max_flow equals exact stage total",
+    "determinism": "lexicographic source/domain edge insertion plus stage seed only for deterministic case ordering inside a feasible source-domain cell",
+    "failure": "block before Candidate-v13 execution; do not weaken domain totals or source shares"
+  },
+  "family_b_matching": {
+    "method": "deterministic integer max-flow/b-matching over source-domain cells, unique base cases, and N1-N12 family nodes",
+    "graph": "root -> source-domain cell quota -> unique case nodes (capacity 1) -> each eligible family -> sink exact family target",
+    "success_condition": "flow equals exact stage total and all source-domain quotas/family targets are saturated",
+    "case_uniqueness": "one base case receives one primary structural family per stage",
+    "failure": "block before Candidate-v13 execution; do not change N-family totals"
+  },
+  "no_evidence_assignment": {
+    "N10": "all primary-family N10 cases are no-evidence by withholding every source-native gold memory",
+    "additional_no_evidence": "fill remaining stage no-evidence quota by SHA256(stage_seed || base_item_id) ordering among already selected non-N10 cases",
+    "query_mutation": false,
+    "private_gold_retention": "evaluator retains original source-native gold IDs only for false-retrieval scoring; Candidate-v13 never sees them"
+  },
+  "ev_c_stress": {
+    "comparison_stage": "ev_b",
+    "goal": "EV-C must be measurably more heterogeneous/stress-heavy than EV-B without changing exact domain/source/family marginals",
+    "stress_dimensions": ["N3", "N4", "N5", "N6", "N7", "N9", "N11", "multi_clause", "implicit_relation", "no_evidence_ambiguity"],
+    "selection_rule": "Within otherwise feasible source-domain/family candidate choices, EV-B tie-breaks toward lower stress_count and EV-C tie-breaks toward higher stress_count. This ordering is locked before Candidate-v13 external execution and never uses model outputs.",
+    "minimum_delta": 0.01,
+    "applicability": "For each dimension with at least 100 eligible remaining EV-C reserve bases, selected EV-C proportion must exceed selected EV-B proportion by >=0.01.",
+    "failure": "evaluation-design blocker before formal freeze; thresholds and family/domain totals cannot be relaxed"
+  },
+  "feasibility_evidence_policy": {
+    "before_formal_freeze_may_persist": [
+      "aggregate source-domain capacity matrices",
+      "aggregate max-flow matrices",
+      "aggregate family eligibility counts",
+      "stage feasibility status",
+      "selected base-ID SHA256 digest only",
+      "stress proportions"
+    ],
+    "before_formal_freeze_must_not_persist": [
+      "EV-B individual base IDs",
+      "EV-C individual base IDs",
+      "formal natural-language queries",
+      "formal memory payloads",
+      "gold IDs linked to formal cases"
+    ]
+  },
+  "integrity": {
+    "maximum_source_share": 0.45,
+    "minimum_source_families": 3,
+    "formal_stage_sizes_unchanged_from_preregistration": true,
+    "domain_totals_unchanged_from_preregistration": true,
+    "family_totals_unchanged_from_preregistration": true,
+    "answerability_totals_unchanged_from_preregistration": true,
+    "candidate_v13_may_be_imported_or_called_during_feasibility": false,
+    "source_or_allocation_change_after_first_candidate_external_output": "FORBIDDEN"
+  }
+}
