@@ -1,42 +1,51 @@
 {
   "candidate_v13_invoked": false,
   "formal_case_materialized": false,
+  "official_loader_source": "Dataset/dataset.py::PerLTMem.read_json_data",
   "repository": "Elvin-Yiming-Du/PerLTQA",
   "revision": "8d9e19868e239740ef701e603ec205cd581f221b",
-  "schema_version": "perltqa-reference-integrity-probe-v3",
+  "schema_version": "perltqa-reference-integrity-probe-v4",
   "versions": {
     "en_v1": {
       "canonical_qa_records": 8593,
-      "formal_mapping_policy_candidate": "Prefer same-character exact key. A global exact key may be used only if the Reference Memory key maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted.",
+      "formal_mapping_policy_candidate": "Normalize list-shaped memory exactly as official PerLTMem.read_json_data by profile.Protagonist. Then prefer same-character exact Reference Memory key. A global exact key may be used only if it maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted.",
       "mapping_by_section": {
         "dialogues": {
-          "missing_character_or_section": 2838,
-          "qa_records": 2838
+          "qa_records": 2838,
+          "reference_key_absent_globally": 2838
         },
         "events": {
-          "missing_character_or_section": 4501,
-          "qa_records": 4501
+          "qa_records": 4501,
+          "reference_key_absent_globally": 4501
         },
         "profile": {
-          "missing_character_or_section": 357,
+          "exact_same_character": 357,
           "qa_records": 357
         },
         "social_relationship": {
-          "missing_character_or_section": 897,
-          "qa_records": 897
+          "qa_records": 897,
+          "reference_key_absent_globally": 897
         }
       },
       "mapping_counts": {
-        "missing_character_or_section": 8593
+        "exact_same_character": 357,
+        "reference_key_absent_globally": 8236
       },
-      "mechanically_resolvable_exact_or_unique_global": 0,
-      "mechanically_resolvable_fraction": 0.0,
-      "memory_character_count": 0,
+      "mechanically_resolvable_exact_or_unique_global": 357,
+      "mechanically_resolvable_fraction": 0.04154544396601885,
+      "memory_character_count": 141,
+      "memory_normalization": {
+        "duplicate_protagonist_keys": 0,
+        "invalid_records": 0,
+        "normalized_via": "official_PerLTMem_profile_Protagonist_rule",
+        "raw_records": 141,
+        "raw_type": "list"
+      },
       "paths": {
         "memory": "Dataset/en/perltmem_en.json",
         "qa": "Dataset/en/perltqa_en.json"
       },
-      "qa_character_count_resolved_against_memory": 0,
+      "qa_character_count_resolved_against_memory": 32,
       "reference_cardinality_counts": {
         "1": 8593
       },
@@ -44,13 +53,11 @@
         "memory": "9ed6ed1a650f3c49ccb10a4407f36db0521f0fe2d3c878e0ce9b7f125109c4ad",
         "qa": "ef1b5025157e338fdda7e2c7e2a12635c6661d364c285f6319306bf02e1ad9d9"
       },
-      "unresolved_path_character_token_counts": {
-        "unresolved_string_token_present": 8593
-      }
+      "unresolved_path_character_token_counts": {}
     },
     "en_v2": {
       "canonical_qa_records": 8593,
-      "formal_mapping_policy_candidate": "Prefer same-character exact key. A global exact key may be used only if the Reference Memory key maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted.",
+      "formal_mapping_policy_candidate": "Normalize list-shaped memory exactly as official PerLTMem.read_json_data by profile.Protagonist. Then prefer same-character exact Reference Memory key. A global exact key may be used only if it maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted.",
       "mapping_by_section": {
         "dialogues": {
           "missing_character_or_section": 94,
@@ -83,6 +90,11 @@
       "mechanically_resolvable_exact_or_unique_global": 345,
       "mechanically_resolvable_fraction": 0.04014895845455604,
       "memory_character_count": 141,
+      "memory_normalization": {
+        "normalized_via": "identity",
+        "raw_records": 141,
+        "raw_type": "dict"
+      },
       "paths": {
         "memory": "Dataset/en_v2/perltmem_en_v2.json",
         "qa": "Dataset/en_v2/perltqa_en_v2.json"
