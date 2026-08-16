@@ -1,0 +1,5 @@
+EV_A_INTEGRITY_GATE_AUTHORIZED
+EV_A_first_external_execution=completed
+source_gold_allocation_rules_immutable=true
+candidate_v13_tuning_forbidden=true
+formal_freeze_requires_integrity_pass=true
