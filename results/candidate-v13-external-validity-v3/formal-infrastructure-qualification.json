@@ -2,31 +2,14 @@
   "candidate_v13_imported": false,
   "candidate_v13_invoked": false,
   "compile": {
+    "scripts/candidate_v13_external_validity_v3_core.py": "PASS",
     "scripts/candidate_v13_external_validity_v3_evaluator.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_infrastructure_qualification.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_materializer.py": "PASS"
+    "scripts/candidate_v13_external_validity_v3_infrastructure_qualification.py": "PASS"
   },
   "evaluator_qa": {
     "pass": true,
     "status": "PASS"
   },
-  "formal_runner_candidate_firewall": "PASS",
-  "formal_runner_compile": {
-    "scripts/candidate_v13_external_validity_v3_contamination.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_core.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_evaluator.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_finalize_qualification.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_formal_runner.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_formal_sequence.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_freeze.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_materializer.py": "PASS",
-    "scripts/candidate_v13_external_validity_v3_qualification_runner.py": "PASS"
-  },
-  "formal_runner_static_candidate_import_violations": [],
-  "formal_sequence_authorization_lock_trigger": true,
-  "formal_sequence_workflow_dispatch_absent": true,
-  "freeze_workflow_read_only_verification": true,
-  "real_formal_runner_qa": "PASS",
   "schema_version": "candidate-v13-external-validity-v3-formal-infrastructure-qualification-v1",
   "static_candidate_firewall": {
     "pass": true,

@@ -70,10 +70,7 @@
     "SCHEMA_PASS": true,
     "SOURCE_QUALIFICATION_PASS": true
   },
-  "gold_cardinality_runtime_requirement_enriched_v3": true,
   "performance_driven_protocol_changes": 0,
-  "preregistration_lock_completeness_v3": "PASS",
   "schema_version": "candidate-v13-external-validity-v3-infrastructure-qualification-v1",
-  "source_manifest_enriched_v3": true,
   "status": "PASS"
 }

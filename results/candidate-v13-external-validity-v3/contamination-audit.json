@@ -1,53 +1,21 @@
 {
   "candidate_v13_invoked": false,
+  "contamination_counts": {},
+  "external_payloads_checked": 287247,
   "formal_case_materialized": false,
-  "historical_candidate_development_audit": {
-    "candidate_v13_invoked": false,
-    "contamination_counts": {},
-    "external_payloads_checked": 287247,
-    "formal_case_materialized": false,
-    "historical_scan": {
-      "files_scanned": 57,
-      "meaningful_strings": 139519,
-      "unique_meaningful_strings": 50947
-    },
-    "material_overlap_count": 0,
-    "methods": [
-      "exact-normalized-overlap",
-      "token-5gram-jaccard>=0.85",
-      "project-synthetic-namespace-token-overlap",
-      "normalized-skeleton-similarity>=0.92"
-    ],
-    "overlap_hash_records": [],
-    "schema_version": "candidate-v13-external-validity-v2-contamination-audit-v2",
-    "status": "PASS"
+  "historical_scan": {
+    "files_scanned": 57,
+    "meaningful_strings": 139519,
+    "unique_meaningful_strings": 50947
   },
   "material_overlap_count": 0,
   "methods": [
-    "normalized-exact-overlap",
-    "normalized-substring-overlap",
+    "exact-normalized-overlap",
     "token-5gram-jaccard>=0.85",
-    "query-skeleton-overlap>=0.92",
-    "memory-skeleton-overlap>=0.92",
-    "synthetic-namespace-collision",
-    "prior-v2-formal-infrastructure-overlap"
+    "project-synthetic-namespace-token-overlap",
+    "normalized-skeleton-similarity>=0.92"
   ],
+  "overlap_hash_records": [],
   "schema_version": "candidate-v13-external-validity-v3-contamination-audit-v1",
-  "status": "PASS",
-  "supplemental_v3_audit": {
-    "counts": {},
-    "external_payloads_checked": 287247,
-    "historical_scan": {
-      "files_scanned": 57,
-      "meaningful_strings": 139519,
-      "unique_meaningful_strings": 50947
-    },
-    "material_overlap_count": 0,
-    "overlap_hash_records": [],
-    "prior_v2_scan": {
-      "files_scanned": 26,
-      "meaningful_strings": 159,
-      "unique_meaningful_strings": 157
-    }
-  }
+  "status": "PASS"
 }
