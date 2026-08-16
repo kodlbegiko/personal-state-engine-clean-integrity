@@ -1,0 +1,124 @@
+{
+  "schema_version": "candidate-v13-external-validity-adapter-policy-v3",
+  "status": "FINAL_ADAPTER_LOCK_PRE_CANDIDATE_EXTERNAL_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "supersedes": "adapter-policy.json v2",
+  "source_activation": "source-activation-v3.json",
+  "formal_sources": [
+    "personamem-v2",
+    "locomo",
+    "sgd-carryover",
+    "longmemeval-cleaned",
+    "evermembench-dynamic"
+  ],
+  "global_rules": {
+    "query_policy": "Runtime queries are verbatim source-native questions/utterances. No LLM rewrite, paraphrase, synonym substitution, grammar cleanup, or Candidate-v13-aware editing is permitted.",
+    "gold_policy": "Gold evidence is source-native or a deterministic transformation of explicit source annotations only. Answer-text matching, semantic repair, and Candidate-v13-output-dependent relabeling are forbidden.",
+    "metadata_firewall": "Candidate-v13 runtime sees only query plus production-style candidate memories. Source, stage, domain, family, gold IDs, answerability, relation labels, provenance, and transformation metadata remain evaluator-only.",
+    "candidate_source_rule": "Candidate-v2 remains the sole candidate source presented to Candidate-v13 during actual evaluation. External corpus construction defines the production-style memory universe before Candidate-v2 retrieval; Candidate-v13 may only reject/reorder/abstain over Candidate-v2-returned IDs.",
+    "raw_corpus_commit": false,
+    "maximum_runtime_memories": 20
+  },
+  "sources": {
+    "personamem-v2": {
+      "dataset": "bowen-upenn/PersonaMem-v2",
+      "revision": "b7b42b78917157afed063527a1c959e98f6109f2",
+      "source_sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+      "license": "CC BY 4.0",
+      "query": "verbatim user_query",
+      "gold_memory": "verbatim related_conversation_snippet",
+      "subject": "persona_id evaluator-only identity",
+      "relation": "topic_preference when nonempty, else topic_query, else preference",
+      "temporal": "source-native updated/prev_pref fields only",
+      "contradiction": "prev_pref and current preference are both nonempty and normalized unequal",
+      "domain_input": "topic_preference + topic_query metadata only; runtime query and memory text do not change PersonaMem domain labels",
+      "domain_fallback": "D1 because every source row is an explicit preference-memory record"
+    },
+    "longmemeval-cleaned": {
+      "dataset": "xiaowu0162/longmemeval-cleaned",
+      "revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+      "source_sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+      "license": "MIT",
+      "query": "verbatim question",
+      "memories": "each haystack session concatenated in original role/content order; source session ID remains memory ID; haystack date is timestamp",
+      "gold_memory_ids": "verbatim answer_session_ids, each required to exist in haystack_session_ids",
+      "relation": "verbatim question_type evaluator metadata",
+      "temporal": "question_type in {knowledge-update, temporal-reasoning}",
+      "domain_input": "verbatim question + exact gold session text under strict domain vocabulary",
+      "domain_fallback": "D8 personal interaction/history"
+    },
+    "locomo": {
+      "dataset": "snap-research/locomo",
+      "revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+      "license": "CC BY-NC 4.0",
+      "query": "verbatim QA question",
+      "memories": "individual source conversation turns with runtime ID <sample_id>::<dia_id>, verbatim speaker/text and source session timestamp",
+      "gold_memory_ids": "every nonempty evidence dia_id exact-resolved within the same sample and prefixed with sample_id",
+      "eligibility": "question, answer, and evidence all nonempty and every evidence ID resolves; unresolved or missing-evidence QA are excluded rather than repaired",
+      "domain_input": "verbatim question + exact gold turn text under strict domain vocabulary",
+      "domain_fallback": "D8 personal conversational event/history"
+    },
+    "sgd-carryover": {
+      "dataset": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "revision": "e852981ae34990f4358979625854259302feaa78",
+      "license": "CC BY-SA 4.0",
+      "query": "verbatim current USER utterance",
+      "gold_memory": "nearest earlier USER turn in same dialogue/service where frame.slots explicitly names the carried slot and source-native state.slot_values contains the same normalized value",
+      "eligibility": "current USER state contains slot/value while current frame.slots omits that slot; unsupported services and multi-domain current turns are excluded",
+      "runtime_memory_id": "sgd::<split>::<dialogue_id>::<turn_index>",
+      "metadata_firewall": "service, slot, state, domain and family metadata are never appended to runtime query/memory text",
+      "domain_map": {
+        "D3": ["Calendar", "Events"],
+        "D4": ["Banks", "Media", "Messaging", "Movies", "Music", "Payment", "Services"],
+        "D5": ["Buses", "Flights", "Hotels", "RentalCars", "Ridesharing", "Trains", "Travel"]
+      },
+      "native_family_support": ["N11 carry-over/elliptical", "N5 when generic coreference token appears", "N4 when current USER turn carries two or more relations"]
+    },
+    "evermembench-dynamic": {
+      "dataset": "EverMind-AI/EverMemBench-Dynamic",
+      "qualification": "results/candidate-v13-external-validity/evermembench-dynamic-qualification.json",
+      "license": "Apache-2.0",
+      "query": "verbatim Q",
+      "answer": "A is evaluator-only and never used to infer evidence",
+      "memories": "source dialogue messages indexed by topic/date/group/msg_index; runtime text is the verbatim source message body with source-native author identity when available",
+      "gold_memory_ids": "expand every source-native R.message_index singleton/range and exact-match against dialogue msg_index under the same topic/date/group; runtime ID evermem::<topic>::<date>::<group>::<msg_index>",
+      "domain_map": {
+        "T1": "D6",
+        "T2": "D7",
+        "T3": "D7",
+        "T4": "D7",
+        "T5": "D7"
+      },
+      "domain_rationale": "T1 is the benchmark's Technology project domain. T2-T5 are distinct workplace project domains and are retained as project-collaboration memories; lexical text does not relabel them.",
+      "eligibility": "Q and A nonempty, R nonempty, and every R reference exact-resolves. Any unresolved reference is excluded; answer-text matching and semantic repair are forbidden."
+    }
+  },
+  "strict_text_domain_rules": {
+    "D3": ["appointment", "schedule", "calendar", "meeting", "reservation", "booking", "deadline"],
+    "D4": ["subscription", "provider", "bank", "banking", "insurance", "bill", "billing", "payment", "renewal", "contract", "streaming service", "internet service", "utility", "phone plan"],
+    "D5": ["travel", "trip", "flight", "airline", "airport", "hotel", "hostel", "train", "bus", "rental car", "vacation", "destination", "passport", "taxi", "rideshare", "uber"],
+    "D6": ["device", "computer", "laptop", "phone", "smartphone", "tablet", "software", "application", "browser", "camera", "technology", "macbook", "iphone", "android"],
+    "D7": ["project", "membership", "member of", "club", "organization", "community", "research project", "certification", "certificate", "volunteer", "initiative"],
+    "D2": ["work", "job", "career", "employer", "employee", "office", "school", "education", "college", "university", "student", "teacher", "occupation", "degree"],
+    "D8": ["routine", "daily", "weekly", "habit", "exercise", "workout", "sleep", "commute", "practice", "regularly", "every day", "every week"],
+    "D1": ["prefer", "preference", "favorite", "favourite", "like", "dislike", "love", "hate", "hobby", "hobbies", "taste"]
+  },
+  "forbidden_generic_domain_evidence": ["when", "date", "time", "today", "tomorrow", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+  "structural_family_rules": {
+    "N1": "answerable non-SGD case with one gold memory, 3-30 natural query tokens and none of N2/N5/N6/N7/N8/N11 natural stress flags",
+    "N2": "natural query >=18 tokens OR >=2 comma/semicolon/parenthetical boundaries OR fixed discourse marker",
+    "N3": "deterministic different-subject/history distractor exists; query unchanged",
+    "N4": "native SGD multi-relation current turn OR deterministic same-subject different-relation distractor exists",
+    "N5": "generic pronoun/demonstrative/coreference token occurs while explicit evaluator subject string is absent",
+    "N6": "PersonaMem source-native update/prev_pref OR LongMemEval knowledge-update/temporal-reasoning",
+    "N7": "PersonaMem prev_pref and current preference are both nonempty and normalized unequal",
+    "N8": "query or exact gold memory contains fixed modality token may/might/maybe/perhaps/possibly/probably/plan/planned/planning/hope/expect/intend/tentative/could/would/should",
+    "N9": "deterministic non-gold distractor has strictly greater normalized query-token overlap than the best gold memory; no text rewrite",
+    "N10": "any valid base case transformed to no-evidence solely by withholding all gold memories",
+    "N11": "source-native SGD carry-over OR non-SGD natural query <=12 tokens with an elliptical signal; formal allocation prefers native SGD carry-over",
+    "N12": "deterministic non-gold memory exists with same evaluator subject/history and relation metadata"
+  },
+  "immutability": "After the first Candidate-v13 external output, this adapter contract, source set, domain map, gold mapping, family rules and transformation rules are immutable. A later defect blocks or invalidates the evaluation; it cannot be repaired inside the same formal execution lineage."
+}
