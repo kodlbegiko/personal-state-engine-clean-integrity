@@ -1,0 +1,9 @@
+JOINT_FIVE_SOURCE_FEASIBILITY_AUTHORIZED_PRE_CANDIDATE_EXECUTION
+source_activation=source-activation-v3.json
+adapter_policy=adapter-policy-v3.json
+allocation_policy=allocation-policy-v4.json
+feasibility_algorithm=feasibility-algorithm-v1.json
+stress_policy=stress-policy-v1.json
+evermembench_qualification=results/candidate-v13-external-validity/evermembench-dynamic-qualification.json
+candidate_v13_external_performance_observed=false
+formal_case_materialized=false
