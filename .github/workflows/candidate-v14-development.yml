@@ -1,0 +1,54 @@
+name: Candidate-v14 Development Qualification
+
+on:
+  push:
+    branches:
+      - research/candidate-v14-generalization-recovery
+  pull_request:
+    branches:
+      - research/candidate-v13-external-validity-infra-v4
+
+jobs:
+  candidate-v14-development:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Generate deterministic development corpus
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v14_development.py generate
+      - name: Compare candidate architectures
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v14_development.py compare
+      - name: Protected-data firewall
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v14_protected_data_firewall.py
+      - name: Calibration audit
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v14_calibration_audit.py
+      - name: Counterfactual and metamorphic audits
+        env:
+          PYTHONPATH: src
+        run: python scripts/candidate_v14_robustness_audit.py
+      - name: Candidate-v14 tests
+        env:
+          PYTHONPATH: src
+        run: >-
+          python -m pytest -q
+          tests/test_candidate_v14.py
+          tests/test_candidate_v14_metamorphic.py
+          tests/test_candidate_v14_counterfactual.py
+          tests/test_candidate_v14_abstention.py
+          tests/test_candidate_v14_temporal.py
+          tests/test_candidate_v14_negation.py
+          tests/test_candidate_v14_determinism.py
+          tests/test_candidate_v14_protected_firewall.py
