@@ -13,33 +13,43 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify frozen source and preregistered hashes
+      - name: Verify frozen source and preregistered artifacts
         env:
           PYTHONPATH: src
         run: |
           python - <<'PY'
-          import hashlib, json
+          import hashlib, json, subprocess
           from pathlib import Path
           root = Path('.')
           freeze = json.loads((root/'results/candidate-v14/candidate-v14-freeze.json').read_text())
           def sha(path):
               return hashlib.sha256((root/path).read_bytes()).hexdigest()
-          checks = {
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          actual = {
               'candidate_source_sha256': sha('src/personal_state_engine/candidate_v14.py'),
               'development_evaluator_sha256': sha('scripts/candidate_v14_development.py'),
-              'selection_policy_sha256': sha('docs/research/candidate-v14/selection-policy.json'),
-              'preregistration_sha256': sha('docs/research/candidate-v14/internal-holdout-preregistration.json'),
+              'selection_policy_git_blob_sha1': git('rev-parse', 'HEAD:docs/research/candidate-v14/selection-policy.json'),
+              'preregistration_git_blob_sha1': git('rev-parse', 'HEAD:docs/research/candidate-v14/internal-holdout-preregistration.json'),
           }
-          for key, actual in checks.items():
+          for key, value in actual.items():
               expected = freeze[key]
-              if actual != expected:
-                  raise SystemExit(f'freeze hash mismatch: {key}: {actual} != {expected}')
+              if value != expected:
+                  raise SystemExit(f'freeze hash mismatch: {key}: {value} != {expected}')
+          parent = git('rev-parse', 'HEAD^')
+          if parent != freeze['frozen_head_commit']:
+              raise SystemExit(f'freeze parent mismatch: {parent} != {freeze["frozen_head_commit"]}')
+          changed = [x for x in git('diff','--name-only','HEAD^','HEAD').splitlines() if x]
+          if changed != ['results/candidate-v14/candidate-v14-freeze.json']:
+              raise SystemExit(f'freeze commit changed unexpected paths: {changed}')
           if (root/'results/candidate-v14/internal-holdout-results.json').exists():
               raise SystemExit('internal holdout result already exists; refusing second invocation')
-          print(json.dumps(checks, indent=2))
+          print(json.dumps(actual, indent=2))
           PY
       - name: Materialize deterministic frozen corpus
         env:
@@ -70,7 +80,7 @@ jobs:
           domain_pass=all(v['r1'] >= .65 and v['answerable_recall'] >= .80 and v['false_retrieval'] <= .18 for v in r['domain_metrics'].values())
           aggregate_pass=(r['mrr'] >= .85 and r['r1'] >= .80 and r['r3'] >= .90 and r['r5'] >= .93 and r['answerable_recall'] >= .92 and r['eligible_rank1_accuracy'] >= .82 and r['abstention_accuracy'] >= .88 and r['false_abstention'] <= .08 and r['false_retrieval'] <= .10)
           anti_collapse=(0.05 < r['retrieve_rate'] < .95 and 0.05 < r['abstain_rate'] < .95)
-          audit={'aggregate_gates': 'PASS' if aggregate_pass else 'FAIL','family_gates':'PASS' if family_pass else 'FAIL','domain_gates':'PASS' if domain_pass else 'FAIL','anti_collapse':'PASS' if anti_collapse else 'FAIL','all_qualification_gates':'PASS' if aggregate_pass and family_pass and domain_pass and anti_collapse else 'FAIL'}
+          audit={'aggregate_gates':'PASS' if aggregate_pass else 'FAIL','family_gates':'PASS' if family_pass else 'FAIL','domain_gates':'PASS' if domain_pass else 'FAIL','anti_collapse':'PASS' if anti_collapse else 'FAIL','all_qualification_gates':'PASS' if aggregate_pass and family_pass and domain_pass and anti_collapse else 'FAIL'}
           Path('results/candidate-v14/internal-holdout-gate-audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
           print(json.dumps(audit,indent=2))
           PY
