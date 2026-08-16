@@ -3,6 +3,32 @@
   "canonical_qa_records": 8593,
   "first_common_character_redacted": true,
   "formal_case_materialized": false,
+  "mapping_by_section": {
+    "dialogues": {
+      "missing_character_or_section": 94,
+      "suffix_missing": 2744
+    },
+    "events": {
+      "missing_character_or_section": 145,
+      "suffix_missing": 4356
+    },
+    "profile": {
+      "direct_exact": 345,
+      "missing_character_or_section": 12
+    },
+    "social_relationship": {
+      "missing_character_or_section": 26,
+      "suffix_missing": 780,
+      "unresolved_structure": 91
+    }
+  },
+  "mapping_hypothesis_counts": {
+    "missing_character_or_section": 277,
+    "nonprofile_suffix_missing": 7880,
+    "nonprofile_unresolved_structure": 91,
+    "profile_direct_exact": 345
+  },
+  "mapping_rule_under_test": "For non-profile records only: if exact Reference Memory key is absent in the QA character's section, strip exactly the first numeric namespace component from both reference and candidate memory keys and require a unique suffix match within that same character and section. No text/content matching is used.",
   "memory_character_count": 141,
   "memory_section_schemas": {
     "dialogues": {
@@ -127,260 +153,11 @@
       "type": "dict"
     }
   },
+  "namespace_prefix_pair_counts_for_unique_suffix_matches": {},
   "qa_character_count_resolved_against_memory": 31,
   "qa_path_depth_counts": {
     "4": 357,
     "6": 8236
-  },
-  "qa_path_examples_by_section": {
-    "dialogues": [
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        0,
-        "4_0_0#0",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        0,
-        "4_0_0#0",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        0,
-        "4_0_0#0",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        1,
-        "4_0_1#1",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        1,
-        "4_0_1#1",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        1,
-        "4_0_1#1",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        1,
-        "4_0_1#1",
-        3
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "dialogues",
-        1,
-        "4_0_1#1",
-        4
-      ]
-    ],
-    "events": [
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        0,
-        "4_0_0",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        0,
-        "4_0_0",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        0,
-        "4_0_0",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        0,
-        "4_0_0",
-        3
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        1,
-        "4_0_1",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        1,
-        "4_0_1",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        1,
-        "4_0_1",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "events",
-        1,
-        "4_0_1",
-        3
-      ]
-    ],
-    "profile": [
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        3
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        4
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        5
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        6
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "profile",
-        7
-      ]
-    ],
-    "social_relationship": [
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        0,
-        "4_0",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        1,
-        "4_1",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        1,
-        "4_1",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        1,
-        "4_1",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        2,
-        "4_2",
-        0
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        2,
-        "4_2",
-        1
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        2,
-        "4_2",
-        2
-      ],
-      [
-        0,
-        "Zhang Xiaohong",
-        "social_relationship",
-        3,
-        "4_3",
-        0
-      ]
-    ]
   },
   "qa_section_counts": {
     "dialogues": 2838,
@@ -388,95 +165,8 @@
     "profile": 357,
     "social_relationship": 897
   },
-  "reference_id_examples_by_section": {
-    "dialogues": [
-      "['4_0_0#0']",
-      "['4_0_0#0']",
-      "['4_0_0#0']",
-      "['4_0_1#1']",
-      "['4_0_1#1']",
-      "['4_0_1#1']",
-      "['4_0_1#1']",
-      "['4_0_1#1']",
-      "['4_1_1#2']",
-      "['4_1_1#2']",
-      "['4_1_1#2']",
-      "['4_1_1#2']",
-      "['4_2_0#3']",
-      "['4_2_0#3']",
-      "['4_2_0#3']",
-      "['4_2_1#4']",
-      "['4_2_1#4']",
-      "['4_2_1#4']",
-      "['4_2_1#4']",
-      "['4_2_1#4']"
-    ],
-    "events": [
-      "['4_0_0']",
-      "['4_0_0']",
-      "['4_0_0']",
-      "['4_0_0']",
-      "['4_0_1']",
-      "['4_0_1']",
-      "['4_0_1']",
-      "['4_0_1']",
-      "['4_0_1']",
-      "['4_2_0']",
-      "['4_2_1']",
-      "['4_2_1']",
-      "['4_2_1']",
-      "['4_2_2']",
-      "['4_2_2']",
-      "['4_2_2']",
-      "['4_2_2']",
-      "['4_2_2']",
-      "['4_3_0']",
-      "['4_3_0']"
-    ],
-    "profile": [
-      "Gender",
-      "Nickname",
-      "Title",
-      "Age",
-      "Occupation",
-      "Nationality",
-      "Physical Characteristics",
-      "Hobbies",
-      "Achievements",
-      "Ethnic Background",
-      "Education Background",
-      "Employer",
-      "Awards and Role Models",
-      "Gender",
-      "Nickname",
-      "Title",
-      "Age",
-      "Occupation",
-      "Nationality",
-      "Physical Characteristics"
-    ],
-    "social_relationship": [
-      "['4_0']",
-      "['4_1']",
-      "['4_1']",
-      "['4_1']",
-      "['4_2']",
-      "['4_2']",
-      "['4_2']",
-      "['4_3']",
-      "['4_3']",
-      "['4_3']",
-      "['4_4']",
-      "['4_4']",
-      "['4_5']",
-      "['4_6']",
-      "['4_7']",
-      "['4_8']",
-      "['4_8']",
-      "['1_1']",
-      "['1_1']",
-      "['1_1']"
-    ]
+  "reference_cardinality_counts": {
+    "1": 8593
   },
   "reference_id_shape_counts": {
     "Achievements": 26,
@@ -500,14 +190,10 @@
   },
   "repository": "Elvin-Yiming-Du/PerLTQA",
   "revision": "8d9e19868e239740ef701e603ec205cd581f221b",
-  "schema_version": "perltqa-mapping-probe-v1",
-  "simple_structural_resolution_counts": {
-    "missing_character_or_section": 277,
-    "needs_rule": 7971,
-    "profile_direct_key": 345
-  },
+  "schema_version": "perltqa-mapping-probe-v2",
   "source_sha256": {
     "memory": "fb3011d78babdc9c5323a8d303ca7d4cdb9e2e08992c9890f9ccb2362ff8be94",
     "qa": "ca9f29cbb23eb8f7dbfb792359d9ff90eec066e6d927c83f6c0b7d0bf7baff23"
-  }
+  },
+  "suffix_collision_multiplicity_counts": {}
 }
