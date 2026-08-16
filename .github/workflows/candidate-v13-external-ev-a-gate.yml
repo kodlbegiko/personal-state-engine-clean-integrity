@@ -1,0 +1,46 @@
+name: Candidate v13 external-validity EV-A integrity gate
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/ev-a-gate-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build EV-A integrity decision
+        id: gate
+        continue-on-error: true
+        run: python scripts/candidate_v13_external_ev_a_gate.py
+      - name: Persist gate evidence
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          test -f results/candidate-v13-external-validity/ev-a-gate.json
+          git add results/candidate-v13-external-validity/ev-a-gate.json
+          git commit -m "candidate-v13 external validity: record EV-A integrity gate" || true
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Enforce formal-freeze authorization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/ev-a-gate.json').read_text())
+          assert r['decision']=='EV_A_INTEGRITY_PASS_READY_FOR_FORMAL_FREEZE', r
+          assert r['formal_freeze_authorized'] is True
+          PY
