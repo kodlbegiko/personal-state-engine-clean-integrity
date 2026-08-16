@@ -1,0 +1,48 @@
+{
+  "evermembench-dynamic:dialogues-config": {
+    "features": "{'topic_id': Value('string'), 'date': Value('timestamp[us]'), 'dialogues': {'Group 1': List({'speaker': Value('string'), 'time': Value('string'), 'dialogue': Value('string'), 'message_index': Value('int64')}), 'Group 2': List({'speaker': Value('string'), 'time': Value('string'), 'dialogue': Value('string'), 'message_index': Value('int64')}), 'Group 3': List({'speaker': Value('string'), 'time': Value('string'), 'dialogue': Value('string'), 'message_index': Value('int64')})}}",
+    "record_keys": [
+      "date",
+      "dialogues",
+      "topic_id"
+    ],
+    "row_count": 1263,
+    "top_level_type": "Dataset"
+  },
+  "evermembench-dynamic:legacy-root-dialogues": {
+    "top_level_keys": [
+      "dialogues",
+      "generated_at",
+      "source_files",
+      "statistics",
+      "type"
+    ],
+    "top_level_type": "dict"
+  },
+  "evermembench-dynamic:legacy-root-qar": {
+    "first_list_container": "qa",
+    "first_list_length": 210,
+    "record_keys": [
+      "answer",
+      "question"
+    ],
+    "record_type": "dict",
+    "top_level_keys": [
+      "qa"
+    ],
+    "top_level_type": "dict"
+  },
+  "evermembench-dynamic:qars-config": {
+    "features": "{'topic_id': Value('string'), 'id': Value('string'), 'Q': Value('string'), 'A': Value('string'), 'R': List({'date': Value('string'), 'group': Value('string'), 'message_index': Value('string')}), 'options': {'A': Value('string'), 'B': Value('string'), 'C': Value('string'), 'D': Value('string')}}",
+    "record_keys": [
+      "A",
+      "Q",
+      "R",
+      "id",
+      "options",
+      "topic_id"
+    ],
+    "row_count": 2400,
+    "top_level_type": "Dataset"
+  }
+}

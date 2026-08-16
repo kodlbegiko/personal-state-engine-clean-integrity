@@ -1,0 +1,141 @@
+{
+  "candidate_v13_invoked": false,
+  "deduplicated_base_count": 93632,
+  "domain_capacity": {
+    "D1": {
+      "eligible": 3738,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 7.987179487179487,
+      "status": "PASS_PREFERRED"
+    },
+    "D2": {
+      "eligible": 568,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 1.2136752136752136,
+      "status": "PASS_REQUIRED_ONLY"
+    },
+    "D3": {
+      "eligible": 16700,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 35.68376068376068,
+      "status": "PASS_PREFERRED"
+    },
+    "D4": {
+      "eligible": 25825,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 55.18162393162393,
+      "status": "PASS_PREFERRED"
+    },
+    "D5": {
+      "eligible": 45445,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 97.10470085470085,
+      "status": "PASS_PREFERRED"
+    },
+    "D6": {
+      "eligible": 212,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 0.452991452991453,
+      "status": "FAIL_REQUIRED_CAPACITY"
+    },
+    "D7": {
+      "eligible": 243,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 0.5192307692307693,
+      "status": "FAIL_REQUIRED_CAPACITY"
+    },
+    "D8": {
+      "eligible": 901,
+      "minimum_safety_target": 702,
+      "preferred_safety_target": 936,
+      "required": 468,
+      "safety_ratio": 1.9252136752136753,
+      "status": "PASS_MINIMUM_SAFETY"
+    }
+  },
+  "domain_counts": {
+    "D1": 3738,
+    "D2": 568,
+    "D3": 16700,
+    "D4": 25825,
+    "D5": 45445,
+    "D6": 212,
+    "D7": 243,
+    "D8": 901
+  },
+  "family_counts": {
+    "N1": 754,
+    "N10": 93632,
+    "N11": 86690,
+    "N12": 2373,
+    "N2": 27824,
+    "N3": 93632,
+    "N4": 60521,
+    "N5": 39913,
+    "N6": 1259,
+    "N7": 1048,
+    "N8": 30979,
+    "N9": 92622
+  },
+  "family_shortfalls": [],
+  "formal_case_materialized": false,
+  "hard_domain_shortfalls": [
+    "D6",
+    "D7"
+  ],
+  "normalized_duplicates_removed": 39737,
+  "pre_dedup_base_count": 133369,
+  "safety_margin_warnings": [
+    "D2"
+  ],
+  "schema_version": "candidate-v13-external-validity-v2-source-capacity-audit-v1",
+  "source_counts": {
+    "locomo": 1518,
+    "longmemeval-cleaned": 500,
+    "personamem-v2": 4949,
+    "sgd-carryover": 86665
+  },
+  "source_domain_counts": {
+    "locomo:D1": 325,
+    "locomo:D2": 138,
+    "locomo:D3": 34,
+    "locomo:D4": 4,
+    "locomo:D5": 120,
+    "locomo:D6": 24,
+    "locomo:D7": 111,
+    "locomo:D8": 762,
+    "longmemeval-cleaned:D1": 11,
+    "longmemeval-cleaned:D2": 25,
+    "longmemeval-cleaned:D3": 280,
+    "longmemeval-cleaned:D4": 61,
+    "longmemeval-cleaned:D5": 55,
+    "longmemeval-cleaned:D6": 32,
+    "longmemeval-cleaned:D7": 28,
+    "longmemeval-cleaned:D8": 8,
+    "personamem-v2:D1": 3402,
+    "personamem-v2:D2": 405,
+    "personamem-v2:D4": 14,
+    "personamem-v2:D5": 737,
+    "personamem-v2:D6": 156,
+    "personamem-v2:D7": 104,
+    "personamem-v2:D8": 131,
+    "sgd-carryover:D3": 16386,
+    "sgd-carryover:D4": 25746,
+    "sgd-carryover:D5": 44533
+  },
+  "status": "FAIL"
+}
