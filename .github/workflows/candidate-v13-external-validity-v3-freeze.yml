@@ -1,0 +1,51 @@
+name: Candidate v13 External Validity v3 — Freeze
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v3
+    paths:
+      - 'results/candidate-v13-external-validity-v3/infrastructure-freeze-manifest-v3.json'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-frozen-state:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify freeze manifest, fresh ledger, and authorization binding
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          out = Path('results/candidate-v13-external-validity-v3')
+          doc = Path('docs/research/candidate-v13-external-validity-v3')
+          freeze_path = out / 'infrastructure-freeze-manifest-v3.json'
+          ledger_path = out / 'formal-ledger.json'
+          auth_path = doc / 'formal-authorization-lock-v3.json'
+          freeze = json.loads(freeze_path.read_text())
+          ledger = json.loads(ledger_path.read_text())
+          auth = json.loads(auth_path.read_text())
+          assert freeze['status'] == 'FROZEN'
+          assert freeze['candidate_v13_imported'] is False
+          assert freeze['candidate_v13_invoked'] is False
+          assert auth['authorized'] is True
+          assert auth['reruns_permitted'] is False
+          assert auth['freeze_manifest_sha256'] == hashlib.sha256(freeze_path.read_bytes()).hexdigest()
+          assert ledger['ev_a_v3'] == 0
+          assert ledger['ev_b_v3'] == 0
+          assert ledger['ev_c_v3'] == 0
+          assert ledger['formal_reruns'] == 0
+          assert ledger['illegal_formal_reruns'] is False
+          assert ledger['candidate_v13_external_invocation_occurred'] is False
+          print('FROZEN_STATE_VERIFICATION_PASS')
+          PY

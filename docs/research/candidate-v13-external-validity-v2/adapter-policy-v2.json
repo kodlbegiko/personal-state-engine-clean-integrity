@@ -1,0 +1,84 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-adapter-policy-v2",
+  "status": "INFRASTRUCTURE_DEVELOPMENT_CANDIDATE_BLIND",
+  "candidate_v13_external_performance_observed": false,
+  "candidate_v13_invoked": false,
+  "formal_case_materialized": false,
+  "principles": {
+    "deterministic": true,
+    "candidate_blind": true,
+    "provenance_preserving": true,
+    "loss_detectable": true,
+    "schema_versioned": true,
+    "gold_may_depend_on_candidate_output": false
+  },
+  "required_transformed_case_provenance": [
+    "source_dataset",
+    "source_revision",
+    "source_record_id",
+    "source_message_ids",
+    "adapter_version",
+    "domain",
+    "gold_ids",
+    "transformation_hash"
+  ],
+  "baseline_sources": {
+    "personamem-v2": {
+      "query": "verbatim user_query",
+      "gold": "deterministic ID for verbatim related_conversation_snippet",
+      "domain_input": "source-native topic_preference + topic_query only",
+      "forbidden": ["query rewrite", "LLM paraphrase", "answer-text fuzzy gold", "Candidate-v13-dependent repair"]
+    },
+    "longmemeval-cleaned": {
+      "query": "verbatim question",
+      "gold": "verbatim answer_session_ids; every ID must exist in haystack_session_ids",
+      "domain_input": "verbatim question + exact gold session text under the frozen strict vocabulary",
+      "forbidden": ["changing answer_session_ids", "LLM gold repair", "Candidate-v13-dependent selection"]
+    },
+    "locomo": {
+      "query": "verbatim source QA question",
+      "gold": "every nonempty source evidence dia_id must exact-resolve within the same sample",
+      "domain_input": "verbatim question + exact gold evidence text under the frozen strict vocabulary",
+      "forbidden": ["answer-text evidence matching", "cross-sample unprefixed dia_id", "Candidate-v13-dependent repair"]
+    },
+    "sgd-carryover": {
+      "query": "verbatim current USER turn utterance",
+      "gold": "nearest earlier USER turn in the same dialogue/service whose source-native span/state exact-supports the carried slot/value",
+      "domain": "source-native service-prefix map",
+      "forbidden": ["SYSTEM turn as gold", "semantic fuzzy gold", "metadata injection into runtime text", "Candidate-v13-dependent selection"]
+    }
+  },
+  "supplemental_sources": {
+    "evermembench-dynamic": {
+      "query": "verbatim Q from official qars config",
+      "answer": "verbatim A retained evaluator-only",
+      "memories": "verbatim dialogue field from official dialogues config; message identity = topic_id/date/group/message_index",
+      "gold": "every R entry exact-resolves topic_id/date/group/message_index to a unique source dialogue message",
+      "domain": "topic 1 -> D6; topics 2,3,4,5 -> D7",
+      "invalid_if": ["R missing", "R malformed", "reference unresolved", "reference ambiguous", "verified dialogue field absent"],
+      "forbidden": ["answer fuzzy matching", "LLM ground-truth rewrite", "silent empty parse", "Candidate-v13-dependent selection"]
+    },
+    "rhelm": {
+      "role": "preregistered reserve",
+      "query": "verbatim question",
+      "answer": "verbatim answer retained evaluator-only",
+      "gold": "every supporting_evidence entry maps mechanically to exactly one pinned source repository path/turn; payload is fetched only at materialization",
+      "domain": "fixed candidate-blind D6/D7 vocabulary over query + answer + supporting_evidence; ties/nonmatches excluded",
+      "invalid_if": ["supporting_evidence missing", "source reference unresolved", "source reference ambiguous"],
+      "forbidden": ["candidate-performance-based activation", "LLM gold rewrite", "fuzzy evidence repair", "Candidate-v13-dependent selection"]
+    }
+  },
+  "deduplication": {
+    "exact_hash": "required",
+    "normalized_content": "required",
+    "cross_source": "required",
+    "semantic_near_duplicate": "audit when computationally feasible; never use Candidate output"
+  },
+  "formal_language_rule": "Runtime natural-language wording remains independently sourced; only preregistered deterministic composition/withholding/distractor transforms are allowed.",
+  "research_integrity": {
+    "performance_driven_relabeling": "FORBIDDEN",
+    "gold_change_after_performance_observation": "FORBIDDEN",
+    "adapter_change_after_formal_performance": "FORBIDDEN",
+    "source_change_after_formal_performance": "FORBIDDEN"
+  }
+}

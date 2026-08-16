@@ -1,0 +1,302 @@
+{
+  "allocation_algorithm": {
+    "base_order": "SHA256(stage_seed || source || domain || base_id)",
+    "constraint_solver": "deterministic unit-capacity max-flow: source-domain cell -> base case -> eligible primary family",
+    "family_assignment": "exact family quota; one primary N-family per selected base",
+    "gold_cardinality_feasibility": "all selected cases must pass v4 runtime-memory policy and 100% production-faithful materialization before freeze",
+    "lineage": "fresh v4 seeds and fresh deterministic selections; v2 individual assignments are not reused",
+    "persist_pre_freeze": "aggregate counts plus SHA256 digests only; no individual formal IDs or natural-language payload",
+    "stage_exclusion": "selected base IDs and normalized queries are excluded from all later stages",
+    "tie_breaking": "lexical node/edge insertion after seeded base ordering"
+  },
+  "answerability_targets": {
+    "ev_a_v4": {
+      "answerable": 240,
+      "no_evidence": 144
+    },
+    "ev_b_v4": {
+      "answerable": 864,
+      "no_evidence": 576
+    },
+    "ev_c_v4": {
+      "answerable": 1152,
+      "no_evidence": 768
+    }
+  },
+  "candidate_v13_external_performance_observed": false,
+  "domain_targets": {
+    "ev_a_v4": {
+      "D1": 48,
+      "D2": 48,
+      "D3": 48,
+      "D4": 48,
+      "D5": 48,
+      "D6": 48,
+      "D7": 48,
+      "D8": 48
+    },
+    "ev_b_v4": {
+      "D1": 180,
+      "D2": 180,
+      "D3": 180,
+      "D4": 180,
+      "D5": 180,
+      "D6": 180,
+      "D7": 180,
+      "D8": 180
+    },
+    "ev_c_v4": {
+      "D1": 240,
+      "D2": 240,
+      "D3": 240,
+      "D4": 240,
+      "D5": 240,
+      "D6": 240,
+      "D7": 240,
+      "D8": 240
+    }
+  },
+  "family_targets": {
+    "ev_a_v4": {
+      "N1": 32,
+      "N10": 32,
+      "N11": 32,
+      "N12": 32,
+      "N2": 32,
+      "N3": 32,
+      "N4": 32,
+      "N5": 32,
+      "N6": 32,
+      "N7": 32,
+      "N8": 32,
+      "N9": 32
+    },
+    "ev_b_v4": {
+      "N1": 120,
+      "N10": 120,
+      "N11": 120,
+      "N12": 120,
+      "N2": 120,
+      "N3": 120,
+      "N4": 120,
+      "N5": 120,
+      "N6": 120,
+      "N7": 120,
+      "N8": 120,
+      "N9": 120
+    },
+    "ev_c_v4": {
+      "N1": 160,
+      "N10": 160,
+      "N11": 160,
+      "N12": 160,
+      "N2": 160,
+      "N3": 160,
+      "N4": 160,
+      "N5": 160,
+      "N6": 160,
+      "N7": 160,
+      "N8": 160,
+      "N9": 160
+    }
+  },
+  "integrity": {
+    "base_item_reuse_across_stages": false,
+    "candidate_performance_used_for_allocation": false,
+    "exact_query_reuse_across_stages": false,
+    "maximum_source_share_per_stage": 0.45,
+    "minimum_source_families_per_stage": 3,
+    "normalized_query_reuse_across_stages": false,
+    "post_performance_reallocation": "FORBIDDEN"
+  },
+  "no_evidence_assignment": {
+    "N10": "Every selected case whose primary family is N10 is transformed to no-evidence by withholding all source-native gold memories from Candidate input.",
+    "candidate_sees_gold_metadata": false,
+    "query_text_changed": false,
+    "remaining_quota": "Additional no-evidence cases are selected from non-N10 cases by SHA256(stage_seed || base_id || no-evidence) order until the exact stage target is reached."
+  },
+  "performance_driven_protocol_changes": 0,
+  "reserve_source": {
+    "rhelm": {
+      "activation_rule": "Only before formal freeze and only for a documented primary-source download/schema/license/capacity/deterministic-parse failure; never for Candidate-v13 performance. Any activation requires a new candidate-blind allocation feasibility run and preregistration must record the resulting fixed matrix before Candidate-v13 external output.",
+      "active": false
+    }
+  },
+  "schema_version": "candidate-v13-external-validity-v4-allocation-policy-v1",
+  "source_domain_targets": {
+    "ev_a_v4": {
+      "D1": {
+        "locomo": 10,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 37
+      },
+      "D2": {
+        "locomo": 6,
+        "longmemeval-cleaned": 2,
+        "personamem-v2": 40
+      },
+      "D3": {
+        "locomo": 1,
+        "longmemeval-cleaned": 6,
+        "sgd-carryover": 41
+      },
+      "D4": {
+        "longmemeval-cleaned": 6,
+        "personamem-v2": 2,
+        "sgd-carryover": 40
+      },
+      "D5": {
+        "locomo": 3,
+        "longmemeval-cleaned": 2,
+        "personamem-v2": 6,
+        "sgd-carryover": 37
+      },
+      "D6": {
+        "evermembench-dynamic": 28,
+        "locomo": 2,
+        "longmemeval-cleaned": 3,
+        "personamem-v2": 15
+      },
+      "D7": {
+        "evermembench-dynamic": 26,
+        "locomo": 11,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 10
+      },
+      "D8": {
+        "locomo": 41,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 6
+      }
+    },
+    "ev_b_v4": {
+      "D1": {
+        "locomo": 39,
+        "longmemeval-cleaned": 4,
+        "personamem-v2": 137
+      },
+      "D2": {
+        "locomo": 25,
+        "longmemeval-cleaned": 9,
+        "personamem-v2": 146
+      },
+      "D3": {
+        "locomo": 3,
+        "longmemeval-cleaned": 23,
+        "sgd-carryover": 154
+      },
+      "D4": {
+        "locomo": 2,
+        "longmemeval-cleaned": 23,
+        "personamem-v2": 5,
+        "sgd-carryover": 150
+      },
+      "D5": {
+        "locomo": 11,
+        "longmemeval-cleaned": 12,
+        "personamem-v2": 23,
+        "sgd-carryover": 134
+      },
+      "D6": {
+        "evermembench-dynamic": 100,
+        "locomo": 10,
+        "longmemeval-cleaned": 13,
+        "personamem-v2": 57
+      },
+      "D7": {
+        "evermembench-dynamic": 96,
+        "locomo": 38,
+        "longmemeval-cleaned": 8,
+        "personamem-v2": 38
+      },
+      "D8": {
+        "locomo": 154,
+        "longmemeval-cleaned": 3,
+        "personamem-v2": 23
+      }
+    },
+    "ev_c_v4": {
+      "D1": {
+        "locomo": 51,
+        "longmemeval-cleaned": 6,
+        "personamem-v2": 183
+      },
+      "D2": {
+        "locomo": 32,
+        "longmemeval-cleaned": 14,
+        "personamem-v2": 194
+      },
+      "D3": {
+        "locomo": 4,
+        "longmemeval-cleaned": 31,
+        "sgd-carryover": 205
+      },
+      "D4": {
+        "locomo": 2,
+        "longmemeval-cleaned": 31,
+        "personamem-v2": 7,
+        "sgd-carryover": 200
+      },
+      "D5": {
+        "locomo": 16,
+        "longmemeval-cleaned": 14,
+        "personamem-v2": 31,
+        "sgd-carryover": 179
+      },
+      "D6": {
+        "evermembench-dynamic": 134,
+        "locomo": 12,
+        "longmemeval-cleaned": 16,
+        "personamem-v2": 78
+      },
+      "D7": {
+        "evermembench-dynamic": 128,
+        "locomo": 51,
+        "longmemeval-cleaned": 9,
+        "personamem-v2": 52
+      },
+      "D8": {
+        "locomo": 205,
+        "longmemeval-cleaned": 4,
+        "personamem-v2": 31
+      }
+    }
+  },
+  "source_totals": {
+    "ev_a_v4": {
+      "evermembench-dynamic": 54,
+      "locomo": 74,
+      "longmemeval-cleaned": 22,
+      "personamem-v2": 116,
+      "sgd-carryover": 118,
+      "total": 384
+    },
+    "ev_b_v4": {
+      "evermembench-dynamic": 196,
+      "locomo": 282,
+      "longmemeval-cleaned": 95,
+      "personamem-v2": 429,
+      "sgd-carryover": 438,
+      "total": 1440
+    },
+    "ev_c_v4": {
+      "evermembench-dynamic": 262,
+      "locomo": 373,
+      "longmemeval-cleaned": 125,
+      "personamem-v2": 576,
+      "sgd-carryover": 584,
+      "total": 1920
+    }
+  },
+  "stage_order": [
+    "ev_a_v4",
+    "ev_b_v4",
+    "ev_c_v4"
+  ],
+  "stage_seeds": {
+    "ev_a_v4": 84101,
+    "ev_b_v4": 84102,
+    "ev_c_v4": 84103
+  },
+  "status": "CANDIDATE_BLIND_PRE_FREEZE"
+}

@@ -1,0 +1,200 @@
+name: Candidate v13 External Validity v4 — Event-Independent One-Shot Mission
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v4
+    paths:
+      - '.github/workflows/candidate-v13-external-validity-v4.yml'
+      - 'scripts/bootstrap_candidate_v13_external_validity_v4.py'
+      - 'scripts/candidate_v13_external_validity_v4_fix_names.py'
+      - 'scripts/candidate_v13_external_validity_v4_launch_path_qa.py'
+      - 'scripts/candidate_v13_external_validity_v4_finalize_qualification.py'
+      - 'scripts/candidate_v13_external_validity_v4_lock_preregistration.py'
+      - 'scripts/candidate_v13_external_validity_v4_final_integrity_audit.py'
+      - 'docs/research/candidate-v13-external-validity-v4/MISSION_V4.md'
+      - 'docs/research/candidate-v13-external-validity-v4/ORCHESTRATION_DESIGN_V4.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-validity-v4
+  cancel-in-progress: false
+
+jobs:
+  execute-v4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout v4 lineage
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install qualification dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install datasets==4.0.0 huggingface_hub==0.34.4
+
+      - name: Configure evidence committer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Bootstrap fresh v4 lineage
+        run: python scripts/bootstrap_candidate_v13_external_validity_v4.py
+
+      - name: Normalize v4 artifact filenames
+        run: python scripts/candidate_v13_external_validity_v4_fix_names.py
+
+      - name: Persist generated v4 infrastructure before qualification
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add scripts/candidate_v13_external_validity_v4*.py \
+                  docs/research/candidate-v13-external-validity-v4/ \
+                  results/candidate-v13-external-validity-v4/ \
+                  .github/workflows/candidate-v13-external-validity-v4.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v13 external validity v4: initialize fresh event-independent lineage [skip ci]"
+            git push origin HEAD:research/candidate-v13-external-validity-infra-v4
+          fi
+
+      - name: Run v4 candidate-blind prequalification
+        run: python scripts/candidate_v13_external_validity_v4_prequalification.py
+
+      - name: Run v4 candidate-blind qualification
+        run: python scripts/candidate_v13_external_validity_v4_qualification_runner.py
+
+      - name: Run v4 formal-runner qualification
+        run: python scripts/candidate_v13_external_validity_v4_finalize_qualification.py
+
+      - name: Run LAUNCH_PATH_QA
+        run: python scripts/candidate_v13_external_validity_v4_launch_path_qa.py
+
+      - name: Complete preregistration lock
+        run: python scripts/candidate_v13_external_validity_v4_lock_preregistration.py
+
+      - name: Persist pre-freeze qualification evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add scripts/candidate_v13_external_validity_v4*.py \
+                  docs/research/candidate-v13-external-validity-v4/ \
+                  results/candidate-v13-external-validity-v4/ \
+                  .github/workflows/candidate-v13-external-validity-v4.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v13 external validity v4: persist candidate-blind qualification and preregistration [skip ci]"
+            git push origin HEAD:research/candidate-v13-external-validity-infra-v4
+          fi
+
+      - name: Enforce pre-freeze gates
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = Path('results/candidate-v13-external-validity-v4')
+          doc = Path('docs/research/candidate-v13-external-validity-v4')
+          infra = json.loads((out/'infrastructure-qualification.json').read_text())
+          launch = json.loads((out/'launch-path-qa.json').read_text())
+          prereg = json.loads((doc/'preregistration-lock-v4.json').read_text())
+          assert infra['status'] == 'PASS', infra
+          assert launch['status'] == 'PASS', launch
+          assert prereg['status'] == 'LOCKED_PRE_FREEZE', prereg
+          assert infra.get('candidate_v13_imported') is False
+          assert infra.get('candidate_v13_invoked') is False
+          PY
+
+      - name: Freeze and authorize
+        run: python scripts/candidate_v13_external_validity_v4_freeze.py
+
+      - name: Persist immutable v4 freeze and authorization
+        id: freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add results/candidate-v13-external-validity-v4/infrastructure-freeze-manifest-v4.json \
+                  results/candidate-v13-external-validity-v4/formal-ledger-v4.json \
+                  docs/research/candidate-v13-external-validity-v4/formal-authorization-lock-v4.json
+          git commit -m "candidate-v13 external validity v4: freeze infrastructure and authorize one-shot formal sequence [skip ci]"
+          git push origin HEAD:research/candidate-v13-external-validity-infra-v4
+          echo "freeze_commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Verify immutable freeze and zero-use ledger
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, sys
+          from pathlib import Path
+          root = Path('.')
+          out = root/'results/candidate-v13-external-validity-v4'
+          doc = root/'docs/research/candidate-v13-external-validity-v4'
+          candidate = root/'src/personal_state_engine/candidate_v13.py'
+          expected = 'b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838'
+          sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          freeze = json.loads((out/'infrastructure-freeze-manifest-v4.json').read_text())
+          auth = json.loads((doc/'formal-authorization-lock-v4.json').read_text())
+          ledger = json.loads((out/'formal-ledger-v4.json').read_text())
+          assert sha(candidate) == expected
+          assert freeze['status'] == 'FROZEN'
+          assert auth['authorized'] is True
+          assert auth['freeze_manifest_sha256'] == sha(out/'infrastructure-freeze-manifest-v4.json')
+          assert [ledger['ev_a_v4'], ledger['ev_b_v4'], ledger['ev_c_v4']] == [0, 0, 0]
+          assert ledger['formal_reruns'] == 0 and ledger['illegal_formal_reruns'] is False
+          assert ledger['candidate_v13_external_invocation_occurred'] is False
+          assert 'personal_state_engine.candidate_v13' not in sys.modules
+          PY
+
+      - name: Run one-shot formal sequence
+        id: formal
+        shell: bash
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: |
+          set +e
+          python scripts/candidate_v13_external_validity_v4_formal_sequence.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Finalize independent integrity audit
+        shell: bash
+        run: |
+          python scripts/candidate_v13_external_validity_v4_final_integrity_audit.py \
+            --formal-exit-code "${{ steps.formal.outputs.exit_code }}" \
+            --freeze-commit "${{ steps.freeze.outputs.freeze_commit }}"
+
+      - name: Persist final v4 terminal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add results/candidate-v13-external-validity-v4/ docs/research/candidate-v13-external-validity-v4/
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v13 external validity v4: final independent integrity audit and terminal report [skip ci]"
+            git push origin HEAD:research/candidate-v13-external-validity-infra-v4
+          fi
+
+      - name: Enforce allowed terminal state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('results/candidate-v13-external-validity-v4/terminal-summary.json')
+          obj = json.loads(p.read_text())
+          allowed = {
+            'EXTERNAL_VALIDITY_V4_PASS',
+            'EXTERNAL_VALIDITY_V4_CANDIDATE_FAIL',
+            'EXTERNAL_VALIDITY_V4_INFRASTRUCTURE_BLOCKED',
+            'EXTERNAL_VALIDITY_V4_INVALID',
+          }
+          assert obj['terminal_state'] in allowed, obj
+          print(obj['terminal_state'])
+          PY

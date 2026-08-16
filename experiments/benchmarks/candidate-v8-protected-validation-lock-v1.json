@@ -1,0 +1,15 @@
+{
+  "schema_version": "candidate-v8-protected-lock-v1",
+  "status": "FROZEN_BEFORE_FORMAL_EXECUTION",
+  "development_freeze_commit": "740cd90da88a3002c7e8a9c57e9b6b5aa129099a",
+  "dataset_seed": 2026081511,
+  "bootstrap_seed": 2026081501,
+  "dataset_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+  "source_sha256": "09d58cfb5c4b8ecfe8fcdb8cbc96b5fc85363ea155d8901ab54b42b92cd1322a",
+  "generator_sha256": "45e962068ddd3fdf94ded2e8666a92d4cbe1303772b3df7af8f60bf8af7c6c47",
+  "evaluator_sha256": "fae90a880803c1f7240a13aa51705ceb0d429e7c7fa1ad9a773c15ecdc83c9da",
+  "formal_execution_count": 0,
+  "rerun": false,
+  "payload_manually_inspected": false,
+  "created_at": "2026-08-15T10:37:29.659164+00:00"
+}

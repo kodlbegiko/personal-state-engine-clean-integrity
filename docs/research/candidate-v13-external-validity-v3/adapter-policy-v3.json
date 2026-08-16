@@ -1,0 +1,7 @@
+{
+  "individual_formal_assignment_persistence": "FORBIDDEN",
+  "metadata_firewall": "Candidate runtime projection contains query+memories only",
+  "schema_version": "candidate-v13-external-validity-v3-adapter-policy-v1",
+  "source_native_gold": true,
+  "status": "CANDIDATE_BLIND_PRE_FREEZE"
+}

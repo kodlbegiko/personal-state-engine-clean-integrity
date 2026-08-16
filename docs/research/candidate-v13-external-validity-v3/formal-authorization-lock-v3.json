@@ -1,0 +1,12 @@
+{
+  "authorized": true,
+  "candidate_v13_invoked": false,
+  "freeze_manifest_sha256": "5763a588f30638951e65c1652a30fe5068446d1b0406e2b6ded23935a9d10185",
+  "reruns_permitted": false,
+  "schema_version": "candidate-v13-external-validity-v3-formal-authorization-lock-v2",
+  "stage_order": [
+    "ev_a_v3",
+    "ev_b_v3",
+    "ev_c_v3"
+  ]
+}

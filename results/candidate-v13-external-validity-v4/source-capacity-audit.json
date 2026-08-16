@@ -1,0 +1,55 @@
+{
+  "D2_safety_warning_retained": true,
+  "domain_capacity": {
+    "D1": {
+      "eligible": 3738,
+      "required": 468,
+      "safety_ratio": 7.987179487179487,
+      "status": "PASS"
+    },
+    "D2": {
+      "eligible": 568,
+      "required": 468,
+      "safety_ratio": 1.2136752136752136,
+      "status": "PASS"
+    },
+    "D3": {
+      "eligible": 16700,
+      "required": 468,
+      "safety_ratio": 35.68376068376068,
+      "status": "PASS"
+    },
+    "D4": {
+      "eligible": 25825,
+      "required": 468,
+      "safety_ratio": 55.18162393162393,
+      "status": "PASS"
+    },
+    "D5": {
+      "eligible": 45445,
+      "required": 468,
+      "safety_ratio": 97.10470085470085,
+      "status": "PASS"
+    },
+    "D6": {
+      "eligible": 723,
+      "required": 468,
+      "safety_ratio": 1.544871794871795,
+      "status": "PASS"
+    },
+    "D7": {
+      "eligible": 2192,
+      "required": 468,
+      "safety_ratio": 4.683760683760684,
+      "status": "PASS"
+    },
+    "D8": {
+      "eligible": 901,
+      "required": 468,
+      "safety_ratio": 1.9252136752136753,
+      "status": "PASS"
+    }
+  },
+  "schema_version": "candidate-v13-external-validity-v4-source-capacity-audit-v1",
+  "status": "PASS"
+}

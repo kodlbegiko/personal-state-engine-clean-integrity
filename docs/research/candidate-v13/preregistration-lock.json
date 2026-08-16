@@ -1,0 +1,22 @@
+{
+  "candidate": "Candidate-v13",
+  "status": "PREREGISTRATION_LOCKED",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v13-fresh-lineage",
+  "historical_parent_anchor": "16dfcbfeb47cf8ad9bf78c639150d17404f4a685",
+  "preregistration_path": "docs/research/candidate-v13/preregistration.md",
+  "preregistration_commit_sha": "143a35cbacc86eac688f90189c857deb6964f3fe",
+  "preregistration_git_blob_sha": "f0f81572874a555101a69f34240e13f41151b7ee",
+  "preregistration_sha256": "b0ecc0f16a59c83955334c05ce356a11bea62d72035a119622cf4494defa9870",
+  "preregistration_commit_utc": "2026-08-15T14:28:59Z",
+  "development_materialized_before_lock": false,
+  "protected_materialized_before_lock": false,
+  "confirmatory_materialized_before_lock": false,
+  "final_materialized_before_lock": false,
+  "formal_execution_ledger": {
+    "protected": 0,
+    "confirmatory": 0,
+    "final": 0
+  },
+  "development_materialization_authorized_after_this_lock_commit": true
+}

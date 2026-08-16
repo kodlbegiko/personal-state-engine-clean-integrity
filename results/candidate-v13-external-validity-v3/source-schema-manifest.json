@@ -1,0 +1,14 @@
+{
+  "candidate_v13_invoked": false,
+  "qualified_base_count": 96092,
+  "schema_version": "candidate-v13-external-validity-v3-source-schema-manifest-v1",
+  "source_counts": {
+    "evermembench-dynamic": 2400,
+    "locomo": 1518,
+    "longmemeval-cleaned": 500,
+    "personamem-v2": 4949,
+    "rhelm": 60,
+    "sgd-carryover": 86665
+  },
+  "status": "PASS"
+}

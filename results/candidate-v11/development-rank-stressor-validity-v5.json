@@ -1,0 +1,14 @@
+{
+  "answerable_count": 360,
+  "benchmark": "experiments/benchmarks/candidate-v11-development-v5.json",
+  "candidate_v2_competitor_rank1_count": 270,
+  "candidate_v2_competitor_rank1_rate": 0.75,
+  "eligibility_pass": true,
+  "eligible_competitor_count": 360,
+  "eligible_competitor_rate": 1.0,
+  "invalid_examples": [],
+  "minimum_v2_competitor_rank1_rate": 0.2,
+  "priority_pressure_pass": true,
+  "schema_version": "candidate-v11-rank-stressor-validity-v1",
+  "verdict": "PASS"
+}

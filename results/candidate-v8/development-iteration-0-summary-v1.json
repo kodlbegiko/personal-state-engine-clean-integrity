@@ -1,0 +1,15 @@
+{
+  "schema_version":"candidate-v8-development-iteration-summary-v1",
+  "iteration":0,
+  "status":"FAILED_RETAINED",
+  "source_sha256":"84d91060ecbd1f976af28c98891da41d8e52d3e9a9653dd41310dad2784489f2",
+  "reconstruction_patch":"results/candidate-v8/development-snapshots/iter0-to-iter1.patch",
+  "surface":"candidate-v8-development-v1",
+  "case_count":240,
+  "answerable_count":140,
+  "no_evidence_count":100,
+  "metrics":{"MRR":0.9071428571428571,"answerable_recall":0.9071428571428571,"false_abstention":0.09285714285714286,"false_retrieval":0.05},
+  "observed_failures":{"false_abstention_count":13,"false_retrieval_count":5,"classes":["RELATION_INFLECTION_STUDIES_GAP","FIRST_PERSON_I_MISBOUND_AS_ENTITY_ANCHOR","SAME_SUBJECT_DIFFERENT_OBJECT_ATTRIBUTE_COLLISION"]},
+  "changed_rationale_for_next_iteration":"Generalize inflection handling, represent first-person binding explicitly, and add object anchors for attribute/state requirements. No historical confirmatory case-specific branch or answer lookup was added.",
+  "historical_confirmatory_used_as_pass_gate":false
+}

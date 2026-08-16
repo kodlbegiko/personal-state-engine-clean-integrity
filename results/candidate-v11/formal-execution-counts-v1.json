@@ -1,0 +1,7 @@
+{
+  "confirmatory": 0,
+  "final": 0,
+  "protected": 1,
+  "schema_version": "candidate-v11-formal-execution-counts-v1",
+  "terminal_state": "CANDIDATE_V11_PROTECTED_FAIL"
+}

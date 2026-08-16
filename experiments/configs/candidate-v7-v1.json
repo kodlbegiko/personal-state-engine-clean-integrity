@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate-v7-config-v1",
+  "architecture": "HYBRID_TYPED_PLUS_GENERIC_LEXICAL_ENTAILMENT",
+  "ranking_backend": "candidate_v2_frozen",
+  "top_k": 5,
+  "decision": {
+    "minimum_query_anchor_coverage": 0.20,
+    "minimum_relation_cue_coverage": 1,
+    "minimum_specific_novel_tokens": 1,
+    "prefer_direct_assertions": true,
+    "current_query_reject_stale_only": true,
+    "hard_reject_nonassertion": true,
+    "hard_reject_explicit_absence": true,
+    "hard_reject_unresolved_inference": true,
+    "hard_reject_explicit_negative_or_contradiction": true,
+    "require_query_entity_anchor_when_present": true
+  },
+  "semantic_cue_families": [
+    "preference",
+    "location",
+    "work_role",
+    "schedule_time",
+    "contact",
+    "possession",
+    "activity_hobby",
+    "travel",
+    "food_drink",
+    "relationship",
+    "quantity_numeric",
+    "status_state",
+    "generic_direct_fact"
+  ],
+  "seed": 20260814,
+  "monetary_cost_usd": 0,
+  "protected_or_final_case_specific_rules": false,
+  "case_id_input": false,
+  "ground_truth_input": false
+}

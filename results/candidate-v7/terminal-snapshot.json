@@ -1,0 +1,164 @@
+{
+  "schema_version": "candidate-v7-terminal-snapshot-v1",
+  "terminal_state": "CANDIDATE_V7_CONFIRMATORY_FAIL",
+  "mission_stopped": true,
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v7-fresh-evidence",
+  "repository_head_before_terminal_snapshot_commit": "d6b6ef97fa15e284584366d08513fb4f86d29d72",
+  "gate_f_historical_result_preserved": true,
+  "gate_f_historical": {
+    "integrity": "PASS",
+    "selection": "FAIL",
+    "formal": "NOT COMPLETE",
+    "terminal_state": "GATE_F_SELECTION_FAIL",
+    "formal_execution_count": 1,
+    "old_99_case_surface_reused_for_candidate_v7": false
+  },
+  "retired_99_case_contamination": {
+    "intersection_count": 0,
+    "semantic_payload_reopened": false,
+    "status": "PASS"
+  },
+  "candidate_v7": {
+    "architecture": "HYBRID_TYPED_PLUS_GENERIC_LEXICAL_ENTAILMENT",
+    "architecture_rationale": "Preserve Candidate-v6-style high-precision hard rejection while adding a deterministic generic natural-language compatibility path; keep Candidate-v2 retrieval ranking unchanged when evidence is supported.",
+    "frozen": true,
+    "freeze_boundary_commit": "090e6201e5c5a6701d003cd51b048edc93133b9d",
+    "source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+    "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+    "post_freeze_modified": false
+  },
+  "development": {
+    "benchmark_sha256": "600866bd1ee8cdbd3c66da46c8ba0787c9d0f6ffdfad47326ada439a5df2b683",
+    "cases": 160,
+    "answerable": 100,
+    "no_evidence": 60,
+    "stress_cases": 40,
+    "tests": "210/210 PASS",
+    "candidate_v7_metrics": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "abstention_accuracy": 1.0,
+      "false_retrieval": 0.0
+    },
+    "guardrails": "ALL PASS",
+    "negative_iterations_retained": [0, 2, 3, 4],
+    "final_iteration": 5
+  },
+  "protected_validation": {
+    "workflow_run_id": 31806050984,
+    "formal_execution_count": 1,
+    "rerun": false,
+    "post_result_editing": false,
+    "dataset_sha256": "a292ff7b64c08d62ede076bfe61a739b7ba9ca0dea263aaccd58168d06bc6017",
+    "cases": 120,
+    "answerable": 70,
+    "no_evidence": 50,
+    "candidate_v7": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "abstention_accuracy": 1.0,
+      "false_retrieval": 0.0
+    },
+    "candidate_v2": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "false_retrieval": 1.0
+    },
+    "bootstrap": {
+      "iterations": 10000,
+      "seed": 20260814,
+      "delta": 0.0,
+      "ci95": [0.0, 0.0],
+      "margin": 0.03,
+      "noninferiority": true
+    },
+    "verdict": "PASS"
+  },
+  "confirmatory": {
+    "workflow_run_id": 31806441520,
+    "dataset_sha256": "8e54f75b7eae4058365e93fb809a47445df7415d02e28fae7dcdf5105cd76576",
+    "cases": 140,
+    "answerable": 85,
+    "no_evidence": 55,
+    "candidate_v2": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "answerable_recall": 1.0,
+      "false_retrieval": 1.0
+    },
+    "candidate_v6_historical": {
+      "source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+      "MRR": 0.0,
+      "R@1": 0.0,
+      "R@3": 0.0,
+      "R@5": 0.0,
+      "answerable_recall": 0.0,
+      "false_abstention": 1.0,
+      "abstention_accuracy": 1.0,
+      "false_retrieval": 0.0
+    },
+    "candidate_v7": {
+      "MRR": 0.9176470588235294,
+      "R@1": 0.9176470588235294,
+      "R@3": 0.9176470588235294,
+      "R@5": 0.9176470588235294,
+      "answerable_recall": 0.9176470588235294,
+      "false_abstention": 0.08235294117647059,
+      "abstention_accuracy": 0.8181818181818181,
+      "false_retrieval": 0.18181818181818182
+    },
+    "candidate_v7_vs_candidate_v2": {
+      "mrr_deficit": 0.08235294117647063,
+      "r1_deficit": 0.08235294117647063,
+      "r3_deficit": 0.08235294117647063,
+      "r5_deficit": 0.08235294117647063,
+      "absolute_false_retrieval_reduction": 0.8181818181818181
+    },
+    "candidate_v7_vs_candidate_v6": {
+      "answerable_recall_improvement": 0.9176470588235294,
+      "false_retrieval_increase": 0.18181818181818182,
+      "interpretation": "Candidate-v7 recovered most answerable coverage compared with v6 but did not retain the required no-evidence safety or Candidate-v2 noninferiority on the fresh confirmatory surface."
+    },
+    "bootstrap": {
+      "iterations": 10000,
+      "seed": 20260815,
+      "delta": -0.08235294117647059,
+      "ci95": [-0.1411764705882353, -0.03529411764705882],
+      "margin": 0.03,
+      "noninferiority": false
+    },
+    "only_success_check_passed": "absolute_false_retrieval_reduction_vs_candidate_v2",
+    "verdict": "FAIL"
+  },
+  "fresh_final_surface": {
+    "qualification_status": "NOT_ELIGIBLE",
+    "search_performed": false,
+    "payload_opened": false,
+    "protocol_frozen": false,
+    "authorization_boundary_reached": false
+  },
+  "monetary_cost_usd": 0,
+  "integrity_deviations": [
+    {
+      "type": "BOOKKEEPING_LABEL_CORRECTION",
+      "description": "A development harness initially mislabeled an iteration-5 success as iteration 4; the current ledger was corrected with an explicit correction artifact while preserving Git history and all negative evidence.",
+      "research_result_impact": "NONE"
+    }
+  ],
+  "algorithm_parity": "NO",
+  "gate_g_status": "NOT STARTED",
+  "next_legal_action": "STOP Candidate-v7. No fresh-final evaluation or Gate G is permitted under this mission. Any future algorithmic work requires a new candidate lineage and new preregistration; Candidate-v7 remains immutable historical evidence."
+}

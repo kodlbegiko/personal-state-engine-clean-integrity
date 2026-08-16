@@ -1,0 +1,45 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "checks": {
+    "authorization_guard": true,
+    "candidate_firewall": true,
+    "candidate_sha_matches": true,
+    "candidate_v13_imported": false,
+    "candidate_v13_invoked": false,
+    "concurrency_guard": true,
+    "dry_run_reaches_formal_boundary": true,
+    "hash_guard": true,
+    "manual_formal_dispatch_absent": true,
+    "no_matrix_retry": true,
+    "no_recursive_event_dependency": true,
+    "one_shot_ledger_guard": true,
+    "same_workflow_freeze_to_formal": true,
+    "single_already_started_job_graph": true,
+    "stage_order_guard": true,
+    "static_dag_order": true
+  },
+  "dry_run": {
+    "candidate_execution_disabled": true,
+    "counts": {
+      "ev_a": 1,
+      "ev_b": 1,
+      "ev_c": 1
+    },
+    "pass": true,
+    "reached": [
+      "qualification",
+      "preregistration",
+      "freeze",
+      "authorization",
+      "ev_a",
+      "ev_b",
+      "ev_c",
+      "terminal"
+    ]
+  },
+  "gate": "LAUNCH_PATH_QA_PASS",
+  "schema_version": "candidate-v13-external-validity-v4-launch-path-qa-v1",
+  "static_candidate_firewall_violations": [],
+  "status": "PASS"
+}

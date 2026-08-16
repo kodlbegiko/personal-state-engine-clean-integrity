@@ -1,0 +1,18 @@
+{
+  "schema_version": "candidate-v11-config-v1",
+  "benchmark": {
+    "development": {"seed": 11021, "answerable": 360, "no_evidence": 240, "families": ["L", "M", "N", "O"]},
+    "protected": {"seed": 22027, "answerable": 260, "no_evidence": 160, "families": ["P", "Q"]},
+    "confirmatory": {"seed": 33037, "answerable": 300, "no_evidence": 180, "families": ["R", "S", "T"]},
+    "final": {"seed": 44041, "answerable": 360, "no_evidence": 240, "families": ["U", "V", "W", "X"]}
+  },
+  "bootstrap": {"seed": 55109, "iterations": 10000, "confidence": 0.95, "r1_noninferiority_margin": -0.01},
+  "thresholds": {
+    "development": {"MRR": 0.98, "R@1": 0.97, "R@3": 0.99, "R@5": 0.995, "answerable_recall": 0.99, "false_abstention_max": 0.01, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95, "eligible_rank1_accuracy": 0.97},
+    "protected": {"MRR": 0.97, "R@1": 0.96, "R@3": 0.99, "R@5": 0.995, "answerable_recall": 0.99, "false_abstention_max": 0.01, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95},
+    "confirmatory": {"MRR": 0.97, "R@1": 0.96, "R@3": 0.99, "R@5": 0.995, "answerable_recall": 0.99, "false_abstention_max": 0.01, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95},
+    "final": {"MRR": 0.97, "R@1": 0.96, "R@3": 0.99, "R@5": 0.995, "answerable_recall": 0.99, "false_abstention_max": 0.01, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95}
+  },
+  "formal_execution_max": {"protected": 1, "confirmatory": 1, "final": 1},
+  "monetary_cost_usd": 0
+}

@@ -1,0 +1,313 @@
+{
+  "cross_stage": [
+    {
+      "evidence_skeleton_overlap_count": 132,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "hard_freshness_pass": true,
+      "normalized_case_overlap": 0,
+      "pair": [
+        "development",
+        "protected"
+      ],
+      "query_skeleton_overlap_count": 0,
+      "structural_mechanism_overlap": [],
+      "template_provenance_overlap": []
+    }
+  ],
+  "cross_stage_hard_freshness_pass": true,
+  "per_stage": [
+    {
+      "answerable_count": 360,
+      "benchmark_name": "candidate-v11-development-v5",
+      "benchmark_sha256": "441f202807bb80d6606f81278e0908ac7c064e502794d06ea8387d8690902435",
+      "case_count": 600,
+      "evidence_skeleton_top": [
+        [
+          "entity s accommodation is entity",
+          132
+        ],
+        [
+          "entity s language is entity",
+          118
+        ],
+        [
+          "entity s software tool is entity",
+          107
+        ],
+        [
+          "entity s subscription is entity tier",
+          107
+        ],
+        [
+          "entity s sports team is entity",
+          100
+        ],
+        [
+          "entity s certification is entity",
+          99
+        ],
+        [
+          "entity s accommodation is perhaps entity",
+          60
+        ],
+        [
+          "entity s language is perhaps entity",
+          58
+        ],
+        [
+          "entity s subscription is perhaps entity tier",
+          52
+        ],
+        [
+          "entity s sports team is perhaps entity",
+          51
+        ],
+        [
+          "entity s software tool is perhaps entity",
+          50
+        ],
+        [
+          "entity s certification is perhaps entity",
+          45
+        ]
+      ],
+      "evidence_skeleton_unique": 226,
+      "exact_duplicate_count": 0,
+      "grammar_family_distribution": {
+        "L": 150,
+        "M": 150,
+        "N": 150,
+        "O": 150
+      },
+      "no_evidence_count": 240,
+      "normalized_duplicate_count": 0,
+      "query_skeleton_top": [
+        [
+          "entity is the recorded accommodation of entity",
+          22
+        ],
+        [
+          "entity appointment is it that the record associates with entity",
+          18
+        ],
+        [
+          "entity which routine does the profile record",
+          18
+        ],
+        [
+          "entity identify the certification in the active profile rather than an older note",
+          17
+        ],
+        [
+          "entity identify the sports team in the active profile rather than an older note",
+          17
+        ],
+        [
+          "entity which sports team does the profile record",
+          17
+        ],
+        [
+          "entity which subscription does the profile record",
+          16
+        ],
+        [
+          "entity is the recorded appointment of entity",
+          16
+        ],
+        [
+          "entity subscription is it that the record associates with entity",
+          16
+        ],
+        [
+          "entity which accommodation does the profile record",
+          15
+        ],
+        [
+          "entity identify the language in the active profile rather than an older note",
+          15
+        ],
+        [
+          "entity is the recorded commute transport of entity",
+          15
+        ]
+      ],
+      "query_skeleton_unique": 48,
+      "semantic_domain_distribution": {
+        "accommodation": 60,
+        "appointment": 61,
+        "certification": 45,
+        "dietary_restriction": 36,
+        "language": 58,
+        "routine": 56,
+        "software_tool": 50,
+        "sports_team": 51,
+        "subscription": 52,
+        "transport": 48,
+        "volunteering": 40,
+        "work_role": 43
+      },
+      "stage": "development",
+      "structural_mechanism_distribution": {
+        "cleft_association_question": 150,
+        "contrastive_discourse_request": 150,
+        "nominalized_of_possessive": 150,
+        "wh_fronted_profile_record": 150
+      },
+      "template_provenance_distribution": {
+        "candidate-v11:development:L:answerable-same-clause-rank-stress:v5": 90,
+        "candidate-v11:development:L:negative:v2": 60,
+        "candidate-v11:development:M:answerable-same-clause-rank-stress:v5": 90,
+        "candidate-v11:development:M:negative:v2": 60,
+        "candidate-v11:development:N:answerable-same-clause-rank-stress:v5": 90,
+        "candidate-v11:development:N:negative:v2": 60,
+        "candidate-v11:development:O:answerable-same-clause-rank-stress:v5": 90,
+        "candidate-v11:development:O:negative:v2": 60
+      }
+    },
+    {
+      "answerable_count": 260,
+      "benchmark_name": "candidate-v11-protected-v1",
+      "benchmark_sha256": "f3b2b5cfbfe855b878960cd1c2f556d5868c175b93e9aed0d02ba02d7eb68434",
+      "case_count": 420,
+      "evidence_skeleton_top": [
+        [
+          "entity s accommodation is entity",
+          85
+        ],
+        [
+          "entity s software tool is entity",
+          77
+        ],
+        [
+          "entity s subscription is entity tier",
+          72
+        ],
+        [
+          "entity s sports team is entity",
+          67
+        ],
+        [
+          "entity s language is entity",
+          60
+        ],
+        [
+          "entity s certification is entity",
+          51
+        ],
+        [
+          "entity s subscription is perhaps entity tier",
+          40
+        ],
+        [
+          "entity s sports team is perhaps entity",
+          38
+        ],
+        [
+          "entity s accommodation is perhaps entity",
+          35
+        ],
+        [
+          "entity s software tool is perhaps entity",
+          35
+        ],
+        [
+          "entity s language is perhaps entity",
+          31
+        ],
+        [
+          "entity profile record for entity gives subscription entity tier",
+          27
+        ]
+      ],
+      "evidence_skeleton_unique": 200,
+      "exact_duplicate_count": 0,
+      "grammar_family_distribution": {
+        "P": 210,
+        "Q": 210
+      },
+      "no_evidence_count": 160,
+      "normalized_duplicate_count": 0,
+      "query_skeleton_top": [
+        [
+          "entity lookup for entity what value is listed under routine",
+          25
+        ],
+        [
+          "entity respect to entity what does the entry give for routine",
+          24
+        ],
+        [
+          "entity respect to entity what does the entry give for subscription",
+          22
+        ],
+        [
+          "entity lookup for entity what value is listed under dietary restriction",
+          21
+        ],
+        [
+          "entity respect to entity what does the entry give for sports team",
+          21
+        ],
+        [
+          "entity lookup for entity what value is listed under volunteering",
+          20
+        ],
+        [
+          "entity lookup for entity what value is listed under accommodation",
+          20
+        ],
+        [
+          "entity respect to entity what does the entry give for dietary restriction",
+          20
+        ],
+        [
+          "entity lookup for entity what value is listed under software tool",
+          18
+        ],
+        [
+          "entity respect to entity what does the entry give for volunteering",
+          18
+        ],
+        [
+          "entity lookup for entity what value is listed under subscription",
+          18
+        ],
+        [
+          "entity respect to entity what does the entry give for appointment",
+          17
+        ]
+      ],
+      "query_skeleton_unique": 24,
+      "semantic_domain_distribution": {
+        "accommodation": 35,
+        "appointment": 30,
+        "certification": 24,
+        "dietary_restriction": 41,
+        "language": 31,
+        "routine": 49,
+        "software_tool": 35,
+        "sports_team": 38,
+        "subscription": 40,
+        "transport": 27,
+        "volunteering": 38,
+        "work_role": 32
+      },
+      "stage": "protected",
+      "structural_mechanism_distribution": {
+        "prepositional_entry_frame": 210,
+        "record_lookup_colon_frame": 210
+      },
+      "template_provenance_distribution": {
+        "candidate-v11:protected:P:answerable-same-clause-rank-stress:v5": 130,
+        "candidate-v11:protected:P:negative:v2": 80,
+        "candidate-v11:protected:Q:answerable-same-clause-rank-stress:v5": 130,
+        "candidate-v11:protected:Q:negative:v2": 80
+      }
+    }
+  ],
+  "per_stage_hard_freshness_pass": true,
+  "schema_version": "candidate-v11-formal-freshness-audit-v1",
+  "skeleton_overlap_policy": "reported for methodology review; exact/normalized/family/provenance/mechanism overlap are hard constraints",
+  "verdict": "PASS"
+}

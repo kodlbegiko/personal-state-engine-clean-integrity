@@ -1,0 +1,70 @@
+name: Candidate v13 External Validity v3 — Formal Infrastructure Qualification
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v3
+    paths:
+      - 'scripts/candidate_v13_external_validity_v3_materializer.py'
+      - 'scripts/candidate_v13_external_validity_v3_evaluator.py'
+      - 'scripts/candidate_v13_external_validity_v3_formal_runner.py'
+      - 'scripts/candidate_v13_external_validity_v3_formal_sequence.py'
+      - 'scripts/candidate_v13_external_validity_v3_freeze.py'
+      - 'scripts/candidate_v13_external_validity_v3_finalize_qualification.py'
+      - '.github/workflows/candidate-v13-external-validity-v3-formal-infrastructure-qualification.yml'
+      - '.github/workflows/candidate-v13-external-validity-v3-formal-sequence.yml'
+      - '.github/workflows/candidate-v13-external-validity-v3-freeze.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  static-formal-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Candidate-blind formal infrastructure static QA
+        shell: bash
+        run: |
+          python - <<'PY'
+          import ast, hashlib, py_compile, sys
+          from pathlib import Path
+
+          root = Path('.')
+          candidate = root / 'src/personal_state_engine/candidate_v13.py'
+          expected = 'b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838'
+          files = [
+              root / 'scripts/candidate_v13_external_validity_v3_core.py',
+              root / 'scripts/candidate_v13_external_validity_v3_materializer.py',
+              root / 'scripts/candidate_v13_external_validity_v3_evaluator.py',
+              root / 'scripts/candidate_v13_external_validity_v3_formal_runner.py',
+              root / 'scripts/candidate_v13_external_validity_v3_formal_sequence.py',
+              root / 'scripts/candidate_v13_external_validity_v3_freeze.py',
+              root / 'scripts/candidate_v13_external_validity_v3_finalize_qualification.py',
+          ]
+          assert hashlib.sha256(candidate.read_bytes()).hexdigest() == expected
+          assert 'personal_state_engine.candidate_v13' not in sys.modules
+          violations = []
+          for path in files:
+              py_compile.compile(str(path), doraise=True)
+              tree = ast.parse(path.read_text())
+              for node in ast.walk(tree):
+                  if isinstance(node, ast.Import):
+                      for alias in node.names:
+                          if alias.name == 'personal_state_engine.candidate_v13' or alias.name.endswith('.candidate_v13'):
+                              violations.append(f'{path}: import {alias.name}')
+                  elif isinstance(node, ast.ImportFrom):
+                      module = node.module or ''
+                      if module == 'personal_state_engine.candidate_v13' or module.endswith('.candidate_v13'):
+                          violations.append(f'{path}: from {module}')
+          assert not violations, violations
+          formal = (root / '.github/workflows/candidate-v13-external-validity-v3-formal-sequence.yml').read_text()
+          freeze = (root / '.github/workflows/candidate-v13-external-validity-v3-freeze.yml').read_text()
+          assert 'workflow_dispatch' not in formal
+          assert 'formal-authorization-lock-v3.json' in formal
+          assert 'contents: read' in freeze and 'contents: write' not in freeze
+          print('FORMAL_INFRASTRUCTURE_STATIC_QA_PASS')
+          PY

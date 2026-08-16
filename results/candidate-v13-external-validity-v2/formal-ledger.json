@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-formal-ledger-v1",
+  "ev_a_v2": 0,
+  "ev_b_v2": 0,
+  "ev_c_v2": 0,
+  "formal_reruns": 0,
+  "illegal_formal_reruns": false,
+  "last_consumed_stage": null,
+  "candidate_v13_external_invocation_occurred": false,
+  "research_integrity": "PASS"
+}

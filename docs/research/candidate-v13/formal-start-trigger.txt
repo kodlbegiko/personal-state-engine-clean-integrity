@@ -1,0 +1,3 @@
+Candidate-v13 formal execution authorized only through the frozen one-shot runner.
+Freeze manifest verified before trigger.
+Initial formal ledger: Protected=0, Confirmatory=0, Final=0.

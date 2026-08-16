@@ -1,0 +1,136 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "gate_that_should_have_caught_failure": "pre-freeze 100% production-faithful selected-case materialization qualification",
+  "individual_formal_ids_persisted": false,
+  "max_80_classification": "benchmark/infrastructure cap; no evidence in the frozen v2 implementation establishes it as a Candidate-v13 architectural constraint",
+  "problem_only_evermem": true,
+  "qualified_pool": {
+    "count": 96092,
+    "gold_count_distribution": {
+      "count": 96092,
+      "max": 96,
+      "median": 1.0,
+      "min": 1,
+      "p90": 3.0,
+      "p95": 3.0,
+      "p99": 31.0
+    },
+    "gold_count_gt_80": 3,
+    "gold_count_gt_80_by_domain": {
+      "D6": 3
+    },
+    "gold_count_gt_80_by_source": {
+      "evermembench-dynamic": 3
+    }
+  },
+  "research_integrity": "PASS",
+  "root_cause": "v2 pre-freeze QA used synthetic materialization and allocation feasibility did not constrain or fully materialize selected source-native gold cardinality; formal materializer first enforced MAX_MEMORIES=80 after freeze.",
+  "schema_version": "candidate-v13-external-validity-v4-v2-root-cause-audit-v1",
+  "secondary_payload_risk_present": false,
+  "status": "PASS",
+  "v2_runtime_max_memory_count": 80,
+  "v2_selected": {
+    "count": 3744,
+    "gold_count_distribution": {
+      "count": 3744,
+      "max": 96,
+      "median": 1.0,
+      "min": 1,
+      "p90": 22.0,
+      "p95": 34.0,
+      "p99": 51.570000000000164
+    },
+    "gold_count_gt_80": 2,
+    "gold_count_gt_80_by_domain": {
+      "D6": 2
+    },
+    "gold_count_gt_80_by_primary_family": {
+      "N8": 2
+    },
+    "gold_count_gt_80_by_source": {
+      "evermembench-dynamic": 2
+    },
+    "gold_text_bytes_distribution": {
+      "count": 3744,
+      "max": 87802,
+      "median": 808.0,
+      "min": 2,
+      "p90": 10618.4,
+      "p95": 16336.2,
+      "p99": 33833.37000000001
+    },
+    "stages": {
+      "ev_a_v2": {
+        "count": 384,
+        "gold_count_distribution": {
+          "count": 384,
+          "max": 96,
+          "median": 1.0,
+          "min": 1,
+          "p90": 23.399999999999977,
+          "p95": 39.0,
+          "p99": 53.70000000000016
+        },
+        "gold_count_gt_80": 1,
+        "gold_text_bytes_distribution": {
+          "count": 384,
+          "max": 73305,
+          "median": 768.5,
+          "min": 15,
+          "p90": 11795.899999999998,
+          "p95": 17025.85,
+          "p99": 30139.320000000054
+        },
+        "selection_digest_sha256": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc"
+      },
+      "ev_b_v2": {
+        "count": 1440,
+        "gold_count_distribution": {
+          "count": 1440,
+          "max": 79,
+          "median": 1.0,
+          "min": 1,
+          "p90": 22.0,
+          "p95": 32.0,
+          "p99": 47.0
+        },
+        "gold_count_gt_80": 0,
+        "gold_text_bytes_distribution": {
+          "count": 1440,
+          "max": 87802,
+          "median": 820.5,
+          "min": 2,
+          "p90": 9939.400000000016,
+          "p95": 14853.299999999983,
+          "p99": 32794.349999999875
+        },
+        "selection_digest_sha256": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab"
+      },
+      "ev_c_v2": {
+        "count": 1920,
+        "gold_count_distribution": {
+          "count": 1920,
+          "max": 82,
+          "median": 1.0,
+          "min": 1,
+          "p90": 22.0,
+          "p95": 35.0,
+          "p99": 52.0
+        },
+        "gold_count_gt_80": 1,
+        "gold_text_bytes_distribution": {
+          "count": 1920,
+          "max": 79139,
+          "median": 802.5,
+          "min": 8,
+          "p90": 10973.0,
+          "p95": 16999.199999999986,
+          "p99": 34621.049999999996
+        },
+        "selection_digest_sha256": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
+      }
+    }
+  },
+  "v2_terminal_state": "EXTERNAL_VALIDITY_V2_INFRASTRUCTURE_BLOCKED"
+}

@@ -1,0 +1,54 @@
+{
+  "case_count": 720,
+  "designation": "DEVELOPMENT",
+  "false_retrieval_answerability": {},
+  "false_retrieval_by_discourse": {},
+  "false_retrieval_by_grammar": {},
+  "false_retrieval_by_relation": {},
+  "false_retrieval_case_count": 0,
+  "false_retrieval_memory_bucket": {},
+  "formal_execution": false,
+  "parse_invalid_by_relation": {},
+  "relation_confusion": {
+    "appointment": {
+      "appointment": 60
+    },
+    "communication_channel": {
+      "communication_channel": 60
+    },
+    "language": {
+      "language": 60
+    },
+    "membership": {
+      "membership": 60
+    },
+    "project_ownership": {
+      "project_ownership": 60
+    },
+    "routine": {
+      "routine": 60
+    },
+    "software_tool": {
+      "software_tool": 60
+    },
+    "status": {
+      "status": 60
+    },
+    "subscription": {
+      "subscription": 60
+    },
+    "travel_plan": {
+      "travel_plan": 60
+    },
+    "volunteering": {
+      "volunteering": 60
+    },
+    "work_role": {
+      "work_role": 60
+    }
+  },
+  "relation_mismatch_by_discourse": {},
+  "relation_mismatch_by_grammar": {},
+  "relation_mismatch_count": 0,
+  "schema_version": "candidate-v12-development-failure-taxonomy-v1"
+}

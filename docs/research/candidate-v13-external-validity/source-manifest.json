@@ -1,0 +1,180 @@
+{
+  "schema_version": "candidate-v13-external-validity-source-manifest-v2",
+  "status": "SOURCE_POOL_AND_REVISIONS_LOCKED_PRE_PERFORMANCE",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v13-naturalistic-external-validity",
+  "historical_terminal_anchor": "cfea38f4a75e9ce92a5cbeff0162a224e0e90c7e",
+  "preregistration_commit": "f0b894967d1968cb8cd994242d89ffe87cdc1de9",
+  "preregistration_lock_commit": "7c429cdf1236ff1ae16f5d2cac3a28e6168ab0f2",
+  "latest_preperformance_source_probe_commit": "003ef0c1ca8d1358f1447a257af3c33fa378f9f6",
+  "retrieval_date_utc": "2026-08-16",
+  "candidate_v13_external_performance_observed_at_lock": false,
+  "formal_case_materialized_at_lock": false,
+  "selection_rule": "Final source pool was locked before any Candidate-v13 external-validity performance observation. Selection used only preregistered source independence, license/provenance, source-native or deterministic gold, reproducibility, domain coverage, structural coverage, and source-family diversity. No source decision used Candidate-v13 output.",
+  "formal_primary_sources": [
+    {
+      "source_id": "personamem-v2",
+      "source_name": "PersonaMem-v2",
+      "public_identifier": "bowen-upenn/PersonaMem-v2",
+      "code_repository": "bowen-upenn/PersonaMem-v2",
+      "code_revision": "dd52429f83ced4394be46c3849186a423942b2a5",
+      "dataset_identifier": "huggingface:bowen-upenn/PersonaMem-v2",
+      "dataset_revision": "b7b42b78917157afed063527a1c959e98f6109f2",
+      "license": "CC BY 4.0",
+      "source_files": {
+        "benchmark/text/benchmark.csv": {
+          "bytes": 42426457,
+          "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+          "rows": 5000
+        }
+      },
+      "natural_language_origin": "Project-independent simulated long-form user/chatbot histories with implicit preferences; explicitly eligible under the preregistered independent synthetic-user-history source class.",
+      "source_native_gold": ["user_query", "correct_answer", "preference", "related_conversation_snippet", "updated", "prev_pref", "persona/query metadata"],
+      "formal_role": "Primary personal-preference, work, technology/device, travel, routine, update/forgetting and noisy discourse source.",
+      "planned_domain_roles": ["D1", "D2", "D5", "D6", "D7", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N3", "N5", "N6", "N8", "N9", "N10", "N11", "N12"],
+      "source_audit_notes": "5000/5000 rows contain user_query, correct_answer, preference and related_conversation_snippet; 1048 rows contain prev_pref and pref_type=ask_to_forget; topic fields include Work, Travel and Technology.",
+      "raw_text_policy": "Do not commit raw corpus. Regenerate from pinned public revision in controlled workflow.",
+      "local_transformation_hash": "PENDING_ADAPTER_LOCK",
+      "number_sampled": "PENDING_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_ELIGIBILITY_AUDIT",
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "longmemeval-cleaned",
+      "source_name": "LongMemEval Cleaned",
+      "public_identifier": "xiaowu0162/longmemeval-cleaned",
+      "code_repository": "xiaowu0162/LongMemEval",
+      "code_revision": "9e0b455f4ef0e2ab8f2e582289761153549043fc",
+      "dataset_identifier": "huggingface:xiaowu0162/longmemeval-cleaned",
+      "dataset_revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+      "license": "MIT",
+      "source_files": {
+        "longmemeval_oracle.json": {
+          "bytes": 15388478,
+          "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+          "records": 500
+        }
+      },
+      "natural_language_origin": "Project-independent long-term-memory benchmark with timestamped chat histories.",
+      "source_native_gold": ["question", "answer", "question_type", "answer_session_ids", "haystack_session_ids", "haystack_dates", "turn-level has_answer"],
+      "formal_role": "Primary temporal, multi-session, knowledge-update, preference and direct evidence-session retrieval source.",
+      "planned_domain_roles": ["D1", "D2", "D3", "D5", "D6", "D7", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N3", "N5", "N6", "N7", "N8", "N9", "N10", "N11", "N12"],
+      "source_audit_notes": "All 500 records contain answer_session_ids; question-type counts include knowledge-update=78, multi-session=133, single-session-preference=30 and temporal-reasoning=133; messages expose content/has_answer/role.",
+      "raw_text_policy": "Do not commit raw corpus. Regenerate from pinned public revision in controlled workflow.",
+      "local_transformation_hash": "PENDING_ADAPTER_LOCK",
+      "number_sampled": "PENDING_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_ELIGIBILITY_AUDIT",
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "perltqa-en-v2",
+      "source_name": "PerLTQA English v2",
+      "public_identifier": "Elvin-Yiming-Du/PerLTQA",
+      "repository_revision": "8d9e19868e239740ef701e603ec205cd581f221b",
+      "license": "CC BY-NC 4.0",
+      "license_scope": "Non-commercial research use in this 0 USD evaluation lineage.",
+      "source_files": {
+        "Dataset/en_v2/perltmem_en_v2.json": {
+          "bytes": 12879644,
+          "git_blob_sha": "398e381827155bcec77da9994b187569f77f6a1b",
+          "sha256": "fb3011d78babdc9c5323a8d303ca7d4cdb9e2e08992c9890f9ccb2362ff8be94"
+        },
+        "Dataset/en_v2/perltqa_en_v2.json": {
+          "bytes": 6766882,
+          "git_blob_sha": "64519343ceebeae9235084ecfb3005f13f98a436",
+          "sha256": "ca9f29cbb23eb8f7dbfb792359d9ff90eec066e6d927c83f6c0b7d0bf7baff23"
+        },
+        "LICENSE.txt": {
+          "git_blob_sha": "78a7bf36f80ef2918ecc9c1b60bc35ceb83ebeda",
+          "sha256": "d89ba8c03b098e4545aa2b3b7a6cd3b2be0adad5ac37b31cc483af1a4fad6f95"
+        }
+      },
+      "natural_language_origin": "Project-independent personal long-term-memory QA with semantic memories (profiles/social relationships) and episodic memories (events/dialogues).",
+      "source_native_gold": ["Question", "Answer", "Reference Memory", "Memory Anchors"],
+      "formal_role": "Primary personal profile, education/work, relationships, events, routines and explicit reference-memory retrieval source.",
+      "planned_domain_roles": ["D1", "D2", "D7", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N3", "N4", "N5", "N8", "N9", "N10", "N11", "N12"],
+      "source_audit_notes": "English v2 memory store contains 141 character records. 8593 canonical QA records contain Reference Memory; 8544 contain Memory Anchors. A few noncanonical lowercase question/answer objects detected by recursive probe are excluded by adapter schema rather than repaired post hoc.",
+      "raw_text_policy": "Do not commit raw corpus. Regenerate from pinned public revision in controlled workflow.",
+      "local_transformation_hash": "PENDING_ADAPTER_LOCK",
+      "number_sampled": "PENDING_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_ELIGIBILITY_AUDIT",
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "sgd",
+      "source_name": "Schema-Guided Dialogue",
+      "public_identifier": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "repository_revision": "e852981ae34990f4358979625854259302feaa78",
+      "license": "CC BY-SA 4.0",
+      "source_probe_files": {
+        "train/dialogues_001.json": "5ce28a6e656bc88c1da29c983d243d5a81eb37de92698da3864d1cf02894ca24",
+        "train/schema.json": "97b6c21673aa7e5c2d1ceef52aa35170c565223cdcbf33bb24c69739bda04a82"
+      },
+      "source_native_gold": ["utterance", "frames", "slots", "actions", "dialogue state", "service/schema"],
+      "formal_role": "Supplemental D3-D5 natural discourse, multi-entity/relation and lexical-decoy stress source. It must not be used where supporting-memory gold would require subjective inference beyond deterministic frame/state mapping.",
+      "planned_domain_roles": ["D3", "D4", "D5"],
+      "planned_structural_roles": ["N2", "N3", "N4", "N5", "N9", "N10", "N11", "N12"],
+      "raw_text_policy": "Do not commit raw corpus. Regenerate from pinned public revision in controlled workflow.",
+      "local_transformation_hash": "PENDING_ADAPTER_LOCK",
+      "number_sampled": "PENDING_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_ELIGIBILITY_AUDIT",
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "taskmaster-1",
+      "source_name": "Taskmaster-1 2019",
+      "public_identifier": "google-research-datasets/Taskmaster/TM-1-2019",
+      "repository_revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+      "license": "CC BY 4.0",
+      "source_native_gold": ["utterance", "speaker", "segment annotations/API arguments", "conversation domain"],
+      "source_identity": {
+        "self_dialogs_git_blob_sha": "f1a1a3fd4bfb9cbb62d419f7964fb33291e0b2dd",
+        "woz_dialogs_git_blob_sha": "c3d5ae919713db351eed531957f8d8893d581a8c",
+        "written_split_unique_ids": 7708
+      },
+      "formal_role": "Supplemental D3-D5 natural spoken/written discourse and fragmented/elliptical stress source. It must not be used where supporting-memory gold would require subjective inference beyond source segment annotations.",
+      "planned_domain_roles": ["D3", "D4", "D5", "D8"],
+      "planned_structural_roles": ["N2", "N3", "N4", "N5", "N9", "N10", "N11", "N12"],
+      "raw_text_policy": "Do not commit raw corpus. Regenerate from pinned public revision in controlled workflow.",
+      "local_transformation_hash": "PENDING_ADAPTER_LOCK",
+      "number_sampled": "PENDING_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_ELIGIBILITY_AUDIT",
+      "contamination_audit": "PENDING"
+    }
+  ],
+  "reserve_sources": [
+    {
+      "source_id": "abcd",
+      "source_name": "Action-Based Conversations Dataset",
+      "public_identifier": "asappresearch/abcd",
+      "repository_revision": "6b8700ce67c6b37b062dd7a60abc76d7ef832a97",
+      "license": "MIT",
+      "activation_rule": "Only a pre-performance deterministic eligibility shortfall in a D3-D5/source-family cell may activate this source."
+    },
+    {
+      "source_id": "locomo",
+      "source_name": "LoCoMo",
+      "public_identifier": "snap-research/locomo",
+      "repository_revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "license": "CC BY-NC 4.0",
+      "activation_rule": "Only a pre-performance deterministic eligibility shortfall in a personal-memory cell may activate this source."
+    }
+  ],
+  "source_family_constraints": {
+    "minimum_formal_families": 3,
+    "maximum_share_per_family_per_formal_stage": 0.45,
+    "source_pool_change_after_this_lock": "FORBIDDEN_AFTER_ANY_CANDIDATE_V13_EXTERNAL_PERFORMANCE_OBSERVATION",
+    "reserve_activation": "Allowed only before any Candidate-v13 external performance and only for objective deterministic eligibility/coverage shortfall."
+  },
+  "formal_materialization_status": {
+    "raw_external_corpora_committed": false,
+    "ev_a_materialized": false,
+    "ev_b_materialized": false,
+    "ev_c_materialized": false,
+    "candidate_v13_external_performance_observed": false
+  },
+  "next_required_gate": "Implement deterministic adapters plus source-independent eligibility/domain/family assignment, prove fixed EV-A/EV-B/EV-C cell capacity, and run contamination/evaluator audits before first Candidate-v13 EV-A observation."
+}

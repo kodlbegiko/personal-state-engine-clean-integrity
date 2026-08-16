@@ -1,0 +1,264 @@
+{
+  "HEAD": "705cc07155ccf77b513fa0317179586cfc4f1a05",
+  "branch": "research/candidate-v9-fresh-lineage",
+  "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+  "config_sha256": "483137ad61fff3e5a4fedfe4b22673931d122729b4045168771d934d592405a5",
+  "confirmatory_execution_count": 1,
+  "confirmatory_result": {
+    "benchmark_name": "candidate-v9-confirmatory-v1",
+    "benchmark_sha256": "fd911987498f47134964da3614508e758437654a54d5a71185050791c4487176",
+    "candidate_v2": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 0.0,
+      "answerable_count": 220,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 1.0,
+      "no_evidence_count": 140,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9": {
+      "MRR": 0.9545454545454546,
+      "R@1": 0.9545454545454546,
+      "R@3": 0.9545454545454546,
+      "R@5": 0.9545454545454546,
+      "abstention_accuracy": 1.0,
+      "answerable_count": 220,
+      "answerable_recall": 0.9545454545454546,
+      "false_abstention": 0.045454545454545456,
+      "false_retrieval": 0.0,
+      "no_evidence_count": 140,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+    "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+    "checks": {
+      "absolute_false_retrieval_reduction": true,
+      "abstention_accuracy": true,
+      "answerable_recall": false,
+      "false_abstention": false,
+      "false_retrieval": true,
+      "mrr": false,
+      "order_preservation": true,
+      "paired_bootstrap_noninferiority": false,
+      "r1": true,
+      "r3": false,
+      "r5": false
+    },
+    "monetary_cost_usd": 0,
+    "paired_bootstrap": {
+      "ci95": [
+        -0.07272727272727272,
+        -0.01818181818181818
+      ],
+      "delta": -0.045454545454545456,
+      "iterations": 10000,
+      "margin": -0.03,
+      "noninferiority": false,
+      "seed": 2026081514
+    },
+    "schema_version": "candidate-v9-evaluation-v1",
+    "stage": "confirmatory",
+    "verdict": "FAIL"
+  },
+  "development_freeze_commit": "046a40824cad38224ca881af34032177eb849a9d",
+  "development_result": {
+    "benchmark_name": "candidate-v9-development-v1",
+    "benchmark_sha256": "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704",
+    "candidate_v2": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 0.0,
+      "answerable_count": 210,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 1.0,
+      "no_evidence_count": 150,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_count": 210,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 0.0,
+      "no_evidence_count": 150,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+    "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+    "checks": {
+      "abstention_accuracy": true,
+      "answerable_recall": true,
+      "false_abstention": true,
+      "false_retrieval": true,
+      "mrr": true,
+      "order_preservation": true,
+      "paired_bootstrap_noninferiority": true,
+      "r1": true,
+      "r3": true,
+      "r5": true
+    },
+    "monetary_cost_usd": 0,
+    "paired_bootstrap": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "delta": 0.0,
+      "iterations": 10000,
+      "margin": -0.03,
+      "noninferiority": true,
+      "seed": 2026081510
+    },
+    "schema_version": "candidate-v9-evaluation-v1",
+    "stage": "development",
+    "verdict": "PASS"
+  },
+  "evaluator_sha256": "2ff3327d3ed7f7081aaf3ad28ac28110af127ef2307c3e500d670d8dfdb3aa8a",
+  "final_gate_f_execution_count": 0,
+  "final_gate_f_result": null,
+  "full_test_output": "........................................................................ [ 26%]\n........................................................................ [ 52%]\n........................................................................ [ 78%]\n............................................................             [100%]\n276 passed in 0.58s",
+  "generator_sha256": "abda84c620c10414011db3fa10a54b8504f6e3fdc7aae1f94233856681392d55",
+  "head_semantics": "HEAD immediately before terminal evidence commit",
+  "historical_diagnostic_accesses": {
+    "case_specific_hardcoding_prohibited": true,
+    "classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+    "excluded_from_candidate_v9_confirmatory": true,
+    "excluded_from_candidate_v9_final": true,
+    "excluded_from_candidate_v9_formal_validation": true,
+    "failure_count_observed": 4,
+    "historical_candidate": "Candidate-v8",
+    "historical_result_commit": "0539ec423c617f15f881f2d0b9009bc64d37bcb8",
+    "historical_stage": "protected_validation",
+    "historical_surface_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+    "historical_terminal_commit": "86c440fc487c46a1e603144177e666d32a52e725",
+    "opened_at": "2026-08-15T11:04:49.886405+00:00",
+    "opened_by": "candidate-v9-research-agent",
+    "preregistration_commit": "86de8e1308a4c492edc54725cdb3c23127dd4749",
+    "purpose": "Diagnose the four Candidate-v8 protected false abstentions only after preregistration, for generalizable root-cause taxonomy and architecture selection.",
+    "retired_99_case_semantic_payload_opened": false,
+    "schema_version": "candidate-v9-historical-diagnostic-access-v1",
+    "semantic_payload_accessed": true
+  },
+  "integrity_deviations": [
+    {
+      "benchmark_written": false,
+      "cause": "finite subject/value cycle produced exact duplicate normalized surfaces before file write",
+      "failure": "duplicate semantic signatures within development generator output",
+      "formal_execution_count": {
+        "confirmatory": 0,
+        "final": 0,
+        "protected": 0
+      },
+      "monetary_cost_usd": 0,
+      "remediation": "expand deterministic subject namespace with surnames; preserve frozen case count, seed, categories, gates, and templates",
+      "semantic_formal_payload_accessed": false,
+      "stage": "PRE_DEVELOPMENT_MATERIALIZATION",
+      "workflow_run_id": "31881331110"
+    },
+    {
+      "benchmark_written": false,
+      "cause": "first-person answerable family omits subject, while value index repeated on the same 24-case mode period",
+      "failure": "duplicate semantic signatures remained after subject-namespace expansion",
+      "formal_execution_count": {
+        "confirmatory": 0,
+        "final": 0,
+        "protected": 0
+      },
+      "monetary_cost_usd": 0,
+      "remediation": "include deterministic mode-cycle index in value selection; preserve counts, seed, categories, templates, and gates",
+      "semantic_formal_payload_accessed": false,
+      "stage": "PRE_DEVELOPMENT_MATERIALIZATION",
+      "workflow_run_id": "31881376267"
+    }
+  ],
+  "monetary_cost_usd": 0,
+  "next_legal_action": "STOP; Candidate-v10 fresh lineage required for further semantic research",
+  "old_99_case_semantic_payload_opened": false,
+  "parent_v8_terminal_commit": "86c440fc487c46a1e603144177e666d32a52e725",
+  "protected_authorization_commit": "020cfa31f36ced883ef0b709d8160283dda20967",
+  "protected_dataset_hash": "befa56dc8f97c9045a6163e02d4980b5682af46b01f94204c216801506c9bde6",
+  "protected_execution_count": 1,
+  "protected_materialization_commit": "b031cf5dc8dc1038c6224cc94650f66f4a63e133",
+  "protected_result": {
+    "benchmark_name": "candidate-v9-protected-v1",
+    "benchmark_sha256": "befa56dc8f97c9045a6163e02d4980b5682af46b01f94204c216801506c9bde6",
+    "candidate_v2": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 0.0,
+      "answerable_count": 190,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 1.0,
+      "no_evidence_count": 110,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_count": 190,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 0.0,
+      "no_evidence_count": 110,
+      "order_preservation_violations": 0
+    },
+    "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+    "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+    "checks": {
+      "absolute_false_retrieval_reduction": true,
+      "abstention_accuracy": true,
+      "answerable_recall": true,
+      "false_abstention": true,
+      "false_retrieval": true,
+      "mrr": true,
+      "order_preservation": true,
+      "paired_bootstrap_noninferiority": true,
+      "r1": true,
+      "r3": true,
+      "r5": true
+    },
+    "monetary_cost_usd": 0,
+    "paired_bootstrap": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "delta": 0.0,
+      "iterations": 10000,
+      "margin": -0.03,
+      "noninferiority": true,
+      "seed": 2026081512
+    },
+    "schema_version": "candidate-v9-evaluation-v1",
+    "stage": "protected",
+    "verdict": "PASS"
+  },
+  "recorded_at": "2026-08-15T11:20:58.618504+00:00",
+  "rerun_flags": {
+    "confirmatory": false,
+    "final": false,
+    "protected": false
+  },
+  "schema_version": "candidate-v9-terminal-snapshot-v1",
+  "terminal_state": "CANDIDATE_V9_CONFIRMATORY_FAIL",
+  "workflow_run_ids": [
+    "31881794343"
+  ]
+}

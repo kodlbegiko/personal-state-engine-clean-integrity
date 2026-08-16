@@ -1,0 +1,27 @@
+{
+  "candidate_hash_match": true,
+  "candidate_sha256_actual": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_sha256_expected": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_v13_external_output_observed": false,
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "checked_v3_scripts": [
+    "scripts/candidate_v13_external_validity_v4_contamination.py",
+    "scripts/candidate_v13_external_validity_v4_core.py",
+    "scripts/candidate_v13_external_validity_v4_evaluator.py",
+    "scripts/candidate_v13_external_validity_v4_final_integrity_audit.py",
+    "scripts/candidate_v13_external_validity_v4_finalize_qualification.py",
+    "scripts/candidate_v13_external_validity_v4_fix_names.py",
+    "scripts/candidate_v13_external_validity_v4_formal_runner.py",
+    "scripts/candidate_v13_external_validity_v4_formal_sequence.py",
+    "scripts/candidate_v13_external_validity_v4_freeze.py",
+    "scripts/candidate_v13_external_validity_v4_infrastructure_qualification.py",
+    "scripts/candidate_v13_external_validity_v4_launch_path_qa.py",
+    "scripts/candidate_v13_external_validity_v4_lock_preregistration.py",
+    "scripts/candidate_v13_external_validity_v4_materializer.py",
+    "scripts/candidate_v13_external_validity_v4_prequalification.py",
+    "scripts/candidate_v13_external_validity_v4_qualification_runner.py"
+  ],
+  "status": "PASS",
+  "violations": []
+}

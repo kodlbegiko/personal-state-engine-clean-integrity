@@ -1,0 +1,52 @@
+name: Candidate v9 development diagnostic iteration 1
+on:
+  push:
+    branches: [research/candidate-v9-fresh-lineage]
+    paths: [.github/workflows/candidate-v9-development-diagnostic-iteration-1.yml]
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: research/candidate-v9-fresh-lineage, fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install -e .
+      - name: Diagnose remaining development misses without changing surface
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          from personal_state_engine.candidate_v9 import evidence_support_signature_v9,pse_candidate_v9_rank
+          data=json.load(open('experiments/benchmarks/candidate-v9-development-v1.json'))
+          failures=[]; counts=Counter()
+          for c in data['cases']:
+              rel=set(c['relevant_memory_ids'])
+              if not rel or rel & set(pse_candidate_v9_rank(c,5)): continue
+              sig=evidence_support_signature_v9(c); cert={x['memory_id']:x for x in sig['certifications']}
+              rows=[]
+              for mid in rel:
+                  for clause in cert.get(mid,{'clauses':[]})['clauses']:
+                      if clause.blocker: cat='BLOCKER:'+str(clause.blocker)
+                      elif not clause.subject_ok: cat='SUBJECT'
+                      elif not clause.relation_ok: cat='RELATION'
+                      elif not clause.value_type_ok: cat='VALUE_TYPE'
+                      elif not clause.value_bearing: cat='VALUE_BEARING'
+                      elif not clause.temporal_ok: cat='TEMPORAL'
+                      else: cat='SCORE_OR_SEGMENTATION'
+                      counts[cat]+=1
+                      rows.append({'memory_id':mid,'clause':clause.text,'category':cat,'subject_ok':clause.subject_ok,'relation_ok':clause.relation_ok,'value_type_ok':clause.value_type_ok,'value_bearing':clause.value_bearing,'direct_assertion':clause.direct_assertion,'temporal_ok':clause.temporal_ok,'blocker':clause.blocker,'score':clause.score,'relation_signals':list(clause.relation_signals),'value_type_signals':list(clause.value_type_signals)})
+              failures.append({'case_id':c['id'],'query':c['query'],'requirements':sig['requirements'],'relevant_rows':rows})
+          out={'failure_count':len(failures),'category_counts':dict(counts),'failures':failures,'development_surface_sha256':'a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704','formal_counts':{'protected':0,'confirmatory':0,'final':0}}
+          Path('results/candidate-v9/development-failure-taxonomy-iteration-1.json').write_text(json.dumps(out,indent=2)+'\n')
+          print(json.dumps(out,indent=2))
+          PY
+      - run: |
+          git config user.name candidate-v9-research-bot
+          git config user.email candidate-v9-research-bot@users.noreply.github.com
+          git add results/candidate-v9/development-failure-taxonomy-iteration-1.json
+          git commit -m "candidate-v9: diagnose development iteration 1 failures"
+          git push origin HEAD:research/candidate-v9-fresh-lineage

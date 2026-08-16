@@ -1,0 +1,81 @@
+{
+  "schema_version": "candidate-v8-development-ci-execution-v1",
+  "workflow_run_id": "31879976758",
+  "attempt": "1",
+  "identity_checks": {
+    "v7_terminal": true,
+    "v7_frozen": true,
+    "v7_freeze": true,
+    "v7_source": true,
+    "v7_config": true,
+    "v8_source": true,
+    "generator": true,
+    "evaluator": true
+  },
+  "generator": {
+    "sha256": "a2a72a6e12efbbbd7adb35b77698c3fa503d2b04f388588d252f88a899e1ab8b",
+    "seed": 2026081500,
+    "case_count": 240,
+    "answerable_count": 140,
+    "no_evidence_count": 100,
+    "namespace": "CV8-DEVELOPMENT-"
+  },
+  "tests": "........................................................................ [ 28%]\n........................................................................ [ 57%]\n........................................................................ [ 85%]\n....................................                                     [100%]\n252 passed in 0.44s",
+  "result": {
+    "schema_version": "candidate-v8-evaluation-v1",
+    "stage": "development",
+    "benchmark_name": "candidate-v8-development-v1",
+    "benchmark_sha256": "a2a72a6e12efbbbd7adb35b77698c3fa503d2b04f388588d252f88a899e1ab8b",
+    "candidate_v8_source_sha256": "09d58cfb5c4b8ecfe8fcdb8cbc96b5fc85363ea155d8901ab54b42b92cd1322a",
+    "candidate_v2": {
+      "MRR": 0.9714285714285714,
+      "R@1": 0.9428571428571428,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "abstention_accuracy": 0.0,
+      "false_retrieval": 1.0,
+      "order_preservation_violations": 0,
+      "answerable_count": 140,
+      "no_evidence_count": 100
+    },
+    "candidate_v8": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "abstention_accuracy": 1.0,
+      "false_retrieval": 0.0,
+      "order_preservation_violations": 0,
+      "answerable_count": 140,
+      "no_evidence_count": 100
+    },
+    "candidate_v8_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+    "paired_bootstrap": {
+      "iterations": 10000,
+      "seed": 2026081500,
+      "delta": 0.02857142857142857,
+      "ci95": [
+        0.010714285714285714,
+        0.05
+      ],
+      "margin": -0.03,
+      "noninferiority": true
+    },
+    "checks": {
+      "mrr": true,
+      "answerable_recall": true,
+      "false_retrieval": true,
+      "false_abstention": true,
+      "order_preservation": true
+    },
+    "verdict": "PASS",
+    "monetary_cost_usd": 0
+  },
+  "historical_confirmatory_used_as_gate": false,
+  "monetary_cost_usd": 0,
+  "executed_at": "2026-08-15T10:37:29.593482+00:00"
+}

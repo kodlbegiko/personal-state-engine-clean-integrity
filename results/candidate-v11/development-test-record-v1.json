@@ -1,0 +1,12 @@
+{
+  "evaluated_commit_sha": "846a2931d48a5b5bf300b9b7e7dfaa5eef5064f2",
+  "github_run_id": "31883922623",
+  "monetary_cost_usd": 0,
+  "pytest_output_sha256": "2970683eabc1f98a1287886ed761217db08b141d286a201b490978cd061a33e7",
+  "pytest_tail": [
+    "........................                                                 [100%]",
+    "24 passed in 0.36s"
+  ],
+  "schema_version": "candidate-v11-development-test-record-v1",
+  "unit_invariants_pass": true
+}

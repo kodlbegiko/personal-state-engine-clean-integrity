@@ -1,0 +1,72 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-materializer-contract-v3",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE_DEVELOPMENT",
+  "candidate_v13_invoked": false,
+  "formal_case_materialized": false,
+  "runtime_contract": {
+    "candidate_input_fields": ["query", "memories"],
+    "memory_fields": ["id", "text", "timestamp"],
+    "candidate_receives_evaluator_metadata": false,
+    "candidate_receives_source_metadata": false,
+    "candidate_receives_domain_or_family_labels": false,
+    "timestamp_policy": "Pass a source timestamp only if the qualified base adapter mechanically retained it. The current qualified v2 base representation does not retain source timestamps, so runtime timestamp is null. Never invent, infer, normalize, or fabricate timestamps after qualification. This limitation is locked before Candidate-v13 external performance observation."
+  },
+  "qualified_memory_unit": "A mechanically resolved source-native gold/evidence text unit emitted by the candidate-blind qualified base adapter. Runtime distractors are other qualified source-native memory units; no new natural-language content is generated.",
+  "case_requirements": {
+    "query": "verbatim source-native wording except preregistered deterministic composition transforms",
+    "memories": "qualified source-native memory units sufficient to make retrieval non-trivial; answerable cases retain every target gold unit and add deterministic source-native distractors; no-evidence cases withhold every target gold unit before adding distractors",
+    "gold_ids": "evaluator-only deterministic IDs derived from exact qualified source-native gold units",
+    "minimum_memory_count": 5,
+    "minimum_non_gold_distractors": 4,
+    "maximum_memory_count": 80,
+    "maximum_memory_rule": "retain every runtime gold unit first for answerable cases, then fill remaining slots with seeded source-native distractors; no Candidate-dependent hard-negative mining",
+    "unique_memory_ids": true,
+    "gold_ids_subset_of_memory_ids": true,
+    "deterministic_ordering": "seeded SHA256 ordering independent of Candidate output"
+  },
+  "distractor_policy": {
+    "same_source_only": true,
+    "priority": [
+      "same source + same subject + same relation",
+      "same source + same subject",
+      "same source + same domain"
+    ],
+    "tie_break": "SHA256(stage_seed || target source || target base id || priority || distractor base id || distractor memory id)",
+    "duplicate_text_removed": true,
+    "target_gold_text_forbidden_in_no_evidence_runtime": true,
+    "cross_source_distractors": false
+  },
+  "source_interpretation": {
+    "personamem-v2": "subject/relation fields preserve the qualified persona/topic structure when available; fallback remains same source/domain",
+    "longmemeval-cleaned": "qualified answer_session evidence units are target gold; distractors are other qualified LongMemEval source-native units selected by the fixed priority",
+    "locomo": "qualified source evidence dia_id text units are target gold; subject/relation preserve sample/relation structure where retained",
+    "sgd-carryover": "qualified source-native support-turn text is target gold; subject/relation preserve dialogue/service structure where retained",
+    "evermembench-dynamic": "QAR.R exact-resolved dialogue text units are target gold; topic-derived subject/relation information is used only through the fixed priority",
+    "rhelm": "reserve only; mechanically resolved supporting_evidence units would follow the same fixed same-source priority if preregistered reserve activation occurred before freeze"
+  },
+  "forbidden": [
+    "gold-only candidate sets",
+    "Candidate-v13-dependent distractor selection",
+    "Candidate-v13-dependent hard-negative mining",
+    "post-performance case replacement",
+    "answer-text fuzzy matching to construct gold",
+    "LLM-generated gold repairs",
+    "runtime injection of source/domain/family labels",
+    "invented timestamps",
+    "post-performance timestamp enrichment"
+  ],
+  "dry_run": {
+    "real_formal_payload_allowed": false,
+    "synthetic_structural_cases_only": true,
+    "must_validate": [
+      "minimum_memory_count",
+      "minimum_non_gold_distractors",
+      "maximum_memory_count",
+      "unique_memory_ids",
+      "gold_ids_subset_of_memory_ids",
+      "deterministic_ordering",
+      "transformation_hash_stability",
+      "no_evidence_gold_withholding"
+    ]
+  }
+}

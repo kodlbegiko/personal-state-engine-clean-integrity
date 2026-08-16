@@ -1,0 +1,119 @@
+{
+  "acceptance": "PASS",
+  "anti_collapse": {
+    "abstain_count": 270,
+    "catastrophic_structural_families": [],
+    "near_universal_abstention": false,
+    "near_universal_retrieval": false,
+    "pass": true,
+    "retrieve_count": 450,
+    "single_class_prediction_collapse": false
+  },
+  "benchmark_path": "experiments/benchmarks/candidate-v13-protected-v1.json",
+  "benchmark_sha256": "8797a8c9111f27f60e0a4267f83937cb4279526336156e22e60e448bdf27f326",
+  "candidate": "v13",
+  "formal_execution": true,
+  "frame_metrics": {
+    "discourse_contamination_rate": 0.0,
+    "relation_binding_accuracy": 1.0,
+    "subject_binding_accuracy": 1.0,
+    "temporal_scope_accuracy": 1.0
+  },
+  "integrity": {
+    "candidate_source_invariant": "PASS",
+    "candidate_source_violations": 0,
+    "determinism": "PASS",
+    "determinism_violations": 0,
+    "metadata_firewall": "PASS",
+    "metadata_firewall_violations": 0
+  },
+  "metrics": {
+    "abstention_accuracy": 1.0,
+    "answerable_count": 450,
+    "answerable_recall": 1.0,
+    "case_count": 720,
+    "eligible_answerable_count": 450,
+    "eligible_rank1_accuracy": 1.0,
+    "false_abstention_rate": 0.0,
+    "false_retrieval_rate": 0.0,
+    "mrr": 1.0,
+    "no_evidence_count": 270,
+    "r_at_1": 1.0,
+    "r_at_3": 1.0,
+    "r_at_5": 1.0
+  },
+  "no_formal_payload_exposure": null,
+  "noninferiority": {
+    "baseline_v12_r_at_1": 0.2288888888888889,
+    "candidate_v13_r_at_1": 1.0,
+    "ci_95_percentile": [
+      0.7311111111111112,
+      0.8088888888888889
+    ],
+    "difference": 0.7711111111111111,
+    "iterations": 10000,
+    "margin": -0.01,
+    "seed": 73129,
+    "status": "PASS"
+  },
+  "schema_version": "candidate-v13-evaluation-summary-v1",
+  "stage": "protected",
+  "structural": {
+    "S1": {
+      "accuracy": 1.0,
+      "correct": 110,
+      "count": 110
+    },
+    "S2": {
+      "accuracy": 1.0,
+      "correct": 110,
+      "count": 110
+    },
+    "S3": {
+      "accuracy": 1.0,
+      "correct": 109,
+      "count": 109
+    },
+    "S4": {
+      "accuracy": 1.0,
+      "correct": 109,
+      "count": 109
+    },
+    "S5": {
+      "accuracy": 1.0,
+      "correct": 109,
+      "count": 109
+    },
+    "S6": {
+      "accuracy": 1.0,
+      "correct": 109,
+      "count": 109
+    },
+    "S7": {
+      "accuracy": 1.0,
+      "correct": 64,
+      "count": 64
+    }
+  },
+  "threshold_failures": [],
+  "thresholds": {
+    "abstention_accuracy": 0.97,
+    "answerable_recall": 0.99,
+    "eligible_rank1_accuracy": 0.97,
+    "false_abstention_rate_max": 0.01,
+    "false_retrieval_rate_max": 0.03,
+    "mrr": 0.98,
+    "r_at_1": 0.97,
+    "r_at_3": 0.99,
+    "r_at_5": 0.995,
+    "structural": {
+      "S1": 0.97,
+      "S2": 0.96,
+      "S3": 0.96,
+      "S4": 0.96,
+      "S5": 0.97,
+      "S6": 0.97,
+      "S7": 0.96
+    }
+  }
+}

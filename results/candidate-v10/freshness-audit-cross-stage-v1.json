@@ -1,0 +1,294 @@
+{
+  "integrity_pass": true,
+  "integrity_policy": {
+    "exact_case_overlap_must_be_zero": true,
+    "grammar_family_overlap_must_be_zero": true,
+    "normalized_case_overlap_must_be_zero": true,
+    "question_and_evidence_skeleton_overlap": "reported for stratified audit; not a post-hoc numeric gate",
+    "template_provenance_overlap_must_be_zero": true
+  },
+  "pairwise": [
+    {
+      "evidence_skeleton_overlap": 0,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 0,
+      "stages": [
+        "development",
+        "protected"
+      ],
+      "template_provenance_overlap": []
+    },
+    {
+      "evidence_skeleton_overlap": 1,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 2,
+      "stages": [
+        "development",
+        "confirmatory"
+      ],
+      "template_provenance_overlap": []
+    },
+    {
+      "evidence_skeleton_overlap": 0,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 0,
+      "stages": [
+        "development",
+        "final"
+      ],
+      "template_provenance_overlap": []
+    },
+    {
+      "evidence_skeleton_overlap": 0,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 0,
+      "stages": [
+        "protected",
+        "confirmatory"
+      ],
+      "template_provenance_overlap": []
+    },
+    {
+      "evidence_skeleton_overlap": 0,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 0,
+      "stages": [
+        "protected",
+        "final"
+      ],
+      "template_provenance_overlap": []
+    },
+    {
+      "evidence_skeleton_overlap": 0,
+      "exact_case_overlap": 0,
+      "grammar_family_overlap": [],
+      "integrity_pass": true,
+      "normalized_case_overlap": 0,
+      "question_skeleton_overlap": 0,
+      "stages": [
+        "confirmatory",
+        "final"
+      ],
+      "template_provenance_overlap": []
+    }
+  ],
+  "schema_version": "candidate-v10-cross-stage-freshness-audit-v1",
+  "stages": [
+    {
+      "case_count": 480,
+      "evidence_skeleton_unique": 138,
+      "families": [
+        "A",
+        "B",
+        "C"
+      ],
+      "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-development-v1.json",
+      "question_skeleton_unique": 61,
+      "semantic_domain_distribution": {
+        "accommodations": 15,
+        "appointments": 16,
+        "attributes/colors": 16,
+        "certifications": 15,
+        "communication channels": 16,
+        "device ownership/use": 15,
+        "dietary restrictions": 15,
+        "education": 30,
+        "employment": 16,
+        "goals": 16,
+        "hobbies": 15,
+        "language": 16,
+        "location": 16,
+        "media": 15,
+        "medication": 15,
+        "memberships": 15,
+        "pets": 16,
+        "preferences": 32,
+        "project ownership": 15,
+        "recurring routines": 15,
+        "relationships": 16,
+        "schedules": 16,
+        "software/tools": 15,
+        "sports teams": 16,
+        "status": 15,
+        "subscriptions": 16,
+        "transportation": 16,
+        "travel plans": 15,
+        "volunteering": 15
+      },
+      "stage": "development",
+      "template_provenance": [
+        "candidate-v10:development:A:answerable",
+        "candidate-v10:development:A:negative",
+        "candidate-v10:development:B:answerable",
+        "candidate-v10:development:B:negative",
+        "candidate-v10:development:C:answerable",
+        "candidate-v10:development:C:negative"
+      ]
+    },
+    {
+      "case_count": 360,
+      "evidence_skeleton_unique": 143,
+      "families": [
+        "D",
+        "E"
+      ],
+      "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-protected-v1.json",
+      "question_skeleton_unique": 62,
+      "semantic_domain_distribution": {
+        "accommodations": 11,
+        "appointments": 12,
+        "attributes/colors": 12,
+        "certifications": 12,
+        "communication channels": 12,
+        "device ownership/use": 11,
+        "dietary restrictions": 11,
+        "education": 23,
+        "employment": 12,
+        "goals": 12,
+        "hobbies": 11,
+        "language": 12,
+        "location": 12,
+        "media": 11,
+        "medication": 12,
+        "memberships": 11,
+        "pets": 12,
+        "preferences": 25,
+        "project ownership": 11,
+        "recurring routines": 11,
+        "relationships": 12,
+        "schedules": 12,
+        "software/tools": 11,
+        "sports teams": 12,
+        "status": 11,
+        "subscriptions": 12,
+        "transportation": 12,
+        "travel plans": 11,
+        "volunteering": 11
+      },
+      "stage": "protected",
+      "template_provenance": [
+        "candidate-v10:protected:D:answerable",
+        "candidate-v10:protected:D:negative",
+        "candidate-v10:protected:E:answerable",
+        "candidate-v10:protected:E:negative"
+      ]
+    },
+    {
+      "case_count": 420,
+      "evidence_skeleton_unique": 126,
+      "families": [
+        "F",
+        "G",
+        "H"
+      ],
+      "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-confirmatory-v1.json",
+      "question_skeleton_unique": 38,
+      "semantic_domain_distribution": {
+        "accommodations": 13,
+        "appointments": 14,
+        "attributes/colors": 14,
+        "certifications": 13,
+        "communication channels": 14,
+        "device ownership/use": 13,
+        "dietary restrictions": 13,
+        "education": 26,
+        "employment": 14,
+        "goals": 14,
+        "hobbies": 13,
+        "language": 14,
+        "location": 14,
+        "media": 13,
+        "medication": 14,
+        "memberships": 13,
+        "pets": 14,
+        "preferences": 29,
+        "project ownership": 13,
+        "recurring routines": 13,
+        "relationships": 14,
+        "schedules": 14,
+        "software/tools": 13,
+        "sports teams": 14,
+        "status": 13,
+        "subscriptions": 14,
+        "transportation": 14,
+        "travel plans": 13,
+        "volunteering": 13
+      },
+      "stage": "confirmatory",
+      "template_provenance": [
+        "candidate-v10:confirmatory:F:answerable",
+        "candidate-v10:confirmatory:F:negative",
+        "candidate-v10:confirmatory:G:answerable",
+        "candidate-v10:confirmatory:G:negative",
+        "candidate-v10:confirmatory:H:answerable",
+        "candidate-v10:confirmatory:H:negative"
+      ]
+    },
+    {
+      "case_count": 480,
+      "evidence_skeleton_unique": 137,
+      "families": [
+        "I",
+        "J",
+        "K"
+      ],
+      "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-final-v1.json",
+      "question_skeleton_unique": 45,
+      "semantic_domain_distribution": {
+        "accommodations": 15,
+        "appointments": 16,
+        "attributes/colors": 16,
+        "certifications": 15,
+        "communication channels": 16,
+        "device ownership/use": 15,
+        "dietary restrictions": 15,
+        "education": 30,
+        "employment": 16,
+        "goals": 16,
+        "hobbies": 15,
+        "language": 16,
+        "location": 16,
+        "media": 15,
+        "medication": 15,
+        "memberships": 15,
+        "pets": 16,
+        "preferences": 32,
+        "project ownership": 15,
+        "recurring routines": 15,
+        "relationships": 16,
+        "schedules": 16,
+        "software/tools": 15,
+        "sports teams": 16,
+        "status": 15,
+        "subscriptions": 16,
+        "transportation": 16,
+        "travel plans": 15,
+        "volunteering": 15
+      },
+      "stage": "final",
+      "template_provenance": [
+        "candidate-v10:final:I:answerable",
+        "candidate-v10:final:I:negative",
+        "candidate-v10:final:J:answerable",
+        "candidate-v10:final:J:negative",
+        "candidate-v10:final:K:answerable",
+        "candidate-v10:final:K:negative"
+      ]
+    }
+  ]
+}

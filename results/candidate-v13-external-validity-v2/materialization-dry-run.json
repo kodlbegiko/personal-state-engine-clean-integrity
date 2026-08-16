@@ -1,0 +1,23 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "deterministic": true,
+  "formal_case_materialized": false,
+  "memory_count": 5,
+  "non_gold_distractor_count": 4,
+  "real_external_payload_materialized": false,
+  "runtime_memory_fields": [
+    "id",
+    "text",
+    "timestamp"
+  ],
+  "runtime_projection_fields": [
+    "memories",
+    "query"
+  ],
+  "schema_version": "candidate-v13-external-validity-v2-materialization-dry-run-v2",
+  "status": "PASS",
+  "synthetic_only": true,
+  "transformation_hash_stable": true,
+  "validation_errors": []
+}

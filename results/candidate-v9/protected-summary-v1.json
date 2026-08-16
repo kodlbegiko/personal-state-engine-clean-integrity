@@ -1,0 +1,60 @@
+{
+  "schema_version": "candidate-v9-evaluation-v1",
+  "stage": "protected",
+  "benchmark_name": "candidate-v9-protected-v1",
+  "benchmark_sha256": "befa56dc8f97c9045a6163e02d4980b5682af46b01f94204c216801506c9bde6",
+  "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+  "candidate_v2": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_retrieval": 1.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 190,
+    "no_evidence_count": 110
+  },
+  "candidate_v9": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 190,
+    "no_evidence_count": 110
+  },
+  "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+  "paired_bootstrap": {
+    "iterations": 10000,
+    "seed": 2026081512,
+    "delta": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "margin": -0.03,
+    "noninferiority": true
+  },
+  "checks": {
+    "mrr": true,
+    "r1": true,
+    "r3": true,
+    "r5": true,
+    "answerable_recall": true,
+    "false_abstention": true,
+    "false_retrieval": true,
+    "abstention_accuracy": true,
+    "order_preservation": true,
+    "paired_bootstrap_noninferiority": true,
+    "absolute_false_retrieval_reduction": true
+  },
+  "verdict": "PASS",
+  "monetary_cost_usd": 0
+}
