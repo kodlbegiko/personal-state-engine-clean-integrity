@@ -107,9 +107,9 @@ def main() -> int:
     core = load("pse_v4_core_qualification", CORE_PATH)
     evaluator = load("pse_v4_evaluator_qualification", EVALUATOR_PATH)
     policy = core.fresh_policy()
-    write_json(DOC / "allocation-policy-v3.json", policy)
+    write_json(DOC / "allocation-policy-v4.json", policy)
     eval_policy = evaluation_policy_v4()
-    write_json(DOC / "evaluation-policy-v3.json", eval_policy)
+    write_json(DOC / "evaluation-policy-v4.json", eval_policy)
 
     source_contract = {
         "schema_version": "candidate-v13-external-validity-v4-source-contract-v1",
@@ -122,7 +122,7 @@ def main() -> int:
         "reserve_activation": "candidate-blind infrastructure-only conditions before freeze; never Candidate performance",
         "gold_resolution": "source-native rules inherited from the independently qualified v2 adapters, re-executed from pinned bytes in this v3 qualification",
     }
-    write_json(DOC / "source-contract-v3.json", source_contract)
+    write_json(DOC / "source-contract-v4.json", source_contract)
 
     source_manifest = {
         "schema_version": "candidate-v13-external-validity-v4-source-manifest-v1",
@@ -133,15 +133,15 @@ def main() -> int:
             for k, v in core.SOURCE_REVISIONS.items()
         ],
     }
-    write_json(DOC / "source-manifest-v3.json", source_manifest)
-    write_json(DOC / "adapter-policy-v3.json", {
+    write_json(DOC / "source-manifest-v4.json", source_manifest)
+    write_json(DOC / "adapter-policy-v4.json", {
         "schema_version": "candidate-v13-external-validity-v4-adapter-policy-v1",
         "status": "CANDIDATE_BLIND_PRE_FREEZE",
         "source_native_gold": True,
         "metadata_firewall": "Candidate runtime projection contains query+memories only",
         "individual_formal_assignment_persistence": "FORBIDDEN",
     })
-    write_json(DOC / "materializer-contract-v3.json", {
+    write_json(DOC / "materializer-contract-v4.json", {
         "schema_version": "candidate-v13-external-validity-v4-materializer-contract-v1",
         "minimum_context": 5, "minimum_distractors": 4, "global_ceiling": 100,
         "gold_preservation": "all answerable source-native gold retained; no truncation",
@@ -273,7 +273,7 @@ def main() -> int:
         return 1
 
     prereg = """# Candidate-v13 External Validity v4 — Preregistration\n\nCandidate-v13 remains immutable and uninvoked. All 3,744 future formal cases have passed production-faithful materialization before freeze.\n\n## Locked sequence\n\nEV-A-v4 (384) -> PASS required -> EV-B-v4 (1,440) -> PASS required -> EV-C-v4 (1,920). No reruns.\n\n## Runtime memory policy\n\nPolicy C: `max(5, gold_count + 4)`, global infrastructure ceiling 100, zero gold truncation.\n\n## Integrity\n\nPinned immutable source revisions; fresh v4 seeds; no v2 individual assignment reuse; aggregate-only persisted protected evidence; Candidate import only after per-stage ledger 0->1 is committed and pushed.\n"""
-    (DOC / "preregistration-v3.md").write_text(prereg, encoding="utf-8")
+    (DOC / "preregistration-v4.md").write_text(prereg, encoding="utf-8")
     lock = {
         "schema_version": "candidate-v13-external-validity-v4-preregistration-lock-v1",
         "status": "LOCKED_PRE_FREEZE",
@@ -283,12 +283,12 @@ def main() -> int:
         "selection_digests": {s: allocation["stages"][s]["selection_digest_sha256"] for s in core.STAGES},
         "materialization_digests": {s: full_stages[s]["materialization_digest_sha256"] for s in core.STAGES},
         "runtime_payload_digests": {s: full_stages[s]["runtime_payload_digest_sha256"] for s in core.STAGES},
-        "memory_policy": json.loads((DOC / "runtime-memory-policy-v3.json").read_text(encoding="utf-8")),
-        "evaluation_policy_sha256": sha256_file(DOC / "evaluation-policy-v3.json"),
+        "memory_policy": json.loads((DOC / "runtime-memory-policy-v4.json").read_text(encoding="utf-8")),
+        "evaluation_policy_sha256": sha256_file(DOC / "evaluation-policy-v4.json"),
         "rerun_prohibition": True, "performance_driven_protocol_changes": 0,
         "candidate_v13_invoked": False,
     }
-    write_json(DOC / "preregistration-lock-v3.json", lock)
+    write_json(DOC / "preregistration-lock-v4.json", lock)
     return 0
 
 

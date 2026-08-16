@@ -59,7 +59,7 @@ def main() -> int:
         raise RuntimeError("full materialization count is not 3744/3744")
     if any(int(full.get(k, -1)) != 0 for k in ("gold_truncation_count", "runtime_gold_loss_count", "materialization_exception_count")):
         raise RuntimeError("full materialization integrity counters are not zero")
-    prereg_path = DOC / "preregistration-lock-v3.json"
+    prereg_path = DOC / "preregistration-lock-v4.json"
     prereg = read_json(prereg_path)
     if prereg.get("status") != "LOCKED_PRE_FREEZE":
         raise RuntimeError("preregistration lock missing or invalid")
@@ -78,9 +78,9 @@ def main() -> int:
 
     freeze_files = [
         CANDIDATE,
-        DOC / "source-contract-v3.json", DOC / "source-manifest-v3.json", DOC / "adapter-policy-v3.json",
-        DOC / "runtime-memory-policy-v3.json", DOC / "allocation-policy-v3.json", DOC / "materializer-contract-v3.json",
-        DOC / "evaluation-policy-v3.json", DOC / "preregistration-v3.md", prereg_path,
+        DOC / "source-contract-v4.json", DOC / "source-manifest-v4.json", DOC / "adapter-policy-v4.json",
+        DOC / "runtime-memory-policy-v4.json", DOC / "allocation-policy-v4.json", DOC / "materializer-contract-v4.json",
+        DOC / "evaluation-policy-v4.json", DOC / "preregistration-v4.md", prereg_path,
         ROOT / "scripts/candidate_v13_external_validity_v4_prequalification.py",
         ROOT / "scripts/candidate_v13_external_validity_v4_core.py",
         ROOT / "scripts/candidate_v13_external_validity_v4_materializer.py",
@@ -94,6 +94,7 @@ def main() -> int:
         ROOT / "scripts/candidate_v13_external_validity_v4_finalize_qualification.py",
         ROOT / ".github/workflows/candidate-v13-external-validity-v4.yml",
         ROOT / "scripts/bootstrap_candidate_v13_external_validity_v4.py",
+        ROOT / "scripts/candidate_v13_external_validity_v4_fix_names.py",
         ROOT / "scripts/candidate_v13_external_validity_v4_launch_path_qa.py",
         ROOT / "scripts/candidate_v13_external_validity_v4_lock_preregistration.py",
         ROOT / "scripts/candidate_v13_external_validity_v4_final_integrity_audit.py",
@@ -135,7 +136,7 @@ def main() -> int:
         "transitive_runtime_dependencies_frozen": True,
         "files": files,
     }
-    freeze_path = OUT / "infrastructure-freeze-manifest-v3.json"
+    freeze_path = OUT / "infrastructure-freeze-manifest-v4.json"
     write_json(freeze_path, manifest)
     write_json(OUT / "formal-ledger-v4.json", {
         "schema_version": "candidate-v13-external-validity-v4-formal-ledger-v2",
@@ -144,7 +145,7 @@ def main() -> int:
         "candidate_v13_external_invocation_occurred": False,
         "formal_invocation_attempts": {},
     })
-    write_json(DOC / "formal-authorization-lock-v3.json", {
+    write_json(DOC / "formal-authorization-lock-v4.json", {
         "schema_version": "candidate-v13-external-validity-v4-formal-authorization-lock-v2",
         "authorized": True,
         "freeze_manifest_sha256": sha256_file(freeze_path),

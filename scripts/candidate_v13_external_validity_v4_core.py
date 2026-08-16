@@ -18,7 +18,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 V2_FEASIBILITY = ROOT / "scripts/candidate_v13_external_validity_v2_allocation_feasibility.py"
 V2_POLICY = ROOT / "docs/research/candidate-v13-external-validity-v2/allocation-policy-v2.json"
-MEMORY_POLICY = ROOT / "docs/research/candidate-v13-external-validity-v4/runtime-memory-policy-v3.json"
+MEMORY_POLICY = ROOT / "docs/research/candidate-v13-external-validity-v4/runtime-memory-policy-v4.json"
 STAGES = ["ev_a_v4", "ev_b_v4", "ev_c_v4"]
 STAGE_SEEDS = {"ev_a_v4": 84101, "ev_b_v4": 84102, "ev_c_v4": 84103}
 SOURCE_REVISIONS = {

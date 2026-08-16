@@ -21,21 +21,21 @@ EXPECTED_CANDIDATE_SHA256 = "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea4
 MATERIALIZER = ROOT / "scripts/candidate_v13_external_validity_v4_materializer.py"
 EVALUATOR = ROOT / "scripts/candidate_v13_external_validity_v4_evaluator.py"
 LEDGER = OUT / "formal-ledger-v4.json"
-FREEZE = OUT / "infrastructure-freeze-manifest-v3.json"
+FREEZE = OUT / "infrastructure-freeze-manifest-v4.json"
 INFRA = OUT / "infrastructure-qualification.json"
-PREREG = DOC / "preregistration-lock-v3.json"
-AUTH = DOC / "formal-authorization-lock-v3.json"
-EVAL_POLICY = DOC / "evaluation-policy-v3.json"
+PREREG = DOC / "preregistration-lock-v4.json"
+AUTH = DOC / "formal-authorization-lock-v4.json"
+EVAL_POLICY = DOC / "evaluation-policy-v4.json"
 STAGES = ["ev_a_v4", "ev_b_v4", "ev_c_v4"]
 SUMMARY_PATHS = {
-    "ev_a_v4": OUT / "ev-a-v3-summary.json",
-    "ev_b_v4": OUT / "ev-b-v3-summary.json",
-    "ev_c_v4": OUT / "ev-c-v3-summary.json",
+    "ev_a_v4": OUT / "ev-a-v4-summary.json",
+    "ev_b_v4": OUT / "ev-b-v4-summary.json",
+    "ev_c_v4": OUT / "ev-c-v4-summary.json",
 }
 MATERIALIZATION_PATHS = {
-    "ev_a_v4": OUT / "ev-a-v3-materialization-summary.json",
-    "ev_b_v4": OUT / "ev-b-v3-materialization-summary.json",
-    "ev_c_v4": OUT / "ev-c-v3-materialization-summary.json",
+    "ev_a_v4": OUT / "ev-a-v4-materialization-summary.json",
+    "ev_b_v4": OUT / "ev-b-v4-materialization-summary.json",
+    "ev_c_v4": OUT / "ev-c-v4-materialization-summary.json",
 }
 
 

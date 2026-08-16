@@ -18,7 +18,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_CORE = ROOT / "scripts/candidate_v13_external_validity_v4_core.py"
-MEMORY_POLICY = ROOT / "docs/research/candidate-v13-external-validity-v4/runtime-memory-policy-v3.json"
+MEMORY_POLICY = ROOT / "docs/research/candidate-v13-external-validity-v4/runtime-memory-policy-v4.json"
 
 
 def _load_base_core():

@@ -178,7 +178,7 @@ def enrich_source_manifest() -> None:
             "gold_rule": old.get("gold_rule"),
             **license_evidence,
         })
-    write_json(DOC / "source-manifest-v3.json", {
+    write_json(DOC / "source-manifest-v4.json", {
         "schema_version": "candidate-v13-external-validity-v4-source-manifest-v2",
         "status": "QUALIFIED_IMMUTABLE_REVISIONS_PINNED_PRE_FREEZE",
         "candidate_v13_imported": False,
@@ -189,7 +189,7 @@ def enrich_source_manifest() -> None:
 
 
 def enrich_materializer_contract() -> None:
-    path = DOC / "materializer-contract-v3.json"
+    path = DOC / "materializer-contract-v4.json"
     contract = read_json(path)
     contract.update({
         "implementation": "scripts/candidate_v13_external_validity_v4_materializer.py",
@@ -203,19 +203,19 @@ def enrich_materializer_contract() -> None:
 
 
 def enrich_preregistration() -> None:
-    lock_path = DOC / "preregistration-lock-v3.json"
-    allocation = read_json(DOC / "allocation-policy-v3.json")
-    memory = read_json(DOC / "runtime-memory-policy-v3.json")
-    evaluation = read_json(DOC / "evaluation-policy-v3.json")
-    source_contract = read_json(DOC / "source-contract-v3.json")
-    source_manifest = read_json(DOC / "source-manifest-v3.json")
-    materializer_contract = read_json(DOC / "materializer-contract-v3.json")
+    lock_path = DOC / "preregistration-lock-v4.json"
+    allocation = read_json(DOC / "allocation-policy-v4.json")
+    memory = read_json(DOC / "runtime-memory-policy-v4.json")
+    evaluation = read_json(DOC / "evaluation-policy-v4.json")
+    source_contract = read_json(DOC / "source-contract-v4.json")
+    source_manifest = read_json(DOC / "source-manifest-v4.json")
+    materializer_contract = read_json(DOC / "materializer-contract-v4.json")
     lock = read_json(lock_path)
     lock.update({
         "schema_version": "candidate-v13-external-validity-v4-preregistration-lock-v2",
         "status": "LOCKED_PRE_FREEZE",
         "source_revisions": {s["source_id"]: s["revision"] for s in source_manifest["sources"]},
-        "source_manifest_sha256": sha256_file(DOC / "source-manifest-v3.json"),
+        "source_manifest_sha256": sha256_file(DOC / "source-manifest-v4.json"),
         "adapter_versions": {s["source_id"]: s["adapter_version"] for s in source_manifest["sources"]},
         "benchmark_sizes": {"ev_a_v4": 384, "ev_b_v4": 1440, "ev_c_v4": 1920},
         "seeds": allocation["stage_seeds"],
@@ -244,11 +244,11 @@ def enrich_preregistration() -> None:
         "performance_driven_protocol_changes": 0,
     })
     write_json(lock_path, lock)
-    md = """# Candidate-v13 External Validity v4 — Preregistration\n\nCandidate-v13 remains immutable, unimported, and uninvoked. All source, allocation, materialization, evaluator, runner, and policy decisions below are candidate-blind and become immutable at freeze.\n\n## Formal sequence\n\nEV-A-v4 (384) → PASS required → EV-B-v4 (1,440) → PASS required → EV-C-v4 (1,920). No stage reruns, no threshold changes, no benchmark replacement, no post-freeze infrastructure patch.\n\n## Allocation\n\nFresh v3 seeds and fresh deterministic max-flow assignments. Exact source×domain, family, domain, and answerability quotas are locked in `preregistration-lock-v3.json`. Cross-stage base reuse must equal zero. Individual protected assignments are process-memory only.\n\n## Runtime memory policy\n\nPolicy C: `max(5, gold_count + 4)`, global safety ceiling 100. All source-native gold must be retained for answerable cases; all target gold is withheld for no-evidence cases. Case dropping after allocation is forbidden.\n\n## Full materialization gate\n\nBefore freeze, all 3,744 future formal cases must materialize production-faithfully with zero gold truncation, zero runtime gold loss, zero exceptions, stable selection/materialization/runtime-payload digests, and no Candidate import.\n\n## Evaluation and anti-collapse\n\nMetrics, thresholds, anti-collapse rules, stop conditions, evaluator behavior, and reserve-source policy are frozen by the machine-readable preregistration lock and referenced policy files. Candidate performance cannot alter them.\n"""
-    (DOC / "preregistration-v3.md").write_text(md, encoding="utf-8")
+    md = """# Candidate-v13 External Validity v4 — Preregistration\n\nCandidate-v13 remains immutable, unimported, and uninvoked. All source, allocation, materialization, evaluator, runner, and policy decisions below are candidate-blind and become immutable at freeze.\n\n## Formal sequence\n\nEV-A-v4 (384) → PASS required → EV-B-v4 (1,440) → PASS required → EV-C-v4 (1,920). No stage reruns, no threshold changes, no benchmark replacement, no post-freeze infrastructure patch.\n\n## Allocation\n\nFresh v3 seeds and fresh deterministic max-flow assignments. Exact source×domain, family, domain, and answerability quotas are locked in `preregistration-lock-v4.json`. Cross-stage base reuse must equal zero. Individual protected assignments are process-memory only.\n\n## Runtime memory policy\n\nPolicy C: `max(5, gold_count + 4)`, global safety ceiling 100. All source-native gold must be retained for answerable cases; all target gold is withheld for no-evidence cases. Case dropping after allocation is forbidden.\n\n## Full materialization gate\n\nBefore freeze, all 3,744 future formal cases must materialize production-faithfully with zero gold truncation, zero runtime gold loss, zero exceptions, stable selection/materialization/runtime-payload digests, and no Candidate import.\n\n## Evaluation and anti-collapse\n\nMetrics, thresholds, anti-collapse rules, stop conditions, evaluator behavior, and reserve-source policy are frozen by the machine-readable preregistration lock and referenced policy files. Candidate performance cannot alter them.\n"""
+    (DOC / "preregistration-v4.md").write_text(md, encoding="utf-8")
     # The markdown changed after lock assembly; bind its final hash inside the lock.
     lock = read_json(lock_path)
-    lock["preregistration_markdown_sha256"] = sha256_file(DOC / "preregistration-v3.md")
+    lock["preregistration_markdown_sha256"] = sha256_file(DOC / "preregistration-v4.md")
     write_json(lock_path, lock)
 
 
