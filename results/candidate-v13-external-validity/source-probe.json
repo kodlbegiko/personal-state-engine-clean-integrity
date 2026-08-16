@@ -1,0 +1,250 @@
+{
+  "candidate_import_guard": {
+    "forbidden_calls": [],
+    "forbidden_modules": [],
+    "pass": true
+  },
+  "candidate_v13_invoked": false,
+  "completed_utc": "2026-08-16T02:07:54.882530Z",
+  "formal_case_materialized": false,
+  "purpose": "Pin source revisions and inspect source-native schemas/count metadata before adapter implementation.",
+  "schema_version": "candidate-v13-external-source-probe-v1",
+  "sources": {
+    "longmemeval-cleaned": {
+      "dataset_repo": "xiaowu0162/longmemeval-cleaned",
+      "dataset_revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+      "file": {
+        "bytes": 15388478,
+        "path": "longmemeval_oracle.json",
+        "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c"
+      },
+      "hf_metadata": {
+        "gated": false,
+        "last_modified": "2025-09-19T23:48:16.000Z",
+        "private": false,
+        "sha": "98d7416c24c778c2fee6e6f3006e7a073259d48f"
+      },
+      "question_type_counts": {
+        "knowledge-update": 78,
+        "multi-session": 133,
+        "single-session-assistant": 56,
+        "single-session-preference": 30,
+        "single-session-user": 70,
+        "temporal-reasoning": 133
+      },
+      "record_key_counts": {
+        "answer": 500,
+        "answer_session_ids": 500,
+        "haystack_dates": 500,
+        "haystack_session_ids": 500,
+        "haystack_sessions": 500,
+        "question": 500,
+        "question_date": 500,
+        "question_id": 500,
+        "question_type": 500
+      },
+      "required_file_present": true,
+      "shape": {
+        "length": 500,
+        "sample_union_keys": [
+          "answer",
+          "answer_session_ids",
+          "haystack_dates",
+          "haystack_session_ids",
+          "haystack_sessions",
+          "question",
+          "question_date",
+          "question_id",
+          "question_type"
+        ],
+        "type": "list"
+      }
+    },
+    "personamem-v2": {
+      "dataset_repo": "bowen-upenn/PersonaMem-v2",
+      "dataset_revision": "b7b42b78917157afed063527a1c959e98f6109f2",
+      "distinct_probe_fields": {},
+      "file": {
+        "bytes": 42426457,
+        "path": "benchmark/text/benchmark.csv",
+        "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52"
+      },
+      "headers": [
+        "persona_id",
+        "chat_history_32k_link",
+        "chat_history_128k_link",
+        "raw_persona_file",
+        "short_persona",
+        "expanded_persona",
+        "user_query",
+        "correct_answer",
+        "incorrect_answers",
+        "topic_query",
+        "preference",
+        "topic_preference",
+        "conversation_scenario",
+        "pref_type",
+        "related_conversation_snippet",
+        "who",
+        "updated",
+        "prev_pref",
+        "sensitive_info",
+        "total_tokens_in_chat_history_32k",
+        "total_tokens_in_chat_history_128k",
+        "distance_from_related_snippet_to_query_32k",
+        "distance_from_related_snippet_to_query_128k",
+        "num_persona_relevant_tokens_32k",
+        "num_persona_irrelevant_tokens_32k",
+        "num_persona_relevant_tokens_128k",
+        "num_persona_irrelevant_tokens_128k"
+      ],
+      "hf_metadata": {
+        "gated": false,
+        "last_modified": "2026-06-06T21:55:18.000Z",
+        "private": false,
+        "sha": "b7b42b78917157afed063527a1c959e98f6109f2"
+      },
+      "nonempty_counts": {
+        "chat_history_128k_link": 5000,
+        "chat_history_32k_link": 5000,
+        "conversation_scenario": 5000,
+        "correct_answer": 5000,
+        "distance_from_related_snippet_to_query_128k": 5000,
+        "distance_from_related_snippet_to_query_32k": 5000,
+        "expanded_persona": 5000,
+        "incorrect_answers": 5000,
+        "num_persona_irrelevant_tokens_128k": 5000,
+        "num_persona_irrelevant_tokens_32k": 5000,
+        "num_persona_relevant_tokens_128k": 5000,
+        "num_persona_relevant_tokens_32k": 5000,
+        "persona_id": 5000,
+        "pref_type": 5000,
+        "preference": 5000,
+        "prev_pref": 1048,
+        "raw_persona_file": 5000,
+        "related_conversation_snippet": 5000,
+        "sensitive_info": 5000,
+        "short_persona": 5000,
+        "topic_preference": 5000,
+        "topic_query": 5000,
+        "total_tokens_in_chat_history_128k": 5000,
+        "total_tokens_in_chat_history_32k": 5000,
+        "updated": 5000,
+        "user_query": 5000,
+        "who": 5000
+      },
+      "required_file_present": true,
+      "row_count": 5000
+    },
+    "sgd": {
+      "dialogue_record_keys": [
+        "dialogue_id",
+        "services",
+        "turns"
+      ],
+      "files": {
+        "train/dialogues_001.json": {
+          "bytes": 3128575,
+          "sha256": "5ce28a6e656bc88c1da29c983d243d5a81eb37de92698da3864d1cf02894ca24"
+        },
+        "train/schema.json": {
+          "bytes": 75764,
+          "sha256": "97b6c21673aa7e5c2d1ceef52aa35170c565223cdcbf33bb24c69739bda04a82"
+        }
+      },
+      "frame_keys": [
+        "actions",
+        "service",
+        "service_call",
+        "service_results",
+        "slots",
+        "state"
+      ],
+      "probe_dialogue_count": 128,
+      "repository": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "revision": "e852981ae34990f4358979625854259302feaa78",
+      "schema_domain_prefix_counts": {
+        "Banks": 1,
+        "Buses": 2,
+        "Calendar": 1,
+        "Events": 2,
+        "Flights": 2,
+        "Homes": 1,
+        "Hotels": 3,
+        "Media": 1,
+        "Movies": 1,
+        "Music": 2,
+        "RentalCars": 2,
+        "Restaurants": 1,
+        "RideSharing": 2,
+        "Services": 3,
+        "Travel": 1,
+        "Weather": 1
+      },
+      "schema_service_count": 26,
+      "turn_keys": [
+        "frames",
+        "speaker",
+        "utterance"
+      ]
+    },
+    "taskmaster-1": {
+      "files": {
+        "TM-1-2019/ontology.json": {
+          "bytes": 1426,
+          "sha256": "b8103a812799a8c0095800ba9fbf2b4654bccf7f099daa8a4a145c340a69bc52"
+        },
+        "TM-1-2019/sample.json": {
+          "bytes": 7116,
+          "sha256": "83fa11504f6e6a8b32fc4f140db82ed624d0e1fdfd0b48f4f40b60c118ac266d"
+        },
+        "TM-1-2019/train-dev-test/dev.csv": {
+          "bytes": 32340,
+          "sha256": "d83a6f413f45e01b376d611aadf07fd0fc49f6cedffb4ffff7e7b1f8393c13bf"
+        },
+        "TM-1-2019/train-dev-test/test.csv": {
+          "bytes": 32340,
+          "sha256": "1938698dc98b71c5256c05da092dff0d4f9eff224ec413b3c3eed57bc0bca928"
+        },
+        "TM-1-2019/train-dev-test/train.csv": {
+          "bytes": 259056,
+          "sha256": "88e48f53524ed123dfc57733ccc23f80e176d1e057d7ea46a62a01ddce02626e"
+        }
+      },
+      "known_full_data_blob_shas": {
+        "TM-1-2019/self-dialogs.json": "f1a1a3fd4bfb9cbb62d419f7964fb33291e0b2dd",
+        "TM-1-2019/woz-dialogs.json": "c3d5ae919713db351eed531957f8d8893d581a8c"
+      },
+      "repository": "google-research-datasets/Taskmaster",
+      "revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+      "sample_record_keys": [
+        "conversation_id",
+        "instruction_id",
+        "utterances"
+      ],
+      "sample_shape": {
+        "keys": [
+          "conversation_id",
+          "instruction_id",
+          "utterances"
+        ],
+        "length": 3,
+        "type": "dict"
+      },
+      "sample_utterance_keys": [
+        "index",
+        "segments",
+        "speaker",
+        "text"
+      ],
+      "split_row_counts_raw": {
+        "dev": 770,
+        "test": 770,
+        "train": 6168
+      },
+      "unique_split_first_column_values": 7708
+    }
+  },
+  "status": "PASS",
+  "utc": "2026-08-16T02:07:36.925340Z"
+}
