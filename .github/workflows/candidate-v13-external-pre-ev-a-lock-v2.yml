@@ -1,0 +1,43 @@
+name: Candidate v13 external-validity final pre-EV-A lock v2
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/pre-ev-a-lock-v2-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify no external execution yet
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          c=json.loads(Path('results/candidate-v13-external-validity/runtime-contract.json').read_text())
+          assert c['candidate_v13_external_performance_observed'] is False
+          d=json.loads(Path('results/candidate-v13-external-validity/ev-a-runtime.json').read_text())
+          assert d['status']=='MATERIALIZATION_VALIDATED_NO_EXECUTION'
+          PY
+      - name: Generate final lock
+        run: python scripts/candidate_v13_external_pre_ev_a_lock_v2.py
+      - name: Commit final lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/research/candidate-v13-external-validity/pre-ev-a-lock-v2.json
+          git commit -m "candidate-v13 external validity: finalize pre-EV-A lock v2"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
