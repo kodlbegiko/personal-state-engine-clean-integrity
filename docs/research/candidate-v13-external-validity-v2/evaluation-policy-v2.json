@@ -1,0 +1,112 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-evaluation-policy-v1",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE",
+  "candidate_v13_external_performance_observed": false,
+  "acceptance_basis": "point_estimates",
+  "uncertainty": {
+    "proportion_intervals": "wilson_95",
+    "mrr_interval": "percentile_bootstrap_95",
+    "bootstrap_iterations": 10000,
+    "bootstrap_seed": 91357
+  },
+  "common_integrity_gates": {
+    "metadata_firewall": "PASS",
+    "candidate_source_invariant": "PASS",
+    "determinism": "PASS",
+    "anti_collapse": "PASS",
+    "contamination_audit": "PASS",
+    "frozen_hash_audit": "PASS",
+    "invalid_rate_max": 0.02
+  },
+  "anti_collapse": {
+    "near_universal_retrieval_rate": 0.97,
+    "near_universal_abstention_rate": 0.97,
+    "catastrophic_family_accuracy": 0.70,
+    "rule": "Any universal/near-universal decision collapse or any primary family accuracy below 0.70 is an automatic stage failure."
+  },
+  "ev_a_v2": {
+    "purpose": "small one-shot external shakedown after full infrastructure freeze; no tuning or protocol changes are allowed after observation",
+    "case_count": 384,
+    "aggregate": {
+      "mrr_min": 0.80,
+      "r_at_1_min": 0.75,
+      "r_at_3_min": 0.85,
+      "r_at_5_min": 0.90,
+      "answerable_recall_min": 0.90,
+      "false_abstention_rate_max": 0.10,
+      "false_retrieval_rate_max": 0.12,
+      "abstention_accuracy_min": 0.85,
+      "eligible_rank1_accuracy_min": 0.78
+    },
+    "family_accuracy_floors": {
+      "N1":0.65,"N2":0.65,"N3":0.65,"N4":0.65,"N5":0.65,"N6":0.65,
+      "N7":0.65,"N8":0.65,"N9":0.65,"N10":0.65,"N11":0.60,"N12":0.65
+    },
+    "domain_floors": {
+      "case_count": 48,
+      "r_at_1_min": 0.60,
+      "answerable_recall_min": 0.75,
+      "false_retrieval_rate_max": 0.20,
+      "abstention_accuracy_min": 0.70
+    }
+  },
+  "ev_b_v2": {
+    "purpose": "one-shot protected naturalistic external evaluation",
+    "case_count": 1440,
+    "aggregate": {
+      "mrr_min": 0.90,
+      "r_at_1_min": 0.88,
+      "r_at_3_min": 0.94,
+      "r_at_5_min": 0.96,
+      "answerable_recall_min": 0.94,
+      "false_abstention_rate_max": 0.06,
+      "false_retrieval_rate_max": 0.05,
+      "abstention_accuracy_min": 0.93,
+      "eligible_rank1_accuracy_min": 0.90
+    },
+    "family_accuracy_floors": {
+      "N1":0.92,"N2":0.88,"N3":0.85,"N4":0.85,"N5":0.85,"N6":0.88,
+      "N7":0.88,"N8":0.88,"N9":0.85,"N10":0.92,"N11":0.82,"N12":0.85
+    },
+    "domain_floors": {
+      "case_count": 180,
+      "r_at_1_min": 0.80,
+      "answerable_recall_min": 0.88,
+      "false_retrieval_rate_max": 0.10,
+      "abstention_accuracy_min": 0.85
+    }
+  },
+  "ev_c_v2": {
+    "purpose": "one-shot final confirmatory naturalistic external evaluation",
+    "case_count": 1920,
+    "aggregate": {
+      "mrr_min": 0.88,
+      "r_at_1_min": 0.85,
+      "r_at_3_min": 0.92,
+      "r_at_5_min": 0.95,
+      "answerable_recall_min": 0.92,
+      "false_abstention_rate_max": 0.08,
+      "false_retrieval_rate_max": 0.06,
+      "abstention_accuracy_min": 0.92,
+      "eligible_rank1_accuracy_min": 0.88
+    },
+    "family_accuracy_floors": {
+      "N1":0.89,"N2":0.85,"N3":0.82,"N4":0.82,"N5":0.82,"N6":0.85,
+      "N7":0.85,"N8":0.85,"N9":0.82,"N10":0.89,"N11":0.79,"N12":0.82
+    },
+    "domain_floors": {
+      "case_count": 240,
+      "r_at_1_min": 0.76,
+      "answerable_recall_min": 0.85,
+      "false_retrieval_rate_max": 0.12,
+      "abstention_accuracy_min": 0.82
+    }
+  },
+  "reporting": {
+    "required": [
+      "overall_metrics","domain_metrics","family_metrics","rank_metrics","coverage","invalid_rate",
+      "bootstrap_confidence_interval","error_counts","dataset_source_distribution","integrity"
+    ],
+    "performance_driven_primary_metric_addition": "FORBIDDEN"
+  }
+}
