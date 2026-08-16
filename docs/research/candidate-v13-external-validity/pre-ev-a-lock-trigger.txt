@@ -1,0 +1,7 @@
+PRE_EV_A_IMMUTABLE_LOCK_AUTHORIZED
+EV_A_materialization=PASS_NO_EXECUTION
+joint_feasibility=PASS
+contamination_firewall=PASS
+runtime_contract=PASS_SYNTHETIC_ONLY
+candidate_v13_external_performance_observed=false
+formal_ev_b_or_ev_c_materialized=false
