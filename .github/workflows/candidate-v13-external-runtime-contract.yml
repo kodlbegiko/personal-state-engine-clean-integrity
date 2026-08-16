@@ -1,0 +1,59 @@
+name: Candidate v13 external-validity synthetic runtime contract
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/runtime-contract-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  runtime-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify external corpus remains unexecuted
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          f=json.loads(Path('results/candidate-v13-external-validity/joint-feasibility.json').read_text())
+          assert f['status']=='JOINT_FEASIBILITY_PASS'
+          assert f['candidate_v13_invoked'] is False
+          assert f['formal_case_materialized'] is False
+          PY
+      - name: Compile contract probe
+        run: python -m py_compile scripts/candidate_v13_external_runtime_contract_probe.py
+      - name: Run fixed synthetic contract probe
+        run: python scripts/candidate_v13_external_runtime_contract_probe.py
+      - name: Persist contract evidence
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          test -f results/candidate-v13-external-validity/runtime-contract.json
+          git add results/candidate-v13-external-validity/runtime-contract.json
+          git commit -m "candidate-v13 external validity: record synthetic runtime contract" || true
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Enforce contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/runtime-contract.json').read_text())
+          assert r['status']=='PASS', r
+          assert r['fixture_only'] is True
+          assert r['external_corpus_loaded'] is False
+          assert r['candidate_v13_external_performance_observed'] is False
+          assert r['candidate_v13_source_hash_match'] is True
+          PY
