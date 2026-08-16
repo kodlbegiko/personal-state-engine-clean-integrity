@@ -1,0 +1,30 @@
+{
+  "automatic_candidate_retry_permitted": false,
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "formal_reruns_permitted": false,
+  "lineage": "fresh-v4-event-independent",
+  "manual_formal_dispatch_permitted": false,
+  "ordered_phases": [
+    "bootstrap",
+    "prequalification",
+    "qualification",
+    "formal_runner_qa",
+    "launch_path_qa",
+    "preregistration_lock",
+    "freeze_and_authorize",
+    "verify_freeze",
+    "ev_a_v4",
+    "ev_a_gate",
+    "ev_b_v4",
+    "ev_b_gate",
+    "ev_c_v4",
+    "independent_final_integrity_audit",
+    "terminal_decision"
+  ],
+  "post_freeze_repository_event_required": false,
+  "recursive_github_token_trigger_required": false,
+  "schema_version": "candidate-v13-external-validity-v4-orchestration-contract-v1",
+  "single_top_level_workflow": ".github/workflows/candidate-v13-external-validity-v4.yml",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE"
+}
