@@ -21,7 +21,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/candidate-v13-external-validity/evermembench-dynamic-probe.json"
 HF_REPO = "EverMind-AI/EverMemBench-Dynamic"
-USER_AGENT = "pse-evermembench-dynamic-probe/1.0"
+USER_AGENT = "pse-evermembench-dynamic-probe/1.1"
 
 
 def request_json(url: str) -> Any:
@@ -42,7 +42,6 @@ def hf_url(revision: str, rel: str) -> str:
 
 
 def expand_indices(value: Any) -> set[str]:
-    """Parse source-native message_index forms like '1, 4-6, 8'."""
     out: set[str] = set()
     if value is None:
         return out
@@ -68,13 +67,25 @@ def normalized_topic(value: Any) -> str:
     return s
 
 
+def license_from_meta(meta: dict[str, Any]) -> str:
+    card = meta.get("cardData") or {}
+    value = str(card.get("license") or "").strip().casefold()
+    if value:
+        return value
+    for tag in meta.get("tags", []) or []:
+        tag = str(tag)
+        if tag.startswith("license:"):
+            return tag.split(":", 1)[1].strip().casefold()
+    return ""
+
+
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     meta = request_json(f"https://huggingface.co/api/datasets/{HF_REPO}")
     revision = str(meta.get("sha") or "")
     if not revision:
         raise RuntimeError("Hugging Face dataset revision missing")
-    license_value = str((meta.get("cardData") or {}).get("license") or "")
+    license_value = license_from_meta(meta)
     siblings = {str(item.get("rfilename")) for item in meta.get("siblings", []) if item.get("rfilename")}
 
     q_rel = "EverMemBench_QAR.json"
@@ -91,7 +102,6 @@ def main() -> int:
     dialogues = json.loads(d_raw)
     profiles = json.loads(p_raw)
 
-    # Build exact source-native index.
     index: dict[tuple[str, str, str], set[str]] = defaultdict(set)
     dialogue_rows = dialogues if isinstance(dialogues, list) else []
     dialogue_topic_counts = Counter()
@@ -183,7 +193,7 @@ def main() -> int:
         else:
             aggregate["qar_unresolved_reference"] += 1
 
-    profile_count = len(profiles) if isinstance(profiles, list) else len(profiles) if isinstance(profiles, dict) else 0
+    profile_count = len(profiles) if isinstance(profiles, (list, dict)) else 0
     result = {
         "schema_version": "candidate-v13-external-evermembench-dynamic-probe-v1",
         "candidate_v13_invoked": False,
