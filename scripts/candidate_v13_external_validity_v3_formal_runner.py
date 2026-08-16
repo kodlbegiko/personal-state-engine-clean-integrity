@@ -15,9 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BRANCH = "research/candidate-v13-external-validity-infra-v3"
 OUT = ROOT / "results/candidate-v13-external-validity-v3"
 DOC = ROOT / "docs/research/candidate-v13-external-validity-v3"
+CANDIDATE_MODULE = "personal_state_engine.candidate_v13"
 CANDIDATE = ROOT / "src/personal_state_engine/candidate_v13.py"
 EXPECTED_CANDIDATE_SHA256 = "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838"
-CORE = ROOT / "scripts/candidate_v13_external_validity_v3_core.py"
+MATERIALIZER = ROOT / "scripts/candidate_v13_external_validity_v3_materializer.py"
 EVALUATOR = ROOT / "scripts/candidate_v13_external_validity_v3_evaluator.py"
 LEDGER = OUT / "formal-ledger.json"
 FREEZE = OUT / "infrastructure-freeze-manifest-v3.json"
@@ -78,13 +79,27 @@ def commit_and_push(paths: list[Path], message: str) -> str:
     return git("rev-parse", "HEAD").stdout.strip()
 
 
+def candidate_loaded() -> bool:
+    return CANDIDATE_MODULE in sys.modules
+
+
+def unload_candidate() -> None:
+    sys.modules.pop(CANDIDATE_MODULE, None)
+    package = sys.modules.get("personal_state_engine")
+    if package is not None and hasattr(package, "candidate_v13"):
+        try:
+            delattr(package, "candidate_v13")
+        except Exception:
+            pass
+
+
 def verify_freeze() -> tuple[dict[str, Any], dict[str, Any]]:
-    if "personal_state_engine.candidate_v13" in sys.modules:
+    if candidate_loaded():
         raise RuntimeError("CANDIDATE_FIREWALL_FAIL: Candidate imported before freeze verification")
     if sha256_file(CANDIDATE) != EXPECTED_CANDIDATE_SHA256:
         raise RuntimeError("FREEZE_MISMATCH: Candidate-v13 SHA256")
     if not FREEZE.exists() or not AUTH.exists() or not PREREG.exists():
-        raise RuntimeError("FREEZE_MISMATCH: required freeze/authorization/preregistration evidence missing")
+        raise RuntimeError("FREEZE_MISMATCH: freeze/authorization/preregistration evidence missing")
     freeze = read_json(FREEZE)
     auth = read_json(AUTH)
     if freeze.get("status") != "FROZEN" or auth.get("authorized") is not True:
@@ -112,6 +127,8 @@ def read_ledger() -> dict[str, Any]:
 
 
 def consume(stage: str) -> None:
+    if candidate_loaded():
+        raise RuntimeError(f"CANDIDATE_FIREWALL_FAIL: Candidate imported before {stage} ledger consumption")
     ledger = read_ledger()
     if ledger[stage] != 0:
         raise RuntimeError(f"FORMAL_RERUN_DETECTED: {stage}")
@@ -120,24 +137,44 @@ def consume(stage: str) -> None:
         if ledger[earlier] != 1 or not SUMMARY_PATHS[earlier].exists() or read_json(SUMMARY_PATHS[earlier]).get("status") != "PASS":
             raise RuntimeError(f"LEDGER_INCONSISTENCY: {stage} before completed PASS {earlier}")
     ledger[stage] = 1
-    ledger["candidate_v13_external_invocation_occurred"] = True
     ledger["last_consumed_stage"] = stage
     write_json(LEDGER, ledger)
     commit_and_push([LEDGER], f"candidate-v13 external validity v3: consume {stage} one-shot ledger")
     if read_ledger()[stage] != 1:
-        raise RuntimeError(f"LEDGER_INCONSISTENCY: {stage} ledger transition not persisted")
+        raise RuntimeError(f"LEDGER_INCONSISTENCY: {stage} transition not persisted")
+
+
+def mark_first_invocation_attempt(stage: str) -> None:
+    ledger = read_ledger()
+    ledger["candidate_v13_external_invocation_occurred"] = True
+    attempts = dict(ledger.get("formal_invocation_attempts", {}))
+    attempts[stage] = int(attempts.get(stage, 0)) + 1
+    ledger["formal_invocation_attempts"] = attempts
+    write_json(LEDGER, ledger)
+    commit_and_push([LEDGER], f"candidate-v13 external validity v3: record {stage} formal invocation attempt")
 
 
 def stage_state(stage: str) -> str:
     return str(read_json(SUMMARY_PATHS[stage]).get("status", "INVALID")) if SUMMARY_PATHS[stage].exists() else "NOT_EXECUTED"
 
 
-def candidate_ranker():
-    if "personal_state_engine.candidate_v13" in sys.modules:
-        raise RuntimeError("CANDIDATE_FIREWALL_FAIL: pre-ledger Candidate import")
-    mod = importlib.import_module("personal_state_engine.candidate_v13")
-    rank = getattr(mod, "pse_candidate_v13_rank")
-    return lambda runtime, k: list(rank(runtime, k))
+def candidate_ranker(stage: str):
+    if candidate_loaded():
+        raise RuntimeError(f"CANDIDATE_FIREWALL_FAIL: Candidate imported before authorized {stage} import")
+    module = importlib.import_module(CANDIDATE_MODULE)
+    rank = getattr(module, "pse_candidate_v13_rank")
+    first_attempt_recorded = False
+
+    def wrapped(runtime: dict[str, Any], k: int) -> list[str]:
+        nonlocal first_attempt_recorded
+        try:
+            return list(rank(runtime, k))
+        finally:
+            if not first_attempt_recorded:
+                first_attempt_recorded = True
+                mark_first_invocation_attempt(stage)
+
+    return wrapped
 
 
 def terminal(state: str, integrity: str, reason: str | None = None) -> None:
@@ -151,10 +188,13 @@ def terminal(state: str, integrity: str, reason: str | None = None) -> None:
         "full_production_materialization": full.get("status", "UNKNOWN"),
         "selected_cases_materialized": f"{full.get('successfully_materialized_case_count', 0)}/{full.get('selected_case_count', 0)}",
         "gold_truncation_count": full.get("gold_truncation_count", 0),
-        "ev_a_v3": summaries["ev_a_v3"], "ev_b_v3": summaries["ev_b_v3"], "ev_c_v3": summaries["ev_c_v3"],
+        "ev_a_v3": summaries["ev_a_v3"],
+        "ev_b_v3": summaries["ev_b_v3"],
+        "ev_c_v3": summaries["ev_c_v3"],
         "formal_ledger": {s: ledger.get(s, 0) for s in STAGES},
         "candidate_v13_modified": sha256_file(CANDIDATE) != EXPECTED_CANDIDATE_SHA256,
         "candidate_v13_formal_invocation": bool(ledger.get("candidate_v13_external_invocation_occurred", False)),
+        "formal_invocation_attempts": ledger.get("formal_invocation_attempts", {}),
         "formal_reruns": int(ledger.get("formal_reruns", 0)),
         "illegal_formal_reruns": bool(ledger.get("illegal_formal_reruns", False)),
         "performance_driven_protocol_changes": 0,
@@ -164,51 +204,60 @@ def terminal(state: str, integrity: str, reason: str | None = None) -> None:
     write_json(OUT / "terminal-summary.json", obj)
     report = [
         "# Candidate-v13 External Validity v3 — Terminal Report", "",
-        f"- Terminal state: `{state}`", f"- Infrastructure: `{obj['infrastructure']}`",
+        f"- Terminal state: `{state}`",
+        f"- Infrastructure: `{obj['infrastructure']}`",
         f"- Full production materialization: `{obj['full_production_materialization']}`",
         f"- Selected cases materialized: `{obj['selected_cases_materialized']}`",
         f"- Gold truncation count: `{obj['gold_truncation_count']}`",
-        f"- EV-A-v3: `{stage_state('ev_a_v3')}`", f"- EV-B-v3: `{stage_state('ev_b_v3')}`", f"- EV-C-v3: `{stage_state('ev_c_v3')}`",
+        f"- EV-A-v3: `{stage_state('ev_a_v3')}`",
+        f"- EV-B-v3: `{stage_state('ev_b_v3')}`",
+        f"- EV-C-v3: `{stage_state('ev_c_v3')}`",
         f"- Candidate-v13 modified: `{'YES' if obj['candidate_v13_modified'] else 'NO'}`",
         f"- Candidate-v13 formal invocation: `{'YES' if obj['candidate_v13_formal_invocation'] else 'NO'}`",
-        f"- Formal reruns: `{obj['formal_reruns']}`", f"- Research integrity: `{integrity}`",
+        f"- Formal reruns: `{obj['formal_reruns']}`",
+        f"- Research integrity: `{integrity}`",
     ]
-    if reason: report += ["", "## Reason", "", reason]
+    if reason:
+        report += ["", "## Reason", "", reason]
     (DOC / "TERMINAL_REPORT.md").write_text("\n".join(report) + "\n", encoding="utf-8")
     commit_and_push([OUT / "terminal-summary.json", DOC / "TERMINAL_REPORT.md"], f"candidate-v13 external validity v3: terminal {state}")
 
 
 def execute() -> int:
     try:
+        unload_candidate()
         _, prereg = verify_freeze()
-        if any(read_ledger()[s] == 1 and not SUMMARY_PATHS[s].exists() for s in STAGES):
-            terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", "A formal ledger was already consumed without a legal stage result; rerun is forbidden.")
+        ledger = read_ledger()
+        if any(ledger[s] == 1 and not SUMMARY_PATHS[s].exists() for s in STAGES):
+            terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", "A formal ledger was consumed without a legal stage result; rerun is forbidden.")
             return 3
 
-        core = load("pse_v3_core_formal", CORE)
+        materializer = load("pse_v3_materializer_formal", MATERIALIZER)
         evaluator = load("pse_v3_evaluator_formal", EVALUATOR)
         policy = read_json(EVAL_POLICY)
-        bases, assignments, allocation = core.select_all()
+        bases, assignments, allocation = materializer.select_all()
         for stage in STAGES:
             if allocation["stages"][stage]["selection_digest_sha256"] != prereg["selection_digests"][stage]:
                 raise RuntimeError(f"FREEZE_MISMATCH: {stage} selection digest")
 
         materialized: dict[str, tuple[list[dict[str, Any]], dict[str, Any]]] = {}
         for stage in STAGES:
-            cases, summary = core.materialize_stage(assignments[stage], bases, int(core.STAGE_SEEDS[stage]))
+            cases, summary = materializer.materialize_stage(assignments[stage], bases, int(materializer.STAGE_SEEDS[stage]))
             if summary["materialization_digest_sha256"] != prereg["materialization_digests"][stage]:
                 raise RuntimeError(f"FREEZE_MISMATCH: {stage} materialization digest")
             if summary["runtime_payload_digest_sha256"] != prereg["runtime_payload_digests"][stage]:
                 raise RuntimeError(f"FREEZE_MISMATCH: {stage} runtime payload digest")
             materialized[stage] = (cases, summary)
-        if "personal_state_engine.candidate_v13" in sys.modules:
+        if candidate_loaded():
             raise RuntimeError("CANDIDATE_FIREWALL_FAIL: Candidate imported before all digest verification")
 
         for stage in STAGES:
             ledger = read_ledger()
             state = stage_state(stage)
             if ledger[stage] == 1:
-                if state == "PASS": continue
+                if state == "PASS":
+                    unload_candidate()
+                    continue
                 if state == "NOT_EXECUTED":
                     terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"{stage} consumed with missing result")
                     return 3
@@ -220,15 +269,21 @@ def execute() -> int:
             if state != "NOT_EXECUTED":
                 terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"{stage} result exists with ledger 0")
                 return 3
+            if candidate_loaded():
+                terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"Candidate module remained loaded before {stage} ledger consumption")
+                return 3
 
             cases, mat = materialized[stage]
             consume(stage)
-            ranker = candidate_ranker()
+            ranker = candidate_ranker(stage)
             try:
                 summary = evaluator.evaluate(stage, cases, ranker, policy)
             except Exception as exc:
-                terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"{stage} Candidate/evaluator execution failed after ledger consumption: {type(exc).__name__}: {exc}")
+                unload_candidate()
+                terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"{stage} execution failed after ledger consumption: {type(exc).__name__}: {exc}")
                 return 3
+            unload_candidate()
+
             summary.update({
                 "selection_digest_sha256": prereg["selection_digests"][stage],
                 "materialization_digest_sha256": mat["materialization_digest_sha256"],
@@ -253,11 +308,19 @@ def execute() -> int:
         terminal("EXTERNAL_VALIDITY_V3_PASS", "PASS")
         return 0
     except RuntimeError as exc:
+        unload_candidate()
         message = str(exc)
         if "FREEZE_MISMATCH" in message or "CANDIDATE_FIREWALL_FAIL" in message or "LEDGER_INCONSISTENCY" in message or "FORMAL_RERUN_DETECTED" in message:
             terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", message)
             return 3
         terminal("EXTERNAL_VALIDITY_V3_INFRASTRUCTURE_BLOCKED", "PASS", message)
+        return 4
+    except Exception as exc:
+        unload_candidate()
+        if LEDGER.exists() and any(read_ledger().get(s) == 1 and not SUMMARY_PATHS[s].exists() for s in STAGES):
+            terminal("EXTERNAL_VALIDITY_V3_INVALID", "FAIL", f"Unexpected failure after ledger consumption: {type(exc).__name__}: {exc}")
+            return 3
+        terminal("EXTERNAL_VALIDITY_V3_INFRASTRUCTURE_BLOCKED", "PASS", f"Unexpected pre-formal infrastructure failure: {type(exc).__name__}: {exc}")
         return 4
 
 
