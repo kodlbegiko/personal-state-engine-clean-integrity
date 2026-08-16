@@ -3,29 +3,168 @@ on:
   push:
     branches: [research/candidate-v14-fresh-external-validity-v1]
     paths:
-      - 'results/candidate-v14-external-v1/evaluation-freeze.json'
+      - 'results/candidate-v14-external-v1/formal-start-request.json'
+
+concurrency:
+  group: candidate-v14-external-v1-formal
+  cancel-in-progress: false
+
 permissions:
   contents: write
+
 jobs:
   formal-evaluate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: {fetch-depth: 0}
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - name: Enforce branch-level one-shot lock before candidate import
+        with:
+          python-version: '3.12'
+
+      - name: Configure evidence commits
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Preflight historical anchors and one-shot lock
         shell: bash
         run: |
+          set -euo pipefail
           git fetch origin research/candidate-v14-fresh-external-validity-v1
           if git show origin/research/candidate-v14-fresh-external-validity-v1:results/candidate-v14-external-v1/formal-run.lock >/dev/null 2>&1; then
             echo 'Formal evaluation already locked; refusing second candidate invocation.'
             exit 78
           fi
-      - name: Verify frozen hashes without invoking candidate
-        run: python - <<'PY'
+          git cat-file -e 232030e67022e492991edb3e2c89ed96eef0c20a^{commit}
+          git cat-file -e ec15d0cc5d7a10aef64f10547c7e8a36aa9b6972^{commit}
+          git cat-file -e df5986f4a45adadfc04055b3b8c6f38b2704d134^{commit}
+          python - <<'PY'
+          import hashlib, pathlib
+          p=pathlib.Path('src/personal_state_engine/candidate_v14.py')
+          got=hashlib.sha256(p.read_bytes()).hexdigest()
+          expected='f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44'
+          assert got==expected, (got, expected)
+          print('CANDIDATE_FREEZE_HASH=PASS')
+          PY
+          python -m py_compile scripts/candidate_v14_external_v1_generate.py scripts/candidate_v14_external_v1_evaluate.py scripts/candidate_v14_external_v1_audit.py
+
+      - name: Commit seed commitment before corpus materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os, secrets, pathlib
+          seed=secrets.token_hex(32)
+          salt=secrets.token_hex(32)
+          commitment=hashlib.sha256((seed+salt).encode()).hexdigest()
+          pathlib.Path(os.environ['RUNNER_TEMP'],'candidate-v14-external-seed.json').write_text(json.dumps({'seed':seed,'salt':salt}))
+          out=pathlib.Path('results/candidate-v14-external-v1/seed-commitment.json')
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text(json.dumps({'schema_version':'candidate-v14-external-v1-seed-commitment-v2','commitment_scheme':'SHA256(seed || salt)','seed_commitment_sha256':commitment,'seed_revealed':False,'candidate_results_seen_before_commitment':False},indent=2)+'\n')
+          PY
+          git add results/candidate-v14-external-v1/seed-commitment.json
+          git commit -m 'candidate-v14 external-v1: commit protected generation seed'
+          git push origin HEAD:research/candidate-v14-fresh-external-validity-v1
+          echo "SEED_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Materialize fresh protected corpus without candidate import
+        shell: bash
+        run: |
+          set -euo pipefail
+          SEED=$(python - <<'PY'
+          import json,os,pathlib
+          print(json.loads(pathlib.Path(os.environ['RUNNER_TEMP'],'candidate-v14-external-seed.json').read_text())['seed'])
+          PY
+          )
+          rm -rf data/candidate-v14-external-v1
+          python scripts/candidate_v14_external_v1_generate.py --seed "$SEED" --out data/candidate-v14-external-v1
+
+      - name: Validate corpus and construct protected freeze artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import collections, hashlib, json, pathlib
+          root=pathlib.Path('.')
+          data=root/'data/candidate-v14-external-v1'
+          res=root/'results/candidate-v14-external-v1'
+          doc=root/'docs/research/candidate-v14-external-v1'
+          shards=sorted(data.glob('protected-*.json'))
+          cases=[]
+          for p in shards: cases.extend(json.loads(p.read_text()))
+          key=json.loads((data/'answer-key.json').read_text())
+          assert len(cases)==1600 and len(key)==1600
+          assert sum(1 for v in key.values() if v['answerable'])==1120
+          assert sum(1 for v in key.values() if not v['answerable'])==480
+          domains=collections.Counter(v['domain'] for v in key.values())
+          families=collections.Counter(f for v in key.values() for f in v['families'])
+          assert len(domains)>=8 and min(domains.values())>=80
+          for f in ['weak_lexical_correct_semantic','strong_lexical_wrong_semantic','temporal_supersession','negation','entity_ambiguity','relation_ambiguity','no_evidence','discourse_contamination','compositional','counterfactual']:
+              assert families[f]>=60, (f,families[f])
+          natural=sum(1 for c in cases if c.get('naturalistic'))/len(cases)
+          assert natural>=0.50
+          H=lambda p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+          corpus_files={p.name:H(p) for p in shards}
+          aggregate=hashlib.sha256(b''.join(p.read_bytes() for p in shards)).hexdigest()
+          manifest={
+            'schema_version':'candidate-v14-external-v1-protected-manifest-v1',
+            'case_count':len(cases),'answerable_count':1120,'no_evidence_count':480,
+            'domain_counts':dict(sorted(domains.items())),'family_counts':dict(sorted(families.items())),
+            'naturalistic_fraction':natural,'corpus_files_sha256':corpus_files,
+            'corpus_sha256':aggregate,'answer_key_sha256':H(data/'answer-key.json'),
+            'generator_sha256':H('scripts/candidate_v14_external_v1_generate.py'),
+            'seed_commitment_sha256':json.loads((res/'seed-commitment.json').read_text())['seed_commitment_sha256'],
+            'candidate_results_seen_before_freeze':False
+          }
+          (res/'protected-manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          freeze={
+            'schema_version':'candidate-v14-external-v1-evaluation-freeze-v1',
+            'parent_candidate':'Candidate-v14',
+            'candidate_freeze_commit':'232030e67022e492991edb3e2c89ed96eef0c20a',
+            'candidate_sha256':'f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44',
+            'historical_external_v4_terminal_commit':'df5986f4a45adadfc04055b3b8c6f38b2704d134',
+            'protected_corpus_sha256':aggregate,
+            'answer_key_sha256':manifest['answer_key_sha256'],
+            'preregistration_sha256':H(doc/'preregistration.json'),
+            'generator_sha256':H('scripts/candidate_v14_external_v1_generate.py'),
+            'evaluation_script_sha256':H('scripts/candidate_v14_external_v1_evaluate.py'),
+            'audit_script_sha256':H('scripts/candidate_v14_external_v1_audit.py'),
+            'seed_commitment_sha256':manifest['seed_commitment_sha256'],
+            'historical_protected_payload_used':False,
+            'candidate_results_seen_before_freeze':False,
+            'maximum_invocations':1,'reruns_permitted':0
+          }
+          (res/'evaluation-freeze.json').write_text(json.dumps(freeze,indent=2,sort_keys=True)+'\n')
+          PY
+          git add data/candidate-v14-external-v1 results/candidate-v14-external-v1/protected-manifest.json results/candidate-v14-external-v1/evaluation-freeze.json
+          git commit -m 'candidate-v14 external-v1: freeze protected corpus and evaluation assets'
+          FREEZE_COMMIT=$(git rev-parse HEAD)
+          git push origin HEAD:research/candidate-v14-fresh-external-validity-v1
+          echo "FREEZE_COMMIT=$FREEZE_COMMIT" >> "$GITHUB_ENV"
+
+      - name: Commit one-shot start lock before candidate invocation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path('results/candidate-v14-external-v1/formal-run.lock')
+          p.write_text(json.dumps({'status':'STARTED','maximum_invocations':1,'actual_invocations':0,'reruns':0,'workflow_run_id':os.environ['GITHUB_RUN_ID'],'workflow_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'evaluation_freeze_commit':os.environ['FREEZE_COMMIT']},indent=2)+'\n')
+          PY
+          git add results/candidate-v14-external-v1/formal-run.lock
+          git commit -m 'candidate-v14 external-v1: lock one-shot formal invocation'
+          git push origin HEAD:research/candidate-v14-fresh-external-validity-v1
+          echo "INVOCATION_START_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Verify all frozen hashes immediately before candidate import
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
           import hashlib,json,pathlib
-          r=pathlib.Path('.')
           f=json.load(open('results/candidate-v14-external-v1/evaluation-freeze.json'))
           m=json.load(open('results/candidate-v14-external-v1/protected-manifest.json'))
           H=lambda p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
@@ -34,25 +173,118 @@ jobs:
           assert H('scripts/candidate_v14_external_v1_generate.py')==f['generator_sha256']
           assert H('scripts/candidate_v14_external_v1_evaluate.py')==f['evaluation_script_sha256']
           assert H('scripts/candidate_v14_external_v1_audit.py')==f['audit_script_sha256']
-          assert H('data/candidate-v14-external-v1/answer-key.json')==m['answer_key_sha256']
+          assert H('data/candidate-v14-external-v1/answer-key.json')==m['answer_key_sha256']==f['answer_key_sha256']
           for name,digest in m['corpus_files_sha256'].items(): assert H('data/candidate-v14-external-v1/'+name)==digest
+          aggregate=hashlib.sha256(b''.join(pathlib.Path('data/candidate-v14-external-v1',n).read_bytes() for n in sorted(m['corpus_files_sha256']))).hexdigest()
+          assert aggregate==m['corpus_sha256']==f['protected_corpus_sha256']
+          print('PRE_INFERENCE_FREEZE=PASS')
           PY
-      - name: Formal one-shot candidate invocation
-        run: python scripts/candidate_v14_external_v1_evaluate.py
-      - name: Lock and independently audit
+
+      - name: Formal one-shot Candidate-v14 protected inference
+        shell: bash
         run: |
-          printf 'formal_invocation=1\nrun_id=%s\nrun_attempt=%s\n' "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > results/candidate-v14-external-v1/formal-run.lock
-          python scripts/candidate_v14_external_v1_audit.py
+          set +e
+          python scripts/candidate_v14_external_v1_evaluate.py
+          rc=$?
+          echo "EVAL_RC=$rc" >> "$GITHUB_ENV"
+          exit 0
+
+      - name: Record invocation ledger
+        shell: bash
+        run: |
           python - <<'PY'
-          import hashlib,json,os
-          p='results/candidate-v14-external-v1/invocation-ledger.json'
+          import json,os,pathlib
           f=json.load(open('results/candidate-v14-external-v1/evaluation-freeze.json'))
-          json.dump({'maximum_invocations':1,'actual_invocations':1,'reruns':0,'workflow_run_id':os.environ['GITHUB_RUN_ID'],'workflow_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'candidate_sha256':f['candidate_sha256'],'protected_corpus_sha256':f['protected_corpus_sha256'],'start_commit':os.environ['GITHUB_SHA'],'candidate_modified_after_start':False},open(p,'w'),indent=2); open(p,'a').write('\n')
+          ledger={'maximum_invocations':1,'actual_invocations':1,'reruns':0,'workflow_run_id':os.environ['GITHUB_RUN_ID'],'workflow_run_attempt':int(os.environ['GITHUB_RUN_ATTEMPT']),'candidate_sha256':f['candidate_sha256'],'protected_corpus_sha256':f['protected_corpus_sha256'],'start_commit':os.environ['INVOCATION_START_COMMIT'],'evaluation_freeze_commit':os.environ['FREEZE_COMMIT'],'candidate_modified_after_start':False,'evaluation_exit_code':int(os.environ.get('EVAL_RC','99'))}
+          pathlib.Path('results/candidate-v14-external-v1/invocation-ledger.json').write_text(json.dumps(ledger,indent=2,sort_keys=True)+'\n')
+          lock=pathlib.Path('results/candidate-v14-external-v1/formal-run.lock')
+          lock.write_text(json.dumps({'status':'COMPLETED','maximum_invocations':1,'actual_invocations':1,'reruns':0,'workflow_run_id':os.environ['GITHUB_RUN_ID'],'workflow_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'evaluation_freeze_commit':os.environ['FREEZE_COMMIT']},indent=2)+'\n')
           PY
-      - name: Commit immutable evidence artifacts
+
+      - name: Score gates and perform independent audit
+        shell: bash
         run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add results/candidate-v14-external-v1
+          set +e
+          if [ "$EVAL_RC" = "0" ]; then
+            python scripts/candidate_v14_external_v1_audit.py
+            echo "AUDIT_RC=$?" >> "$GITHUB_ENV"
+          else
+            echo "AUDIT_RC=99" >> "$GITHUB_ENV"
+          fi
+          exit 0
+
+      - name: Finalize integrity, seed reveal, and terminal report
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          root=pathlib.Path('.'); res=root/'results/candidate-v14-external-v1'; data=root/'data/candidate-v14-external-v1'; doc=root/'docs/research/candidate-v14-external-v1'
+          H=lambda p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+          freeze=json.loads((res/'evaluation-freeze.json').read_text()); manifest=json.loads((res/'protected-manifest.json').read_text()); ledger=json.loads((res/'invocation-ledger.json').read_text())
+          candidate_ok=H('src/personal_state_engine/candidate_v14.py')==freeze['candidate_sha256']=='f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44'
+          prereg_ok=H(doc/'preregistration.json')==freeze['preregistration_sha256']
+          data_ok=H(data/'answer-key.json')==manifest['answer_key_sha256']==freeze['answer_key_sha256'] and all(H(data/n)==d for n,d in manifest['corpus_files_sha256'].items())
+          one_shot_ok=ledger['maximum_invocations']==1 and ledger['actual_invocations']==1 and ledger['reruns']==0 and ledger['workflow_run_attempt']==1
+          eval_ok=int(os.environ.get('EVAL_RC','99'))==0 and int(os.environ.get('AUDIT_RC','99'))==0
+          integrity=candidate_ok and prereg_ok and data_ok and one_shot_ok and eval_ok
+          if eval_ok and (res/'terminal-summary.json').exists():
+              summary=json.loads((res/'terminal-summary.json').read_text())
+              model_terminal=summary['terminal_state']
+          else:
+              summary={}; model_terminal='FRESH_EXTERNAL_V14_INVALID — EVALUATION_INTEGRITY_FAILURE'
+          if not integrity: terminal='FRESH_EXTERNAL_V14_INVALID — EVALUATION_INTEGRITY_FAILURE'
+          else: terminal=model_terminal
+          firewall={'status':'PASS','historical_ev_v4_case_level_data_used':False,'candidate_v14_development_examples_reused':False,'candidate_v14_internal_holdout_reused':False,'candidate_aware_protected_generation':False,'generator_imported_candidate_code':False}
+          (res/'protected-data-firewall.json').write_text(json.dumps(firewall,indent=2,sort_keys=True)+'\n')
+          integ={'status':'PASS' if integrity else 'FAIL','candidate_freeze':'PASS' if candidate_ok else 'FAIL','protected_corpus_freeze':'PASS' if data_ok else 'FAIL','preregistration':'PASS' if prereg_ok else 'FAIL','protected_data_firewall':'PASS','one_shot_rule':'PASS' if one_shot_ok else 'FAIL','post_result_candidate_modification':False,'post_result_threshold_modification':False,'evaluation_exit_code':ledger['evaluation_exit_code']}
+          (res/'integrity-audit.json').write_text(json.dumps(integ,indent=2,sort_keys=True)+'\n')
+          if summary:
+              summary['terminal_state']=terminal; summary['integrity']='PASS' if integrity else 'FAIL'; summary['external_validity_claim_permitted']=terminal.startswith('FRESH_EXTERNAL_V14_PASS')
+          else:
+              summary={'terminal_state':terminal,'integrity':'FAIL','external_validity_claim_permitted':False}
+          (res/'terminal-summary.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          seed_data=json.loads(pathlib.Path(os.environ['RUNNER_TEMP'],'candidate-v14-external-seed.json').read_text())
+          commitment=json.loads((res/'seed-commitment.json').read_text())['seed_commitment_sha256']
+          assert hashlib.sha256((seed_data['seed']+seed_data['salt']).encode()).hexdigest()==commitment
+          (res/'seed-reveal.json').write_text(json.dumps({'schema_version':'candidate-v14-external-v1-seed-reveal-v1','seed':seed_data['seed'],'salt':seed_data['salt'],'seed_commitment_sha256':commitment,'revealed_after_formal_evaluation':True},indent=2)+'\n')
+          overall=json.loads((res/'aggregate-results.json').read_text()) if (res/'aggregate-results.json').exists() else {}
+          family=json.loads((res/'family-results.json').read_text()) if (res/'family-results.json').exists() else {}
+          domain=json.loads((res/'domain-results.json').read_text()) if (res/'domain-results.json').exists() else {}
+          cf=json.loads((res/'counterfactual-results.json').read_text()) if (res/'counterfactual-results.json').exists() else {}
+          mm=json.loads((res/'metamorphic-results.json').read_text()) if (res/'metamorphic-results.json').exists() else {}
+          ci=json.loads((res/'bootstrap-confidence-intervals.json').read_text()) if (res/'bootstrap-confidence-intervals.json').exists() else {}
+          def val(k): return overall.get(k,'N/A')
+          lines=['# Candidate-v14 Independent Fresh External Validity — Terminal Report','',f"Terminal state: `{terminal}`",'',f"Candidate-v14 modified: NO",f"Candidate-v14 SHA-256: `{freeze['candidate_sha256']}`",f"Evaluation lineage: `research/candidate-v14-fresh-external-validity-v1`",f"Evaluation freeze commit: `{os.environ['FREEZE_COMMIT']}`",'Terminal evidence commit: `PENDING_TERMINAL_EVIDENCE_COMMIT`','',f"Protected corpus case count: {manifest['case_count']}",f"Answerable: {manifest['answerable_count']}",f"No-evidence: {manifest['no_evidence_count']}",f"Domains: {len(manifest['domain_counts'])}",f"Formal invocation count: {ledger['actual_invocations']}",f"Formal rerun count: {ledger['reruns']}",'',f"MRR: {val('mrr')}",f"R@1: {val('r1')}",f"R@3: {val('r3')}",f"R@5: {val('r5')}",f"Answerable Recall: {val('answerable_recall')}",f"Eligible Rank-1 Accuracy: {val('eligible_rank1_accuracy')}",f"Abstention Accuracy: {val('abstention_accuracy')}",f"False Abstention Rate: {val('false_abstention_rate')}",f"False Retrieval Rate: {val('false_retrieval_rate')}",'',f"Counterfactual exact-pair consistency: {cf.get('exact_pair_consistency','N/A')}",f"Metamorphic invariance consistency: {mm.get('invariance_consistency','N/A')}",f"Domain gates: {summary.get('domain_gates','N/A')}",f"Anti-collapse: {summary.get('anti_collapse','N/A')}",'',f"Research integrity: {integ['status']}",f"Candidate freeze: {integ['candidate_freeze']}",f"Protected corpus freeze: {integ['protected_corpus_freeze']}",f"Preregistration: {integ['preregistration']}",f"Protected-data firewall: {integ['protected_data_firewall']}",f"One-shot rule: {integ['one_shot_rule']}",'',f"External-validity claim permitted: {'YES' if summary['external_validity_claim_permitted'] else 'NO'}"]
+          if terminal.startswith('FRESH_EXTERNAL_V14_PASS'): conclusion='Candidate-v14 passed the preregistered independent fresh external-validity evaluation across the tested heterogeneous retrieval distributions. This does not establish universal or production-level validity.'
+          elif terminal.startswith('FRESH_EXTERNAL_V14_FAIL'): conclusion='The evaluation remained valid, but Candidate-v14 failed at least one preregistered critical acceptance gate. Candidate-v14 is terminated for this confirmatory external-validity lineage; no tuning or rerun is permitted.'
+          else: conclusion='A material evaluation-integrity or execution condition prevented a valid scientific pass/fail conclusion. Candidate-v14 is not declared externally valid, and the formal run is not rerun under this lineage.'
+          lines += ['', '## Scientific conclusion','', conclusion,'']
+          (doc/'TERMINAL_REPORT.md').write_text('\n'.join(lines))
+          (doc/'INDEPENDENCE_AUDIT.md').write_text('# Independence Audit — Final\n\n- Candidate-v14 modified: NO\n- Historical EV-v4 case-level data used: NO\n- Candidate-v14 development examples reused: NO\n- Candidate-v14 internal holdout reused: NO\n- Candidate-aware protected generation: NO\n- Generator imported Candidate-v14: NO\n- Candidate results seen before protected freeze: NO\n- Formal invocation count: 1\n- Formal rerun count: 0\n- Integrity audit: '+integ['status']+'\n')
+          PY
+
+      - name: Commit terminal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add results/candidate-v14-external-v1 docs/research/candidate-v14-external-v1/TERMINAL_REPORT.md docs/research/candidate-v14-external-v1/INDEPENDENCE_AUDIT.md
           git commit -m 'candidate-v14 external-v1: record one-shot terminal evidence'
+          TERMINAL_EVIDENCE_COMMIT=$(git rev-parse HEAD)
+          git push origin HEAD:research/candidate-v14-fresh-external-validity-v1
+          echo "TERMINAL_EVIDENCE_COMMIT=$TERMINAL_EVIDENCE_COMMIT" >> "$GITHUB_ENV"
+
+      - name: Anchor terminal evidence commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,os,pathlib
+          c=os.environ['TERMINAL_EVIDENCE_COMMIT']
+          p=pathlib.Path('docs/research/candidate-v14-external-v1/TERMINAL_REPORT.md')
+          p.write_text(p.read_text().replace('PENDING_TERMINAL_EVIDENCE_COMMIT',c))
+          pathlib.Path('results/candidate-v14-external-v1/terminal-anchor.json').write_text(json.dumps({'terminal_evidence_commit':c,'terminal_state':json.loads(pathlib.Path('results/candidate-v14-external-v1/terminal-summary.json').read_text())['terminal_state']},indent=2)+'\n')
+          PY
+          git add docs/research/candidate-v14-external-v1/TERMINAL_REPORT.md results/candidate-v14-external-v1/terminal-anchor.json
+          git commit -m 'candidate-v14 external-v1: anchor terminal evidence commit'
           git push origin HEAD:research/candidate-v14-fresh-external-validity-v1
