@@ -1,0 +1,78 @@
+{
+  "compositional": {
+    "accuracy": 0.06363636363636363,
+    "n": 110
+  },
+  "contradictory_unresolved": {
+    "accuracy": 1.0,
+    "n": 79
+  },
+  "counterfactual": {
+    "accuracy": 0.05,
+    "n": 240
+  },
+  "discourse_contamination": {
+    "accuracy": 0.0,
+    "n": 114
+  },
+  "entity_ambiguity": {
+    "accuracy": 0.0,
+    "n": 114
+  },
+  "lexical_divergence": {
+    "accuracy": 0.0,
+    "n": 114
+  },
+  "metamorphic": {
+    "accuracy": 0.25,
+    "n": 400
+  },
+  "natural_variation": {
+    "accuracy": 0.0,
+    "n": 114
+  },
+  "negation": {
+    "accuracy": 0.0,
+    "n": 110
+  },
+  "no_evidence": {
+    "accuracy": 1.0,
+    "n": 480
+  },
+  "out_of_memory": {
+    "accuracy": 1.0,
+    "n": 79
+  },
+  "partial_evidence": {
+    "accuracy": 1.0,
+    "n": 79
+  },
+  "relation_ambiguity": {
+    "accuracy": 0.043859649122807015,
+    "n": 114
+  },
+  "strong_lexical_wrong_semantic": {
+    "accuracy": 0.0,
+    "n": 110
+  },
+  "temporal_supersession": {
+    "accuracy": 0.0,
+    "n": 110
+  },
+  "truly_absent": {
+    "accuracy": 1.0,
+    "n": 84
+  },
+  "underspecified": {
+    "accuracy": 1.0,
+    "n": 79
+  },
+  "weak_lexical_correct_semantic": {
+    "accuracy": 0.0,
+    "n": 110
+  },
+  "wrong_relation_only": {
+    "accuracy": 1.0,
+    "n": 80
+  }
+}

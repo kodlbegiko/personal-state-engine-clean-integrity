@@ -1,0 +1,13 @@
+{
+  "actual_invocations": 1,
+  "candidate_modified_after_start": false,
+  "candidate_sha256": "f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44",
+  "evaluation_exit_code": 0,
+  "evaluation_freeze_commit": "cb05d523986634e046de200c42336e8a8d6e60ae",
+  "maximum_invocations": 1,
+  "protected_corpus_sha256": "44c2ed33f6213dae1ba4e7fc78c6e7ada07237149d5e26cb7ce1e926a71f9cd8",
+  "reruns": 0,
+  "start_commit": "092f3e4be7137e90394b739bd1b1f643ace42441",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "31933670909"
+}

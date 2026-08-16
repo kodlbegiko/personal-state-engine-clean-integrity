@@ -1,0 +1,8 @@
+{
+  "candidate_aware_protected_generation": false,
+  "candidate_v14_development_examples_reused": false,
+  "candidate_v14_internal_holdout_reused": false,
+  "generator_imported_candidate_code": false,
+  "historical_ev_v4_case_level_data_used": false,
+  "status": "PASS"
+}

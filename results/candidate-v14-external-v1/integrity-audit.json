@@ -1,0 +1,11 @@
+{
+  "candidate_freeze": "PASS",
+  "evaluation_exit_code": 0,
+  "one_shot_rule": "PASS",
+  "post_result_candidate_modification": false,
+  "post_result_threshold_modification": false,
+  "preregistration": "PASS",
+  "protected_corpus_freeze": "PASS",
+  "protected_data_firewall": "PASS",
+  "status": "PASS"
+}

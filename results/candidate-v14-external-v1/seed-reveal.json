@@ -1,0 +1,7 @@
+{
+  "schema_version": "candidate-v14-external-v1-seed-reveal-v1",
+  "seed": "fa50b824ad9b62806a290a2efb7fe200fa271745acb173ce94227efedaf67a36",
+  "salt": "d67569abee84884e6e3faebee8dc5d976f37822f251351b7129d0e8a29e966bf",
+  "seed_commitment_sha256": "0391bdb1006563f0355256e00d31750887dbc57843a924835a021c6adff16333",
+  "revealed_after_formal_evaluation": true
+}

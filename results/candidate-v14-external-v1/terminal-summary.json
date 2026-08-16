@@ -1,0 +1,11 @@
+{
+  "aggregate_gates": "FAIL",
+  "anti_collapse": "FAIL",
+  "counterfactual_gate": "FAIL",
+  "critical_family_gates": "FAIL",
+  "domain_gates": "FAIL",
+  "external_validity_claim_permitted": false,
+  "integrity": "PASS",
+  "metamorphic_gate": "PASS",
+  "terminal_state": "FRESH_EXTERNAL_V14_FAIL \u2014 CANDIDATE_V14_LINEAGE_TERMINATED"
+}
