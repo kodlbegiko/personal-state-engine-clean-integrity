@@ -44,6 +44,13 @@ jobs:
         run: python -m py_compile scripts/candidate_v13_external_evermembench_probe.py
       - name: Run EverMemBench-Dynamic integrity probe
         run: python scripts/candidate_v13_external_evermembench_probe.py
+      - name: Commit aggregate source evidence before assertions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/evermembench-dynamic-probe.json
+          git commit -m "candidate-v13 external validity: record EverMemBench-Dynamic source probe"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
       - name: Verify probe boundaries
         run: |
           python - <<'PY'
@@ -55,10 +62,3 @@ jobs:
           assert r['license'] == 'apache-2.0', r['license']
           assert r['aggregate_counts']['qar_total'] >= 2000
           PY
-      - name: Commit aggregate source evidence
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add results/candidate-v13-external-validity/evermembench-dynamic-probe.json
-          git commit -m "candidate-v13 external validity: record EverMemBench-Dynamic source probe"
-          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
