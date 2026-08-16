@@ -1,0 +1,93 @@
+name: Candidate v13 External Validity v2 — Infrastructure Qualification
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v2
+    paths:
+      - 'scripts/candidate_v13_external_validity_v2_integrity_qualification.py'
+      - 'scripts/candidate_v13_external_validity_v2_integrity_runner.py'
+      - 'scripts/candidate_v13_external_validity_v2_strict_contamination.py'
+      - 'scripts/candidate_v13_external_validity_v2_materializer_dry_run.py'
+      - 'scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py'
+      - 'scripts/candidate_v13_external_validity_v2_source_qualification.py'
+      - 'scripts/candidate_v13_external_validity_v2_source_qualification_runner.py'
+      - 'docs/research/candidate-v13-external-validity-v2/source-contract-v2.json'
+      - 'docs/research/candidate-v13-external-validity-v2/adapter-policy-v2.json'
+      - 'docs/research/candidate-v13-external-validity-v2/materializer-contract-v2.json'
+      - '.github/workflows/candidate-v13-external-validity-v2-infrastructure-qualification.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install qualification dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install datasets==4.0.0 huggingface_hub==0.34.4
+
+      - name: Run strict candidate-blind integrity qualification
+        id: integrity
+        shell: bash
+        run: |
+          set +e
+          python scripts/candidate_v13_external_validity_v2_integrity_runner.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Run production-faithful synthetic materialization dry-run
+        id: dryrun
+        shell: bash
+        run: |
+          set +e
+          python scripts/candidate_v13_external_validity_v2_materializer_dry_run.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Finalize fail-closed infrastructure qualification
+        id: finalize
+        shell: bash
+        run: |
+          set +e
+          python scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Persist aggregate infrastructure evidence
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmpdir="$(mktemp -d)"
+          cp -a results/candidate-v13-external-validity-v2/. "$tmpdir/"
+          git fetch origin research/candidate-v13-external-validity-infra-v2
+          git reset --hard origin/research/candidate-v13-external-validity-infra-v2
+          mkdir -p results/candidate-v13-external-validity-v2
+          cp -a "$tmpdir"/. results/candidate-v13-external-validity-v2/
+          git add results/candidate-v13-external-validity-v2/
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v13 external validity v2: persist infrastructure qualification evidence [skip ci]"
+            git push origin HEAD:research/candidate-v13-external-validity-infra-v2
+          fi
+
+      - name: Enforce fail-closed gate status
+        shell: bash
+        run: |
+          test "${{ steps.integrity.outputs.exit_code }}" = "0"
+          test "${{ steps.dryrun.outputs.exit_code }}" = "0"
+          test "${{ steps.finalize.outputs.exit_code }}" = "0"
