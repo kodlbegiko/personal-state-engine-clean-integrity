@@ -7,3 +7,5 @@ This lineage starts from v3 terminal commit `21d1bb3a645c9c38000294694a78be3fced
 The v4 scientific objective is to obtain one valid one-shot external-validity result over EV-A → EV-B → EV-C while preserving candidate blindness before freeze, fresh v4 allocation seeds, v3 scientific thresholds, zero formal reruns, and strict separation of infrastructure failure from Candidate failure.
 
 The decisive v4 infrastructure change is event independence after freeze: one already-started workflow graph performs candidate-blind qualification, launch-path QA, preregistration, freeze/authorization verification, and then the formal sequence without requiring a second GitHub repository event.
+
+Candidate-blind qualification launch revision: `2` (pre-freeze artifact-namespace normalization included and firewall-qualified).
