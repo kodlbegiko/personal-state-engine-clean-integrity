@@ -1,0 +1,160 @@
+{
+  "candidate": "Candidate-v13",
+  "candidate_modified": false,
+  "candidate_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_v13_external_performance_observed_before_freeze": false,
+  "candidate_v13_invoked_before_freeze": false,
+  "files": {
+    ".github/workflows/candidate-v13-external-validity-v2-formal-sequence.yml": {
+      "git_blob_sha": "def6a2315b6b14e382ac3d3209cdec3ecdfd5cdc",
+      "sha256": "825fb094e0e5f31370c250043c82c38c68002ef2d2be1ed4327ae64c4cedf542"
+    },
+    ".github/workflows/candidate-v13-external-validity-v2-freeze.yml": {
+      "git_blob_sha": "0e50f88352fa553b9f24403a9799214a0f9f9dc6",
+      "sha256": "9513e3d65fcc50aed4f969c8a73e17b4b73071fcd56844e54cd5dcfa41883713"
+    },
+    "docs/research/candidate-v13-external-validity-v2/adapter-policy-v2.json": {
+      "git_blob_sha": "c9cf75b9834ae71a9a00548f1926488a9f01e700",
+      "sha256": "9fd16b29e26c341473832d0286a6e684ccca7d190708663beec7a80f0e26ce28"
+    },
+    "docs/research/candidate-v13-external-validity-v2/allocation-policy-v2.json": {
+      "git_blob_sha": "f2e4813eae6057610b92a341165c4bc5c760a4f6",
+      "sha256": "84150623426758619ef826e539c9919c92a0c2e215942936762a36e1c22f7e81"
+    },
+    "docs/research/candidate-v13-external-validity-v2/evaluation-policy-v2.json": {
+      "git_blob_sha": "30bdf8a5ad2ad1df8034c2f355fd77ae82fe725c",
+      "sha256": "8375975b145993b4ecdfdad6ba69bea69861520116a16f24f57eb3315a35c817"
+    },
+    "docs/research/candidate-v13-external-validity-v2/materializer-contract-v2.json": {
+      "git_blob_sha": "f7ede5fdea4e592b76a8e7f5afec62bee746d61a",
+      "sha256": "f32cebf5fafdae9ce0856e18fde01dfc884e8abe7d2ea6067b43e1c54bf95c9a"
+    },
+    "docs/research/candidate-v13-external-validity-v2/preregistration-lock.json": {
+      "git_blob_sha": "1935f0234a59b22e2aab3e18581215c946b791af",
+      "sha256": "9acb92a5c8984f0924cad166444e13a5d2e465be6bf9f654f964222e1bf60418"
+    },
+    "docs/research/candidate-v13-external-validity-v2/preregistration.md": {
+      "git_blob_sha": "c12402a6822e63abfc68a887d73871cf359f06a6",
+      "sha256": "03310317446eb833ec493dedb11e2ae1c6aeb838a2b0d9a9a1cb2358c1e26da7"
+    },
+    "docs/research/candidate-v13-external-validity-v2/source-contract-v2.json": {
+      "git_blob_sha": "06bfec94cb2b350d5702f1aa0334b3ae239e2fcb",
+      "sha256": "1f6004f70cca6fa52e8efac1c207a82c739c583b33f7ee5cbad60aa6aefcc5c2"
+    },
+    "docs/research/candidate-v13-external-validity-v2/source-manifest-v2.json": {
+      "git_blob_sha": "b5b0db2ba114854b346800b7c834427f0064eeaf",
+      "sha256": "1e36b561280037bd44060adc59c885de5d8e12377242db98501a33af4a801ee8"
+    },
+    "results/candidate-v13-external-validity-v2/allocation-feasibility.json": {
+      "git_blob_sha": "8388be172fe3d315480081cf79eade4c7318a8c8",
+      "sha256": "3972703080553ba0e141d19c94dd9c3fef68e8203103f0df567cf3e74b631a7c"
+    },
+    "results/candidate-v13-external-validity-v2/contamination-audit.json": {
+      "git_blob_sha": "d22c1737759eeb75884c41c1b550afed243d4f52",
+      "sha256": "bc5dca8777135fc58910aab6880612989f6cd64789d946dbe2db5e8f515ad340"
+    },
+    "results/candidate-v13-external-validity-v2/dedup-audit.json": {
+      "git_blob_sha": "8b0722d2069b94cd02ac7ab94b55f4abc32b4a34",
+      "sha256": "066c29970fb4aa72a80dd14888b4d9dc328f41e7e12737a3d3d8cc817a8eda04"
+    },
+    "results/candidate-v13-external-validity-v2/determinism-audit.json": {
+      "git_blob_sha": "7a66ee283f63bad91ec550f05c9658e8ab5ec91c",
+      "sha256": "daac832276c283ee180cf14fbc92d568fda65e9646a291d7b389ae435c324a0a"
+    },
+    "results/candidate-v13-external-validity-v2/formal-infrastructure-qualification.json": {
+      "git_blob_sha": "bf411a798d48b8c91c9e5aff540742c97267777b",
+      "sha256": "e5be8680ff2326c05ff5891cd6cecbba594eddf0a733a5ecf180d8198ac8466d"
+    },
+    "results/candidate-v13-external-validity-v2/infrastructure-qualification.json": {
+      "git_blob_sha": "b759d20efadda1eec9df91e7fec8ea312326d270",
+      "sha256": "63617f50c7b86fc0d25077b1ec728ed1cc5639902178ed04233d432e0d85a88a"
+    },
+    "results/candidate-v13-external-validity-v2/source-capacity-audit.json": {
+      "git_blob_sha": "cc59fea35ff8b4ed3105f66ba076ba02d2270f78",
+      "sha256": "7b41e4ac2e1dcb455342bb729a438de50df91f97f8815b18106cd416c1acbe84"
+    },
+    "results/candidate-v13-external-validity-v2/source-qualification.json": {
+      "git_blob_sha": "3fff5c41cfe11c9b4a8add62a9a2ca5cfe1d876b",
+      "sha256": "df695f360e0a75e04c416cbb2c1389a967209bdcd22ae4c2f88fee50d007c712"
+    },
+    "results/candidate-v13-external-validity-v2/source-schema-manifest.json": {
+      "git_blob_sha": "40fdd49e4e2a547366010301887715b7b9332966",
+      "sha256": "9ca27a305791080ff62a21c4b65d1f9a590c274c9e0c2b49c880d14a0e4a7e32"
+    },
+    "scripts/candidate_v13_external_validity_v2_allocation_feasibility.py": {
+      "git_blob_sha": "67875cff7641a0fda1dbc5bff4a18fe2db8ad407",
+      "sha256": "69425fb1b8351241570399b0199ac6cdf8e3fcc2d475327ca8d462869b7accf8"
+    },
+    "scripts/candidate_v13_external_validity_v2_allocation_runtime.py": {
+      "git_blob_sha": "36d1e5e1af7c626d50289506cee310896f6baad0",
+      "sha256": "61ad371195824a8f4bb7f9fe79ad46db032eb7c93450799d0d88f29cd6e7911a"
+    },
+    "scripts/candidate_v13_external_validity_v2_evaluator.py": {
+      "git_blob_sha": "5e5b2787b8252b2b5868c5d7c3c590aa16d7c8ea",
+      "sha256": "6b60a3a82426899f56d1f116933c49a244d31fa3fdaf408db73edba6d326d949"
+    },
+    "scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py": {
+      "git_blob_sha": "460bb8edddfabce9527cd045a15e377868dfcc43",
+      "sha256": "f7e9d987cb16012971e776abd159bb73569cda25a9100c859551456df048ec07"
+    },
+    "scripts/candidate_v13_external_validity_v2_formal_infrastructure_qualification.py": {
+      "git_blob_sha": "7969f59c48be6ec5b4550d63ed6ddc2a9302e233",
+      "sha256": "b926d422998f5985c2438a98282f9a1d27e52a32755fb9bf0f9059e80af3e78b"
+    },
+    "scripts/candidate_v13_external_validity_v2_formal_materializer.py": {
+      "git_blob_sha": "6491185cede53ec7a8ec37cbae79f6e45c5ddef1",
+      "sha256": "5cb70e48bc37086a203722205901faf59d194b0afca9932a210abb4a0dfb53b6"
+    },
+    "scripts/candidate_v13_external_validity_v2_formal_runner.py": {
+      "git_blob_sha": "4ce228a0b05d6e53a20f54a9c8421557313ecc33",
+      "sha256": "9620ce0a6e06697089ef78dcddbef9df0f83707c79db471b1d3ec9f64b8159da"
+    },
+    "scripts/candidate_v13_external_validity_v2_formal_sequence.py": {
+      "git_blob_sha": "2151236cfe700f744a603b39d001d1397b8e5614",
+      "sha256": "c1187e8d81b36a66f20f2e8ad8d749d1ab3dfa9a967c014a07d5038077ba318e"
+    },
+    "scripts/candidate_v13_external_validity_v2_freeze.py": {
+      "git_blob_sha": "700f63dd7c8807f3cbcee8a40cd3de9f590df958",
+      "sha256": "c6bc656c4fddeab45daa208493590ad9afb3fd687b3ab22315adddb9b595f9b9"
+    },
+    "scripts/candidate_v13_external_validity_v2_integrity_qualification.py": {
+      "git_blob_sha": "4324aea1acddfb009d83d0dfd705f111d7c9101c",
+      "sha256": "2158238ce8e218709c83b12409a7a9abb03be2b9b95d9fe24f69102e5e2416cd"
+    },
+    "scripts/candidate_v13_external_validity_v2_integrity_runner.py": {
+      "git_blob_sha": "879198941171a2a87b4302c64530a55aac735601",
+      "sha256": "28e8a537e34822bf927329e778f5740a8d572fd4a0a35211a73e434e594a9c63"
+    },
+    "scripts/candidate_v13_external_validity_v2_source_qualification.py": {
+      "git_blob_sha": "99e9d91f16010b0a9bfefa0c871c71c584b0a79c",
+      "sha256": "b0b378faf155290f9a62cb5afb594f47ec262b0fb620eaa932b8e68fc957346f"
+    },
+    "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py": {
+      "git_blob_sha": "b5c02efa91a80409bb8c73d8bc0678bf52fc5101",
+      "sha256": "09b4427ffb55a7b00f04f7236701b61c53ebbfc64ab925dae808ac9ba547012f"
+    },
+    "scripts/candidate_v13_external_validity_v2_strict_contamination.py": {
+      "git_blob_sha": "8255276ffff635053689c5da5b3c2752a4f3018c",
+      "sha256": "385ee19b754bf8a78350f3933725b8aaa703ec12e768304814795dc96c6ff592"
+    },
+    "src/personal_state_engine/candidate_v13.py": {
+      "git_blob_sha": "6c8ae4bce6ba8def0dd32fc3106c65639d521ef3",
+      "sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838"
+    }
+  },
+  "formal_case_persisted_before_freeze": false,
+  "preregistration_commit": "e8c797fb41f832c8b53fdbbc69196bb4627f0f90",
+  "preregistration_content_commit": "e8c797fb41f832c8b53fdbbc69196bb4627f0f90",
+  "research_integrity": "PASS",
+  "schema_version": "candidate-v13-external-validity-v2-infrastructure-freeze-manifest-v1",
+  "selection_digests": {
+    "ev_a_v2": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc",
+    "ev_b_v2": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab",
+    "ev_c_v2": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
+  },
+  "source_revisions": {
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5"
+  },
+  "status": "FROZEN"
+}
