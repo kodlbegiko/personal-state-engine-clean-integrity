@@ -9,12 +9,14 @@ on:
       - 'scripts/candidate_v13_external_validity_v2_integrity_runner.py'
       - 'scripts/candidate_v13_external_validity_v2_strict_contamination.py'
       - 'scripts/candidate_v13_external_validity_v2_materializer_dry_run.py'
+      - 'scripts/candidate_v13_external_validity_v2_allocation_feasibility.py'
       - 'scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py'
       - 'scripts/candidate_v13_external_validity_v2_source_qualification.py'
       - 'scripts/candidate_v13_external_validity_v2_source_qualification_runner.py'
       - 'docs/research/candidate-v13-external-validity-v2/source-contract-v2.json'
       - 'docs/research/candidate-v13-external-validity-v2/adapter-policy-v2.json'
       - 'docs/research/candidate-v13-external-validity-v2/materializer-contract-v2.json'
+      - 'docs/research/candidate-v13-external-validity-v2/allocation-policy-v2.json'
       - '.github/workflows/candidate-v13-external-validity-v2-infrastructure-qualification.yml'
 
 permissions:
@@ -23,7 +25,7 @@ permissions:
 jobs:
   qualify:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,6 +46,16 @@ jobs:
         run: |
           set +e
           python scripts/candidate_v13_external_validity_v2_integrity_runner.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Run exact source-domain-family allocation feasibility
+        id: allocation
+        shell: bash
+        run: |
+          set +e
+          python scripts/candidate_v13_external_validity_v2_allocation_feasibility.py
           code=$?
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
@@ -89,5 +101,6 @@ jobs:
         shell: bash
         run: |
           test "${{ steps.integrity.outputs.exit_code }}" = "0"
+          test "${{ steps.allocation.outputs.exit_code }}" = "0"
           test "${{ steps.dryrun.outputs.exit_code }}" = "0"
           test "${{ steps.finalize.outputs.exit_code }}" = "0"
