@@ -1,0 +1,6 @@
+{
+  "cross_stage_base_reuse_count": 0,
+  "normalized_query_duplicate_count": 0,
+  "schema_version": "candidate-v13-external-validity-v3-dedup-audit-v1",
+  "status": "PASS"
+}

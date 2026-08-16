@@ -1,0 +1,151 @@
+{
+  "acceptance_basis": "point_estimates",
+  "anti_collapse": {
+    "catastrophic_family_accuracy": 0.7,
+    "near_universal_abstention_rate": 0.97,
+    "near_universal_retrieval_rate": 0.97,
+    "rule": "Any universal/near-universal decision collapse or any primary family accuracy below 0.70 is an automatic stage failure."
+  },
+  "candidate_v13_external_performance_observed": false,
+  "common_integrity_gates": {
+    "anti_collapse": "PASS",
+    "candidate_source_invariant": "PASS",
+    "contamination_audit": "PASS",
+    "determinism": "PASS",
+    "frozen_hash_audit": "PASS",
+    "invalid_rate_max": 0.02,
+    "metadata_firewall": "PASS"
+  },
+  "ev_a_v3": {
+    "aggregate": {
+      "abstention_accuracy_min": 0.85,
+      "answerable_recall_min": 0.9,
+      "eligible_rank1_accuracy_min": 0.78,
+      "false_abstention_rate_max": 0.1,
+      "false_retrieval_rate_max": 0.12,
+      "mrr_min": 0.8,
+      "r_at_1_min": 0.75,
+      "r_at_3_min": 0.85,
+      "r_at_5_min": 0.9
+    },
+    "case_count": 384,
+    "domain_floors": {
+      "abstention_accuracy_min": 0.7,
+      "answerable_recall_min": 0.75,
+      "case_count": 48,
+      "false_retrieval_rate_max": 0.2,
+      "r_at_1_min": 0.6
+    },
+    "family_accuracy_floors": {
+      "N1": 0.7,
+      "N10": 0.7,
+      "N11": 0.7,
+      "N12": 0.7,
+      "N2": 0.7,
+      "N3": 0.7,
+      "N4": 0.7,
+      "N5": 0.7,
+      "N6": 0.7,
+      "N7": 0.7,
+      "N8": 0.7,
+      "N9": 0.7
+    },
+    "purpose": "small one-shot external shakedown after full infrastructure freeze; no tuning or protocol changes are allowed after observation"
+  },
+  "ev_b_v3": {
+    "aggregate": {
+      "abstention_accuracy_min": 0.93,
+      "answerable_recall_min": 0.94,
+      "eligible_rank1_accuracy_min": 0.9,
+      "false_abstention_rate_max": 0.06,
+      "false_retrieval_rate_max": 0.05,
+      "mrr_min": 0.9,
+      "r_at_1_min": 0.88,
+      "r_at_3_min": 0.94,
+      "r_at_5_min": 0.96
+    },
+    "case_count": 1440,
+    "domain_floors": {
+      "abstention_accuracy_min": 0.85,
+      "answerable_recall_min": 0.88,
+      "case_count": 180,
+      "false_retrieval_rate_max": 0.1,
+      "r_at_1_min": 0.8
+    },
+    "family_accuracy_floors": {
+      "N1": 0.92,
+      "N10": 0.92,
+      "N11": 0.82,
+      "N12": 0.85,
+      "N2": 0.88,
+      "N3": 0.85,
+      "N4": 0.85,
+      "N5": 0.85,
+      "N6": 0.88,
+      "N7": 0.88,
+      "N8": 0.88,
+      "N9": 0.85
+    },
+    "purpose": "one-shot protected naturalistic external evaluation"
+  },
+  "ev_c_v3": {
+    "aggregate": {
+      "abstention_accuracy_min": 0.92,
+      "answerable_recall_min": 0.92,
+      "eligible_rank1_accuracy_min": 0.88,
+      "false_abstention_rate_max": 0.08,
+      "false_retrieval_rate_max": 0.06,
+      "mrr_min": 0.88,
+      "r_at_1_min": 0.85,
+      "r_at_3_min": 0.92,
+      "r_at_5_min": 0.95
+    },
+    "case_count": 1920,
+    "domain_floors": {
+      "abstention_accuracy_min": 0.82,
+      "answerable_recall_min": 0.85,
+      "case_count": 240,
+      "false_retrieval_rate_max": 0.12,
+      "r_at_1_min": 0.76
+    },
+    "family_accuracy_floors": {
+      "N1": 0.89,
+      "N10": 0.89,
+      "N11": 0.79,
+      "N12": 0.82,
+      "N2": 0.85,
+      "N3": 0.82,
+      "N4": 0.82,
+      "N5": 0.82,
+      "N6": 0.85,
+      "N7": 0.85,
+      "N8": 0.85,
+      "N9": 0.82
+    },
+    "purpose": "one-shot final confirmatory naturalistic external evaluation"
+  },
+  "performance_driven_metric_changes": 0,
+  "reporting": {
+    "performance_driven_primary_metric_addition": "FORBIDDEN",
+    "required": [
+      "overall_metrics",
+      "domain_metrics",
+      "family_metrics",
+      "rank_metrics",
+      "coverage",
+      "invalid_rate",
+      "bootstrap_confidence_interval",
+      "error_counts",
+      "dataset_source_distribution",
+      "integrity"
+    ]
+  },
+  "schema_version": "candidate-v13-external-validity-v3-evaluation-policy-v1",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE",
+  "uncertainty": {
+    "bootstrap_iterations": 10000,
+    "bootstrap_seed": 91357,
+    "mrr_interval": "percentile_bootstrap_95",
+    "proportion_intervals": "wilson_95"
+  }
+}
