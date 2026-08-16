@@ -1,0 +1,57 @@
+{
+  "schema_version": "candidate-v13-external-validity-formal-thresholds-v1",
+  "status": "CODIFIED_FROM_PREREGISTRATION_WITHOUT_THRESHOLD_CHANGE",
+  "source": "docs/research/candidate-v13-external-validity/preregistration.md",
+  "candidate_v13_external_performance_observed_before_threshold_definition": false,
+  "note": "These thresholds reproduce the preregistered EV-B/EV-C criteria. This file is a machine-readable transcription, not a post-EV-A threshold change.",
+  "ev_b": {
+    "aggregate": {
+      "MRR_min": 0.90,
+      "R@1_min": 0.88,
+      "R@3_min": 0.94,
+      "R@5_min": 0.96,
+      "answerable_recall_min": 0.94,
+      "false_abstention_rate_max": 0.06,
+      "false_retrieval_rate_max": 0.05,
+      "abstention_accuracy_min": 0.93,
+      "eligible_rank1_accuracy_min": 0.90
+    },
+    "frame": {
+      "subject_binding_accuracy_min": 0.93,
+      "relation_binding_accuracy_min": 0.93,
+      "temporal_scope_accuracy_min": 0.92,
+      "contradiction_handling_accuracy_min": 0.92,
+      "discourse_contamination_rate_max": 0.03
+    },
+    "structural_accuracy_floors": {
+      "N1": 0.92,
+      "N2": 0.88,
+      "N3": 0.85,
+      "N4": 0.85,
+      "N5": 0.85,
+      "N6": 0.88,
+      "N7": 0.88,
+      "N8": 0.88,
+      "N9": 0.85,
+      "N10": 0.92,
+      "N11": 0.82,
+      "N12": 0.85
+    },
+    "integrity_required": ["metadata_firewall_pass", "candidate_source_invariant_pass", "determinism_pass", "anti_collapse_pass"]
+  },
+  "ev_c": {
+    "aggregate": {
+      "MRR_min": 0.88,
+      "R@1_min": 0.85,
+      "R@3_min": 0.92,
+      "R@5_min": 0.95,
+      "answerable_recall_min": 0.92,
+      "false_abstention_rate_max": 0.08,
+      "false_retrieval_rate_max": 0.06,
+      "abstention_accuracy_min": 0.92,
+      "eligible_rank1_accuracy_min": 0.88
+    },
+    "catastrophic_structural_accuracy_below": 0.70,
+    "integrity_violation": "INVALID"
+  }
+}
