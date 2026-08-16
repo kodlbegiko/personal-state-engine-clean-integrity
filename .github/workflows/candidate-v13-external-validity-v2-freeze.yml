@@ -1,0 +1,37 @@
+name: Candidate v13 External Validity v2 — Freeze
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v2
+    paths:
+      - 'docs/research/candidate-v13-external-validity-v2/preregistration-lock.json'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate full SHA256 plus git-blob freeze manifest
+        run: |
+          python scripts/candidate_v13_external_validity_v2_freeze.py
+
+      - name: Persist immutable freeze evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          manifest="results/candidate-v13-external-validity-v2/infrastructure-freeze-manifest.json"
+          git add "$manifest"
+          git commit -m "candidate-v13 external validity v2: freeze formal infrastructure"
+          git push origin HEAD:research/candidate-v13-external-validity-infra-v2
