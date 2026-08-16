@@ -1,0 +1,24 @@
+{
+  "schema_version": "candidate-v13-external-validity-contamination-policy-v1",
+  "status": "LOCKED_PRE_CANDIDATE_EXTERNAL_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "historical_scope": [
+    "Candidate-v12/v13 research docs/results/configs",
+    "repository tests and fixtures",
+    "repository README/example material",
+    "project benchmark JSON/JSONL/CSV/TXT/YAML/Markdown/Python literal text"
+  ],
+  "external_scope": "All eligible five-source base queries and gold evidence text reconstructed under adapter-policy-v3 before stage allocation.",
+  "tests": {
+    "exact_string": "case-sensitive full-string equality after surrounding whitespace trim",
+    "normalized_string": "casefold + Unicode apostrophe normalization + whitespace collapse full-string equality",
+    "ngram": "12-token contiguous n-gram coverage; material when external text has >=2 12-grams and >=0.80 of its 12-grams appear in historical fingerprint corpus",
+    "entity_namespace": "regex for project-specific synthetic namespace/case markers including candidate-v<number>, gate labels, protected/confirmatory/final benchmark identifiers, entity_<number>, value_<number>, subject_<number>, relation_<number>",
+    "query_skeleton": "exact function-word/content-placeholder skeleton fingerprint; diagnostic only unless accompanied by material n-gram or namespace overlap",
+    "memory_skeleton": "same skeleton method for gold memory text; diagnostic only unless accompanied by material n-gram or namespace overlap"
+  },
+  "material_contamination": "Any exact or normalized full-string overlap, any >=0.80 12-token n-gram coverage with >=2 n-grams, or any project-specific synthetic namespace marker in an external query/gold memory.",
+  "replacement_policy": "Before any Candidate-v13 external output, material-contaminated base IDs are deterministically excluded and joint feasibility must be rerun under unchanged source/domain/family/stage targets. After first Candidate-v13 external output, newly discovered material contamination cannot be repaired by silent deletion; it triggers the preregistered INVALID/blocked handling.",
+  "persistence": "Persist aggregate counts, source/domain counts, overlap-type counts and SHA256 digest of contaminated base IDs only. Do not persist external natural-language text or individual formal IDs."
+}
