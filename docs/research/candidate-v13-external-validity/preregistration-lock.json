@@ -1,0 +1,20 @@
+{
+  "schema_version": "candidate-v13-external-validity-preregistration-lock-v1",
+  "status": "LOCKED_BEFORE_EXTERNAL_SOURCE_DISCOVERY",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v13-naturalistic-external-validity",
+  "historical_terminal_anchor": "cfea38f4a75e9ce92a5cbeff0162a224e0e90c7e",
+  "preregistration_path": "docs/research/candidate-v13-external-validity/preregistration.md",
+  "preregistration_commit_sha": "f0b894967d1968cb8cd994242d89ffe87cdc1de9",
+  "preregistration_git_blob_sha": "bbb35cb627bd410fc146be154baf5cb1f4f81aa1",
+  "external_source_discovery_started_before_preregistration_commit": false,
+  "external_source_download_started_before_preregistration_commit": false,
+  "external_case_materialization_started_before_preregistration_commit": false,
+  "candidate_v13_external_performance_observed_before_preregistration_commit": false,
+  "formal_ledger_initial": {
+    "ev_b": 0,
+    "ev_c": 0,
+    "terminal_state": null
+  },
+  "immutability_rule": "Any post-lock change to stage sizes, sampling, gold construction, thresholds, contamination/replacement policy, or stopping rules invalidates formal evaluation rather than silently amending this preregistration."
+}
