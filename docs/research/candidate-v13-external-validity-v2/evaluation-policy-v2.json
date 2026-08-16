@@ -1,5 +1,5 @@
 {
-  "schema_version": "candidate-v13-external-validity-v2-evaluation-policy-v1",
+  "schema_version": "candidate-v13-external-validity-v2-evaluation-policy-v2",
   "status": "CANDIDATE_BLIND_PRE_FREEZE",
   "candidate_v13_external_performance_observed": false,
   "acceptance_basis": "point_estimates",
@@ -39,8 +39,8 @@
       "eligible_rank1_accuracy_min": 0.78
     },
     "family_accuracy_floors": {
-      "N1":0.65,"N2":0.65,"N3":0.65,"N4":0.65,"N5":0.65,"N6":0.65,
-      "N7":0.65,"N8":0.65,"N9":0.65,"N10":0.65,"N11":0.60,"N12":0.65
+      "N1":0.70,"N2":0.70,"N3":0.70,"N4":0.70,"N5":0.70,"N6":0.70,
+      "N7":0.70,"N8":0.70,"N9":0.70,"N10":0.70,"N11":0.70,"N12":0.70
     },
     "domain_floors": {
       "case_count": 48,
