@@ -2,10 +2,9 @@ from __future__ import annotations
 
 """Pre-performance source probe for Candidate-v13 external validity.
 
-This script is intentionally forbidden from importing or invoking Candidate-v13.
-It pins public source revisions, hashes only the minimum probe files, and records
-schema/count metadata needed to implement deterministic adapters. It does not
-materialize EV-A/EV-B/EV-C cases and does not inspect Candidate-v13 outputs.
+This script never imports or invokes Candidate-v13. It pins public source
+revisions, hashes source files, and records schema/count metadata needed before
+adapter design. It does not materialize EV-A/EV-B/EV-C cases.
 """
 
 import ast
@@ -18,11 +17,11 @@ import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/candidate-v13-external-validity/source-probe.json"
-USER_AGENT = "personal-state-engine-external-validity-source-probe/1.0"
+USER_AGENT = "personal-state-engine-external-validity-source-probe/2.0"
 
 
 def utc_now() -> str:
@@ -57,20 +56,32 @@ def download(url: str, path: Path) -> dict[str, Any]:
 
 def hf_metadata(repo: str) -> dict[str, Any]:
     data = request_json(f"https://huggingface.co/api/datasets/{repo}")
-    siblings = [x.get("rfilename") for x in data.get("siblings", []) if x.get("rfilename")]
+    siblings = sorted(x["rfilename"] for x in data.get("siblings", []) if x.get("rfilename"))
     return {
         "sha": data.get("sha"),
         "last_modified": data.get("lastModified"),
         "private": data.get("private"),
         "gated": data.get("gated"),
-        "siblings": sorted(siblings),
+        "siblings": siblings,
     }
 
 
 def hf_download(repo: str, revision: str, rel: str, path: Path) -> dict[str, Any]:
-    quoted_rel = "/".join(urllib.parse.quote(part, safe="") for part in rel.split("/"))
-    url = f"https://huggingface.co/datasets/{repo}/resolve/{revision}/{quoted_rel}?download=true"
-    return download(url, path)
+    quoted = "/".join(urllib.parse.quote(part, safe="") for part in rel.split("/"))
+    return download(f"https://huggingface.co/datasets/{repo}/resolve/{revision}/{quoted}?download=true", path)
+
+
+def raw_github(repo: str, revision: str, rel: str, path: Path) -> dict[str, Any]:
+    return download(f"https://raw.githubusercontent.com/{repo}/{revision}/{rel}", path)
+
+
+def top_shape(data: Any) -> dict[str, Any]:
+    if isinstance(data, list):
+        keys = sorted({str(k) for item in data[:100] if isinstance(item, dict) for k in item})
+        return {"type": "list", "length": len(data), "sample_union_keys": keys}
+    if isinstance(data, dict):
+        return {"type": "dict", "length": len(data), "keys": sorted(map(str, data.keys()))[:500]}
+    return {"type": type(data).__name__}
 
 
 def probe_personamem(tmp: Path) -> dict[str, Any]:
@@ -80,46 +91,40 @@ def probe_personamem(tmp: Path) -> dict[str, Any]:
     if not revision:
         raise RuntimeError("PersonaMem-v2 Hugging Face revision missing")
     rel = "benchmark/text/benchmark.csv"
-    path = tmp / "personamem-v2-benchmark.csv"
-    file_info = hf_download(repo, revision, rel, path)
+    path = tmp / "personamem.csv"
+    info = hf_download(repo, revision, rel, path)
     rows = 0
     headers: list[str] = []
     nonempty: Counter[str] = Counter()
-    distinct: dict[str, set[str]] = {}
+    field_values: dict[str, Counter[str]] = {
+        "pref_type": Counter(), "who": Counter(), "updated": Counter(),
+        "conversation_scenario": Counter(), "topic_query": Counter(), "topic_preference": Counter(),
+    }
     with path.open("r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         headers = list(reader.fieldnames or [])
-        distinct = {h: set() for h in headers if h in {"question_type", "topic", "scenario", "category", "task", "domain"}}
         for row in reader:
             rows += 1
             for h in headers:
-                value = row.get(h)
-                if value is not None and str(value).strip():
-                    nonempty[h] += 1
-            for h in distinct:
                 value = str(row.get(h, "")).strip()
-                if value and len(distinct[h]) < 2000:
-                    distinct[h].add(value)
+                if value:
+                    nonempty[h] += 1
+            for h in field_values:
+                value = str(row.get(h, "")).strip()
+                if value:
+                    field_values[h][value] += 1
     return {
         "dataset_repo": repo,
         "dataset_revision": revision,
         "hf_metadata": {k: v for k, v in meta.items() if k != "siblings"},
         "required_file_present": rel in meta["siblings"],
-        "file": {"path": rel, **file_info},
+        "file": {"path": rel, **info},
         "row_count": rows,
         "headers": headers,
         "nonempty_counts": dict(sorted(nonempty.items())),
-        "distinct_probe_fields": {k: sorted(v) for k, v in distinct.items()},
+        "field_cardinality": {k: len(v) for k, v in field_values.items()},
+        "field_top_counts": {k: v.most_common(20) for k, v in field_values.items()},
     }
-
-
-def _top_level_shape(data: Any) -> dict[str, Any]:
-    if isinstance(data, list):
-        keys = sorted({str(k) for item in data[:100] if isinstance(item, dict) for k in item})
-        return {"type": "list", "length": len(data), "sample_union_keys": keys}
-    if isinstance(data, dict):
-        return {"type": "dict", "length": len(data), "keys": sorted(map(str, data.keys()))[:500]}
-    return {"type": type(data).__name__}
 
 
 def probe_longmemeval(tmp: Path) -> dict[str, Any]:
@@ -129,87 +134,141 @@ def probe_longmemeval(tmp: Path) -> dict[str, Any]:
     if not revision:
         raise RuntimeError("LongMemEval-cleaned Hugging Face revision missing")
     rel = "longmemeval_oracle.json"
-    path = tmp / "longmemeval-oracle.json"
-    file_info = hf_download(repo, revision, rel, path)
+    path = tmp / "longmemeval.json"
+    info = hf_download(repo, revision, rel, path)
     data = json.loads(path.read_text(encoding="utf-8"))
     records = data if isinstance(data, list) else []
     qtypes: Counter[str] = Counter()
     key_counts: Counter[str] = Counter()
+    sessions_per_case: list[int] = []
+    answer_sessions_per_case: list[int] = []
+    sample_message_keys: set[str] = set()
     for item in records:
         if not isinstance(item, dict):
             continue
-        for key in item:
-            key_counts[str(key)] += 1
-        qtype = item.get("question_type") or item.get("type")
-        if qtype is not None:
-            qtypes[str(qtype)] += 1
+        key_counts.update(map(str, item.keys()))
+        if item.get("question_type") is not None:
+            qtypes[str(item["question_type"])] += 1
+        sessions = item.get("haystack_sessions") or []
+        sessions_per_case.append(len(sessions) if isinstance(sessions, list) else 0)
+        answer_sessions = item.get("answer_session_ids") or []
+        answer_sessions_per_case.append(len(answer_sessions) if isinstance(answer_sessions, list) else 0)
+        if isinstance(sessions, list):
+            for session in sessions[:3]:
+                if isinstance(session, list):
+                    for message in session[:5]:
+                        if isinstance(message, dict):
+                            sample_message_keys.update(map(str, message.keys()))
     return {
         "dataset_repo": repo,
         "dataset_revision": revision,
         "hf_metadata": {k: v for k, v in meta.items() if k != "siblings"},
         "required_file_present": rel in meta["siblings"],
-        "file": {"path": rel, **file_info},
-        "shape": _top_level_shape(data),
+        "file": {"path": rel, **info},
+        "shape": top_shape(data),
         "record_key_counts": dict(sorted(key_counts.items())),
         "question_type_counts": dict(sorted(qtypes.items())),
+        "session_count_range": [min(sessions_per_case or [0]), max(sessions_per_case or [0])],
+        "answer_session_count_range": [min(answer_sessions_per_case or [0]), max(answer_sessions_per_case or [0])],
+        "sample_message_keys": sorted(sample_message_keys),
     }
 
 
-def raw_github(repo: str, revision: str, rel: str, path: Path) -> dict[str, Any]:
-    url = f"https://raw.githubusercontent.com/{repo}/{revision}/{rel}"
-    return download(url, path)
+def iter_records(node: Any) -> Iterable[dict[str, Any]]:
+    if isinstance(node, dict):
+        if any(str(k).casefold() in {"question", "answer", "reference memory", "reference_memory", "reference_memory_id"} for k in node):
+            yield node
+        for value in node.values():
+            yield from iter_records(value)
+    elif isinstance(node, list):
+        for value in node:
+            yield from iter_records(value)
+
+
+def probe_perltqa(tmp: Path) -> dict[str, Any]:
+    repo = "Elvin-Yiming-Du/PerLTQA"
+    revision = "8d9e19868e239740ef701e603ec205cd581f221b"
+    files: dict[str, dict[str, Any]] = {}
+    for rel in ["LICENSE.txt", "Dataset/en_v2/perltmem_en_v2.json", "Dataset/en_v2/perltqa_en_v2.json"]:
+        path = tmp / ("perltqa-" + rel.replace("/", "__"))
+        files[rel] = {**raw_github(repo, revision, rel, path), "local": str(path)}
+    mem = json.loads(Path(files["Dataset/en_v2/perltmem_en_v2.json"]["local"]).read_text(encoding="utf-8"))
+    qa = json.loads(Path(files["Dataset/en_v2/perltqa_en_v2.json"]["local"]).read_text(encoding="utf-8"))
+    qa_records = list(iter_records(qa))
+    key_counts: Counter[str] = Counter()
+    reference_present = 0
+    anchor_present = 0
+    for record in qa_records:
+        key_counts.update(map(str, record.keys()))
+        folded = {str(k).casefold().replace("_", " "): v for k, v in record.items()}
+        if any(name in folded and folded[name] not in (None, "", [], {}) for name in ["reference memory", "reference memories"]):
+            reference_present += 1
+        if any("anchor" in name and value not in (None, "", [], {}) for name, value in folded.items()):
+            anchor_present += 1
+    mem_section_keys: Counter[str] = Counter()
+    if isinstance(mem, dict):
+        for value in mem.values():
+            if isinstance(value, dict):
+                mem_section_keys.update(map(str, value.keys()))
+    for value in files.values():
+        value.pop("local", None)
+    return {
+        "repository": repo,
+        "revision": revision,
+        "license": "CC BY-NC 4.0",
+        "files": files,
+        "memory_shape": top_shape(mem),
+        "qa_shape": top_shape(qa),
+        "qa_record_count_recursive": len(qa_records),
+        "qa_record_key_counts": dict(sorted(key_counts.items())),
+        "qa_records_with_reference_memory": reference_present,
+        "qa_records_with_memory_anchor": anchor_present,
+        "memory_section_key_counts": dict(sorted(mem_section_keys.items())),
+    }
 
 
 def probe_taskmaster(tmp: Path) -> dict[str, Any]:
     repo = "google-research-datasets/Taskmaster"
     revision = "d92cb6af3005f1dc09c39e75e7daf4a04905e00b"
-    files = {}
+    files: dict[str, dict[str, Any]] = {}
     for rel in ["TM-1-2019/sample.json", "TM-1-2019/ontology.json", "TM-1-2019/train-dev-test/train.csv", "TM-1-2019/train-dev-test/dev.csv", "TM-1-2019/train-dev-test/test.csv"]:
         path = tmp / ("taskmaster-" + rel.replace("/", "__"))
         files[rel] = {**raw_github(repo, revision, rel, path), "local": str(path)}
     sample = json.loads(Path(files["TM-1-2019/sample.json"]["local"]).read_text(encoding="utf-8"))
-    split_rows = {}
+    split_rows: dict[str, int] = {}
     split_ids: set[str] = set()
     for split in ["train", "dev", "test"]:
         rel = f"TM-1-2019/train-dev-test/{split}.csv"
-        path = Path(files[rel]["local"])
-        count = 0
-        with path.open("r", encoding="utf-8", newline="") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                if not row:
-                    continue
-                count += 1
-                split_ids.add(str(row[0]))
-        split_rows[split] = count
+        with Path(files[rel]["local"]).open("r", encoding="utf-8", newline="") as f:
+            rows = [row for row in csv.reader(f) if row]
+        split_rows[split] = len(rows)
+        split_ids.update(str(row[0]) for row in rows)
     for value in files.values():
         value.pop("local", None)
-    sample_item = sample[0] if isinstance(sample, list) and sample else sample
-    utterance_keys: list[str] = []
-    if isinstance(sample_item, dict):
-        utterances = sample_item.get("utterances")
-        if isinstance(utterances, list):
-            utterance_keys = sorted({str(k) for u in utterances if isinstance(u, dict) for k in u})
+    item = sample[0] if isinstance(sample, list) and sample else sample
+    utterance_keys: set[str] = set()
+    if isinstance(item, dict) and isinstance(item.get("utterances"), list):
+        utterance_keys = {str(k) for u in item["utterances"] if isinstance(u, dict) for k in u}
     return {
         "repository": repo,
         "revision": revision,
         "files": files,
-        "sample_shape": _top_level_shape(sample),
-        "sample_record_keys": sorted(sample_item.keys()) if isinstance(sample_item, dict) else [],
-        "sample_utterance_keys": utterance_keys,
+        "sample_shape": top_shape(sample),
+        "sample_record_keys": sorted(item.keys()) if isinstance(item, dict) else [],
+        "sample_utterance_keys": sorted(utterance_keys),
         "split_row_counts_raw": split_rows,
         "unique_split_first_column_values": len(split_ids),
         "known_full_data_blob_shas": {
             "TM-1-2019/self-dialogs.json": "f1a1a3fd4bfb9cbb62d419f7964fb33291e0b2dd",
-            "TM-1-2019/woz-dialogs.json": "c3d5ae919713db351eed531957f8d8893d581a8c"
-        }
+            "TM-1-2019/woz-dialogs.json": "c3d5ae919713db351eed531957f8d8893d581a8c",
+        },
     }
 
 
 def probe_sgd(tmp: Path) -> dict[str, Any]:
     repo = "google-research-datasets/dstc8-schema-guided-dialogue"
     revision = "e852981ae34990f4358979625854259302feaa78"
-    files = {}
+    files: dict[str, dict[str, Any]] = {}
     for rel in ["train/schema.json", "train/dialogues_001.json"]:
         path = tmp / ("sgd-" + rel.replace("/", "__"))
         files[rel] = {**raw_github(repo, revision, rel, path), "local": str(path)}
@@ -217,65 +276,66 @@ def probe_sgd(tmp: Path) -> dict[str, Any]:
     dialogues = json.loads(Path(files["train/dialogues_001.json"]["local"]).read_text(encoding="utf-8"))
     for value in files.values():
         value.pop("local", None)
-    service_domains: Counter[str] = Counter()
+    domains: Counter[str] = Counter()
     for service in schema if isinstance(schema, list) else []:
         if isinstance(service, dict):
             name = str(service.get("service_name", ""))
-            domain = name.split("_")[0] if name else ""
-            if domain:
-                service_domains[domain] += 1
+            if name:
+                domains[name.split("_")[0]] += 1
     first = dialogues[0] if isinstance(dialogues, list) and dialogues else {}
-    turn_keys: list[str] = []
-    frame_keys: list[str] = []
+    turn_keys: set[str] = set()
+    frame_keys: set[str] = set()
     if isinstance(first, dict):
-        turns = first.get("turns") or []
-        turn_keys = sorted({str(k) for t in turns if isinstance(t, dict) for k in t})
-        frame_keys = sorted({str(k) for t in turns if isinstance(t, dict) for fr in (t.get("frames") or []) if isinstance(fr, dict) for k in fr})
+        for turn in first.get("turns") or []:
+            if isinstance(turn, dict):
+                turn_keys.update(map(str, turn.keys()))
+                for frame in turn.get("frames") or []:
+                    if isinstance(frame, dict):
+                        frame_keys.update(map(str, frame.keys()))
     return {
         "repository": repo,
         "revision": revision,
         "files": files,
         "schema_service_count": len(schema) if isinstance(schema, list) else None,
-        "schema_domain_prefix_counts": dict(sorted(service_domains.items())),
+        "schema_domain_prefix_counts": dict(sorted(domains.items())),
         "probe_dialogue_count": len(dialogues) if isinstance(dialogues, list) else None,
         "dialogue_record_keys": sorted(first.keys()) if isinstance(first, dict) else [],
-        "turn_keys": turn_keys,
-        "frame_keys": frame_keys,
+        "turn_keys": sorted(turn_keys),
+        "frame_keys": sorted(frame_keys),
     }
 
 
-def static_candidate_import_guard() -> dict[str, Any]:
+def candidate_import_guard() -> dict[str, Any]:
     tree = ast.parse(Path(__file__).read_text(encoding="utf-8"))
-    forbidden_modules: list[str] = []
-    forbidden_calls: list[str] = []
+    modules: list[str] = []
+    calls: list[str] = []
+    forbidden_calls = {"pse_candidate_v13_rank", "evidence_support_signature_v13"}
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            for alias in node.names:
-                if "candidate_v13" in alias.name:
-                    forbidden_modules.append(alias.name)
+            modules.extend(alias.name for alias in node.names if "candidate_v13" in alias.name)
         elif isinstance(node, ast.ImportFrom):
             module = node.module or ""
             if "candidate_v13" in module:
-                forbidden_modules.append(module)
+                modules.append(module)
         elif isinstance(node, ast.Call):
-            if isinstance(node.func, ast.Name) and node.func.id in {"pse_candidate_v13_rank", "evidence_support_signature_v13"}:
-                forbidden_calls.append(node.func.id)
-            elif isinstance(node.func, ast.Attribute) and node.func.attr in {"pse_candidate_v13_rank", "evidence_support_signature_v13"}:
-                forbidden_calls.append(node.func.attr)
-    return {"pass": not forbidden_modules and not forbidden_calls, "forbidden_modules": sorted(set(forbidden_modules)), "forbidden_calls": sorted(set(forbidden_calls))}
+            if isinstance(node.func, ast.Name) and node.func.id in forbidden_calls:
+                calls.append(node.func.id)
+            elif isinstance(node.func, ast.Attribute) and node.func.attr in forbidden_calls:
+                calls.append(node.func.attr)
+    return {"pass": not modules and not calls, "forbidden_modules": sorted(set(modules)), "forbidden_calls": sorted(set(calls))}
 
 
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     result: dict[str, Any] = {
-        "schema_version": "candidate-v13-external-source-probe-v1",
+        "schema_version": "candidate-v13-external-source-probe-v2",
         "status": "RUNNING",
         "utc": utc_now(),
         "candidate_v13_invoked": False,
         "formal_case_materialized": False,
-        "purpose": "Pin source revisions and inspect source-native schemas/count metadata before adapter implementation."
+        "purpose": "Pin source revisions/hashes and inspect source-native schemas/count metadata before adapter implementation.",
     }
-    guard = static_candidate_import_guard()
+    guard = candidate_import_guard()
     result["candidate_import_guard"] = guard
     if not guard["pass"]:
         result["status"] = "FAIL"
@@ -287,8 +347,9 @@ def main() -> int:
             result["sources"] = {
                 "personamem-v2": probe_personamem(tmp),
                 "longmemeval-cleaned": probe_longmemeval(tmp),
+                "perltqa-en-v2": probe_perltqa(tmp),
                 "taskmaster-1": probe_taskmaster(tmp),
-                "sgd": probe_sgd(tmp)
+                "sgd": probe_sgd(tmp),
             }
         result["status"] = "PASS"
     except Exception as exc:
