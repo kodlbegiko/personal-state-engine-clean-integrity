@@ -1,0 +1,8 @@
+EV_A_MATERIALIZATION_DRY_RUN_AUTHORIZED
+candidate_v13_external_execution=false
+joint_feasibility=PASS
+contamination_firewall=PASS
+synthetic_runtime_contract=PASS
+expected_total=384
+expected_answerable=240
+expected_no_evidence=144
