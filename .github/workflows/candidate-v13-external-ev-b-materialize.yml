@@ -1,0 +1,63 @@
+name: Candidate v13 external-validity EV-B frozen materialization
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/ev-b-materialize-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify formal freeze and zero ledger
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          l=json.loads(Path('results/candidate-v13-external-validity/formal-ledger.json').read_text())
+          assert f['status']=='FORMAL_EVALUATION_FROZEN_AFTER_EV_A_INTEGRITY_PASS'
+          assert l=={'ev_b':0,'ev_c':0,'terminal_state':None},l
+          for rel,expected in f['files_sha256'].items():
+              p=Path(rel); assert p.exists(),rel
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,rel
+          PY
+      - name: Materialize frozen EV-B without Candidate execution
+        run: python scripts/candidate_v13_external_runtime_eval.py --stage ev_b --materialize-only
+      - name: Validate frozen EV-B materialization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/ev-b-runtime.json').read_text())
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          assert r['status']=='MATERIALIZATION_VALIDATED_NO_EXECUTION'
+          assert r['selection_digest']==f['ev_b_selection_digest']
+          assert r['case_counts']['total']==1440
+          assert r['case_counts']['answerable']==864
+          assert r['case_counts']['no_evidence']==576
+          assert set(r['case_counts']['domain'].values())=={180}
+          assert set(r['case_counts']['family'].values())=={120}
+          assert r['case_counts']['source']=={'personamem-v2':360,'locomo':288,'sgd-carryover':360,'longmemeval-cleaned':144,'evermembench-dynamic':288}
+          assert r['raw_case_payload_persisted'] is False
+          PY
+      - name: Persist aggregate EV-B materialization proof
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/ev-b-runtime.json
+          git commit -m "candidate-v13 external validity: validate frozen EV-B materialization without execution"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
