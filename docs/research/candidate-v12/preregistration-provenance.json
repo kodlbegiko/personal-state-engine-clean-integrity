@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate-v12-preregistration-provenance-v1",
+  "candidate": "v12",
+  "branch": "research/candidate-v12-fresh-lineage",
+  "parent_terminal_commit": "8faf4965fdf99eae0c154de012939eb33295cbab",
+  "preregistration_commit_sha": "afe9d358a337c2dd1a47710aa2212ed5ae672288",
+  "preregistration_sha256": "f1aed776117058ff212346225654cc6dcf81fb45265bf0571cbbd00cc56384c6",
+  "preregistration_created_utc": "2026-08-15T13:46:51Z",
+  "protected_case_inspection_before_preregistration_commit": false,
+  "historical_terminal_state": "CANDIDATE_V11_PROTECTED_FAIL"
+}

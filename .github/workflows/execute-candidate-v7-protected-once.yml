@@ -1,0 +1,68 @@
+name: Execute Candidate-v7 Protected Validation Once
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - '.github/workflows/execute-candidate-v7-protected-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  protected-once:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen identities before formal execution
+        run: |
+          source_sha=$(sha256sum src/personal_state_engine/candidate_v7.py | awk '{print $1}')
+          config_sha=$(sha256sum experiments/configs/candidate-v7-v1.json | awk '{print $1}')
+          dataset_sha=$(sha256sum experiments/benchmarks/candidate-v7-protected-validation-v1.json | awk '{print $1}')
+          generator_sha=$(sha256sum scripts/materialize_candidate_v7_protected.py | awk '{print $1}')
+          evaluator_sha=$(sha256sum scripts/evaluate_candidate_v7_protected.py | awk '{print $1}')
+          test "$source_sha" = "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae"
+          test "$config_sha" = "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+          test "$dataset_sha" = "a292ff7b64c08d62ede076bfe61a739b7ba9ca0dea263aaccd58168d06bc6017"
+          test "$generator_sha" = "5787349595c07cb865b73f4fdfcc7e676e73ba6018a4cd5c39b3461bbb895a82"
+          test "$evaluator_sha" = "f6e93318cb656a8c8bc774f7d6b8418e1e7355cb88ddeddbaeba9ba90b916e5b"
+      - name: Formal protected execution — exactly once
+        id: formal_eval
+        run: |
+          set +e
+          python scripts/evaluate_candidate_v7_protected.py
+          rc=$?
+          set -e
+          echo "EVAL_RC=$rc" >> "$GITHUB_ENV"
+          echo "formal_eval_rc=$rc"
+          test -f results/candidate-v7/protected-validation-summary-v1.json
+          test -f results/candidate-v7/protected-validation-statistics-v1.json
+          test -f results/candidate-v7/protected-validation-per-case-v1.json
+          exit 0
+      - name: Verify Candidate-v7 stayed frozen after result exposure
+        run: |
+          test "$(sha256sum src/personal_state_engine/candidate_v7.py | awk '{print $1}')" = "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae"
+          test "$(sha256sum experiments/configs/candidate-v7-v1.json | awk '{print $1}')" = "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+          git diff --exit-code -- src/personal_state_engine/candidate_v7.py experiments/configs/candidate-v7-v1.json
+      - name: Commit one-shot protected evidence regardless of PASS or FAIL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v7/protected-validation-summary-v1.json
+          git add results/candidate-v7/protected-validation-statistics-v1.json
+          git add results/candidate-v7/protected-validation-per-case-v1.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "3"
+          git commit -m "research: record one-shot protected validation"
+          git push origin HEAD:research/candidate-v7-fresh-evidence
+      - name: Enforce protected verdict
+        run: |
+          if [ "$EVAL_RC" -ne 0 ]; then
+            echo "Protected validation did not PASS; evidence is committed and rerun is forbidden." >&2
+            exit "$EVAL_RC"
+          fi

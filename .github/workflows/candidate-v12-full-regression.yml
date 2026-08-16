@@ -1,0 +1,29 @@
+name: Candidate v12 full repository regression
+
+on:
+  push:
+    branches:
+      - research/candidate-v12-fresh-lineage
+    paths:
+      - src/personal_state_engine/candidate_v12.py
+      - tests/test_candidate_v12.py
+      - .github/workflows/candidate-v12-full-regression.yml
+
+permissions:
+  contents: read
+
+jobs:
+  full-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v12-fresh-lineage
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pytest
+      - name: Run complete historical plus Candidate-v12 test suite
+        env:
+          PYTHONPATH: src
+        run: pytest -q

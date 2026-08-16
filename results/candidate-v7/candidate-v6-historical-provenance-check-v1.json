@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate-v6-historical-provenance-check-v1",
+  "repository": "kodlbegiko/personal-state-engine-research",
+  "commit": "a5fcb252c37d0e7db8604a56ebd8aedbfb921ea0",
+  "path": "src/personal_state_engine/candidate_v6.py",
+  "expected_source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+  "actual_source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+  "identity_match": true,
+  "semantic_gate_f_payload_accessed": false,
+  "candidate_v6_modified": false
+}

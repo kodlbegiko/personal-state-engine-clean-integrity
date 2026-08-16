@@ -1,0 +1,65 @@
+--- candidate_v8-iter0.py
++++ candidate_v8-iter1.py
+@@ -46,7 +46,7 @@
+     ),
+     "education_course": (
+         r"\bclass\b", r"\bcourse\b", r"\bmodule\b", r"\benroll(?:s|ed|ment)?\b",
+-        r"\bstudy(?:ing)?\b",
++        r"\bstud(?:y|ies|ied|ying)\b",
+     ),
+@@ -149,6 +149,7 @@
+     first_person: bool
+     relation_signals: tuple[str, ...]
+     predicate_terms: tuple[str, ...]
++    object_anchors: tuple[str, ...]
+     temporal_scope: str
+@@ -175,26 +176,33 @@
+ def _subject_anchors(query: str) -> set[str]:
+     raw = re.findall(r"\b[A-Z][A-Za-z0-9_-]*\b", query)
+-    blocked = {"What","Which","Who","Where","When","How","Does","Do","Did","Is","Are","Can","Could","Would","Should","Will"}
++    blocked = {"What","Which","Who","Where","When","How","Does","Do","Did","Is","Are","Can","Could","Would","Should","Will","I"}
+     return {x.casefold() for x in raw if x not in blocked}
+ 
+ def _predicate_terms(query: str, anchors: set[str]) -> set[str]:
+     out = set()
++    anchor_stems = {_stem(a) for a in anchors}
+     for t in content_tokens(query):
+         s = _stem(t)
+-        if s in GENERIC_STOP or s in anchors or len(s) <= 1:
++        if s in GENERIC_STOP or s in anchor_stems or len(s) <= 1:
+             continue
+         out.add(s)
+     return out
+ 
+ def query_requirements(query: str) -> QueryRequirements:
+     anchors = _subject_anchors(query)
++    relation_signals = _relation_signals(query)
+     temporal = "HISTORICAL" if STALE.search(query) else ("CURRENT" if CURRENT.search(query) or re.search(r"\b(?:does|is|are|has|have)\b", query, re.I) else "UNSPECIFIED")
++    object_vocab = {"tablet","bag","application","account","passport","car","bike","bicycle","watch","shirt","jacket"}
++    object_anchors = {_stem(t) for t in tokens(query) if _stem(t) in object_vocab} if relation_signals & {"identity_attribute","status"} else set()
+     return QueryRequirements(
+         subject_anchors=tuple(sorted(anchors)),
+         first_person=_first_person(query),
+-        relation_signals=tuple(sorted(_relation_signals(query))),
++        relation_signals=tuple(sorted(relation_signals)),
+         predicate_terms=tuple(sorted(_predicate_terms(query, anchors))),
++        object_anchors=tuple(sorted(object_anchors)),
+         temporal_scope=temporal,
+     )
+@@ -233,11 +241,14 @@
+ def _subject_ok(clause: str, req: QueryRequirements) -> bool:
+     lowered = clause.casefold()
+-    if req.subject_anchors:
+-        return all(re.search(rf"(?<![a-z0-9_-]){re.escape(anchor)}(?![a-z0-9_-])", lowered) for anchor in req.subject_anchors)
+-    if req.first_person:
+-        return _first_person(clause) or bool(re.search(r"\buser\b", lowered))
+-    # No explicit subject anchor: require a first-person form or a lexical predicate match later.
++    if req.subject_anchors and not all(re.search(rf"(?<![a-z0-9_-]){re.escape(anchor)}(?![a-z0-9_-])", lowered) for anchor in req.subject_anchors):
++        return False
++    if req.first_person and not (_first_person(clause) or bool(re.search(r"\buser\b", lowered))):
++        return False
++    if req.object_anchors:
++        cstems = _stems(clause)
++        if not set(req.object_anchors).issubset(cstems):
++            return False
+     return True

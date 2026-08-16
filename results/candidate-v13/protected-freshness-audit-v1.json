@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "stage": "protected",
+  "violations": {
+    "discourse_family_overlap": [],
+    "entity_overlap": [],
+    "exact_memory_overlap": [],
+    "exact_query_overlap": [],
+    "grammar_family_overlap": [],
+    "normalized_query_overlap": []
+  }
+}

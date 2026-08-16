@@ -1,0 +1,40 @@
+{
+  "schema_version": "candidate-v10-provenance-verification-v1",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "verified_at": "2026-08-15T19:30:00+08:00",
+  "candidate_v10_branch": "research/candidate-v10-fresh-lineage",
+  "candidate_v10_base_commit": "a5f627248064ab98fed9e23a1f5eb24707a74c22",
+  "candidate_v7": {
+    "branch": "research/candidate-v7-fresh-evidence",
+    "terminal_commit": "375754853d30075b48d092c79bc4024981efe46d",
+    "terminal_state": "CANDIDATE_V7_CONFIRMATORY_FAIL",
+    "branch_head_matches_terminal_commit": true,
+    "immutable": true
+  },
+  "candidate_v8": {
+    "branch": "research/candidate-v8-fresh-lineage",
+    "terminal_commit": "86c440fc487c46a1e603144177e666d32a52e725",
+    "terminal_state": "CANDIDATE_V8_PROTECTED_VALIDATION_FAIL",
+    "branch_head_matches_terminal_commit": true,
+    "immutable": true
+  },
+  "candidate_v9": {
+    "branch": "research/candidate-v9-fresh-lineage",
+    "terminal_commit": "a5f627248064ab98fed9e23a1f5eb24707a74c22",
+    "terminal_state": "CANDIDATE_V9_CONFIRMATORY_FAIL",
+    "branch_head_matches_terminal_commit": true,
+    "immutable": true,
+    "formal_execution_count": {
+      "protected": 1,
+      "confirmatory": 1,
+      "final": 0
+    }
+  },
+  "historical_surface_audit": {
+    "candidate_v7_to_v8_diff": "only Candidate-v8-specific files/workflows were added; no Candidate-v7 files modified",
+    "candidate_v8_to_v9_diff": "only Candidate-v9-specific files/workflows were added; no Candidate-v8 or Candidate-v7 files modified",
+    "old_formal_surfaces_modified": false
+  },
+  "candidate_v9_confirmatory_semantic_payload_accessed_before_preregistration": false,
+  "integrity_status": "PASS"
+}

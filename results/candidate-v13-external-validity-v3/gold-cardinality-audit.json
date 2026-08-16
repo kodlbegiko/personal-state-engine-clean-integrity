@@ -1,0 +1,336 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "distributions": {
+    "by_domain": {
+      "D1": {
+        "count": 3738,
+        "max": 9,
+        "median": 1.0,
+        "min": 1,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 3.0
+      },
+      "D2": {
+        "count": 568,
+        "max": 6,
+        "median": 1.0,
+        "min": 1,
+        "p90": 1.0,
+        "p95": 2.0,
+        "p99": 4.0
+      },
+      "D3": {
+        "count": 16700,
+        "max": 19,
+        "median": 1.0,
+        "min": 1,
+        "p90": 2.0,
+        "p95": 2.0,
+        "p99": 3.0
+      },
+      "D4": {
+        "count": 25825,
+        "max": 5,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 4.0
+      },
+      "D5": {
+        "count": 45445,
+        "max": 11,
+        "median": 2,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 4.0
+      },
+      "D6": {
+        "count": 723,
+        "max": 96,
+        "median": 22,
+        "min": 1,
+        "p90": 45.80000000000007,
+        "p95": 52.0,
+        "p99": 71.77999999999997
+      },
+      "D7": {
+        "count": 2192,
+        "max": 74,
+        "median": 25.0,
+        "min": 1,
+        "p90": 46.0,
+        "p95": 53.0,
+        "p99": 64.09000000000015
+      },
+      "D8": {
+        "count": 901,
+        "max": 6,
+        "median": 1,
+        "min": 1,
+        "p90": 2.0,
+        "p95": 2.0,
+        "p99": 4.0
+      }
+    },
+    "by_eligible_family": {
+      "N1": {
+        "count": 757,
+        "max": 10,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 4.0,
+        "p99": 5.439999999999941
+      },
+      "N10": {
+        "count": 96092,
+        "max": 96,
+        "median": 1.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 31.0
+      },
+      "N11": {
+        "count": 86690,
+        "max": 6,
+        "median": 1.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 4.0
+      },
+      "N12": {
+        "count": 2373,
+        "max": 1,
+        "median": 1,
+        "min": 1,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "N2": {
+        "count": 30279,
+        "max": 96,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 24.0,
+        "p99": 46.0
+      },
+      "N3": {
+        "count": 96092,
+        "max": 96,
+        "median": 1.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 31.0
+      },
+      "N4": {
+        "count": 60521,
+        "max": 6,
+        "median": 2,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 4.0
+      },
+      "N5": {
+        "count": 41885,
+        "max": 96,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 4.0,
+        "p99": 41.0
+      },
+      "N6": {
+        "count": 1259,
+        "max": 6,
+        "median": 1,
+        "min": 1,
+        "p90": 2.0,
+        "p95": 2.0,
+        "p99": 3.0
+      },
+      "N7": {
+        "count": 1048,
+        "max": 1,
+        "median": 1.0,
+        "min": 1,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "N8": {
+        "count": 33374,
+        "max": 96,
+        "median": 2.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 22.0,
+        "p99": 44.0
+      },
+      "N9": {
+        "count": 94887,
+        "max": 96,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 30.0
+      }
+    },
+    "by_source": {
+      "evermembench-dynamic": {
+        "count": 2400,
+        "max": 96,
+        "median": 27.0,
+        "min": 4,
+        "p90": 48.0,
+        "p95": 54.0,
+        "p99": 67.0
+      },
+      "locomo": {
+        "count": 1518,
+        "max": 19,
+        "median": 1.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 4.0,
+        "p99": 6.0
+      },
+      "longmemeval-cleaned": {
+        "count": 500,
+        "max": 6,
+        "median": 2.0,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 4.0,
+        "p99": 5.0
+      },
+      "personamem-v2": {
+        "count": 4949,
+        "max": 1,
+        "median": 1,
+        "min": 1,
+        "p90": 1.0,
+        "p95": 1.0,
+        "p99": 1.0
+      },
+      "rhelm": {
+        "count": 60,
+        "max": 2,
+        "median": 1.0,
+        "min": 1,
+        "p90": 2.0,
+        "p95": 2.0,
+        "p99": 2.0
+      },
+      "sgd-carryover": {
+        "count": 86665,
+        "max": 6,
+        "median": 1,
+        "min": 1,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 4.0
+      }
+    },
+    "gold_text_bytes_by_source": {
+      "evermembench-dynamic": {
+        "count": 2400,
+        "max": 26566,
+        "median": 8393.0,
+        "min": 677,
+        "p90": 13776.5,
+        "p95": 15703.599999999991,
+        "p99": 19348.249999999993
+      },
+      "locomo": {
+        "count": 1518,
+        "max": 3587,
+        "median": 206.0,
+        "min": 24,
+        "p90": 532.3,
+        "p95": 724.4499999999996,
+        "p99": 1113.9199999999983
+      },
+      "longmemeval-cleaned": {
+        "count": 500,
+        "max": 109793,
+        "median": 26293.5,
+        "min": 514,
+        "p90": 45039.30000000001,
+        "p95": 55458.0,
+        "p99": 76070.98999999998
+      },
+      "personamem-v2": {
+        "count": 4949,
+        "max": 6696,
+        "median": 1832,
+        "min": 270,
+        "p90": 3108.0,
+        "p95": 3632.5999999999995,
+        "p99": 4864.199999999995
+      },
+      "rhelm": {
+        "count": 60,
+        "max": 288,
+        "median": 134.0,
+        "min": 95,
+        "p90": 250.10000000000002,
+        "p95": 260.65,
+        "p99": 280.3299999999999
+      },
+      "sgd-carryover": {
+        "count": 86665,
+        "max": 494,
+        "median": 81,
+        "min": 2,
+        "p90": 162.0,
+        "p95": 190.0,
+        "p99": 253.0
+      }
+    },
+    "overall": {
+      "count": 96092,
+      "max": 96,
+      "median": 1.0,
+      "min": 1,
+      "p90": 3.0,
+      "p95": 3.0,
+      "p99": 31.0
+    }
+  },
+  "gold_count_gt_80": {
+    "by_domain": {
+      "D6": 3
+    },
+    "by_eligible_family": {
+      "N10": 3,
+      "N2": 3,
+      "N3": 3,
+      "N5": 3,
+      "N8": 3,
+      "N9": 3
+    },
+    "by_source": {
+      "evermembench-dynamic": 3
+    },
+    "total": 3
+  },
+  "individual_base_ids_persisted": false,
+  "qualified_base_count": 96092,
+  "schema_version": "candidate-v13-external-validity-v3-gold-cardinality-audit-v1",
+  "secondary_payload_risk": {
+    "cases_over_threshold_by_source": {},
+    "threshold_gold_text_bytes": 1000000
+  },
+  "status": "PASS"
+}

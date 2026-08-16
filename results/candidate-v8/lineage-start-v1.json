@@ -1,0 +1,15 @@
+{
+  "schema_version": "candidate-v8-lineage-start-v1",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v8-fresh-lineage",
+  "parent_terminal_branch": "research/candidate-v7-fresh-evidence",
+  "parent_terminal_head": "375754853d30075b48d092c79bc4024981efe46d",
+  "candidate_v7_terminal_state_verified": "CANDIDATE_V7_CONFIRMATORY_FAIL",
+  "candidate_v7_source_sha256_verified": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "candidate_v7_config_sha256_verified": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "candidate_v7_freeze_boundary_commit_verified": "090e6201e5c5a6701d003cd51b048edc93133b9d",
+  "retired_99_case_surface_semantic_payload_opened": false,
+  "candidate_v7_confirmatory_semantic_payload_opened_before_preregistration": false,
+  "monetary_cost_usd": 0,
+  "created_at": "2026-08-15T10:15:00Z"
+}

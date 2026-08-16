@@ -1,0 +1,15 @@
+{
+  "stage": "PRE_DEVELOPMENT_MATERIALIZATION",
+  "workflow_run_id": "31881331110",
+  "formal_execution_count": {
+    "protected": 0,
+    "confirmatory": 0,
+    "final": 0
+  },
+  "semantic_formal_payload_accessed": false,
+  "failure": "duplicate semantic signatures within development generator output",
+  "cause": "finite subject/value cycle produced exact duplicate normalized surfaces before file write",
+  "remediation": "expand deterministic subject namespace with surnames; preserve frozen case count, seed, categories, gates, and templates",
+  "benchmark_written": false,
+  "monetary_cost_usd": 0
+}

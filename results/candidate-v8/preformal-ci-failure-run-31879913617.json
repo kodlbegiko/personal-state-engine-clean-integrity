@@ -1,0 +1,15 @@
+{
+  "schema_version":"candidate-v8-preformal-ci-failure-v1",
+  "workflow_run_id":31879913617,
+  "head_sha":"bf83ff93a27203d2d273310dcef746fe9c9ac035",
+  "stage":"IDENTITY_GATE_BEFORE_DEVELOPMENT_MATERIALIZATION",
+  "conclusion":"FAIL_CLOSED",
+  "formal_execution_count":{"protected":0,"confirmatory":0},
+  "identity_checks":{"candidate_v7_terminal":true,"candidate_v7_frozen":true,"candidate_v7_freeze_boundary":true,"candidate_v7_source_sha256":true,"candidate_v7_config_sha256":true,"candidate_v8_source_sha256":true,"generator_sha256":false,"evaluator_sha256":true},
+  "root_cause":"The connector-created generator file omitted one unused `from dataclasses import dataclass` import. This changed file-byte SHA-256 but not generator behavior or benchmark bytes.",
+  "observed_repository_generator_sha256":"45e962068ddd3fdf94ded2e8666a92d4cbe1303772b3df7af8f60bf8af7c6c47",
+  "mitigation":"Bind the mission identity gate and Candidate-v8 config to the exact repository generator bytes; do not alter the generator semantics, v8 source, thresholds, or any formal surface.",
+  "counts_as_formal_rerun":false,
+  "retired_99_case_semantic_payload_opened":false,
+  "monetary_cost_usd":0
+}

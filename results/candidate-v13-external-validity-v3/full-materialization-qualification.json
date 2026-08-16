@@ -1,0 +1,60 @@
+{
+  "ALL_SELECTED_CASES_PRODUCTION_MATERIALIZABLE_PASS": true,
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "gold_truncation_count": 0,
+  "individual_formal_assignments_persisted": false,
+  "materialization_exception_count": 0,
+  "runtime_gold_loss_count": 0,
+  "schema_version": "candidate-v13-external-validity-v3-full-materialization-qualification-v1",
+  "selected_case_count": 3744,
+  "stages": {
+    "ev_a_v3": {
+      "case_count": 384,
+      "deterministic_reconstruction": true,
+      "gold_truncation_count": 0,
+      "individual_case_contents_persisted": false,
+      "materialization_digest_sha256": "7b3744c99c72d4828f0c1a0ce02a15b057cc42b141a86da45bf5bf85114b662e",
+      "materialization_exception_count": 0,
+      "maximum_memory_count": 70,
+      "minimum_memory_count": 5,
+      "runtime_gold_loss_count": 0,
+      "runtime_payload_digest_sha256": "1098f79f82cee958d8322187aeeb1480b17196bf183034be51599d13115d12b1",
+      "selection_digest_sha256": "686f9bee71e52a81458c2f8ee58e7a0546ba884080979677a0a020fc96f4a330",
+      "status": "PASS",
+      "successfully_materialized_case_count": 384
+    },
+    "ev_b_v3": {
+      "case_count": 1440,
+      "deterministic_reconstruction": true,
+      "gold_truncation_count": 0,
+      "individual_case_contents_persisted": false,
+      "materialization_digest_sha256": "25628d35851706bf8009d4183d27d89f71aa956b5506730105bcc109ed8e58dd",
+      "materialization_exception_count": 0,
+      "maximum_memory_count": 83,
+      "minimum_memory_count": 5,
+      "runtime_gold_loss_count": 0,
+      "runtime_payload_digest_sha256": "4aa109facc7262053febf84040860ec28885c66d39ed7dd33a5b1b69e48858fd",
+      "selection_digest_sha256": "bff68e51e03db9b7ca9f35a99ce8343a93c0ae925e1e73e2ff27f38a9837f80f",
+      "status": "PASS",
+      "successfully_materialized_case_count": 1440
+    },
+    "ev_c_v3": {
+      "case_count": 1920,
+      "deterministic_reconstruction": true,
+      "gold_truncation_count": 0,
+      "individual_case_contents_persisted": false,
+      "materialization_digest_sha256": "7a4771352cbbf33adc50b4f288581cdc54e72ec999e75c0b0b4d7dce965423f0",
+      "materialization_exception_count": 0,
+      "maximum_memory_count": 100,
+      "minimum_memory_count": 5,
+      "runtime_gold_loss_count": 0,
+      "runtime_payload_digest_sha256": "439f498269a9950e7e00b5b986fd1e0d190e09bdcea62d40bc1511b0e4a19096",
+      "selection_digest_sha256": "7ffc84a34d8e48c4d78876e8eda5bb470e3670b8a204bc2c7c60b8cb718c6d49",
+      "status": "PASS",
+      "successfully_materialized_case_count": 1920
+    }
+  },
+  "status": "PASS",
+  "successfully_materialized_case_count": 3744
+}

@@ -1,0 +1,42 @@
+name: Materialize Candidate-v7 Protected Benchmark
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - '.github/workflows/materialize-candidate-v7-protected.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize-protected:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Materialize fresh protected benchmark and lock
+        run: python scripts/materialize_candidate_v7_protected.py
+      - name: Verify frozen Candidate-v7 remains unchanged
+        run: |
+          source_sha=$(sha256sum src/personal_state_engine/candidate_v7.py | awk '{print $1}')
+          config_sha=$(sha256sum experiments/configs/candidate-v7-v1.json | awk '{print $1}')
+          test "$source_sha" = "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae"
+          test "$config_sha" = "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+          git diff --exit-code -- src/personal_state_engine/candidate_v7.py experiments/configs/candidate-v7-v1.json
+      - name: Commit protected benchmark lock only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/benchmarks/candidate-v7-protected-validation-v1.json
+          git add experiments/benchmarks/candidate-v7-protected-validation-lock-v1.json
+          git diff --cached --name-only | grep -qx 'experiments/benchmarks/candidate-v7-protected-validation-lock-v1.json'
+          git diff --cached --name-only | grep -qx 'experiments/benchmarks/candidate-v7-protected-validation-v1.json'
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "2"
+          git commit -m "research: freeze fresh protected benchmark"
+          git push origin HEAD:research/candidate-v7-fresh-evidence

@@ -1,0 +1,214 @@
+{
+  "schema_version": "candidate-v9-v8-historical-failure-taxonomy-v1",
+  "classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+  "historical_dataset_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+  "failure_count": 4,
+  "failures": [
+    {
+      "case_id": "CV8-PROTECTED-A-021",
+      "query": "What drink is Vera's usual choice?",
+      "relevant_memories": [
+        {
+          "memory_id": "CV8-PROTECTED-A-021-rel",
+          "memory_text": "Vera tends to order espresso when taking a break.",
+          "certification": {
+            "supported": false,
+            "clauses": [
+              {
+                "text": "Vera tends to order espresso when taking a break.",
+                "subject_ok": true,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": true,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "assertion",
+                  "subject",
+                  "temporal",
+                  "value"
+                ],
+                "score": 4,
+                "supported": false
+              }
+            ]
+          }
+        }
+      ],
+      "candidate_v2_ranking": [
+        "CV8-PROTECTED-A-021-rel",
+        "CV8-PROTECTED-A-021-n4",
+        "CV8-PROTECTED-A-021-n2",
+        "CV8-PROTECTED-A-021-n5",
+        "CV8-PROTECTED-A-021-n1",
+        "CV8-PROTECTED-A-021-n3"
+      ],
+      "candidate_v8_ranking": [],
+      "root_cause_category": "RELATION_REALIZATION",
+      "predicted_by_preregistered_hypothesis": true,
+      "generalizable_change_required": true
+    },
+    {
+      "case_id": "CV8-PROTECTED-A-027",
+      "query": "Where does Benoit study?",
+      "relevant_memories": [
+        {
+          "memory_id": "CV8-PROTECTED-A-027-rel",
+          "memory_text": "Someone asked a separate planning question earlier; Benoit attends Maple Coast University this year.",
+          "certification": {
+            "supported": false,
+            "clauses": [
+              {
+                "text": "Someone asked a separate planning question earlier",
+                "subject_ok": false,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": false,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "temporal",
+                  "value"
+                ],
+                "score": 2,
+                "supported": false
+              },
+              {
+                "text": "Benoit attends Maple Coast University this year.",
+                "subject_ok": true,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": false,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "subject",
+                  "temporal",
+                  "value"
+                ],
+                "score": 3,
+                "supported": false
+              }
+            ]
+          }
+        }
+      ],
+      "candidate_v2_ranking": [
+        "CV8-PROTECTED-A-027-n4",
+        "CV8-PROTECTED-A-027-rel",
+        "CV8-PROTECTED-A-027-n1",
+        "CV8-PROTECTED-A-027-n2",
+        "CV8-PROTECTED-A-027-n5",
+        "CV8-PROTECTED-A-027-n3"
+      ],
+      "candidate_v8_ranking": [],
+      "root_cause_category": "RELATION_REALIZATION",
+      "predicted_by_preregistered_hypothesis": true,
+      "generalizable_change_required": true
+    },
+    {
+      "case_id": "CV8-PROTECTED-A-063",
+      "query": "What drink is Lena's usual choice?",
+      "relevant_memories": [
+        {
+          "memory_id": "CV8-PROTECTED-A-063-rel",
+          "memory_text": "Someone asked a separate planning question earlier; Lena tends to order flat white when taking a break.",
+          "certification": {
+            "supported": false,
+            "clauses": [
+              {
+                "text": "Someone asked a separate planning question earlier",
+                "subject_ok": false,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": false,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "temporal",
+                  "value"
+                ],
+                "score": 2,
+                "supported": false
+              },
+              {
+                "text": "Lena tends to order flat white when taking a break.",
+                "subject_ok": true,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": true,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "assertion",
+                  "subject",
+                  "temporal",
+                  "value"
+                ],
+                "score": 4,
+                "supported": false
+              }
+            ]
+          }
+        }
+      ],
+      "candidate_v2_ranking": [
+        "CV8-PROTECTED-A-063-n4",
+        "CV8-PROTECTED-A-063-rel",
+        "CV8-PROTECTED-A-063-n2",
+        "CV8-PROTECTED-A-063-n5",
+        "CV8-PROTECTED-A-063-n1",
+        "CV8-PROTECTED-A-063-n3"
+      ],
+      "candidate_v8_ranking": [],
+      "root_cause_category": "RELATION_REALIZATION",
+      "predicted_by_preregistered_hypothesis": true,
+      "generalizable_change_required": true
+    },
+    {
+      "case_id": "CV8-PROTECTED-A-069",
+      "query": "Where does Rhea study?",
+      "relevant_memories": [
+        {
+          "memory_id": "CV8-PROTECTED-A-069-rel",
+          "memory_text": "Rhea attends Silver Hill College this year.",
+          "certification": {
+            "supported": false,
+            "clauses": [
+              {
+                "text": "Rhea attends Silver Hill College this year.",
+                "subject_ok": true,
+                "relation_ok": false,
+                "value_bearing": true,
+                "direct_assertion": false,
+                "temporal_ok": true,
+                "blocker": null,
+                "support_signals": [
+                  "subject",
+                  "temporal",
+                  "value"
+                ],
+                "score": 3,
+                "supported": false
+              }
+            ]
+          }
+        }
+      ],
+      "candidate_v2_ranking": [
+        "CV8-PROTECTED-A-069-rel",
+        "CV8-PROTECTED-A-069-n4",
+        "CV8-PROTECTED-A-069-n1",
+        "CV8-PROTECTED-A-069-n5",
+        "CV8-PROTECTED-A-069-n2",
+        "CV8-PROTECTED-A-069-n3"
+      ],
+      "candidate_v8_ranking": [],
+      "root_cause_category": "RELATION_REALIZATION",
+      "predicted_by_preregistered_hypothesis": true,
+      "generalizable_change_required": true
+    }
+  ],
+  "case_specific_hardcoding_prohibited": true,
+  "opened_at": "2026-08-15T11:04:49.886405+00:00"
+}

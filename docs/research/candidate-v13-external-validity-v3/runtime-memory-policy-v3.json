@@ -1,0 +1,51 @@
+{
+  "schema_version": "candidate-v13-external-validity-v3-runtime-memory-policy-v1",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE",
+  "candidate_v13_external_performance_observed": false,
+  "minimum_context": 5,
+  "minimum_non_gold_distractors": 4,
+  "global_infrastructure_safety_ceiling": 100,
+  "selected_policy": "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP",
+  "runtime_memory_target_rule": "max(minimum_context, gold_count + minimum_non_gold_distractors)",
+  "no_evidence_rule": "withhold all target gold but preserve the same structural runtime target derived from source-native gold_count",
+  "eligibility_exclusion_for_gold_cardinality": false,
+  "empirical_basis": {
+    "qualified_pool_gold_count_max": 96,
+    "qualified_pool_gold_count_gt_80": 3,
+    "v2_selected_gold_count_max": 96,
+    "v2_selected_gold_count_gt_80": 2,
+    "secondary_payload_risk_over_1mb": 0
+  },
+  "candidate_policies_compared": {
+    "A_GLOBAL_FIXED_CAP": {
+      "feasible_cap": 100,
+      "complete_gold_retention": true,
+      "deterministic": true,
+      "runtime_cost": "highest; fills every case toward one global ceiling",
+      "selected": false
+    },
+    "B_SOURCE_AWARE_FIXED_CAP": {
+      "source_caps": {
+        "evermembench-dynamic": 100,
+        "locomo": 23,
+        "longmemeval-cleaned": 10,
+        "personamem-v2": 5,
+        "rhelm": 6,
+        "sgd-carryover": 10
+      },
+      "complete_gold_retention": true,
+      "deterministic": true,
+      "runtime_cost": "lower than A but source-dependent fixed padding creates avoidable context distortion",
+      "selected": false
+    },
+    "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP": {
+      "complete_gold_retention": true,
+      "deterministic": true,
+      "runtime_cost": "lowest of the complete-gold policies; exactly gold_count + four distractors with minimum context five",
+      "source_fairness": "same structural rule for every source and case",
+      "selected": true
+    }
+  },
+  "selection_reason": "Policy C preserves every qualified source-native gold set including max gold_count=96, guarantees at least four distractors under a candidate-blind global ceiling of 100, avoids arbitrary case dropping, and minimizes unnecessary runtime context compared with fixed-cap alternatives.",
+  "performance_driven_protocol_changes": 0
+}

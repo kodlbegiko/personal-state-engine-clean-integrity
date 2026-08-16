@@ -1,0 +1,10 @@
+{
+  "candidate_v13_invoked": false,
+  "exact_duplicate_count": 0,
+  "formal_case_materialized": false,
+  "normalized_query_duplicates_removed": 39737,
+  "post_dedup": 96092,
+  "pre_dedup": 135829,
+  "schema_version": "candidate-v13-external-validity-v2-dedup-audit-v1",
+  "status": "PASS"
+}

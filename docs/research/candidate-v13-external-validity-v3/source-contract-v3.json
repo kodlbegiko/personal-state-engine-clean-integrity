@@ -1,0 +1,24 @@
+{
+  "candidate_v13_invoked": false,
+  "gold_resolution": "source-native rules inherited from the independently qualified v2 adapters, re-executed from pinned bytes in this v3 qualification",
+  "loading_rule": "every source is loaded directly from the qualified immutable revision; no HEAD-at-runtime source is permitted",
+  "primary_sources": [
+    "personamem-v2",
+    "longmemeval-cleaned",
+    "locomo",
+    "sgd-carryover",
+    "evermembench-dynamic"
+  ],
+  "reserve_activation": "candidate-blind infrastructure-only conditions before freeze; never Candidate performance",
+  "reserve_source": "rhelm",
+  "schema_version": "candidate-v13-external-validity-v3-source-contract-v1",
+  "source_revisions": {
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "locomo": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "longmemeval-cleaned": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+    "personamem-v2": "b7b42b78917157afed063527a1c959e98f6109f2",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+    "sgd-carryover": "e852981ae34990f4358979625854259302feaa78"
+  },
+  "status": "CANDIDATE_BLIND_IMMUTABLE_REVISIONS"
+}

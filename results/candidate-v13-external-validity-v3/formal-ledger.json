@@ -1,0 +1,10 @@
+{
+  "candidate_v13_external_invocation_occurred": false,
+  "ev_a_v3": 0,
+  "ev_b_v3": 0,
+  "ev_c_v3": 0,
+  "formal_invocation_attempts": {},
+  "formal_reruns": 0,
+  "illegal_formal_reruns": false,
+  "schema_version": "candidate-v13-external-validity-v3-formal-ledger-v2"
+}

@@ -1,0 +1,165 @@
+{
+  "failure_count": 3,
+  "category_counts": {
+    "VALUE_TYPE": 3
+  },
+  "failures": [
+    {
+      "case_id": "CV9-DEV-A-105",
+      "query": "What target is Ina Olsen preparing toward?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ina",
+            "olsen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "prepar",
+            "target",
+            "toward"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "value_types": [
+          "goal"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-105-rel",
+          "clause": "Ina Olsen is preparing for a cycling brevet.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "goal"
+          ],
+          "value_type_signals": [
+            "activity"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-120",
+      "query": "Which beverage does Luc Ito favor on ordinary workdays?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ito",
+            "luc"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink"
+          ],
+          "predicate_terms": [
+            "beverage",
+            "favor",
+            "ordinary",
+            "workday"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "beverage"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-120-rel",
+          "clause": "Luc Ito routinely selects cafe au lait during afternoon breaks.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "preference"
+          ],
+          "value_type_signals": [
+            "schedule"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-177",
+      "query": "What target is Ina Jensen preparing toward?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ina",
+            "jensen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "prepar",
+            "target",
+            "toward"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "value_types": [
+          "goal"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-177-rel",
+          "clause": "Ina Jensen is preparing for a wilderness course.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "goal"
+          ],
+          "value_type_signals": [
+            "course"
+          ]
+        }
+      ]
+    }
+  ],
+  "development_surface_sha256": "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704",
+  "formal_counts": {
+    "protected": 0,
+    "confirmatory": 0,
+    "final": 0
+  }
+}

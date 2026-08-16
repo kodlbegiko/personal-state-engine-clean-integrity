@@ -1,0 +1,2044 @@
+{
+  "schema_version": "candidate-v10-development-failure-taxonomy-v1",
+  "stage": "development",
+  "formal_stage": false,
+  "miss_count": 29,
+  "by_semantic_domain": {
+    "goals": 2,
+    "hobbies": 9,
+    "project ownership": 9,
+    "sports teams": 9
+  },
+  "by_grammar_family": {
+    "A": 9,
+    "B": 11,
+    "C": 9
+  },
+  "by_relation": {
+    "activity": 9,
+    "goal": 2,
+    "sports_team": 9
+  },
+  "failed_constraint_counts": {
+    "relation": 29,
+    "value_type": 29
+  },
+  "by_domain_family": {
+    "goals::B": 2,
+    "hobbies::A": 3,
+    "hobbies::B": 3,
+    "hobbies::C": 3,
+    "project ownership::A": 3,
+    "project ownership::B": 3,
+    "project ownership::C": 3,
+    "sports teams::A": 3,
+    "sports teams::B": 3,
+    "sports teams::C": 3
+  },
+  "misses": [
+    {
+      "case_id": "CV10-DEV-A-152",
+      "semantic_domain": "project ownership",
+      "grammar_family": "C",
+      "query": "For Pavel Petrov4, can you identify the project currently owned currently on record?",
+      "relevant_texts": [
+        "The record for Pavel Petrov4 lists Atlas Migration under project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "for",
+            "pavel",
+            "petrov4"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "identify",
+            "own",
+            "project",
+            "record",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-152-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Pavel Petrov4 lists Atlas Migration under project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-121",
+      "semantic_domain": "project ownership",
+      "grammar_family": "B",
+      "query": "What is Yara Bennett3's current project currently owned?",
+      "relevant_texts": [
+        "Yara Bennett3's project responsibility is Harbor Index."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "bennett3",
+            "yara"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "own",
+            "project"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": [
+          "own"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-121-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Yara Bennett3's project responsibility is Harbor Index.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-196",
+      "semantic_domain": "goals",
+      "grammar_family": "B",
+      "query": "What is Dev Tanaka6's current current goal?",
+      "relevant_texts": [
+        "Dev Tanaka6's training target is a conservation certificate."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dev",
+            "tanaka6"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "goal"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-196-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Dev Tanaka6's training target is a conservation certificate.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "certification"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-102",
+      "semantic_domain": "hobbies",
+      "grammar_family": "A",
+      "query": "Which weekend hobby does Sven Jensen3 have right now?",
+      "relevant_texts": [
+        "Sven Jensen3 has glass painting recorded as the regular activity."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "jensen3",
+            "sven"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity",
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "hobby",
+            "right",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-102-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Sven Jensen3 has glass painting recorded as the regular activity.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-059",
+      "semantic_domain": "project ownership",
+      "grammar_family": "C",
+      "query": "For Elin Quinn1, can you identify the project currently owned currently on record?",
+      "relevant_texts": [
+        "The record for Elin Quinn1 lists Lumen Archive under project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "elin",
+            "for",
+            "quinn1"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "identify",
+            "own",
+            "project",
+            "record",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-059-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Elin Quinn1 lists Lumen Archive under project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-028",
+      "semantic_domain": "project ownership",
+      "grammar_family": "B",
+      "query": "What is Luc Choi0's current project currently owned?",
+      "relevant_texts": [
+        "Luc Choi0's project responsibility is Northwind Pilot."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "choi0",
+            "luc"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "own",
+            "project"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": [
+          "own"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-028-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Luc Choi0's project responsibility is Northwind Pilot.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-023",
+      "semantic_domain": "sports teams",
+      "grammar_family": "C",
+      "query": "For Ina Evans0, can you identify the sports team followed currently on record?",
+      "relevant_texts": [
+        "The record for Ina Evans0 lists Seaside Arrows under team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "evans0",
+            "for",
+            "ina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "identify",
+            "record",
+            "sport",
+            "team",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-023-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Ina Evans0 lists Seaside Arrows under team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-147",
+      "semantic_domain": "sports teams",
+      "grammar_family": "A",
+      "query": "Which sports team followed does Maya Young4 have right now?",
+      "relevant_texts": [
+        "Maya Young4 has North Harbor Comets recorded as the team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "maya",
+            "young4"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership",
+            "possession"
+          ],
+          "predicate_terms": [
+            "follow",
+            "have",
+            "right",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-147-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Maya Young4 has North Harbor Comets recorded as the team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-116",
+      "semantic_domain": "sports teams",
+      "grammar_family": "C",
+      "query": "For Umar Dahl3, can you identify the sports team followed currently on record?",
+      "relevant_texts": [
+        "The record for Umar Dahl3 lists Redwood Owls under team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dahl3",
+            "for",
+            "umar"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "identify",
+            "record",
+            "sport",
+            "team",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-116-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Umar Dahl3 lists Redwood Owls under team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-183",
+      "semantic_domain": "project ownership",
+      "grammar_family": "A",
+      "query": "Which project currently owned does Ina Evans5 have right now?",
+      "relevant_texts": [
+        "Ina Evans5 has Project Orion recorded as the project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "evans5",
+            "ina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "own",
+            "project",
+            "right"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-183-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Ina Evans5 has Project Orion recorded as the project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-276",
+      "semantic_domain": "project ownership",
+      "grammar_family": "A",
+      "query": "Which project currently owned does Umar Dahl8 have right now?",
+      "relevant_texts": [
+        "Umar Dahl8 has Cedar Launch recorded as the project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dahl8",
+            "umar"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "own",
+            "project",
+            "right"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-276-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Umar Dahl8 has Cedar Launch recorded as the project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-240",
+      "semantic_domain": "sports teams",
+      "grammar_family": "A",
+      "query": "Which sports team followed does Zev Xu7 have right now?",
+      "relevant_texts": [
+        "Zev Xu7 has Blue Ridge Sparks recorded as the team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "xu7",
+            "zev"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership",
+            "possession"
+          ],
+          "predicate_terms": [
+            "follow",
+            "have",
+            "right",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-240-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Zev Xu7 has Blue Ridge Sparks recorded as the team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-009",
+      "semantic_domain": "hobbies",
+      "grammar_family": "A",
+      "query": "Which weekend hobby does Gwen Kovac0 have right now?",
+      "relevant_texts": [
+        "Gwen Kovac0 has linocut printing recorded as the regular activity."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gwen",
+            "kovac0"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity",
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "hobby",
+            "right",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-009-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Gwen Kovac0 has linocut printing recorded as the regular activity.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-010",
+      "semantic_domain": "goals",
+      "grammar_family": "B",
+      "query": "What is Nolan Vega0's current current goal?",
+      "relevant_texts": [
+        "Nolan Vega0's training target is a conservation certificate."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "nolan",
+            "vega0"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "goal"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-010-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Nolan Vega0's training target is a conservation certificate.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "certification"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-271",
+      "semantic_domain": "sports teams",
+      "grammar_family": "B",
+      "query": "What is Reina Mori8's current sports team followed?",
+      "relevant_texts": [
+        "Reina Mori8's team supported is Metro Foxes."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "mori8",
+            "reina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": [
+          "follow",
+          "sport"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-271-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Reina Mori8's team supported is Metro Foxes.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "transport"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-040",
+      "semantic_domain": "hobbies",
+      "grammar_family": "B",
+      "query": "What is Hana Gruber1's current weekend hobby?",
+      "relevant_texts": [
+        "Hana Gruber1's regular activity is letterpress."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "gruber1",
+            "hana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": [
+          "weekend"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-040-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Hana Gruber1's regular activity is letterpress.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-178",
+      "semantic_domain": "sports teams",
+      "grammar_family": "B",
+      "query": "What is Farid Neri5's current sports team followed?",
+      "relevant_texts": [
+        "Farid Neri5's team supported is Granite Wolves."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "farid",
+            "neri5"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": [
+          "follow",
+          "sport"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-178-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Farid Neri5's team supported is Granite Wolves.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-245",
+      "semantic_domain": "project ownership",
+      "grammar_family": "C",
+      "query": "For Cleo Olsen7, can you identify the project currently owned currently on record?",
+      "relevant_texts": [
+        "The record for Cleo Olsen7 lists Lumen Archive under project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "cleo",
+            "for",
+            "olsen7"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "identify",
+            "own",
+            "project",
+            "record",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-245-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Cleo Olsen7 lists Lumen Archive under project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-164",
+      "semantic_domain": "hobbies",
+      "grammar_family": "C",
+      "query": "What is my current weekend hobby?",
+      "relevant_texts": [
+        "My regular activity is sailing."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [],
+          "first_person": true,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-164-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "My regular activity is sailing.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-071",
+      "semantic_domain": "hobbies",
+      "grammar_family": "C",
+      "query": "For Ari Ulrich2, can you identify the weekend hobby currently on record?",
+      "relevant_texts": [
+        "The record for Ari Ulrich2 lists orienteering under regular activity."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ari",
+            "for",
+            "ulrich2"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "identify",
+            "record",
+            "weekend",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-071-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Ari Ulrich2 lists orienteering under regular activity.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-090",
+      "semantic_domain": "project ownership",
+      "grammar_family": "A",
+      "query": "Which project currently owned does Faye Fischer2 have right now?",
+      "relevant_texts": [
+        "Faye Fischer2 has Cedar Launch recorded as the project responsibility."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "faye",
+            "fischer2"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "own",
+            "project",
+            "right"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-090-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Faye Fischer2 has Cedar Launch recorded as the project responsibility.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-214",
+      "semantic_domain": "project ownership",
+      "grammar_family": "B",
+      "query": "What is Bruno Zoric6's current project currently owned?",
+      "relevant_texts": [
+        "Bruno Zoric6's project responsibility is Northwind Pilot."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "bruno",
+            "zoric6"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "possession"
+          ],
+          "predicate_terms": [
+            "own",
+            "project"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [],
+        "object_terms": [
+          "own"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-214-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Bruno Zoric6's project responsibility is Northwind Pilot.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-195",
+      "semantic_domain": "hobbies",
+      "grammar_family": "A",
+      "query": "Which weekend hobby does Emil Ito6 have right now?",
+      "relevant_texts": [
+        "Emil Ito6 has linocut printing recorded as the regular activity."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "emil",
+            "ito6"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity",
+            "possession"
+          ],
+          "predicate_terms": [
+            "have",
+            "hobby",
+            "right",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-195-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Emil Ito6 has linocut printing recorded as the regular activity.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-085",
+      "semantic_domain": "sports teams",
+      "grammar_family": "B",
+      "query": "What is Cleo Olsen2's current sports team followed?",
+      "relevant_texts": [
+        "Cleo Olsen2's team supported is Metro Foxes."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "cleo",
+            "olsen2"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": [
+          "follow",
+          "sport"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-085-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Cleo Olsen2's team supported is Metro Foxes.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "transport"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-054",
+      "semantic_domain": "sports teams",
+      "grammar_family": "A",
+      "query": "Which sports team followed does Bruno Zoric1 have right now?",
+      "relevant_texts": [
+        "Bruno Zoric1 has Blue Ridge Sparks recorded as the team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "bruno",
+            "zoric1"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership",
+            "possession"
+          ],
+          "predicate_terms": [
+            "follow",
+            "have",
+            "right",
+            "sport",
+            "team"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-054-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Bruno Zoric1 has Blue Ridge Sparks recorded as the team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-209",
+      "semantic_domain": "sports teams",
+      "grammar_family": "C",
+      "query": "For Gio Costa6, can you identify the sports team followed currently on record?",
+      "relevant_texts": [
+        "The record for Gio Costa6 lists Seaside Arrows under team supported."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "costa6",
+            "for",
+            "gio"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "follow",
+            "identify",
+            "record",
+            "sport",
+            "team",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "sports_team"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-209-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Gio Costa6 lists Seaside Arrows under team supported.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-133",
+      "semantic_domain": "hobbies",
+      "grammar_family": "B",
+      "query": "What is Keiko Ferrer4's current weekend hobby?",
+      "relevant_texts": [
+        "Keiko Ferrer4's regular activity is mushroom photography."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ferrer4",
+            "keiko"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": [
+          "weekend"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-133-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Keiko Ferrer4's regular activity is mushroom photography.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-226",
+      "semantic_domain": "hobbies",
+      "grammar_family": "B",
+      "query": "What is Wes Eriksen7's current weekend hobby?",
+      "relevant_texts": [
+        "Wes Eriksen7's regular activity is letterpress."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "eriksen7",
+            "wes"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": [
+          "weekend"
+        ]
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-226-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "Wes Eriksen7's regular activity is letterpress.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "CV10-DEV-A-257",
+      "semantic_domain": "hobbies",
+      "grammar_family": "C",
+      "query": "For Oksana Singh8, can you identify the weekend hobby currently on record?",
+      "relevant_texts": [
+        "The record for Oksana Singh8 lists orienteering under regular activity."
+      ],
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "for",
+            "oksana",
+            "singh8"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "hobby",
+            "identify",
+            "record",
+            "weekend",
+            "you"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "object_terms": []
+      },
+      "candidate_v10_rank": [],
+      "relevant_certifications": [
+        {
+          "memory_id": "CV10-DEV-A-257-rel",
+          "flags": {
+            "subject": true,
+            "relation": false,
+            "value_type": false,
+            "value_bearing": true,
+            "assertion": true,
+            "temporal": true,
+            "blocker_free": true
+          },
+          "clauses": [
+            {
+              "text": "The record for Oksana Singh8 lists orienteering under regular activity.",
+              "subject_ok": true,
+              "relation_ok": false,
+              "value_type_ok": false,
+              "value_bearing": true,
+              "assertion_ok": true,
+              "temporal_ok": true,
+              "blocker": null,
+              "relation_signals": [
+                "preference"
+              ],
+              "proof": [
+                "assertion",
+                "open-value",
+                "subject",
+                "temporal"
+              ],
+              "supported": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "monetary_cost_usd": 0
+}

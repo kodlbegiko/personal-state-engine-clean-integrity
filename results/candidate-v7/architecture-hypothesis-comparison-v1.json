@@ -1,0 +1,48 @@
+{
+  "schema_version": "candidate-v7-architecture-hypothesis-comparison-v1",
+  "selection_basis": "aggregate Gate F evidence plus frozen Candidate-v6 design only",
+  "objectives": ["recover answerable coverage", "preserve Candidate-v6-style abstention safety", "preserve Candidate-v2 ranking unchanged", "deterministic", "zero-cost", "benchmark-agnostic"],
+  "architectures": [
+    {
+      "id": "A",
+      "name": "STRICT_V6_PLUS_GENERIC_EVIDENCE_FALLBACK",
+      "strengths": ["minimal change", "retains strict precision path", "directly addresses coverage failure"],
+      "risks": ["fallback semantics can become an unprincipled lexical acceptor unless hard rejection and compatibility rules are explicit"],
+      "assessment": "VIABLE"
+    },
+    {
+      "id": "B",
+      "name": "RELAXED_STRUCTURAL_ASSERTION_PARSER",
+      "strengths": ["interpretable structured evidence", "extends implicit and conversational forms"],
+      "risks": ["still turns open-domain evidence into a parser-coverage problem", "relation/value extraction brittleness remains"],
+      "assessment": "NOT_SELECTED"
+    },
+    {
+      "id": "C",
+      "name": "RETRIEVAL_CONFIDENCE_ABSTENTION_GATE",
+      "strengths": ["high coverage potential", "naturally reuses Candidate-v2 signals"],
+      "risks": ["retrieval confidence is not evidence entailment", "may weaken no-evidence safety and conflate ranking with answerability"],
+      "assessment": "NOT_SELECTED"
+    },
+    {
+      "id": "D",
+      "name": "HYBRID_TYPED_PLUS_GENERIC_LEXICAL_ENTAILMENT",
+      "strengths": ["strict structural verifier remains a high-precision path", "generic deterministic evidence compatibility addresses heterogeneous natural language", "hard rejection can preserve explicit absence/non-assertion/contradiction safety", "Candidate-v2 ranking can remain frozen and unchanged"],
+      "risks": ["generic lexical entailment must be bounded to direct factual specificity", "synonym/cue families can overfit if derived from protected/final cases"],
+      "assessment": "SELECTED"
+    }
+  ],
+  "selected_architecture": "D",
+  "selected_name": "HYBRID_TYPED_PLUS_GENERIC_LEXICAL_ENTAILMENT",
+  "selection_rationale": "Gate F demonstrates an extreme coverage/safety split: Candidate-v6 rejects all answerable cases while correctly abstaining on all no-evidence cases. Architecture D preserves the typed strict path as a precision mechanism, adds a benchmark-agnostic deterministic compatibility path for natural-language factual evidence, and keeps contradiction/absence/non-assertion as hard rejects. It also cleanly separates answerability verification from the frozen Candidate-v2 ranking backend.",
+  "implementation_boundary": {
+    "ranking_backend": "Candidate-v2 frozen ranking, unchanged",
+    "candidate_v7_role": "evidence support / answerability gate only",
+    "supported": "return Candidate-v2 ranking unchanged",
+    "insufficient": "return []",
+    "rerank": false,
+    "paid_model": false,
+    "case_id_input": false,
+    "ground_truth_input": false
+  }
+}

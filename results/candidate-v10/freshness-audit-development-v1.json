@@ -1,0 +1,60 @@
+{
+  "schema_version": "candidate-v10-freshness-audit-v2",
+  "stage": "development",
+  "case_count": 480,
+  "exact_surface_duplicate_count": 0,
+  "normalized_surface_duplicate_count": 0,
+  "question_skeleton_unique": 61,
+  "evidence_skeleton_unique": 138,
+  "grammar_family_distribution": {
+    "A": 161,
+    "B": 160,
+    "C": 159
+  },
+  "semantic_domain_distribution": {
+    "accommodations": 15,
+    "appointments": 16,
+    "attributes/colors": 16,
+    "certifications": 15,
+    "communication channels": 16,
+    "device ownership/use": 15,
+    "dietary restrictions": 15,
+    "education": 30,
+    "employment": 16,
+    "goals": 16,
+    "hobbies": 15,
+    "language": 16,
+    "location": 16,
+    "media": 15,
+    "medication": 15,
+    "memberships": 15,
+    "pets": 16,
+    "preferences": 32,
+    "project ownership": 15,
+    "recurring routines": 15,
+    "relationships": 16,
+    "schedules": 16,
+    "software/tools": 15,
+    "sports teams": 16,
+    "status": 15,
+    "subscriptions": 16,
+    "transportation": 16,
+    "travel plans": 15,
+    "volunteering": 15
+  },
+  "declared_family_partition": [
+    "A",
+    "B",
+    "C"
+  ],
+  "template_provenance": [
+    "candidate-v10:development:A:answerable",
+    "candidate-v10:development:A:negative",
+    "candidate-v10:development:B:answerable",
+    "candidate-v10:development:B:negative",
+    "candidate-v10:development:C:answerable",
+    "candidate-v10:development:C:negative"
+  ],
+  "normalization_policy": "casefold + apostrophe + whitespace; entity/value abstraction reserved for skeleton audit",
+  "inference_metadata_visibility": false
+}

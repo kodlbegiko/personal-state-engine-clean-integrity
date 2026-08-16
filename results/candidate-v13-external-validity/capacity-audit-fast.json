@@ -1,0 +1,147 @@
+{
+  "candidate_v13_invoked": false,
+  "domain_counts": {
+    "D1": 3738,
+    "D2": 568,
+    "D3": 4868,
+    "D4": 4736,
+    "D5": 5814,
+    "D6": 212,
+    "D7": 243,
+    "D8": 901
+  },
+  "family_counts": {
+    "N1": 754,
+    "N10": 21080,
+    "N11": 14138,
+    "N12": 2373,
+    "N2": 8445,
+    "N3": 21080,
+    "N4": 13901,
+    "N5": 8841,
+    "N6": 1259,
+    "N7": 1048,
+    "N8": 9373,
+    "N9": 6147
+  },
+  "formal_case_materialized": false,
+  "guard": {
+    "calls": [],
+    "modules": [],
+    "pass": true
+  },
+  "individual_formal_ids_persisted": false,
+  "loader_stats": {
+    "lme_rows": 500,
+    "locomo_evidence_fail": 9,
+    "locomo_groundtruth_missing": 448,
+    "locomo_qa": 1986,
+    "locomo_samples": 10,
+    "normalized_query_duplicates_removed": 3949,
+    "persona_rows": 5000,
+    "sgd_D3_capacity_reservoir": 6000,
+    "sgd_D3_full_eligible": 25051,
+    "sgd_D4_capacity_reservoir": 6000,
+    "sgd_D4_full_eligible": 37988,
+    "sgd_D5_capacity_reservoir": 6000,
+    "sgd_D5_full_eligible": 63301,
+    "sgd_capacity_reservoir_dropped": 108340,
+    "sgd_dialogues": 22825,
+    "sgd_eligible": 126340,
+    "sgd_multidomain_excluded": 281
+  },
+  "pre_dedup_base_count": 25029,
+  "required_all_stages": {
+    "domain": {
+      "D1": 468,
+      "D2": 468,
+      "D3": 468,
+      "D4": 468,
+      "D5": 468,
+      "D6": 468,
+      "D7": 468,
+      "D8": 468
+    },
+    "family": {
+      "N1": 312,
+      "N10": 312,
+      "N11": 312,
+      "N12": 312,
+      "N2": 312,
+      "N3": 312,
+      "N4": 312,
+      "N5": 312,
+      "N6": 312,
+      "N7": 312,
+      "N8": 312,
+      "N9": 312
+    },
+    "source": {
+      "locomo": 936,
+      "longmemeval-cleaned": 374,
+      "personamem-v2": 1311,
+      "sgd-carryover": 1123
+    }
+  },
+  "schema_version": "capacity-audit-v2",
+  "shortfalls": {
+    "domain": [
+      {
+        "available": 212,
+        "domain": "D6",
+        "required": 468,
+        "shortfall": 256
+      },
+      {
+        "available": 243,
+        "domain": "D7",
+        "required": 468,
+        "shortfall": 225
+      }
+    ],
+    "family": [],
+    "source": []
+  },
+  "source_counts": {
+    "locomo": 1518,
+    "longmemeval-cleaned": 500,
+    "personamem-v2": 4949,
+    "sgd-carryover": 14113
+  },
+  "source_domain_counts": {
+    "locomo:D1": 325,
+    "locomo:D2": 138,
+    "locomo:D3": 34,
+    "locomo:D4": 4,
+    "locomo:D5": 120,
+    "locomo:D6": 24,
+    "locomo:D7": 111,
+    "locomo:D8": 762,
+    "longmemeval-cleaned:D1": 11,
+    "longmemeval-cleaned:D2": 25,
+    "longmemeval-cleaned:D3": 280,
+    "longmemeval-cleaned:D4": 61,
+    "longmemeval-cleaned:D5": 55,
+    "longmemeval-cleaned:D6": 32,
+    "longmemeval-cleaned:D7": 28,
+    "longmemeval-cleaned:D8": 8,
+    "personamem-v2:D1": 3402,
+    "personamem-v2:D2": 405,
+    "personamem-v2:D4": 14,
+    "personamem-v2:D5": 737,
+    "personamem-v2:D6": 156,
+    "personamem-v2:D7": 104,
+    "personamem-v2:D8": 131,
+    "sgd-carryover:D3": 4554,
+    "sgd-carryover:D4": 4657,
+    "sgd-carryover:D5": 4902
+  },
+  "source_hashes": {
+    "locomo": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "longmemeval-cleaned": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+    "personamem-v2": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+    "sgd-archive": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9"
+  },
+  "status": "CAPACITY_SHORTFALL",
+  "unique_base_count": 21080
+}

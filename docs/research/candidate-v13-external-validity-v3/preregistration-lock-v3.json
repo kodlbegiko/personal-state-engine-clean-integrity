@@ -1,0 +1,97 @@
+{
+  "benchmark_sizes": {
+    "ev_a_v3": 384,
+    "ev_b_v3": 1440,
+    "ev_c_v3": 1920
+  },
+  "candidate_v13_invoked": false,
+  "evaluation_policy_sha256": "d679bafe8ecbe78492d4873f2370f9e9368052fc22e180916b713f7d3f7bf0c9",
+  "materialization_digests": {
+    "ev_a_v3": "7b3744c99c72d4828f0c1a0ce02a15b057cc42b141a86da45bf5bf85114b662e",
+    "ev_b_v3": "25628d35851706bf8009d4183d27d89f71aa956b5506730105bcc109ed8e58dd",
+    "ev_c_v3": "7a4771352cbbf33adc50b4f288581cdc54e72ec999e75c0b0b4d7dce965423f0"
+  },
+  "memory_policy": {
+    "candidate_policies_compared": {
+      "A_GLOBAL_FIXED_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "feasible_cap": 100,
+        "runtime_cost": "highest; fills every case toward one global ceiling",
+        "selected": false
+      },
+      "B_SOURCE_AWARE_FIXED_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "runtime_cost": "lower than A but source-dependent fixed padding creates avoidable context distortion",
+        "selected": false,
+        "source_caps": {
+          "evermembench-dynamic": 100,
+          "locomo": 23,
+          "longmemeval-cleaned": 10,
+          "personamem-v2": 5,
+          "rhelm": 6,
+          "sgd-carryover": 10
+        }
+      },
+      "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "runtime_cost": "lowest of the complete-gold policies; exactly gold_count + four distractors with minimum context five",
+        "selected": true,
+        "source_fairness": "same structural rule for every source and case"
+      }
+    },
+    "candidate_v13_external_performance_observed": false,
+    "eligibility_exclusion_for_gold_cardinality": false,
+    "empirical_basis": {
+      "qualified_pool_gold_count_gt_80": 3,
+      "qualified_pool_gold_count_max": 96,
+      "secondary_payload_risk_over_1mb": 0,
+      "v2_selected_gold_count_gt_80": 2,
+      "v2_selected_gold_count_max": 96
+    },
+    "global_infrastructure_safety_ceiling": 100,
+    "minimum_context": 5,
+    "minimum_non_gold_distractors": 4,
+    "no_evidence_rule": "withhold all target gold but preserve the same structural runtime target derived from source-native gold_count",
+    "performance_driven_protocol_changes": 0,
+    "runtime_memory_target_rule": "max(minimum_context, gold_count + minimum_non_gold_distractors)",
+    "schema_version": "candidate-v13-external-validity-v3-runtime-memory-policy-v1",
+    "selected_policy": "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP",
+    "selection_reason": "Policy C preserves every qualified source-native gold set including max gold_count=96, guarantees at least four distractors under a candidate-blind global ceiling of 100, avoids arbitrary case dropping, and minimizes unnecessary runtime context compared with fixed-cap alternatives.",
+    "status": "CANDIDATE_BLIND_PRE_FREEZE"
+  },
+  "performance_driven_protocol_changes": 0,
+  "rerun_prohibition": true,
+  "runtime_payload_digests": {
+    "ev_a_v3": "1098f79f82cee958d8322187aeeb1480b17196bf183034be51599d13115d12b1",
+    "ev_b_v3": "4aa109facc7262053febf84040860ec28885c66d39ed7dd33a5b1b69e48858fd",
+    "ev_c_v3": "439f498269a9950e7e00b5b986fd1e0d190e09bdcea62d40bc1511b0e4a19096"
+  },
+  "schema_version": "candidate-v13-external-validity-v3-preregistration-lock-v1",
+  "selection_digests": {
+    "ev_a_v3": "686f9bee71e52a81458c2f8ee58e7a0546ba884080979677a0a020fc96f4a330",
+    "ev_b_v3": "bff68e51e03db9b7ca9f35a99ce8343a93c0ae925e1e73e2ff27f38a9837f80f",
+    "ev_c_v3": "7ffc84a34d8e48c4d78876e8eda5bb470e3670b8a204bc2c7c60b8cb718c6d49"
+  },
+  "source_revisions": {
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "locomo": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "longmemeval-cleaned": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+    "personamem-v2": "b7b42b78917157afed063527a1c959e98f6109f2",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+    "sgd-carryover": "e852981ae34990f4358979625854259302feaa78"
+  },
+  "stage_order": [
+    "ev_a_v3",
+    "ev_b_v3",
+    "ev_c_v3"
+  ],
+  "stage_seeds": {
+    "ev_a_v3": 73101,
+    "ev_b_v3": 73102,
+    "ev_c_v3": 73103
+  },
+  "status": "LOCKED_PRE_FREEZE"
+}

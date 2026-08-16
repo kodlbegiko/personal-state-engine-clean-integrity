@@ -1,0 +1,83 @@
+{
+  "aggregate_counts": {
+    "dialogue_turns": 5882,
+    "qa_missing_answer": 444,
+    "qa_total": 1986,
+    "qa_with_evidence": 1982,
+    "qa_with_fully_resolved_evidence": 1973,
+    "qa_with_unresolved_evidence": 9,
+    "qa_without_evidence": 4,
+    "samples": 10,
+    "samples_with_duplicate_dia_ids": 0,
+    "unresolved_evidence_ids_total": 9
+  },
+  "candidate_v13_invoked": false,
+  "category_counts": {
+    "1": 282,
+    "2": 321,
+    "3": 96,
+    "4": 841,
+    "5": 446
+  },
+  "category_with_evidence_counts": {
+    "1": 282,
+    "2": 321,
+    "3": 92,
+    "4": 841,
+    "5": 446
+  },
+  "category_without_evidence_counts": {
+    "3": 4
+  },
+  "data_path": "data/locomo10.json",
+  "data_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "evidence_cardinality_histogram": {
+    "0": 4,
+    "1": 1559,
+    "2": 239,
+    "3": 83,
+    "4": 58,
+    "5": 20,
+    "6": 6,
+    "7": 7,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "17": 1,
+    "19": 1
+  },
+  "formal_case_materialized": false,
+  "formal_gold_rule_candidate": "For QA entries with nonempty source-native evidence, every evidence value must exact-match a dia_id within the same sample conversation. Those matched turns are the gold memory IDs. QA entries with empty evidence are not automatically labeled no-evidence until their category semantics are separately audited from source documentation/code; no answer-text matching is permitted.",
+  "global_duplicate_dia_id_count": 871,
+  "license_class": "CC BY-NC 4.0",
+  "license_path": "LICENSE.txt",
+  "license_sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+  "qa_count_per_sample_histogram": {
+    "105": 1,
+    "158": 1,
+    "190": 1,
+    "193": 1,
+    "196": 1,
+    "199": 1,
+    "204": 1,
+    "239": 1,
+    "242": 1,
+    "260": 1
+  },
+  "repository": "snap-research/locomo",
+  "revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "schema_version": "candidate-v13-external-locomo-probe-v1",
+  "session_count_histogram": {
+    "19": 2,
+    "25": 1,
+    "28": 1,
+    "29": 2,
+    "30": 2,
+    "31": 1,
+    "32": 1
+  },
+  "unresolved_evidence_multiplicity": {
+    "1": 9
+  }
+}

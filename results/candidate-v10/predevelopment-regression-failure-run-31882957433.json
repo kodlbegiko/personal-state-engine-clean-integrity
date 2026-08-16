@@ -1,0 +1,18 @@
+{
+  "schema_version": "candidate-v10-predevelopment-regression-failure-v1",
+  "workflow_run_id": 31882957433,
+  "workflow": "Candidate-v10 Development",
+  "head_commit": "32d6d654068ddcff37aba6c5eb8b6ede2df363b1",
+  "classification": "PRE_FREEZE_REGRESSION_TEST_FAILURE",
+  "formal_execution": false,
+  "tests": {"passed": 296, "failed": 1},
+  "failed_test": "test_project_responsibility_matches_project_ownership_frame",
+  "query_shape": "project-first responsible-for ownership construction",
+  "root_cause": "The project_ownership frame recognized responsibility when the ownership predicate preceded project or when evidence used project responsibility, but did not recognize the inverse project ... responsible for query construction.",
+  "corrective_action": "Extend the general project_ownership predicate frame to project-first responsible-for forms; retain regression test.",
+  "benchmark_metrics_executed": false,
+  "protected_execution_count_impact": 0,
+  "confirmatory_execution_count_impact": 0,
+  "final_execution_count_impact": 0,
+  "monetary_cost_usd": 0
+}

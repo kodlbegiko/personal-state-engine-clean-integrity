@@ -1,0 +1,23 @@
+{
+  "schema_version": "candidate-v7-fresh-final-readiness-v1",
+  "status": "NOT_ELIGIBLE",
+  "reason": "Candidate-v7 failed the preregistered fresh confirmatory success rule, so fresh-final surface qualification is legally unreachable in this mission.",
+  "confirmatory": {
+    "benchmark": "candidate-v7-confirmatory-v1",
+    "dataset_sha256": "8e54f75b7eae4058365e93fb809a47445df7415d02e28fae7dcdf5105cd76576",
+    "verdict": "FAIL",
+    "candidate_v7_answerable_recall": 0.9176470588235294,
+    "candidate_v7_false_abstention": 0.08235294117647059,
+    "candidate_v7_false_retrieval": 0.18181818181818182,
+    "candidate_v7_mrr_deficit_vs_candidate_v2": 0.08235294117647063,
+    "absolute_false_retrieval_reduction_vs_candidate_v2": 0.8181818181818181,
+    "paired_bootstrap_ci95": [-0.1411764705882353, -0.03529411764705882],
+    "paired_bootstrap_noninferiority": false
+  },
+  "fresh_final_surface_search_performed": false,
+  "fresh_final_payload_opened": false,
+  "fresh_final_protocol_created": false,
+  "old_gate_f_surface_reused": false,
+  "next_authorization_boundary_reached": false,
+  "terminal_state": "CANDIDATE_V7_CONFIRMATORY_FAIL"
+}

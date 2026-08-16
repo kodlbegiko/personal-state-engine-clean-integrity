@@ -1,0 +1,51 @@
+{
+  "architectures": {
+    "A_binary_certification_plus_candidate_v2_order": {
+      "MRR": 0.625,
+      "R@1": 0.25,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_recall": 1.0,
+      "false_retrieval": 0.0
+    },
+    "B_structured_weighted_quality_ranking": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_recall": 1.0,
+      "false_retrieval": 0.0
+    },
+    "C_lexicographic_semantic_proof_ordering": {
+      "MRR": 1.0,
+      "R@1": 1.0,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_recall": 1.0,
+      "false_retrieval": 0.0
+    },
+    "D_pareto_dominance_plus_candidate_v2_tiebreak": {
+      "MRR": 0.625,
+      "R@1": 0.25,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_recall": 1.0,
+      "false_retrieval": 0.0
+    }
+  },
+  "development_only": true,
+  "interpretation": {
+    "A": "Frozen Candidate-v10 concept; establishes the no-second-stage baseline.",
+    "B": "Shows whether a compensatory weighted proof score can recover rank-1 while preserving the same Layer-1 safety surface.",
+    "C": "Selected Candidate-v11 architecture; fixed lexicographic semantic proof ordering with Candidate-v2 rank last.",
+    "D": "Conservative non-compensatory dominance alternative; incomparable candidates fall back to Candidate-v2 order."
+  },
+  "monetary_cost_usd": 0,
+  "schema_version": "candidate-v11-architecture-comparison-v1",
+  "selection_rule": "Prefer C when it meets all safety/ranking requirements and is at least as effective as B/D, because it is deterministic, non-compensatory, explainable, and has a smaller tuning surface.",
+  "surface": "candidate-v11-development-v5"
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-preregistration-lock-v1",
+  "locked": true,
+  "preregistration_content_commit": "e8c797fb41f832c8b53fdbbc69196bb4627f0f90",
+  "candidate": "Candidate-v13",
+  "candidate_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_modified": false,
+  "candidate_v13_external_performance_observed": false,
+  "candidate_v13_invoked": false,
+  "formal_case_materialized": false,
+  "source_revisions": {
+    "personamem-v2": "b7b42b78917157afed063527a1c959e98f6109f2",
+    "longmemeval-cleaned": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+    "locomo": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "sgd-carryover": "e852981ae34990f4358979625854259302feaa78",
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5"
+  },
+  "selection_digests": {
+    "ev_a_v2": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc",
+    "ev_b_v2": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab",
+    "ev_c_v2": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
+  },
+  "stage_seeds": {
+    "ev_a_v2": 42018,
+    "ev_b_v2": 42019,
+    "ev_c_v2": 42020
+  },
+  "stage_sizes": {
+    "ev_a_v2": 384,
+    "ev_b_v2": 1440,
+    "ev_c_v2": 1920
+  },
+  "reserve_source_active": false,
+  "timestamp_policy": "qualified base representation retains no source timestamp; runtime timestamp is null; invented or post-result timestamp enrichment is forbidden",
+  "policies": {
+    "source": "docs/research/candidate-v13-external-validity-v2/source-contract-v2.json",
+    "source_manifest": "docs/research/candidate-v13-external-validity-v2/source-manifest-v2.json",
+    "adapter": "docs/research/candidate-v13-external-validity-v2/adapter-policy-v2.json",
+    "allocation": "docs/research/candidate-v13-external-validity-v2/allocation-policy-v2.json",
+    "materializer": "docs/research/candidate-v13-external-validity-v2/materializer-contract-v2.json",
+    "evaluation": "docs/research/candidate-v13-external-validity-v2/evaluation-policy-v2.json"
+  },
+  "one_shot": {
+    "ev_a_v2": "0->1 only",
+    "ev_b_v2": "0->1 only after EV-A-v2 PASS",
+    "ev_c_v2": "0->1 only after EV-B-v2 PASS",
+    "protected_rerun": "FORBIDDEN"
+  },
+  "performance_driven_changes": "FORBIDDEN",
+  "candidate_v14_authorized": false,
+  "research_integrity": "PASS"
+}

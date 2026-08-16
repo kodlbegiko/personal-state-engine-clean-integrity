@@ -1,0 +1,22 @@
+{
+  "schema_version": "candidate-v10-config-v1",
+  "architecture": "PREDICATE_ARGUMENT_FRAMES_PLUS_CONSTRAINT_VERIFIER_PLUS_HARD_BLOCKERS",
+  "ranker": "candidate-v2-only",
+  "order_preserving": true,
+  "paid_external_inference": false,
+  "generator_metadata_visible_to_inference": false,
+  "bootstrap_iterations": 10000,
+  "noninferiority_margin": -0.03,
+  "stages": {
+    "development": {"seed": 2026081515, "answerable": 280, "negative": 200, "families": ["A", "B", "C"], "bootstrap_seed": 2026081525},
+    "protected": {"seed": 2026081516, "answerable": 220, "negative": 140, "families": ["D", "E"], "bootstrap_seed": 2026081526},
+    "confirmatory": {"seed": 2026081517, "answerable": 250, "negative": 170, "families": ["F", "G", "H"], "bootstrap_seed": 2026081527},
+    "final": {"seed": 2026081518, "answerable": 280, "negative": 200, "families": ["I", "J", "K"], "bootstrap_seed": 2026081528}
+  },
+  "gates": {
+    "development": {"MRR": 0.98, "R@1": 0.98, "R@3": 0.99, "R@5": 0.99, "answerable_recall": 0.98, "false_abstention_max": 0.02, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95, "order_violations": 0, "bootstrap_lower_ci": -0.03},
+    "protected": {"MRR": 0.97, "R@1": 0.96, "R@3": 0.98, "R@5": 0.98, "answerable_recall": 0.98, "false_abstention_max": 0.02, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95, "order_violations": 0, "bootstrap_lower_ci": -0.03, "false_retrieval_reduction": 0.80},
+    "confirmatory": {"MRR": 0.96, "R@1": 0.95, "R@3": 0.97, "R@5": 0.97, "answerable_recall": 0.97, "false_abstention_max": 0.03, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95, "order_violations": 0, "bootstrap_lower_ci": -0.03, "false_retrieval_reduction": 0.80},
+    "final": {"MRR": 0.96, "R@1": 0.95, "R@3": 0.97, "R@5": 0.97, "answerable_recall": 0.97, "false_abstention_max": 0.03, "false_retrieval_max": 0.05, "abstention_accuracy": 0.95, "order_violations": 0, "bootstrap_lower_ci": -0.03, "false_retrieval_reduction": 0.80}
+  }
+}

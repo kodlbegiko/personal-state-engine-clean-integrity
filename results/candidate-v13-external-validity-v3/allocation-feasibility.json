@@ -1,0 +1,155 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "cross_stage_base_reuse_count": 0,
+  "cross_stage_selected_count": 3744,
+  "individual_formal_ids_persisted": false,
+  "schema_version": "candidate-v13-external-validity-v3-allocation-feasibility-v1",
+  "stages": {
+    "ev_a_v3": {
+      "answerability_counts": {
+        "answerable": 240,
+        "no_evidence": 144
+      },
+      "checks": {
+        "exact_answerability": true,
+        "exact_count": true,
+        "exact_domains": true,
+        "exact_families": true,
+        "exact_source_domain_cells": true,
+        "maximum_source_share": true
+      },
+      "domain_counts": {
+        "D1": 48,
+        "D2": 48,
+        "D3": 48,
+        "D4": 48,
+        "D5": 48,
+        "D6": 48,
+        "D7": 48,
+        "D8": 48
+      },
+      "family_counts": {
+        "N1": 32,
+        "N10": 32,
+        "N11": 32,
+        "N12": 32,
+        "N2": 32,
+        "N3": 32,
+        "N4": 32,
+        "N5": 32,
+        "N6": 32,
+        "N7": 32,
+        "N8": 32,
+        "N9": 32
+      },
+      "selected_count": 384,
+      "selection_digest_sha256": "686f9bee71e52a81458c2f8ee58e7a0546ba884080979677a0a020fc96f4a330",
+      "source_counts": {
+        "evermembench-dynamic": 54,
+        "locomo": 74,
+        "longmemeval-cleaned": 22,
+        "personamem-v2": 116,
+        "sgd-carryover": 118
+      },
+      "status": "PASS"
+    },
+    "ev_b_v3": {
+      "answerability_counts": {
+        "answerable": 864,
+        "no_evidence": 576
+      },
+      "checks": {
+        "exact_answerability": true,
+        "exact_count": true,
+        "exact_domains": true,
+        "exact_families": true,
+        "exact_source_domain_cells": true,
+        "maximum_source_share": true
+      },
+      "domain_counts": {
+        "D1": 180,
+        "D2": 180,
+        "D3": 180,
+        "D4": 180,
+        "D5": 180,
+        "D6": 180,
+        "D7": 180,
+        "D8": 180
+      },
+      "family_counts": {
+        "N1": 120,
+        "N10": 120,
+        "N11": 120,
+        "N12": 120,
+        "N2": 120,
+        "N3": 120,
+        "N4": 120,
+        "N5": 120,
+        "N6": 120,
+        "N7": 120,
+        "N8": 120,
+        "N9": 120
+      },
+      "selected_count": 1440,
+      "selection_digest_sha256": "bff68e51e03db9b7ca9f35a99ce8343a93c0ae925e1e73e2ff27f38a9837f80f",
+      "source_counts": {
+        "evermembench-dynamic": 196,
+        "locomo": 282,
+        "longmemeval-cleaned": 95,
+        "personamem-v2": 429,
+        "sgd-carryover": 438
+      },
+      "status": "PASS"
+    },
+    "ev_c_v3": {
+      "answerability_counts": {
+        "answerable": 1152,
+        "no_evidence": 768
+      },
+      "checks": {
+        "exact_answerability": true,
+        "exact_count": true,
+        "exact_domains": true,
+        "exact_families": true,
+        "exact_source_domain_cells": true,
+        "maximum_source_share": true
+      },
+      "domain_counts": {
+        "D1": 240,
+        "D2": 240,
+        "D3": 240,
+        "D4": 240,
+        "D5": 240,
+        "D6": 240,
+        "D7": 240,
+        "D8": 240
+      },
+      "family_counts": {
+        "N1": 160,
+        "N10": 160,
+        "N11": 160,
+        "N12": 160,
+        "N2": 160,
+        "N3": 160,
+        "N4": 160,
+        "N5": 160,
+        "N6": 160,
+        "N7": 160,
+        "N8": 160,
+        "N9": 160
+      },
+      "selected_count": 1920,
+      "selection_digest_sha256": "7ffc84a34d8e48c4d78876e8eda5bb470e3670b8a204bc2c7c60b8cb718c6d49",
+      "source_counts": {
+        "evermembench-dynamic": 262,
+        "locomo": 373,
+        "longmemeval-cleaned": 125,
+        "personamem-v2": 576,
+        "sgd-carryover": 584
+      },
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

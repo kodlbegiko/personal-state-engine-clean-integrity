@@ -1,0 +1,76 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "domain_capacity": {
+    "D1": {
+      "eligible": 3738,
+      "required": 468,
+      "safety_ratio": 7.987179487179487,
+      "status": "PASS"
+    },
+    "D2": {
+      "eligible": 568,
+      "required": 468,
+      "safety_ratio": 1.2136752136752136,
+      "status": "PASS"
+    },
+    "D3": {
+      "eligible": 16700,
+      "required": 468,
+      "safety_ratio": 35.68376068376068,
+      "status": "PASS"
+    },
+    "D4": {
+      "eligible": 25825,
+      "required": 468,
+      "safety_ratio": 55.18162393162393,
+      "status": "PASS"
+    },
+    "D5": {
+      "eligible": 45445,
+      "required": 468,
+      "safety_ratio": 97.10470085470085,
+      "status": "PASS"
+    },
+    "D6": {
+      "eligible": 723,
+      "required": 468,
+      "safety_ratio": 1.544871794871795,
+      "status": "PASS"
+    },
+    "D7": {
+      "eligible": 2192,
+      "required": 468,
+      "safety_ratio": 4.683760683760684,
+      "status": "PASS"
+    },
+    "D8": {
+      "eligible": 901,
+      "required": 468,
+      "safety_ratio": 1.9252136752136753,
+      "status": "PASS"
+    }
+  },
+  "formal_authorized": true,
+  "gates": {
+    "ALLOCATION_FEASIBILITY_PASS": true,
+    "ALL_SELECTED_CASES_PRODUCTION_MATERIALIZABLE_PASS": true,
+    "CANDIDATE_FIREWALL_PASS": true,
+    "CAPACITY_PASS": true,
+    "CONTAMINATION_PASS": true,
+    "DEDUP_PASS": true,
+    "DETERMINISM_PASS": true,
+    "EVALUATOR_QA_PASS": true,
+    "FORMAL_RUNNER_QA_PASS": true,
+    "FULL_MATERIALIZATION_PASS": true,
+    "GOLD_CARDINALITY_AUDIT_PASS": true,
+    "GOLD_RESOLUTION_PASS": true,
+    "IMMUTABLE_SOURCE_PIN_PASS": true,
+    "RUNTIME_PAYLOAD_DIGEST_PASS": true,
+    "SCHEMA_PASS": true,
+    "SOURCE_QUALIFICATION_PASS": true
+  },
+  "performance_driven_protocol_changes": 0,
+  "schema_version": "candidate-v13-external-validity-v3-infrastructure-qualification-v1",
+  "status": "PASS"
+}

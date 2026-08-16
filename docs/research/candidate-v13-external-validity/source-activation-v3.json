@@ -1,0 +1,31 @@
+{
+  "schema_version": "candidate-v13-external-validity-source-activation-v3",
+  "status": "FINAL_FORMAL_SOURCE_SET_LOCKED_PRE_CANDIDATE_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "supersedes": "source-activation-v2.json",
+  "reason": "The conservative calibrated capacity audit passed all N1-N12 family totals but showed objective preregistered domain shortfalls D6=212/468 and D7=243/468 before any Candidate-v13 external output. EverMemBench-Dynamic was therefore audited as an additional independent source. Its qualification artifact exists only after exact source-native QAR references resolve and predeclared D6/D7 floors pass.",
+  "evermembench_qualification": "results/candidate-v13-external-validity/evermembench-dynamic-qualification.json",
+  "active_formal_sources": [
+    "personamem-v2",
+    "locomo",
+    "sgd-carryover",
+    "longmemeval-cleaned",
+    "evermembench-dynamic"
+  ],
+  "evermembench_contract": {
+    "dataset": "EverMind-AI/EverMemBench-Dynamic",
+    "license": "apache-2.0",
+    "domain_mapping": {
+      "T1": "D6",
+      "T2": "D7",
+      "T3": "D7",
+      "T4": "D7",
+      "T5": "D7"
+    },
+    "mapping_rationale": "The dataset defines five workplace project domains; T1 is explicitly Technology. T1 therefore maps directly to tools/devices. T2-T5 remain project-collaboration memories and map to memberships/projects without lexical relabeling.",
+    "gold_rule": "Use source-native QAR R entries only. Exact-match topic/date/group and expand source message_index against dialogue msg_index. Runtime gold IDs are topic::date::group::msg_index. Any unresolved reference is excluded; no answer-text matching or semantic repair is allowed."
+  },
+  "inactive_sources": ["perltqa-en-v2", "taskmaster-1", "abcd"],
+  "immutability": "From this lock onward, no formal source may be added, removed, reweighted, or remapped after any Candidate-v13 external output is observed. Any later source failure blocks or invalidates the evaluation instead of triggering replacement."
+}

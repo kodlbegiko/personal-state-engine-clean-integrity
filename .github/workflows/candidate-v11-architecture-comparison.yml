@@ -1,0 +1,36 @@
+name: Candidate-v11 Architecture Comparison
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - scripts/compare_candidate_v11_architectures.py
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare A B C D on frozen Development-v5 evidence surface
+        run: |
+          python scripts/compare_candidate_v11_architectures.py \
+            experiments/benchmarks/candidate-v11-development-v5.json \
+            results/candidate-v11/architecture-comparison-v1.json
+      - name: Commit comparison evidence
+        run: |
+          git config user.name "candidate-v11-research-bot"
+          git config user.email "candidate-v11-research-bot@users.noreply.github.com"
+          git add results/candidate-v11/architecture-comparison-v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "candidate-v11: record architecture comparison evidence"
+            git push origin HEAD:research/candidate-v11-fresh-lineage
+          fi

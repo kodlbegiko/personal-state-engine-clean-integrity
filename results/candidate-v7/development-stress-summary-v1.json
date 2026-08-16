@@ -1,0 +1,537 @@
+{
+  "schema_version": "candidate-v7-development-stress-summary-v1",
+  "candidate_v7_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "benchmark_sha256": "1ed2b419b4dfa2f4fc74f8f3c2363c1d379db168eca8cf2a3686ad909f75aed9",
+  "answerable_supported_and_ranking_preserved": 20,
+  "answerable_total": 20,
+  "negative_correct_abstention": 20,
+  "negative_total": 20,
+  "answerable_rate": 1.0,
+  "negative_abstention_rate": 1.0,
+  "positive_rows": [
+    {
+      "id": "CV7STRESS-A-000",
+      "category": "language",
+      "v2": [
+        "CV7STRESS-A-000-rel",
+        "CV7STRESS-A-000-d3",
+        "CV7STRESS-A-000-d1",
+        "CV7STRESS-A-000-d2",
+        "CV7STRESS-A-000-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-000-rel",
+        "CV7STRESS-A-000-d3",
+        "CV7STRESS-A-000-d1",
+        "CV7STRESS-A-000-d2",
+        "CV7STRESS-A-000-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-001",
+      "category": "education",
+      "v2": [
+        "CV7STRESS-A-001-rel",
+        "CV7STRESS-A-001-d3",
+        "CV7STRESS-A-001-d1",
+        "CV7STRESS-A-001-d2",
+        "CV7STRESS-A-001-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-001-rel",
+        "CV7STRESS-A-001-d3",
+        "CV7STRESS-A-001-d1",
+        "CV7STRESS-A-001-d2",
+        "CV7STRESS-A-001-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-002",
+      "category": "music",
+      "v2": [
+        "CV7STRESS-A-002-rel",
+        "CV7STRESS-A-002-d3",
+        "CV7STRESS-A-002-d1",
+        "CV7STRESS-A-002-d2",
+        "CV7STRESS-A-002-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-002-rel",
+        "CV7STRESS-A-002-d3",
+        "CV7STRESS-A-002-d1",
+        "CV7STRESS-A-002-d2",
+        "CV7STRESS-A-002-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-003",
+      "category": "medication",
+      "v2": [
+        "CV7STRESS-A-003-rel",
+        "CV7STRESS-A-003-d3",
+        "CV7STRESS-A-003-d1",
+        "CV7STRESS-A-003-d2",
+        "CV7STRESS-A-003-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-003-rel",
+        "CV7STRESS-A-003-d3",
+        "CV7STRESS-A-003-d1",
+        "CV7STRESS-A-003-d2",
+        "CV7STRESS-A-003-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-004",
+      "category": "allergy",
+      "v2": [
+        "CV7STRESS-A-004-rel",
+        "CV7STRESS-A-004-d3",
+        "CV7STRESS-A-004-d2",
+        "CV7STRESS-A-004-d1",
+        "CV7STRESS-A-004-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-004-rel",
+        "CV7STRESS-A-004-d3",
+        "CV7STRESS-A-004-d2",
+        "CV7STRESS-A-004-d1",
+        "CV7STRESS-A-004-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-005",
+      "category": "device",
+      "v2": [
+        "CV7STRESS-A-005-rel",
+        "CV7STRESS-A-005-d3",
+        "CV7STRESS-A-005-d1",
+        "CV7STRESS-A-005-d2",
+        "CV7STRESS-A-005-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-005-rel",
+        "CV7STRESS-A-005-d3",
+        "CV7STRESS-A-005-d1",
+        "CV7STRESS-A-005-d2",
+        "CV7STRESS-A-005-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-006",
+      "category": "color",
+      "v2": [
+        "CV7STRESS-A-006-rel",
+        "CV7STRESS-A-006-d3",
+        "CV7STRESS-A-006-d2",
+        "CV7STRESS-A-006-d1",
+        "CV7STRESS-A-006-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-006-rel",
+        "CV7STRESS-A-006-d3",
+        "CV7STRESS-A-006-d2",
+        "CV7STRESS-A-006-d1",
+        "CV7STRESS-A-006-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-007",
+      "category": "size",
+      "v2": [
+        "CV7STRESS-A-007-rel",
+        "CV7STRESS-A-007-d3",
+        "CV7STRESS-A-007-d1",
+        "CV7STRESS-A-007-d2",
+        "CV7STRESS-A-007-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-007-rel",
+        "CV7STRESS-A-007-d3",
+        "CV7STRESS-A-007-d1",
+        "CV7STRESS-A-007-d2",
+        "CV7STRESS-A-007-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-008",
+      "category": "relationship",
+      "v2": [
+        "CV7STRESS-A-008-rel",
+        "CV7STRESS-A-008-d3",
+        "CV7STRESS-A-008-d2",
+        "CV7STRESS-A-008-d1",
+        "CV7STRESS-A-008-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-008-rel",
+        "CV7STRESS-A-008-d3",
+        "CV7STRESS-A-008-d2",
+        "CV7STRESS-A-008-d1",
+        "CV7STRESS-A-008-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-009",
+      "category": "pet_name",
+      "v2": [
+        "CV7STRESS-A-009-rel",
+        "CV7STRESS-A-009-d3",
+        "CV7STRESS-A-009-d2",
+        "CV7STRESS-A-009-d1",
+        "CV7STRESS-A-009-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-009-rel",
+        "CV7STRESS-A-009-d3",
+        "CV7STRESS-A-009-d2",
+        "CV7STRESS-A-009-d1",
+        "CV7STRESS-A-009-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-010",
+      "category": "book",
+      "v2": [
+        "CV7STRESS-A-010-rel",
+        "CV7STRESS-A-010-d3",
+        "CV7STRESS-A-010-d2",
+        "CV7STRESS-A-010-d1",
+        "CV7STRESS-A-010-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-010-rel",
+        "CV7STRESS-A-010-d3",
+        "CV7STRESS-A-010-d2",
+        "CV7STRESS-A-010-d1",
+        "CV7STRESS-A-010-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-011",
+      "category": "course",
+      "v2": [
+        "CV7STRESS-A-011-rel",
+        "CV7STRESS-A-011-d3",
+        "CV7STRESS-A-011-d2",
+        "CV7STRESS-A-011-d1",
+        "CV7STRESS-A-011-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-011-rel",
+        "CV7STRESS-A-011-d3",
+        "CV7STRESS-A-011-d2",
+        "CV7STRESS-A-011-d1",
+        "CV7STRESS-A-011-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-012",
+      "category": "skill",
+      "v2": [
+        "CV7STRESS-A-012-rel",
+        "CV7STRESS-A-012-d3",
+        "CV7STRESS-A-012-d1",
+        "CV7STRESS-A-012-d2",
+        "CV7STRESS-A-012-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-012-rel",
+        "CV7STRESS-A-012-d3",
+        "CV7STRESS-A-012-d1",
+        "CV7STRESS-A-012-d2",
+        "CV7STRESS-A-012-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-013",
+      "category": "goal",
+      "v2": [
+        "CV7STRESS-A-013-rel",
+        "CV7STRESS-A-013-d3",
+        "CV7STRESS-A-013-d2",
+        "CV7STRESS-A-013-d1",
+        "CV7STRESS-A-013-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-013-rel",
+        "CV7STRESS-A-013-d3",
+        "CV7STRESS-A-013-d2",
+        "CV7STRESS-A-013-d1",
+        "CV7STRESS-A-013-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-014",
+      "category": "membership",
+      "v2": [
+        "CV7STRESS-A-014-rel",
+        "CV7STRESS-A-014-d3",
+        "CV7STRESS-A-014-d1",
+        "CV7STRESS-A-014-d2",
+        "CV7STRESS-A-014-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-014-rel",
+        "CV7STRESS-A-014-d3",
+        "CV7STRESS-A-014-d1",
+        "CV7STRESS-A-014-d2",
+        "CV7STRESS-A-014-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-015",
+      "category": "car",
+      "v2": [
+        "CV7STRESS-A-015-rel",
+        "CV7STRESS-A-015-d3",
+        "CV7STRESS-A-015-d1",
+        "CV7STRESS-A-015-d2",
+        "CV7STRESS-A-015-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-015-rel",
+        "CV7STRESS-A-015-d3",
+        "CV7STRESS-A-015-d1",
+        "CV7STRESS-A-015-d2",
+        "CV7STRESS-A-015-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-016",
+      "category": "bus",
+      "v2": [
+        "CV7STRESS-A-016-rel",
+        "CV7STRESS-A-016-d3",
+        "CV7STRESS-A-016-d1",
+        "CV7STRESS-A-016-d2",
+        "CV7STRESS-A-016-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-016-rel",
+        "CV7STRESS-A-016-d3",
+        "CV7STRESS-A-016-d1",
+        "CV7STRESS-A-016-d2",
+        "CV7STRESS-A-016-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-017",
+      "category": "movie",
+      "v2": [
+        "CV7STRESS-A-017-rel",
+        "CV7STRESS-A-017-d3",
+        "CV7STRESS-A-017-d1",
+        "CV7STRESS-A-017-d2",
+        "CV7STRESS-A-017-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-017-rel",
+        "CV7STRESS-A-017-d3",
+        "CV7STRESS-A-017-d1",
+        "CV7STRESS-A-017-d2",
+        "CV7STRESS-A-017-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-018",
+      "category": "game",
+      "v2": [
+        "CV7STRESS-A-018-rel",
+        "CV7STRESS-A-018-d3",
+        "CV7STRESS-A-018-d1",
+        "CV7STRESS-A-018-d2",
+        "CV7STRESS-A-018-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-018-rel",
+        "CV7STRESS-A-018-d3",
+        "CV7STRESS-A-018-d1",
+        "CV7STRESS-A-018-d2",
+        "CV7STRESS-A-018-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    },
+    {
+      "id": "CV7STRESS-A-019",
+      "category": "perform",
+      "v2": [
+        "CV7STRESS-A-019-rel",
+        "CV7STRESS-A-019-d3",
+        "CV7STRESS-A-019-d1",
+        "CV7STRESS-A-019-d2",
+        "CV7STRESS-A-019-d4"
+      ],
+      "v7": [
+        "CV7STRESS-A-019-rel",
+        "CV7STRESS-A-019-d3",
+        "CV7STRESS-A-019-d1",
+        "CV7STRESS-A-019-d2",
+        "CV7STRESS-A-019-d4"
+      ],
+      "supported": true,
+      "ranking_preserved": true
+    }
+  ],
+  "negative_rows": [
+    {
+      "id": "CV7STRESS-N-000",
+      "category": "wrong_subject_language",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-001",
+      "category": "wrong_relation_education",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-002",
+      "category": "meta_music",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-003",
+      "category": "unresolved_medication",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-004",
+      "category": "no_value_allergy",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-005",
+      "category": "question_device",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-006",
+      "category": "wrong_subject_color",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-007",
+      "category": "wrong_subject_size",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-008",
+      "category": "agenda_relationship",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-009",
+      "category": "no_value_pet",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-010",
+      "category": "review_book",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-011",
+      "category": "wrong_relation_course",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-012",
+      "category": "stale_skill",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-013",
+      "category": "unresolved_goal",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-014",
+      "category": "meta_membership",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-015",
+      "category": "wrong_subject_car",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-016",
+      "category": "no_value_bus",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-017",
+      "category": "question_movie",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-018",
+      "category": "wrong_subject_game",
+      "v7": [],
+      "abstained": true
+    },
+    {
+      "id": "CV7STRESS-N-019",
+      "category": "stale_perform",
+      "v7": [],
+      "abstained": true
+    }
+  ],
+  "verdict": "PASS"
+}

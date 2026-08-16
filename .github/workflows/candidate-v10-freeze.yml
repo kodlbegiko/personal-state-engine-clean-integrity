@@ -1,0 +1,37 @@
+name: Candidate-v10 Development Freeze
+
+on:
+  push:
+    branches:
+      - research/candidate-v10-fresh-lineage
+    paths:
+      - .github/workflows/candidate-v10-freeze.yml
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v10-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Verify full test suite before freeze
+        run: pytest -q
+      - name: Create immutable development freeze manifest
+        run: python scripts/freeze_candidate_v10.py
+      - name: Commit freeze manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v10/development-freeze-manifest-v1.json
+          git commit -m "candidate-v10: freeze development implementation"
+          git push origin HEAD:research/candidate-v10-fresh-lineage

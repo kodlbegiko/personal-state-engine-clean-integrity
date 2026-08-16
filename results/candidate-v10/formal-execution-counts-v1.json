@@ -1,0 +1,8 @@
+{
+  "confirmatory": 1,
+  "final": 1,
+  "github_run_id": "31883140160",
+  "protected": 1,
+  "schema_version": "candidate-v10-formal-execution-counts-v1",
+  "terminal_state": "CANDIDATE_V10_FINAL_GATE_F_FAIL"
+}
