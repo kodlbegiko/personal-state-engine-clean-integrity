@@ -1,0 +1,6 @@
+CONVERGE_TO_TERMINAL_STATE
+never_rerun_EV_B=true
+never_rerun_EV_C_if_consumed=true
+wait_for_committed_EV_B_evidence_up_to_seconds=600
+execute_EV_C_only_if_EV_B_PASS_and_ledger_1_0=true
+formal_freeze_immutable=true
