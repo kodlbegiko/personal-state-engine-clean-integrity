@@ -34,6 +34,48 @@ def strict_evermem_text(msg: dict[str, Any]) -> str:
     return value.strip()
 
 
+class NonEmptyDialogueDatasetView:
+    """Preserve HF dataset metadata while skipping schema-valid empty dialogue groups.
+
+    Empty group lists are structural absence, not malformed records. Non-list group
+    values are preserved so the strict downstream parser still fails loudly.
+    """
+
+    def __init__(self, dataset: Any):
+        self._dataset = dataset
+        self.column_names = dataset.column_names
+        self.features = dataset.features
+
+    def __len__(self) -> int:
+        return len(self._dataset)
+
+    def __iter__(self):
+        for row in self._dataset:
+            out = dict(row)
+            groups = out.get("dialogues")
+            if isinstance(groups, dict):
+                out["dialogues"] = {
+                    key: value
+                    for key, value in groups.items()
+                    if not (isinstance(value, list) and len(value) == 0)
+                }
+            yield out
+
+
+def bind_schema_verified_evermem(mod: Any) -> None:
+    original_load_dataset = mod.load_dataset
+
+    def load_dataset_verified(*args: Any, **kwargs: Any):
+        dataset = original_load_dataset(*args, **kwargs)
+        config = args[1] if len(args) > 1 else kwargs.get("name")
+        if config == "dialogues":
+            return NonEmptyDialogueDatasetView(dataset)
+        return dataset
+
+    mod.load_dataset = load_dataset_verified
+    mod.extract_message_text = strict_evermem_text
+
+
 def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[str, Any]) -> dict[str, Any]:
     api = HfApi()
     repo = mod.SOURCE_CONTRACT["reserve_sources"]["rhelm"]["dataset"]
@@ -182,7 +224,7 @@ def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[s
 
 def main() -> int:
     mod = load_qualifier()
-    mod.extract_message_text = strict_evermem_text
+    bind_schema_verified_evermem(mod)
     mod.rhelm = lambda legacy, bases, schema_manifest: fast_rhelm(mod, legacy, bases, schema_manifest)
     return int(mod.main())
 
