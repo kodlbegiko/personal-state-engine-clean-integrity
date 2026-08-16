@@ -6,7 +6,8 @@
   "candidate_v13_imported": false,
   "candidate_v13_invoked": false,
   "checked_scripts": [
-    "scripts/candidate_v13_external_validity_v2_source_qualification.py"
+    "scripts/candidate_v13_external_validity_v2_source_qualification.py",
+    "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py"
   ],
   "formal_case_materialized": false,
   "pass": true,

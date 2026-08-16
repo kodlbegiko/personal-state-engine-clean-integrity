@@ -44,5 +44,21 @@
     ],
     "row_count": 2400,
     "top_level_type": "Dataset"
+  },
+  "rhelm:qa-jsonl": {
+    "qa_file_count": 10,
+    "record_keys": [
+      "answer",
+      "characteristics",
+      "id",
+      "question",
+      "question_date",
+      "question_type",
+      "supporting_evidence"
+    ],
+    "record_type": "dict",
+    "repository_file_count": 2319,
+    "source_resolution_mode": "immutable-repository-file-index",
+    "top_level_type": "JSONL"
   }
 }

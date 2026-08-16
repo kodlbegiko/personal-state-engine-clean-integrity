@@ -1,8 +1,7 @@
 {
   "candidate_v13_invoked": false,
   "errors": {
-    "evermembench-dynamic": "RuntimeError: EverMem message text field is missing/ambiguous",
-    "rhelm": "HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/resolve-cache/datasets/microsoft/RHELM/4799f7b5757c6d9a945770fe8660c7ccfafca4c5/conversations%2FMartin_Keller%2Fconversation_2024_04_12.json"
+    "evermembench-dynamic": "RuntimeError: EverMem message text field is missing/ambiguous"
   },
   "formal_case_materialized": false,
   "schema_version": "candidate-v13-external-validity-v2-source-qualification-v1",
@@ -28,6 +27,24 @@
         "sgd-archive": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9"
       },
       "status": "PASS"
+    },
+    "rhelm": {
+      "candidate_blind": true,
+      "dataset": "microsoft/RHELM",
+      "eligible_by_domain_pre_global_dedup": {
+        "D6": 23,
+        "D7": 37
+      },
+      "gold_rule": "supporting_evidence must map to exactly one pinned repository path; source payload fetched only at materialization",
+      "license": "cc-by-4.0",
+      "qa_rows": 1305,
+      "revision": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+      "source_payload_mass_downloaded": false,
+      "status": "PASS",
+      "unresolved": {
+        "not_d6_d7": 1019,
+        "unresolved_or_ambiguous_reference": 226
+      }
     }
   },
   "status": "FAIL"

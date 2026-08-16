@@ -1,6 +1,6 @@
 {
   "candidate_v13_invoked": false,
-  "deduplicated_base_count": 93632,
+  "deduplicated_base_count": 93692,
   "domain_capacity": {
     "D1": {
       "eligible": 3738,
@@ -43,19 +43,19 @@
       "status": "PASS_PREFERRED"
     },
     "D6": {
-      "eligible": 212,
+      "eligible": 235,
       "minimum_safety_target": 702,
       "preferred_safety_target": 936,
       "required": 468,
-      "safety_ratio": 0.452991452991453,
+      "safety_ratio": 0.5021367521367521,
       "status": "FAIL_REQUIRED_CAPACITY"
     },
     "D7": {
-      "eligible": 243,
+      "eligible": 280,
       "minimum_safety_target": 702,
       "preferred_safety_target": 936,
       "required": 468,
-      "safety_ratio": 0.5192307692307693,
+      "safety_ratio": 0.5982905982905983,
       "status": "FAIL_REQUIRED_CAPACITY"
     },
     "D8": {
@@ -73,23 +73,23 @@
     "D3": 16700,
     "D4": 25825,
     "D5": 45445,
-    "D6": 212,
-    "D7": 243,
+    "D6": 235,
+    "D7": 280,
     "D8": 901
   },
   "family_counts": {
-    "N1": 754,
-    "N10": 93632,
+    "N1": 757,
+    "N10": 93692,
     "N11": 86690,
     "N12": 2373,
-    "N2": 27824,
-    "N3": 93632,
+    "N2": 27881,
+    "N3": 93692,
     "N4": 60521,
-    "N5": 39913,
+    "N5": 39945,
     "N6": 1259,
     "N7": 1048,
-    "N8": 30979,
-    "N9": 92622
+    "N8": 30989,
+    "N9": 92682
   },
   "family_shortfalls": [],
   "formal_case_materialized": false,
@@ -98,7 +98,7 @@
     "D7"
   ],
   "normalized_duplicates_removed": 39737,
-  "pre_dedup_base_count": 133369,
+  "pre_dedup_base_count": 133429,
   "safety_margin_warnings": [
     "D2"
   ],
@@ -107,6 +107,7 @@
     "locomo": 1518,
     "longmemeval-cleaned": 500,
     "personamem-v2": 4949,
+    "rhelm": 60,
     "sgd-carryover": 86665
   },
   "source_domain_counts": {
@@ -133,6 +134,8 @@
     "personamem-v2:D6": 156,
     "personamem-v2:D7": 104,
     "personamem-v2:D8": 131,
+    "rhelm:D6": 23,
+    "rhelm:D7": 37,
     "sgd-carryover:D3": 16386,
     "sgd-carryover:D4": 25746,
     "sgd-carryover:D5": 44533
