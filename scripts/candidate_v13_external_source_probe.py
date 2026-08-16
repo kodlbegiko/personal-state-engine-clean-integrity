@@ -8,6 +8,7 @@ schema/count metadata needed to implement deterministic adapters. It does not
 materialize EV-A/EV-B/EV-C cases and does not inspect Candidate-v13 outputs.
 """
 
+import ast
 import csv
 import hashlib
 import json
@@ -166,8 +167,7 @@ def probe_taskmaster(tmp: Path) -> dict[str, Any]:
     for rel in ["TM-1-2019/sample.json", "TM-1-2019/ontology.json", "TM-1-2019/train-dev-test/train.csv", "TM-1-2019/train-dev-test/dev.csv", "TM-1-2019/train-dev-test/test.csv"]:
         path = tmp / ("taskmaster-" + rel.replace("/", "__"))
         files[rel] = {**raw_github(repo, revision, rel, path), "local": str(path)}
-    sample_path = Path(files["TM-1-2019/sample.json"]["local"])
-    sample = json.loads(sample_path.read_text(encoding="utf-8"))
+    sample = json.loads(Path(files["TM-1-2019/sample.json"]["local"]).read_text(encoding="utf-8"))
     split_rows = {}
     split_ids: set[str] = set()
     for split in ["train", "dev", "test"]:
@@ -245,17 +245,24 @@ def probe_sgd(tmp: Path) -> dict[str, Any]:
 
 
 def static_candidate_import_guard() -> dict[str, Any]:
-    text = Path(__file__).read_text(encoding="utf-8")
-    forbidden = [
-        "from personal_state_engine.candidate_v13",
-        "import personal_state_engine.candidate_v13",
-        "from candidate_v13",
-        "import candidate_v13",
-        "pse_candidate_v13_rank" + "(",
-        "evidence_support_signature_v13" + "("
-    ]
-    hits = [needle for needle in forbidden if needle in text]
-    return {"pass": not hits, "forbidden_hits": hits}
+    tree = ast.parse(Path(__file__).read_text(encoding="utf-8"))
+    forbidden_modules: list[str] = []
+    forbidden_calls: list[str] = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                if "candidate_v13" in alias.name:
+                    forbidden_modules.append(alias.name)
+        elif isinstance(node, ast.ImportFrom):
+            module = node.module or ""
+            if "candidate_v13" in module:
+                forbidden_modules.append(module)
+        elif isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Name) and node.func.id in {"pse_candidate_v13_rank", "evidence_support_signature_v13"}:
+                forbidden_calls.append(node.func.id)
+            elif isinstance(node.func, ast.Attribute) and node.func.attr in {"pse_candidate_v13_rank", "evidence_support_signature_v13"}:
+                forbidden_calls.append(node.func.attr)
+    return {"pass": not forbidden_modules and not forbidden_calls, "forbidden_modules": sorted(set(forbidden_modules)), "forbidden_calls": sorted(set(forbidden_calls))}
 
 
 def main() -> int:
