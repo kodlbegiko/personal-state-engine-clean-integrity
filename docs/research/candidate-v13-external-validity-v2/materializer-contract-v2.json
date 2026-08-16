@@ -1,0 +1,52 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-materializer-contract-v1",
+  "status": "CANDIDATE_BLIND_PRE_FREEZE_DEVELOPMENT",
+  "candidate_v13_invoked": false,
+  "formal_case_materialized": false,
+  "runtime_contract": {
+    "candidate_input_fields": ["query", "memories"],
+    "memory_fields": ["id", "text", "timestamp"],
+    "candidate_receives_evaluator_metadata": false,
+    "candidate_receives_source_metadata": false,
+    "candidate_receives_domain_or_family_labels": false
+  },
+  "case_requirements": {
+    "query": "verbatim source-native wording except preregistered deterministic composition transforms",
+    "memories": "source-native context sufficient to make retrieval non-trivial; must include gold plus source-native or preregistered deterministic distractors",
+    "gold_ids": "evaluator-only exact source-native IDs after adapter mapping",
+    "minimum_memory_count": 5,
+    "minimum_non_gold_distractors": 4,
+    "unique_memory_ids": true,
+    "gold_ids_subset_of_memory_ids": true,
+    "deterministic_ordering": "seeded hash ordering independent of Candidate output"
+  },
+  "source_context_rules": {
+    "personamem-v2": "gold related_conversation_snippet plus deterministic same-persona/same-topic and cross-topic source-native snippets from the pinned benchmark pool; no Candidate-driven hard-negative mining",
+    "longmemeval-cleaned": "use pinned haystack_sessions as memory candidates; answer_session_ids are gold",
+    "locomo": "use the same LoCoMo sample conversation messages as candidate memories; source evidence dia_ids are gold",
+    "sgd-carryover": "use prior user/system dialogue turns from the same pinned dialogue/service as candidates; source-native carried-value support turn is gold",
+    "evermembench-dynamic": "use messages from the same pinned topic/date context plus deterministic neighboring source-native groups/dates; QAR.R exact references are gold",
+    "rhelm": "reserve only; use pinned source files/turns for the same persona and deterministic same-persona distractors; supporting_evidence exact references are gold"
+  },
+  "forbidden": [
+    "gold-only candidate sets",
+    "Candidate-v13-dependent distractor selection",
+    "Candidate-v13-dependent hard-negative mining",
+    "post-performance case replacement",
+    "answer-text fuzzy matching to construct gold",
+    "LLM-generated gold repairs",
+    "runtime injection of source/domain/family labels"
+  ],
+  "dry_run": {
+    "real_formal_payload_allowed": false,
+    "synthetic_structural_cases_only": true,
+    "must_validate": [
+      "minimum_memory_count",
+      "minimum_non_gold_distractors",
+      "unique_memory_ids",
+      "gold_ids_subset_of_memory_ids",
+      "deterministic_ordering",
+      "transformation_hash_stability"
+    ]
+  }
+}
