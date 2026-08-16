@@ -1,7 +1,7 @@
 {
   "candidate_v13_invoked": false,
   "errors": {
-    "evermembench-dynamic": "RuntimeError: EverMem message text field is missing/ambiguous"
+    "evermembench-dynamic": "RuntimeError: EverMem dialogue group must be non-empty list"
   },
   "formal_case_materialized": false,
   "schema_version": "candidate-v13-external-validity-v2-source-qualification-v1",
