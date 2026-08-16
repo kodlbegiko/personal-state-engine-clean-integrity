@@ -1,0 +1,38 @@
+{
+  "aggregate_counts": {},
+  "candidate_v13_invoked": false,
+  "dataset": "EverMind-AI/EverMemBench-Dynamic",
+  "dialogue_row_count": 0,
+  "dialogue_topic_counts": {},
+  "formal_case_materialized": false,
+  "formal_domain_rule_candidate": {
+    "topic_01": "D6 tools/devices because the benchmark paper/source labels T1 as Technology",
+    "topic_02_to_05": "D7 memberships/projects because EverMemBench-Dynamic explicitly instantiates five workplace project domains; non-T1 topics are eligible as project-collaboration memories only, not reclassified by lexical content"
+  },
+  "formal_gold_rule_candidate": "Use each QAR's source-native R entries. For every R entry, exact-match topic_id/date/group and expand message_index singletons/ranges; all referenced message_index values must exist. Runtime gold IDs are topic_id::date::group::message_index. No answer-text matching or Candidate-v13 output is used.",
+  "license": "apache-2.0",
+  "malformed_dialogue_rows": 0,
+  "message_counts": {},
+  "profile_count": 170,
+  "qar_fully_resolved_by_topic": {},
+  "qar_topic_counts": {},
+  "reference_entry_count_histogram": {},
+  "referenced_message_count_histogram": {},
+  "revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+  "schema_version": "candidate-v13-external-evermembench-dynamic-probe-v1",
+  "source_files": {
+    "EverMemBench_Dialogues.json": {
+      "bytes": 26252486,
+      "sha256": "4440eceb67dba962fb985c35e3d3f7cec8ceaa57e137f902c77d20b04a463e86"
+    },
+    "EverMemBench_QAR.json": {
+      "bytes": 281119,
+      "sha256": "577248e09f404e98b01f306f91b1e33454d63827bc3ea8202b3438e89c971783"
+    },
+    "profiles.json": {
+      "bytes": 210206,
+      "sha256": "1ba5806f2e674282bb19fbbfeb52f733d02748a03de00bc11295521049a49ca2"
+    }
+  },
+  "unresolved_reference_reasons": {}
+}
