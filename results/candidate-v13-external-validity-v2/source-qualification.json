@@ -1,8 +1,6 @@
 {
   "candidate_v13_invoked": false,
-  "errors": {
-    "evermembench-dynamic": "RuntimeError: EverMem dialogue group must be non-empty list"
-  },
+  "errors": {},
   "formal_case_materialized": false,
   "schema_version": "candidate-v13-external-validity-v2-source-qualification-v1",
   "sources": {
@@ -28,6 +26,23 @@
       },
       "status": "PASS"
     },
+    "evermembench-dynamic": {
+      "candidate_blind": true,
+      "dataset": "EverMind-AI/EverMemBench-Dynamic",
+      "dialogue_rows": 1263,
+      "eligible_by_domain_pre_global_dedup": {
+        "D6": 488,
+        "D7": 1912
+      },
+      "gold_rule": "source-native R exact resolution against topic/date/group/message index",
+      "indexed_messages": 51023,
+      "license": "apache-2.0",
+      "message_index_field": "message_index",
+      "qars_rows": 2400,
+      "revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+      "status": "PASS",
+      "unresolved": {}
+    },
     "rhelm": {
       "candidate_blind": true,
       "dataset": "microsoft/RHELM",
@@ -47,5 +62,5 @@
       }
     }
   },
-  "status": "FAIL"
+  "status": "PASS"
 }

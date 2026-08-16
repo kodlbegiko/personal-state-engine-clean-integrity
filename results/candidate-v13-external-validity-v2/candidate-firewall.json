@@ -7,8 +7,10 @@
   "candidate_v13_invoked": false,
   "checked_scripts": [
     "scripts/candidate_v13_external_validity_v2_integrity_qualification.py",
+    "scripts/candidate_v13_external_validity_v2_integrity_runner.py",
     "scripts/candidate_v13_external_validity_v2_source_qualification.py",
-    "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py"
+    "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py",
+    "scripts/candidate_v13_external_validity_v2_strict_contamination.py"
   ],
   "formal_case_materialized": false,
   "pass": true,

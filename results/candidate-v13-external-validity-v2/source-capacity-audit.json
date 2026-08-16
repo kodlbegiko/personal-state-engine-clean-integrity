@@ -1,6 +1,6 @@
 {
   "candidate_v13_invoked": false,
-  "deduplicated_base_count": 93692,
+  "deduplicated_base_count": 96092,
   "domain_capacity": {
     "D1": {
       "eligible": 3738,
@@ -43,20 +43,20 @@
       "status": "PASS_PREFERRED"
     },
     "D6": {
-      "eligible": 235,
+      "eligible": 723,
       "minimum_safety_target": 702,
       "preferred_safety_target": 936,
       "required": 468,
-      "safety_ratio": 0.5021367521367521,
-      "status": "FAIL_REQUIRED_CAPACITY"
+      "safety_ratio": 1.544871794871795,
+      "status": "PASS_MINIMUM_SAFETY"
     },
     "D7": {
-      "eligible": 280,
+      "eligible": 2192,
       "minimum_safety_target": 702,
       "preferred_safety_target": 936,
       "required": 468,
-      "safety_ratio": 0.5982905982905983,
-      "status": "FAIL_REQUIRED_CAPACITY"
+      "safety_ratio": 4.683760683760684,
+      "status": "PASS_PREFERRED"
     },
     "D8": {
       "eligible": 901,
@@ -73,37 +73,35 @@
     "D3": 16700,
     "D4": 25825,
     "D5": 45445,
-    "D6": 235,
-    "D7": 280,
+    "D6": 723,
+    "D7": 2192,
     "D8": 901
   },
   "family_counts": {
     "N1": 757,
-    "N10": 93692,
+    "N10": 96092,
     "N11": 86690,
     "N12": 2373,
-    "N2": 27881,
-    "N3": 93692,
+    "N2": 30279,
+    "N3": 96092,
     "N4": 60521,
-    "N5": 39945,
+    "N5": 41885,
     "N6": 1259,
     "N7": 1048,
-    "N8": 30989,
-    "N9": 92682
+    "N8": 33374,
+    "N9": 94887
   },
   "family_shortfalls": [],
   "formal_case_materialized": false,
-  "hard_domain_shortfalls": [
-    "D6",
-    "D7"
-  ],
+  "hard_domain_shortfalls": [],
   "normalized_duplicates_removed": 39737,
-  "pre_dedup_base_count": 133429,
+  "pre_dedup_base_count": 135829,
   "safety_margin_warnings": [
     "D2"
   ],
   "schema_version": "candidate-v13-external-validity-v2-source-capacity-audit-v1",
   "source_counts": {
+    "evermembench-dynamic": 2400,
     "locomo": 1518,
     "longmemeval-cleaned": 500,
     "personamem-v2": 4949,
@@ -111,6 +109,8 @@
     "sgd-carryover": 86665
   },
   "source_domain_counts": {
+    "evermembench-dynamic:D6": 488,
+    "evermembench-dynamic:D7": 1912,
     "locomo:D1": 325,
     "locomo:D2": 138,
     "locomo:D3": 34,
@@ -140,5 +140,5 @@
     "sgd-carryover:D4": 25746,
     "sgd-carryover:D5": 44533
   },
-  "status": "FAIL"
+  "status": "PASS"
 }
