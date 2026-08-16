@@ -1,0 +1,62 @@
+name: Candidate v13 external-validity source probe
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/source-probe-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-source-probe
+  cancel-in-progress: false
+
+jobs:
+  source-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify preregistration precedes source probing
+        run: |
+          test -f docs/research/candidate-v13-external-validity/preregistration.md
+          test -f docs/research/candidate-v13-external-validity/preregistration-lock.json
+          test -f docs/research/candidate-v13-external-validity/source-manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          lock = json.loads(Path('docs/research/candidate-v13-external-validity/preregistration-lock.json').read_text())
+          assert lock['status'] == 'LOCKED_BEFORE_EXTERNAL_SOURCE_DISCOVERY'
+          assert lock['external_source_discovery_started_before_preregistration_commit'] is False
+          assert lock['external_case_materialization_started_before_preregistration_commit'] is False
+          assert lock['candidate_v13_external_performance_observed_before_preregistration_commit'] is False
+          PY
+      - name: Run pre-performance source probe
+        run: python scripts/candidate_v13_external_source_probe.py
+      - name: Verify source probe did not execute Candidate-v13
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('results/candidate-v13-external-validity/source-probe.json').read_text())
+          assert result['status'] == 'PASS', result
+          assert result['candidate_v13_invoked'] is False
+          assert result['formal_case_materialized'] is False
+          assert result['candidate_import_guard']['pass'] is True
+          PY
+      - name: Commit append-only source-probe evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/source-probe.json
+          git commit -m "candidate-v13 external validity: record pre-performance source probe"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
