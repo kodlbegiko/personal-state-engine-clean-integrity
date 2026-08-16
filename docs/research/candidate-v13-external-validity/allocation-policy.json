@@ -1,0 +1,61 @@
+{
+  "schema_version": "candidate-v13-external-validity-allocation-policy-v1",
+  "status": "LOCKED_BEFORE_ELIGIBILITY_AUDIT_AND_BEFORE_CANDIDATE_V13_EXTERNAL_PERFORMANCE",
+  "candidate_v13_external_performance_observed": false,
+  "source_domain_targets": {
+    "ev_a": {
+      "D1": {"personamem-v2": 32, "perltqa-en-v2": 10, "longmemeval-cleaned": 6},
+      "D2": {"personamem-v2": 22, "perltqa-en-v2": 20, "longmemeval-cleaned": 6},
+      "D3": {"personamem-v2": 8, "perltqa-en-v2": 32, "longmemeval-cleaned": 8},
+      "D4": {"personamem-v2": 26, "perltqa-en-v2": 14, "longmemeval-cleaned": 8},
+      "D5": {"personamem-v2": 32, "perltqa-en-v2": 8, "longmemeval-cleaned": 8},
+      "D6": {"personamem-v2": 26, "perltqa-en-v2": 16, "longmemeval-cleaned": 6},
+      "D7": {"personamem-v2": 14, "perltqa-en-v2": 28, "longmemeval-cleaned": 6},
+      "D8": {"personamem-v2": 8, "perltqa-en-v2": 40, "longmemeval-cleaned": 0}
+    },
+    "ev_b": {
+      "D1": {"personamem-v2": 120, "perltqa-en-v2": 40, "longmemeval-cleaned": 20},
+      "D2": {"personamem-v2": 80, "perltqa-en-v2": 80, "longmemeval-cleaned": 20},
+      "D3": {"personamem-v2": 30, "perltqa-en-v2": 120, "longmemeval-cleaned": 30},
+      "D4": {"personamem-v2": 100, "perltqa-en-v2": 40, "longmemeval-cleaned": 40},
+      "D5": {"personamem-v2": 120, "perltqa-en-v2": 30, "longmemeval-cleaned": 30},
+      "D6": {"personamem-v2": 100, "perltqa-en-v2": 60, "longmemeval-cleaned": 20},
+      "D7": {"personamem-v2": 50, "perltqa-en-v2": 110, "longmemeval-cleaned": 20},
+      "D8": {"personamem-v2": 30, "perltqa-en-v2": 150, "longmemeval-cleaned": 0}
+    },
+    "ev_c": {
+      "D1": {"personamem-v2": 160, "perltqa-en-v2": 50, "longmemeval-cleaned": 30},
+      "D2": {"personamem-v2": 110, "perltqa-en-v2": 100, "longmemeval-cleaned": 30},
+      "D3": {"personamem-v2": 40, "perltqa-en-v2": 160, "longmemeval-cleaned": 40},
+      "D4": {"personamem-v2": 130, "perltqa-en-v2": 70, "longmemeval-cleaned": 40},
+      "D5": {"personamem-v2": 160, "perltqa-en-v2": 40, "longmemeval-cleaned": 40},
+      "D6": {"personamem-v2": 130, "perltqa-en-v2": 80, "longmemeval-cleaned": 30},
+      "D7": {"personamem-v2": 70, "perltqa-en-v2": 140, "longmemeval-cleaned": 30},
+      "D8": {"personamem-v2": 40, "perltqa-en-v2": 200, "longmemeval-cleaned": 0}
+    }
+  },
+  "structural_family_targets": {
+    "ev_a": {"N1": 32, "N2": 32, "N3": 32, "N4": 32, "N5": 32, "N6": 32, "N7": 32, "N8": 32, "N9": 32, "N10": 32, "N11": 32, "N12": 32},
+    "ev_b": {"N1": 120, "N2": 120, "N3": 120, "N4": 120, "N5": 120, "N6": 120, "N7": 120, "N8": 120, "N9": 120, "N10": 120, "N11": 120, "N12": 120},
+    "ev_c": {"N1": 160, "N2": 160, "N3": 160, "N4": 160, "N5": 160, "N6": 160, "N7": 160, "N8": 160, "N9": 160, "N10": 160, "N11": 160, "N12": 160}
+  },
+  "answerability_targets": {
+    "ev_a": {"answerable": 240, "no_evidence": 144},
+    "ev_b": {"answerable": 864, "no_evidence": 576},
+    "ev_c": {"answerable": 1152, "no_evidence": 768}
+  },
+  "source_totals_check": {
+    "ev_a": {"personamem-v2": 168, "perltqa-en-v2": 168, "longmemeval-cleaned": 48},
+    "ev_b": {"personamem-v2": 630, "perltqa-en-v2": 630, "longmemeval-cleaned": 180},
+    "ev_c": {"personamem-v2": 840, "perltqa-en-v2": 840, "longmemeval-cleaned": 240}
+  },
+  "domain_totals_check": {
+    "ev_a": {"D1": 48, "D2": 48, "D3": 48, "D4": 48, "D5": 48, "D6": 48, "D7": 48, "D8": 48},
+    "ev_b": {"D1": 180, "D2": 180, "D3": 180, "D4": 180, "D5": 180, "D6": 180, "D7": 180, "D8": 180},
+    "ev_c": {"D1": 240, "D2": 240, "D3": 240, "D4": 240, "D5": 240, "D6": 240, "D7": 240, "D8": 240}
+  },
+  "allocation_order": ["ev_a", "ev_b", "ev_c"],
+  "base_item_reuse_across_stages": false,
+  "reserve_activation_rule": "If and only if the pre-performance eligibility audit proves an objective source/domain or structural-family capacity shortfall under these locked targets, activate a source already listed in source-manifest reserve_sources. Candidate-v13 must still be unexecuted. Do not alter targets based on Candidate-v13 performance.",
+  "failure_rule": "If exact marginals cannot be satisfied using core sources and legally activated reserve sources before Candidate-v13 execution, stop before EV-A as EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED rather than weakening the preregistered evaluation."
+}
