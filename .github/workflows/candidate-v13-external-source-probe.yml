@@ -57,9 +57,10 @@ jobs:
           assert source['candidate_import_guard']['pass'] is True
           assert mapping['candidate_v13_invoked'] is False
           assert mapping['formal_case_materialized'] is False
-          if mapping.get('schema_version') == 'perltqa-reference-integrity-probe-v3':
+          schema = mapping.get('schema_version', '')
+          if schema.startswith('perltqa-reference-integrity-probe-v'):
               assert mapping['versions']['en_v2']['canonical_qa_records'] == 8593
-              assert mapping['versions']['en_v1']['canonical_qa_records'] > 0
+              assert mapping['versions']['en_v1']['canonical_qa_records'] == 8593
           else:
               assert mapping['canonical_qa_records'] == 8593
           PY
