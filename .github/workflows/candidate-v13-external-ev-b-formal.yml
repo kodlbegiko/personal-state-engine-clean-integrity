@@ -1,0 +1,130 @@
+name: Candidate v13 external-validity EV-B one-shot formal
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/ev-b-formal-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-ev-b-one-shot
+  cancel-in-progress: false
+
+jobs:
+  ev-b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify freeze, EV-B materialization, and unused ledger
+        run: |
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          l=json.loads(Path('results/candidate-v13-external-validity/formal-ledger.json').read_text())
+          b=json.loads(Path('results/candidate-v13-external-validity/ev-b-runtime.json').read_text())
+          assert l=={'ev_b':0,'ev_c':0,'terminal_state':None},l
+          assert b['status']=='MATERIALIZATION_VALIDATED_NO_EXECUTION'
+          assert b['selection_digest']==f['ev_b_selection_digest']
+          assert b['case_counts']['total']==1440 and b['case_counts']['answerable']==864 and b['case_counts']['no_evidence']==576
+          for rel,expected in f['files_sha256'].items():
+              p=Path(rel); assert p.exists(),rel
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,rel
+          PY
+      - name: Consume EV-B one-shot ledger before first formal Candidate call
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          p=Path('results/candidate-v13-external-validity/formal-ledger.json')
+          l=json.loads(p.read_text())
+          assert l=={'ev_b':0,'ev_c':0,'terminal_state':None},l
+          l['ev_b']=1
+          p.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n')
+          Path('results/candidate-v13-external-validity/ev-b-execution-start.json').write_text(json.dumps({
+            'schema_version':'candidate-v13-external-ev-b-execution-start-v1',
+            'status':'EV_B_FORMAL_BULLET_CONSUMED_BEFORE_ALGORITHM_CALL',
+            'created_utc':datetime.now(timezone.utc).isoformat(),
+            'ev_b_ledger_count':1
+          },indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json results/candidate-v13-external-validity/ev-b-execution-start.json
+          git commit -m "candidate-v13 external validity: consume EV-B formal bullet"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Execute EV-B exactly once
+        id: execute
+        continue-on-error: true
+        run: python scripts/candidate_v13_external_formal_execute.py --stage ev_b
+      - name: Resolve EV-B decision and authorization
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          ledger_path=Path('results/candidate-v13-external-validity/formal-ledger.json')
+          l=json.loads(ledger_path.read_text())
+          assert l['ev_b']==1 and l['ev_c']==0
+          summary=Path('results/candidate-v13-external-validity/ev-b-summary.json')
+          trigger=Path('docs/research/candidate-v13-external-validity/ev-c-formal-trigger.txt')
+          if summary.exists():
+              d=json.loads(summary.read_text())['decision']
+              allowed={
+                'EV_B_PASS — EV_C_AUTHORIZED',
+                'CANDIDATE_V13_EXTERNAL_VALIDITY_FAIL — CANDIDATE_V14_AUTHORIZED',
+                'EXTERNAL_VALIDITY_INVALID — RESEARCH_INTEGRITY_FAILURE'
+              }
+              if d not in allowed: raise RuntimeError(f'illegal EV-B decision: {d}')
+              if d=='EV_B_PASS — EV_C_AUTHORIZED':
+                  l['terminal_state']=None
+                  trigger.write_text('EV_C_FORMAL_AUTHORIZED_BY_EV_B_PASS\nev_b_ledger_count=1\nev_c_ledger_count=0\nformal_freeze_immutable=true\n')
+                  terminal=None
+              else:
+                  l['terminal_state']=d
+                  terminal=d
+                  reason='EV-B completed exactly once under the frozen evaluator and failed a preregistered performance/integrity gate; EV-C is not authorized.'
+          else:
+              d='EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED'
+              l['terminal_state']=d
+              terminal=d
+              reason='EV-B formal bullet was consumed but the frozen formal runner did not produce a valid stage summary; no rerun is permitted.'
+          ledger_path.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n')
+          if terminal:
+              Path('/tmp/terminal_state.txt').write_text(terminal)
+              Path('/tmp/terminal_reason.txt').write_text(reason)
+          PY
+          if test -f /tmp/terminal_state.txt; then
+            terminal="$(cat /tmp/terminal_state.txt)"
+            reason="$(cat /tmp/terminal_reason.txt)"
+            python scripts/candidate_v13_external_finalize.py --terminal-state "$terminal" --reason "$reason"
+          fi
+      - name: Persist EV-B evidence and next state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json
+          for f in ev-b-summary.json ev-b-structural.json ev-b-domain.json ev-b-integrity.json ev-b-freshness-audit.json; do
+            test ! -f "results/candidate-v13-external-validity/$f" || git add "results/candidate-v13-external-validity/$f"
+          done
+          test ! -f docs/research/candidate-v13-external-validity/ev-c-formal-trigger.txt || git add docs/research/candidate-v13-external-validity/ev-c-formal-trigger.txt
+          test ! -f results/candidate-v13-external-validity/terminal-summary.json || git add results/candidate-v13-external-validity/terminal-summary.json
+          test ! -f docs/research/candidate-v13-external-validity/terminal-decision.md || git add docs/research/candidate-v13-external-validity/terminal-decision.md
+          git commit -m "candidate-v13 external validity: record EV-B one-shot decision" || true
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
