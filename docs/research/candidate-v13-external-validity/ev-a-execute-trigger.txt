@@ -1,0 +1,8 @@
+EV_A_FIRST_EXTERNAL_EXECUTION_AUTHORIZED
+pre_ev_a_lock=pre-ev-a-lock-v2.json
+joint_feasibility=PASS
+contamination_firewall=PASS
+runtime_contract=PASS_SYNTHETIC
+EV_A_materialization=PASS_NO_EXECUTION
+candidate_v13_source_sha256=b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838
+from_this_point_source_gold_allocation_rules_immutable=true
