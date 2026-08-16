@@ -62,3 +62,5 @@ jobs:
         shell: bash
         run: |
           test "${{ steps.qualify.outputs.exit_code }}" = "0"
+
+# schema-normalized qualification trigger v3
