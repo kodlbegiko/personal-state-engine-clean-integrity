@@ -1,0 +1,16 @@
+{
+  "candidate_v13_invoked": false,
+  "case_count": 384,
+  "distractor_selection": "same-subject-relation -> same-subject -> same-domain, deterministic cyclic offset per stage/target/tier",
+  "gold_truncation_count": 0,
+  "indexed_materializer": true,
+  "individual_case_contents_persisted": false,
+  "materialization_digest_sha256": "9159df00f2a09b51b2d3706c9e0f9a8c0676d22c2cc917ef20381dcdabc93363",
+  "materialization_exception_count": 0,
+  "maximum_memory_count": 100,
+  "minimum_memory_count": 5,
+  "runtime_gold_loss_count": 0,
+  "runtime_payload_digest_sha256": "3b98bd3079f6e9ddcdf75276b6606e0c6b5dc379ab5c0fb7debac7a1eed54199",
+  "status": "PASS",
+  "successfully_materialized_case_count": 384
+}
