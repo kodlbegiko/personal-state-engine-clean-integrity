@@ -1,0 +1,143 @@
+name: Candidate v13 external-validity safe continuation
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/safe-continuation-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-ev-c-one-shot
+  cancel-in-progress: false
+
+jobs:
+  continue-if-authorized:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Resolve current formal state
+        id: state
+        run: |
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          l=json.loads(Path('results/candidate-v13-external-validity/formal-ledger.json').read_text())
+          b=Path('results/candidate-v13-external-validity/ev-b-summary.json')
+          if l.get('terminal_state') is not None:
+              mode='ALREADY_TERMINAL'
+          elif l.get('ev_b')==1 and l.get('ev_c')==0 and b.exists() and json.loads(b.read_text()).get('decision')=='EV_B_PASS — EV_C_AUTHORIZED':
+              mode='EV_C_AUTHORIZED'
+          elif l.get('ev_c')==1:
+              mode='EV_C_ALREADY_CONSUMED'
+          else:
+              mode='NO_ACTION_NOT_AUTHORIZED'
+          Path('/tmp/mode.txt').write_text(mode)
+          Path('results/candidate-v13-external-validity/continuation-status.json').write_text(json.dumps({'schema_version':'candidate-v13-external-safe-continuation-v1','mode':mode,'ledger':l},indent=2,sort_keys=True)+'\n')
+          print(mode)
+          PY
+      - name: Persist no-op continuation state
+        if: ${{ hashFiles('/tmp/mode.txt') != '' }}
+        run: |
+          mode="$(cat /tmp/mode.txt)"
+          if test "$mode" != "EV_C_AUTHORIZED"; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add results/candidate-v13-external-validity/continuation-status.json
+            git commit -m "candidate-v13 external validity: record safe continuation no-op" || true
+            git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+          fi
+      - name: Verify freeze for EV-C
+        if: ${{ success() }}
+        run: |
+          mode="$(cat /tmp/mode.txt)"
+          test "$mode" = "EV_C_AUTHORIZED" || exit 0
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          for rel,expected in f['files_sha256'].items():
+              p=Path(rel); assert p.exists(),rel
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,rel
+          PY
+      - name: Materialize EV-C without Candidate execution
+        if: ${{ success() }}
+        run: |
+          mode="$(cat /tmp/mode.txt)"
+          test "$mode" = "EV_C_AUTHORIZED" || exit 0
+          python scripts/candidate_v13_external_runtime_eval.py --stage ev_c --materialize-only
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/ev-c-runtime.json').read_text())
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          assert r['status']=='MATERIALIZATION_VALIDATED_NO_EXECUTION'
+          assert r['selection_digest']==f['ev_c_selection_digest']
+          assert r['case_counts']['total']==1920 and r['case_counts']['answerable']==1152 and r['case_counts']['no_evidence']==768
+          assert set(r['case_counts']['domain'].values())=={240}
+          assert set(r['case_counts']['family'].values())=={160}
+          PY
+      - name: Consume EV-C bullet
+        if: ${{ success() }}
+        run: |
+          mode="$(cat /tmp/mode.txt)"
+          test "$mode" = "EV_C_AUTHORIZED" || exit 0
+          python - <<'PY'
+          import json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          p=Path('results/candidate-v13-external-validity/formal-ledger.json')
+          l=json.loads(p.read_text()); assert l=={'ev_b':1,'ev_c':0,'terminal_state':None},l
+          l['ev_c']=1; p.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n')
+          Path('results/candidate-v13-external-validity/ev-c-execution-start.json').write_text(json.dumps({'schema_version':'candidate-v13-external-ev-c-execution-start-v1','status':'EV_C_FORMAL_BULLET_CONSUMED_BEFORE_ALGORITHM_CALL','created_utc':datetime.now(timezone.utc).isoformat(),'ev_c_ledger_count':1},indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json results/candidate-v13-external-validity/ev-c-execution-start.json results/candidate-v13-external-validity/ev-c-runtime.json
+          git commit -m "candidate-v13 external validity: consume EV-C formal bullet via safe continuation"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Execute EV-C once
+        if: ${{ success() }}
+        id: execute
+        continue-on-error: true
+        run: |
+          mode="$(cat /tmp/mode.txt)"
+          test "$mode" = "EV_C_AUTHORIZED" || exit 0
+          python scripts/candidate_v13_external_formal_execute.py --stage ev_c
+      - name: Finalize after EV-C
+        if: always()
+        run: |
+          mode="$(cat /tmp/mode.txt 2>/dev/null || echo NO_ACTION_NOT_AUTHORIZED)"
+          test "$mode" = "EV_C_AUTHORIZED" || exit 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('results/candidate-v13-external-validity/formal-ledger.json'); l=json.loads(p.read_text()); assert l['ev_b']==1 and l['ev_c']==1
+          s=Path('results/candidate-v13-external-validity/ev-c-summary.json')
+          if s.exists():
+              d=json.loads(s.read_text())['decision']
+              assert d in {'CANDIDATE_V13_EXTERNAL_VALIDITY_PASS','CANDIDATE_V13_EXTERNAL_VALIDITY_FAIL — CANDIDATE_V14_AUTHORIZED','EXTERNAL_VALIDITY_INVALID — RESEARCH_INTEGRITY_FAILURE'},d
+              reason='EV-C completed exactly once under the frozen evaluator; terminal state follows preregistered formal gates.'
+          else:
+              d='EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED'; reason='EV-C bullet was consumed but no valid frozen-runner summary was produced; no rerun is permitted.'
+          l['terminal_state']=d; p.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n'); Path('/tmp/terminal.txt').write_text(d); Path('/tmp/reason.txt').write_text(reason)
+          PY
+          python scripts/candidate_v13_external_finalize.py --terminal-state "$(cat /tmp/terminal.txt)" --reason "$(cat /tmp/reason.txt)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json results/candidate-v13-external-validity/terminal-summary.json docs/research/candidate-v13-external-validity/terminal-decision.md
+          for f in ev-c-summary.json ev-c-structural.json ev-c-domain.json ev-c-integrity.json ev-c-freshness-audit.json; do test ! -f "results/candidate-v13-external-validity/$f" || git add "results/candidate-v13-external-validity/$f"; done
+          git commit -m "candidate-v13 external validity: record EV-C terminal evidence via safe continuation" || true
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
