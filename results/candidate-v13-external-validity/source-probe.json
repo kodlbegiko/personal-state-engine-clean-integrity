@@ -5,7 +5,7 @@
     "pass": true
   },
   "candidate_v13_invoked": false,
-  "completed_utc": "2026-08-16T02:11:02.285073Z",
+  "completed_utc": "2026-08-16T02:13:52.482078Z",
   "formal_case_materialized": false,
   "purpose": "Pin source revisions/hashes and inspect source-native schemas/count metadata before adapter implementation.",
   "schema_version": "candidate-v13-external-source-probe-v2",
@@ -742,5 +742,5 @@
     }
   },
   "status": "PASS",
-  "utc": "2026-08-16T02:10:42.931678Z"
+  "utc": "2026-08-16T02:13:28.888417Z"
 }
