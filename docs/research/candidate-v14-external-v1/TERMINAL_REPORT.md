@@ -6,7 +6,7 @@ Candidate-v14 modified: NO
 Candidate-v14 SHA-256: `f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44`
 Evaluation lineage: `research/candidate-v14-fresh-external-validity-v1`
 Evaluation freeze commit: `cb05d523986634e046de200c42336e8a8d6e60ae`
-Terminal evidence commit: `PENDING_TERMINAL_EVIDENCE_COMMIT`
+Terminal evidence commit: `1a55ad0b7d474ce98c2ac4fb3bef8a2cd95d78ae`
 
 Protected corpus case count: 1600
 Answerable: 1120
