@@ -11,9 +11,8 @@ materialize EV-A/EV-B/EV-C cases and does not inspect Candidate-v13 outputs.
 import csv
 import hashlib
 import json
-import os
-import sys
 import tempfile
+import urllib.parse
 import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
@@ -22,7 +21,6 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/candidate-v13-external-validity/source-probe.json"
-
 USER_AGENT = "personal-state-engine-external-validity-source-probe/1.0"
 
 
@@ -90,9 +88,7 @@ def probe_personamem(tmp: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         headers = list(reader.fieldnames or [])
-        distinct = {h: set() for h in headers if h in {
-            "question_type", "topic", "scenario", "category", "task", "domain"
-        }}
+        distinct = {h: set() for h in headers if h in {"question_type", "topic", "scenario", "category", "task", "domain"}}
         for row in reader:
             rows += 1
             for h in headers:
@@ -167,13 +163,7 @@ def probe_taskmaster(tmp: Path) -> dict[str, Any]:
     repo = "google-research-datasets/Taskmaster"
     revision = "d92cb6af3005f1dc09c39e75e7daf4a04905e00b"
     files = {}
-    for rel in [
-        "TM-1-2019/sample.json",
-        "TM-1-2019/ontology.json",
-        "TM-1-2019/train-dev-test/train.csv",
-        "TM-1-2019/train-dev-test/dev.csv",
-        "TM-1-2019/train-dev-test/test.csv",
-    ]:
+    for rel in ["TM-1-2019/sample.json", "TM-1-2019/ontology.json", "TM-1-2019/train-dev-test/train.csv", "TM-1-2019/train-dev-test/dev.csv", "TM-1-2019/train-dev-test/test.csv"]:
         path = tmp / ("taskmaster-" + rel.replace("/", "__"))
         files[rel] = {**raw_github(repo, revision, rel, path), "local": str(path)}
     sample_path = Path(files["TM-1-2019/sample.json"]["local"])
@@ -261,8 +251,8 @@ def static_candidate_import_guard() -> dict[str, Any]:
         "import personal_state_engine.candidate_v13",
         "from candidate_v13",
         "import candidate_v13",
-        "pse_candidate_v13_rank(",
-        "evidence_support_signature_v13("
+        "pse_candidate_v13_rank" + "(",
+        "evidence_support_signature_v13" + "("
     ]
     hits = [needle for needle in forbidden if needle in text]
     return {"pass": not hits, "forbidden_hits": hits}
@@ -276,7 +266,7 @@ def main() -> int:
         "utc": utc_now(),
         "candidate_v13_invoked": False,
         "formal_case_materialized": False,
-        "purpose": "Pin source revisions and inspect source-native schemas/count metadata before adapter implementation.",
+        "purpose": "Pin source revisions and inspect source-native schemas/count metadata before adapter implementation."
     }
     guard = static_candidate_import_guard()
     result["candidate_import_guard"] = guard
@@ -291,7 +281,7 @@ def main() -> int:
                 "personamem-v2": probe_personamem(tmp),
                 "longmemeval-cleaned": probe_longmemeval(tmp),
                 "taskmaster-1": probe_taskmaster(tmp),
-                "sgd": probe_sgd(tmp),
+                "sgd": probe_sgd(tmp)
             }
         result["status"] = "PASS"
     except Exception as exc:
