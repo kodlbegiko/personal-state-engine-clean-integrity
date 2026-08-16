@@ -1,0 +1,98 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-source-manifest-v1",
+  "status": "QUALIFIED_PRE_FREEZE",
+  "candidate_v13_external_performance_observed": false,
+  "candidate_v13_invoked": false,
+  "sources": [
+    {
+      "source_id": "personamem-v2",
+      "dataset_name": "bowen-upenn/PersonaMem-v2",
+      "publisher": "bowen-upenn",
+      "source_type": "huggingface_dataset",
+      "revision": "b7b42b78917157afed063527a1c959e98f6109f2",
+      "payload_sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
+      "role": "primary",
+      "domain_coverage": ["D1","D2","D4","D5","D6","D7","D8"],
+      "gold": "source-native related_conversation_snippet",
+      "candidate_blind_qualification": "PASS"
+    },
+    {
+      "source_id": "longmemeval-cleaned",
+      "dataset_name": "xiaowu0162/longmemeval-cleaned",
+      "publisher": "xiaowu0162",
+      "source_type": "huggingface_dataset",
+      "revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+      "payload_sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+      "role": "primary",
+      "domain_coverage": ["D1","D2","D3","D4","D5","D6","D7","D8"],
+      "gold": "source-native answer_session_ids resolving haystack_session_ids",
+      "candidate_blind_qualification": "PASS"
+    },
+    {
+      "source_id": "locomo",
+      "dataset_name": "snap-research/locomo",
+      "publisher": "snap-research",
+      "source_type": "github_repository",
+      "revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "payload_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+      "role": "primary",
+      "domain_coverage": ["D1","D2","D3","D4","D5","D6","D7","D8"],
+      "gold": "source-native evidence dia_id exact resolution",
+      "candidate_blind_qualification": "PASS"
+    },
+    {
+      "source_id": "sgd-carryover",
+      "dataset_name": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "publisher": "google-research-datasets",
+      "source_type": "github_repository",
+      "revision": "e852981ae34990f4358979625854259302feaa78",
+      "payload_sha256": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9",
+      "role": "primary",
+      "domain_coverage": ["D3","D4","D5"],
+      "gold": "nearest prior source-native USER turn mechanically supporting carried slot/value",
+      "candidate_blind_qualification": "PASS"
+    },
+    {
+      "source_id": "evermembench-dynamic",
+      "dataset_name": "EverMind-AI/EverMemBench-Dynamic",
+      "publisher": "EverMind-AI",
+      "source_type": "huggingface_dataset",
+      "revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+      "license": "apache-2.0",
+      "role": "primary_gap_source",
+      "domain_coverage": ["D6","D7"],
+      "gold": "QAR.R exact topic/date/group/message_index resolution",
+      "qualified_qars": 2400,
+      "qualified_domain_capacity": {"D6":488,"D7":1912},
+      "candidate_blind_qualification": "PASS"
+    },
+    {
+      "source_id": "rhelm",
+      "dataset_name": "microsoft/RHELM",
+      "publisher": "microsoft",
+      "source_type": "huggingface_dataset",
+      "revision": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+      "license": "cc-by-4.0",
+      "role": "preregistered_reserve",
+      "domain_coverage": ["D6","D7"],
+      "gold": "supporting_evidence exact pinned repository-path resolution",
+      "qualified_domain_capacity": {"D6":23,"D7":37},
+      "candidate_blind_qualification": "PASS",
+      "active_for_formal_allocation": false
+    }
+  ],
+  "reserve_activation": {
+    "allowed_before_freeze_only": ["download_failure","schema_failure","license_failure","capacity_failure","deterministic_parsing_failure"],
+    "forbidden": ["Candidate-v13 performance","Candidate-v13 metric","source difficulty for Candidate-v13"]
+  },
+  "aggregate_qualification": {
+    "source_access": "PASS",
+    "schema": "PASS",
+    "gold_resolution": "PASS",
+    "capacity": "PASS",
+    "deduplicated_pool_count": 96092,
+    "capacity_safety_warning": ["D2"],
+    "hard_domain_shortfalls": [],
+    "family_shortfalls": []
+  }
+}
