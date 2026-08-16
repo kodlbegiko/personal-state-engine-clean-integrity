@@ -1,9 +1,11 @@
 {
-  "candidate_v13_external_invocation_occurred": false,
+  "candidate_v13_external_invocation_occurred": true,
   "ev_a_v4": 1,
   "ev_b_v4": 0,
   "ev_c_v4": 0,
-  "formal_invocation_attempts": {},
+  "formal_invocation_attempts": {
+    "ev_a_v4": 1
+  },
   "formal_reruns": 0,
   "illegal_formal_reruns": false,
   "last_consumed_stage": "ev_a_v4",
