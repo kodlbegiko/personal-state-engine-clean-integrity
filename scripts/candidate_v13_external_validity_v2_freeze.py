@@ -27,6 +27,7 @@ FROZEN_FILES = [
     "scripts/candidate_v13_external_validity_v2_formal_sequence.py",
     "scripts/candidate_v13_external_validity_v2_formal_infrastructure_qualification.py",
     "scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py",
+    "scripts/candidate_v13_external_validity_v2_freeze.py",
     "docs/research/candidate-v13-external-validity-v2/source-contract-v2.json",
     "docs/research/candidate-v13-external-validity-v2/source-manifest-v2.json",
     "docs/research/candidate-v13-external-validity-v2/adapter-policy-v2.json",
