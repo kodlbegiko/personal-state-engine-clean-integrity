@@ -1,0 +1,32 @@
+{
+  "candidate_v13_imported_in_audit": false,
+  "candidate_v13_invoked_in_audit": false,
+  "checks": {
+    "authorization_valid": true,
+    "candidate_sha_match": true,
+    "consumed_stage_results_present": true,
+    "duplicate_invocation_attempts_absent": true,
+    "formal_reruns_zero": true,
+    "freeze_commit_ancestor": true,
+    "freeze_status": true,
+    "frozen_hashes_match": true,
+    "illegal_formal_reruns_false": true,
+    "launch_path_qa_pass": true,
+    "performance_driven_protocol_changes_zero": true,
+    "preauthorization_candidate_invoked_false": true,
+    "preregistration_locked": true,
+    "result_rewriting_absent": true,
+    "stage_order_valid": true
+  },
+  "duplicate_invocation_attempts": {},
+  "formal_exit_code": "2",
+  "freeze_commit": "385962f438b8d7d5a7c0814c7468b984b27c994d",
+  "frozen_hash_mismatches": [],
+  "missing_consumed_stage_results": [],
+  "research_integrity": "PASS",
+  "result_commit_counts": {
+    "ev_a_v4": 1
+  },
+  "schema_version": "candidate-v13-external-validity-v4-final-integrity-audit-v1",
+  "status": "PASS"
+}
