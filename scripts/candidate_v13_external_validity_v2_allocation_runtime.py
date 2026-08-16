@@ -10,7 +10,7 @@ any formal ledger is consumed or Candidate-v13 is imported.
 import hashlib
 import importlib.util
 import json
-from collections import Counter
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -20,10 +20,13 @@ FEASIBILITY_RESULT = ROOT / "results/candidate-v13-external-validity-v2/allocati
 
 
 def load_module():
-    spec = importlib.util.spec_from_file_location("pse_v2_allocation_feasibility_runtime", FEASIBILITY_SCRIPT)
+    name = "pse_v2_allocation_feasibility_runtime"
+    spec = importlib.util.spec_from_file_location(name, FEASIBILITY_SCRIPT)
     if spec is None or spec.loader is None:
         raise RuntimeError("cannot load allocation feasibility module")
     module = importlib.util.module_from_spec(spec)
+    # dataclasses inspects sys.modules[cls.__module__] while decorators execute.
+    sys.modules[name] = module
     spec.loader.exec_module(module)
     return module
 
@@ -145,7 +148,7 @@ def select_all() -> tuple[list[dict[str, Any]], dict[str, list[dict[str, Any]]],
 
 def aggregate_check() -> dict[str, Any]:
     _, stages, digests = select_all()
-    result = {
+    return {
         "schema_version": "candidate-v13-external-validity-v2-runtime-selection-check-v1",
         "candidate_v13_invoked": False,
         "formal_case_materialized": False,
@@ -155,4 +158,3 @@ def aggregate_check() -> dict[str, Any]:
         "cross_stage_selected_count": sum(len(v) for v in stages.values()),
         "status": "PASS",
     }
-    return result
