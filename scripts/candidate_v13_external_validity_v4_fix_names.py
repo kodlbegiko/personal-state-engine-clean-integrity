@@ -31,6 +31,13 @@ def main() -> int:
         normalized = text.replace("-v3.json", "-v4.json").replace("-v3.md", "-v4.md")
         normalized = normalized.replace("-v3-summary.json", "-v4-summary.json")
         normalized = normalized.replace("-v3-materialization-summary.json", "-v4-materialization-summary.json")
+        if stem == "freeze":
+            anchor = '        ROOT / "scripts/bootstrap_candidate_v13_external_validity_v4.py",\n'
+            self_entry = '        ROOT / "scripts/candidate_v13_external_validity_v4_fix_names.py",\n'
+            if self_entry not in normalized:
+                if anchor not in normalized:
+                    raise RuntimeError("could not bind namespace normalizer into v4 freeze manifest inputs")
+                normalized = normalized.replace(anchor, anchor + self_entry)
         if normalized != text:
             path.write_text(normalized, encoding="utf-8")
             changed.append(str(path.relative_to(ROOT)))
@@ -59,6 +66,9 @@ def main() -> int:
         ):
             if needle in text:
                 remaining.append(f"{path.name}:{needle}")
+    freeze_text = (ROOT / "scripts/candidate_v13_external_validity_v4_freeze.py").read_text(encoding="utf-8")
+    if 'ROOT / "scripts/candidate_v13_external_validity_v4_fix_names.py"' not in freeze_text:
+        remaining.append("freeze:namespace-normalizer-not-frozen")
     if remaining:
         raise RuntimeError("v4 artifact filename normalization incomplete: " + ", ".join(remaining))
     print(json.dumps({"status": "PASS", "changed": changed, "candidate_v13_imported": False, "candidate_v13_invoked": False}, sort_keys=True))
