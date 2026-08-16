@@ -1,0 +1,58 @@
+name: Candidate-v14 fresh external evaluation
+on:
+  push:
+    branches: [research/candidate-v14-fresh-external-validity-v1]
+    paths:
+      - 'results/candidate-v14-external-v1/evaluation-freeze.json'
+permissions:
+  contents: write
+jobs:
+  formal-evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Enforce branch-level one-shot lock before candidate import
+        shell: bash
+        run: |
+          git fetch origin research/candidate-v14-fresh-external-validity-v1
+          if git show origin/research/candidate-v14-fresh-external-validity-v1:results/candidate-v14-external-v1/formal-run.lock >/dev/null 2>&1; then
+            echo 'Formal evaluation already locked; refusing second candidate invocation.'
+            exit 78
+          fi
+      - name: Verify frozen hashes without invoking candidate
+        run: python - <<'PY'
+          import hashlib,json,pathlib
+          r=pathlib.Path('.')
+          f=json.load(open('results/candidate-v14-external-v1/evaluation-freeze.json'))
+          m=json.load(open('results/candidate-v14-external-v1/protected-manifest.json'))
+          H=lambda p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+          assert H('src/personal_state_engine/candidate_v14.py')==f['candidate_sha256']
+          assert H('docs/research/candidate-v14-external-v1/preregistration.json')==f['preregistration_sha256']
+          assert H('scripts/candidate_v14_external_v1_generate.py')==f['generator_sha256']
+          assert H('scripts/candidate_v14_external_v1_evaluate.py')==f['evaluation_script_sha256']
+          assert H('scripts/candidate_v14_external_v1_audit.py')==f['audit_script_sha256']
+          assert H('data/candidate-v14-external-v1/answer-key.json')==m['answer_key_sha256']
+          for name,digest in m['corpus_files_sha256'].items(): assert H('data/candidate-v14-external-v1/'+name)==digest
+          PY
+      - name: Formal one-shot candidate invocation
+        run: python scripts/candidate_v14_external_v1_evaluate.py
+      - name: Lock and independently audit
+        run: |
+          printf 'formal_invocation=1\nrun_id=%s\nrun_attempt=%s\n' "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > results/candidate-v14-external-v1/formal-run.lock
+          python scripts/candidate_v14_external_v1_audit.py
+          python - <<'PY'
+          import hashlib,json,os
+          p='results/candidate-v14-external-v1/invocation-ledger.json'
+          f=json.load(open('results/candidate-v14-external-v1/evaluation-freeze.json'))
+          json.dump({'maximum_invocations':1,'actual_invocations':1,'reruns':0,'workflow_run_id':os.environ['GITHUB_RUN_ID'],'workflow_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'candidate_sha256':f['candidate_sha256'],'protected_corpus_sha256':f['protected_corpus_sha256'],'start_commit':os.environ['GITHUB_SHA'],'candidate_modified_after_start':False},open(p,'w'),indent=2); open(p,'a').write('\n')
+          PY
+      - name: Commit immutable evidence artifacts
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add results/candidate-v14-external-v1
+          git commit -m 'candidate-v14 external-v1: record one-shot terminal evidence'
+          git push origin HEAD:research/candidate-v14-fresh-external-validity-v1

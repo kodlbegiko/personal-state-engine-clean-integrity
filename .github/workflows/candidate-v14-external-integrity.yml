@@ -1,0 +1,19 @@
+name: Candidate-v14 external integrity audit
+on:
+  push:
+    branches: [research/candidate-v14-fresh-external-validity-v1]
+    paths:
+      - 'results/candidate-v14-external-v1/**'
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Pre-run or post-run integrity checks
+        run: |
+          python -m py_compile scripts/candidate_v14_external_v1_generate.py scripts/candidate_v14_external_v1_evaluate.py scripts/candidate_v14_external_v1_audit.py
+          if [ -f results/candidate-v14-external-v1/terminal-summary.json ]; then python scripts/candidate_v14_external_v1_audit.py; fi

@@ -1,0 +1,29 @@
+name: Candidate-v14 external preregistration checks
+on:
+  push:
+    branches: [research/candidate-v14-fresh-external-validity-v1]
+    paths:
+      - 'docs/research/candidate-v14-external-v1/**'
+      - 'scripts/candidate_v14_external_v1_generate.py'
+      - 'scripts/candidate_v14_external_v1_evaluate.py'
+      - 'scripts/candidate_v14_external_v1_audit.py'
+      - 'results/candidate-v14-external-v1/seed-commitment.json'
+permissions:
+  contents: read
+jobs:
+  preregister:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m py_compile scripts/candidate_v14_external_v1_generate.py scripts/candidate_v14_external_v1_evaluate.py scripts/candidate_v14_external_v1_audit.py
+      - run: python - <<'PY'
+          import json
+          p=json.load(open('docs/research/candidate-v14-external-v1/preregistration.json'))
+          assert p['maximum_invocations']==1 and p['reruns_permitted']==0
+          assert p['target_case_count']>=1200 and p['no_evidence_count']/p['target_case_count']>=.25
+          assert not p['historical_protected_case_level_data_used']
+          assert not p['candidate_aware_generation']
+          print('PREREGISTRATION_CHECK=PASS')
+          PY

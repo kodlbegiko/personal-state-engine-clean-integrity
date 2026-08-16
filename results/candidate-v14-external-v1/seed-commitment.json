@@ -1,0 +1,1 @@
+{"schema_version":"candidate-v14-external-v1-seed-commitment-v1","commitment_scheme":"SHA256(seed || salt)","seed_commitment_sha256":"f856c9edb431e190274f641c6d6bf7728853ac6b9dc4e0da2dfef0d33442e726","seed_revealed":false,"candidate_results_seen_before_commitment":false}
