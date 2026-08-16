@@ -1,0 +1,5 @@
+SAFE_FORMAL_CONTINUATION_CHECK
+if_EV_B_terminal=NO_ACTION
+if_EV_B_pass_and_ledger_1_0=EXECUTE_EV_C_ONCE
+if_EV_C_already_consumed=NO_RERUN
+formal_freeze_immutable=true
