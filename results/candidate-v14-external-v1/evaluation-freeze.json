@@ -1,0 +1,18 @@
+{
+  "answer_key_sha256": "5f9000fc7cb5ec1f8cb84958bbe3d77531647f4110c784edd9b05e493a89fbcf",
+  "audit_script_sha256": "a13dbf646588567a7030179df8ca4ae3c4f70d4f476e9137dc9a7b8310941f7f",
+  "candidate_freeze_commit": "232030e67022e492991edb3e2c89ed96eef0c20a",
+  "candidate_results_seen_before_freeze": false,
+  "candidate_sha256": "f2e28fd11edb65fb1bca94a919b3c0b479221d010bd1a1d33dae40004e564e44",
+  "evaluation_script_sha256": "02d7273cf4f2f92eb25718b0a70370bda1c162d04bc3b2ae2e3aa03976a3d2b4",
+  "generator_sha256": "6819205df431e7409c3d2b9662c9555017c6859bafebe1ad51d316cf38372248",
+  "historical_external_v4_terminal_commit": "df5986f4a45adadfc04055b3b8c6f38b2704d134",
+  "historical_protected_payload_used": false,
+  "maximum_invocations": 1,
+  "parent_candidate": "Candidate-v14",
+  "preregistration_sha256": "92177088082686a4feaf24a8528af37b98888a2efb806fb838ab9ccffe1bdeb7",
+  "protected_corpus_sha256": "44c2ed33f6213dae1ba4e7fc78c6e7ada07237149d5e26cb7ce1e926a71f9cd8",
+  "reruns_permitted": 0,
+  "schema_version": "candidate-v14-external-v1-evaluation-freeze-v1",
+  "seed_commitment_sha256": "0391bdb1006563f0355256e00d31750887dbc57843a924835a021c6adff16333"
+}
