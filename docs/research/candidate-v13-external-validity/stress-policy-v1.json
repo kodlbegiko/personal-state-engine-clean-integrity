@@ -1,0 +1,19 @@
+{
+  "schema_version": "candidate-v13-external-validity-stress-policy-v1",
+  "status": "LOCKED_PRE_FEASIBILITY_AND_PRE_CANDIDATE_EXTERNAL_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "refines": "allocation-policy-v4.json::ev_c_stress",
+  "reason": "A strict +0.01 EV-C-minus-EV-B rule is mathematically impossible when an eligibility dimension is already saturated or nearly saturated in EV-B. This refinement is made before feasibility execution and before any Candidate-v13 external output. It does not change stage sizes, source shares, domain totals, family totals, answerability totals, performance thresholds, gold mapping, or formal one-shot rules.",
+  "dimensions": ["N3", "N4", "N5", "N6", "N7", "N9", "N11", "multi_clause", "implicit_relation", "no_evidence_ambiguity"],
+  "classification": {
+    "testable": "After a feasible EV-B selection is obtained but before Candidate-v13 execution, the dimension has >=100 eligible remaining EV-C-reserve bases and EV-B selected proportion <=0.98.",
+    "saturated_not_testable": "EV-B selected proportion >0.98, so a guaranteed +0.01 increase would exceed or nearly exceed probability 1.0. EV-C must not have a lower proportion, but the dimension does not count toward the required increase set.",
+    "insufficient_reserve_not_testable": "Fewer than 100 eligible remaining EV-C-reserve bases. Report as coverage limitation; do not use it to claim EV-C is harder."
+  },
+  "testable_dimension_rule": "EV-C selected proportion must exceed EV-B by >=0.01.",
+  "saturated_dimension_rule": "EV-C selected proportion must be >= EV-B proportion; report saturation explicitly and do not claim a measured increase.",
+  "minimum_testable_dimensions": 4,
+  "global_success_rule": "At least four stress dimensions must be testable and must each satisfy +0.01. Every saturated dimension must be non-decreasing. Dimensions with insufficient reserve are reported but do not rescue failure of a testable dimension.",
+  "selection_order": "Unchanged: EV-B tie-breaks toward lower stress_count and EV-C toward higher stress_count within otherwise feasible source/domain/family assignments. No model output participates."
+}
