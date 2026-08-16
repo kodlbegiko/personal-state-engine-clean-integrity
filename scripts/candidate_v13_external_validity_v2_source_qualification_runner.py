@@ -26,6 +26,14 @@ def load_qualifier():
     return module
 
 
+def strict_evermem_text(msg: dict[str, Any]) -> str:
+    """Use the schema-manifest-verified EverMemBench dialogues field only."""
+    value = msg.get("dialogue")
+    if not isinstance(value, str) or not value.strip():
+        raise RuntimeError("EverMem verified 'dialogue' field missing or empty")
+    return value.strip()
+
+
 def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[str, Any]) -> dict[str, Any]:
     api = HfApi()
     repo = mod.SOURCE_CONTRACT["reserve_sources"]["rhelm"]["dataset"]
@@ -174,6 +182,7 @@ def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[s
 
 def main() -> int:
     mod = load_qualifier()
+    mod.extract_message_text = strict_evermem_text
     mod.rhelm = lambda legacy, bases, schema_manifest: fast_rhelm(mod, legacy, bases, schema_manifest)
     return int(mod.main())
 
