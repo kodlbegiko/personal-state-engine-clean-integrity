@@ -1,0 +1,52 @@
+{
+  "schema_version": "candidate-v13-external-validity-feasibility-algorithm-v1",
+  "status": "LOCKED_PRE_CANDIDATE_EXTERNAL_EXECUTION",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "inputs": [
+    "adapter-policy-v3.json",
+    "allocation-policy-v4.json",
+    "source-activation-v3.json",
+    "evermembench-dynamic-qualification.json"
+  ],
+  "query_deduplication": "Before any stage allocation, keep exactly one base case for each normalized query over all five sources. Winner is minimum SHA256(source_id || base_item_id). This is source/model independent.",
+  "sgd_capacity_reservoir": "For feasibility computation only, retain at most 6000 normalized-query-unique SGD carry-over bases per D3/D4/D5, ordered by SHA256('sgd-feasibility-reservoir' || domain || base_item_id). This is a conservative undercount relative to the full source.",
+  "n9_capacity_reservoir": "Evaluate lexical-decoy eligibility only within at most 1600 deterministic bases per domain ordered by SHA256('n9-feasibility-reservoir' || domain || source || base_item_id). Undiscovered full-corpus N9 candidates remain ineligible, so this can only undercount N9 capacity.",
+  "transport_variants": {
+    "count": 32,
+    "variant_order": "0..31",
+    "edge_order": "For variant v, source-domain transport edges are ordered by SHA256('transport' || stage || v || source || domain). Source/sink capacities and domain/source totals never change.",
+    "selection": "Use the first variant whose transport flow saturates the stage and whose resulting source-domain cell quotas admit a full family b-matching. If none of 32 variants succeeds, stage feasibility FAILS."
+  },
+  "family_b_matching": {
+    "cell_case_order_ev_a": "SHA256('family' || stage || base_item_id)",
+    "cell_case_order_ev_b": "ascending stress_count, then SHA256('family' || stage || base_item_id)",
+    "cell_case_order_ev_c": "descending stress_count, then SHA256('family' || stage || base_item_id)",
+    "family_edge_order": "N1..N12 lexical",
+    "case_capacity": 1,
+    "primary_family_count_per_selected_case": 1
+  },
+  "stage_sequence": ["ev_a", "ev_b", "ev_c"],
+  "removal_after_stage": "Selected base IDs and their normalized queries are removed ephemerally before the next stage. Only an aggregate SHA256 digest of selected IDs may be persisted before formal freeze.",
+  "no_evidence_assignment": "After stage selection, N10-primary cases are no-evidence; remaining quota is filled by SHA256('no-evidence' || stage || base_item_id) among non-N10 selected cases. No query text is changed.",
+  "stress_count_dimensions": ["N3", "N4", "N5", "N6", "N7", "N9", "N11", "multi_clause", "implicit_relation"],
+  "stress_postcheck": "Apply allocation-policy-v4 EV-C stress rule. A failed required >=0.01 EV-C-vs-EV-B delta is a pre-formal evaluation-design blocker; it does not authorize threshold/source/family/domain changes after Candidate-v13 execution.",
+  "persisted_output": [
+    "source and domain capacity counts",
+    "family eligibility counts",
+    "chosen transport variant index",
+    "source-domain flow matrix",
+    "family primary counts",
+    "answerability counts",
+    "stress proportions",
+    "selected-base digest",
+    "overall feasibility PASS/FAIL"
+  ],
+  "forbidden_output_before_formal_freeze": [
+    "individual EV-B base IDs",
+    "individual EV-C base IDs",
+    "formal queries",
+    "formal memories",
+    "formal gold IDs"
+  ]
+}
