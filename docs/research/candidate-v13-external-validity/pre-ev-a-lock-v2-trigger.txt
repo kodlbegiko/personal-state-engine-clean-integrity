@@ -1,0 +1,5 @@
+FINAL_PRE_EV_A_LOCK_V2_AUTHORIZED
+reason=ADD_NON_OVERWRITING_EV_A_WRAPPER_ONLY
+candidate_v13_external_performance_observed=false
+EV_A_dry_run=PASS_NO_EXECUTION
+source_gold_allocation_rules_unchanged=true
