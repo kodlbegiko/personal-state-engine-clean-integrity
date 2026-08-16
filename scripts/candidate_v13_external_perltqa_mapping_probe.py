@@ -3,8 +3,8 @@ from __future__ import annotations
 """Schema-only PerLTQA mapping probe.
 
 No Candidate-v13 imports/calls. No natural-language text is written to output.
-The output contains only counts, field names, structural paths and reference IDs
-needed to implement a deterministic Reference Memory -> memory-record mapping.
+The output contains only aggregate counts, field names, structural paths and
+reference-ID shapes needed to establish a deterministic source-native mapping.
 """
 
 import hashlib
@@ -24,7 +24,7 @@ REV = "8d9e19868e239740ef701e603ec205cd581f221b"
 
 def download(rel: str, dst: Path) -> str:
     url = f"https://raw.githubusercontent.com/{REPO}/{REV}/{rel}"
-    req = urllib.request.Request(url, headers={"User-Agent": "pse-perltqa-mapping-probe/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "pse-perltqa-mapping-probe/2.0"})
     h = hashlib.sha256()
     with urllib.request.urlopen(req, timeout=300) as src, dst.open("wb") as out:
         while True:
@@ -48,11 +48,19 @@ def walk_qa(node: Any, path: tuple[Any, ...] = ()) -> Iterator[tuple[tuple[Any, 
             yield from walk_qa(v, path + (i,))
 
 
+def refs(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(x) for x in value]
+    if isinstance(value, str):
+        return [value]
+    return []
+
+
 def type_schema(value: Any, depth: int = 0) -> Any:
     if depth >= 3:
         return type(value).__name__
     if isinstance(value, dict):
-        result = {"type": "dict", "keys": sorted(map(str, value.keys()))[:80]}
+        result: dict[str, Any] = {"type": "dict", "keys": sorted(map(str, value.keys()))[:80]}
         child = next(iter(value.values()), None)
         if child is not None:
             result["sample_value_schema"] = type_schema(child, depth + 1)
@@ -66,14 +74,33 @@ def type_schema(value: Any, depth: int = 0) -> Any:
 
 
 def ref_shape(value: Any) -> str:
-    s = str(value)
-    return re.sub(r"\d+", "N", s)
+    return re.sub(r"\d+", "N", str(value))
+
+
+def strip_leading_namespace(ref: str) -> str:
+    """Drop exactly the first numeric namespace before the first underscore.
+
+    Dialogue '#turn' suffixes are retained. This is tested only as a source
+    structural hypothesis; the probe reports uniqueness rather than assuming it.
+    """
+    parts = ref.split("_", 1)
+    if len(parts) == 2 and parts[0].isdigit():
+        return parts[1]
+    return ref
+
+
+def key_suffix_index(container: Any) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = defaultdict(list)
+    if isinstance(container, dict):
+        for key in container:
+            out[strip_leading_namespace(str(key))].append(str(key))
+    return out
 
 
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="perltqa-map-") as td:
-        td = Path(td)
+    with tempfile.TemporaryDirectory(prefix="perltqa-map-") as td_raw:
+        td = Path(td_raw)
         mem_path = td / "mem.json"
         qa_path = td / "qa.json"
         mem_sha = download("Dataset/en_v2/perltmem_en_v2.json", mem_path)
@@ -85,25 +112,16 @@ def main() -> int:
     path_depths = Counter(len(path) for path, _ in records)
     section_counts: Counter[str] = Counter()
     ref_shapes: Counter[str] = Counter()
-    ref_examples: dict[str, list[str]] = defaultdict(list)
-    path_examples: dict[str, list[list[Any]]] = defaultdict(list)
     for path, record in records:
         section = next((str(x) for x in reversed(path) if str(x) in {"profile", "social_relationship", "events", "dialogues"}), "UNKNOWN")
         section_counts[section] += 1
-        ref = record.get("Reference Memory")
-        shape = ref_shape(ref)
-        ref_shapes[shape] += 1
-        if len(ref_examples[section]) < 20:
-            ref_examples[section].append(str(ref))
-        if len(path_examples[section]) < 8:
-            safe_path = [x if isinstance(x, int) else str(x) for x in path]
-            path_examples[section].append(safe_path)
+        ref_shapes[ref_shape(record.get("Reference Memory"))] += 1
 
     memory_characters = list(mem.keys()) if isinstance(mem, dict) else []
     qa_characters: set[str] = set()
     for path, _ in records:
         for x in path:
-            if isinstance(x, str) and x in mem:
+            if isinstance(x, str) and isinstance(mem, dict) and x in mem:
                 qa_characters.add(x)
                 break
 
@@ -115,35 +133,67 @@ def main() -> int:
             if isinstance(char, dict) and section in char:
                 section_schemas[section] = type_schema(char[section])
 
-    # Pure structural resolution candidates: interpret underscore-delimited
-    # numeric components only against container indexes/keys. Report rates, not text.
-    resolution = Counter()
+    # Evaluate source-structural mapping hypotheses without exposing QA text.
+    mapping = Counter()
+    section_mapping: dict[str, Counter[str]] = defaultdict(Counter)
+    namespace_pair_counts: Counter[str] = Counter()
+    suffix_collision_counts: Counter[str] = Counter()
+    reference_cardinality = Counter()
+
     for path, record in records:
-        char_name = next((x for x in path if isinstance(x, str) and x in mem), None)
+        char_name = next((x for x in path if isinstance(x, str) and isinstance(mem, dict) and x in mem), None)
         section = next((str(x) for x in reversed(path) if str(x) in {"profile", "social_relationship", "events", "dialogues"}), None)
-        ref = str(record.get("Reference Memory", ""))
-        parts = ref.split("_")
+        rlist = refs(record.get("Reference Memory"))
+        reference_cardinality[len(rlist)] += 1
         if not char_name or not section:
-            resolution["missing_character_or_section"] += 1
+            mapping["missing_character_or_section"] += 1
+            section_mapping[section or "UNKNOWN"]["missing_character_or_section"] += 1
             continue
         target = mem[char_name].get(section) if isinstance(mem[char_name], dict) else None
         if section == "profile":
-            # profile references may name a field or use numeric conventions.
-            if ref in target if isinstance(target, dict) else False:
-                resolution["profile_direct_key"] += 1
+            if isinstance(target, dict) and rlist and all(ref in target for ref in rlist):
+                mapping["profile_direct_exact"] += 1
+                section_mapping[section]["direct_exact"] += 1
             else:
-                resolution["profile_needs_rule"] += 1
+                mapping["profile_unresolved"] += 1
+                section_mapping[section]["unresolved"] += 1
             continue
-        last = parts[-1] if parts else ref
-        if isinstance(target, list) and last.isdigit() and 0 <= int(last) < len(target):
-            resolution["last_component_list_index"] += 1
-        elif isinstance(target, dict) and last in target:
-            resolution["last_component_dict_key"] += 1
+        if not isinstance(target, dict) or not rlist:
+            mapping["nonprofile_unresolved_structure"] += 1
+            section_mapping[section]["unresolved_structure"] += 1
+            continue
+
+        exact_ok = all(ref in target for ref in rlist)
+        if exact_ok:
+            mapping["nonprofile_exact_same_character"] += 1
+            section_mapping[section]["exact_same_character"] += 1
+            continue
+
+        suffix_idx = key_suffix_index(target)
+        suffix_matches = [suffix_idx.get(strip_leading_namespace(ref), []) for ref in rlist]
+        unique_suffix_ok = all(len(matches) == 1 for matches in suffix_matches)
+        if unique_suffix_ok:
+            mapping["nonprofile_unique_suffix_same_character"] += 1
+            section_mapping[section]["unique_suffix_same_character"] += 1
+            for ref, matches in zip(rlist, suffix_matches):
+                src_prefix = ref.split("_", 1)[0] if "_" in ref else "NO_PREFIX"
+                dst = matches[0]
+                dst_prefix = dst.split("_", 1)[0] if "_" in dst else "NO_PREFIX"
+                namespace_pair_counts[f"{src_prefix}->{dst_prefix}"] += 1
+            continue
+
+        if any(len(matches) > 1 for matches in suffix_matches):
+            mapping["nonprofile_suffix_collision"] += 1
+            section_mapping[section]["suffix_collision"] += 1
+            for matches in suffix_matches:
+                if len(matches) > 1:
+                    suffix_collision_counts[str(len(matches))] += 1
         else:
-            resolution["needs_rule"] += 1
+            mapping["nonprofile_suffix_missing"] += 1
+            section_mapping[section]["suffix_missing"] += 1
 
     result = {
-        "schema_version": "perltqa-mapping-probe-v1",
+        "schema_version": "perltqa-mapping-probe-v2",
         "candidate_v13_invoked": False,
         "formal_case_materialized": False,
         "repository": REPO,
@@ -153,13 +203,16 @@ def main() -> int:
         "qa_path_depth_counts": dict(sorted(path_depths.items())),
         "qa_section_counts": dict(sorted(section_counts.items())),
         "reference_id_shape_counts": dict(sorted(ref_shapes.items(), key=lambda kv: (-kv[1], kv[0]))),
-        "reference_id_examples_by_section": dict(ref_examples),
-        "qa_path_examples_by_section": dict(path_examples),
+        "reference_cardinality_counts": dict(sorted(reference_cardinality.items())),
         "memory_character_count": len(memory_characters),
         "qa_character_count_resolved_against_memory": len(qa_characters),
         "first_common_character_redacted": bool(first_common),
         "memory_section_schemas": section_schemas,
-        "simple_structural_resolution_counts": dict(sorted(resolution.items())),
+        "mapping_hypothesis_counts": dict(sorted(mapping.items())),
+        "mapping_by_section": {k: dict(sorted(v.items())) for k, v in sorted(section_mapping.items())},
+        "namespace_prefix_pair_counts_for_unique_suffix_matches": dict(sorted(namespace_pair_counts.items())),
+        "suffix_collision_multiplicity_counts": dict(sorted(suffix_collision_counts.items())),
+        "mapping_rule_under_test": "For non-profile records only: if exact Reference Memory key is absent in the QA character's section, strip exactly the first numeric namespace component from both reference and candidate memory keys and require a unique suffix match within that same character and section. No text/content matching is used.",
     }
     OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
