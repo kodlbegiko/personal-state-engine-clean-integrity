@@ -1,0 +1,30 @@
+name: Candidate v13 external-validity converge terminal
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/converge-terminal-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-ev-c-one-shot
+  cancel-in-progress: false
+
+jobs:
+  converge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Converge safely to existing or authorized terminal state
+        run: python scripts/candidate_v13_external_converge_terminal.py
