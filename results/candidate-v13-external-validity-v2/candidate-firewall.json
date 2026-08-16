@@ -6,8 +6,18 @@
   "candidate_v13_imported": false,
   "candidate_v13_invoked": false,
   "checked_scripts": [
+    "scripts/candidate_v13_external_validity_v2_allocation_feasibility.py",
+    "scripts/candidate_v13_external_validity_v2_allocation_runtime.py",
+    "scripts/candidate_v13_external_validity_v2_evaluator.py",
+    "scripts/candidate_v13_external_validity_v2_finalize_infrastructure.py",
+    "scripts/candidate_v13_external_validity_v2_formal_infrastructure_qualification.py",
+    "scripts/candidate_v13_external_validity_v2_formal_materializer.py",
+    "scripts/candidate_v13_external_validity_v2_formal_runner.py",
+    "scripts/candidate_v13_external_validity_v2_formal_sequence.py",
+    "scripts/candidate_v13_external_validity_v2_freeze.py",
     "scripts/candidate_v13_external_validity_v2_integrity_qualification.py",
     "scripts/candidate_v13_external_validity_v2_integrity_runner.py",
+    "scripts/candidate_v13_external_validity_v2_materializer_dry_run.py",
     "scripts/candidate_v13_external_validity_v2_source_qualification.py",
     "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py",
     "scripts/candidate_v13_external_validity_v2_strict_contamination.py"

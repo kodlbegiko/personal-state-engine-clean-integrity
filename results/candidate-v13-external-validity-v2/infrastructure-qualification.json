@@ -1,139 +1,22 @@
 {
-  "allocation_summary": {
-    "cross_stage_base_reuse_count": 0,
-    "cross_stage_selected_count": 3744,
-    "stage_selection_digests": {
-      "ev_a_v2": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc",
-      "ev_b_v2": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab",
-      "ev_c_v2": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
-    },
-    "status": "PASS"
-  },
   "candidate_v13_invoked": false,
-  "capacity_safety_warnings": [
-    "D2"
-  ],
-  "contamination_summary": {
-    "material_overlap_count": 0,
-    "methods": [
-      "exact-normalized-overlap",
-      "token-5gram-jaccard>=0.85",
-      "project-synthetic-namespace-token-overlap",
-      "normalized-skeleton-similarity>=0.92"
-    ],
-    "status": "PASS"
-  },
-  "dedup_summary": {
-    "post_dedup": 96092,
-    "pre_dedup": 135829,
-    "status": "PASS"
-  },
-  "determinism_summary": {
-    "canonical_hash": "4f5e86249b8cd590d778902bb2572022e308bdb1345f75641f5a041b2d046f8c",
-    "pool_case_count": 96092,
-    "status": "PASS"
-  },
-  "domain_capacity": {
-    "D1": {
-      "eligible": 3738,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 7.987179487179487,
-      "status": "PASS_PREFERRED"
-    },
-    "D2": {
-      "eligible": 568,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 1.2136752136752136,
-      "status": "PASS_REQUIRED_ONLY"
-    },
-    "D3": {
-      "eligible": 16700,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 35.68376068376068,
-      "status": "PASS_PREFERRED"
-    },
-    "D4": {
-      "eligible": 25825,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 55.18162393162393,
-      "status": "PASS_PREFERRED"
-    },
-    "D5": {
-      "eligible": 45445,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 97.10470085470085,
-      "status": "PASS_PREFERRED"
-    },
-    "D6": {
-      "eligible": 723,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 1.544871794871795,
-      "status": "PASS_MINIMUM_SAFETY"
-    },
-    "D7": {
-      "eligible": 2192,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 4.683760683760684,
-      "status": "PASS_PREFERRED"
-    },
-    "D8": {
-      "eligible": 901,
-      "minimum_safety_target": 702,
-      "preferred_safety_target": 936,
-      "required": 468,
-      "safety_ratio": 1.9252136752136753,
-      "status": "PASS_MINIMUM_SAFETY"
-    }
-  },
-  "formal_authorized": true,
+  "formal_authorized": false,
   "formal_case_materialized": false,
   "gates": {
-    "ALLOCATION_FEASIBILITY_PASS": true,
     "CANDIDATE_FIREWALL_PASS": true,
     "CAPACITY_PASS": true,
-    "CONTAMINATION_PASS": true,
+    "CONTAMINATION_PASS": false,
     "DEDUP_PASS": true,
-    "DETERMINISM_PASS": true,
+    "DETERMINISM_PASS": false,
     "DOMAIN_MAPPING_PASS": true,
     "GOLD_RESOLUTION_PASS": true,
     "LICENSE_PASS": true,
-    "MATERIALIZATION_DRY_RUN_PASS": true,
+    "MATERIALIZATION_DRY_RUN_PASS": false,
     "PARSER_PASS": true,
     "SCHEMA_PASS": true,
     "SOURCE_ACCESS_PASS": true
   },
-  "materialization_dry_run": {
-    "memory_count": 5,
-    "non_gold_distractor_count": 4,
-    "runtime_projection_fields": [
-      "memories",
-      "query"
-    ],
-    "status": "PASS"
-  },
-  "schema_version": "candidate-v13-external-validity-v2-infrastructure-qualification-v4",
-  "source_revision_actual": {
-    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
-    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5"
-  },
-  "source_revision_expected": {
-    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
-    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5"
-  },
-  "source_revision_match": true,
-  "status": "PASS"
+  "note": "Contamination, full determinism, and synthetic materialization dry-run are separate pre-freeze gates.",
+  "schema_version": "candidate-v13-external-validity-v2-infrastructure-qualification-v1",
+  "status": "IN_PROGRESS"
 }

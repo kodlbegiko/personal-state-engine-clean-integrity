@@ -46,6 +46,7 @@
     "top_level_type": "Dataset"
   },
   "rhelm:qa-jsonl": {
+    "pinned_revision": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
     "qa_file_count": 10,
     "record_keys": [
       "answer",
