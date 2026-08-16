@@ -1,0 +1,160 @@
+{
+  "schema_version": "candidate-v13-external-validity-source-manifest-v1",
+  "status": "SOURCE_DISCOVERY_LOCKED_PRE_MATERIALIZATION",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v13-naturalistic-external-validity",
+  "preregistration_commit": "f0b894967d1968cb8cd994242d89ffe87cdc1de9",
+  "preregistration_lock_commit": "7c429cdf1236ff1ae16f5d2cac3a28e6168ab0f2",
+  "retrieval_date_utc": "2026-08-16",
+  "selection_rule": "Sources were selected before any Candidate-v13 external-validity performance observation, using only preregistered license/provenance, natural-language independence, structured-gold, reproducibility, domain-coverage, and source-family diversity criteria.",
+  "formal_primary_sources": [
+    {
+      "source_id": "personamem-v2",
+      "source_name": "PersonaMem-v2",
+      "public_identifier": "bowen-upenn/PersonaMem-v2",
+      "code_repository": "bowen-upenn/PersonaMem-v2",
+      "code_revision": "dd52429f83ced4394be46c3849186a423942b2a5",
+      "dataset_identifier": "huggingface:bowen-upenn/PersonaMem-v2",
+      "dataset_revision": "PENDING_SOURCE_AUDIT_PIN",
+      "license": "CC BY 4.0",
+      "license_scope": "Hugging Face dataset card",
+      "natural_language_origin": "project-independent simulated long-form user/chatbot histories with implicit preferences; eligible under preregistration's independent synthetic-user-history allowance",
+      "source_native_gold": [
+        "user query",
+        "target answer",
+        "user preference",
+        "related conversation snippets",
+        "persona/query metadata"
+      ],
+      "planned_domain_roles": ["D1", "D2", "D6", "D7", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N5", "N6", "N8", "N10", "N11", "N12"],
+      "formal_raw_text_redistribution": "DO_NOT_COMMIT_RAW_CORPUS; regenerate from pinned public source during evaluation",
+      "source_hash": "PENDING_SOURCE_AUDIT",
+      "local_transformation_hash": "PENDING_IMPLEMENTATION",
+      "original_split": "benchmark/text/benchmark.csv plus referenced text histories",
+      "number_sampled": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "exclusion_reasons": [],
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "longmemeval-cleaned",
+      "source_name": "LongMemEval Cleaned",
+      "public_identifier": "xiaowu0162/longmemeval-cleaned",
+      "code_repository": "xiaowu0162/LongMemEval",
+      "code_revision": "9e0b455f4ef0e2ab8f2e582289761153549043fc",
+      "dataset_identifier": "huggingface:xiaowu0162/longmemeval-cleaned",
+      "dataset_revision": "PENDING_SOURCE_AUDIT_PIN",
+      "license": "MIT",
+      "license_scope": "Hugging Face dataset card",
+      "natural_language_origin": "project-independent long-term-memory benchmark with timestamped chat histories",
+      "source_native_gold": [
+        "question",
+        "answer",
+        "question type",
+        "answer session IDs",
+        "turn-level has_answer labels",
+        "session timestamps"
+      ],
+      "planned_domain_roles": ["D1", "D2", "D3", "D6", "D7", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N5", "N6", "N7", "N8", "N10", "N11", "N12"],
+      "formal_raw_text_redistribution": "DO_NOT_COMMIT_RAW_CORPUS; regenerate from pinned public source during evaluation",
+      "source_hash": "PENDING_SOURCE_AUDIT",
+      "local_transformation_hash": "PENDING_IMPLEMENTATION",
+      "original_split": "longmemeval_s_cleaned and/or oracle as determined by pre-performance source audit",
+      "number_sampled": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "exclusion_reasons": [],
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "sgd",
+      "source_name": "Schema-Guided Dialogue",
+      "public_identifier": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "code_repository": "google-research-datasets/dstc8-schema-guided-dialogue",
+      "code_revision": "e852981ae34990f4358979625854259302feaa78",
+      "dataset_identifier": "github:google-research-datasets/dstc8-schema-guided-dialogue",
+      "dataset_revision": "e852981ae34990f4358979625854259302feaa78",
+      "license": "CC BY-SA 4.0",
+      "license_scope": "SGD and SGD-X datasets",
+      "natural_language_origin": "project-independent annotated multi-domain task-oriented human/assistant conversations",
+      "source_native_gold": [
+        "turn utterance",
+        "frames",
+        "slots",
+        "actions",
+        "dialogue state",
+        "service/schema"
+      ],
+      "planned_domain_roles": ["D3", "D4", "D5"],
+      "planned_structural_roles": ["N1", "N2", "N3", "N4", "N5", "N9", "N10", "N11", "N12"],
+      "formal_raw_text_redistribution": "DO_NOT_COMMIT_RAW_CORPUS; regenerate from pinned public source during evaluation",
+      "source_hash": "PENDING_SOURCE_AUDIT",
+      "local_transformation_hash": "PENDING_IMPLEMENTATION",
+      "original_split": "train/dev/test annotations subject to deterministic source audit",
+      "number_sampled": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "exclusion_reasons": [],
+      "contamination_audit": "PENDING"
+    },
+    {
+      "source_id": "taskmaster-1",
+      "source_name": "Taskmaster-1 2019",
+      "public_identifier": "google-research-datasets/Taskmaster/TM-1-2019",
+      "code_repository": "google-research-datasets/Taskmaster",
+      "code_revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+      "dataset_identifier": "github:google-research-datasets/Taskmaster/TM-1-2019",
+      "dataset_revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+      "license": "CC BY 4.0",
+      "license_scope": "Taskmaster-1 2019",
+      "natural_language_origin": "project-independent spoken and written Wizard-of-Oz/task-oriented dialogues with source-native API argument annotations",
+      "source_native_gold": [
+        "utterance",
+        "speaker",
+        "segment annotations/API arguments",
+        "conversation domain"
+      ],
+      "planned_domain_roles": ["D3", "D4", "D5", "D8"],
+      "planned_structural_roles": ["N1", "N2", "N3", "N4", "N5", "N9", "N10", "N11", "N12"],
+      "formal_raw_text_redistribution": "DO_NOT_COMMIT_RAW_CORPUS; regenerate from pinned public source during evaluation",
+      "source_hash": "PENDING_SOURCE_AUDIT",
+      "local_transformation_hash": "PENDING_IMPLEMENTATION",
+      "original_split": "TM-1-2019 self-dialogs and Wizard-of-Oz dialogues as mechanically eligible",
+      "number_sampled": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "stage_allocation": "PENDING_DETERMINISTIC_ELIGIBILITY_AUDIT",
+      "exclusion_reasons": [],
+      "contamination_audit": "PENDING"
+    }
+  ],
+  "reserve_sources": [
+    {
+      "source_id": "abcd",
+      "source_name": "Action-Based Conversations Dataset",
+      "public_identifier": "asappresearch/abcd",
+      "code_revision": "6b8700ce67c6b37b062dd7a60abc76d7ef832a97",
+      "license": "MIT",
+      "reason_reserve_only": "Good service-domain structured gold but primary pool already covers D3-D5; may be activated only if a preregistered domain/family cell lacks eligible source volume, never based on Candidate-v13 performance."
+    },
+    {
+      "source_id": "locomo",
+      "source_name": "LoCoMo",
+      "public_identifier": "snap-research/locomo",
+      "code_revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "license": "CC BY-NC 4.0",
+      "reason_reserve_only": "Strong evidence-ID QA structure but noncommercial license adds avoidable downstream reuse constraints; activate only for zero-cost noncommercial research coverage if primary sources cannot fill a preregistered cell."
+    }
+  ],
+  "source_family_constraints": {
+    "minimum_formal_families": 3,
+    "maximum_share_per_family_per_formal_stage": 0.45,
+    "activation_of_reserve_source": "Only objective pre-performance eligibility/coverage shortfall may activate a reserve source. Candidate-v13 outputs must not be observed before the decision."
+  },
+  "formal_materialization_status": {
+    "raw_external_corpora_downloaded_into_project": false,
+    "ev_a_materialized": false,
+    "ev_b_materialized": false,
+    "ev_c_materialized": false,
+    "candidate_v13_external_performance_observed": false
+  },
+  "next_required_gate": "Implement deterministic source audit that pins dataset revisions/hashes and proves sufficient eligible coverage before any Candidate-v13 EV-A observation."
+}
