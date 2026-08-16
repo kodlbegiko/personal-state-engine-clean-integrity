@@ -1,0 +1,7 @@
+EV_B_FROZEN_MATERIALIZATION_AUTHORIZED
+formal_freeze_required=true
+formal_ledger_ev_b_must_equal=0
+candidate_v13_execution=false
+expected_total=1440
+expected_answerable=864
+expected_no_evidence=576
