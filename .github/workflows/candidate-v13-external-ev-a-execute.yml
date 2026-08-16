@@ -1,0 +1,69 @@
+name: Candidate v13 external-validity EV-A execution
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/ev-a-execute-trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  ev-a:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify final pre-EV-A immutable lock
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('.')
+          lock=json.loads(Path('docs/research/candidate-v13-external-validity/pre-ev-a-lock-v2.json').read_text())
+          assert lock['status']=='FINAL_LOCK_BEFORE_FIRST_EXTERNAL_CANDIDATE_V13_EXECUTION'
+          assert lock['candidate_v13_external_performance_observed'] is False
+          for rel,expected in lock['files_sha256'].items():
+              p=root/rel
+              assert p.exists(), rel
+              actual=hashlib.sha256(p.read_bytes()).hexdigest()
+              assert actual==expected,(rel,actual,expected)
+          assert lock['files_sha256']['src/personal_state_engine/candidate_v13.py']==lock['candidate_v13_expected_sha256']
+          PY
+      - name: Execute EV-A external calibration audit
+        id: execute
+        continue-on-error: true
+        run: python scripts/candidate_v13_external_ev_a_execute.py
+      - name: Persist EV-A aggregate evidence
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          test -f results/candidate-v13-external-validity/ev-a-summary.json
+          test -f results/candidate-v13-external-validity/ev-a-integrity.json
+          git add results/candidate-v13-external-validity/ev-a-summary.json results/candidate-v13-external-validity/ev-a-integrity.json
+          git commit -m "candidate-v13 external validity: record EV-A external calibration audit" || true
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Enforce EV-A evaluator integrity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          i=json.loads(Path('results/candidate-v13-external-validity/ev-a-integrity.json').read_text())
+          s=json.loads(Path('results/candidate-v13-external-validity/ev-a-summary.json').read_text())
+          assert i['candidate_v13_external_performance_observed'] is True
+          assert i['all_integrity_pass'] is True, i
+          assert i['candidate_source_violations']==0
+          assert i['determinism_violations']==0
+          assert i['metadata_firewall_violations']==0
+          assert s['case_counts']['total']==384
+          assert s['algorithmic_performance_used_for_source_or_rule_change'] is False
+          PY
