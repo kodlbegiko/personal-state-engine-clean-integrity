@@ -1,0 +1,7 @@
+EV_B_ONE_SHOT_FORMAL_EXECUTION_AUTHORIZED
+formal_freeze_required=true
+ev_b_materialization_digest_required=true
+formal_ledger_ev_b_must_equal=0
+formal_ledger_ev_c_must_equal=0
+consume_ledger_before_candidate_call=true
+rerun_forbidden_after_execution_start=true
