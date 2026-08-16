@@ -17,7 +17,7 @@ concurrency:
 jobs:
   source-probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,30 +46,43 @@ jobs:
         run: python scripts/candidate_v13_external_perltqa_mapping_probe.py
       - name: Run PerLTQA Memory Anchors probe
         run: python scripts/candidate_v13_external_perltqa_anchor_probe.py
+      - name: Run LoCoMo evidence-ID probe
+        run: python scripts/candidate_v13_external_locomo_probe.py
+      - name: Run SGD carry-over probe
+        run: python scripts/candidate_v13_external_sgd_carryover_probe.py
       - name: Verify probes did not execute Candidate-v13 or materialize formal cases
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          source = json.loads(Path('results/candidate-v13-external-validity/source-probe.json').read_text())
-          mapping = json.loads(Path('results/candidate-v13-external-validity/perltqa-mapping-probe.json').read_text())
-          anchor = json.loads(Path('results/candidate-v13-external-validity/perltqa-anchor-probe.json').read_text())
-          assert source['status'] == 'PASS', source
-          assert source['candidate_v13_invoked'] is False
-          assert source['formal_case_materialized'] is False
-          assert source['candidate_import_guard']['pass'] is True
-          assert mapping['candidate_v13_invoked'] is False
-          assert mapping['formal_case_materialized'] is False
-          assert mapping['versions']['en_v2']['canonical_qa_records'] == 8593
-          assert mapping['versions']['en_v1']['canonical_qa_records'] == 8593
-          assert anchor['candidate_v13_invoked'] is False
-          assert anchor['formal_case_materialized'] is False
-          assert anchor['aggregate_counts']['canonical_qa_records'] == 8593
+          paths = {
+              'source': 'results/candidate-v13-external-validity/source-probe.json',
+              'mapping': 'results/candidate-v13-external-validity/perltqa-mapping-probe.json',
+              'anchor': 'results/candidate-v13-external-validity/perltqa-anchor-probe.json',
+              'locomo': 'results/candidate-v13-external-validity/locomo-probe.json',
+              'sgd': 'results/candidate-v13-external-validity/sgd-carryover-probe.json',
+          }
+          r = {k: json.loads(Path(v).read_text()) for k, v in paths.items()}
+          assert r['source']['status'] == 'PASS', r['source']
+          assert r['source']['candidate_import_guard']['pass'] is True
+          for name, value in r.items():
+              assert value['candidate_v13_invoked'] is False, name
+              assert value['formal_case_materialized'] is False, name
+          assert r['mapping']['versions']['en_v2']['canonical_qa_records'] == 8593
+          assert r['mapping']['versions']['en_v1']['canonical_qa_records'] == 8593
+          assert r['anchor']['aggregate_counts']['canonical_qa_records'] == 8593
+          assert r['locomo']['aggregate_counts']['samples'] == 10
+          assert r['sgd']['aggregate_counts']['dialogues'] > 0
           PY
       - name: Commit pre-performance source evidence
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add results/candidate-v13-external-validity/source-probe.json results/candidate-v13-external-validity/perltqa-mapping-probe.json results/candidate-v13-external-validity/perltqa-anchor-probe.json
+          git add \
+            results/candidate-v13-external-validity/source-probe.json \
+            results/candidate-v13-external-validity/perltqa-mapping-probe.json \
+            results/candidate-v13-external-validity/perltqa-anchor-probe.json \
+            results/candidate-v13-external-validity/locomo-probe.json \
+            results/candidate-v13-external-validity/sgd-carryover-probe.json
           git commit -m "candidate-v13 external validity: record pre-performance source probes"
           git push origin HEAD:research/candidate-v13-naturalistic-external-validity
