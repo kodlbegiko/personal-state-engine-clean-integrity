@@ -1,0 +1,17 @@
+{
+  "schema_version": "candidate-v13-external-validity-anti-collapse-policy-v1",
+  "status": "LOCKED_BEFORE_EV_B_FORMAL_EXECUTION",
+  "purpose": "Operationalize the preregistered anti-collapse checks without changing any performance threshold.",
+  "definitions": {
+    "universal_retrieval": "Every formal case returns at least one Candidate-v13 ID.",
+    "universal_abstention": "Every formal case returns no Candidate-v13 ID.",
+    "near_universal_retrieval": "At least 98% of formal cases return at least one Candidate-v13 ID.",
+    "near_universal_abstention": "At least 98% of formal cases return no Candidate-v13 ID.",
+    "single_class_prediction_collapse": "Either near-universal retrieval or near-universal abstention.",
+    "structural_family_collapse": "Any N1-N12 combined decision accuracy below 0.70.",
+    "domain_specific_collapse": "Any D1-D8 combined decision accuracy below 0.70."
+  },
+  "combined_decision_accuracy": "For a group, numerator = answerable cases with gold at rank 1 + no-evidence cases with correct abstention; denominator = all cases in that group.",
+  "pass_rule": "No universal retrieval, no universal abstention, no single-class prediction collapse, no structural-family collapse, and no domain-specific collapse.",
+  "relationship_to_preregistered_thresholds": "This policy only implements the preregistered collapse diagnostics. EV-B structural floors and EV-B/EV-C aggregate thresholds remain independently binding and are not weakened by this policy."
+}
