@@ -1,0 +1,15 @@
+{
+  "abstention_accuracy": 1.0,
+  "answerable_count": 1120,
+  "answerable_recall": 0.011607142857142858,
+  "case_count": 1600,
+  "eligible_rank1_accuracy": 0.010714285714285714,
+  "false_abstention_rate": 0.9883928571428572,
+  "false_retrieval_rate": 0.0,
+  "mrr": 0.011160714285714286,
+  "no_evidence_count": 480,
+  "r1": 0.010714285714285714,
+  "r3": 0.011607142857142858,
+  "r5": 0.011607142857142858,
+  "retrieve_rate": 0.008125
+}

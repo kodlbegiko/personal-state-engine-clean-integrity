@@ -1,7 +1,7 @@
 {
-  "status": "STARTED",
+  "status": "COMPLETED",
   "maximum_invocations": 1,
-  "actual_invocations": 0,
+  "actual_invocations": 1,
   "reruns": 0,
   "workflow_run_id": "31933670909",
   "workflow_run_attempt": "1",
