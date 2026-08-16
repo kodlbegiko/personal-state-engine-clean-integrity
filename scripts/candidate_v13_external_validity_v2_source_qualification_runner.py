@@ -27,7 +27,6 @@ def load_qualifier():
 
 
 def strict_evermem_text(msg: dict[str, Any]) -> str:
-    """Use the schema-manifest-verified EverMemBench dialogues field only."""
     value = msg.get("dialogue")
     if not isinstance(value, str) or not value.strip():
         raise RuntimeError("EverMem verified 'dialogue' field missing or empty")
@@ -35,13 +34,6 @@ def strict_evermem_text(msg: dict[str, Any]) -> str:
 
 
 class NonEmptyDialogueDatasetView:
-    """Normalize only schema-native missing group values.
-
-    HF Arrow represents absent struct members as ``None`` and some source rows
-    contain explicit empty lists. Both mean "this group is absent". Any other
-    non-list value is preserved so the strict downstream parser fails loudly.
-    """
-
     def __init__(self, dataset: Any):
         self._dataset = dataset
         self.column_names = dataset.column_names
@@ -65,25 +57,45 @@ class NonEmptyDialogueDatasetView:
 
 def bind_schema_verified_evermem(mod: Any) -> None:
     original_load_dataset = mod.load_dataset
+    original_api = mod.HfApi
+    repo = mod.SOURCE_CONTRACT["supplemental_sources"]["evermembench-dynamic"]["dataset"]
+    pinned = mod.SOURCE_CONTRACT["supplemental_sources"]["evermembench-dynamic"].get("revision")
+    if not pinned:
+        raise RuntimeError("EverMemBench qualified revision is not pinned")
+
+    class PinnedApi(original_api):
+        def dataset_info(self, repo_id: str, *args: Any, **kwargs: Any):
+            if repo_id == repo:
+                kwargs["revision"] = pinned
+            info = super().dataset_info(repo_id, *args, **kwargs)
+            if repo_id == repo and info.sha != pinned:
+                raise RuntimeError(f"EverMemBench revision mismatch: {info.sha} != {pinned}")
+            return info
 
     def load_dataset_verified(*args: Any, **kwargs: Any):
+        if args and args[0] == repo:
+            kwargs["revision"] = pinned
         dataset = original_load_dataset(*args, **kwargs)
         config = args[1] if len(args) > 1 else kwargs.get("name")
         if config == "dialogues":
             return NonEmptyDialogueDatasetView(dataset)
         return dataset
 
+    mod.HfApi = PinnedApi
     mod.load_dataset = load_dataset_verified
     mod.extract_message_text = strict_evermem_text
 
 
 def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[str, Any]) -> dict[str, Any]:
     api = HfApi()
-    repo = mod.SOURCE_CONTRACT["reserve_sources"]["rhelm"]["dataset"]
-    info = api.dataset_info(repo)
-    rev = info.sha
+    cfg = mod.SOURCE_CONTRACT["reserve_sources"]["rhelm"]
+    repo = cfg["dataset"]
+    rev = cfg.get("revision")
     if not rev:
-        raise RuntimeError("RHELM revision missing")
+        raise RuntimeError("RHELM qualified revision is not pinned")
+    info = api.dataset_info(repo, revision=rev)
+    if info.sha != rev:
+        raise RuntimeError(f"RHELM revision mismatch: {info.sha} != {rev}")
     card = info.card_data or {}
     license_value = str(card.get("license") or "").casefold()
 
@@ -123,6 +135,7 @@ def fast_rhelm(mod, legacy, bases: list[dict[str, Any]], schema_manifest: dict[s
             "qa_file_count": len(qa_files),
             "repository_file_count": len(repo_files),
             "source_resolution_mode": "immutable-repository-file-index",
+            "pinned_revision": rev,
         }
 
         eligible = Counter()
