@@ -52,15 +52,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          tmpdir="$(mktemp -d)"
-          cp results/candidate-v13-external-validity-v2/formal-infrastructure-qualification.json "$tmpdir/result.json"
-          git fetch origin research/candidate-v13-external-validity-infra-v2
-          git reset --hard origin/research/candidate-v13-external-validity-infra-v2
-          cp "$tmpdir/result.json" results/candidate-v13-external-validity-v2/formal-infrastructure-qualification.json
-          git add results/candidate-v13-external-validity-v2/formal-infrastructure-qualification.json
-          if ! git diff --cached --quiet; then
-            git commit -m "candidate-v13 external validity v2: persist formal infrastructure qualification evidence [skip ci]"
-            git push origin HEAD:research/candidate-v13-external-validity-infra-v2
+          result="results/candidate-v13-external-validity-v2/formal-infrastructure-qualification.json"
+          if [ -f "$result" ]; then
+            tmpdir="$(mktemp -d)"
+            cp "$result" "$tmpdir/result.json"
+            git fetch origin research/candidate-v13-external-validity-infra-v2
+            git reset --hard origin/research/candidate-v13-external-validity-infra-v2
+            mkdir -p results/candidate-v13-external-validity-v2
+            cp "$tmpdir/result.json" "$result"
+            git add "$result"
+            if ! git diff --cached --quiet; then
+              git commit -m "candidate-v13 external validity v2: persist formal infrastructure qualification evidence [skip ci]"
+              git push origin HEAD:research/candidate-v13-external-validity-infra-v2
+            fi
+          else
+            echo "qualification result absent; enforcement step will fail closed"
           fi
 
       - name: Enforce fail-closed formal infrastructure status
