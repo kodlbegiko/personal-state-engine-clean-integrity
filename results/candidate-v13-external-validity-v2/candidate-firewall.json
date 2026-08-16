@@ -8,6 +8,7 @@
   "checked_scripts": [
     "scripts/candidate_v13_external_validity_v2_integrity_qualification.py",
     "scripts/candidate_v13_external_validity_v2_integrity_runner.py",
+    "scripts/candidate_v13_external_validity_v2_materializer_dry_run.py",
     "scripts/candidate_v13_external_validity_v2_source_qualification.py",
     "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py",
     "scripts/candidate_v13_external_validity_v2_strict_contamination.py"
