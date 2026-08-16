@@ -57,7 +57,11 @@ jobs:
           assert source['candidate_import_guard']['pass'] is True
           assert mapping['candidate_v13_invoked'] is False
           assert mapping['formal_case_materialized'] is False
-          assert mapping['canonical_qa_records'] == 8593
+          if mapping.get('schema_version') == 'perltqa-reference-integrity-probe-v3':
+              assert mapping['versions']['en_v2']['canonical_qa_records'] == 8593
+              assert mapping['versions']['en_v1']['canonical_qa_records'] > 0
+          else:
+              assert mapping['canonical_qa_records'] == 8593
           PY
       - name: Commit pre-performance source evidence
         run: |
