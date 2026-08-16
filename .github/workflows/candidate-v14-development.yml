@@ -52,3 +52,11 @@ jobs:
           tests/test_candidate_v14_negation.py
           tests/test_candidate_v14_determinism.py
           tests/test_candidate_v14_protected_firewall.py
+      - name: Upload pre-freeze evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-v14-pre-freeze-evidence
+          path: |
+            data/candidate-v14-development/manifest.json
+            results/candidate-v14/
