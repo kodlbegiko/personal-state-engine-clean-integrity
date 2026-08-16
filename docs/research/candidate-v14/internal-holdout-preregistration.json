@@ -1,0 +1,13 @@
+{
+  "schema_version": "candidate-v14-internal-holdout-preregistration-v1",
+  "selected_architecture": "B — Two-Stage Retrieve → Verify",
+  "holdout_path": "data/candidate-v14-development/untouched-internal-holdout.json",
+  "holdout_case_count": 384,
+  "holdout_sha256": "6b8a8040aa25248eb41c1c2b8293e34ae943fab6707aab55688742c7ba04d0a9",
+  "maximum_invocations": 1,
+  "reruns_permitted": 0,
+  "post_holdout_tuning_permitted": false,
+  "qualification_gates_source": "docs/research/candidate-v14/selection-policy.json",
+  "terminal_logic": {"integrity_fail": "CANDIDATE_V14_DEVELOPMENT_INFRASTRUCTURE_BLOCKED", "holdout_gate_fail": "CANDIDATE_V14_INTERNAL_FAIL", "all_gates_pass": "CANDIDATE_V14_INTERNAL_QUALIFIED"},
+  "external_validity_claim_permitted": false
+}
