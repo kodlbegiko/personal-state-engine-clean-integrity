@@ -5,12 +5,17 @@ on:
     branches:
       - research/candidate-v13-external-validity-infra-v2
     paths:
+      - 'scripts/candidate_v13_external_validity_v2_source_qualification.py'
+      - 'scripts/candidate_v13_external_validity_v2_source_qualification_runner.py'
+      - 'scripts/candidate_v13_external_validity_v2_allocation_feasibility.py'
       - 'scripts/candidate_v13_external_validity_v2_allocation_runtime.py'
       - 'scripts/candidate_v13_external_validity_v2_formal_materializer.py'
       - 'scripts/candidate_v13_external_validity_v2_evaluator.py'
       - 'scripts/candidate_v13_external_validity_v2_formal_runner.py'
       - 'scripts/candidate_v13_external_validity_v2_formal_sequence.py'
       - 'scripts/candidate_v13_external_validity_v2_formal_infrastructure_qualification.py'
+      - 'docs/research/candidate-v13-external-validity-v2/source-contract-v2.json'
+      - 'docs/research/candidate-v13-external-validity-v2/allocation-policy-v2.json'
       - 'docs/research/candidate-v13-external-validity-v2/evaluation-policy-v2.json'
       - 'docs/research/candidate-v13-external-validity-v2/materializer-contract-v2.json'
       - '.github/workflows/candidate-v13-external-validity-v2-formal-infrastructure-qualification.yml'
