@@ -1,5 +1,5 @@
 {
-  "schema_version": "candidate-v13-external-validity-v2-materializer-contract-v1",
+  "schema_version": "candidate-v13-external-validity-v2-materializer-contract-v2",
   "status": "CANDIDATE_BLIND_PRE_FREEZE_DEVELOPMENT",
   "candidate_v13_invoked": false,
   "formal_case_materialized": false,
@@ -16,15 +16,17 @@
     "gold_ids": "evaluator-only exact source-native IDs after adapter mapping",
     "minimum_memory_count": 5,
     "minimum_non_gold_distractors": 4,
+    "maximum_memory_count": 80,
+    "maximum_memory_rule": "retain every runtime gold memory first, then fill remaining slots only with seeded source-native distractors; no Candidate-dependent hard-negative mining",
     "unique_memory_ids": true,
     "gold_ids_subset_of_memory_ids": true,
     "deterministic_ordering": "seeded hash ordering independent of Candidate output"
   },
   "source_context_rules": {
-    "personamem-v2": "gold related_conversation_snippet plus deterministic same-persona/same-topic and cross-topic source-native snippets from the pinned benchmark pool; no Candidate-driven hard-negative mining",
-    "longmemeval-cleaned": "use pinned haystack_sessions as memory candidates; answer_session_ids are gold",
-    "locomo": "use the same LoCoMo sample conversation messages as candidate memories; source evidence dia_ids are gold",
-    "sgd-carryover": "use prior user/system dialogue turns from the same pinned dialogue/service as candidates; source-native carried-value support turn is gold",
+    "personamem-v2": "gold related_conversation_snippet plus deterministic same-persona/same-topic first, then same-domain source-native snippets from the pinned benchmark pool",
+    "longmemeval-cleaned": "use pinned haystack_sessions as first-choice candidate memories; answer_session_ids are gold; if source record supplies fewer than five usable memories, fill only with deterministic same-domain LongMemEval source-native sessions",
+    "locomo": "use the same LoCoMo sample conversation messages as first-choice candidate memories; source evidence dia_ids are gold; if fewer than five remain, fill only with deterministic same-domain LoCoMo source-native turns",
+    "sgd-carryover": "use prior user/system dialogue turns from the same pinned dialogue as first-choice candidates; source-native carried-value support turn is gold; if fewer than five remain, fill only with deterministic same-domain SGD source-native turns",
     "evermembench-dynamic": "use messages from the same pinned topic/date context plus deterministic neighboring source-native groups/dates; QAR.R exact references are gold",
     "rhelm": "reserve only; use pinned source files/turns for the same persona and deterministic same-persona distractors; supporting_evidence exact references are gold"
   },
@@ -43,6 +45,7 @@
     "must_validate": [
       "minimum_memory_count",
       "minimum_non_gold_distractors",
+      "maximum_memory_count",
       "unique_memory_ids",
       "gold_ids_subset_of_memory_ids",
       "deterministic_ordering",
