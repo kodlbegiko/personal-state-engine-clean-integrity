@@ -1,0 +1,6 @@
+CONTAMINATION_FIREWALL_AUTHORIZED_PRE_EXTERNAL_PERFORMANCE
+joint_feasibility=JOINT_FEASIBILITY_PASS
+synthetic_runtime_contract=PASS
+candidate_v13_external_performance_observed=false
+formal_case_materialized=false
+contamination_policy=contamination-policy-v1.json
