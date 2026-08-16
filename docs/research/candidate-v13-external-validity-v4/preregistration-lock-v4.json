@@ -1,1 +1,518 @@
-{}
+{
+  "adapter_versions": {
+    "evermembench-dynamic": "candidate-v13-external-validity-v4-pinned-adapter-v1",
+    "locomo": "candidate-v13-external-validity-v4-pinned-adapter-v1",
+    "longmemeval-cleaned": "candidate-v13-external-validity-v4-pinned-adapter-v1",
+    "personamem-v2": "candidate-v13-external-validity-v4-pinned-adapter-v1",
+    "rhelm": "candidate-v13-external-validity-v4-pinned-adapter-v1",
+    "sgd-carryover": "candidate-v13-external-validity-v4-pinned-adapter-v1"
+  },
+  "answerability_quotas": {
+    "ev_a_v4": {
+      "answerable": 240,
+      "no_evidence": 144
+    },
+    "ev_b_v4": {
+      "answerable": 864,
+      "no_evidence": 576
+    },
+    "ev_c_v4": {
+      "answerable": 1152,
+      "no_evidence": 768
+    }
+  },
+  "anti_collapse_rules": {
+    "catastrophic_family_accuracy": 0.7,
+    "near_universal_abstention_rate": 0.97,
+    "near_universal_retrieval_rate": 0.97,
+    "rule": "Any universal/near-universal decision collapse or any primary family accuracy below 0.70 is an automatic stage failure."
+  },
+  "benchmark_sizes": {
+    "ev_a_v4": 384,
+    "ev_b_v4": 1440,
+    "ev_c_v4": 1920
+  },
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "candidate_v13_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "distractor_rule": "same-subject-relation -> same-subject -> same-domain; deterministic cyclic offset keyed by stage seed + target + tier",
+  "evaluation_metrics_and_thresholds": {
+    "acceptance_basis": "point_estimates",
+    "anti_collapse": {
+      "catastrophic_family_accuracy": 0.7,
+      "near_universal_abstention_rate": 0.97,
+      "near_universal_retrieval_rate": 0.97,
+      "rule": "Any universal/near-universal decision collapse or any primary family accuracy below 0.70 is an automatic stage failure."
+    },
+    "candidate_v13_external_performance_observed": false,
+    "common_integrity_gates": {
+      "anti_collapse": "PASS",
+      "candidate_source_invariant": "PASS",
+      "contamination_audit": "PASS",
+      "determinism": "PASS",
+      "frozen_hash_audit": "PASS",
+      "invalid_rate_max": 0.02,
+      "metadata_firewall": "PASS"
+    },
+    "ev_a_v4": {
+      "aggregate": {
+        "abstention_accuracy_min": 0.85,
+        "answerable_recall_min": 0.9,
+        "eligible_rank1_accuracy_min": 0.78,
+        "false_abstention_rate_max": 0.1,
+        "false_retrieval_rate_max": 0.12,
+        "mrr_min": 0.8,
+        "r_at_1_min": 0.75,
+        "r_at_3_min": 0.85,
+        "r_at_5_min": 0.9
+      },
+      "case_count": 384,
+      "domain_floors": {
+        "abstention_accuracy_min": 0.7,
+        "answerable_recall_min": 0.75,
+        "case_count": 48,
+        "false_retrieval_rate_max": 0.2,
+        "r_at_1_min": 0.6
+      },
+      "family_accuracy_floors": {
+        "N1": 0.7,
+        "N10": 0.7,
+        "N11": 0.7,
+        "N12": 0.7,
+        "N2": 0.7,
+        "N3": 0.7,
+        "N4": 0.7,
+        "N5": 0.7,
+        "N6": 0.7,
+        "N7": 0.7,
+        "N8": 0.7,
+        "N9": 0.7
+      },
+      "purpose": "small one-shot external shakedown after full infrastructure freeze; no tuning or protocol changes are allowed after observation"
+    },
+    "ev_b_v4": {
+      "aggregate": {
+        "abstention_accuracy_min": 0.93,
+        "answerable_recall_min": 0.94,
+        "eligible_rank1_accuracy_min": 0.9,
+        "false_abstention_rate_max": 0.06,
+        "false_retrieval_rate_max": 0.05,
+        "mrr_min": 0.9,
+        "r_at_1_min": 0.88,
+        "r_at_3_min": 0.94,
+        "r_at_5_min": 0.96
+      },
+      "case_count": 1440,
+      "domain_floors": {
+        "abstention_accuracy_min": 0.85,
+        "answerable_recall_min": 0.88,
+        "case_count": 180,
+        "false_retrieval_rate_max": 0.1,
+        "r_at_1_min": 0.8
+      },
+      "family_accuracy_floors": {
+        "N1": 0.92,
+        "N10": 0.92,
+        "N11": 0.82,
+        "N12": 0.85,
+        "N2": 0.88,
+        "N3": 0.85,
+        "N4": 0.85,
+        "N5": 0.85,
+        "N6": 0.88,
+        "N7": 0.88,
+        "N8": 0.88,
+        "N9": 0.85
+      },
+      "purpose": "one-shot protected naturalistic external evaluation"
+    },
+    "ev_c_v4": {
+      "aggregate": {
+        "abstention_accuracy_min": 0.92,
+        "answerable_recall_min": 0.92,
+        "eligible_rank1_accuracy_min": 0.88,
+        "false_abstention_rate_max": 0.08,
+        "false_retrieval_rate_max": 0.06,
+        "mrr_min": 0.88,
+        "r_at_1_min": 0.85,
+        "r_at_3_min": 0.92,
+        "r_at_5_min": 0.95
+      },
+      "case_count": 1920,
+      "domain_floors": {
+        "abstention_accuracy_min": 0.82,
+        "answerable_recall_min": 0.85,
+        "case_count": 240,
+        "false_retrieval_rate_max": 0.12,
+        "r_at_1_min": 0.76
+      },
+      "family_accuracy_floors": {
+        "N1": 0.89,
+        "N10": 0.89,
+        "N11": 0.79,
+        "N12": 0.82,
+        "N2": 0.85,
+        "N3": 0.82,
+        "N4": 0.82,
+        "N5": 0.82,
+        "N6": 0.85,
+        "N7": 0.85,
+        "N8": 0.85,
+        "N9": 0.82
+      },
+      "purpose": "one-shot final confirmatory naturalistic external evaluation"
+    },
+    "performance_driven_metric_changes": 0,
+    "reporting": {
+      "performance_driven_primary_metric_addition": "FORBIDDEN",
+      "required": [
+        "overall_metrics",
+        "domain_metrics",
+        "family_metrics",
+        "rank_metrics",
+        "coverage",
+        "invalid_rate",
+        "bootstrap_confidence_interval",
+        "error_counts",
+        "dataset_source_distribution",
+        "integrity"
+      ]
+    },
+    "schema_version": "candidate-v13-external-validity-v4-evaluation-policy-v1",
+    "status": "CANDIDATE_BLIND_PRE_FREEZE",
+    "uncertainty": {
+      "bootstrap_iterations": 10000,
+      "bootstrap_seed": 91357,
+      "mrr_interval": "percentile_bootstrap_95",
+      "proportion_intervals": "wilson_95"
+    }
+  },
+  "evaluation_policy_sha256": "f0c07d7cacd4b71501ca8f5134174a647ed4afac0bd8fa54e882ee7e7b65c0b8",
+  "evaluator_sha256": "feb7b4e5cc75e916572f9cd36c9cd34b19bae55076825e9f2aa62ed6e007c1e8",
+  "family_quotas": {
+    "ev_a_v4": {
+      "N1": 32,
+      "N10": 32,
+      "N11": 32,
+      "N12": 32,
+      "N2": 32,
+      "N3": 32,
+      "N4": 32,
+      "N5": 32,
+      "N6": 32,
+      "N7": 32,
+      "N8": 32,
+      "N9": 32
+    },
+    "ev_b_v4": {
+      "N1": 120,
+      "N10": 120,
+      "N11": 120,
+      "N12": 120,
+      "N2": 120,
+      "N3": 120,
+      "N4": 120,
+      "N5": 120,
+      "N6": 120,
+      "N7": 120,
+      "N8": 120,
+      "N9": 120
+    },
+    "ev_c_v4": {
+      "N1": 160,
+      "N10": 160,
+      "N11": 160,
+      "N12": 160,
+      "N2": 160,
+      "N3": 160,
+      "N4": 160,
+      "N5": 160,
+      "N6": 160,
+      "N7": 160,
+      "N8": 160,
+      "N9": 160
+    }
+  },
+  "final_integrity_audit_sha256": "c92a713b90522d440613a2244fd584edb539ab53db20278ac88fd051f534445f",
+  "formal_ledger_initial_state": {
+    "ev_a_v4": 0,
+    "ev_b_v4": 0,
+    "ev_c_v4": 0,
+    "formal_reruns": 0
+  },
+  "formal_runner_sha256": "07275da8ee4bf295289d71d0bb18d4b6270acebb56362f23ce8e93f6edfe5a07",
+  "freeze_logic_sha256": "25535a6e22c0b8c3e25eca715f56638ef1f99bb00a4a066600d17b6d1d2705cf",
+  "gold_cardinality_handling": "retain all source-native gold; no post-allocation case drop; runtime target max(5,gold_count+4); global ceiling 100",
+  "launch_path_qa": "PASS",
+  "launch_path_qa_sha256": "094ef6a52dda2d08baa56f296a6d26c0655ce8bfd8bcd6903179b21302056e0c",
+  "materialization_digests": {
+    "ev_a_v4": "9159df00f2a09b51b2d3706c9e0f9a8c0676d22c2cc917ef20381dcdabc93363",
+    "ev_b_v4": "d75dcaef2df6540277ecefede2ac9d6132e4091e8cba52fc81149e71e65a796d",
+    "ev_c_v4": "fe1febe360d9e4b7c1a3ceb6abbf4c65212f8cba0c9cf611d5ceafa8c4b7717f"
+  },
+  "materializer_sha256": "3637dea4decf1dbc76777b2ae1725fb7f8f2a262f2ae7c6c22942fe66d127f36",
+  "memory_policy": {
+    "candidate_policies_compared": {
+      "A_GLOBAL_FIXED_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "feasible_cap": 100,
+        "runtime_cost": "highest; fills every case toward one global ceiling",
+        "selected": false
+      },
+      "B_SOURCE_AWARE_FIXED_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "runtime_cost": "lower than A but source-dependent fixed padding creates avoidable context distortion",
+        "selected": false,
+        "source_caps": {
+          "evermembench-dynamic": 100,
+          "locomo": 23,
+          "longmemeval-cleaned": 10,
+          "personamem-v2": 5,
+          "rhelm": 6,
+          "sgd-carryover": 10
+        }
+      },
+      "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP": {
+        "complete_gold_retention": true,
+        "deterministic": true,
+        "runtime_cost": "lowest of the complete-gold policies; exactly gold_count + four distractors with minimum context five",
+        "selected": true,
+        "source_fairness": "same structural rule for every source and case"
+      }
+    },
+    "candidate_v13_external_performance_observed": false,
+    "eligibility_exclusion_for_gold_cardinality": false,
+    "empirical_basis": {
+      "qualified_pool_gold_count_gt_80": 3,
+      "qualified_pool_gold_count_max": 96,
+      "secondary_payload_risk_over_1mb": 0,
+      "v2_selected_gold_count_gt_80": 2,
+      "v2_selected_gold_count_max": 96
+    },
+    "global_infrastructure_safety_ceiling": 100,
+    "minimum_context": 5,
+    "minimum_non_gold_distractors": 4,
+    "no_evidence_rule": "withhold all target gold but preserve the same structural runtime target derived from source-native gold_count",
+    "performance_driven_protocol_changes": 0,
+    "runtime_memory_target_rule": "max(minimum_context, gold_count + minimum_non_gold_distractors)",
+    "schema_version": "candidate-v13-external-validity-v4-runtime-memory-policy-v1",
+    "selected_policy": "C_GOLD_PRESERVING_ADAPTIVE_STRUCTURAL_CAP",
+    "selection_reason": "Policy C preserves every qualified source-native gold set including max gold_count=96, guarantees at least four distractors under a candidate-blind global ceiling of 100, avoids arbitrary case dropping, and minimizes unnecessary runtime context compared with fixed-cap alternatives.",
+    "status": "CANDIDATE_BLIND_PRE_FREEZE"
+  },
+  "orchestration_contract_sha256": "1d877bcaa44b406f584048b52d5ae226b85b5a8387778a5cf4f80faeed925ffc",
+  "orchestration_workflow_sha256": "17c3814b7d3993d266a2e851cf65fb7a0b3f6ad09240f348dea5220605e15df2",
+  "performance_driven_protocol_changes": 0,
+  "preregistration_markdown_sha256": "3e3c04a104b11d5efd9c1aa03c61ef26e0c4a786272193a09691cfb19fe724aa",
+  "rerun_prohibition": true,
+  "reserve_source_activation_rule": "candidate-blind infrastructure-only conditions before freeze; never Candidate performance",
+  "runtime_payload_digests": {
+    "ev_a_v4": "3b98bd3079f6e9ddcdf75276b6606e0c6b5dc379ab5c0fb7debac7a1eed54199",
+    "ev_b_v4": "71fd3e01058f2f78d58e1874fba8af7bb0821d77b2072ca03932e23ea7c14290",
+    "ev_c_v4": "4defa0e24ff5d8c96c988357df1f64872acd3b7e77841f6c23487faa46053176"
+  },
+  "schema_version": "candidate-v13-external-validity-v4-preregistration-lock-v3",
+  "seeds": {
+    "ev_a_v4": 84101,
+    "ev_b_v4": 84102,
+    "ev_c_v4": 84103
+  },
+  "selection_digests": {
+    "ev_a_v4": "f214ab349961a3e3667b85d14ff3aedee92e1414991511e92a5c6a6bc3332163",
+    "ev_b_v4": "af7a7967ded0e1d01226e007c88fb84cf26a77f792cb7d11c54d3dc1fc768dd8",
+    "ev_c_v4": "a0206447ddfac39b1ecc8f6921ae4613883e8de81f0805e1512f966f46bb30ec"
+  },
+  "source_domain_quotas": {
+    "ev_a_v4": {
+      "D1": {
+        "locomo": 10,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 37
+      },
+      "D2": {
+        "locomo": 6,
+        "longmemeval-cleaned": 2,
+        "personamem-v2": 40
+      },
+      "D3": {
+        "locomo": 1,
+        "longmemeval-cleaned": 6,
+        "sgd-carryover": 41
+      },
+      "D4": {
+        "longmemeval-cleaned": 6,
+        "personamem-v2": 2,
+        "sgd-carryover": 40
+      },
+      "D5": {
+        "locomo": 3,
+        "longmemeval-cleaned": 2,
+        "personamem-v2": 6,
+        "sgd-carryover": 37
+      },
+      "D6": {
+        "evermembench-dynamic": 28,
+        "locomo": 2,
+        "longmemeval-cleaned": 3,
+        "personamem-v2": 15
+      },
+      "D7": {
+        "evermembench-dynamic": 26,
+        "locomo": 11,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 10
+      },
+      "D8": {
+        "locomo": 41,
+        "longmemeval-cleaned": 1,
+        "personamem-v2": 6
+      }
+    },
+    "ev_b_v4": {
+      "D1": {
+        "locomo": 39,
+        "longmemeval-cleaned": 4,
+        "personamem-v2": 137
+      },
+      "D2": {
+        "locomo": 25,
+        "longmemeval-cleaned": 9,
+        "personamem-v2": 146
+      },
+      "D3": {
+        "locomo": 3,
+        "longmemeval-cleaned": 23,
+        "sgd-carryover": 154
+      },
+      "D4": {
+        "locomo": 2,
+        "longmemeval-cleaned": 23,
+        "personamem-v2": 5,
+        "sgd-carryover": 150
+      },
+      "D5": {
+        "locomo": 11,
+        "longmemeval-cleaned": 12,
+        "personamem-v2": 23,
+        "sgd-carryover": 134
+      },
+      "D6": {
+        "evermembench-dynamic": 100,
+        "locomo": 10,
+        "longmemeval-cleaned": 13,
+        "personamem-v2": 57
+      },
+      "D7": {
+        "evermembench-dynamic": 96,
+        "locomo": 38,
+        "longmemeval-cleaned": 8,
+        "personamem-v2": 38
+      },
+      "D8": {
+        "locomo": 154,
+        "longmemeval-cleaned": 3,
+        "personamem-v2": 23
+      }
+    },
+    "ev_c_v4": {
+      "D1": {
+        "locomo": 51,
+        "longmemeval-cleaned": 6,
+        "personamem-v2": 183
+      },
+      "D2": {
+        "locomo": 32,
+        "longmemeval-cleaned": 14,
+        "personamem-v2": 194
+      },
+      "D3": {
+        "locomo": 4,
+        "longmemeval-cleaned": 31,
+        "sgd-carryover": 205
+      },
+      "D4": {
+        "locomo": 2,
+        "longmemeval-cleaned": 31,
+        "personamem-v2": 7,
+        "sgd-carryover": 200
+      },
+      "D5": {
+        "locomo": 16,
+        "longmemeval-cleaned": 14,
+        "personamem-v2": 31,
+        "sgd-carryover": 179
+      },
+      "D6": {
+        "evermembench-dynamic": 134,
+        "locomo": 12,
+        "longmemeval-cleaned": 16,
+        "personamem-v2": 78
+      },
+      "D7": {
+        "evermembench-dynamic": 128,
+        "locomo": 51,
+        "longmemeval-cleaned": 9,
+        "personamem-v2": 52
+      },
+      "D8": {
+        "locomo": 205,
+        "longmemeval-cleaned": 4,
+        "personamem-v2": 31
+      }
+    }
+  },
+  "source_manifest_sha256": "6eb0fc398374e646443dc41932155aee6e0cc651b12cdb7e5a0ae18ac054289f",
+  "source_revisions": {
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "locomo": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+    "longmemeval-cleaned": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+    "personamem-v2": "b7b42b78917157afed063527a1c959e98f6109f2",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+    "sgd-carryover": "e852981ae34990f4358979625854259302feaa78"
+  },
+  "stage_order": [
+    "ev_a_v4",
+    "ev_b_v4",
+    "ev_c_v4"
+  ],
+  "stage_seeds": {
+    "ev_a_v4": 84101,
+    "ev_b_v4": 84102,
+    "ev_c_v4": 84103
+  },
+  "status": "LOCKED_PRE_FREEZE",
+  "stop_rules": [
+    "EV-A FAIL stops sequence",
+    "EV-B FAIL stops sequence",
+    "EV-C is final confirmatory gate",
+    "freeze mismatch -> INVALID",
+    "ledger inconsistency or consumed ledger without result -> INVALID",
+    "frozen infrastructure bug -> EXTERNAL_VALIDITY_V4_INFRASTRUCTURE_BLOCKED; no patch-and-rerun"
+  ],
+  "terminal_states": [
+    "EXTERNAL_VALIDITY_V4_PASS",
+    "EXTERNAL_VALIDITY_V4_CANDIDATE_FAIL",
+    "EXTERNAL_VALIDITY_V4_INFRASTRUCTURE_BLOCKED",
+    "EXTERNAL_VALIDITY_V4_INVALID"
+  ],
+  "transformation_policy": {
+    "candidate_payload_projection": [
+      "query",
+      "memories[id,text,timestamp]"
+    ],
+    "candidate_v13_invoked": false,
+    "distractor_selection": "same-subject-relation -> same-subject -> same-domain; deterministic cyclic offset keyed by stage seed + target + tier",
+    "full_pre_freeze_qualification": "100% of all 3,744 selected future formal cases",
+    "global_ceiling": 100,
+    "gold_preservation": "all answerable source-native gold retained; no truncation",
+    "implementation": "scripts/candidate_v13_external_validity_v4_materializer.py",
+    "indexing": "pre-index source/domain/subject/relation and materialized source-native units; no full source scan per selected case",
+    "individual_case_contents_persisted": false,
+    "minimum_context": 5,
+    "minimum_distractors": 4,
+    "no_evidence": "all target gold withheld and duplicate target text excluded from distractors",
+    "schema_version": "candidate-v13-external-validity-v4-materializer-contract-v1"
+  }
+}

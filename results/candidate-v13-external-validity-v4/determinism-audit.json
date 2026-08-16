@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate-v13-external-validity-v4-determinism-audit-v1",
+  "stage_digest_stability": {
+    "ev_a_v4": true,
+    "ev_b_v4": true,
+    "ev_c_v4": true
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,46 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "compile": {
+    "scripts/bootstrap_candidate_v13_external_validity_v4.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_contamination.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_core.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_evaluator.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_final_integrity_audit.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_fix_names.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_formal_runner.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_formal_sequence.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_freeze.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_infrastructure_qualification.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_launch_path_qa.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_lock_preregistration.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_materializer.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_prequalification.py": "PASS",
+    "scripts/candidate_v13_external_validity_v4_qualification_runner.py": "PASS"
+  },
+  "evaluator_qa": {
+    "pass": true,
+    "status": "PASS"
+  },
+  "event_independent_formal_runner_checks": {
+    "all_v4_scripts_compile": true,
+    "candidate_hash_match": true,
+    "candidate_not_imported": true,
+    "formal_runner_has_one_shot_guard": true,
+    "formal_runner_requires_authorization": true,
+    "freeze_before_formal_in_same_workflow": true,
+    "prefreeze_static_candidate_imports_absent": true,
+    "repository_dispatch_absent": true,
+    "single_execution_job": true,
+    "workflow_dispatch_absent": true,
+    "workflow_run_trigger_absent": true
+  },
+  "prefreeze_static_candidate_import_violations": [],
+  "real_formal_runner_qa": "PASS",
+  "schema_version": "candidate-v13-external-validity-v4-formal-infrastructure-qualification-v2",
+  "static_candidate_firewall": {
+    "pass": true,
+    "violations": []
+  },
+  "status": "PASS"
+}
