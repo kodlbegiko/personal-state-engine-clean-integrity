@@ -24,6 +24,7 @@ def main() -> int:
     contamination = load(OUT / "contamination-audit.json")
     determinism = load(OUT / "determinism-audit.json")
     dry = load(OUT / "materialization-dry-run.json")
+    allocation = load(OUT / "allocation-feasibility.json")
     contract = load(DOC / "source-contract-v2.json")
 
     expected_revisions = {
@@ -48,6 +49,13 @@ def main() -> int:
     capacity_ok = capacity.get("status") == "PASS" and not capacity.get("hard_domain_shortfalls") and not capacity.get("family_shortfalls")
     strict_contam = contamination.get("schema_version") == "candidate-v13-external-validity-v2-contamination-audit-v2"
     dry_v2 = dry.get("schema_version") == "candidate-v13-external-validity-v2-materialization-dry-run-v2"
+    allocation_ok = (
+        allocation.get("schema_version") == "candidate-v13-external-validity-v2-allocation-feasibility-v1"
+        and allocation.get("status") == "PASS"
+        and allocation.get("formal_case_materialized") is False
+        and allocation.get("individual_formal_ids_persisted") is False
+        and allocation.get("cross_stage_base_reuse_count") == 0
+    )
 
     gates = {
         "SOURCE_ACCESS_PASS": source_ok,
@@ -57,6 +65,7 @@ def main() -> int:
         "GOLD_RESOLUTION_PASS": source_ok,
         "DOMAIN_MAPPING_PASS": source_ok,
         "CAPACITY_PASS": capacity_ok,
+        "ALLOCATION_FEASIBILITY_PASS": allocation_ok,
         "DEDUP_PASS": dedup.get("status") == "PASS",
         "CONTAMINATION_PASS": strict_contam and contamination.get("status") == "PASS",
         "DETERMINISM_PASS": determinism.get("status") == "PASS" and determinism.get("hash_match") is True,
@@ -66,7 +75,7 @@ def main() -> int:
     all_pass = all(gates.values())
     status = "PASS" if all_pass else "BLOCKED"
     result = {
-        "schema_version": "candidate-v13-external-validity-v2-infrastructure-qualification-v3",
+        "schema_version": "candidate-v13-external-validity-v2-infrastructure-qualification-v4",
         "status": status,
         "formal_authorized": all_pass,
         "gates": gates,
@@ -77,6 +86,15 @@ def main() -> int:
         "source_revision_match": revision_match,
         "domain_capacity": capacity.get("domain_capacity", {}),
         "capacity_safety_warnings": capacity.get("safety_margin_warnings", []),
+        "allocation_summary": {
+            "status": allocation.get("status"),
+            "cross_stage_selected_count": allocation.get("cross_stage_selected_count"),
+            "cross_stage_base_reuse_count": allocation.get("cross_stage_base_reuse_count"),
+            "stage_selection_digests": {
+                stage: data.get("selection_digest_sha256")
+                for stage, data in allocation.get("stages", {}).items()
+            },
+        },
         "contamination_summary": {
             "status": contamination.get("status"),
             "material_overlap_count": contamination.get("material_overlap_count"),
