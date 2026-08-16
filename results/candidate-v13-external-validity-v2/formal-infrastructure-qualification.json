@@ -1,0 +1,68 @@
+{
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "compile": {
+    "scripts/candidate_v13_external_validity_v2_allocation_runtime.py": "PASS",
+    "scripts/candidate_v13_external_validity_v2_evaluator.py": "PASS",
+    "scripts/candidate_v13_external_validity_v2_formal_materializer.py": "PASS",
+    "scripts/candidate_v13_external_validity_v2_formal_runner.py": "PASS",
+    "scripts/candidate_v13_external_validity_v2_formal_sequence.py": "PASS"
+  },
+  "formal_case_materialized": false,
+  "gates": {
+    "CANDIDATE_FIREWALL_PASS": true,
+    "PY_COMPILE_PASS": true,
+    "RUNTIME_SELECTION_DIGEST_PASS": true,
+    "STATIC_CANDIDATE_IMPORT_AUDIT_PASS": true,
+    "SYNTHETIC_EVALUATOR_PASS": true,
+    "SYNTHETIC_FORMAL_MATERIALIZER_PASS": true
+  },
+  "runtime_selection": {
+    "candidate_v13_invoked": false,
+    "cross_stage_selected_count": 3744,
+    "formal_case_materialized": false,
+    "individual_assignments_persisted": false,
+    "schema_version": "candidate-v13-external-validity-v2-runtime-selection-check-v1",
+    "selection_digests": {
+      "ev_a_v2": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc",
+      "ev_b_v2": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab",
+      "ev_c_v2": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
+    },
+    "stage_counts": {
+      "ev_a_v2": 384,
+      "ev_b_v2": 1440,
+      "ev_c_v2": 1920
+    },
+    "status": "PASS"
+  },
+  "schema_version": "candidate-v13-external-validity-v2-formal-infrastructure-qualification-v1",
+  "static_candidate_import_audit": {
+    "pass": true,
+    "violations": []
+  },
+  "status": "PASS",
+  "synthetic_evaluator": {
+    "checks": {
+      "candidate_source_pass": true,
+      "coverage_one": true,
+      "determinism_pass": true,
+      "invalid_zero": true,
+      "status_pass": true
+    },
+    "pass": true,
+    "status": "PASS"
+  },
+  "synthetic_materializer": {
+    "checks": {
+      "answerable_gold_present": true,
+      "case_count": true,
+      "deterministic_digest": true,
+      "memory_max": true,
+      "memory_min": true,
+      "minimum_distractors": true,
+      "no_evidence_runtime_gold_empty": true,
+      "no_evidence_withheld_gold_private": true
+    },
+    "pass": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "candidate-v7-retired-sealed-final-quarantine-v1",
+  "status": "PERMANENTLY_RETIRED_FROM_SELECTION",
+  "retired_surface": {
+    "name": "LongMemEval-S cleaned Gate F sealed-final",
+    "case_count": 99,
+    "answerable_count": 93,
+    "no_evidence_count": 6,
+    "dataset_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "split_sha256": "1f5cb377ce971931dffc0be97550240181ea9062d4ae1dd1251af432ca8f015f",
+    "case_id_set_sha256": "1ca053112b634871d24addbb3982d4e417dc8f4acce10609554cc41b6ed8e987",
+    "formal_workflow": 31801039217,
+    "formal_attempt": 1,
+    "formal_artifact": 9219287805,
+    "formal_result_sha256": "566284023e198539f5560b3ce8da8e97ded64555b78895c178d36fdcab0a039f"
+  },
+  "allowed_use": [
+    "provenance identity",
+    "overlap exclusion only",
+    "historical aggregate-result reporting"
+  ],
+  "prohibited_use": [
+    "Candidate-v7 development",
+    "Candidate-v7 debugging",
+    "architecture selection from semantic cases",
+    "threshold selection",
+    "parser construction from retired cases",
+    "prompt construction",
+    "semantic case-level error analysis",
+    "regression testing",
+    "protected validation",
+    "confirmatory validation",
+    "future final certification"
+  ],
+  "semantic_payload_access_for_candidate_v7": false,
+  "rerun_allowed": false,
+  "historical_gate_f_verdict": {
+    "integrity": "PASS",
+    "selection": "FAIL",
+    "formal": "NOT COMPLETE",
+    "terminal_state": "GATE_F_SELECTION_FAIL"
+  }
+}

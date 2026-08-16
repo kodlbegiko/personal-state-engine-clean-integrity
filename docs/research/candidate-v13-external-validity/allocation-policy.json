@@ -1,0 +1,95 @@
+{
+  "schema_version": "candidate-v13-external-validity-allocation-policy-v3",
+  "status": "LOCKED_AFTER_SOURCE_ONLY_CALIBRATION_AND_BEFORE_CANDIDATE_V13_EXTERNAL_PERFORMANCE",
+  "candidate_v13_external_performance_observed": false,
+  "formal_case_materialized": false,
+  "supersedes_allocation_policy_v2_commit": "07abf3a42f2f2975f5bff9c76bd3fd47656214fc",
+  "source_activation_commit": "d4e61345a5b0f58248bb2fa5cbb5c83236a2e3ca",
+  "adapter_policy_v2_commit": "9fbf067b6f040872a53d9693d38f7069a1353201",
+  "supersession_reason": "The v2 source-domain matrix was an implementation-level allocation introduced before the first eligibility audit. The audit, still with Candidate-v13 unexecuted, proved PerLTQA non-profile source integrity inadequate and proved the original generic domain classifier semantically overbroad. v3 preserves every preregistered formal invariant—exact stage sizes, 8 equal domains, 12 equal structural families, answerable/no-evidence totals, at least three source families, <=45% per source, fixed seeds, thresholds and one-shot rules—while replacing the invalid source and removing an unnecessary fixed source-by-domain cross-table. Exact source marginals and exact domain marginals are now both enforced by deterministic capacity flow over source-native domain labels.",
+  "stage_source_targets": {
+    "ev_a": {
+      "total": 384,
+      "personamem-v2": 135,
+      "locomo": 96,
+      "sgd-carryover": 115,
+      "longmemeval-cleaned": 38
+    },
+    "ev_b": {
+      "total": 1440,
+      "personamem-v2": 504,
+      "locomo": 360,
+      "sgd-carryover": 432,
+      "longmemeval-cleaned": 144
+    },
+    "ev_c": {
+      "total": 1920,
+      "personamem-v2": 672,
+      "locomo": 480,
+      "sgd-carryover": 576,
+      "longmemeval-cleaned": 192
+    }
+  },
+  "source_share_checks": {
+    "ev_a": {"personamem-v2": 0.3515625, "locomo": 0.25, "sgd-carryover": 0.2994791667, "longmemeval-cleaned": 0.0989583333},
+    "ev_b": {"personamem-v2": 0.35, "locomo": 0.25, "sgd-carryover": 0.30, "longmemeval-cleaned": 0.10},
+    "ev_c": {"personamem-v2": 0.35, "locomo": 0.25, "sgd-carryover": 0.30, "longmemeval-cleaned": 0.10}
+  },
+  "domain_targets": {
+    "ev_a": {"D1": 48, "D2": 48, "D3": 48, "D4": 48, "D5": 48, "D6": 48, "D7": 48, "D8": 48},
+    "ev_b": {"D1": 180, "D2": 180, "D3": 180, "D4": 180, "D5": 180, "D6": 180, "D7": 180, "D8": 180},
+    "ev_c": {"D1": 240, "D2": 240, "D3": 240, "D4": 240, "D5": 240, "D6": 240, "D7": 240, "D8": 240}
+  },
+  "structural_family_targets": {
+    "ev_a": {"N1": 32, "N2": 32, "N3": 32, "N4": 32, "N5": 32, "N6": 32, "N7": 32, "N8": 32, "N9": 32, "N10": 32, "N11": 32, "N12": 32},
+    "ev_b": {"N1": 120, "N2": 120, "N3": 120, "N4": 120, "N5": 120, "N6": 120, "N7": 120, "N8": 120, "N9": 120, "N10": 120, "N11": 120, "N12": 120},
+    "ev_c": {"N1": 160, "N2": 160, "N3": 160, "N4": 160, "N5": 160, "N6": 160, "N7": 160, "N8": 160, "N9": 160, "N10": 160, "N11": 160, "N12": 160}
+  },
+  "answerability_targets": {
+    "ev_a": {"answerable": 240, "no_evidence": 144},
+    "ev_b": {"answerable": 864, "no_evidence": 576},
+    "ev_c": {"answerable": 1152, "no_evidence": 768}
+  },
+  "allocation_order": ["ev_a", "ev_b", "ev_c"],
+  "base_item_reuse_across_stages": false,
+  "exact_query_reuse_across_stages": false,
+  "normalized_query_reuse_across_stages": false,
+  "stage_seeds": {"ev_a": 42018, "ev_b": 42019, "ev_c": 42020},
+  "source_domain_flow": {
+    "rule": "For each stage, compute source×domain available unique-base capacities after earlier-stage exclusion. Solve a deterministic max-flow from source nodes with exact stage_source_targets to domain nodes with exact domain_targets through source-domain capacity edges. Edge insertion order is lexical source/domain order; max-flow implementation and resulting matrix are hashed. If full stage flow is impossible, stop before Candidate-v13 execution; do not change source/domain totals.",
+    "persist_before_formal_freeze": "Only aggregate source-domain flow matrix and hashes may be persisted during eligibility. Individual EV-B/EV-C base item IDs are not persisted before freeze."
+  },
+  "family_feasibility": {
+    "rule": "After a feasible source-domain flow matrix is known, eligibility audit may perform an ephemeral deterministic b-matching using unique base cases as unit-capacity nodes between source-domain cells and eligible N1-N12 family nodes. It may persist only feasibility status, aggregate cell/family counts, and a SHA256 digest of the ephemeral selected base IDs; it must not persist the selected EV-B/EV-C IDs or natural-language payload before freeze.",
+    "failure": "Any family infeasibility blocks Candidate-v13 execution until a source-only/evaluator-integrity defect is resolved within preregistration. After first Candidate-v13 external output, no family/source rule changes are permitted."
+  },
+  "no_evidence_assignment": {
+    "N10": "Every case assigned primary family N10 is no-evidence by withholding all gold IDs.",
+    "remaining_quota": "Additional no-evidence cases are chosen from already selected non-N10 base cases by deterministic SHA256(stage seed, base_item_id) order and receive the same gold-withholding transform. Query text is unchanged.",
+    "gold_metadata": "Evaluator retains original source-native gold IDs privately to score false retrieval; Candidate-v13 never sees them."
+  },
+  "ev_c_stress_requirement": {
+    "comparison_stage": "ev_b",
+    "minimum_absolute_proportion_delta": 0.01,
+    "dimensions": {
+      "multi_entity": "N3-eligible",
+      "multi_relation": "N4-eligible",
+      "temporal_update": "N6-eligible",
+      "contradiction": "N7-eligible",
+      "lexical_decoy": "N9-eligible",
+      "implicit_relation": "SGD carry-over case where carried slot is absent from current frame.slots",
+      "coreference": "N5-eligible",
+      "fragmented_language": "N11-eligible",
+      "no_evidence_ambiguity": "no-evidence transformed case that is also N3-, N9-, or N11-eligible",
+      "multi_clause": "natural query has >=2 comma/semicolon/parenthetical boundaries or >=2 source turns are concatenated as source-native context"
+    },
+    "rule": "For every dimension with at least 100 eligible EV-C-reserve base cases after EV-A/EV-B exclusion, EV-C selected proportion must exceed EV-B by at least 0.01. Failure to satisfy this before formal freeze is an infrastructure/evaluation-design blocker, not a threshold relaxation opportunity."
+  },
+  "integrity": {
+    "maximum_source_share": 0.45,
+    "minimum_source_families": 3,
+    "candidate_v13_external_performance_observed": false,
+    "source_or_allocation_change_after_candidate_external_output": "FORBIDDEN",
+    "formal_ev_b_or_ev_c_ids_before_freeze": "FORBIDDEN"
+  }
+}

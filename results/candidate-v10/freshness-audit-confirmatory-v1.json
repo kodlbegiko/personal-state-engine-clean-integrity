@@ -1,0 +1,60 @@
+{
+  "case_count": 420,
+  "declared_family_partition": [
+    "F",
+    "G",
+    "H"
+  ],
+  "evidence_skeleton_unique": 126,
+  "exact_surface_duplicate_count": 0,
+  "grammar_family_distribution": {
+    "F": 141,
+    "G": 140,
+    "H": 139
+  },
+  "inference_metadata_visibility": false,
+  "normalization_policy": "casefold + apostrophe + whitespace; entity/value abstraction reserved for skeleton audit",
+  "normalized_surface_duplicate_count": 0,
+  "question_skeleton_unique": 38,
+  "schema_version": "candidate-v10-freshness-audit-v2",
+  "semantic_domain_distribution": {
+    "accommodations": 13,
+    "appointments": 14,
+    "attributes/colors": 14,
+    "certifications": 13,
+    "communication channels": 14,
+    "device ownership/use": 13,
+    "dietary restrictions": 13,
+    "education": 26,
+    "employment": 14,
+    "goals": 14,
+    "hobbies": 13,
+    "language": 14,
+    "location": 14,
+    "media": 13,
+    "medication": 14,
+    "memberships": 13,
+    "pets": 14,
+    "preferences": 29,
+    "project ownership": 13,
+    "recurring routines": 13,
+    "relationships": 14,
+    "schedules": 14,
+    "software/tools": 13,
+    "sports teams": 14,
+    "status": 13,
+    "subscriptions": 14,
+    "transportation": 14,
+    "travel plans": 13,
+    "volunteering": 13
+  },
+  "stage": "confirmatory",
+  "template_provenance": [
+    "candidate-v10:confirmatory:F:answerable",
+    "candidate-v10:confirmatory:F:negative",
+    "candidate-v10:confirmatory:G:answerable",
+    "candidate-v10:confirmatory:G:negative",
+    "candidate-v10:confirmatory:H:answerable",
+    "candidate-v10:confirmatory:H:negative"
+  ]
+}

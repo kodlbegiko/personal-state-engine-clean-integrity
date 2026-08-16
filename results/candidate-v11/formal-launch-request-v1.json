@@ -1,0 +1,12 @@
+{
+  "schema_version": "candidate-v11-formal-launch-request-v1",
+  "freeze_commit": "f75c2b249d74a5b63734a71bad9a1ca43a499b37",
+  "required_initial_counts": {"protected": 0, "confirmatory": 0, "final": 0},
+  "launch_mode": "infrastructure_recovery_wrapper_over_frozen_runner",
+  "frozen_runner": "scripts/run_candidate_v11_formal.py",
+  "frozen_components_may_change": false,
+  "formal_stage_order": ["protected", "confirmatory", "final"],
+  "stop_on_first_algorithmic_failure": true,
+  "rerun_permitted": false,
+  "monetary_cost_usd": 0
+}

@@ -1,0 +1,64 @@
+name: Candidate v13 EverMemBench-Dynamic source probe
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/evermembench-probe-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-evermembench-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify Candidate-v13 remains unexecuted externally
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in [
+              'docs/research/candidate-v13-external-validity/source-activation-v2.json',
+              'docs/research/candidate-v13-external-validity/adapter-policy.json',
+              'docs/research/candidate-v13-external-validity/allocation-policy.json',
+          ]:
+              o=json.loads(Path(p).read_text())
+              assert o['candidate_v13_external_performance_observed'] is False
+              assert o.get('formal_case_materialized', False) is False
+          PY
+      - name: Compile source probe
+        run: python -m py_compile scripts/candidate_v13_external_evermembench_probe.py
+      - name: Run EverMemBench-Dynamic integrity probe
+        run: python scripts/candidate_v13_external_evermembench_probe.py
+      - name: Commit aggregate source evidence before assertions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/evermembench-dynamic-probe.json
+          git commit -m "candidate-v13 external validity: record EverMemBench-Dynamic source probe"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Verify probe boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/evermembench-dynamic-probe.json').read_text())
+          assert r['candidate_v13_invoked'] is False
+          assert r['formal_case_materialized'] is False
+          assert r['license'] == 'apache-2.0', r['license']
+          assert r['aggregate_counts']['qar_total'] >= 2000
+          PY

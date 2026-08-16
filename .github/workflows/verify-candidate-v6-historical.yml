@@ -1,0 +1,54 @@
+name: Verify Historical Candidate-v6 Source
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - '.github/workflows/verify-candidate-v6-historical.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  verify-v6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - name: Fetch exact pinned Candidate-v6 source and hash it
+        run: |
+          url='https://raw.githubusercontent.com/kodlbegiko/personal-state-engine-research/a5fcb252c37d0e7db8604a56ebd8aedbfb921ea0/src/personal_state_engine/candidate_v6.py'
+          curl -fsSL "$url" -o /tmp/candidate_v6.py
+          actual=$(sha256sum /tmp/candidate_v6.py | awk '{print $1}')
+          expected='c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325'
+          mkdir -p results/candidate-v7
+          python - "$actual" "$expected" <<'PY'
+          import json, sys
+          from pathlib import Path
+          actual, expected = sys.argv[1:]
+          payload = {
+              "schema_version": "candidate-v6-historical-provenance-check-v1",
+              "repository": "kodlbegiko/personal-state-engine-research",
+              "commit": "a5fcb252c37d0e7db8604a56ebd8aedbfb921ea0",
+              "path": "src/personal_state_engine/candidate_v6.py",
+              "expected_source_sha256": expected,
+              "actual_source_sha256": actual,
+              "identity_match": actual == expected,
+              "semantic_gate_f_payload_accessed": False,
+              "candidate_v6_modified": False,
+          }
+          Path("results/candidate-v7/candidate-v6-historical-provenance-check-v1.json").write_text(json.dumps(payload, indent=2) + "\n")
+          PY
+          echo "V6_ACTUAL_SHA=$actual" >> "$GITHUB_ENV"
+          echo "V6_EXPECTED_SHA=$expected" >> "$GITHUB_ENV"
+      - name: Commit provenance evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v7/candidate-v6-historical-provenance-check-v1.json
+          git commit -m "research: record historical Candidate-v6 provenance check"
+          git push origin HEAD:research/candidate-v7-fresh-evidence
+      - name: Enforce historical source identity
+        run: test "$V6_ACTUAL_SHA" = "$V6_EXPECTED_SHA"

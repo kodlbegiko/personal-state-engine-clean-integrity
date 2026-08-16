@@ -1,0 +1,98 @@
+{
+  "candidate": "Candidate-v13",
+  "candidate_modified": false,
+  "candidate_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "ev_a_v2": {},
+  "ev_b_v2": {},
+  "ev_c_v2": {},
+  "formal_ledger": {
+    "ev_a_v2": 0,
+    "ev_b_v2": 0,
+    "ev_c_v2": 0
+  },
+  "formal_reruns": 0,
+  "illegal_formal_reruns": false,
+  "infrastructure": {
+    "capacity": {
+      "D1": {
+        "eligible": 3738,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 7.987179487179487,
+        "status": "PASS_PREFERRED"
+      },
+      "D2": {
+        "eligible": 568,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 1.2136752136752136,
+        "status": "PASS_REQUIRED_ONLY"
+      },
+      "D3": {
+        "eligible": 16700,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 35.68376068376068,
+        "status": "PASS_PREFERRED"
+      },
+      "D4": {
+        "eligible": 25825,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 55.18162393162393,
+        "status": "PASS_PREFERRED"
+      },
+      "D5": {
+        "eligible": 45445,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 97.10470085470085,
+        "status": "PASS_PREFERRED"
+      },
+      "D6": {
+        "eligible": 723,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 1.544871794871795,
+        "status": "PASS_MINIMUM_SAFETY"
+      },
+      "D7": {
+        "eligible": 2192,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 4.683760683760684,
+        "status": "PASS_PREFERRED"
+      },
+      "D8": {
+        "eligible": 901,
+        "minimum_safety_target": 702,
+        "preferred_safety_target": 936,
+        "required": 468,
+        "safety_ratio": 1.9252136752136753,
+        "status": "PASS_MINIMUM_SAFETY"
+      }
+    },
+    "freeze_manifest": "results/candidate-v13-external-validity-v2/infrastructure-freeze-manifest.json",
+    "preregistration_commit": "e8c797fb41f832c8b53fdbbc69196bb4627f0f90",
+    "sources": [
+      "personamem-v2",
+      "longmemeval-cleaned",
+      "locomo",
+      "sgd-carryover",
+      "evermembench-dynamic",
+      "rhelm"
+    ],
+    "status": "PASS"
+  },
+  "performance_driven_changes": 0,
+  "reason": "RuntimeError: selected base gold exceeds runtime maximum: evermembench-dynamic:evermem:1:F_MH_Top01_033",
+  "research_integrity": "PASS",
+  "terminal_state": "EXTERNAL_VALIDITY_V2_INFRASTRUCTURE_BLOCKED"
+}

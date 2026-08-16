@@ -1,0 +1,67 @@
+name: Candidate v13 external-validity conservative fast capacity audit
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/capacity-fast-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-capacity-fast
+  cancel-in-progress: false
+
+jobs:
+  capacity-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify calibrated pre-performance locks
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in [
+              'docs/research/candidate-v13-external-validity/source-activation-v2.json',
+              'docs/research/candidate-v13-external-validity/adapter-policy.json',
+              'docs/research/candidate-v13-external-validity/allocation-policy.json',
+          ]:
+              o=json.loads(Path(p).read_text())
+              assert o['candidate_v13_external_performance_observed'] is False
+              assert o.get('formal_case_materialized', False) is False
+          PY
+      - name: Compile audit scripts
+        run: |
+          python -m py_compile scripts/candidate_v13_external_capacity_audit_v2.py
+          python -m py_compile scripts/candidate_v13_external_capacity_audit_fast.py
+      - name: Run conservative fast capacity audit
+        run: python scripts/candidate_v13_external_capacity_audit_fast.py
+      - name: Verify audit integrity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/capacity-audit-fast.json').read_text())
+          assert r['candidate_v13_invoked'] is False
+          assert r['formal_case_materialized'] is False
+          assert r['individual_formal_ids_persisted'] is False
+          assert r['guard']['pass'] is True
+          assert r['status'] in {'PASS_SIMPLE_CAPACITY','CAPACITY_SHORTFALL'}, r
+          PY
+      - name: Commit aggregate fast capacity evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/capacity-audit-fast.json
+          git commit -m "candidate-v13 external validity: record conservative capacity audit"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity

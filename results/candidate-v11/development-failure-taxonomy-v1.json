@@ -1,0 +1,842 @@
+{
+  "benchmark": "experiments/benchmarks/candidate-v11-development-v1.json",
+  "candidate_v11_metrics": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "abstention_accuracy": 0.9125,
+    "answerable_count": 360,
+    "answerable_recall": 1.0,
+    "candidate_source_invariant_violations": 0,
+    "false_abstention": 0.0,
+    "false_retrieval": 0.0875,
+    "no_evidence_count": 240
+  },
+  "category_counts": {
+    "false_retrieval": 21
+  },
+  "evaluation_verdict": "FAIL",
+  "failure_count": 21,
+  "failures": [
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-064-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-064-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-064",
+      "category": "false_retrieval",
+      "grammar_family": "L",
+      "relevant_memory_ids": [],
+      "semantic_domain": "certification",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-064-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Uma MerinD5064's certification is Atlas Safety Credential.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-108-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-108-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-108",
+      "category": "false_retrieval",
+      "grammar_family": "L",
+      "relevant_memory_ids": [],
+      "semantic_domain": "accommodation",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-108-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Marek JorinD5108's accommodation is Harbor Guesthouse.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-141-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-141-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-141",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "dietary_restriction",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-141-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Tova PerrinD5141's dietary restriction is gluten-free.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-020-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-020-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-020",
+      "category": "false_retrieval",
+      "grammar_family": "L",
+      "relevant_memory_ids": [],
+      "semantic_domain": "subscription",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 3,
+          "memory_id": "CV11-DEV-N-020-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -3
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Corin SayerD5020's subscription is Studio tier.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-229-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-229-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-229",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "certification",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 1,
+          "memory_id": "CV11-DEV-N-229-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -1
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Dalia GroveD5229's certification is Atlas Safety Credential.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-196-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-196-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-196",
+      "category": "false_retrieval",
+      "grammar_family": "L",
+      "relevant_memory_ids": [],
+      "semantic_domain": "routine",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 3,
+          "memory_id": "CV11-DEV-N-196-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -3
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Wren VossD5196's routine is weekly planning.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-207-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-207-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-207",
+      "category": "false_retrieval",
+      "grammar_family": "O",
+      "relevant_memory_ids": [],
+      "semantic_domain": "sports_team",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-207-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Hana CalderD5207's sports team is Cedar Owls.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-042-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-042-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-042",
+      "category": "false_retrieval",
+      "grammar_family": "N",
+      "relevant_memory_ids": [],
+      "semantic_domain": "dietary_restriction",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-042-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Yuri WellsD5042's dietary restriction is dairy-free.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-053-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-053-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-053",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "volunteering",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 1,
+          "memory_id": "CV11-DEV-N-053-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -1
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Jessa ZorinD5053's volunteering is meal delivery.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-009-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-009-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-009",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "accommodation",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 1,
+          "memory_id": "CV11-DEV-N-009-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -1
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Rhea QuillD5009's accommodation is North Garden Hotel.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-086-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-086-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-086",
+      "category": "false_retrieval",
+      "grammar_family": "N",
+      "relevant_memory_ids": [],
+      "semantic_domain": "sports_team",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-086-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Quin FarrowD5086's sports team is Metro Lynx.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-097-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-097-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-097",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "volunteering",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-097-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Bianca HollisD5097's volunteering is river cleanup.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-130-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-130-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-130",
+      "category": "false_retrieval",
+      "grammar_family": "N",
+      "relevant_memory_ids": [],
+      "semantic_domain": "sports_team",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-130-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Ivo NerisD5130's sports team is Harbor Falcons.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-075-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-075-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-075",
+      "category": "false_retrieval",
+      "grammar_family": "O",
+      "relevant_memory_ids": [],
+      "semantic_domain": "language",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 3,
+          "memory_id": "CV11-DEV-N-075-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -3
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Farah DorneD5075's language is Catalan.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-185-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-185-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-185",
+      "category": "false_retrieval",
+      "grammar_family": "M",
+      "relevant_memory_ids": [],
+      "semantic_domain": "volunteering",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-185-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Liora YarrowD5185's volunteering is trail maintenance.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-163-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-163-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-163",
+      "category": "false_retrieval",
+      "grammar_family": "O",
+      "relevant_memory_ids": [],
+      "semantic_domain": "transport",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 3,
+          "memory_id": "CV11-DEV-N-163-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -3
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Petra TrellD5163's commute transport is bicycle.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-031-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-031-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-031",
+      "category": "false_retrieval",
+      "grammar_family": "O",
+      "relevant_memory_ids": [],
+      "semantic_domain": "work_role",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-031-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Nadia UlmerD5031's work role is field engineer.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-152-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-152-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-152",
+      "category": "false_retrieval",
+      "grammar_family": "L",
+      "relevant_memory_ids": [],
+      "semantic_domain": "sports_team",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 3,
+          "memory_id": "CV11-DEV-N-152-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -3
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Emil RosenD5152's sports team is Cedar Owls.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-174-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-174-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-174",
+      "category": "false_retrieval",
+      "grammar_family": "N",
+      "relevant_memory_ids": [],
+      "semantic_domain": "appointment",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-174-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Alden ValeD5174's appointment is dental checkup.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-119-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-119-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-119",
+      "category": "false_retrieval",
+      "grammar_family": "O",
+      "relevant_memory_ids": [],
+      "semantic_domain": "work_role",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 2,
+          "memory_id": "CV11-DEV-N-119-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -2
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Xara LorneD5119's work role is systems analyst.",
+          "temporal_specificity": 2
+        }
+      ]
+    },
+    {
+      "candidate_v10_ranking": [
+        "CV11-DEV-N-218-wrong-relation"
+      ],
+      "candidate_v11_ranking": [
+        "CV11-DEV-N-218-wrong-relation"
+      ],
+      "case_id": "CV11-DEVELOPMENT-N-218",
+      "category": "false_retrieval",
+      "grammar_family": "N",
+      "relevant_memory_ids": [],
+      "semantic_domain": "volunteering",
+      "v11_proofs": [
+        {
+          "ambiguity_penalty": 0,
+          "assertion_directness": 3,
+          "candidate_v2_original_rank": 1,
+          "memory_id": "CV11-DEV-N-218-wrong-relation",
+          "object_slot_matches": 0,
+          "object_slot_total": 0,
+          "priority_tuple": [
+            3,
+            3,
+            0,
+            3,
+            2,
+            6,
+            0,
+            -1
+          ],
+          "relation_specificity": 3,
+          "semantic_completeness": 6,
+          "subject_binding_quality": 3,
+          "supported_clause": "Silas EllisD5218's volunteering is meal delivery.",
+          "temporal_specificity": 2
+        }
+      ]
+    }
+  ],
+  "grammar_family_counts": {
+    "L": 5,
+    "M": 6,
+    "N": 5,
+    "O": 5
+  },
+  "iteration": 1,
+  "schema_version": "candidate-v11-development-failure-taxonomy-v1",
+  "semantic_domain_counts": {
+    "accommodation": 2,
+    "appointment": 1,
+    "certification": 2,
+    "dietary_restriction": 2,
+    "language": 1,
+    "routine": 1,
+    "sports_team": 4,
+    "subscription": 1,
+    "transport": 1,
+    "volunteering": 4,
+    "work_role": 2
+  }
+}

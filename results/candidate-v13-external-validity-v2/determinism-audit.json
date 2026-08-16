@@ -1,0 +1,14 @@
+{
+  "candidate_v13_invoked": false,
+  "canonical_hash_run_1": "4f5e86249b8cd590d778902bb2572022e308bdb1345f75641f5a041b2d046f8c",
+  "canonical_hash_run_2": "4f5e86249b8cd590d778902bb2572022e308bdb1345f75641f5a041b2d046f8c",
+  "formal_case_materialized": false,
+  "hash_match": true,
+  "pool_case_count": 96092,
+  "schema_version": "candidate-v13-external-validity-v2-determinism-audit-v1",
+  "source_revisions": {
+    "evermembench-dynamic": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "rhelm": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5"
+  },
+  "status": "PASS"
+}

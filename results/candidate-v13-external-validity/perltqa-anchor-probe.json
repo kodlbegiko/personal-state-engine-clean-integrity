@@ -1,0 +1,80 @@
+{
+  "aggregate_counts": {
+    "canonical_qa_records": 8593,
+    "nonprofile_ambiguous_by_phrase": 532,
+    "nonprofile_no_anchor_match": 6683,
+    "nonprofile_no_valid_anchors": 49,
+    "nonprofile_unique_by_anchor_phrase": 972,
+    "profile_exact_reference": 357
+  },
+  "anchor_count_histogram": {
+    "0": 49,
+    "1": 3580,
+    "2": 1495,
+    "3": 1099,
+    "4": 801,
+    "5": 540,
+    "6": 390,
+    "7": 229,
+    "8": 151,
+    "9": 100,
+    "10": 58,
+    "11": 35,
+    "12": 25,
+    "13": 14,
+    "14": 7,
+    "15": 7,
+    "16": 6,
+    "17": 4,
+    "18": 1,
+    "19": 1,
+    "24": 1
+  },
+  "by_section": {
+    "dialogues": {
+      "no_anchor_match": 2812,
+      "no_valid_anchors": 26,
+      "qa_records": 2838
+    },
+    "events": {
+      "ambiguous_by_phrase": 451,
+      "no_anchor_match": 3201,
+      "no_valid_anchors": 23,
+      "qa_records": 4501,
+      "unique_by_anchor_phrase": 826
+    },
+    "profile": {
+      "profile_exact_reference": 357,
+      "qa_records": 357
+    },
+    "social_relationship": {
+      "ambiguous_by_phrase": 81,
+      "no_anchor_match": 670,
+      "qa_records": 897,
+      "unique_by_anchor_phrase": 146
+    }
+  },
+  "candidate_v13_invoked": false,
+  "formal_case_materialized": false,
+  "formal_rule_candidate": "Profile: exact Reference Memory field key. Non-profile: within the same QA character and section, require Memory Anchors to identify exactly one memory record by exact source-provided anchor offset against one of the section's canonical text fields. Phrase-only resolution is diagnostic and is not authorized for formal gold unless separately preregistered before Candidate-v13 execution.",
+  "memory_character_count": 141,
+  "mode_uniqueness_counts": {
+    "ambiguous_phrase:Description": 81,
+    "ambiguous_phrase:content": 450,
+    "ambiguous_phrase:summary": 36,
+    "unique_phrase:Description": 146,
+    "unique_phrase:content": 813,
+    "unique_phrase:summary": 150
+  },
+  "paths": {
+    "memory": "Dataset/en/perltmem_en.json",
+    "qa": "Dataset/en/perltqa_en.json"
+  },
+  "repository": "Elvin-Yiming-Du/PerLTQA",
+  "revision": "8d9e19868e239740ef701e603ec205cd581f221b",
+  "schema_version": "perltqa-anchor-probe-v1",
+  "source_sha256": {
+    "memory": "9ed6ed1a650f3c49ccb10a4407f36db0521f0fe2d3c878e0ce9b7f125109c4ad",
+    "qa": "ef1b5025157e338fdda7e2c7e2a12635c6661d364c285f6319306bf02e1ad9d9"
+  }
+}

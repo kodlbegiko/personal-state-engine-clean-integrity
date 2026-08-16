@@ -1,0 +1,36 @@
+name: Candidate-v11 Historical Rank-1 Diagnostic
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - scripts/diagnose_candidate_v10_final_rank1_failures.py
+      - .github/workflows/candidate-v11-historical-diagnostic.yml
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run diagnostic
+        run: python scripts/diagnose_candidate_v10_final_rank1_failures.py
+      - name: Commit immutable diagnostic evidence
+        run: |
+          git config user.name "candidate-v11-research-bot"
+          git config user.email "candidate-v11-research-bot@users.noreply.github.com"
+          git add results/candidate-v11/candidate-v10-final-rank1-failure-taxonomy.json
+          if git diff --cached --quiet; then
+            echo "No diagnostic changes to commit"
+            exit 0
+          fi
+          git commit -m "candidate-v11: record v10 rank-1 failure taxonomy"
+          git push origin HEAD:research/candidate-v11-fresh-lineage

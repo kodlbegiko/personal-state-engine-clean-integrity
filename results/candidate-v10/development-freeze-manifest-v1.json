@@ -1,0 +1,40 @@
+{
+  "schema_version": "candidate-v10-development-freeze-v1",
+  "state": "CANDIDATE_V10_DEVELOPMENT_FROZEN",
+  "freeze_commit_parent": "17d322ee2841bf94de9501c49fe7d4eae35875b6",
+  "development_verdict": "PASS",
+  "development_metrics": {
+    "MRR": 0.9982142857142857,
+    "R@1": 0.9964285714285714,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 280,
+    "no_evidence_count": 200
+  },
+  "development_benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
+  "development_result_sha256": "951ed3ca456c411ce4bbe2a1470b52f5a07645be270cb922d4738904b4e5a606",
+  "development_freshness_audit_sha256": "81b417f8d6d077a70d9b45070095a589ea8f222195d5fda651791b8a3299ba41",
+  "frozen_files": {
+    "src/personal_state_engine/candidate_v10.py": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+    "scripts/generate_candidate_v10_benchmark.py": "ac81afd96ab0ad4e8887bb8c355a6e80b80070996b4478443a8872fd849c9a8e",
+    "scripts/generate_candidate_v10_benchmark_v2.py": "d944ad5988564db0b75af50a20e6d84c5438aef94dcb8080ecb6b89e35490d2c",
+    "scripts/evaluate_candidate_v10.py": "7b075f366bfdeab7a3210aca0019ca7f3b02fbbbfdbca82e4598a65021e714dd",
+    "scripts/audit_candidate_v10_cross_stage_freshness.py": "9f551996d442c4d105d26c4aed81e4274d718e62c9d483272a9ee15e567177da",
+    "scripts/run_candidate_v10_formal_mission.py": "48fb3b00d3c2a48cf421bf6350f268d9552bea6a7768bd3da9643d1227da1a7c",
+    "experiments/configs/candidate-v10-v1.json": "70ac0acebb1c46b9f000c11b3a54fc0377335c6e1806aebaf6b5487631fcd5eb",
+    "tests/test_candidate_v10.py": "269db481e7d0a3544d90a6d009f5bf10da5b942887f825f6617071bcf8c87ca7",
+    "docs/research/candidate-v10/preregistration.md": "e2e18898af8fca8393ed52d6272d3da92c72b905a0dff0a632a121d03ed61415"
+  },
+  "formal_execution_counts_at_freeze": {
+    "protected": 0,
+    "confirmatory": 0,
+    "final": 0
+  },
+  "post_freeze_policy": "No frozen file may change before or during protected/confirmatory/final formal execution.",
+  "monetary_cost_usd": 0
+}

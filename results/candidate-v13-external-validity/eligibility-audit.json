@@ -1,0 +1,321 @@
+{
+  "adapter_policy_sha256": "b641fdcf86427d21ea76e2508461327a74b03ebadd58c30e486964dd4388dd32",
+  "allocation_policy_sha256": "2e12cf469dcc25c4dcf08e01d310475cc1f9025c3e1caff60848ef46fc80eebe",
+  "candidate_v13_invoked": false,
+  "capacity": {
+    "basic_capacity_pass": false,
+    "domain_counts": {
+      "D1": 213,
+      "D2": 269,
+      "D3": 4466,
+      "D4": 226,
+      "D5": 165,
+      "D6": 75,
+      "D7": 195,
+      "D8": 62
+    },
+    "eligible_base_count": 5671,
+    "family_capacity_shortfalls": [
+      {
+        "available_unique_base_items": 155,
+        "family": "N1",
+        "required_all_stages": 312,
+        "shortfall": 157
+      },
+      {
+        "available_unique_base_items": 28,
+        "family": "N11",
+        "required_all_stages": 312,
+        "shortfall": 284
+      }
+    ],
+    "family_eligibility_by_source": {
+      "longmemeval-cleaned": {
+        "N10": 500,
+        "N11": 3,
+        "N2": 164,
+        "N3": 500,
+        "N5": 67,
+        "N6": 211,
+        "N8": 493,
+        "N9": 250
+      },
+      "perltqa-en-v2": {
+        "N1": 155,
+        "N10": 171,
+        "N12": 4,
+        "N2": 8,
+        "N3": 171,
+        "N4": 168,
+        "N8": 10,
+        "N9": 160
+      },
+      "personamem-v2": {
+        "N10": 5000,
+        "N11": 25,
+        "N12": 2424,
+        "N2": 4701,
+        "N3": 5000,
+        "N4": 5000,
+        "N5": 2354,
+        "N6": 1048,
+        "N7": 1048,
+        "N8": 4613,
+        "N9": 4766
+      }
+    },
+    "family_eligibility_counts": {
+      "N1": 155,
+      "N10": 5671,
+      "N11": 28,
+      "N12": 2428,
+      "N2": 4873,
+      "N3": 5671,
+      "N4": 5168,
+      "N5": 2421,
+      "N6": 1259,
+      "N7": 1048,
+      "N8": 5116,
+      "N9": 5176
+    },
+    "required_family_all_stages": {
+      "N1": 312,
+      "N10": 312,
+      "N11": 312,
+      "N12": 312,
+      "N2": 312,
+      "N3": 312,
+      "N4": 312,
+      "N5": 312,
+      "N6": 312,
+      "N7": 312,
+      "N8": 312,
+      "N9": 312
+    },
+    "required_source_domain_all_stages": {
+      "longmemeval-cleaned:D1": 78,
+      "longmemeval-cleaned:D2": 28,
+      "longmemeval-cleaned:D3": 56,
+      "longmemeval-cleaned:D4": 56,
+      "longmemeval-cleaned:D5": 28,
+      "longmemeval-cleaned:D6": 28,
+      "longmemeval-cleaned:D7": 28,
+      "longmemeval-cleaned:D8": 166,
+      "perltqa-en-v2:D1": 100,
+      "perltqa-en-v2:D2": 228,
+      "perltqa-en-v2:D3": 334,
+      "perltqa-en-v2:D4": 156,
+      "perltqa-en-v2:D5": 128,
+      "perltqa-en-v2:D6": 184,
+      "perltqa-en-v2:D7": 284,
+      "perltqa-en-v2:D8": 224,
+      "personamem-v2:D1": 290,
+      "personamem-v2:D2": 212,
+      "personamem-v2:D3": 78,
+      "personamem-v2:D4": 256,
+      "personamem-v2:D5": 312,
+      "personamem-v2:D6": 256,
+      "personamem-v2:D7": 156,
+      "personamem-v2:D8": 78
+    },
+    "source_counts": {
+      "longmemeval-cleaned": 500,
+      "perltqa-en-v2": 171,
+      "personamem-v2": 5000
+    },
+    "source_domain_counts": {
+      "longmemeval-cleaned:D1": 1,
+      "longmemeval-cleaned:D2": 2,
+      "longmemeval-cleaned:D3": 485,
+      "longmemeval-cleaned:D4": 4,
+      "longmemeval-cleaned:D6": 2,
+      "longmemeval-cleaned:D7": 5,
+      "longmemeval-cleaned:D8": 1,
+      "perltqa-en-v2:D1": 25,
+      "perltqa-en-v2:D2": 141,
+      "perltqa-en-v2:D5": 2,
+      "perltqa-en-v2:D7": 3,
+      "personamem-v2:D1": 187,
+      "personamem-v2:D2": 126,
+      "personamem-v2:D3": 3981,
+      "personamem-v2:D4": 222,
+      "personamem-v2:D5": 163,
+      "personamem-v2:D6": 73,
+      "personamem-v2:D7": 187,
+      "personamem-v2:D8": 61
+    },
+    "source_domain_shortfalls": [
+      {
+        "available_unique_base_items": 1,
+        "domain": "D1",
+        "required_all_stages": 78,
+        "shortfall": 77,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 2,
+        "domain": "D2",
+        "required_all_stages": 28,
+        "shortfall": 26,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 4,
+        "domain": "D4",
+        "required_all_stages": 56,
+        "shortfall": 52,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 0,
+        "domain": "D5",
+        "required_all_stages": 28,
+        "shortfall": 28,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 2,
+        "domain": "D6",
+        "required_all_stages": 28,
+        "shortfall": 26,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 5,
+        "domain": "D7",
+        "required_all_stages": 28,
+        "shortfall": 23,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 1,
+        "domain": "D8",
+        "required_all_stages": 166,
+        "shortfall": 165,
+        "source": "longmemeval-cleaned"
+      },
+      {
+        "available_unique_base_items": 25,
+        "domain": "D1",
+        "required_all_stages": 100,
+        "shortfall": 75,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 141,
+        "domain": "D2",
+        "required_all_stages": 228,
+        "shortfall": 87,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 0,
+        "domain": "D3",
+        "required_all_stages": 334,
+        "shortfall": 334,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 0,
+        "domain": "D4",
+        "required_all_stages": 156,
+        "shortfall": 156,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 2,
+        "domain": "D5",
+        "required_all_stages": 128,
+        "shortfall": 126,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 0,
+        "domain": "D6",
+        "required_all_stages": 184,
+        "shortfall": 184,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 3,
+        "domain": "D7",
+        "required_all_stages": 284,
+        "shortfall": 281,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 0,
+        "domain": "D8",
+        "required_all_stages": 224,
+        "shortfall": 224,
+        "source": "perltqa-en-v2"
+      },
+      {
+        "available_unique_base_items": 187,
+        "domain": "D1",
+        "required_all_stages": 290,
+        "shortfall": 103,
+        "source": "personamem-v2"
+      },
+      {
+        "available_unique_base_items": 126,
+        "domain": "D2",
+        "required_all_stages": 212,
+        "shortfall": 86,
+        "source": "personamem-v2"
+      },
+      {
+        "available_unique_base_items": 222,
+        "domain": "D4",
+        "required_all_stages": 256,
+        "shortfall": 34,
+        "source": "personamem-v2"
+      },
+      {
+        "available_unique_base_items": 163,
+        "domain": "D5",
+        "required_all_stages": 312,
+        "shortfall": 149,
+        "source": "personamem-v2"
+      },
+      {
+        "available_unique_base_items": 73,
+        "domain": "D6",
+        "required_all_stages": 256,
+        "shortfall": 183,
+        "source": "personamem-v2"
+      },
+      {
+        "available_unique_base_items": 61,
+        "domain": "D8",
+        "required_all_stages": 78,
+        "shortfall": 17,
+        "source": "personamem-v2"
+      }
+    ]
+  },
+  "formal_case_materialized": false,
+  "guard": {
+    "forbidden_calls": [],
+    "forbidden_modules": [],
+    "pass": true
+  },
+  "loader_stats": {
+    "longmemeval_eligible": 500,
+    "longmemeval_rows": 500,
+    "perltqa_canonical_rows": 8593,
+    "perltqa_character_or_section_unresolved": 277,
+    "perltqa_eligible": 171,
+    "perltqa_reference_unresolved": 7971,
+    "personamem_eligible": 5000,
+    "personamem_rows": 5000
+  },
+  "schema_version": "candidate-v13-external-eligibility-audit-v1",
+  "source_hashes": {
+    "longmemeval-cleaned": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+    "perltqa-mem": "fb3011d78babdc9c5323a8d303ca7d4cdb9e2e08992c9890f9ccb2362ff8be94",
+    "perltqa-qa": "ca9f29cbb23eb8f7dbfb792359d9ff90eec066e6d927c83f6c0b7d0bf7baff23",
+    "personamem-v2": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52"
+  },
+  "status": "CAPACITY_SHORTFALL"
+}

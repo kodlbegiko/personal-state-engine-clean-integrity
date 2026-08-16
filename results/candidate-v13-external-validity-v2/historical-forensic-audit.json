@@ -1,0 +1,47 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-historical-forensic-audit-v1",
+  "status": "HISTORICAL_RECONCILIATION_COMPLETE",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "historical_terminal_commit": "bad307ac11e549437b4337f0459ccfd55625f826",
+  "historical_terminal_state": "NATURALISTIC_EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED",
+  "candidate_v13": {
+    "invoked": false,
+    "modified": false,
+    "git_blob_sha": "6c8ae4bce6ba8def0dd32fc3106c65639d521ef3",
+    "sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838"
+  },
+  "historical_formal_ledger": {
+    "ev_b": 0,
+    "ev_c": 0
+  },
+  "failure_layers": [
+    "source_contract",
+    "dataset_schema",
+    "parser",
+    "capacity",
+    "materialization"
+  ],
+  "historical_capacity": {
+    "D6": {"eligible": 212, "required": 468},
+    "D7": {"eligible": 243, "required": 468}
+  },
+  "evermembench_historical_probe": {
+    "dataset": "EverMind-AI/EverMemBench-Dynamic",
+    "historical_revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "candidate_v13_invoked": false,
+    "formal_case_materialized": false,
+    "dialogue_row_count": 0,
+    "qar_topic_counts": {},
+    "parser_defect": "non-list top-level JSON silently converted to empty list"
+  },
+  "parser_only_repair_sufficient": "NOT_ESTABLISHED",
+  "v2_required_next_checks": [
+    "direct_schema_manifest",
+    "fail_loudly_parser",
+    "source_native_gold_resolution",
+    "deduplication",
+    "domain_capacity_safety_margin",
+    "candidate_firewall"
+  ],
+  "research_integrity": "PASS"
+}

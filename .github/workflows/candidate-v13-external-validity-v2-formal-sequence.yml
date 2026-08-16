@@ -1,0 +1,43 @@
+name: Candidate v13 External Validity v2 — Formal Sequence
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-external-validity-infra-v2
+    paths:
+      - 'docs/research/candidate-v13-external-validity-v2/formal-authorization-lock.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-validity-v2-formal-sequence
+  cancel-in-progress: false
+
+jobs:
+  formal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen formal dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install datasets==4.0.0 huggingface_hub==0.34.4
+
+      - name: Configure formal evidence committer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Execute fail-closed one-shot formal sequence
+        run: |
+          python scripts/candidate_v13_external_validity_v2_formal_sequence.py

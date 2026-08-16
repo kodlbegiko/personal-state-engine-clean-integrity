@@ -1,0 +1,104 @@
+{
+  "acceptance": "PASS",
+  "anti_collapse": {
+    "abstain_count": 360,
+    "catastrophic_structural_families": [],
+    "near_universal_abstention": false,
+    "near_universal_retrieval": false,
+    "pass": true,
+    "retrieve_count": 540,
+    "single_class_prediction_collapse": false
+  },
+  "benchmark_path": "experiments/benchmarks/candidate-v13-development-v1.json",
+  "benchmark_sha256": "f115264fd8d2737dd041a3278e5f74a4bf9bf8de1fcca28c0cff8ba325800d04",
+  "candidate": "v13",
+  "formal_execution": false,
+  "frame_metrics": {
+    "discourse_contamination_rate": 0.0,
+    "relation_binding_accuracy": 1.0,
+    "subject_binding_accuracy": 1.0,
+    "temporal_scope_accuracy": 1.0
+  },
+  "integrity": {
+    "candidate_source_invariant": "PASS",
+    "candidate_source_violations": 0,
+    "determinism": "PASS",
+    "determinism_violations": 0,
+    "metadata_firewall": "PASS",
+    "metadata_firewall_violations": 0
+  },
+  "metrics": {
+    "abstention_accuracy": 1.0,
+    "answerable_count": 540,
+    "answerable_recall": 1.0,
+    "case_count": 900,
+    "eligible_answerable_count": 540,
+    "eligible_rank1_accuracy": 1.0,
+    "false_abstention_rate": 0.0,
+    "false_retrieval_rate": 0.0,
+    "mrr": 1.0,
+    "no_evidence_count": 360,
+    "r_at_1": 1.0,
+    "r_at_3": 1.0,
+    "r_at_5": 1.0
+  },
+  "no_formal_payload_exposure": true,
+  "noninferiority": null,
+  "schema_version": "candidate-v13-evaluation-summary-v1",
+  "stage": "development",
+  "structural": {
+    "S1": {
+      "accuracy": 1.0,
+      "correct": 138,
+      "count": 138
+    },
+    "S2": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S3": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S4": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S5": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S6": {
+      "accuracy": 1.0,
+      "correct": 137,
+      "count": 137
+    },
+    "S7": {
+      "accuracy": 1.0,
+      "correct": 77,
+      "count": 77
+    }
+  },
+  "threshold_failures": [],
+  "thresholds": {
+    "abstention_accuracy": 0.98,
+    "answerable_recall": 0.995,
+    "discourse_contamination_rate_max": 0.01,
+    "eligible_rank1_accuracy": 0.98,
+    "false_abstention_rate_max": 0.005,
+    "false_retrieval_rate_max": 0.02,
+    "mrr": 0.985,
+    "r_at_1": 0.98,
+    "r_at_3": 0.995,
+    "r_at_5": 0.998,
+    "structural": {
+      "S1": 0.99,
+      "S2": 0.985,
+      "S3": 0.985
+    }
+  }
+}

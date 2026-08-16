@@ -1,0 +1,12 @@
+{
+  "schema_version": "candidate-v8-protected-execution-record-v1",
+  "formal_execution_count": 1,
+  "rerun": false,
+  "authorization_commit": "d415085a68bec58efe7c4f8addb8f45607ed6f1e",
+  "materialization_commit": "2ee113ee44e1c0126950c6169d8e10edd10a3bff",
+  "dataset_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+  "workflow_run_id": "31879976758",
+  "return_code": 2,
+  "verdict": "FAIL",
+  "executed_at": "2026-08-15T10:37:30.532109+00:00"
+}

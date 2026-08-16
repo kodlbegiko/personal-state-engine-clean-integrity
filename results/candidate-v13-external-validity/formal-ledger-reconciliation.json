@@ -1,0 +1,73 @@
+{
+  "schema_version": "candidate-v13-external-validity-formal-ledger-reconciliation-v1",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "branch": "research/candidate-v13-naturalistic-external-validity",
+  "reconciliation_parent_head": "2821dc6c0f5855186fd8e85f137d2ea35fb01272",
+  "source_of_truth": "GitHub committed repository history and GitHub Actions evidence",
+  "ledger_current": {
+    "ev_b": 0,
+    "ev_c": 0,
+    "status": "RECONSTRUCTED_FROM_PREREGISTRATION_LOCK_PLUS_NO_CONSUMPTION_EVIDENCE"
+  },
+  "ledger_history": [],
+  "external_formal_ledger_file_present": false,
+  "external_formal_ledger_history_present": false,
+  "stage_history": {
+    "ev_a": {
+      "summary_history_present": false,
+      "candidate_v13_external_invocation_evidence": false,
+      "state": "NOT_EXECUTED"
+    },
+    "ev_b": {
+      "summary_history_present": false,
+      "candidate_v13_external_invocation_evidence": false,
+      "consumed": false,
+      "state": "NOT_EXECUTED_INFRASTRUCTURE_BLOCKED"
+    },
+    "ev_c": {
+      "summary_history_present": false,
+      "candidate_v13_external_invocation_evidence": false,
+      "consumed": false,
+      "state": "NOT_EXECUTED_NOT_AUTHORIZED"
+    }
+  },
+  "formal_actions_runs_found": 0,
+  "preformal_forensic_probe": {
+    "run_id": 31924604151,
+    "trigger_commit": "7ef239570c2597cbd04f3442f4ded6b49afb2c5c",
+    "evidence_commit": "2821dc6c0f5855186fd8e85f137d2ea35fb01272",
+    "candidate_v13_invoked": false,
+    "formal_case_materialized": false,
+    "classification": "PRE_FORMAL_EVIDENCE_PERSISTENCE_RECOVERY",
+    "formal_bullet_consumed": false
+  },
+  "infrastructure": {
+    "capacity_fast_result": "CAPACITY_SHORTFALL",
+    "capacity_v2_result": "CAPACITY_SHORTFALL",
+    "d6_eligible": 212,
+    "d6_required": 468,
+    "d7_eligible": 243,
+    "d7_required": 468,
+    "locked_gap_source": "EverMind-AI/EverMemBench-Dynamic",
+    "locked_gap_source_revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "locked_gap_source_probe_dialogue_row_count": 0,
+    "locked_gap_source_probe_qar_topic_counts": {},
+    "locked_gap_source_probe_usable_for_formal_materialization": false,
+    "continuation_requires_parser_adapter_or_source_contract_change": true,
+    "such_change_is_forbidden_in_this_closeout_mission": true
+  },
+  "terminal_classification": "NATURALISTIC_EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED",
+  "formal_reruns_performed": {
+    "ev_a": 0,
+    "ev_b": 0,
+    "ev_c": 0
+  },
+  "illegal_formal_reruns": false,
+  "performance_driven_changes": 0,
+  "evidence_commits": [
+    "7c429cdf1236ff1ae16f5d2cac3a28e6168ab0f2",
+    "f1d8a5dc08d6bf1b0f7723242c674ee08b895947",
+    "7ef239570c2597cbd04f3442f4ded6b49afb2c5c",
+    "2821dc6c0f5855186fd8e85f137d2ea35fb01272"
+  ]
+}

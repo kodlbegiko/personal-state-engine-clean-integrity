@@ -1,0 +1,41 @@
+name: Candidate-v10 Frozen Formal Mission
+
+on:
+  push:
+    branches:
+      - research/candidate-v10-fresh-lineage
+    paths:
+      - .github/workflows/candidate-v10-formal-mission.yml
+
+permissions:
+  contents: write
+
+jobs:
+  formal-mission:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v10-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Verify frozen test suite
+        run: pytest -q
+      - name: Execute one-shot protected-confirmatory-final chain
+        run: python scripts/run_candidate_v10_formal_mission.py
+      - name: Commit immutable formal evidence and terminal report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A experiments/benchmarks results/candidate-v10 docs/research/candidate-v10/terminal-report.md
+          if git diff --cached --quiet; then
+            echo "No formal evidence produced" >&2
+            exit 4
+          fi
+          git commit -m "candidate-v10: record one-shot formal terminal evidence"
+          git push origin HEAD:research/candidate-v10-fresh-lineage

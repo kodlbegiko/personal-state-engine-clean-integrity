@@ -1,0 +1,99 @@
+{
+  "baseline_requalification": {
+    "legacy_capacity_script_git_blob_sha": "3c23e39597e2170541815fa098869acdf6230c4d",
+    "sources": {
+      "locomo": {
+        "repository": "snap-research/locomo",
+        "revision": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+        "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+      },
+      "longmemeval-cleaned": {
+        "dataset": "xiaowu0162/longmemeval-cleaned",
+        "revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+        "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c"
+      },
+      "personamem-v2": {
+        "dataset": "bowen-upenn/PersonaMem-v2",
+        "revision": "b7b42b78917157afed063527a1c959e98f6109f2",
+        "sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52"
+      },
+      "sgd-carryover": {
+        "repository": "google-research-datasets/dstc8-schema-guided-dialogue",
+        "revision": "e852981ae34990f4358979625854259302feaa78",
+        "sha256": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9"
+      }
+    },
+    "strategy": "freshly rerun the four historical candidate-blind source loaders from pinned bytes; treat the historical implementation as a requalification dependency, not as a frozen v2 formal infrastructure"
+  },
+  "candidate_firewall": {
+    "candidate_v13_external_predictions_exist": false,
+    "candidate_v13_imported": false,
+    "candidate_v13_invoked": false,
+    "formal_case_materialized": false
+  },
+  "candidate_v13_external_performance_observed": false,
+  "candidate_v13_invoked": false,
+  "capacity_policy": {
+    "hard_rule": "eligible must be >= required for every D1-D8 and N1-N12 before freeze",
+    "minimum_safety_ratio": 1.5,
+    "preferred_safety_ratio": 2.0,
+    "safety_ratio_is_pre_freeze_engineering_target": true,
+    "warning_policy": "a domain between 1.0x and 1.5x is recorded as a pre-freeze safety warning but is not a hard capacity failure unless eligible < required"
+  },
+  "formal_case_materialized": false,
+  "integrity": {
+    "performance_driven_gold_change": "FORBIDDEN",
+    "performance_driven_parser_change": "FORBIDDEN",
+    "performance_driven_source_change": "FORBIDDEN",
+    "source_selection_candidate_blind": true
+  },
+  "parser_invariants": [
+    "nonzero_raw_records",
+    "nonzero_parsed_dialogues",
+    "nonzero_messages",
+    "stable_ids",
+    "schema_match",
+    "deterministic_parse",
+    "no_silent_empty_success",
+    "gold_reference_resolvable"
+  ],
+  "reserve_sources": {
+    "rhelm": {
+      "activation_conditions": [
+        "primary_capacity_failure",
+        "primary_schema_failure",
+        "primary_gold_resolution_failure",
+        "primary_download_failure"
+      ],
+      "dataset": "microsoft/RHELM",
+      "eligible_domains": ["D6", "D7"],
+      "forbidden_activation_conditions": [
+        "candidate_performance",
+        "candidate_metric",
+        "source_difficulty_for_candidate"
+      ],
+      "gold_rule": "every supporting_evidence reference must mechanically resolve to exactly one source item/turn",
+      "required_license": "cc-by-4.0",
+      "revision": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+      "revision_policy": "immutable revision pinned from successful candidate-blind qualification before preregistration/freeze",
+      "role": "preregistered_reserve"
+    }
+  },
+  "schema_version": "candidate-v13-external-validity-v2-source-contract-v2",
+  "status": "QUALIFIED_REVISIONS_PINNED_PRE_FREEZE",
+  "supplemental_sources": {
+    "evermembench-dynamic": {
+      "dataset": "EverMind-AI/EverMemBench-Dynamic",
+      "domain_mapping": {
+        "topic_1": "D6",
+        "topics_2_to_5": "D7"
+      },
+      "gold_rule": "source-native QAR R entries exact-resolve topic/date/group/message_index against dialogue records",
+      "required_license": "apache-2.0",
+      "revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+      "revision_policy": "immutable revision pinned from successful candidate-blind qualification before preregistration/freeze",
+      "role": "primary_gap_source",
+      "schema_policy": "inspect both legacy root JSON and official qars/dialogues dataset configs; any mismatch fails loudly"
+    }
+  }
+}

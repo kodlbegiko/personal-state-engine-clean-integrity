@@ -1,0 +1,18 @@
+{
+  "candidate_hash_match": true,
+  "candidate_sha256_actual": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_sha256_expected": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_v13_external_predictions_exist": false,
+  "candidate_v13_imported": false,
+  "candidate_v13_invoked": false,
+  "checked_scripts": [
+    "scripts/candidate_v13_external_validity_v2_integrity_qualification.py",
+    "scripts/candidate_v13_external_validity_v2_integrity_runner.py",
+    "scripts/candidate_v13_external_validity_v2_source_qualification.py",
+    "scripts/candidate_v13_external_validity_v2_source_qualification_runner.py",
+    "scripts/candidate_v13_external_validity_v2_strict_contamination.py"
+  ],
+  "formal_case_materialized": false,
+  "pass": true,
+  "violations": []
+}

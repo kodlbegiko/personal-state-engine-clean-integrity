@@ -1,0 +1,106 @@
+name: Candidate v9 development iteration 1
+
+on:
+  push:
+    branches: [research/candidate-v9-fresh-lineage]
+    paths: [.github/workflows/candidate-v9-development-iteration-1.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  iterate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v9-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Implement open-class typed-value compatibility
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p=Path('src/personal_state_engine/candidate_v9.py')
+          s=p.read_text()
+          old='''def _value_type_ok(clause: str, req: SemanticRequirements) -> tuple[bool, set[str]]:\n    qtypes = set(req.value_types)\n    ctypes = _evidence_value_types(clause)\n    if not qtypes:\n        return True, ctypes\n    shared = qtypes & ctypes\n    return bool(shared), shared\n'''
+          new='''def _value_type_ok(\n    clause: str,\n    req: SemanticRequirements,\n    relation_evidence: set[str] | None = None,\n) -> tuple[bool, set[str]]:\n    \"\"\"Check value-type compatibility without requiring a closed entity lexicon.\n\n    Explicit typed evidence wins.  A detected conflicting type fails closed.\n    For canonical relations whose range is structurally single-typed, the\n    relation itself licenses the open-class value (e.g. ``serves as X`` ->\n    role, ``enrolled in X`` -> course, ``speaks X`` -> language).  The\n    polymorphic preference relation may use an unknown value only when no\n    contradictory type signal is present.  Generic ``take/taking`` is not\n    allowed to structurally prove medication type.\n    \"\"\"\n    qtypes = set(req.value_types)\n    ctypes = _evidence_value_types(clause)\n    if not qtypes:\n        return True, ctypes\n\n    shared_types = qtypes & ctypes\n    if shared_types:\n        return True, shared_types\n\n    # If evidence explicitly identifies another semantic type, do not infer\n    # compatibility merely from lexical proximity.\n    if ctypes and not shared_types:\n        return False, ctypes\n\n    relation_evidence = set(relation_evidence or ())\n    for relation in relation_evidence:\n        allowed = RELATION_TO_VALUE_TYPES.get(relation, set())\n        if relation != \"health_medication\" and len(allowed) == 1 and allowed <= qtypes:\n            return True, {f\"inferred:{next(iter(allowed))}\"}\n\n    # Preference is deliberately polymorphic.  Permit an open-class value only\n    # when the clause exposes no contradictory typed signal; safety blockers,\n    # subject matching, relation matching, value-bearing, and temporal checks\n    # are still mandatory.\n    if \"preference\" in relation_evidence and len(qtypes) == 1 and not ctypes:\n        return True, {f\"open:{next(iter(qtypes))}\"}\n\n    return False, ctypes\n'''
+          assert old in s, 'expected value-type function not found'
+          s=s.replace(old,new)
+          old_call='''    value_type_ok, type_evidence = _value_type_ok(clause, req)\n'''
+          new_call='''    value_type_ok, type_evidence = _value_type_ok(clause, req, rel_evidence)\n'''
+          assert old_call in s, 'expected call site not found'
+          s=s.replace(old_call,new_call)
+          p.write_text(s)
+
+          t=Path('tests/test_candidate_v9.py')
+          ts=t.read_text()
+          addition='''\n\ndef test_open_class_role_is_licensed_by_typed_relation():\n    c=case(\"What profession does Noor hold?\",[m(\"rel\",\"Noor serves as a quantum archivist.\")])\n    assert pse_candidate_v9_rank(c,5)==[\"rel\"]\n\n\ndef test_open_class_course_is_licensed_by_typed_relation():\n    c=case(\"Which course is Noor taking this term?\",[m(\"rel\",\"Noor is enrolled in comparative hydrology this term.\")])\n    assert pse_candidate_v9_rank(c,5)==[\"rel\"]\n\n\ndef test_polymorphic_preference_rejects_explicit_conflicting_type():\n    c=case(\"Which beverage does Noor normally prefer?\",[m(\"x\",\"Noor's favorite pastime is origami.\")])\n    assert pse_candidate_v9_rank(c,5)==[]\n\n\ndef test_polymorphic_preference_accepts_open_value_without_conflicting_type():\n    c=case(\"Which beverage does Noor normally prefer?\",[m(\"rel\",\"Noor normally orders saffron tonic during breaks.\")])\n    assert pse_candidate_v9_rank(c,5)==[\"rel\"]\n'''
+          if 'test_open_class_role_is_licensed_by_typed_relation' not in ts:
+              t.write_text(ts+addition)
+          PY
+          git config user.name candidate-v9-research-bot
+          git config user.email candidate-v9-research-bot@users.noreply.github.com
+          git add src/personal_state_engine/candidate_v9.py tests/test_candidate_v9.py
+          git commit -m "candidate-v9: generalize open-class typed value binding"
+          git push origin HEAD:research/candidate-v9-fresh-lineage
+
+      - name: Install and verify integrity
+        run: |
+          python -m pip install -e . pytest
+          test "$(git rev-parse origin/research/candidate-v8-fresh-lineage)" = "86c440fc487c46a1e603144177e666d32a52e725"
+          test -z "$(git diff --name-only 86c440fc487c46a1e603144177e666d32a52e725 HEAD -- docs/research/candidate-v8 results/candidate-v8 src/personal_state_engine/candidate_v8.py scripts/generate_candidate_v8_benchmark.py scripts/evaluate_candidate_v8.py 'experiments/benchmarks/candidate-v8-*' experiments/configs/candidate-v8-v1.json)"
+          python -m pytest -q | tee /tmp/candidate-v9-tests-iter1.txt
+
+      - name: Verify development surface unchanged
+        run: |
+          test "$(sha256sum experiments/benchmarks/candidate-v9-development-v1.json | awk '{print $1}')" = "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704"
+
+      - name: Evaluate development iteration 1
+        run: |
+          python scripts/evaluate_candidate_v9.py experiments/benchmarks/candidate-v9-development-v1.json results/candidate-v9/development-summary-iteration-1.json --stage development --no-fail
+
+      - name: Append immutable development ledger
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          root=Path('.')
+          r=json.loads((root/'results/candidate-v9/development-summary-iteration-1.json').read_text())
+          tests=Path('/tmp/candidate-v9-tests-iter1.txt').read_text().strip()
+          def sha(p): return hashlib.sha256((root/p).read_bytes()).hexdigest()
+          row={
+            'iteration':1,
+            'architecture':'TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_OPEN_CLASS_VALUE_BINDING_PLUS_HARD_SAFETY_BLOCKERS',
+            'source_sha256':sha('src/personal_state_engine/candidate_v9.py'),
+            'generator_sha256':sha('scripts/generate_candidate_v9_benchmark.py'),
+            'evaluator_sha256':sha('scripts/evaluate_candidate_v9.py'),
+            'config_sha256':sha('experiments/configs/candidate-v9-v1.json'),
+            'development_benchmark_sha256':sha('experiments/benchmarks/candidate-v9-development-v1.json'),
+            'metrics':r['candidate_v9'],'paired_bootstrap':r['paired_bootstrap'],'checks':r['checks'],'verdict':r['verdict'],
+            'failure_taxonomy_basis':'iteration-0: 22/22 VALUE_TYPE',
+            'reason':'replace closed value-entity whitelist requirement with relation-range typing; preserve explicit-conflict rejection and all hard blockers',
+            'patch':'single-range canonical relations license open-class values; preference allows unknown type only absent explicit conflict; medication excluded from generic structural inference',
+            'tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0
+          }
+          p=root/'results/candidate-v9/development-ledger.jsonl'
+          existing=p.read_text() if p.exists() else ''
+          p.write_text(existing+json.dumps(row)+'\n')
+          (root/'results/candidate-v9/development-test-record-iteration-1.json').write_text(json.dumps({'tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0},indent=2)+'\n')
+          PY
+          git add results/candidate-v9/development-summary-iteration-1.json results/candidate-v9/development-ledger.jsonl results/candidate-v9/development-test-record-iteration-1.json
+          git commit -m "candidate-v9: record development iteration 1"
+          git push origin HEAD:research/candidate-v9-fresh-lineage
+
+      - name: Enforce preregistered development gates
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('results/candidate-v9/development-summary-iteration-1.json'))
+          print(json.dumps({'metrics':r['candidate_v9'],'bootstrap':r['paired_bootstrap'],'checks':r['checks'],'verdict':r['verdict']},indent=2))
+          raise SystemExit(0 if r['verdict']=='PASS' else 2)
+          PY

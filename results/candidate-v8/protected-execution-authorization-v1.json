@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate-v8-protected-execution-authorization-v1",
+  "status": "AUTHORIZED_ONCE",
+  "materialization_commit": "2ee113ee44e1c0126950c6169d8e10edd10a3bff",
+  "dataset_sha256": "087352b8ccc3a66790cd29953f41418e9fb296df60d10245b576bf41c49d55f8",
+  "formal_execution_limit": 1,
+  "workflow_run_id": "31879976758",
+  "created_at": "2026-08-15T10:37:29.670308+00:00"
+}

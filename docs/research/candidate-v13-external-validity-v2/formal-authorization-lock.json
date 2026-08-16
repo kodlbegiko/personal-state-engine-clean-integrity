@@ -1,0 +1,28 @@
+{
+  "schema_version": "candidate-v13-external-validity-v2-formal-authorization-lock-v1",
+  "authorized": true,
+  "candidate": "Candidate-v13",
+  "candidate_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+  "candidate_modified": false,
+  "preregistration_content_commit": "e8c797fb41f832c8b53fdbbc69196bb4627f0f90",
+  "preregistration_lock_commit": "637d61ea3dfb2812fc425c2928551a23139e19ad",
+  "formal_ledger_initialization_commit": "f80d39e6a75886709a880c8db76f8cbb1922c7e5",
+  "freeze_manifest_git_blob_sha": "98631b78d11e46c5f7e884466a8d90c2644c6a8c",
+  "freeze_status": "FROZEN",
+  "selection_digests": {
+    "ev_a_v2": "09531ebaa5558a4e424c0f99d6173e5dde7f2a766e461f0eeb9650253d8ac4bc",
+    "ev_b_v2": "0fab0710a020cdeb53b58bc1f0de0b0adb2c09acf6276228d4f839d7763c90ab",
+    "ev_c_v2": "c7a32b83c2ba79241513b3a442ff242f68b4035c52265531324b6d155d75f50d"
+  },
+  "formal_ledger_initial": {
+    "ev_a_v2": 0,
+    "ev_b_v2": 0,
+    "ev_c_v2": 0
+  },
+  "one_shot_sequence": ["ev_a_v2", "ev_b_v2", "ev_c_v2"],
+  "candidate_v13_external_performance_observed_before_authorization": false,
+  "candidate_v13_invoked_before_authorization": false,
+  "manual_rerun_authorized": false,
+  "candidate_v14_authorized": false,
+  "research_integrity": "PASS"
+}

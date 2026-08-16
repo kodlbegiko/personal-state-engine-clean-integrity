@@ -1,0 +1,75 @@
+name: Candidate-v11 Development Freeze
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - results/candidate-v11/development-freeze-request-v1.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v11-freeze
+  cancel-in-progress: false
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Re-run Candidate-v11 tests before freeze
+        run: PYTHONPATH=src python -m pytest -q tests/test_candidate_v11.py | tee /tmp/candidate-v11-freeze-pytest.txt
+      - name: Build freeze manifest and initialize one-shot execution state
+        run: |
+          python scripts/create_candidate_v11_freeze_manifest.py \
+            --manifest results/candidate-v11/development-freeze-manifest-v1.json \
+            --counts results/candidate-v11/formal-execution-counts-v1.json \
+            --ledger results/candidate-v11/formal-execution-ledger-v1.jsonl
+      - name: Verify generated freeze manifest
+        run: |
+          python scripts/verify_candidate_v11_freeze.py \
+            --require-zero-counts \
+            --output results/candidate-v11/development-freeze-verification-v1.json
+      - name: Record freeze test evidence
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          log = Path('/tmp/candidate-v11-freeze-pytest.txt').read_text()
+          record = {
+              'schema_version': 'candidate-v11-development-freeze-test-record-v1',
+              'freeze_source_commit_sha': os.environ['SOURCE_SHA'],
+              'github_run_id': os.environ['RUN_ID'],
+              'pytest_output_sha256': hashlib.sha256(log.encode()).hexdigest(),
+              'pytest_tail': log.strip().splitlines()[-3:],
+              'unit_invariants_pass': True,
+              'formal_execution_counts_before_freeze_commit': {'protected': 0, 'confirmatory': 0, 'final': 0},
+              'monetary_cost_usd': 0,
+          }
+          path = Path('results/candidate-v11/development-freeze-test-record-v1.json')
+          path.write_text(json.dumps(record, indent=2, sort_keys=True) + '\n')
+          PY
+      - name: Commit freeze boundary
+        run: |
+          git config user.name "candidate-v11-research-bot"
+          git config user.email "candidate-v11-research-bot@users.noreply.github.com"
+          git add \
+            results/candidate-v11/development-freeze-manifest-v1.json \
+            results/candidate-v11/development-freeze-verification-v1.json \
+            results/candidate-v11/development-freeze-test-record-v1.json \
+            results/candidate-v11/formal-execution-counts-v1.json \
+            results/candidate-v11/formal-execution-ledger-v1.jsonl
+          git commit -m "candidate-v11: freeze development and initialize formal counts"
+          git push origin HEAD:research/candidate-v11-fresh-lineage

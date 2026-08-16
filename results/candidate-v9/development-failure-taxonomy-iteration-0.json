@@ -1,0 +1,1162 @@
+{
+  "failure_count": 22,
+  "category_counts": {
+    "VALUE_TYPE": 22
+  },
+  "query_relation_counts": {
+    "goal": 3,
+    "education_course": 6,
+    "health_medication": 6,
+    "language": 2,
+    "work_role": 2,
+    "activity": 2,
+    "media": 1,
+    "attribute_color": 2,
+    "education_institution": 2,
+    "preference": 1,
+    "membership": 1
+  },
+  "query_value_type_counts": {
+    "goal": 3,
+    "course": 6,
+    "language": 2,
+    "role": 2,
+    "activity": 2,
+    "media": 1,
+    "color": 2,
+    "institution": 2,
+    "beverage": 1,
+    "organization": 1
+  },
+  "failures": [
+    {
+      "case_id": "CV9-DEV-A-153",
+      "query": "What target is Ina Arden preparing toward?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "arden",
+            "ina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "prepar",
+            "target",
+            "toward"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "value_types": [
+          "goal"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-153-rel",
+          "clause": "Ina Arden is preparing for a research poster.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "goal"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-087",
+      "query": "Which course is Oksana Petrov taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "oksana",
+            "petrov"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-087-rel",
+          "clause": "Oksana Petrov is enrolled in economic history this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-105",
+      "query": "What target is Ina Olsen preparing toward?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ina",
+            "olsen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "prepar",
+            "target",
+            "toward"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "value_types": [
+          "goal"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-105-rel",
+          "clause": "Ina Olsen is preparing for a cycling brevet.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "goal"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-198",
+      "query": "Which language does Sven Neri communicate in fluently?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "neri",
+            "sven"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "language"
+          ],
+          "predicate_terms": [
+            "communicate",
+            "fluently",
+            "language"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "language"
+        ],
+        "value_types": [
+          "language"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-198-rel",
+          "clause": "Sven Neri speaks Norwegian fluently.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "language"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-063",
+      "query": "Which course is Oksana Garcia taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "garcia",
+            "oksana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-063-rel",
+          "clause": "Oksana Garcia is enrolled in plant physiology this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-039",
+      "query": "Which course is Oksana Neri taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "neri",
+            "oksana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-039-rel",
+          "clause": "Oksana Neri is enrolled in structural design this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-051",
+      "query": "What profession does Chiara Costa hold?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "chiara",
+            "costa"
+          ],
+          "first_person": false,
+          "relation_signals": [],
+          "predicate_terms": [
+            "hold",
+            "profession"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "work_role"
+        ],
+        "value_types": [
+          "role"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-051-rel",
+          "clause": "Chiara Costa serves as a energy auditor.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "work_role"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-152",
+      "query": "What activity does Dev Jensen enjoy on weekends?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dev",
+            "jensen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "activity",
+            "enjoy",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "value_types": [
+          "activity"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-152-rel",
+          "clause": "Dev Jensen enjoys kayaking on weekends.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "activity"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-208",
+      "query": "What kind of music does Umar Dahl usually listen to?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "dahl",
+            "umar"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "identity_attribute",
+            "media",
+            "preference_choice"
+          ],
+          "predicate_terms": [
+            "listen",
+            "music",
+            "usually"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "media"
+        ],
+        "value_types": [
+          "media"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-208-rel",
+          "clause": "Umar Dahl often listens to bossa nova.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "media"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-123",
+      "query": "What profession does Chiara Neri hold?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "chiara",
+            "neri"
+          ],
+          "first_person": false,
+          "relation_signals": [],
+          "predicate_terms": [
+            "hold",
+            "profession"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "work_role"
+        ],
+        "value_types": [
+          "role"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-123-rel",
+          "clause": "Chiara Neri serves as a data librarian.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "work_role"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-157",
+      "query": "Which colour is Elin Mori's backpack?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "elin",
+            "mori"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "identity_attribute"
+          ],
+          "predicate_terms": [
+            "backpack",
+            "colour"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "attribute_color"
+        ],
+        "value_types": [
+          "color"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-157-rel",
+          "clause": "Elin Mori's backpack is indigo.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "attribute_color"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-174",
+      "query": "Which language does Sven Evans communicate in fluently?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "evans",
+            "sven"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "language"
+          ],
+          "predicate_terms": [
+            "communicate",
+            "fluently",
+            "language"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "language"
+        ],
+        "value_types": [
+          "language"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-174-rel",
+          "clause": "Sven Evans speaks Finnish fluently.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "language"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-193",
+      "query": "Which college or university is Reina Kovac enrolled at?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "kovac",
+            "reina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course",
+            "education_institution"
+          ],
+          "predicate_terms": [
+            "college",
+            "enroll",
+            "university"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_institution"
+        ],
+        "value_types": [
+          "institution"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-193-rel",
+          "clause": "Reina Kovac attends Harbor Institute this year.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_institution"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-120",
+      "query": "Which beverage does Luc Ito favor on ordinary workdays?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ito",
+            "luc"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "food_drink"
+          ],
+          "predicate_terms": [
+            "beverage",
+            "favor",
+            "ordinary",
+            "workday"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "preference"
+        ],
+        "value_types": [
+          "beverage"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-120-rel",
+          "clause": "Luc Ito routinely selects cafe au lait during afternoon breaks.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "preference"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-015",
+      "query": "Which course is Oksana Evans taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "evans",
+            "oksana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-015-rel",
+          "clause": "Oksana Evans is enrolled in digital ethics this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-128",
+      "query": "What activity does Dev Arden enjoy on weekends?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "arden",
+            "dev"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "activity"
+          ],
+          "predicate_terms": [
+            "activity",
+            "enjoy",
+            "weekend"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "activity"
+        ],
+        "value_types": [
+          "activity"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-128-rel",
+          "clause": "Dev Arden enjoys bookbinding on weekends.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "activity"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-111",
+      "query": "Which course is Oksana Ito taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ito",
+            "oksana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-111-rel",
+          "clause": "Oksana Ito is enrolled in data visualization this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-135",
+      "query": "Which course is Oksana Bauer taking this term?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "bauer",
+            "oksana"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course"
+          ],
+          "predicate_terms": [
+            "course",
+            "tak",
+            "term"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_course",
+          "health_medication"
+        ],
+        "value_types": [
+          "course"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-135-rel",
+          "clause": "Oksana Bauer is enrolled in materials science this term.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_course"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-031",
+      "query": "What club is Yara Fischer a member of?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "fischer",
+            "yara"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "membership"
+          ],
+          "predicate_terms": [
+            "club",
+            "member"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "membership"
+        ],
+        "value_types": [
+          "organization"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-031-rel",
+          "clause": "Yara Fischer is a member of the volunteer network.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "membership"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-049",
+      "query": "Which college or university is Reina Evans enrolled at?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "evans",
+            "reina"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "education_course",
+            "education_institution"
+          ],
+          "predicate_terms": [
+            "college",
+            "enroll",
+            "university"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "education_institution"
+        ],
+        "value_types": [
+          "institution"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-049-rel",
+          "clause": "Reina Evans attends Lighthouse Institute this year.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "education_institution"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-177",
+      "query": "What target is Ina Jensen preparing toward?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "ina",
+            "jensen"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "goal"
+          ],
+          "predicate_terms": [
+            "prepar",
+            "target",
+            "toward"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "goal"
+        ],
+        "value_types": [
+          "goal"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-177-rel",
+          "clause": "Ina Jensen is preparing for a wilderness course.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "goal"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    },
+    {
+      "case_id": "CV9-DEV-A-181",
+      "query": "Which colour is Elin Fischer's backpack?",
+      "requirements": {
+        "base": {
+          "subject_anchors": [
+            "elin",
+            "fischer"
+          ],
+          "first_person": false,
+          "relation_signals": [
+            "identity_attribute"
+          ],
+          "predicate_terms": [
+            "backpack",
+            "colour"
+          ],
+          "object_anchors": [],
+          "temporal_scope": "CURRENT"
+        },
+        "relations": [
+          "attribute_color"
+        ],
+        "value_types": [
+          "color"
+        ]
+      },
+      "relevant_rows": [
+        {
+          "memory_id": "CV9-DEV-A-181-rel",
+          "clause": "Elin Fischer's backpack is ochre.",
+          "category": "VALUE_TYPE",
+          "subject_ok": true,
+          "relation_ok": true,
+          "value_type_ok": false,
+          "value_bearing": true,
+          "direct_assertion": true,
+          "temporal_ok": true,
+          "blocker": null,
+          "score": 5,
+          "relation_signals": [
+            "attribute_color"
+          ],
+          "value_type_signals": []
+        }
+      ],
+      "categories": [
+        "VALUE_TYPE"
+      ]
+    }
+  ],
+  "formal_counts": {
+    "protected": 0,
+    "confirmatory": 0,
+    "final": 0
+  }
+}
