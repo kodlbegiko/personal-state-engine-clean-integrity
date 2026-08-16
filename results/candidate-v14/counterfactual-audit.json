@@ -1,0 +1,1 @@
+{"checks":{"contradiction_resistance":true,"deterministic_output":true,"evidence_removal_retrieve_to_abstain":true,"lexical_lure_resistance":true,"memory_permutation_invariance":true,"punctuation_invariance":true,"retrieval_preserving_wording":true,"temporal_newer_wins":true},"count":8,"pass":true,"passed":8,"schema_version":"candidate-v14-counterfactual-audit-v1"}
