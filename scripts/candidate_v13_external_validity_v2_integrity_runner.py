@@ -8,6 +8,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 INTEGRITY = ROOT / "scripts/candidate_v13_external_validity_v2_integrity_qualification.py"
+STRICT_CONTAM = ROOT / "scripts/candidate_v13_external_validity_v2_strict_contamination.py"
 
 
 def load(name: str, path: Path):
@@ -21,6 +22,7 @@ def load(name: str, path: Path):
 
 def main() -> int:
     integrity = load("pse_v2_integrity", INTEGRITY)
+    strict_contam = load("pse_v2_strict_contamination", STRICT_CONTAM)
 
     def fixed_build_pool():
         mod = integrity.load_module("pse_v2_source_qualifier_for_integrity", integrity.SRC)
@@ -57,6 +59,7 @@ def main() -> int:
         }
 
     integrity.build_pool = fixed_build_pool
+    integrity.contamination_audit = lambda bases: strict_contam.audit(ROOT, bases)
     return int(integrity.main())
 
 
