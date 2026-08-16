@@ -1,8 +1,16 @@
 {
+  "candidate_payload_projection": [
+    "query",
+    "memories[id,text,timestamp]"
+  ],
   "candidate_v13_invoked": false,
+  "distractor_selection": "same-subject-relation -> same-subject -> same-domain; deterministic cyclic offset keyed by stage seed + target + tier",
   "full_pre_freeze_qualification": "100% of all 3,744 selected future formal cases",
   "global_ceiling": 100,
   "gold_preservation": "all answerable source-native gold retained; no truncation",
+  "implementation": "scripts/candidate_v13_external_validity_v3_materializer.py",
+  "indexing": "pre-index source/domain/subject/relation and materialized source-native units; no full source scan per selected case",
+  "individual_case_contents_persisted": false,
   "minimum_context": 5,
   "minimum_distractors": 4,
   "no_evidence": "all target gold withheld and duplicate target text excluded from distractors",

@@ -1,15 +1,23 @@
 # Candidate-v13 External Validity v3 — Preregistration
 
-Candidate-v13 remains immutable and uninvoked. All 3,744 future formal cases have passed production-faithful materialization before freeze.
+Candidate-v13 remains immutable, unimported, and uninvoked. All source, allocation, materialization, evaluator, runner, and policy decisions below are candidate-blind and become immutable at freeze.
 
-## Locked sequence
+## Formal sequence
 
-EV-A-v3 (384) -> PASS required -> EV-B-v3 (1,440) -> PASS required -> EV-C-v3 (1,920). No reruns.
+EV-A-v3 (384) → PASS required → EV-B-v3 (1,440) → PASS required → EV-C-v3 (1,920). No stage reruns, no threshold changes, no benchmark replacement, no post-freeze infrastructure patch.
+
+## Allocation
+
+Fresh v3 seeds and fresh deterministic max-flow assignments. Exact source×domain, family, domain, and answerability quotas are locked in `preregistration-lock-v3.json`. Cross-stage base reuse must equal zero. Individual protected assignments are process-memory only.
 
 ## Runtime memory policy
 
-Policy C: `max(5, gold_count + 4)`, global infrastructure ceiling 100, zero gold truncation.
+Policy C: `max(5, gold_count + 4)`, global safety ceiling 100. All source-native gold must be retained for answerable cases; all target gold is withheld for no-evidence cases. Case dropping after allocation is forbidden.
 
-## Integrity
+## Full materialization gate
 
-Pinned immutable source revisions; fresh v3 seeds; no v2 individual assignment reuse; aggregate-only persisted protected evidence; Candidate import only after per-stage ledger 0->1 is committed and pushed.
+Before freeze, all 3,744 future formal cases must materialize production-faithfully with zero gold truncation, zero runtime gold loss, zero exceptions, stable selection/materialization/runtime-payload digests, and no Candidate import.
+
+## Evaluation and anti-collapse
+
+Metrics, thresholds, anti-collapse rules, stop conditions, evaluator behavior, and reserve-source policy are frozen by the machine-readable preregistration lock and referenced policy files. Candidate performance cannot alter them.

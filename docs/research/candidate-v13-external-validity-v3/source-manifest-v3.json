@@ -7,7 +7,7 @@
     {
       "adapter_dependency": "bowen-upenn/PersonaMem-v2",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": "95f2a8a324aab7baf2af937feae12731369e2abf7cad5ab3e170594cb25a3e52",
       "dataset": "bowen-upenn/PersonaMem-v2",
       "gold_rule": null,
@@ -22,7 +22,7 @@
     {
       "adapter_dependency": "xiaowu0162/longmemeval-cleaned",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
       "dataset": "xiaowu0162/longmemeval-cleaned",
       "gold_rule": null,
@@ -37,7 +37,7 @@
     {
       "adapter_dependency": "snap-research/locomo",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
       "gold_rule": null,
       "license": "cc-by-nc-4.0",
@@ -53,7 +53,7 @@
     {
       "adapter_dependency": "google-research-datasets/dstc8-schema-guided-dialogue",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9",
       "gold_rule": null,
       "license": "cc-by-sa-4.0",
@@ -69,7 +69,7 @@
     {
       "adapter_dependency": "EverMind-AI/EverMemBench-Dynamic",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": null,
       "dataset": "EverMind-AI/EverMemBench-Dynamic",
       "gold_rule": null,
@@ -84,7 +84,7 @@
     {
       "adapter_dependency": "microsoft/RHELM",
       "adapter_version": "candidate-v13-external-validity-v3-pinned-adapter-v1",
-      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+      "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
       "content_sha256": null,
       "dataset": "microsoft/RHELM",
       "gold_rule": null,
