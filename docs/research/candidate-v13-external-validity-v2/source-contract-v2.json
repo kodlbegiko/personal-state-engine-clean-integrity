@@ -37,7 +37,8 @@
     "hard_rule": "eligible must be >= required for every D1-D8 and N1-N12 before freeze",
     "minimum_safety_ratio": 1.5,
     "preferred_safety_ratio": 2.0,
-    "safety_ratio_is_pre_freeze_engineering_target": true
+    "safety_ratio_is_pre_freeze_engineering_target": true,
+    "warning_policy": "a domain between 1.0x and 1.5x is recorded as a pre-freeze safety warning but is not a hard capacity failure unless eligible < required"
   },
   "formal_case_materialized": false,
   "integrity": {
@@ -65,10 +66,7 @@
         "primary_download_failure"
       ],
       "dataset": "microsoft/RHELM",
-      "eligible_domains": [
-        "D6",
-        "D7"
-      ],
+      "eligible_domains": ["D6", "D7"],
       "forbidden_activation_conditions": [
         "candidate_performance",
         "candidate_metric",
@@ -76,12 +74,13 @@
       ],
       "gold_rule": "every supporting_evidence reference must mechanically resolve to exactly one source item/turn",
       "required_license": "cc-by-4.0",
-      "revision_policy": "resolve current immutable Hugging Face commit during qualification; persist exact SHA before preregistration/freeze",
+      "revision": "4799f7b5757c6d9a945770fe8660c7ccfafca4c5",
+      "revision_policy": "immutable revision pinned from successful candidate-blind qualification before preregistration/freeze",
       "role": "preregistered_reserve"
     }
   },
-  "schema_version": "candidate-v13-external-validity-v2-source-contract-v1",
-  "status": "CANDIDATE_BLIND_INFRASTRUCTURE_DEVELOPMENT",
+  "schema_version": "candidate-v13-external-validity-v2-source-contract-v2",
+  "status": "QUALIFIED_REVISIONS_PINNED_PRE_FREEZE",
   "supplemental_sources": {
     "evermembench-dynamic": {
       "dataset": "EverMind-AI/EverMemBench-Dynamic",
@@ -89,9 +88,10 @@
         "topic_1": "D6",
         "topics_2_to_5": "D7"
       },
-      "gold_rule": "source-native QAR R entries exact-resolve topic/date/group/message index against dialogue records",
+      "gold_rule": "source-native QAR R entries exact-resolve topic/date/group/message_index against dialogue records",
       "required_license": "apache-2.0",
-      "revision_policy": "resolve current immutable Hugging Face commit during qualification; persist exact SHA before preregistration/freeze",
+      "revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+      "revision_policy": "immutable revision pinned from successful candidate-blind qualification before preregistration/freeze",
       "role": "primary_gap_source",
       "schema_policy": "inspect both legacy root JSON and official qars/dialogues dataset configs; any mismatch fails loudly"
     }
