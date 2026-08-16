@@ -1,0 +1,10 @@
+{
+  "schema_version": "candidate-v14-selection-policy-v1",
+  "selected_architecture": "B — Two-Stage Retrieve → Verify",
+  "selection_timing": "before untouched internal holdout",
+  "objective": ["maximize answerable_recall", "maximize ranking_quality", "maximize family_robustness", "maximize domain_robustness"],
+  "constraints": {"false_retrieval_bounded": true, "abstention_accuracy_bounded": true, "anti_collapse_required": true},
+  "aggregate_gates": {"mrr_min": 0.85, "r1_min": 0.80, "r3_min": 0.90, "r5_min": 0.93, "answerable_recall_min": 0.92, "eligible_rank1_accuracy_min": 0.82, "abstention_accuracy_min": 0.88, "false_abstention_max": 0.08, "false_retrieval_max": 0.10},
+  "robustness_gates": {"family_accuracy_min": 0.75, "domain_r1_min": 0.65, "domain_answerable_recall_min": 0.80, "domain_false_retrieval_max": 0.18},
+  "anti_collapse": {"reject_always_abstain": true, "reject_always_retrieve": true, "action_distribution_sanity_required": true}
+}

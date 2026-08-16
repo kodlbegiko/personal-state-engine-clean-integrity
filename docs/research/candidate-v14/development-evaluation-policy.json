@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate-v14-development-evaluation-policy-v1",
+  "formal_external_evaluation": false,
+  "development_splits": ["architecture-development", "internal-validation", "adversarial-validation"],
+  "holdout_split": "untouched-internal-holdout",
+  "holdout_access_policy": "locked until candidate, evaluator, thresholds, policy, and holdout digest are frozen",
+  "metrics": ["MRR", "R@1", "R@3", "R@5", "answerable_recall", "eligible_rank1_accuracy", "abstention_accuracy", "false_abstention", "false_retrieval", "family_accuracy", "domain_metrics"],
+  "integrity_rules": ["no protected v4 case-level data", "no protected assignment reconstruction", "no threshold tuning after holdout", "holdout invocation count exactly one", "no holdout rerun", "no post-holdout candidate modification"]
+}
