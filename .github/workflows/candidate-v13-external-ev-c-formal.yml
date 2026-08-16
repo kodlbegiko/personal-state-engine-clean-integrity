@@ -1,0 +1,132 @@
+name: Candidate v13 external-validity EV-C one-shot formal
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/ev-c-formal-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-ev-c-one-shot
+  cancel-in-progress: false
+
+jobs:
+  ev-c:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify EV-B authorization, freeze, and unused EV-C ledger
+        run: |
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          l=json.loads(Path('results/candidate-v13-external-validity/formal-ledger.json').read_text())
+          b=json.loads(Path('results/candidate-v13-external-validity/ev-b-summary.json').read_text())
+          assert b['decision']=='EV_B_PASS — EV_C_AUTHORIZED',b['decision']
+          assert l=={'ev_b':1,'ev_c':0,'terminal_state':None},l
+          for rel,expected in f['files_sha256'].items():
+              p=Path(rel); assert p.exists(),rel
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,rel
+          PY
+      - name: Materialize EV-C under frozen evaluator without Candidate execution
+        run: python scripts/candidate_v13_external_runtime_eval.py --stage ev_c --materialize-only
+      - name: Validate EV-C formal materialization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/ev-c-runtime.json').read_text())
+          f=json.loads(Path('docs/research/candidate-v13-external-validity/freeze-manifest.json').read_text())
+          assert r['status']=='MATERIALIZATION_VALIDATED_NO_EXECUTION'
+          assert r['selection_digest']==f['ev_c_selection_digest']
+          assert r['case_counts']['total']==1920
+          assert r['case_counts']['answerable']==1152
+          assert r['case_counts']['no_evidence']==768
+          assert set(r['case_counts']['domain'].values())=={240}
+          assert set(r['case_counts']['family'].values())=={160}
+          assert r['case_counts']['source']=={'personamem-v2':480,'locomo':384,'sgd-carryover':480,'longmemeval-cleaned':192,'evermembench-dynamic':384}
+          assert r['raw_case_payload_persisted'] is False
+          PY
+      - name: Consume EV-C one-shot ledger before first formal Candidate call
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime,timezone
+          from pathlib import Path
+          p=Path('results/candidate-v13-external-validity/formal-ledger.json')
+          l=json.loads(p.read_text())
+          assert l=={'ev_b':1,'ev_c':0,'terminal_state':None},l
+          l['ev_c']=1
+          p.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n')
+          Path('results/candidate-v13-external-validity/ev-c-execution-start.json').write_text(json.dumps({
+            'schema_version':'candidate-v13-external-ev-c-execution-start-v1',
+            'status':'EV_C_FORMAL_BULLET_CONSUMED_BEFORE_ALGORITHM_CALL',
+            'created_utc':datetime.now(timezone.utc).isoformat(),
+            'ev_c_ledger_count':1
+          },indent=2,sort_keys=True)+'\n')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json results/candidate-v13-external-validity/ev-c-execution-start.json results/candidate-v13-external-validity/ev-c-runtime.json
+          git commit -m "candidate-v13 external validity: consume EV-C formal bullet"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Execute EV-C exactly once
+        id: execute
+        continue-on-error: true
+        run: python scripts/candidate_v13_external_formal_execute.py --stage ev_c
+      - name: Finalize EV-C terminal state
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ledger_path=Path('results/candidate-v13-external-validity/formal-ledger.json')
+          l=json.loads(ledger_path.read_text())
+          assert l['ev_b']==1 and l['ev_c']==1
+          summary=Path('results/candidate-v13-external-validity/ev-c-summary.json')
+          if summary.exists():
+              d=json.loads(summary.read_text())['decision']
+              allowed={
+                'CANDIDATE_V13_EXTERNAL_VALIDITY_PASS',
+                'CANDIDATE_V13_EXTERNAL_VALIDITY_FAIL — CANDIDATE_V14_AUTHORIZED',
+                'EXTERNAL_VALIDITY_INVALID — RESEARCH_INTEGRITY_FAILURE'
+              }
+              if d not in allowed: raise RuntimeError(f'illegal EV-C decision: {d}')
+              l['terminal_state']=d
+              reason='EV-C completed exactly once under the frozen evaluator; terminal state follows preregistered aggregate, structural, anti-collapse, freshness, and integrity gates.'
+          else:
+              d='EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED'
+              l['terminal_state']=d
+              reason='EV-C formal bullet was consumed but the frozen formal runner did not produce a valid stage summary; no rerun is permitted.'
+          ledger_path.write_text(json.dumps(l,indent=2,sort_keys=True)+'\n')
+          Path('/tmp/terminal_state.txt').write_text(d)
+          Path('/tmp/terminal_reason.txt').write_text(reason)
+          PY
+          terminal="$(cat /tmp/terminal_state.txt)"
+          reason="$(cat /tmp/terminal_reason.txt)"
+          python scripts/candidate_v13_external_finalize.py --terminal-state "$terminal" --reason "$reason"
+      - name: Persist EV-C and terminal evidence
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/formal-ledger.json results/candidate-v13-external-validity/terminal-summary.json docs/research/candidate-v13-external-validity/terminal-decision.md
+          for f in ev-c-summary.json ev-c-structural.json ev-c-domain.json ev-c-integrity.json ev-c-freshness-audit.json; do
+            test ! -f "results/candidate-v13-external-validity/$f" || git add "results/candidate-v13-external-validity/$f"
+          done
+          git commit -m "candidate-v13 external validity: record EV-C terminal evidence" || true
+          git pull --rebase origin research/candidate-v13-naturalistic-external-validity
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
