@@ -17,6 +17,7 @@ CANDIDATE = ROOT / "src/personal_state_engine/candidate_v13.py"
 EXPECTED = "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838"
 PREFREEZE = [
     ROOT / "scripts/bootstrap_candidate_v13_external_validity_v4.py",
+    ROOT / "scripts/candidate_v13_external_validity_v4_fix_names.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_prequalification.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_core.py",
     ROOT / "scripts/candidate_v13_external_validity_v4_materializer.py",
@@ -84,6 +85,7 @@ def main() -> int:
     formal = FORMAL.read_text(encoding="utf-8")
     markers = [
         "Bootstrap fresh v4 lineage",
+        "Normalize v4 artifact filenames",
         "Run v4 candidate-blind prequalification",
         "Run v4 candidate-blind qualification",
         "Run v4 formal-runner qualification",
@@ -115,7 +117,6 @@ def main() -> int:
         "no_matrix_retry": "matrix:" not in workflow,
         "concurrency_guard": "cancel-in-progress: false" in workflow,
     }
-    status = "PASS" if all(v is True or v is False and k in {"candidate_v13_imported", "candidate_v13_invoked"} for k, v in checks.items()) else "FAIL"
     # Explicitly require the two false-valued candidate-use facts and every other boolean true.
     status = "PASS" if checks["candidate_v13_imported"] is False and checks["candidate_v13_invoked"] is False and all(v for k, v in checks.items() if k not in {"candidate_v13_imported", "candidate_v13_invoked"}) else "FAIL"
     obj = {
