@@ -25,7 +25,7 @@ SECTIONS = {"profile", "social_relationship", "events", "dialogues"}
 
 def download(rel: str, dst: Path) -> str:
     url = f"https://raw.githubusercontent.com/{REPO}/{REV}/{rel}"
-    req = urllib.request.Request(url, headers={"User-Agent": "pse-perltqa-reference-integrity-probe/3.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "pse-perltqa-reference-integrity-probe/4.0"})
     h = hashlib.sha256()
     with urllib.request.urlopen(req, timeout=300) as src, dst.open("wb") as out:
         while True:
@@ -35,6 +35,41 @@ def download(rel: str, dst: Path) -> str:
             h.update(block)
             out.write(block)
     return h.hexdigest()
+
+
+def normalize_memory_dataset(raw: Any) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Follow the repository's Dataset/dataset.py PerLTMem loader semantics.
+
+    The documented/original English memory file is a list. PerLTMem maps each
+    character by character['profile']['Protagonist']. Newer files may already
+    be dict-shaped; those are retained verbatim.
+    """
+    if isinstance(raw, dict):
+        return raw, {"raw_type": "dict", "normalized_via": "identity", "raw_records": len(raw)}
+    if isinstance(raw, list):
+        out: dict[str, Any] = {}
+        invalid = 0
+        duplicate = 0
+        for character in raw:
+            if not isinstance(character, dict):
+                invalid += 1
+                continue
+            profile = character.get("profile")
+            name = profile.get("Protagonist") if isinstance(profile, dict) else None
+            if not isinstance(name, str) or not name.strip():
+                invalid += 1
+                continue
+            if name in out:
+                duplicate += 1
+            out[name] = character
+        return out, {
+            "raw_type": "list",
+            "normalized_via": "official_PerLTMem_profile_Protagonist_rule",
+            "raw_records": len(raw),
+            "invalid_records": invalid,
+            "duplicate_protagonist_keys": duplicate,
+        }
+    return {}, {"raw_type": type(raw).__name__, "normalized_via": "unsupported", "raw_records": 0}
 
 
 def walk_qa(node: Any, path: tuple[Any, ...] = ()) -> Iterator[tuple[tuple[Any, ...], dict[str, Any]]]:
@@ -57,9 +92,7 @@ def refs(value: Any) -> list[str]:
     return []
 
 
-def character_from_path(path: tuple[Any, ...], mem: Any) -> str | None:
-    if not isinstance(mem, dict):
-        return None
+def character_from_path(path: tuple[Any, ...], mem: dict[str, Any]) -> str | None:
     return next((x for x in path if isinstance(x, str) and x in mem), None)
 
 
@@ -67,10 +100,8 @@ def section_from_path(path: tuple[Any, ...]) -> str | None:
     return next((str(x) for x in path if str(x) in SECTIONS), None)
 
 
-def global_key_index(mem: Any) -> dict[str, dict[str, set[str]]]:
+def global_key_index(mem: dict[str, Any]) -> dict[str, dict[str, set[str]]]:
     index: dict[str, dict[str, set[str]]] = {s: defaultdict(set) for s in SECTIONS}
-    if not isinstance(mem, dict):
-        return index
     for char_name, char in mem.items():
         if not isinstance(char, dict):
             continue
@@ -82,7 +113,7 @@ def global_key_index(mem: Any) -> dict[str, dict[str, set[str]]]:
     return index
 
 
-def analyze_pair(mem: Any, qa: Any) -> dict[str, Any]:
+def analyze_pair(mem: dict[str, Any], qa: Any, normalization: dict[str, Any]) -> dict[str, Any]:
     records = list(walk_qa(qa))
     index = global_key_index(mem)
     counts = Counter()
@@ -133,8 +164,9 @@ def analyze_pair(mem: Any, qa: Any) -> dict[str, Any]:
 
     exact_or_unique = counts["exact_same_character"] + counts["exact_global_unique"] + counts["exact_global_common_unique_character"]
     return {
+        "memory_normalization": normalization,
         "canonical_qa_records": len(records),
-        "memory_character_count": len(mem) if isinstance(mem, dict) else 0,
+        "memory_character_count": len(mem),
         "qa_character_count_resolved_against_memory": len(qa_chars),
         "reference_cardinality_counts": dict(sorted(ref_cardinality.items())),
         "mapping_counts": dict(sorted(counts.items())),
@@ -142,7 +174,7 @@ def analyze_pair(mem: Any, qa: Any) -> dict[str, Any]:
         "mechanically_resolvable_exact_or_unique_global": exact_or_unique,
         "mechanically_resolvable_fraction": exact_or_unique / len(records) if records else 0.0,
         "unresolved_path_character_token_counts": dict(sorted(qa_path_char_tokens.items())),
-        "formal_mapping_policy_candidate": "Prefer same-character exact key. A global exact key may be used only if the Reference Memory key maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted."
+        "formal_mapping_policy_candidate": "Normalize list-shaped memory exactly as official PerLTMem.read_json_data by profile.Protagonist. Then prefer same-character exact Reference Memory key. A global exact key may be used only if it maps to exactly one character in the same section, or multiple reference keys have exactly one common character. No question/answer/memory text matching is permitted."
     }
 
 
@@ -153,11 +185,12 @@ def main() -> int:
         "en_v2": ("Dataset/en_v2/perltmem_en_v2.json", "Dataset/en_v2/perltqa_en_v2.json"),
     }
     result: dict[str, Any] = {
-        "schema_version": "perltqa-reference-integrity-probe-v3",
+        "schema_version": "perltqa-reference-integrity-probe-v4",
         "candidate_v13_invoked": False,
         "formal_case_materialized": False,
         "repository": REPO,
         "revision": REV,
+        "official_loader_source": "Dataset/dataset.py::PerLTMem.read_json_data",
         "versions": {},
     }
     with tempfile.TemporaryDirectory(prefix="perltqa-ref-") as td_raw:
@@ -167,12 +200,13 @@ def main() -> int:
             qa_path = td / f"{version}-qa.json"
             mem_sha = download(mem_rel, mem_path)
             qa_sha = download(qa_rel, qa_path)
-            mem = json.loads(mem_path.read_text(encoding="utf-8"))
+            raw_mem = json.loads(mem_path.read_text(encoding="utf-8"))
             qa = json.loads(qa_path.read_text(encoding="utf-8"))
+            mem, normalization = normalize_memory_dataset(raw_mem)
             result["versions"][version] = {
                 "paths": {"memory": mem_rel, "qa": qa_rel},
                 "source_sha256": {"memory": mem_sha, "qa": qa_sha},
-                **analyze_pair(mem, qa),
+                **analyze_pair(mem, qa, normalization),
             }
     OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
