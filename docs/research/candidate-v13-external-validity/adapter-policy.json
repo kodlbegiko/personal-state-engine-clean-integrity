@@ -1,136 +1,122 @@
 {
-  "schema_version": "candidate-v13-external-validity-adapter-policy-v1",
-  "status": "LOCKED_BEFORE_CANDIDATE_V13_EXTERNAL_PERFORMANCE",
+  "schema_version": "candidate-v13-external-validity-adapter-policy-v2",
+  "status": "LOCKED_AFTER_SOURCE_ONLY_CALIBRATION_AND_BEFORE_CANDIDATE_V13_EXTERNAL_PERFORMANCE",
   "candidate_v13_external_performance_observed": false,
   "formal_case_materialized": false,
-  "source_pool_lock_commit": "a7662dabe323ee83c1e66878575b23520568c8e6",
-  "core_formal_sources": ["personamem-v2", "perltqa-en-v2", "longmemeval-cleaned"],
-  "supplemental_sources_initial_allocation": {
-    "sgd": 0,
-    "taskmaster-1": 0
-  },
-  "supplemental_zero_allocation_reason": "The three core sources expose direct question-to-supporting-memory gold. SGD and Taskmaster remain source-locked reserves for natural-language stress only if the pre-performance eligibility audit proves an objective structural/domain capacity shortfall; they are not used merely to increase apparent diversity.",
-  "stage_source_targets": {
-    "ev_a": {"total": 384, "personamem-v2": 168, "perltqa-en-v2": 168, "longmemeval-cleaned": 48},
-    "ev_b": {"total": 1440, "personamem-v2": 630, "perltqa-en-v2": 630, "longmemeval-cleaned": 180},
-    "ev_c": {"total": 1920, "personamem-v2": 840, "perltqa-en-v2": 840, "longmemeval-cleaned": 240}
-  },
-  "disjointness": {
-    "source_item_reuse_across_stages": false,
-    "exact_runtime_query_reuse_across_stages": false,
-    "normalized_runtime_query_reuse_across_stages": false,
-    "allocation_order": ["ev_a", "ev_b", "ev_c"],
-    "selection_order": "SHA256(source_id || base_item_id || stage_seed)"
-  },
+  "supersedes_adapter_policy_v1_commit": "b9fc1d34e9378ddbdb079f6b1a9dc9635fa7597b",
+  "source_activation_commit": "d4e61345a5b0f58248bb2fa5cbb5c83236a2e3ca",
+  "calibration_reason": "The first source-only eligibility audit exposed two evaluator/source-realization defects before Candidate-v13 was ever run externally: a generic domain classifier over-assigned temporal words such as when/date/time to D3, and PerLTQA non-profile evidence IDs did not mechanically resolve. This v2 removes those defects while preserving the preregistered domains, structural-family definitions, stage sizes, thresholds, source-independence requirement, source-native/deterministic gold requirement, and one-shot rules.",
+  "formal_sources": ["personamem-v2", "locomo", "sgd-carryover", "longmemeval-cleaned"],
+  "excluded_from_formal": ["perltqa-en-v2", "taskmaster-1", "abcd"],
   "source_adapters": {
     "personamem-v2": {
       "query": "verbatim user_query",
-      "gold_memory": "verbatim related_conversation_snippet",
-      "subject": "persona_id evaluator metadata",
-      "relation": "topic_preference when nonempty, otherwise topic_query",
-      "temporal_update": "updated plus prev_pref/preference when source-native fields are present",
-      "base_item_id": "persona_id plus deterministic row index",
-      "forbidden": ["rewrite query", "LLM paraphrase", "label repair after Candidate-v13 output"]
+      "gold_memory_ids": "one deterministic ID for the source row's verbatim related_conversation_snippet",
+      "gold_memory_text": "verbatim related_conversation_snippet",
+      "subject": "persona_id evaluator-only subject identity",
+      "relation": "verbatim topic_preference when nonempty, otherwise topic_query, otherwise preference",
+      "temporal_update": "source-native updated/prev_pref fields only",
+      "contradiction": "prev_pref and current preference are both nonempty and normalized unequal",
+      "base_item_id": "pm:<zero-based source row index>:<persona_id>",
+      "domain_input": "source-native topic_preference + topic_query only; user_query and memory text do not influence domain classification",
+      "forbidden": ["query rewrite", "LLM paraphrase", "answer-text-to-gold inference", "Candidate-v13-output-dependent label repair"]
     },
     "longmemeval-cleaned": {
       "query": "verbatim question",
-      "memories": "each source haystack session deterministically concatenated from its original ordered role/content turns",
-      "gold_memory_ids": "verbatim answer_session_ids",
-      "subject": "question_id as evaluator-only history identity",
-      "relation": "question_type as source-native task relation class",
-      "timestamp": "verbatim haystack_dates aligned to haystack_session_ids",
-      "base_item_id": "question_id",
-      "forbidden": ["rewrite query", "change answer_session_ids", "inspect Candidate-v13 output during gold construction"]
+      "memories": "each source haystack session concatenated in original message order with source role labels retained; session ID remains runtime memory ID and source date is timestamp",
+      "gold_memory_ids": "verbatim answer_session_ids; every ID must exist in haystack_session_ids",
+      "subject": "question_id/history identity evaluator metadata",
+      "relation": "verbatim question_type",
+      "temporal_update": "question_type in {knowledge-update, temporal-reasoning}",
+      "base_item_id": "lme:<question_id>",
+      "domain_input": "verbatim question + gold session text under strict domain vocabulary; no generic when/date/time tokens",
+      "forbidden": ["query rewrite", "changing answer_session_ids", "Candidate-v13-output-dependent gold"]
     },
-    "perltqa-en-v2": {
-      "query": "verbatim canonical Question",
-      "gold_memory_ids": "verbatim Reference Memory entries",
-      "subject": "character name evaluator metadata",
-      "mapping": {
-        "profile": "Reference Memory must exactly equal a key in memory[character].profile",
-        "events": "each Reference Memory entry must exactly equal a key in memory[character].events",
-        "social_relationship": "each Reference Memory entry must exactly equal a key in memory[character].social_relationship",
-        "dialogues": "each Reference Memory entry must exactly equal a key in memory[character].dialogues"
-      },
-      "memory_text": {
-        "profile": "verbatim source profile field value only",
-        "events": "verbatim event content, falling back to verbatim summary only when content is empty",
-        "social_relationship": "verbatim Description",
-        "dialogues": "verbatim contents"
-      },
-      "relation": {
-        "profile": "profile field name",
-        "events": "verbatim Theme when present, otherwise events",
-        "social_relationship": "verbatim Relationship when present, otherwise social_relationship",
-        "dialogues": "dialogues"
-      },
-      "timestamp": "verbatim Creation Time for events when present; otherwise omitted",
-      "base_item_id": "character plus section plus immutable QA structural path",
-      "exclusion": "Any canonical QA whose character or any Reference Memory entry cannot be exact-mapped is excluded before allocation; no aliases or repairs are allowed."
+    "locomo": {
+      "query": "verbatim source QA question",
+      "memories": "individual source conversation turns, runtime ID = <sample_id>::<dia_id>, text = verbatim speaker + ': ' + text, timestamp = source session date_time",
+      "gold_memory_ids": "every nonempty source QA evidence dia_id, prefixed by sample_id; all evidence IDs must exact-resolve inside the same sample",
+      "answerability_eligibility": "question nonempty, answer nonempty, evidence nonempty, and every evidence ID exact-resolves; unresolved/no-evidence/missing-answer QA are excluded rather than repaired",
+      "subject": "evaluator-only set of speaker identities on gold evidence turns",
+      "relation": "source QA category retained as evaluator metadata but not used as a semantic domain label",
+      "base_item_id": "locomo:<sample_id>:<qa index>",
+      "domain_input": "verbatim question + exact gold evidence turn text under strict domain vocabulary; no generic when/date/time tokens",
+      "forbidden": ["answer-text evidence matching", "using category 5 as automatic no-evidence", "cross-sample unprefixed dia_id", "Candidate-v13-output-dependent label repair"]
+    },
+    "sgd-carryover": {
+      "query": "verbatim current USER turn utterance",
+      "gold_memory": "verbatim nearest earlier USER turn in same dialogue/service that explicitly span-annotates the carried slot and whose source-native state.slot_values contains the same normalized value",
+      "runtime_memory_id": "sgd:<split>:<dialogue_id>:<turn_index>",
+      "runtime_memory_text": "verbatim prior/current USER utterance only; service, slot, state and family labels remain evaluator-only and are never appended to memory text",
+      "subject": "dialogue-local user/evaluator identity",
+      "relation": "source-native service + carried slot evaluator metadata",
+      "domain": "source-native service-prefix map: Calendar/Events -> D3; Banks/Media/Messaging/Movies/Music/Payment/Services -> D4; Buses/Flights/Hotels/RentalCars/Ridesharing/Trains/Travel -> D5",
+      "base_item_id": "sgd:<split>:<dialogue_id>:<current_turn_index>:<service>:<slot>:<gold_turn_index>",
+      "structural_native": ["N11 carry-over/elliptical", "N5 when current query has a generic coreference token", "N4 when current USER turn carries two or more distinct relations"],
+      "forbidden": ["put service/slot/state metadata into runtime text", "semantic text matching to choose gold", "SYSTEM turn as gold", "Candidate-v13-output-dependent selection"]
     }
   },
   "domain_classifier": {
-    "method": "deterministic case-insensitive token/phrase matching over source-native query, relation and gold-memory text; structured profile-field overrides apply before lexical rules",
+    "rule": "Each base item has exactly one evaluator-only D1-D8 domain. SGD uses source-native service mapping. PersonaMem uses topic metadata only. LoCoMo and LongMemEval use strict phrase/token matching over query + exact gold evidence. Generic temporal interrogatives (when/date/time/today/tomorrow/day names) are explicitly forbidden as domain evidence.",
     "priority": ["D3", "D4", "D5", "D6", "D7", "D2", "D8", "D1"],
-    "structured_overrides": {
-      "perltqa_profile": {
-        "D1": ["Hobbies"],
-        "D2": ["Title", "Occupation", "Education Background", "Employer", "Achievements", "Awards and Role Models"]
-      },
-      "personamem_fallback": "D1 because every base record is explicitly a user preference record",
-      "perltqa_events_dialogues_fallback": "D8 because the source record is a personal event/activity memory",
-      "longmemeval_fallback": "D8 because the source record is a personal interaction/activity memory"
+    "personamem_topic_rules": {
+      "D3": ["schedule", "calendar", "appointment", "meeting", "reservation", "booking", "deadline"],
+      "D4": ["subscription", "banking", "bank", "insurance", "billing", "payment", "streaming", "internet service", "utility", "phone plan", "financial service"],
+      "D5": ["travel", "trip", "flight", "airline", "airport", "hotel", "vacation", "destination", "transportation", "rental car"],
+      "D6": ["technology", "tech", "device", "computer", "laptop", "phone", "smartphone", "tablet", "software", "app", "camera", "browser"],
+      "D7": ["project", "membership", "club", "organization", "community", "research", "certification", "volunteer", "initiative"],
+      "D2": ["work", "job", "career", "employer", "occupation", "professional", "education", "school", "college", "university", "study"],
+      "D8": ["routine", "exercise", "fitness", "workout", "sleep", "daily habit", "weekly habit", "practice", "wellness"],
+      "D1": ["preference", "favorite", "favourite", "food", "music", "hobby", "hobbies", "sport", "sports", "style", "taste"]
     },
-    "lexical_rules": {
-      "D3": ["appointment", "schedule", "calendar", "meeting", "reservation", "booking", "deadline", "when", "date", "time", "today", "tomorrow", "morning", "afternoon", "evening", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
-      "D4": ["subscription", "service", "account", "provider", "carrier", "bank", "banking", "insurance", "bill", "billing", "payment", "fee", "renewal", "contract", "streaming", "internet", "utility", "repair", "plan"],
-      "D5": ["travel", "trip", "flight", "airline", "airport", "hotel", "hostel", "train", "bus", "rental car", "vacation", "destination", "passport", "ride", "uber", "taxi"],
-      "D6": ["device", "laptop", "computer", "phone", "smartphone", "tablet", "software", "app", "application", "browser", "tool", "technology", "tech", "windows", "mac", "macbook", "iphone", "android", "camera", "github"],
-      "D7": ["project", "membership", "member", "club", "team", "organization", "organisation", "community", "group", "repository", "course", "class", "certification", "certificate", "volunteer", "research", "program", "initiative", "campaign"],
-      "D2": ["work", "job", "career", "employer", "employee", "office", "school", "education", "college", "university", "student", "teacher", "occupation", "professional", "degree"],
-      "D8": ["routine", "daily", "weekly", "habit", "exercise", "workout", "sleep", "breakfast", "lunch", "dinner", "commute", "practice", "activity", "activities", "every day", "every week"],
-      "D1": ["prefer", "preference", "favorite", "favourite", "like", "dislike", "love", "hate", "hobby", "hobbies", "food", "music", "sport", "sports", "style", "taste"]
+    "strict_text_rules": {
+      "D3": ["appointment", "schedule", "calendar", "meeting", "reservation", "booking", "deadline"],
+      "D4": ["subscription", "provider", "bank", "banking", "insurance", "bill", "billing", "payment", "renewal", "contract", "streaming service", "internet service", "utility", "phone plan"],
+      "D5": ["travel", "trip", "flight", "airline", "airport", "hotel", "hostel", "train", "bus", "rental car", "vacation", "destination", "passport", "taxi", "rideshare", "uber"],
+      "D6": ["device", "computer", "laptop", "phone", "smartphone", "tablet", "software", "application", " app ", "browser", "camera", "technology", "macbook", "iphone", "android"],
+      "D7": ["project", "membership", "member of", "club", "organization", "community", "research project", "certification", "certificate", "volunteer", "initiative"],
+      "D2": ["work", "job", "career", "employer", "employee", "office", "school", "education", "college", "university", "student", "teacher", "occupation", "degree"],
+      "D8": ["routine", "daily", "weekly", "habit", "exercise", "workout", "sleep", "commute", "practice", "regularly", "every day", "every week"],
+      "D1": ["prefer", "preference", "favorite", "favourite", "like", "dislike", "love", "hate", "hobby", "hobbies", "taste"]
     },
-    "unclassified_policy": "Exclude unless one of the explicit source-specific fallbacks applies."
+    "fallbacks": {
+      "personamem-v2": "D1 because the source row is explicitly a preference-memory record",
+      "longmemeval-cleaned": "D8 because the source record is a personal interaction/history when no stricter domain noun is present",
+      "locomo": "D8 because the source record is a personal conversational event/history when no stricter domain noun is present",
+      "sgd-carryover": "none; unsupported services are excluded"
+    }
   },
   "structural_family_eligibility": {
-    "N1": "answerable natural query with 5-18 whitespace tokens, terminal question mark, and not selected by N5 or N8 natural flags",
-    "N2": "query has >=18 whitespace tokens OR at least two comma/semicolon/parenthetical punctuation boundaries OR a generic discourse marker",
-    "N3": "base case is eligible when a deterministic distractor from a different evaluator subject exists; the query itself is not rewritten",
-    "N4": "base case is eligible when a deterministic distractor with the same subject but different evaluator relation exists",
-    "N5": "query contains a generic pronoun/demonstrative/coreference token while the evaluator subject string is not literally present in the query",
-    "N6": "PersonaMem source-native updated state with prev_pref OR LongMemEval question_type in {knowledge-update, temporal-reasoning}",
+    "N1": "answerable non-SGD base case with exactly one gold memory, 3-30 natural query tokens, and no N2/N5/N6/N7/N8/N11 natural stress flag",
+    "N2": "natural query has >=18 tokens OR >=2 comma/semicolon/parenthetical boundaries OR contains a fixed generic discourse marker",
+    "N3": "a deterministic distractor from a different evaluator subject/history exists; runtime query is unchanged",
+    "N4": "SGD current turn carries >=2 relations OR a deterministic same-subject different-relation distractor exists",
+    "N5": "SGD or other natural query contains a fixed generic pronoun/demonstrative/coreference token while explicit evaluator subject is absent from the query",
+    "N6": "PersonaMem source-native update/prev_pref OR LongMemEval question_type in {knowledge-update, temporal-reasoning}",
     "N7": "PersonaMem prev_pref and current preference are both nonempty and normalized unequal",
-    "N8": "query or gold memory contains a generic modality/uncertainty term: may, might, maybe, perhaps, possibly, probably, plan, planned, planning, hope, expect, intend, tentative, could, would, should",
-    "N9": "a non-gold deterministic distractor exists whose normalized token-overlap score with the query is strictly greater than the best gold-memory overlap score",
-    "N10": "any valid base case; all gold evidence is withheld by the preregistered no-evidence transform",
-    "N11": "natural query has <=12 whitespace tokens and at least one elliptical signal: lacks terminal question mark, begins with pronoun/demonstrative, contains ellipsis, contains contraction, or begins lowercase",
-    "N12": "a deterministic non-gold memory exists with the same evaluator subject and relation as the gold case"
+    "N8": "natural query or exact gold memory contains a fixed modality/uncertainty token: may, might, maybe, perhaps, possibly, probably, plan, planned, planning, hope, expect, intend, tentative, could, would, should",
+    "N9": "a deterministic non-gold distractor exists whose normalized query-token overlap is strictly greater than the best gold-memory overlap; gold/query text are not rewritten",
+    "N10": "any valid base case; every gold memory is withheld by the preregistered no-evidence transform",
+    "N11": "SGD source-native carry-over relation OR a non-SGD natural query <=12 tokens with an elliptical signal; formal allocation prefers SGD carry-over cases",
+    "N12": "a deterministic non-gold memory exists with the same evaluator subject/history identity and relation metadata as the gold case"
   },
   "generic_discourse_markers": ["by the way", "actually", "so", "anyway", "for context", "i mean", "also", "one more thing", "quick question"],
   "coreference_tokens": ["he", "she", "they", "them", "their", "his", "her", "hers", "it", "its", "this", "that", "these", "those", "former", "latter"],
-  "case_memory_budget": 20,
+  "runtime_memory_budget": 20,
   "memory_composition": {
-    "default": "all gold memories plus deterministic distractors up to 20",
-    "N3": "ensure at least two evaluator subjects are present",
-    "N4": "ensure at least one same-subject different-relation distractor",
-    "N6": "retain source-native stale/current evidence when available",
-    "N7": "retain source-native previous/current conflicting preference states when available",
-    "N9": "include the preregistered higher-overlap lexical decoy",
+    "default": "all gold memories plus deterministic source-disjoint eligible distractors up to 20 total runtime memories",
+    "N3": "include at least one different-subject/history distractor",
+    "N4": "include at least one same-subject different-relation distractor when family eligibility comes from a constructed competition rather than native SGD multi-relation",
+    "N6": "retain source-native stale/current evidence when source supplies both states",
+    "N7": "retain source-native previous/current conflicting states",
+    "N9": "include the preregistered higher-overlap decoy",
     "N10": "withhold every gold memory ID",
     "N12": "include at least one same-subject same-relation non-gold distractor"
   },
-  "answerability_targets": {
-    "ev_a": {"answerable": 240, "no_evidence": 144},
-    "ev_b": {"answerable": 864, "no_evidence": 576},
-    "ev_c": {"answerable": 1152, "no_evidence": 768}
-  },
-  "no_evidence_assignment": "N10 is always no-evidence; remaining no-evidence quota is assigned by deterministic SHA256 ordering across non-N10 selected cases, with gold withholding only and no query rewrite.",
-  "allocation_algorithm": "Deterministic max-flow first satisfies per-stage source and domain marginals using eligible source/domain capacities; selected base cases are then assigned to N1-N12 with a deterministic bipartite max-flow over family eligibility. If exact preregistered marginals cannot be satisfied, no Candidate-v13 execution occurs and reserve-source policy is evaluated.",
   "integrity": {
-    "candidate_v13_import_or_call_during_eligibility_audit": "FORBIDDEN",
+    "candidate_v13_import_or_call_during_source_or_eligibility_audit": "FORBIDDEN",
     "raw_external_text_committed": false,
-    "performance_based_source_or_rule_change": "FORBIDDEN",
-    "formal_payload_before_freeze": "FORBIDDEN"
+    "gold_or_domain_change_after_candidate_external_output": "FORBIDDEN",
+    "performance_based_source_or_rule_change": "FORBIDDEN"
   }
 }
