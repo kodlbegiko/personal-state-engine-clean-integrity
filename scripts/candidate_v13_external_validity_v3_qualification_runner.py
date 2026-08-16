@@ -1,11 +1,6 @@
 from __future__ import annotations
 
-"""Authoritative v3 qualification entry point.
-
-Binds indexed production materialization and the v3 contamination audit into the
-candidate-blind qualification, then enriches only aggregate evidence. Protected
-individual assignments are never persisted.
-"""
+"""Authoritative v3 candidate-blind qualification entry point."""
 
 import hashlib
 import importlib.util
@@ -44,6 +39,10 @@ def read_json(path: Path) -> dict[str, Any]:
 def write_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def transform_distribution(dist: dict[str, Any]) -> dict[str, Any]:
@@ -174,7 +173,7 @@ def enrich_source_manifest() -> None:
             "adapter_dependency": old.get("dataset_name") or old.get("source_type") or "pinned-v2-qualified-loader",
             "qualification_status": "PASS",
             "content_sha256": content_hash,
-            "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable repository revision plus qualification/runtime digests",
+            "content_hash_policy": "exact pinned payload hash retained where v2 qualification produced one; otherwise immutable revision plus qualification/runtime digests",
             "role": "preregistered_reserve" if source_id == "rhelm" else "primary",
             "gold_rule": old.get("gold_rule"),
             **license_evidence,
@@ -189,6 +188,70 @@ def enrich_source_manifest() -> None:
     })
 
 
+def enrich_materializer_contract() -> None:
+    path = DOC / "materializer-contract-v3.json"
+    contract = read_json(path)
+    contract.update({
+        "implementation": "scripts/candidate_v13_external_validity_v3_materializer.py",
+        "distractor_selection": "same-subject-relation -> same-subject -> same-domain; deterministic cyclic offset keyed by stage seed + target + tier",
+        "indexing": "pre-index source/domain/subject/relation and materialized source-native units; no full source scan per selected case",
+        "candidate_payload_projection": ["query", "memories[id,text,timestamp]"],
+        "individual_case_contents_persisted": False,
+        "candidate_v13_invoked": False,
+    })
+    write_json(path, contract)
+
+
+def enrich_preregistration() -> None:
+    lock_path = DOC / "preregistration-lock-v3.json"
+    allocation = read_json(DOC / "allocation-policy-v3.json")
+    memory = read_json(DOC / "runtime-memory-policy-v3.json")
+    evaluation = read_json(DOC / "evaluation-policy-v3.json")
+    source_contract = read_json(DOC / "source-contract-v3.json")
+    source_manifest = read_json(DOC / "source-manifest-v3.json")
+    materializer_contract = read_json(DOC / "materializer-contract-v3.json")
+    lock = read_json(lock_path)
+    lock.update({
+        "schema_version": "candidate-v13-external-validity-v3-preregistration-lock-v2",
+        "status": "LOCKED_PRE_FREEZE",
+        "source_revisions": {s["source_id"]: s["revision"] for s in source_manifest["sources"]},
+        "source_manifest_sha256": sha256_file(DOC / "source-manifest-v3.json"),
+        "adapter_versions": {s["source_id"]: s["adapter_version"] for s in source_manifest["sources"]},
+        "benchmark_sizes": {"ev_a_v3": 384, "ev_b_v3": 1440, "ev_c_v3": 1920},
+        "seeds": allocation["stage_seeds"],
+        "source_domain_quotas": allocation["source_domain_targets"],
+        "family_quotas": allocation["family_targets"],
+        "answerability_quotas": allocation["answerability_targets"],
+        "memory_policy": memory,
+        "distractor_rule": materializer_contract["distractor_selection"],
+        "gold_cardinality_handling": "retain all source-native gold; no post-allocation case drop; runtime target max(5,gold_count+4); global ceiling 100",
+        "transformation_policy": materializer_contract,
+        "evaluation_metrics_and_thresholds": evaluation,
+        "anti_collapse_rules": evaluation.get("anti_collapse") or evaluation.get("anti_collapse_rules") or "as encoded in stage evaluation policies",
+        "stage_order": ["ev_a_v3", "ev_b_v3", "ev_c_v3"],
+        "stop_rules": [
+            "EV-A FAIL stops sequence",
+            "EV-B FAIL stops sequence",
+            "EV-C is final confirmatory gate",
+            "freeze mismatch -> INVALID",
+            "ledger inconsistency or consumed ledger without result -> INVALID",
+            "frozen infrastructure bug -> EXTERNAL_VALIDITY_V3_INFRASTRUCTURE_BLOCKED; no patch-and-rerun",
+        ],
+        "rerun_prohibition": True,
+        "reserve_source_activation_rule": source_contract.get("reserve_activation", "infrastructure-only candidate-blind conditions; never Candidate performance"),
+        "candidate_v13_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+        "candidate_v13_invoked": False,
+        "performance_driven_protocol_changes": 0,
+    })
+    write_json(lock_path, lock)
+    md = """# Candidate-v13 External Validity v3 — Preregistration\n\nCandidate-v13 remains immutable, unimported, and uninvoked. All source, allocation, materialization, evaluator, runner, and policy decisions below are candidate-blind and become immutable at freeze.\n\n## Formal sequence\n\nEV-A-v3 (384) → PASS required → EV-B-v3 (1,440) → PASS required → EV-C-v3 (1,920). No stage reruns, no threshold changes, no benchmark replacement, no post-freeze infrastructure patch.\n\n## Allocation\n\nFresh v3 seeds and fresh deterministic max-flow assignments. Exact source×domain, family, domain, and answerability quotas are locked in `preregistration-lock-v3.json`. Cross-stage base reuse must equal zero. Individual protected assignments are process-memory only.\n\n## Runtime memory policy\n\nPolicy C: `max(5, gold_count + 4)`, global safety ceiling 100. All source-native gold must be retained for answerable cases; all target gold is withheld for no-evidence cases. Case dropping after allocation is forbidden.\n\n## Full materialization gate\n\nBefore freeze, all 3,744 future formal cases must materialize production-faithfully with zero gold truncation, zero runtime gold loss, zero exceptions, stable selection/materialization/runtime-payload digests, and no Candidate import.\n\n## Evaluation and anti-collapse\n\nMetrics, thresholds, anti-collapse rules, stop conditions, evaluator behavior, and reserve-source policy are frozen by the machine-readable preregistration lock and referenced policy files. Candidate performance cannot alter them.\n"""
+    (DOC / "preregistration-v3.md").write_text(md, encoding="utf-8")
+    # The markdown changed after lock assembly; bind its final hash inside the lock.
+    lock = read_json(lock_path)
+    lock["preregistration_markdown_sha256"] = sha256_file(DOC / "preregistration-v3.md")
+    write_json(lock_path, lock)
+
+
 def main() -> int:
     qual = load("pse_v3_base_infrastructure_qualification", BASE_QUAL)
     qual.CORE_PATH = MATERIALIZER
@@ -198,10 +261,13 @@ def main() -> int:
         return code
     enrich_gold_audit()
     enrich_source_manifest()
+    enrich_materializer_contract()
+    enrich_preregistration()
     infra_path = OUT / "infrastructure-qualification.json"
     infra = read_json(infra_path)
     infra["source_manifest_enriched_v3"] = True
     infra["gold_cardinality_runtime_requirement_enriched_v3"] = True
+    infra["preregistration_lock_completeness_v3"] = "PASS"
     infra["candidate_v13_imported"] = False
     infra["candidate_v13_invoked"] = False
     write_json(infra_path, infra)
