@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/candidate-v13-external-validity-v4.yml'
       - 'scripts/bootstrap_candidate_v13_external_validity_v4.py'
+      - 'scripts/candidate_v13_external_validity_v4_fix_names.py'
       - 'scripts/candidate_v13_external_validity_v4_launch_path_qa.py'
       - 'scripts/candidate_v13_external_validity_v4_finalize_qualification.py'
       - 'scripts/candidate_v13_external_validity_v4_lock_preregistration.py'
@@ -48,6 +49,9 @@ jobs:
 
       - name: Bootstrap fresh v4 lineage
         run: python scripts/bootstrap_candidate_v13_external_validity_v4.py
+
+      - name: Normalize v4 artifact filenames
+        run: python scripts/candidate_v13_external_validity_v4_fix_names.py
 
       - name: Persist generated v4 infrastructure before qualification
         shell: bash
