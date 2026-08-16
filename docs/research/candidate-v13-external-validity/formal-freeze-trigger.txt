@@ -1,0 +1,6 @@
+FORMAL_FREEZE_AUTHORIZED_AFTER_EV_A_GATE
+required_ev_a_gate=EV_A_INTEGRITY_PASS_READY_FOR_FORMAL_FREEZE
+formal_ledger_initial_ev_b=0
+formal_ledger_initial_ev_c=0
+candidate_v13_tuning_forbidden=true
+source_gold_allocation_changes_forbidden=true
