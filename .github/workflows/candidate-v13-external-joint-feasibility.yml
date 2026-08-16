@@ -1,0 +1,78 @@
+name: Candidate v13 external-validity joint feasibility proof
+
+on:
+  push:
+    branches:
+      - research/candidate-v13-naturalistic-external-validity
+    paths:
+      - docs/research/candidate-v13-external-validity/joint-feasibility-trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candidate-v13-external-joint-feasibility
+  cancel-in-progress: false
+
+jobs:
+  feasibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v13-naturalistic-external-validity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify all pre-candidate locks
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          required=[
+            'docs/research/candidate-v13-external-validity/preregistration.md',
+            'docs/research/candidate-v13-external-validity/source-activation-v3.json',
+            'docs/research/candidate-v13-external-validity/adapter-policy-v3.json',
+            'docs/research/candidate-v13-external-validity/allocation-policy-v4.json',
+            'docs/research/candidate-v13-external-validity/feasibility-algorithm-v1.json',
+            'docs/research/candidate-v13-external-validity/stress-policy-v1.json',
+            'results/candidate-v13-external-validity/evermembench-dynamic-qualification.json',
+          ]
+          for p in required: assert Path(p).exists(), p
+          for p in required[1:6]:
+              o=json.loads(Path(p).read_text())
+              assert o['candidate_v13_external_performance_observed'] is False, p
+              assert o.get('formal_case_materialized',False) is False, p
+          q=json.loads(Path(required[-1]).read_text())
+          assert q['status']=='QUALIFIED_PRE_CANDIDATE_EXECUTION'
+          assert q['candidate_v13_invoked'] is False
+          assert q['formal_case_materialized'] is False
+          PY
+      - name: Compile feasibility proof
+        run: |
+          python -m py_compile scripts/candidate_v13_external_capacity_audit_v2.py
+          python -m py_compile scripts/candidate_v13_external_joint_feasibility.py
+      - name: Run joint source-domain-family feasibility
+        run: python scripts/candidate_v13_external_joint_feasibility.py
+      - name: Persist aggregate feasibility evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v13-external-validity/joint-feasibility.json
+          git commit -m "candidate-v13 external validity: record joint feasibility proof"
+          git push origin HEAD:research/candidate-v13-naturalistic-external-validity
+      - name: Enforce pre-candidate gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('results/candidate-v13-external-validity/joint-feasibility.json').read_text())
+          assert r['candidate_v13_invoked'] is False
+          assert r['formal_case_materialized'] is False
+          assert r['individual_formal_ids_persisted'] is False
+          assert r['status']=='JOINT_FEASIBILITY_PASS', r['status']
+          assert r['stress_gate']['pass'] is True
+          assert r['all_stage_selected_count']==384+1440+1920
+          PY
