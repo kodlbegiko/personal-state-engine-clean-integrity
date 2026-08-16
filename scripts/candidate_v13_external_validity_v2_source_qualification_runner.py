@@ -35,10 +35,11 @@ def strict_evermem_text(msg: dict[str, Any]) -> str:
 
 
 class NonEmptyDialogueDatasetView:
-    """Preserve HF dataset metadata while skipping schema-valid empty dialogue groups.
+    """Normalize only schema-native missing group values.
 
-    Empty group lists are structural absence, not malformed records. Non-list group
-    values are preserved so the strict downstream parser still fails loudly.
+    HF Arrow represents absent struct members as ``None`` and some source rows
+    contain explicit empty lists. Both mean "this group is absent". Any other
+    non-list value is preserved so the strict downstream parser fails loudly.
     """
 
     def __init__(self, dataset: Any):
@@ -57,7 +58,7 @@ class NonEmptyDialogueDatasetView:
                 out["dialogues"] = {
                     key: value
                     for key, value in groups.items()
-                    if not (isinstance(value, list) and len(value) == 0)
+                    if value is not None and not (isinstance(value, list) and len(value) == 0)
                 }
             yield out
 
