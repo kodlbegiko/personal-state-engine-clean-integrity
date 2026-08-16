@@ -1,0 +1,69 @@
+name: Candidate v9 development recovery 2
+
+on:
+  push:
+    branches:
+      - research/candidate-v9-fresh-lineage
+    paths:
+      - .github/workflows/candidate-v9-development-recovery-2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  recover-and-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v9-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Repair first-person value-cycle collision
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('scripts/generate_candidate_v9_benchmark.py'); s=p.read_text()
+          old='    j = (i * 7 + STAGE_SPECS[stage]["seed"]) % 12\n'
+          new='    j = (i * 7 + i // 24 + STAGE_SPECS[stage]["seed"]) % 12\n'
+          assert old in s
+          p.write_text(s.replace(old,new,1))
+          Path('results/candidate-v9/predevelopment-generator-failure-run-31881376267.json').write_text(json.dumps({
+            'stage':'PRE_DEVELOPMENT_MATERIALIZATION','workflow_run_id':'31881376267','formal_execution_count':{'protected':0,'confirmatory':0,'final':0},'semantic_formal_payload_accessed':False,
+            'failure':'duplicate semantic signatures remained after subject-namespace expansion','cause':'first-person answerable family omits subject, while value index repeated on the same 24-case mode period','remediation':'include deterministic mode-cycle index in value selection; preserve counts, seed, categories, templates, and gates','benchmark_written':False,'monetary_cost_usd':0
+          },indent=2)+'\n')
+          PY
+          git config user.name candidate-v9-research-bot
+          git config user.email candidate-v9-research-bot@users.noreply.github.com
+          git add scripts/generate_candidate_v9_benchmark.py results/candidate-v9/predevelopment-generator-failure-run-31881376267.json
+          git commit -m "candidate-v9: repair first-person development surface collision"
+          git push origin HEAD:research/candidate-v9-fresh-lineage
+      - name: Install and test
+        run: |
+          python -m pip install -e . pytest
+          test "$(git rev-parse origin/research/candidate-v8-fresh-lineage)" = "86c440fc487c46a1e603144177e666d32a52e725"
+          test -z "$(git diff --name-only 86c440fc487c46a1e603144177e666d32a52e725 HEAD -- docs/research/candidate-v8 results/candidate-v8 src/personal_state_engine/candidate_v8.py scripts/generate_candidate_v8_benchmark.py scripts/evaluate_candidate_v8.py 'experiments/benchmarks/candidate-v8-*' experiments/configs/candidate-v8-v1.json)"
+          python -m pytest -q | tee /tmp/candidate-v9-tests.txt
+      - name: Fresh development materialization and evaluation
+        run: |
+          python scripts/generate_candidate_v9_benchmark.py --stage development --output experiments/benchmarks/candidate-v9-development-v1.json
+          python scripts/evaluate_candidate_v9.py experiments/benchmarks/candidate-v9-development-v1.json results/candidate-v9/development-summary-v1.json --stage development --no-fail
+      - name: Commit development evidence
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          root=Path('.'); r=json.loads((root/'results/candidate-v9/development-summary-v1.json').read_text()); tests=Path('/tmp/candidate-v9-tests.txt').read_text().strip()
+          def sha(p): return hashlib.sha256((root/p).read_bytes()).hexdigest()
+          row={'iteration':0,'architecture':'TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_HARD_SAFETY_BLOCKERS','source_sha256':sha('src/personal_state_engine/candidate_v9.py'),'generator_sha256':sha('scripts/generate_candidate_v9_benchmark.py'),'evaluator_sha256':sha('scripts/evaluate_candidate_v9.py'),'config_sha256':sha('experiments/configs/candidate-v9-v1.json'),'development_benchmark_sha256':sha('experiments/benchmarks/candidate-v9-development-v1.json'),'metrics':r['candidate_v9'],'paired_bootstrap':r['paired_bootstrap'],'checks':r['checks'],'verdict':r['verdict'],'reason':'first successful development materialization after two pre-write uniqueness defects','patch':'typed query intent + relation canonicalization + value-type binding + bounded coreference; hard blockers preserved','tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0}
+          Path('results/candidate-v9/development-ledger.jsonl').write_text(json.dumps(row)+'\n')
+          Path('results/candidate-v9/development-test-record-v1.json').write_text(json.dumps({'tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0},indent=2)+'\n')
+          PY
+          git add experiments/benchmarks/candidate-v9-development-v1.json results/candidate-v9/development-summary-v1.json results/candidate-v9/development-ledger.jsonl results/candidate-v9/development-test-record-v1.json
+          git commit -m "candidate-v9: record development iteration 0"
+          git push origin HEAD:research/candidate-v9-fresh-lineage
+      - name: Enforce gates
+        run: python -c "import json; r=json.load(open('results/candidate-v9/development-summary-v1.json')); print(r['verdict']); raise SystemExit(0 if r['verdict']=='PASS' else 2)"

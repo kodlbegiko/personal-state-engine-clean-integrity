@@ -1,0 +1,36 @@
+name: Freeze Candidate-v7
+
+on:
+  push:
+    branches:
+      - research/candidate-v7-fresh-evidence
+    paths:
+      - 'scripts/freeze_candidate_v7.py'
+      - '.github/workflows/freeze-candidate-v7.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v7-fresh-evidence
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and freeze Candidate-v7
+        run: python scripts/freeze_candidate_v7.py
+      - name: Commit freeze manifest only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/candidate-v7/freeze-manifest-v1.json
+          if ! git diff --cached --quiet -- src/personal_state_engine/candidate_v7.py experiments/configs/candidate-v7-v1.json; then
+            echo "Candidate source/config changed during freeze" >&2
+            exit 1
+          fi
+          git commit -m "research: freeze Candidate-v7 identity"
+          git push origin HEAD:research/candidate-v7-fresh-evidence

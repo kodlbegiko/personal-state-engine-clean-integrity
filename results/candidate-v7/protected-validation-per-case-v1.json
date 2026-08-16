@@ -1,0 +1,2586 @@
+{
+  "candidate_v2": [
+    {
+      "id": "CV7PROT-A-000",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-000-rel",
+        "CV7PROT-A-000-d4",
+        "CV7PROT-A-000-d3",
+        "CV7PROT-A-000-d1",
+        "CV7PROT-A-000-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-001",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-001-rel",
+        "CV7PROT-A-001-d3",
+        "CV7PROT-A-001-d1",
+        "CV7PROT-A-001-d2",
+        "CV7PROT-A-001-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-002",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-002-rel",
+        "CV7PROT-A-002-d3",
+        "CV7PROT-A-002-d2",
+        "CV7PROT-A-002-d1",
+        "CV7PROT-A-002-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-003",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-003-rel",
+        "CV7PROT-A-003-d1",
+        "CV7PROT-A-003-d2",
+        "CV7PROT-A-003-d3",
+        "CV7PROT-A-003-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-004",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-004-rel",
+        "CV7PROT-A-004-d3",
+        "CV7PROT-A-004-d1",
+        "CV7PROT-A-004-d4",
+        "CV7PROT-A-004-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-005",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-005-rel",
+        "CV7PROT-A-005-d3",
+        "CV7PROT-A-005-d1",
+        "CV7PROT-A-005-d2",
+        "CV7PROT-A-005-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-006",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-006-rel",
+        "CV7PROT-A-006-d4",
+        "CV7PROT-A-006-d2",
+        "CV7PROT-A-006-d1",
+        "CV7PROT-A-006-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-007",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-007-rel",
+        "CV7PROT-A-007-d2",
+        "CV7PROT-A-007-d3",
+        "CV7PROT-A-007-d4",
+        "CV7PROT-A-007-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-008",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-008-rel",
+        "CV7PROT-A-008-d3",
+        "CV7PROT-A-008-d1",
+        "CV7PROT-A-008-d2",
+        "CV7PROT-A-008-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-009",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-009-rel",
+        "CV7PROT-A-009-d2",
+        "CV7PROT-A-009-d4",
+        "CV7PROT-A-009-d1",
+        "CV7PROT-A-009-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-010",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-010-rel",
+        "CV7PROT-A-010-d2",
+        "CV7PROT-A-010-d3",
+        "CV7PROT-A-010-d1",
+        "CV7PROT-A-010-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-011",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-011-rel",
+        "CV7PROT-A-011-d3",
+        "CV7PROT-A-011-d1",
+        "CV7PROT-A-011-d4",
+        "CV7PROT-A-011-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-012",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-012-rel",
+        "CV7PROT-A-012-d3",
+        "CV7PROT-A-012-d2",
+        "CV7PROT-A-012-d1",
+        "CV7PROT-A-012-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-013",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-013-rel",
+        "CV7PROT-A-013-d3",
+        "CV7PROT-A-013-d2",
+        "CV7PROT-A-013-d1",
+        "CV7PROT-A-013-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-014",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-014-rel",
+        "CV7PROT-A-014-d2",
+        "CV7PROT-A-014-d3",
+        "CV7PROT-A-014-d1",
+        "CV7PROT-A-014-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-015",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-015-rel",
+        "CV7PROT-A-015-d2",
+        "CV7PROT-A-015-d1",
+        "CV7PROT-A-015-d3",
+        "CV7PROT-A-015-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-016",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-016-rel",
+        "CV7PROT-A-016-d2",
+        "CV7PROT-A-016-d4",
+        "CV7PROT-A-016-d3",
+        "CV7PROT-A-016-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-017",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-017-rel",
+        "CV7PROT-A-017-d2",
+        "CV7PROT-A-017-d3",
+        "CV7PROT-A-017-d4",
+        "CV7PROT-A-017-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-018",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-018-rel",
+        "CV7PROT-A-018-d2",
+        "CV7PROT-A-018-d3",
+        "CV7PROT-A-018-d4",
+        "CV7PROT-A-018-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-019",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-019-rel",
+        "CV7PROT-A-019-d3",
+        "CV7PROT-A-019-d4",
+        "CV7PROT-A-019-d2",
+        "CV7PROT-A-019-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-020",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-020-rel",
+        "CV7PROT-A-020-d4",
+        "CV7PROT-A-020-d2",
+        "CV7PROT-A-020-d3",
+        "CV7PROT-A-020-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-021",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-021-rel",
+        "CV7PROT-A-021-d2",
+        "CV7PROT-A-021-d3",
+        "CV7PROT-A-021-d4",
+        "CV7PROT-A-021-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-022",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-022-rel",
+        "CV7PROT-A-022-d2",
+        "CV7PROT-A-022-d3",
+        "CV7PROT-A-022-d1",
+        "CV7PROT-A-022-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-023",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-023-rel",
+        "CV7PROT-A-023-d2",
+        "CV7PROT-A-023-d3",
+        "CV7PROT-A-023-d4",
+        "CV7PROT-A-023-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-024",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-024-rel",
+        "CV7PROT-A-024-d4",
+        "CV7PROT-A-024-d3",
+        "CV7PROT-A-024-d1",
+        "CV7PROT-A-024-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-025",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-025-rel",
+        "CV7PROT-A-025-d4",
+        "CV7PROT-A-025-d3",
+        "CV7PROT-A-025-d1",
+        "CV7PROT-A-025-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-026",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-026-rel",
+        "CV7PROT-A-026-d3",
+        "CV7PROT-A-026-d4",
+        "CV7PROT-A-026-d1",
+        "CV7PROT-A-026-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-027",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-027-rel",
+        "CV7PROT-A-027-d1",
+        "CV7PROT-A-027-d2",
+        "CV7PROT-A-027-d4",
+        "CV7PROT-A-027-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-028",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-028-rel",
+        "CV7PROT-A-028-d3",
+        "CV7PROT-A-028-d2",
+        "CV7PROT-A-028-d1",
+        "CV7PROT-A-028-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-029",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-029-rel",
+        "CV7PROT-A-029-d3",
+        "CV7PROT-A-029-d1",
+        "CV7PROT-A-029-d4",
+        "CV7PROT-A-029-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-030",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-030-rel",
+        "CV7PROT-A-030-d1",
+        "CV7PROT-A-030-d3",
+        "CV7PROT-A-030-d2",
+        "CV7PROT-A-030-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-031",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-031-rel",
+        "CV7PROT-A-031-d2",
+        "CV7PROT-A-031-d3",
+        "CV7PROT-A-031-d1",
+        "CV7PROT-A-031-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-032",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-032-rel",
+        "CV7PROT-A-032-d3",
+        "CV7PROT-A-032-d2",
+        "CV7PROT-A-032-d4",
+        "CV7PROT-A-032-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-033",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-033-rel",
+        "CV7PROT-A-033-d2",
+        "CV7PROT-A-033-d3",
+        "CV7PROT-A-033-d1",
+        "CV7PROT-A-033-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-034",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-034-rel",
+        "CV7PROT-A-034-d2",
+        "CV7PROT-A-034-d3",
+        "CV7PROT-A-034-d4",
+        "CV7PROT-A-034-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-035",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-035-rel",
+        "CV7PROT-A-035-d3",
+        "CV7PROT-A-035-d1",
+        "CV7PROT-A-035-d2",
+        "CV7PROT-A-035-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-036",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-036-rel",
+        "CV7PROT-A-036-d3",
+        "CV7PROT-A-036-d1",
+        "CV7PROT-A-036-d2",
+        "CV7PROT-A-036-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-037",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-037-rel",
+        "CV7PROT-A-037-d3",
+        "CV7PROT-A-037-d1",
+        "CV7PROT-A-037-d2",
+        "CV7PROT-A-037-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-038",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-038-rel",
+        "CV7PROT-A-038-d2",
+        "CV7PROT-A-038-d3",
+        "CV7PROT-A-038-d1",
+        "CV7PROT-A-038-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-039",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-039-rel",
+        "CV7PROT-A-039-d3",
+        "CV7PROT-A-039-d2",
+        "CV7PROT-A-039-d1",
+        "CV7PROT-A-039-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-040",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-040-rel",
+        "CV7PROT-A-040-d2",
+        "CV7PROT-A-040-d3",
+        "CV7PROT-A-040-d1",
+        "CV7PROT-A-040-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-041",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-041-rel",
+        "CV7PROT-A-041-d2",
+        "CV7PROT-A-041-d3",
+        "CV7PROT-A-041-d1",
+        "CV7PROT-A-041-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-042",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-042-rel",
+        "CV7PROT-A-042-d2",
+        "CV7PROT-A-042-d1",
+        "CV7PROT-A-042-d4",
+        "CV7PROT-A-042-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-043",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-043-rel",
+        "CV7PROT-A-043-d3",
+        "CV7PROT-A-043-d1",
+        "CV7PROT-A-043-d4",
+        "CV7PROT-A-043-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-044",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-044-rel",
+        "CV7PROT-A-044-d2",
+        "CV7PROT-A-044-d1",
+        "CV7PROT-A-044-d4",
+        "CV7PROT-A-044-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-045",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-045-rel",
+        "CV7PROT-A-045-d2",
+        "CV7PROT-A-045-d3",
+        "CV7PROT-A-045-d1",
+        "CV7PROT-A-045-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-046",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-046-rel",
+        "CV7PROT-A-046-d2",
+        "CV7PROT-A-046-d3",
+        "CV7PROT-A-046-d4",
+        "CV7PROT-A-046-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-047",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-047-rel",
+        "CV7PROT-A-047-d1",
+        "CV7PROT-A-047-d3",
+        "CV7PROT-A-047-d2",
+        "CV7PROT-A-047-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-048",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-048-rel",
+        "CV7PROT-A-048-d4",
+        "CV7PROT-A-048-d1",
+        "CV7PROT-A-048-d3",
+        "CV7PROT-A-048-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-049",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-049-rel",
+        "CV7PROT-A-049-d1",
+        "CV7PROT-A-049-d3",
+        "CV7PROT-A-049-d2",
+        "CV7PROT-A-049-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-050",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-050-rel",
+        "CV7PROT-A-050-d3",
+        "CV7PROT-A-050-d2",
+        "CV7PROT-A-050-d4",
+        "CV7PROT-A-050-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-051",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-051-rel",
+        "CV7PROT-A-051-d1",
+        "CV7PROT-A-051-d2",
+        "CV7PROT-A-051-d4",
+        "CV7PROT-A-051-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-052",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-052-rel",
+        "CV7PROT-A-052-d3",
+        "CV7PROT-A-052-d4",
+        "CV7PROT-A-052-d1",
+        "CV7PROT-A-052-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-053",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-053-rel",
+        "CV7PROT-A-053-d3",
+        "CV7PROT-A-053-d2",
+        "CV7PROT-A-053-d1",
+        "CV7PROT-A-053-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-054",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-054-rel",
+        "CV7PROT-A-054-d3",
+        "CV7PROT-A-054-d2",
+        "CV7PROT-A-054-d4",
+        "CV7PROT-A-054-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-055",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-055-rel",
+        "CV7PROT-A-055-d2",
+        "CV7PROT-A-055-d3",
+        "CV7PROT-A-055-d1",
+        "CV7PROT-A-055-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-056",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-056-rel",
+        "CV7PROT-A-056-d3",
+        "CV7PROT-A-056-d2",
+        "CV7PROT-A-056-d1",
+        "CV7PROT-A-056-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-057",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-057-rel",
+        "CV7PROT-A-057-d4",
+        "CV7PROT-A-057-d3",
+        "CV7PROT-A-057-d2",
+        "CV7PROT-A-057-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-058",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-058-rel",
+        "CV7PROT-A-058-d2",
+        "CV7PROT-A-058-d3",
+        "CV7PROT-A-058-d4",
+        "CV7PROT-A-058-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-059",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-059-rel",
+        "CV7PROT-A-059-d3",
+        "CV7PROT-A-059-d2",
+        "CV7PROT-A-059-d4",
+        "CV7PROT-A-059-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-060",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-060-rel",
+        "CV7PROT-A-060-d3",
+        "CV7PROT-A-060-d1",
+        "CV7PROT-A-060-d4",
+        "CV7PROT-A-060-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-061",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-061-rel",
+        "CV7PROT-A-061-d3",
+        "CV7PROT-A-061-d2",
+        "CV7PROT-A-061-d1",
+        "CV7PROT-A-061-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-062",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-062-rel",
+        "CV7PROT-A-062-d2",
+        "CV7PROT-A-062-d3",
+        "CV7PROT-A-062-d4",
+        "CV7PROT-A-062-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-063",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-063-rel",
+        "CV7PROT-A-063-d2",
+        "CV7PROT-A-063-d1",
+        "CV7PROT-A-063-d4",
+        "CV7PROT-A-063-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-064",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-064-rel",
+        "CV7PROT-A-064-d2",
+        "CV7PROT-A-064-d4",
+        "CV7PROT-A-064-d1",
+        "CV7PROT-A-064-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-065",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-065-rel",
+        "CV7PROT-A-065-d2",
+        "CV7PROT-A-065-d3",
+        "CV7PROT-A-065-d4",
+        "CV7PROT-A-065-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-066",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-066-rel",
+        "CV7PROT-A-066-d2",
+        "CV7PROT-A-066-d1",
+        "CV7PROT-A-066-d4",
+        "CV7PROT-A-066-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-067",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-067-rel",
+        "CV7PROT-A-067-d3",
+        "CV7PROT-A-067-d2",
+        "CV7PROT-A-067-d4",
+        "CV7PROT-A-067-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-068",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-068-rel",
+        "CV7PROT-A-068-d4",
+        "CV7PROT-A-068-d3",
+        "CV7PROT-A-068-d1",
+        "CV7PROT-A-068-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-069",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-069-rel",
+        "CV7PROT-A-069-d2",
+        "CV7PROT-A-069-d3",
+        "CV7PROT-A-069-d4",
+        "CV7PROT-A-069-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-N-000",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-000-x",
+        "CV7PROT-N-000-d3",
+        "CV7PROT-N-000-d4",
+        "CV7PROT-N-000-d1",
+        "CV7PROT-N-000-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-001",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-001-x",
+        "CV7PROT-N-001-d2",
+        "CV7PROT-N-001-d3",
+        "CV7PROT-N-001-d4",
+        "CV7PROT-N-001-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-002",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-002-x",
+        "CV7PROT-N-002-d3",
+        "CV7PROT-N-002-d2",
+        "CV7PROT-N-002-d4",
+        "CV7PROT-N-002-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-003",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-003-x",
+        "CV7PROT-N-003-d2",
+        "CV7PROT-N-003-d1",
+        "CV7PROT-N-003-d4",
+        "CV7PROT-N-003-d3"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-004",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-004-x",
+        "CV7PROT-N-004-d3",
+        "CV7PROT-N-004-d2",
+        "CV7PROT-N-004-d4",
+        "CV7PROT-N-004-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-005",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-005-x",
+        "CV7PROT-N-005-d3",
+        "CV7PROT-N-005-d2",
+        "CV7PROT-N-005-d1",
+        "CV7PROT-N-005-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-006",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-006-x",
+        "CV7PROT-N-006-d2",
+        "CV7PROT-N-006-d3",
+        "CV7PROT-N-006-d1",
+        "CV7PROT-N-006-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-007",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-007-x",
+        "CV7PROT-N-007-d2",
+        "CV7PROT-N-007-d3",
+        "CV7PROT-N-007-d1",
+        "CV7PROT-N-007-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-008",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-008-x",
+        "CV7PROT-N-008-d2",
+        "CV7PROT-N-008-d4",
+        "CV7PROT-N-008-d3",
+        "CV7PROT-N-008-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-009",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-009-x",
+        "CV7PROT-N-009-d2",
+        "CV7PROT-N-009-d3",
+        "CV7PROT-N-009-d1",
+        "CV7PROT-N-009-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-010",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-010-x",
+        "CV7PROT-N-010-d4",
+        "CV7PROT-N-010-d3",
+        "CV7PROT-N-010-d2",
+        "CV7PROT-N-010-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-011",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-011-x",
+        "CV7PROT-N-011-d3",
+        "CV7PROT-N-011-d4",
+        "CV7PROT-N-011-d1",
+        "CV7PROT-N-011-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-012",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-012-x",
+        "CV7PROT-N-012-d2",
+        "CV7PROT-N-012-d3",
+        "CV7PROT-N-012-d4",
+        "CV7PROT-N-012-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-013",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-013-x",
+        "CV7PROT-N-013-d2",
+        "CV7PROT-N-013-d3",
+        "CV7PROT-N-013-d1",
+        "CV7PROT-N-013-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-014",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-014-x",
+        "CV7PROT-N-014-d3",
+        "CV7PROT-N-014-d2",
+        "CV7PROT-N-014-d1",
+        "CV7PROT-N-014-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-015",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-015-x",
+        "CV7PROT-N-015-d2",
+        "CV7PROT-N-015-d1",
+        "CV7PROT-N-015-d4",
+        "CV7PROT-N-015-d3"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-016",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-016-x",
+        "CV7PROT-N-016-d3",
+        "CV7PROT-N-016-d4",
+        "CV7PROT-N-016-d2",
+        "CV7PROT-N-016-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-017",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-017-x",
+        "CV7PROT-N-017-d3",
+        "CV7PROT-N-017-d4",
+        "CV7PROT-N-017-d1",
+        "CV7PROT-N-017-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-018",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-018-x",
+        "CV7PROT-N-018-d2",
+        "CV7PROT-N-018-d3",
+        "CV7PROT-N-018-d4",
+        "CV7PROT-N-018-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-019",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-019-x",
+        "CV7PROT-N-019-d2",
+        "CV7PROT-N-019-d3",
+        "CV7PROT-N-019-d1",
+        "CV7PROT-N-019-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-020",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-020-x",
+        "CV7PROT-N-020-d3",
+        "CV7PROT-N-020-d1",
+        "CV7PROT-N-020-d4",
+        "CV7PROT-N-020-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-021",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-021-x",
+        "CV7PROT-N-021-d2",
+        "CV7PROT-N-021-d3",
+        "CV7PROT-N-021-d1",
+        "CV7PROT-N-021-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-022",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-022-x",
+        "CV7PROT-N-022-d4",
+        "CV7PROT-N-022-d3",
+        "CV7PROT-N-022-d2",
+        "CV7PROT-N-022-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-023",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-023-x",
+        "CV7PROT-N-023-d4",
+        "CV7PROT-N-023-d1",
+        "CV7PROT-N-023-d2",
+        "CV7PROT-N-023-d3"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-024",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-024-x",
+        "CV7PROT-N-024-d3",
+        "CV7PROT-N-024-d1",
+        "CV7PROT-N-024-d4",
+        "CV7PROT-N-024-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-025",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-025-x",
+        "CV7PROT-N-025-d2",
+        "CV7PROT-N-025-d3",
+        "CV7PROT-N-025-d4",
+        "CV7PROT-N-025-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-026",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-026-x",
+        "CV7PROT-N-026-d3",
+        "CV7PROT-N-026-d2",
+        "CV7PROT-N-026-d4",
+        "CV7PROT-N-026-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-027",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-027-x",
+        "CV7PROT-N-027-d2",
+        "CV7PROT-N-027-d4",
+        "CV7PROT-N-027-d3",
+        "CV7PROT-N-027-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-028",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-028-x",
+        "CV7PROT-N-028-d3",
+        "CV7PROT-N-028-d1",
+        "CV7PROT-N-028-d2",
+        "CV7PROT-N-028-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-029",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-029-x",
+        "CV7PROT-N-029-d3",
+        "CV7PROT-N-029-d4",
+        "CV7PROT-N-029-d2",
+        "CV7PROT-N-029-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-030",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-030-x",
+        "CV7PROT-N-030-d2",
+        "CV7PROT-N-030-d3",
+        "CV7PROT-N-030-d1",
+        "CV7PROT-N-030-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-031",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-031-x",
+        "CV7PROT-N-031-d2",
+        "CV7PROT-N-031-d3",
+        "CV7PROT-N-031-d1",
+        "CV7PROT-N-031-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-032",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-032-x",
+        "CV7PROT-N-032-d3",
+        "CV7PROT-N-032-d4",
+        "CV7PROT-N-032-d1",
+        "CV7PROT-N-032-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-033",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-033-x",
+        "CV7PROT-N-033-d2",
+        "CV7PROT-N-033-d3",
+        "CV7PROT-N-033-d1",
+        "CV7PROT-N-033-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-034",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-034-x",
+        "CV7PROT-N-034-d4",
+        "CV7PROT-N-034-d3",
+        "CV7PROT-N-034-d1",
+        "CV7PROT-N-034-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-035",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-035-x",
+        "CV7PROT-N-035-d3",
+        "CV7PROT-N-035-d4",
+        "CV7PROT-N-035-d1",
+        "CV7PROT-N-035-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-036",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-036-x",
+        "CV7PROT-N-036-d1",
+        "CV7PROT-N-036-d4",
+        "CV7PROT-N-036-d2",
+        "CV7PROT-N-036-d3"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-037",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-037-x",
+        "CV7PROT-N-037-d2",
+        "CV7PROT-N-037-d3",
+        "CV7PROT-N-037-d1",
+        "CV7PROT-N-037-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-038",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-038-x",
+        "CV7PROT-N-038-d3",
+        "CV7PROT-N-038-d2",
+        "CV7PROT-N-038-d4",
+        "CV7PROT-N-038-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-039",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-039-x",
+        "CV7PROT-N-039-d2",
+        "CV7PROT-N-039-d1",
+        "CV7PROT-N-039-d3",
+        "CV7PROT-N-039-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-040",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-040-x",
+        "CV7PROT-N-040-d3",
+        "CV7PROT-N-040-d1",
+        "CV7PROT-N-040-d4",
+        "CV7PROT-N-040-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-041",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-041-x",
+        "CV7PROT-N-041-d3",
+        "CV7PROT-N-041-d1",
+        "CV7PROT-N-041-d4",
+        "CV7PROT-N-041-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-042",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-042-x",
+        "CV7PROT-N-042-d2",
+        "CV7PROT-N-042-d3",
+        "CV7PROT-N-042-d1",
+        "CV7PROT-N-042-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-043",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-043-x",
+        "CV7PROT-N-043-d2",
+        "CV7PROT-N-043-d3",
+        "CV7PROT-N-043-d4",
+        "CV7PROT-N-043-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-044",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-044-x",
+        "CV7PROT-N-044-d1",
+        "CV7PROT-N-044-d3",
+        "CV7PROT-N-044-d4",
+        "CV7PROT-N-044-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-045",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-045-x",
+        "CV7PROT-N-045-d2",
+        "CV7PROT-N-045-d3",
+        "CV7PROT-N-045-d1",
+        "CV7PROT-N-045-d4"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-046",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-046-x",
+        "CV7PROT-N-046-d4",
+        "CV7PROT-N-046-d3",
+        "CV7PROT-N-046-d1",
+        "CV7PROT-N-046-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-047",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-047-x",
+        "CV7PROT-N-047-d3",
+        "CV7PROT-N-047-d4",
+        "CV7PROT-N-047-d2",
+        "CV7PROT-N-047-d1"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-048",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-048-x",
+        "CV7PROT-N-048-d4",
+        "CV7PROT-N-048-d3",
+        "CV7PROT-N-048-d1",
+        "CV7PROT-N-048-d2"
+      ],
+      "false_retrieval": true
+    },
+    {
+      "id": "CV7PROT-N-049",
+      "answerable": false,
+      "ranking": [
+        "CV7PROT-N-049-x",
+        "CV7PROT-N-049-d2",
+        "CV7PROT-N-049-d3",
+        "CV7PROT-N-049-d1",
+        "CV7PROT-N-049-d4"
+      ],
+      "false_retrieval": true
+    }
+  ],
+  "candidate_v7": [
+    {
+      "id": "CV7PROT-A-000",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-000-rel",
+        "CV7PROT-A-000-d4",
+        "CV7PROT-A-000-d3",
+        "CV7PROT-A-000-d1",
+        "CV7PROT-A-000-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-001",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-001-rel",
+        "CV7PROT-A-001-d3",
+        "CV7PROT-A-001-d1",
+        "CV7PROT-A-001-d2",
+        "CV7PROT-A-001-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-002",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-002-rel",
+        "CV7PROT-A-002-d3",
+        "CV7PROT-A-002-d2",
+        "CV7PROT-A-002-d1",
+        "CV7PROT-A-002-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-003",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-003-rel",
+        "CV7PROT-A-003-d1",
+        "CV7PROT-A-003-d2",
+        "CV7PROT-A-003-d3",
+        "CV7PROT-A-003-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-004",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-004-rel",
+        "CV7PROT-A-004-d3",
+        "CV7PROT-A-004-d1",
+        "CV7PROT-A-004-d4",
+        "CV7PROT-A-004-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-005",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-005-rel",
+        "CV7PROT-A-005-d3",
+        "CV7PROT-A-005-d1",
+        "CV7PROT-A-005-d2",
+        "CV7PROT-A-005-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-006",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-006-rel",
+        "CV7PROT-A-006-d4",
+        "CV7PROT-A-006-d2",
+        "CV7PROT-A-006-d1",
+        "CV7PROT-A-006-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-007",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-007-rel",
+        "CV7PROT-A-007-d2",
+        "CV7PROT-A-007-d3",
+        "CV7PROT-A-007-d4",
+        "CV7PROT-A-007-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-008",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-008-rel",
+        "CV7PROT-A-008-d3",
+        "CV7PROT-A-008-d1",
+        "CV7PROT-A-008-d2",
+        "CV7PROT-A-008-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-009",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-009-rel",
+        "CV7PROT-A-009-d2",
+        "CV7PROT-A-009-d4",
+        "CV7PROT-A-009-d1",
+        "CV7PROT-A-009-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-010",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-010-rel",
+        "CV7PROT-A-010-d2",
+        "CV7PROT-A-010-d3",
+        "CV7PROT-A-010-d1",
+        "CV7PROT-A-010-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-011",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-011-rel",
+        "CV7PROT-A-011-d3",
+        "CV7PROT-A-011-d1",
+        "CV7PROT-A-011-d4",
+        "CV7PROT-A-011-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-012",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-012-rel",
+        "CV7PROT-A-012-d3",
+        "CV7PROT-A-012-d2",
+        "CV7PROT-A-012-d1",
+        "CV7PROT-A-012-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-013",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-013-rel",
+        "CV7PROT-A-013-d3",
+        "CV7PROT-A-013-d2",
+        "CV7PROT-A-013-d1",
+        "CV7PROT-A-013-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-014",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-014-rel",
+        "CV7PROT-A-014-d2",
+        "CV7PROT-A-014-d3",
+        "CV7PROT-A-014-d1",
+        "CV7PROT-A-014-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-015",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-015-rel",
+        "CV7PROT-A-015-d2",
+        "CV7PROT-A-015-d1",
+        "CV7PROT-A-015-d3",
+        "CV7PROT-A-015-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-016",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-016-rel",
+        "CV7PROT-A-016-d2",
+        "CV7PROT-A-016-d4",
+        "CV7PROT-A-016-d3",
+        "CV7PROT-A-016-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-017",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-017-rel",
+        "CV7PROT-A-017-d2",
+        "CV7PROT-A-017-d3",
+        "CV7PROT-A-017-d4",
+        "CV7PROT-A-017-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-018",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-018-rel",
+        "CV7PROT-A-018-d2",
+        "CV7PROT-A-018-d3",
+        "CV7PROT-A-018-d4",
+        "CV7PROT-A-018-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-019",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-019-rel",
+        "CV7PROT-A-019-d3",
+        "CV7PROT-A-019-d4",
+        "CV7PROT-A-019-d2",
+        "CV7PROT-A-019-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-020",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-020-rel",
+        "CV7PROT-A-020-d4",
+        "CV7PROT-A-020-d2",
+        "CV7PROT-A-020-d3",
+        "CV7PROT-A-020-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-021",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-021-rel",
+        "CV7PROT-A-021-d2",
+        "CV7PROT-A-021-d3",
+        "CV7PROT-A-021-d4",
+        "CV7PROT-A-021-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-022",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-022-rel",
+        "CV7PROT-A-022-d2",
+        "CV7PROT-A-022-d3",
+        "CV7PROT-A-022-d1",
+        "CV7PROT-A-022-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-023",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-023-rel",
+        "CV7PROT-A-023-d2",
+        "CV7PROT-A-023-d3",
+        "CV7PROT-A-023-d4",
+        "CV7PROT-A-023-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-024",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-024-rel",
+        "CV7PROT-A-024-d4",
+        "CV7PROT-A-024-d3",
+        "CV7PROT-A-024-d1",
+        "CV7PROT-A-024-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-025",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-025-rel",
+        "CV7PROT-A-025-d4",
+        "CV7PROT-A-025-d3",
+        "CV7PROT-A-025-d1",
+        "CV7PROT-A-025-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-026",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-026-rel",
+        "CV7PROT-A-026-d3",
+        "CV7PROT-A-026-d4",
+        "CV7PROT-A-026-d1",
+        "CV7PROT-A-026-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-027",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-027-rel",
+        "CV7PROT-A-027-d1",
+        "CV7PROT-A-027-d2",
+        "CV7PROT-A-027-d4",
+        "CV7PROT-A-027-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-028",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-028-rel",
+        "CV7PROT-A-028-d3",
+        "CV7PROT-A-028-d2",
+        "CV7PROT-A-028-d1",
+        "CV7PROT-A-028-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-029",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-029-rel",
+        "CV7PROT-A-029-d3",
+        "CV7PROT-A-029-d1",
+        "CV7PROT-A-029-d4",
+        "CV7PROT-A-029-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-030",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-030-rel",
+        "CV7PROT-A-030-d1",
+        "CV7PROT-A-030-d3",
+        "CV7PROT-A-030-d2",
+        "CV7PROT-A-030-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-031",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-031-rel",
+        "CV7PROT-A-031-d2",
+        "CV7PROT-A-031-d3",
+        "CV7PROT-A-031-d1",
+        "CV7PROT-A-031-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-032",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-032-rel",
+        "CV7PROT-A-032-d3",
+        "CV7PROT-A-032-d2",
+        "CV7PROT-A-032-d4",
+        "CV7PROT-A-032-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-033",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-033-rel",
+        "CV7PROT-A-033-d2",
+        "CV7PROT-A-033-d3",
+        "CV7PROT-A-033-d1",
+        "CV7PROT-A-033-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-034",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-034-rel",
+        "CV7PROT-A-034-d2",
+        "CV7PROT-A-034-d3",
+        "CV7PROT-A-034-d4",
+        "CV7PROT-A-034-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-035",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-035-rel",
+        "CV7PROT-A-035-d3",
+        "CV7PROT-A-035-d1",
+        "CV7PROT-A-035-d2",
+        "CV7PROT-A-035-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-036",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-036-rel",
+        "CV7PROT-A-036-d3",
+        "CV7PROT-A-036-d1",
+        "CV7PROT-A-036-d2",
+        "CV7PROT-A-036-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-037",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-037-rel",
+        "CV7PROT-A-037-d3",
+        "CV7PROT-A-037-d1",
+        "CV7PROT-A-037-d2",
+        "CV7PROT-A-037-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-038",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-038-rel",
+        "CV7PROT-A-038-d2",
+        "CV7PROT-A-038-d3",
+        "CV7PROT-A-038-d1",
+        "CV7PROT-A-038-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-039",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-039-rel",
+        "CV7PROT-A-039-d3",
+        "CV7PROT-A-039-d2",
+        "CV7PROT-A-039-d1",
+        "CV7PROT-A-039-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-040",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-040-rel",
+        "CV7PROT-A-040-d2",
+        "CV7PROT-A-040-d3",
+        "CV7PROT-A-040-d1",
+        "CV7PROT-A-040-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-041",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-041-rel",
+        "CV7PROT-A-041-d2",
+        "CV7PROT-A-041-d3",
+        "CV7PROT-A-041-d1",
+        "CV7PROT-A-041-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-042",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-042-rel",
+        "CV7PROT-A-042-d2",
+        "CV7PROT-A-042-d1",
+        "CV7PROT-A-042-d4",
+        "CV7PROT-A-042-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-043",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-043-rel",
+        "CV7PROT-A-043-d3",
+        "CV7PROT-A-043-d1",
+        "CV7PROT-A-043-d4",
+        "CV7PROT-A-043-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-044",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-044-rel",
+        "CV7PROT-A-044-d2",
+        "CV7PROT-A-044-d1",
+        "CV7PROT-A-044-d4",
+        "CV7PROT-A-044-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-045",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-045-rel",
+        "CV7PROT-A-045-d2",
+        "CV7PROT-A-045-d3",
+        "CV7PROT-A-045-d1",
+        "CV7PROT-A-045-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-046",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-046-rel",
+        "CV7PROT-A-046-d2",
+        "CV7PROT-A-046-d3",
+        "CV7PROT-A-046-d4",
+        "CV7PROT-A-046-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-047",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-047-rel",
+        "CV7PROT-A-047-d1",
+        "CV7PROT-A-047-d3",
+        "CV7PROT-A-047-d2",
+        "CV7PROT-A-047-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-048",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-048-rel",
+        "CV7PROT-A-048-d4",
+        "CV7PROT-A-048-d1",
+        "CV7PROT-A-048-d3",
+        "CV7PROT-A-048-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-049",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-049-rel",
+        "CV7PROT-A-049-d1",
+        "CV7PROT-A-049-d3",
+        "CV7PROT-A-049-d2",
+        "CV7PROT-A-049-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-050",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-050-rel",
+        "CV7PROT-A-050-d3",
+        "CV7PROT-A-050-d2",
+        "CV7PROT-A-050-d4",
+        "CV7PROT-A-050-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-051",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-051-rel",
+        "CV7PROT-A-051-d1",
+        "CV7PROT-A-051-d2",
+        "CV7PROT-A-051-d4",
+        "CV7PROT-A-051-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-052",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-052-rel",
+        "CV7PROT-A-052-d3",
+        "CV7PROT-A-052-d4",
+        "CV7PROT-A-052-d1",
+        "CV7PROT-A-052-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-053",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-053-rel",
+        "CV7PROT-A-053-d3",
+        "CV7PROT-A-053-d2",
+        "CV7PROT-A-053-d1",
+        "CV7PROT-A-053-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-054",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-054-rel",
+        "CV7PROT-A-054-d3",
+        "CV7PROT-A-054-d2",
+        "CV7PROT-A-054-d4",
+        "CV7PROT-A-054-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-055",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-055-rel",
+        "CV7PROT-A-055-d2",
+        "CV7PROT-A-055-d3",
+        "CV7PROT-A-055-d1",
+        "CV7PROT-A-055-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-056",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-056-rel",
+        "CV7PROT-A-056-d3",
+        "CV7PROT-A-056-d2",
+        "CV7PROT-A-056-d1",
+        "CV7PROT-A-056-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-057",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-057-rel",
+        "CV7PROT-A-057-d4",
+        "CV7PROT-A-057-d3",
+        "CV7PROT-A-057-d2",
+        "CV7PROT-A-057-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-058",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-058-rel",
+        "CV7PROT-A-058-d2",
+        "CV7PROT-A-058-d3",
+        "CV7PROT-A-058-d4",
+        "CV7PROT-A-058-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-059",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-059-rel",
+        "CV7PROT-A-059-d3",
+        "CV7PROT-A-059-d2",
+        "CV7PROT-A-059-d4",
+        "CV7PROT-A-059-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-060",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-060-rel",
+        "CV7PROT-A-060-d3",
+        "CV7PROT-A-060-d1",
+        "CV7PROT-A-060-d4",
+        "CV7PROT-A-060-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-061",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-061-rel",
+        "CV7PROT-A-061-d3",
+        "CV7PROT-A-061-d2",
+        "CV7PROT-A-061-d1",
+        "CV7PROT-A-061-d4"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-062",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-062-rel",
+        "CV7PROT-A-062-d2",
+        "CV7PROT-A-062-d3",
+        "CV7PROT-A-062-d4",
+        "CV7PROT-A-062-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-063",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-063-rel",
+        "CV7PROT-A-063-d2",
+        "CV7PROT-A-063-d1",
+        "CV7PROT-A-063-d4",
+        "CV7PROT-A-063-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-064",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-064-rel",
+        "CV7PROT-A-064-d2",
+        "CV7PROT-A-064-d4",
+        "CV7PROT-A-064-d1",
+        "CV7PROT-A-064-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-065",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-065-rel",
+        "CV7PROT-A-065-d2",
+        "CV7PROT-A-065-d3",
+        "CV7PROT-A-065-d4",
+        "CV7PROT-A-065-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-066",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-066-rel",
+        "CV7PROT-A-066-d2",
+        "CV7PROT-A-066-d1",
+        "CV7PROT-A-066-d4",
+        "CV7PROT-A-066-d3"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-067",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-067-rel",
+        "CV7PROT-A-067-d3",
+        "CV7PROT-A-067-d2",
+        "CV7PROT-A-067-d4",
+        "CV7PROT-A-067-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-068",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-068-rel",
+        "CV7PROT-A-068-d4",
+        "CV7PROT-A-068-d3",
+        "CV7PROT-A-068-d1",
+        "CV7PROT-A-068-d2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-A-069",
+      "answerable": true,
+      "ranking": [
+        "CV7PROT-A-069-rel",
+        "CV7PROT-A-069-d2",
+        "CV7PROT-A-069-d3",
+        "CV7PROT-A-069-d4",
+        "CV7PROT-A-069-d1"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "CV7PROT-N-000",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-001",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-002",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-003",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-004",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-005",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-006",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-007",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-008",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-009",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-010",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-011",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-012",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-013",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-014",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-015",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-016",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-017",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-018",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-019",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-020",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-021",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-022",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-023",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-024",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-025",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-026",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-027",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-028",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-029",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-030",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-031",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-032",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-033",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-034",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-035",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-036",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-037",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-038",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-039",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-040",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-041",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-042",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-043",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-044",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-045",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-046",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-047",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-048",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    },
+    {
+      "id": "CV7PROT-N-049",
+      "answerable": false,
+      "ranking": [],
+      "false_retrieval": false
+    }
+  ]
+}

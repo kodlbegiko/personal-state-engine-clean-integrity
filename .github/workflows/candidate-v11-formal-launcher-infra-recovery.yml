@@ -1,0 +1,155 @@
+name: Candidate-v11 Formal Launcher — Infrastructure Recovery
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - results/candidate-v11/formal-launch-request-v1.json
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  CANDIDATE_V11_FREEZE_COMMIT: 'f75c2b249d74a5b63734a71bad9a1ca43a499b37'
+
+concurrency:
+  group: candidate-v11-formal-one-shot
+  cancel-in-progress: false
+
+jobs:
+  formal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Verify frozen hashes and formal counts are still zero
+        run: |
+          python scripts/verify_candidate_v11_freeze.py \
+            --require-zero-counts \
+            --output results/candidate-v11/formal-freeze-verification-v1.json
+      - name: Verify historical terminal branch heads remain immutable
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          expected = {
+              'research/candidate-v7-fresh-evidence': '375754853d30075b48d092c79bc4024981efe46d',
+              'research/candidate-v8-fresh-lineage': '86c440fc487c46a1e603144177e666d32a52e725',
+              'research/candidate-v9-fresh-lineage': 'a5f627248064ab98fed9e23a1f5eb24707a74c22',
+              'research/candidate-v10-fresh-lineage': 'f909c0da144ada1268145b2f42cf26571231818e',
+          }
+          actual = {}
+          for branch in expected:
+              output = subprocess.check_output(
+                  ['git', 'ls-remote', 'origin', f'refs/heads/{branch}'], text=True
+              ).strip()
+              actual[branch] = output.split()[0] if output else None
+          checks = {branch: actual[branch] == sha for branch, sha in expected.items()}
+          result = {
+              'schema_version': 'candidate-v11-historical-immutability-preformal-v1',
+              'expected': expected,
+              'actual': actual,
+              'checks': checks,
+              'verdict': 'PASS' if all(checks.values()) else 'FAIL',
+          }
+          path = Path('results/candidate-v11/historical-immutability-preformal-v1.json')
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(result, indent=2))
+          raise SystemExit(0 if result['verdict'] == 'PASS' else 2)
+          PY
+      - name: Verify frozen unit and invariant suite
+        run: PYTHONPATH=src python -m pytest -q tests/test_candidate_v11.py | tee results/candidate-v11/formal-frozen-test-output-v1.txt
+      - name: Execute the frozen formal runner exactly once
+        env:
+          ACTUAL_RUN_ID: ${{ github.run_id }}
+        run: |
+          GITHUB_SHA="$CANDIDATE_V11_FREEZE_COMMIT" \
+          GITHUB_RUN_ID="$ACTUAL_RUN_ID" \
+          python scripts/run_candidate_v11_formal.py
+      - name: Annotate infrastructure recovery metadata only
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          snapshot_path = Path('results/candidate-v11/terminal-snapshot-v1.json')
+          snapshot = json.loads(snapshot_path.read_text())
+          snapshot['formal_launch_path'] = '.github/workflows/candidate-v11-formal-launcher-infra-recovery.yml'
+          snapshot['infrastructure_recovery'] = {
+              'reason': 'A freeze-workflow push authenticated with GITHUB_TOKEN does not trigger a second push-triggered workflow.',
+              'frozen_formal_workflow_modified': False,
+              'frozen_components_modified_after_freeze': False,
+              'formal_counts_before_recovery_launch': {'protected': 0, 'confirmatory': 0, 'final': 0},
+              'evaluation_logic_source': 'frozen scripts/run_candidate_v11_formal.py',
+              'freeze_commit': 'f75c2b249d74a5b63734a71bad9a1ca43a499b37',
+          }
+          snapshot_path.write_text(json.dumps(snapshot, indent=2, sort_keys=True) + '\n')
+          report_path = Path('docs/research/candidate-v11/terminal-report.md')
+          report = report_path.read_text()
+          report += (
+              '\n## Infrastructure recovery\n\n'
+              'The freeze boundary itself completed successfully, but its GITHUB_TOKEN-authenticated push did not recursively trigger the frozen push-triggered formal workflow. '
+              'A post-freeze infrastructure-only launcher was therefore used. It changed no frozen component, threshold, seed, benchmark generator, evaluator, test, or algorithm; '
+              'it first re-verified the freeze hashes and zero formal counts, then invoked the already frozen `scripts/run_candidate_v11_formal.py` exactly once.\n'
+          )
+          report_path.write_text(report)
+          PY
+      - name: Commit immutable formal evidence
+        id: evidence_commit
+        run: |
+          git config user.name "candidate-v11-research-bot"
+          git config user.email "candidate-v11-research-bot@users.noreply.github.com"
+          git add -A results/candidate-v11
+          git add docs/research/candidate-v11/terminal-report.md
+          for f in \
+            experiments/benchmarks/candidate-v11-protected-v1.json \
+            experiments/benchmarks/candidate-v11-confirmatory-v1.json \
+            experiments/benchmarks/candidate-v11-final-v1.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          terminal_state=$(python - <<'PY'
+          import json
+          print(json.load(open('results/candidate-v11/terminal-snapshot-v1.json'))['terminal_state'])
+          PY
+          )
+          git commit -m "candidate-v11: record one-shot formal terminal evidence (${terminal_state})"
+          git push origin HEAD:research/candidate-v11-fresh-lineage
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Finalize terminal evidence commit provenance
+        env:
+          TERMINAL_EVIDENCE_COMMIT: ${{ steps.evidence_commit.outputs.sha }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          sha = os.environ['TERMINAL_EVIDENCE_COMMIT']
+          snapshot_path = Path('results/candidate-v11/terminal-snapshot-v1.json')
+          snapshot = json.loads(snapshot_path.read_text())
+          snapshot['terminal_evidence_commit'] = sha
+          snapshot_path.write_text(json.dumps(snapshot, indent=2, sort_keys=True) + '\n')
+          report_path = Path('docs/research/candidate-v11/terminal-report.md')
+          report = report_path.read_text().replace('TERMINAL_EVIDENCE_COMMIT_PENDING', sha)
+          report_path.write_text(report)
+          PY
+          git add results/candidate-v11/terminal-snapshot-v1.json docs/research/candidate-v11/terminal-report.md
+          git commit -m "candidate-v11: finalize terminal provenance"
+          git push origin HEAD:research/candidate-v11-fresh-lineage
+      - name: Display legal terminal state
+        run: |
+          python - <<'PY'
+          import json
+          result = json.load(open('results/candidate-v11/terminal-snapshot-v1.json'))
+          print(json.dumps({
+              'terminal_state': result['terminal_state'],
+              'formal_execution_counts': result['formal_execution_counts'],
+              'terminal_evidence_commit': result['terminal_evidence_commit'],
+          }, indent=2))
+          PY

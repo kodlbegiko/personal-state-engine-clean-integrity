@@ -1,0 +1,24 @@
+{
+  "benchmark": "experiments/benchmarks/candidate-v11-development-v5.json",
+  "candidate_v11_metrics": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "abstention_accuracy": 1.0,
+    "answerable_count": 360,
+    "answerable_recall": 1.0,
+    "candidate_source_invariant_violations": 0,
+    "false_abstention": 0.0,
+    "false_retrieval": 0.0,
+    "no_evidence_count": 240
+  },
+  "category_counts": {},
+  "evaluation_verdict": "PASS",
+  "failure_count": 0,
+  "failures": [],
+  "grammar_family_counts": {},
+  "iteration": 5,
+  "schema_version": "candidate-v11-development-failure-taxonomy-v1",
+  "semantic_domain_counts": {}
+}

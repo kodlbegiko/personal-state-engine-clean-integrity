@@ -1,0 +1,93 @@
+{
+  "schema_version": "candidate-v7-freeze-manifest-v1",
+  "candidate_v7_frozen": true,
+  "freeze_boundary_commit": "090e6201e5c5a6701d003cd51b048edc93133b9d",
+  "freeze_rule": "Candidate-v7 source/config must not change after this boundary commit; later commits may only add evaluation protocols, benchmarks, evidence, reports, and non-candidate tooling.",
+  "timestamp_utc": "2026-08-14T13:38:48.253132+00:00",
+  "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "dependency_identities": {
+    "candidate_v2_source_sha256": "1bc1f9f073a8cb5e7618fc8d3dcc3137cb7510f691e0d1c80bdc60fb84c29df6",
+    "zero_cost_baselines_sha256": "5df4151df67de8dd9a7a1b3653514648cd559fef7e1138841d5f7376ea59f5bb",
+    "candidate_v6_historical_source_sha256": "c540056c6f30f0145ab8ef8c10be3abcae2ed24e6a087a2d9a3531bc5e545325",
+    "candidate_v6_historical_config_sha256": "067bfa64d97bf2eb1f7208082c36d202118a0e50a2414fc345bf328f83cab5b1"
+  },
+  "development_benchmark_sha256": "600866bd1ee8cdbd3c66da46c8ba0787c9d0f6ffdfad47326ada439a5df2b683",
+  "stress_development_benchmark_sha256": "1ed2b419b4dfa2f4fc74f8f3c2363c1d379db168eca8cf2a3686ad909f75aed9",
+  "development_metrics": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 1.0,
+    "no_evidence_false_retrieval": 0.0
+  },
+  "candidate_v2_development_metrics": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "no_evidence_false_retrieval": 1.0
+  },
+  "development_guardrails": {
+    "mrr_deficit_le_0_03": true,
+    "r1_deficit_le_0_03": true,
+    "r3_deficit_le_0_02": true,
+    "r5_deficit_le_0_02": true,
+    "answerable_recall_ge_0_95": true,
+    "false_abstention_le_0_05": true,
+    "abstention_accuracy_ge_0_90": true,
+    "no_evidence_false_retrieval_le_0_10": true,
+    "absolute_false_retrieval_reduction_ge_0_70": true,
+    "natural_language_coverage_ge_0_95": true,
+    "meta_rejection_ge_0_95": true,
+    "no_value_rejection_ge_0_95": true,
+    "contradiction_handling_ge_0_95": true,
+    "temporal_handling_ge_0_95": true,
+    "wrong_subject_rejection_ge_0_95": true,
+    "wrong_relation_rejection_ge_0_95": true,
+    "stress_answerable_ge_0_95": true,
+    "stress_negative_abstention_ge_0_95": true
+  },
+  "test_result": {
+    "passed": 210,
+    "failed": 0,
+    "total": 210
+  },
+  "stress_result": {
+    "answerable_supported_and_ranking_preserved": 20,
+    "answerable_total": 20,
+    "negative_correct_abstention": 20,
+    "negative_total": 20,
+    "verdict": "PASS"
+  },
+  "decontamination": {
+    "retired_count": 99,
+    "intersection_count": 0,
+    "retired_payload_accessed": false,
+    "status": "PASS"
+  },
+  "freeze_checks": {
+    "development_verdict_pass": true,
+    "development_source_identity_match": true,
+    "development_config_identity_match": true,
+    "all_development_guardrails_pass": true,
+    "development_tests_210_of_210": true,
+    "stress_pass": true,
+    "stress_source_identity_match": true,
+    "stress_answerable_20_of_20": true,
+    "stress_negative_20_of_20": true,
+    "decontamination_pass": true,
+    "retired_intersection_zero": true,
+    "retired_semantic_payload_not_accessed": true,
+    "negative_development_evidence_retained": true,
+    "iteration5_pass_present": true,
+    "iteration4_fail_present": true
+  },
+  "monetary_cost_usd": 0
+}

@@ -1,0 +1,26 @@
+name: Candidate-v11 Unit and Invariant Tests
+
+on:
+  push:
+    branches:
+      - research/candidate-v11-fresh-lineage
+    paths:
+      - src/personal_state_engine/candidate_v11.py
+      - tests/test_candidate_v11.py
+      - .github/workflows/candidate-v11-unit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install pytest
+      - name: Run Candidate-v11 tests
+        run: PYTHONPATH=src python -m pytest -q tests/test_candidate_v11.py

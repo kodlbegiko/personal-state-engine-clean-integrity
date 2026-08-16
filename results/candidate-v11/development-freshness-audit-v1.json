@@ -1,0 +1,158 @@
+{
+  "cross_stage": [],
+  "cross_stage_hard_freshness_pass": true,
+  "per_stage": [
+    {
+      "answerable_count": 360,
+      "benchmark_name": "candidate-v11-development-v1",
+      "benchmark_sha256": "2ad455c343d2df8cd741e30784f92d853aec9a6e42244899cf6315e0704e74a2",
+      "case_count": 600,
+      "evidence_skeleton_top": [
+        [
+          "entity s accommodation is entity",
+          129
+        ],
+        [
+          "entity s language is entity",
+          116
+        ],
+        [
+          "entity s subscription is entity tier",
+          112
+        ],
+        [
+          "entity s software tool is entity",
+          108
+        ],
+        [
+          "entity s sports team is entity",
+          106
+        ],
+        [
+          "entity s certification is entity",
+          97
+        ],
+        [
+          "entity s accommodation is perhaps entity",
+          60
+        ],
+        [
+          "entity s language is perhaps entity",
+          58
+        ],
+        [
+          "entity s subscription is perhaps entity tier",
+          52
+        ],
+        [
+          "entity s sports team is perhaps entity",
+          51
+        ],
+        [
+          "entity s software tool is perhaps entity",
+          50
+        ],
+        [
+          "entity s certification is perhaps entity",
+          45
+        ]
+      ],
+      "evidence_skeleton_unique": 314,
+      "exact_duplicate_count": 0,
+      "grammar_family_distribution": {
+        "L": 150,
+        "M": 150,
+        "N": 150,
+        "O": 150
+      },
+      "no_evidence_count": 240,
+      "normalized_duplicate_count": 0,
+      "query_skeleton_top": [
+        [
+          "entity is the recorded accommodation of entity",
+          22
+        ],
+        [
+          "entity appointment is it that the record associates with entity",
+          18
+        ],
+        [
+          "entity which routine does the profile record",
+          18
+        ],
+        [
+          "entity identify the certification in the active profile rather than an older note",
+          17
+        ],
+        [
+          "entity identify the sports team in the active profile rather than an older note",
+          17
+        ],
+        [
+          "entity which sports team does the profile record",
+          17
+        ],
+        [
+          "entity which subscription does the profile record",
+          16
+        ],
+        [
+          "entity is the recorded appointment of entity",
+          16
+        ],
+        [
+          "entity subscription is it that the record associates with entity",
+          16
+        ],
+        [
+          "entity which accommodation does the profile record",
+          15
+        ],
+        [
+          "entity identify the language in the active profile rather than an older note",
+          15
+        ],
+        [
+          "entity is the recorded commute transport of entity",
+          15
+        ]
+      ],
+      "query_skeleton_unique": 48,
+      "semantic_domain_distribution": {
+        "accommodation": 60,
+        "appointment": 61,
+        "certification": 45,
+        "dietary_restriction": 36,
+        "language": 58,
+        "routine": 56,
+        "software_tool": 50,
+        "sports_team": 51,
+        "subscription": 52,
+        "transport": 48,
+        "volunteering": 40,
+        "work_role": 43
+      },
+      "stage": "development",
+      "structural_mechanism_distribution": {
+        "cleft_association_question": 150,
+        "contrastive_discourse_request": 150,
+        "nominalized_of_possessive": 150,
+        "wh_fronted_profile_record": 150
+      },
+      "template_provenance_distribution": {
+        "candidate-v11:development:L:answerable:v1": 90,
+        "candidate-v11:development:L:negative:v1": 60,
+        "candidate-v11:development:M:answerable:v1": 90,
+        "candidate-v11:development:M:negative:v1": 60,
+        "candidate-v11:development:N:answerable:v1": 90,
+        "candidate-v11:development:N:negative:v1": 60,
+        "candidate-v11:development:O:answerable:v1": 90,
+        "candidate-v11:development:O:negative:v1": 60
+      }
+    }
+  ],
+  "per_stage_hard_freshness_pass": true,
+  "schema_version": "candidate-v11-freshness-audit-v1",
+  "skeleton_overlap_policy": "reported for methodology review; exact/normalized/family/provenance/mechanism overlap are hard constraints",
+  "verdict": "PASS"
+}

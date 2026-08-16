@@ -1,0 +1,1733 @@
+{
+  "all_failures_relevant_in_top3": true,
+  "answerable_count": 280,
+  "diagnostic_only": true,
+  "expected_from_aggregate_r1": 15,
+  "failures": [
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-177-d3",
+        "CV10-FINAL-A-177-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-177-d4",
+        "CV10-FINAL-A-177-d3",
+        "CV10-FINAL-A-177-rel"
+      ],
+      "case_id": "CV10-FINAL-A-177",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "dietary",
+          "field",
+          "restriction"
+        ],
+        "relations": [
+          "dietary_restriction"
+        ],
+        "subject_anchors": [
+          "bruno",
+          "fischer5"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "a21f9e95065f302a2f868299f0dfeadeebf1b34a05ac80ec76c356f700b1148d",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-177-d3",
+        "memory_text_sha256": "de7fd575b34ccc2b1c345e42ef058356759938937ff0330dd2901b0a1c82314a",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-177-rel",
+        "memory_text_sha256": "2d254e4e261c379d49ac5bee8e2ba2b3d37116743203d6fbbb4702c344eb32f5",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "dietary restrictions"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-084-d3",
+        "CV10-FINAL-A-084-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-084-d4",
+        "CV10-FINAL-A-084-d3",
+        "CV10-FINAL-A-084-rel"
+      ],
+      "case_id": "CV10-FINAL-A-084",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "dietary",
+          "field",
+          "restriction"
+        ],
+        "relations": [
+          "dietary_restriction"
+        ],
+        "subject_anchors": [
+          "garcia2",
+          "yara"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "6b95af3248f2ff148aa7775f0829a23482e6f0e1f47e73ee8a95c1bd14e3cf2a",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.23076923076923078,
+        "memory_id": "CV10-FINAL-A-084-d3",
+        "memory_text_sha256": "09800ceca5b23a7fecadda650c9d10cdb20f51ebdce6740c78d4bd0669806e97",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-084-rel",
+        "memory_text_sha256": "6d8fe76b0774b2d44f0ea89a9214dc7a1d7953d595d5198f108490f765e5fa3b",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "dietary restrictions"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-153-d3",
+        "CV10-FINAL-A-153-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-153-d2",
+        "CV10-FINAL-A-153-d4",
+        "CV10-FINAL-A-153-d3"
+      ],
+      "case_id": "CV10-FINAL-A-153",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "next"
+        ],
+        "relations": [
+          "appointment"
+        ],
+        "subject_anchors": [
+          "bela",
+          "eriksen4"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "830c51f7a2180b28130a69d90d19783c9672124e566ad9a86a5a48864d8f5ac8",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-153-d3",
+        "memory_text_sha256": "284870bafa5ad9d221dbea91a4212bdda479c81de139cb9c390dbe514ed6b139",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.14285714285714285,
+        "memory_id": "CV10-FINAL-A-153-rel",
+        "memory_text_sha256": "1a5397384cbc76ef0651c6091bfd18259777dbba4f6de09beb75a9c8e0208cd6",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "appointments"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-159-d3",
+        "CV10-FINAL-A-159-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-159-d4",
+        "CV10-FINAL-A-159-d3",
+        "CV10-FINAL-A-159-d2"
+      ],
+      "case_id": "CV10-FINAL-A-159",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "professional"
+        ],
+        "relations": [
+          "work_role"
+        ],
+        "subject_anchors": [
+          "dev",
+          "gruber4"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "932683ad09bca786505c840a7c0a269f116159ed8f0316c371d6cdec82b354fc",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-159-d3",
+        "memory_text_sha256": "d6a074b8afa12e71693b59c0979eb3760cbc763ab47c9291607a6a3963e906df",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-159-rel",
+        "memory_text_sha256": "046bcdc210ae6ac43088c29375e72eb1d03aee8f13b9d960b8a7cb5efd20df9d",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "employment"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-261-d3",
+        "CV10-FINAL-A-261-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-261-d4",
+        "CV10-FINAL-A-261-d3",
+        "CV10-FINAL-A-261-d2"
+      ],
+      "case_id": "CV10-FINAL-A-261",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "meet",
+          "recurr"
+        ],
+        "relations": [
+          "schedule"
+        ],
+        "subject_anchors": [
+          "bauer8",
+          "nolan"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "0034bdd88182d625501290f09f082369f25a481ece3d9c5b1589da99b237c73b",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-261-d3",
+        "memory_text_sha256": "2b11e9122776440ee6369369cc0dc8e711c7a3433f1ecc96e7c0ee3669c03266",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-261-rel",
+        "memory_text_sha256": "c79db0887ed3079b01fa9b63419f0d2dcff80df7717ac26a80770dafa2f96245",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "schedules"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-180-d3",
+        "CV10-FINAL-A-180-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-180-d2",
+        "CV10-FINAL-A-180-d4",
+        "CV10-FINAL-A-180-d3"
+      ],
+      "case_id": "CV10-FINAL-A-180",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "main"
+        ],
+        "relations": [
+          "software_tool"
+        ],
+        "subject_anchors": [
+          "garcia5",
+          "yara"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "b376b5cc81827d7b2b58e62935d9a9c8688cf585b9dfd68aa7daffb856acecdb",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.14285714285714285,
+        "memory_id": "CV10-FINAL-A-180-d3",
+        "memory_text_sha256": "bc6b0adefea54e2b6b672f7408e2ac61c1020df50f81bba2372f6931c740d18d",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.14285714285714285,
+        "memory_id": "CV10-FINAL-A-180-rel",
+        "memory_text_sha256": "a45f99d40d63b39e586d586917ffa7fd560726952069cd77a4d27c47d4a6d2ec",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "software/tools"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-060-d3",
+        "CV10-FINAL-A-060-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-060-d2",
+        "CV10-FINAL-A-060-d4",
+        "CV10-FINAL-A-060-d3"
+      ],
+      "case_id": "CV10-FINAL-A-060",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "next"
+        ],
+        "relations": [
+          "appointment"
+        ],
+        "subject_anchors": [
+          "ferrer1",
+          "oksana"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "1c7a2bc00cbc1ef12c81d316afdb43de2c3ecc9e218ecce8533f0c3b4dda76d8",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-060-d3",
+        "memory_text_sha256": "c05d273e5ae33df998070bce557a9604b199b1e4aa643f44d41c93773507946f",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-060-rel",
+        "memory_text_sha256": "5eda5ef7213897bfc3a58d297223ea42eabafd6d00317022ee54a8b08cb3c93e",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "appointments"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-168-d3",
+        "CV10-FINAL-A-168-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-168-d4",
+        "CV10-FINAL-A-168-d3",
+        "CV10-FINAL-A-168-d2"
+      ],
+      "case_id": "CV10-FINAL-A-168",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "meet",
+          "recurr"
+        ],
+        "relations": [
+          "schedule"
+        ],
+        "subject_anchors": [
+          "chiara",
+          "costa5"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "c5e74d46fdb203caa59d3516870a3b85977d97baa6844395635907697a41db9a",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-168-d3",
+        "memory_text_sha256": "d5ab0cf1bb29f837bd940d5a8f231c2b961e3c4b193f2a50008bcf6e009707fa",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-168-rel",
+        "memory_text_sha256": "c55e31e2a0055dbba57146808abae43853bfa48196a36053983a0d44d2f595c2",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "schedules"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-246-d3",
+        "CV10-FINAL-A-246-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-246-d2",
+        "CV10-FINAL-A-246-d4",
+        "CV10-FINAL-A-246-d3"
+      ],
+      "case_id": "CV10-FINAL-A-246",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "next"
+        ],
+        "relations": [
+          "appointment"
+        ],
+        "subject_anchors": [
+          "dubois7",
+          "elin"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "694febf20e29238d9044f3926e35b01884a08ce812373fee45ba0f14037dac14",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-246-d3",
+        "memory_text_sha256": "7a7135ea1c21e61ff17119f6920f7760faf3087e2aa81bb46a024620c7c1aaec",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:appointment",
+            "relation:appointment",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "appointment"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-246-rel",
+        "memory_text_sha256": "6a7ce6a3874ff4987af32308095a654c73de068a17ca8b787a9201c02d46679c",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "next"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "appointments"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-252-d3",
+        "CV10-FINAL-A-252-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-252-d4",
+        "CV10-FINAL-A-252-d3",
+        "CV10-FINAL-A-252-d2"
+      ],
+      "case_id": "CV10-FINAL-A-252",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "professional"
+        ],
+        "relations": [
+          "work_role"
+        ],
+        "subject_anchors": [
+          "ferrer7",
+          "oksana"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "6e7bab334cdbed4e184f506bb9b3e93af2329f76a64cdf82464e6e982c1057d3",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-252-d3",
+        "memory_text_sha256": "695cffda20c3ef642a7db4d187f04b6d4619245b1d63d345f2dc6e12a40a149b",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.23076923076923078,
+        "memory_id": "CV10-FINAL-A-252-rel",
+        "memory_text_sha256": "5e409c60b3bb9ecb58aca877c4d18ffe42c43b4ed3a4310f8d0c418ef63e1342",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "lexical_overlap_priority_over_semantic_proof_quality",
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "employment"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-270-d3",
+        "CV10-FINAL-A-270-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-270-d4",
+        "CV10-FINAL-A-270-d3",
+        "CV10-FINAL-A-270-rel"
+      ],
+      "case_id": "CV10-FINAL-A-270",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "dietary",
+          "field",
+          "restriction"
+        ],
+        "relations": [
+          "dietary_restriction"
+        ],
+        "subject_anchors": [
+          "evans8",
+          "maya"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "5ce1651dd590cb766771e36f08a5b816880ec3b68039f32cc69d80e825aa2870",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.23076923076923078,
+        "memory_id": "CV10-FINAL-A-270-d3",
+        "memory_text_sha256": "73edfd2c0a0c8f88530b9d77a02dac938ad5009a6027220ee0a28683f7b19d14",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:dietary_restriction",
+            "relation:dietary_restriction",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "dietary_restriction"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-270-rel",
+        "memory_text_sha256": "7edf5b7bd8d25aac7bd53e90cf18aab35ece0d84034e377ae72c2dee04d1bf61",
+        "object_alignment": {
+          "matched_object_terms": [
+            "restriction"
+          ],
+          "object_match": true,
+          "query_object_terms": [
+            "dietary",
+            "field",
+            "restriction"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "dietary restrictions"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-075-d3",
+        "CV10-FINAL-A-075-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-075-d4",
+        "CV10-FINAL-A-075-d3",
+        "CV10-FINAL-A-075-d2"
+      ],
+      "case_id": "CV10-FINAL-A-075",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "meet",
+          "recurr"
+        ],
+        "relations": [
+          "schedule"
+        ],
+        "subject_anchors": [
+          "dahl2",
+          "zev"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "2de6b84490dd2b1d1b18e830dd1b50457a1e76c3a084cb1bc38fb02cb437ce43",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-075-d3",
+        "memory_text_sha256": "ea92bb7b0625df36702bb2bec0c8276666808d826a41da47314b54f446a78be3",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:schedule",
+            "relation:schedule",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "schedule"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.13333333333333333,
+        "memory_id": "CV10-FINAL-A-075-rel",
+        "memory_text_sha256": "285a9d15b3d937ece4db2aa65ec4fa9fb23c422d15bd90b275378d25a745b70a",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "meet",
+            "recurr"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "schedules"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-087-d3",
+        "CV10-FINAL-A-087-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-087-d2",
+        "CV10-FINAL-A-087-d4",
+        "CV10-FINAL-A-087-d3"
+      ],
+      "case_id": "CV10-FINAL-A-087",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "main"
+        ],
+        "relations": [
+          "software_tool"
+        ],
+        "subject_anchors": [
+          "hale2",
+          "luc"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "53a929c605659d29b923b224d437623fb3491696343143e82524634ca0a23c56",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.14285714285714285,
+        "memory_id": "CV10-FINAL-A-087-d3",
+        "memory_text_sha256": "9a7e2fa5bf76eae1559dc984f8adc59c3469785116eabe5c192ca3fa1ea19077",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.15384615384615385,
+        "memory_id": "CV10-FINAL-A-087-rel",
+        "memory_text_sha256": "9dfb902c4bd6d90675d8355988d45c5b25d5caa1c5a6e7993140e2c7978b3bff",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "software/tools"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-066-d3",
+        "CV10-FINAL-A-066-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-066-d4",
+        "CV10-FINAL-A-066-d3",
+        "CV10-FINAL-A-066-d2"
+      ],
+      "case_id": "CV10-FINAL-A-066",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "professional"
+        ],
+        "relations": [
+          "work_role"
+        ],
+        "subject_anchors": [
+          "arden2",
+          "ari"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "b8c29ac243411ed19394caaeed99b501897af57b4f578cd6af2fc06e7410994a",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.25,
+        "memory_id": "CV10-FINAL-A-066-d3",
+        "memory_text_sha256": "b94b40de2cba457df2bc13f492c732b60b98b71e67314cf92020aaf5d2a4ab43",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:work_role",
+            "relation:work_role",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "work_role"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.23076923076923078,
+        "memory_id": "CV10-FINAL-A-066-rel",
+        "memory_text_sha256": "3a3c45eb41b6514ee79344b173891c2c019ed2d5defa6d7c2ff4e75b122874a7",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "professional"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "lexical_overlap_priority_over_semantic_proof_quality",
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "employment"
+    },
+    {
+      "candidate_v10_rank": 2,
+      "candidate_v10_top3": [
+        "CV10-FINAL-A-273-d3",
+        "CV10-FINAL-A-273-rel"
+      ],
+      "candidate_v2_top3": [
+        "CV10-FINAL-A-273-d2",
+        "CV10-FINAL-A-273-d4",
+        "CV10-FINAL-A-273-d3"
+      ],
+      "case_id": "CV10-FINAL-A-273",
+      "grammar_family": "I",
+      "query_requirements": {
+        "object_terms": [
+          "field",
+          "main"
+        ],
+        "relations": [
+          "software_tool"
+        ],
+        "subject_anchors": [
+          "bruno",
+          "fischer8"
+        ],
+        "temporal_scope": "UNSPECIFIED"
+      },
+      "query_sha256": "c22d3d838ab22af1e750778225e30ac9771bfdf2890cbc6f393bdd4270ea9df1",
+      "rank1_distractor": {
+        "assertion_strength": "assignment_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.14285714285714285,
+        "memory_id": "CV10-FINAL-A-273-d3",
+        "memory_text_sha256": "6823fd0f4be37430e4e4d6c27bf871675e4d2d325dc69c0702faa07c63ead1ea",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "historical"
+      },
+      "ranking_score_pathology": "Candidate-v10 certifies eligibility but preserves Candidate-v2 ordering among all eligible candidates; semantic proof quality has no second-stage priority function.",
+      "relevant_evidence": {
+        "assertion_strength": "direct_assertion",
+        "certification": {
+          "assertion_ok": true,
+          "blocker": null,
+          "completeness": 6,
+          "proof": [
+            "assertion",
+            "open-value",
+            "range:software_tool",
+            "relation:software_tool",
+            "subject",
+            "temporal"
+          ],
+          "relation_ok": true,
+          "relation_signals": [
+            "software_tool"
+          ],
+          "subject_ok": true,
+          "supported": true,
+          "temporal_ok": true,
+          "value_bearing": true,
+          "value_type_ok": true
+        },
+        "lexical_overlap": 0.15384615384615385,
+        "memory_id": "CV10-FINAL-A-273-rel",
+        "memory_text_sha256": "3d157d1ea07849baaa4f585ae3c6c6616eab45371180f042d4fe1625fba78deb",
+        "object_alignment": {
+          "matched_object_terms": [],
+          "object_match": false,
+          "query_object_terms": [
+            "field",
+            "main"
+          ]
+        },
+        "subject_specificity": "exact_subject",
+        "temporal_class": "current_or_unspecified"
+      },
+      "root_causes": [
+        "multiple_certification_compatible_relation_candidates",
+        "assertion_directness_underweighted_after_eligibility"
+      ],
+      "semantic_domain": "software/tools"
+    }
+  ],
+  "grammar_family_counts": {
+    "I": 15
+  },
+  "rank1_failure_count": 15,
+  "raw_query_or_memory_text_emitted": false,
+  "relevant_rank_counts": {
+    "2": 15
+  },
+  "research_interpretation": {
+    "candidate_v11_implication": "Introduce a safety-preserving second-stage priority proof over eligible candidates only; never rescue blocked evidence and never inject candidates outside Candidate-v2 output.",
+    "mechanism": "Candidate-v10 separates eligible from ineligible evidence but has no semantic quality ordering among eligible Candidate-v2 candidates.",
+    "primary_pathology": "eligibility_priority_conflation"
+  },
+  "root_cause_counts": {
+    "assertion_directness_underweighted_after_eligibility": 15,
+    "lexical_overlap_priority_over_semantic_proof_quality": 2,
+    "multiple_certification_compatible_relation_candidates": 15
+  },
+  "schema_version": "candidate-v11-v10-final-rank1-failure-taxonomy-v1",
+  "semantic_domain_counts": {
+    "appointments": 3,
+    "dietary restrictions": 3,
+    "employment": 3,
+    "schedules": 3,
+    "software/tools": 3
+  },
+  "source_benchmark": "experiments/benchmarks/candidate-v10-final-v1.json",
+  "source_benchmark_sha256": "d1175e35e3a2dd3f9b5774a2a326d89871d881707a4eea11fbc4084614b94bba"
+}

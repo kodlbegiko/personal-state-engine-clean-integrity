@@ -1,0 +1,72 @@
+name: Candidate v9 development
+
+on:
+  push:
+    branches:
+      - research/candidate-v9-fresh-lineage
+    paths:
+      - .github/workflows/candidate-v9-development.yml
+
+permissions:
+  contents: write
+
+jobs:
+  development:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v9-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e . pytest
+      - name: Verify Candidate-v8 immutable paths
+        run: |
+          test "$(git rev-parse origin/research/candidate-v8-fresh-lineage)" = "86c440fc487c46a1e603144177e666d32a52e725"
+          test -z "$(git diff --name-only 86c440fc487c46a1e603144177e666d32a52e725 HEAD -- docs/research/candidate-v8 results/candidate-v8 src/personal_state_engine/candidate_v8.py scripts/generate_candidate_v8_benchmark.py scripts/evaluate_candidate_v8.py 'experiments/benchmarks/candidate-v8-*' experiments/configs/candidate-v8-v1.json)"
+      - name: Full test suite
+        run: python -m pytest -q | tee /tmp/candidate-v9-tests.txt
+      - name: Materialize fresh development only
+        run: python scripts/generate_candidate_v9_benchmark.py --stage development --output experiments/benchmarks/candidate-v9-development-v1.json
+      - name: Evaluate development
+        run: python scripts/evaluate_candidate_v9.py experiments/benchmarks/candidate-v9-development-v1.json results/candidate-v9/development-summary-v1.json --stage development --no-fail | tee /tmp/candidate-v9-development.txt
+      - name: Record development ledger and evidence
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          root=Path('.')
+          result=json.loads((root/'results/candidate-v9/development-summary-v1.json').read_text())
+          tests=Path('/tmp/candidate-v9-tests.txt').read_text().strip()
+          def sha(p): return hashlib.sha256((root/p).read_bytes()).hexdigest()
+          row={
+            'iteration':0,
+            'architecture':'TYPED_QUERY_INTENT_PLUS_RELATION_CANONICALIZATION_PLUS_HARD_SAFETY_BLOCKERS',
+            'source_sha256':sha('src/personal_state_engine/candidate_v9.py'),
+            'generator_sha256':sha('scripts/generate_candidate_v9_benchmark.py'),
+            'evaluator_sha256':sha('scripts/evaluate_candidate_v9.py'),
+            'config_sha256':sha('experiments/configs/candidate-v9-v1.json'),
+            'development_benchmark_sha256':sha('experiments/benchmarks/candidate-v9-development-v1.json'),
+            'metrics':result['candidate_v9'],'paired_bootstrap':result['paired_bootstrap'],'checks':result['checks'],'verdict':result['verdict'],
+            'reason':'initial preregistered Candidate-v9 architecture after historical diagnosis','patch':'typed query intent, canonical relation compatibility, value-type binding, bounded coreference; hard blockers preserved',
+            'tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0
+          }
+          p=root/'results/candidate-v9/development-ledger.jsonl'; p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(row)+'\n')
+          (root/'results/candidate-v9/development-test-record-v1.json').write_text(json.dumps({'tests':tests,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'monetary_cost_usd':0},indent=2)+'\n')
+          PY
+          git config user.name candidate-v9-research-bot
+          git config user.email candidate-v9-research-bot@users.noreply.github.com
+          git add experiments/benchmarks/candidate-v9-development-v1.json results/candidate-v9/development-summary-v1.json results/candidate-v9/development-ledger.jsonl results/candidate-v9/development-test-record-v1.json
+          git commit -m "candidate-v9: record development iteration 0"
+          git push origin HEAD:research/candidate-v9-fresh-lineage
+      - name: Enforce development gates
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('results/candidate-v9/development-summary-v1.json'))
+          print('development verdict:',r['verdict'])
+          raise SystemExit(0 if r['verdict']=='PASS' else 2)
+          PY

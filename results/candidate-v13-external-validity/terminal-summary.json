@@ -1,0 +1,81 @@
+{
+  "schema_version": "candidate-v13-external-validity-terminal-summary-v1",
+  "terminal_state": "NATURALISTIC_EXTERNAL_VALIDITY_INFRASTRUCTURE_BLOCKED",
+  "candidate": "Candidate-v13",
+  "candidate_modified": false,
+  "candidate_modified_after_external_preregistration_lock": false,
+  "formal_ledger": {
+    "ev_b": 0,
+    "ev_c": 0,
+    "basis": "initial locked ledger plus complete target-branch history showing no external formal-ledger/EV-B/EV-C consumption artifacts or formal Candidate-v13 invocation"
+  },
+  "ev_b": {
+    "state": "EV_B_NOT_EXECUTED_INFRASTRUCTURE_BLOCKED",
+    "decision": "NOT_EXECUTED",
+    "integrity": "NOT_APPLICABLE_FORMAL_EXECUTION_NEVER_BEGAN",
+    "metrics": {},
+    "run_id": null,
+    "commit": null
+  },
+  "ev_c": {
+    "state": "EV_C_NOT_EXECUTED_NOT_AUTHORIZED",
+    "decision": "NOT_EXECUTED",
+    "integrity": "NOT_APPLICABLE_FORMAL_EXECUTION_NEVER_BEGAN",
+    "metrics": {},
+    "run_id": null,
+    "commit": null
+  },
+  "freeze": {
+    "candidate_v13_sha256": "b602b55428b365d8e925301a1fc8c4bb2a3a0d73d0590228ea48cc7a62be8838",
+    "candidate_v13_git_blob_sha": "6c8ae4bce6ba8def0dd32fc3106c65639d521ef3",
+    "candidate_v2_sha256": null,
+    "candidate_v2_git_blob_sha": "c9c12aec26e40bee9b71267d663b82aa800b47fd",
+    "evaluator_sha256": "5d849e9d3f13dc1067619984d883055fee52d6da59ae45c62043e15ce9096838",
+    "evaluator_git_blob_sha": "f72ff171bf10c30780042798d35febb5fb8b7728",
+    "formal_runner_sha256": "8cf552ad6dc5aeba0f7054c90d71d73453f3e239b47862a118eb1c63e0802b83",
+    "formal_runner_git_blob_sha": "5c158eea1040f725b336663a0a286cfec8c77a17",
+    "adapter_policy_sha256": null,
+    "adapter_policy_git_blob_sha": "6d820b860ecaafcb4fc0e4cd1ca6999a20579515",
+    "allocation_policy_sha256": null,
+    "allocation_policy_git_blob_sha": "1b88dbc7edccb16ec34f923433fb0b9a183920c1",
+    "candidate_v13_freeze_manifest_git_blob_sha": "d9edaee39fa2f34e4eba6fd3eb1c50dff3ae0b99",
+    "external_preregistration_lock_git_blob_sha": "42fa6a38f2837d97cab1cf2277de44bb171ef4c9",
+    "external_preregistration_lock_commit": "7c429cdf1236ff1ae16f5d2cac3a28e6168ab0f2",
+    "candidate_last_modified_commit": "8dd34a8d414e122ca5c2d4ebb665c901e58c35e7",
+    "candidate_v13_verified": true,
+    "candidate_v13_verification_basis": "current Candidate-v13 Git blob equals the frozen Candidate-v13 manifest blob and no candidate_v13.py commit occurs after the external preregistration lock",
+    "full_external_formal_hash_manifest_verified": false,
+    "full_external_formal_hash_manifest_status": "NOT_ESTABLISHED_BEFORE_INFRASTRUCTURE_BLOCK",
+    "unavailable_sha256_fields_reason": "The external formal infrastructure never reached a legal materialization/freeze step that recorded separate SHA256 values for these components; Git blob provenance is retained instead of inventing hashes."
+  },
+  "infrastructure_block": {
+    "preformal_capacity_fast": {
+      "result": "CAPACITY_SHORTFALL",
+      "d6": "212/468",
+      "d7": "243/468"
+    },
+    "preformal_capacity_v2": {
+      "result": "CAPACITY_SHORTFALL",
+      "d6": "212/468",
+      "d7": "243/468"
+    },
+    "locked_gap_source": "EverMind-AI/EverMemBench-Dynamic",
+    "source_revision": "a6b210a32248e841967b7b64a64281d2ff3f669d",
+    "source_probe_evidence_commit": "2821dc6c0f5855186fd8e85f137d2ea35fb01272",
+    "source_probe_run_id": 31924604151,
+    "source_probe_candidate_v13_invoked": false,
+    "source_probe_formal_case_materialized": false,
+    "source_probe_dialogue_row_count": 0,
+    "source_probe_qar_topic_counts": {},
+    "source_probe_aggregate_counts": {},
+    "reason": "The preregistered source pool has unresolved D6/D7 capacity shortfall and the final locked gap source cannot be transformed into usable formal cases by the frozen preformal probe contract. Continuing would require parser/adapter/source-contract repair or source replacement, all forbidden in this closeout mission."
+  },
+  "reruns_performed": 0,
+  "performance_driven_changes": 0,
+  "candidate_tuning_after_ev_a": false,
+  "candidate_tuning_after_ev_b": false,
+  "candidate_tuning_after_ev_c": false,
+  "illegal_formal_reruns": false,
+  "research_integrity": "PASS",
+  "research_integrity_basis": "No external Candidate-v13 formal invocation occurred, EV-B and EV-C bullets remain unconsumed, no formal rerun occurred, and the lineage was stopped rather than repairing or replacing frozen infrastructure after observing the block."
+}

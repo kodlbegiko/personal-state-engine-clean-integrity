@@ -1,0 +1,600 @@
+{
+  "branch": "research/candidate-v10-fresh-lineage",
+  "candidate_v9_formal_execution_counts_preserved": {
+    "confirmatory": 1,
+    "final": 0,
+    "protected": 1
+  },
+  "cross_stage_freshness": {
+    "integrity_pass": true,
+    "integrity_policy": {
+      "exact_case_overlap_must_be_zero": true,
+      "grammar_family_overlap_must_be_zero": true,
+      "normalized_case_overlap_must_be_zero": true,
+      "question_and_evidence_skeleton_overlap": "reported for stratified audit; not a post-hoc numeric gate",
+      "template_provenance_overlap_must_be_zero": true
+    },
+    "pairwise": [
+      {
+        "evidence_skeleton_overlap": 0,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 0,
+        "stages": [
+          "development",
+          "protected"
+        ],
+        "template_provenance_overlap": []
+      },
+      {
+        "evidence_skeleton_overlap": 1,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 2,
+        "stages": [
+          "development",
+          "confirmatory"
+        ],
+        "template_provenance_overlap": []
+      },
+      {
+        "evidence_skeleton_overlap": 0,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 0,
+        "stages": [
+          "development",
+          "final"
+        ],
+        "template_provenance_overlap": []
+      },
+      {
+        "evidence_skeleton_overlap": 0,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 0,
+        "stages": [
+          "protected",
+          "confirmatory"
+        ],
+        "template_provenance_overlap": []
+      },
+      {
+        "evidence_skeleton_overlap": 0,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 0,
+        "stages": [
+          "protected",
+          "final"
+        ],
+        "template_provenance_overlap": []
+      },
+      {
+        "evidence_skeleton_overlap": 0,
+        "exact_case_overlap": 0,
+        "grammar_family_overlap": [],
+        "integrity_pass": true,
+        "normalized_case_overlap": 0,
+        "question_skeleton_overlap": 0,
+        "stages": [
+          "confirmatory",
+          "final"
+        ],
+        "template_provenance_overlap": []
+      }
+    ],
+    "schema_version": "candidate-v10-cross-stage-freshness-audit-v1",
+    "stages": [
+      {
+        "case_count": 480,
+        "evidence_skeleton_unique": 138,
+        "families": [
+          "A",
+          "B",
+          "C"
+        ],
+        "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-development-v1.json",
+        "question_skeleton_unique": 61,
+        "semantic_domain_distribution": {
+          "accommodations": 15,
+          "appointments": 16,
+          "attributes/colors": 16,
+          "certifications": 15,
+          "communication channels": 16,
+          "device ownership/use": 15,
+          "dietary restrictions": 15,
+          "education": 30,
+          "employment": 16,
+          "goals": 16,
+          "hobbies": 15,
+          "language": 16,
+          "location": 16,
+          "media": 15,
+          "medication": 15,
+          "memberships": 15,
+          "pets": 16,
+          "preferences": 32,
+          "project ownership": 15,
+          "recurring routines": 15,
+          "relationships": 16,
+          "schedules": 16,
+          "software/tools": 15,
+          "sports teams": 16,
+          "status": 15,
+          "subscriptions": 16,
+          "transportation": 16,
+          "travel plans": 15,
+          "volunteering": 15
+        },
+        "stage": "development",
+        "template_provenance": [
+          "candidate-v10:development:A:answerable",
+          "candidate-v10:development:A:negative",
+          "candidate-v10:development:B:answerable",
+          "candidate-v10:development:B:negative",
+          "candidate-v10:development:C:answerable",
+          "candidate-v10:development:C:negative"
+        ]
+      },
+      {
+        "case_count": 360,
+        "evidence_skeleton_unique": 143,
+        "families": [
+          "D",
+          "E"
+        ],
+        "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-protected-v1.json",
+        "question_skeleton_unique": 62,
+        "semantic_domain_distribution": {
+          "accommodations": 11,
+          "appointments": 12,
+          "attributes/colors": 12,
+          "certifications": 12,
+          "communication channels": 12,
+          "device ownership/use": 11,
+          "dietary restrictions": 11,
+          "education": 23,
+          "employment": 12,
+          "goals": 12,
+          "hobbies": 11,
+          "language": 12,
+          "location": 12,
+          "media": 11,
+          "medication": 12,
+          "memberships": 11,
+          "pets": 12,
+          "preferences": 25,
+          "project ownership": 11,
+          "recurring routines": 11,
+          "relationships": 12,
+          "schedules": 12,
+          "software/tools": 11,
+          "sports teams": 12,
+          "status": 11,
+          "subscriptions": 12,
+          "transportation": 12,
+          "travel plans": 11,
+          "volunteering": 11
+        },
+        "stage": "protected",
+        "template_provenance": [
+          "candidate-v10:protected:D:answerable",
+          "candidate-v10:protected:D:negative",
+          "candidate-v10:protected:E:answerable",
+          "candidate-v10:protected:E:negative"
+        ]
+      },
+      {
+        "case_count": 420,
+        "evidence_skeleton_unique": 126,
+        "families": [
+          "F",
+          "G",
+          "H"
+        ],
+        "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-confirmatory-v1.json",
+        "question_skeleton_unique": 38,
+        "semantic_domain_distribution": {
+          "accommodations": 13,
+          "appointments": 14,
+          "attributes/colors": 14,
+          "certifications": 13,
+          "communication channels": 14,
+          "device ownership/use": 13,
+          "dietary restrictions": 13,
+          "education": 26,
+          "employment": 14,
+          "goals": 14,
+          "hobbies": 13,
+          "language": 14,
+          "location": 14,
+          "media": 13,
+          "medication": 14,
+          "memberships": 13,
+          "pets": 14,
+          "preferences": 29,
+          "project ownership": 13,
+          "recurring routines": 13,
+          "relationships": 14,
+          "schedules": 14,
+          "software/tools": 13,
+          "sports teams": 14,
+          "status": 13,
+          "subscriptions": 14,
+          "transportation": 14,
+          "travel plans": 13,
+          "volunteering": 13
+        },
+        "stage": "confirmatory",
+        "template_provenance": [
+          "candidate-v10:confirmatory:F:answerable",
+          "candidate-v10:confirmatory:F:negative",
+          "candidate-v10:confirmatory:G:answerable",
+          "candidate-v10:confirmatory:G:negative",
+          "candidate-v10:confirmatory:H:answerable",
+          "candidate-v10:confirmatory:H:negative"
+        ]
+      },
+      {
+        "case_count": 480,
+        "evidence_skeleton_unique": 137,
+        "families": [
+          "I",
+          "J",
+          "K"
+        ],
+        "path": "/home/runner/work/personal-state-engine-clean-integrity/personal-state-engine-clean-integrity/experiments/benchmarks/candidate-v10-final-v1.json",
+        "question_skeleton_unique": 45,
+        "semantic_domain_distribution": {
+          "accommodations": 15,
+          "appointments": 16,
+          "attributes/colors": 16,
+          "certifications": 15,
+          "communication channels": 16,
+          "device ownership/use": 15,
+          "dietary restrictions": 15,
+          "education": 30,
+          "employment": 16,
+          "goals": 16,
+          "hobbies": 15,
+          "language": 16,
+          "location": 16,
+          "media": 15,
+          "medication": 15,
+          "memberships": 15,
+          "pets": 16,
+          "preferences": 32,
+          "project ownership": 15,
+          "recurring routines": 15,
+          "relationships": 16,
+          "schedules": 16,
+          "software/tools": 15,
+          "sports teams": 16,
+          "status": 15,
+          "subscriptions": 16,
+          "transportation": 16,
+          "travel plans": 15,
+          "volunteering": 15
+        },
+        "stage": "final",
+        "template_provenance": [
+          "candidate-v10:final:I:answerable",
+          "candidate-v10:final:I:negative",
+          "candidate-v10:final:J:answerable",
+          "candidate-v10:final:J:negative",
+          "candidate-v10:final:K:answerable",
+          "candidate-v10:final:K:negative"
+        ]
+      }
+    ]
+  },
+  "development_freeze": {
+    "development_benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
+    "development_freshness_audit_sha256": "81b417f8d6d077a70d9b45070095a589ea8f222195d5fda651791b8a3299ba41",
+    "development_metrics": {
+      "MRR": 0.9982142857142857,
+      "R@1": 0.9964285714285714,
+      "R@3": 1.0,
+      "R@5": 1.0,
+      "abstention_accuracy": 1.0,
+      "answerable_count": 280,
+      "answerable_recall": 1.0,
+      "false_abstention": 0.0,
+      "false_retrieval": 0.0,
+      "no_evidence_count": 200,
+      "order_preservation_violations": 0
+    },
+    "development_result_sha256": "951ed3ca456c411ce4bbe2a1470b52f5a07645be270cb922d4738904b4e5a606",
+    "development_verdict": "PASS",
+    "formal_execution_counts_at_freeze": {
+      "confirmatory": 0,
+      "final": 0,
+      "protected": 0
+    },
+    "freeze_commit_parent": "17d322ee2841bf94de9501c49fe7d4eae35875b6",
+    "frozen_files": {
+      "docs/research/candidate-v10/preregistration.md": "e2e18898af8fca8393ed52d6272d3da92c72b905a0dff0a632a121d03ed61415",
+      "experiments/configs/candidate-v10-v1.json": "70ac0acebb1c46b9f000c11b3a54fc0377335c6e1806aebaf6b5487631fcd5eb",
+      "scripts/audit_candidate_v10_cross_stage_freshness.py": "9f551996d442c4d105d26c4aed81e4274d718e62c9d483272a9ee15e567177da",
+      "scripts/evaluate_candidate_v10.py": "7b075f366bfdeab7a3210aca0019ca7f3b02fbbbfdbca82e4598a65021e714dd",
+      "scripts/generate_candidate_v10_benchmark.py": "ac81afd96ab0ad4e8887bb8c355a6e80b80070996b4478443a8872fd849c9a8e",
+      "scripts/generate_candidate_v10_benchmark_v2.py": "d944ad5988564db0b75af50a20e6d84c5438aef94dcb8080ecb6b89e35490d2c",
+      "scripts/run_candidate_v10_formal_mission.py": "48fb3b00d3c2a48cf421bf6350f268d9552bea6a7768bd3da9643d1227da1a7c",
+      "src/personal_state_engine/candidate_v10.py": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "tests/test_candidate_v10.py": "269db481e7d0a3544d90a6d009f5bf10da5b942887f825f6617071bcf8c87ca7"
+    },
+    "monetary_cost_usd": 0,
+    "post_freeze_policy": "No frozen file may change before or during protected/confirmatory/final formal execution.",
+    "schema_version": "candidate-v10-development-freeze-v1",
+    "state": "CANDIDATE_V10_DEVELOPMENT_FROZEN"
+  },
+  "formal_execution_counts": {
+    "confirmatory": 1,
+    "final": 1,
+    "protected": 1
+  },
+  "github_run_id": "31883140160",
+  "github_sha": "203db78ddf2e5896cdbd8138b669cc1bf093bb02",
+  "monetary_cost_usd": 0,
+  "notes": [
+    "Development was frozen before any Candidate-v10 formal protected payload was generated.",
+    "final formal gate failed; subsequent formal stages were not generated or executed."
+  ],
+  "preregistration_commit": "d31881019a3df1befbd7faa23df0f009e76485a9",
+  "repository": "kodlbegiko/personal-state-engine-clean-integrity",
+  "schema_version": "candidate-v10-terminal-snapshot-v1",
+  "stage_results": {
+    "confirmatory": {
+      "benchmark_name": "candidate-v10-confirmatory-v1",
+      "benchmark_sha256": "508f07643d51d36da26ed7eb2892a1037ca87076d1ed760358c31db0646a0404",
+      "candidate_v10": {
+        "MRR": 1.0,
+        "R@1": 1.0,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.9941176470588236,
+        "answerable_count": 250,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 0.0058823529411764705,
+        "no_evidence_count": 170,
+        "order_preservation_violations": 0
+      },
+      "candidate_v10_absolute_false_retrieval_reduction_vs_candidate_v2": 0.9941176470588236,
+      "candidate_v10_source_sha256": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "candidate_v2": {
+        "MRR": 0.9593333333333334,
+        "R@1": 0.928,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.0,
+        "answerable_count": 250,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 1.0,
+        "no_evidence_count": 170,
+        "order_preservation_violations": 0
+      },
+      "checks": {
+        "absolute_false_retrieval_reduction": true,
+        "abstention_accuracy": true,
+        "answerable_recall": true,
+        "false_abstention": true,
+        "false_retrieval": true,
+        "mrr": true,
+        "order_preservation": true,
+        "paired_bootstrap_noninferiority": true,
+        "r1": true,
+        "r3": true,
+        "r5": true
+      },
+      "monetary_cost_usd": 0,
+      "paired_bootstrap": {
+        "ci95": [
+          0.024,
+          0.06
+        ],
+        "delta": 0.04066666666666667,
+        "iterations": 10000,
+        "margin": -0.03,
+        "noninferiority": true,
+        "seed": 2026081527
+      },
+      "schema_version": "candidate-v10-evaluation-v1",
+      "stage": "confirmatory",
+      "verdict": "PASS"
+    },
+    "development": {
+      "benchmark_name": "candidate-v10-development-v1",
+      "benchmark_sha256": "9db0b281685d38cb8d65e64625dd3a704bb78c523cde39d91d3be11301679b37",
+      "candidate_v10": {
+        "MRR": 0.9982142857142857,
+        "R@1": 0.9964285714285714,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 1.0,
+        "answerable_count": 280,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 0.0,
+        "no_evidence_count": 200,
+        "order_preservation_violations": 0
+      },
+      "candidate_v10_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+      "candidate_v10_source_sha256": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "candidate_v2": {
+        "MRR": 0.6982142857142857,
+        "R@1": 0.5107142857142857,
+        "R@3": 0.8714285714285714,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.0,
+        "answerable_count": 280,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 1.0,
+        "no_evidence_count": 200,
+        "order_preservation_violations": 0
+      },
+      "checks": {
+        "abstention_accuracy": true,
+        "answerable_recall": true,
+        "false_abstention": true,
+        "false_retrieval": true,
+        "mrr": true,
+        "order_preservation": true,
+        "paired_bootstrap_noninferiority": true,
+        "r1": true,
+        "r3": true,
+        "r5": true
+      },
+      "monetary_cost_usd": 0,
+      "paired_bootstrap": {
+        "ci95": [
+          0.2630952380952381,
+          0.3366071428571429
+        ],
+        "delta": 0.3,
+        "iterations": 10000,
+        "margin": -0.03,
+        "noninferiority": true,
+        "seed": 2026081525
+      },
+      "schema_version": "candidate-v10-evaluation-v1",
+      "stage": "development",
+      "verdict": "PASS"
+    },
+    "final": {
+      "benchmark_name": "candidate-v10-final-v1",
+      "benchmark_sha256": "d1175e35e3a2dd3f9b5774a2a326d89871d881707a4eea11fbc4084614b94bba",
+      "candidate_v10": {
+        "MRR": 0.9732142857142857,
+        "R@1": 0.9464285714285714,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.95,
+        "answerable_count": 280,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 0.05,
+        "no_evidence_count": 200,
+        "order_preservation_violations": 0
+      },
+      "candidate_v10_absolute_false_retrieval_reduction_vs_candidate_v2": 0.95,
+      "candidate_v10_source_sha256": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "candidate_v2": {
+        "MRR": 0.7458333333333333,
+        "R@1": 0.6428571428571429,
+        "R@3": 0.7571428571428571,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.0,
+        "answerable_count": 280,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 1.0,
+        "no_evidence_count": 200,
+        "order_preservation_violations": 0
+      },
+      "checks": {
+        "absolute_false_retrieval_reduction": true,
+        "abstention_accuracy": true,
+        "answerable_recall": true,
+        "false_abstention": true,
+        "false_retrieval": true,
+        "mrr": true,
+        "order_preservation": true,
+        "paired_bootstrap_noninferiority": true,
+        "r1": false,
+        "r3": true,
+        "r5": true
+      },
+      "monetary_cost_usd": 0,
+      "paired_bootstrap": {
+        "ci95": [
+          0.18928571428571428,
+          0.2663690476190476
+        ],
+        "delta": 0.2273809523809524,
+        "iterations": 10000,
+        "margin": -0.03,
+        "noninferiority": true,
+        "seed": 2026081528
+      },
+      "schema_version": "candidate-v10-evaluation-v1",
+      "stage": "final",
+      "verdict": "FAIL"
+    },
+    "protected": {
+      "benchmark_name": "candidate-v10-protected-v1",
+      "benchmark_sha256": "0a3638c165407c60b67ef467a642c6df835be196c7fb7f7d08a9f947ced1052c",
+      "candidate_v10": {
+        "MRR": 1.0,
+        "R@1": 1.0,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 1.0,
+        "answerable_count": 220,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 0.0,
+        "no_evidence_count": 140,
+        "order_preservation_violations": 0
+      },
+      "candidate_v10_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+      "candidate_v10_source_sha256": "07b52db9883b18990badb9da9454b2b94ec4e945a62d5f368243e9423f0bb634",
+      "candidate_v2": {
+        "MRR": 0.975,
+        "R@1": 0.95,
+        "R@3": 1.0,
+        "R@5": 1.0,
+        "abstention_accuracy": 0.0,
+        "answerable_count": 220,
+        "answerable_recall": 1.0,
+        "false_abstention": 0.0,
+        "false_retrieval": 1.0,
+        "no_evidence_count": 140,
+        "order_preservation_violations": 0
+      },
+      "checks": {
+        "absolute_false_retrieval_reduction": true,
+        "abstention_accuracy": true,
+        "answerable_recall": true,
+        "false_abstention": true,
+        "false_retrieval": true,
+        "mrr": true,
+        "order_preservation": true,
+        "paired_bootstrap_noninferiority": true,
+        "r1": true,
+        "r3": true,
+        "r5": true
+      },
+      "monetary_cost_usd": 0,
+      "paired_bootstrap": {
+        "ci95": [
+          0.011363636363636364,
+          0.04090909090909091
+        ],
+        "delta": 0.025,
+        "iterations": 10000,
+        "margin": -0.03,
+        "noninferiority": true,
+        "seed": 2026081526
+      },
+      "schema_version": "candidate-v10-evaluation-v1",
+      "stage": "protected",
+      "verdict": "PASS"
+    }
+  },
+  "terminal_at": "2026-08-15T11:52:26.300081+00:00",
+  "terminal_state": "CANDIDATE_V10_FINAL_GATE_F_FAIL"
+}

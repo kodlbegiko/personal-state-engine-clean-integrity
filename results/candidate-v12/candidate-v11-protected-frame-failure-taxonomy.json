@@ -1,0 +1,4493 @@
+{
+  "eligibility_collapse_decomposition": {
+    "classified_answerable_count": 260,
+    "first_blocking_reason_counts": {
+      "subject": 260
+    }
+  },
+  "entity_span_failure": {
+    "mixed-with-preceding-discourse-tokens": 260,
+    "over-expanded": 260
+  },
+  "integrity": {
+    "candidate_v11_formal_rerun_performed": false,
+    "candidate_v11_source_modified": false,
+    "development_fixture_generated_from_protected": false,
+    "exact_case_ids_emitted": false,
+    "exact_entity_or_value_emitted": false,
+    "exact_protected_text_emitted": false,
+    "generator_family_labels_used_at_inference": false,
+    "historical_formal_execution_counts_modified": false
+  },
+  "object_constraint_extraction": {
+    "cases_without_explicit_object_constraints": 260
+  },
+  "per_case_hashed_diagnostics": [
+    {
+      "case_ref": "d0e99baa4ec22935",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a9f0a27376658653",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d937e5b7b3347fb7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "aa2b12ddee368868",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "9f261cc6d45b9705",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a4b437b9030d87a0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "35c732eaad919998",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "859ed70eeefda5dc",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d2b896f14bcc344e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a37762329442d302",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "dac2c7252fb13e0d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "11b01461c19ac6de",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "777a56a8237bc7c9",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "492bc5c5483c429f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "dab764fb65be5a20",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1e50eb46b913e429",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "dc7e4aa546877748",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0d98a76419e9dd8e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6f2080c5ec735c2b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "51f5f22aa5f4d36e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4de7c4d81114c776",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1f066595f848728a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a4db82af90bd6608",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "61aa32db4ca4a435",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "dec432332e72cbed",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "50b65203544be1f1",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "be180f5f08f99d63",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "26b97a7de1034637",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "00758a62c76a6513",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1774f2507965d8f7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "8ae17ea2cbd95b1f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6964eb850712d077",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c8662ace759b2c9f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "cfd0ed0ceebe41a8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c4813f398708cab0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d4ee939755b79dc2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d8a8444c428ad6e5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1666acfb08689b0b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "492728f2954370b0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "86e6761260699e18",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ba1f6fdc1d3a7b50",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c22ac91cc517124a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "614dd52ae518af9a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3be256564e4202fb",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "014b036c1e727e48",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f6f5f0b3008f7511",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "462a4e05442c0657",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "72d5ea711d5aadb8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6cc7cf90a3d44ff7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "34745b6c7258911e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "173811412d776455",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fa0b58e41cb3abe1",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4204c4f48f071f54",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "9e1d95b6f3a15fcc",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6301edd8841653c2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e10031b8c96edcbe",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4bc7804479b5240a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "53930e74ad611354",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3952720db2ad5913",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b5f193632777c81d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "bb1200dd228b8761",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "96a34efda83eab58",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ea3d3923d95ea094",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2d7ea8fe0f7103b6",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3a313bfb7601d75b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0a063bc771c435f9",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "57ad30370e050410",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "bd9cd0293c321f05",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "9a03a6e8a0c74bbd",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e6b8211cec0b440d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b49535f116fdf378",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4b2f7d40e01c5139",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c45edbd1fd3f9d5f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "22e9e371a0b02b5f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "25f347a6d67d538e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d03b42c783daa476",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "566065ddca4675dd",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3be849a879b71fd5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f6a584d9cb728d7f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "326bcf46f50e4e07",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b501ddc15aee3216",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6a21bb6229a8fd75",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b9ee285bc0f45979",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1d8091fe241dee39",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "bd579ad7e1c41caf",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "00c8c867b638ea33",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "7d72ac945171e5e4",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "8acb7e9836bc61af",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5d99ab0d8579e878",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "8cb2581bbda8cd8b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "734705d109c0912c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "521917aead2fb8b4",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0a9cac95c86ecc2d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "42941af1e1e746e5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "34fd5a3be8661d9c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c5dbc1c0ee93943e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2e790d76cbf07e66",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "740bdccab5c677e6",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "71651c31ad230308",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "aa961f96f112718f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2a9e197876b9c143",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1676f476bcaede2f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "526090ecb38c9842",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "cac70dc781177c83",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d60f715fd1310be3",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c62c47835ac7eb60",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "486bf37640da5838",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "371e41e83771dcc1",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f4525eb174b46cb9",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "74d3a2ebf4023cf2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "7f8f52c582409a41",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "74709bcfb9fe1fc0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f76beeb8587bbc38",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c501aa7c3133a32a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "96d97ad79b2d53de",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f3c55540553ce825",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2b90f7a4c5685257",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "bce6a421b6a96e76",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f7d2a3258fc30c50",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "494776dcaff89f66",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "8082b8d3dc65fc00",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3cf81aa3ffee790e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3d2afee87651b161",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "43d2dca92fbf7484",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1ba13bf9c1f78351",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a0ac28fb12ed13ff",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "18ee14a760a9d8a5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5ef97eb5a6563659",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4fef6af8096e9074",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "10e04d452aca35d7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e5b6739574f715a0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "da7a845f1c03b6d7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "38118ac2f85baba7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "44d6ebc0fc20f153",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d391562da6f78689",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "165a6c8c74e6903a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0b02ec238e0f7da5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c26a71244028b115",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "de3ef8618fad088f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e967112e9131c2f8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "9114804e48a34772",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "242d20d775ccd9f1",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1270eabba5f9821d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "aa60792f01c57640",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "13a091ed6cdbc527",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6d08ee922b5d3266",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "315ec255bba9878f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3d7a93f1c8ea18ca",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "bbf9529c1df201ba",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ee4d1fe83586095a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c66bbf3bca5730a1",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2b951290a0a67a94",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "98758334d024c3ef",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "906ba5bf6c5c786d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ea781e1b416d2d55",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "de9e3b6530e34127",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e341479ecbaf4cdb",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c6d734b914e1c5b6",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b201835963d1f75f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "26a657dcc8ebdc02",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d25c07cdc4eb3659",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "17fad8b2a893b070",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "00edea575cc5ad07",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fb213bdb3557c2ab",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "912ce7d630b2bb04",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a8eb89929e27b922",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6adeaff7d465e5c0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "cec964dda6429164",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6241cc9a20673932",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2d6db0ca27277441",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d41e0b83cb79f9f8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a813ebb31f59bc2e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "53794fd8c7c2a7da",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f84e45527b075a9b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "51daff319d9b45a7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e8d80f4c4d27624d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6d4a8ecbf5b71a02",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5fb77f8a4c8563e7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "8b5d489756302451",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d852c02e650c4899",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ae95e0f134afe62f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "1cd37dda2a429c48",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f71c8e23538a51aa",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "366c32760727db33",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5f5ee5d0c66eb791",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "26f2936895721f8a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "59cc74ffebb2ce29",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "712e253ef868a42c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d1f5d1d9861b8cff",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "437363ce592e07c2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "011c32fb08b40968",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "df0a247d106b947c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fe2de555d0d754f6",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "598495d87951a0c7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e3a84bf54a394224",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "cb65bffe05714c04",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "436e69d3cdf23480",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e310bd2280aceaa2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e6a9265b8fcaefe7",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "86e26681345f61a4",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "76280d8f36868120",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "142cca93170b4c2c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d1ce429ddb141d1a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d950309c7e1a8c5d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e22e0abbf313d8f4",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "692a1d9da0a7a2f0",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "72769bdf1ce28f8e",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5faa68651183894d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e31edaa0c8fabe04",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "17b2d19ec85ad088",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "aeece8bc59282dc9",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c485f2ed8469678a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "76bf76aa41f26742",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "ed3e78024953054f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3047190e81525119",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "33c01b5259bc3879",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c5a2d6e3e2a3892d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2ea7bb1913908546",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d812e1fcdad277a2",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2618e734654869bb",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "de920fe2852fbf74",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "08b466a1b6f01c17",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "6bc6ee2313e8d35a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2a09cbf1c339943d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "084598db0b349f16",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fbffb9e9d7a4b15c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f80512aa25b51019",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "aacf4195cc133dc8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "79fb694db60fe30a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c45700b6db1efd63",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "cb18229118854275",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a3acc132bd62535a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d580aa8e85292f5c",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e567ed20c78b3d6a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e69b169f5b20c432",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "a45f9638dff695c8",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fe9ba964308270eb",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "d0a588424d4097c9",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "23f09ebdf03f0c23",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c3431b9c3973cdee",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5ef243141a1b8b4a",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0c4ae68637c72f11",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5cc5459f25d1baae",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "751d5827d8998123",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "3beab7739e7ae0d5",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "fd9dc659a2495257",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "c87bc8029a82539f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "59c7a5381ca7c85d",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "06bb9655adc26591",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "897f318f2703f426",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "5492e25805379914",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "f8296ea25d6c2181",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "0e0f77d1f0fbc212",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "986345c87c010c49",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "4c006062e14608a6",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "e37a4db636d08840",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "924347752e8fd69f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "2e80d84dd81e1531",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "88f07b435eb6034f",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    },
+    {
+      "case_ref": "b848ae939fe0615b",
+      "diagnostic_flags": {
+        "assertion_ok": true,
+        "object_missing": false,
+        "relation_ok": true,
+        "safety_blocker": false,
+        "subject_ok": false,
+        "temporal_ok": true,
+        "value_bearing": true,
+        "value_type_ok": true
+      },
+      "first_blocking_reason": "subject",
+      "incorrect_mandatory_anchor": true,
+      "subject_extra_anchor": true,
+      "subject_missing_anchor": false
+    }
+  ],
+  "purpose": "diagnostic-only historical Candidate-v11 Protected failure taxonomy",
+  "relation_extraction": {
+    "failure_form_counts": {},
+    "query_form_counts": {
+      "indirect-lookup-wording": 260,
+      "nominalized-predicate-or-slot-noun": 208,
+      "passive-construction": 130,
+      "prepositional-paraphrase": 130,
+      "record-entry-construction": 260,
+      "slot-value-language": 260
+    }
+  },
+  "research_interpretation_guardrail": "This artifact may motivate architecture-level hypotheses only. It must not be copied into Candidate-v12 development tests, templates, token blacklists, or inference rules.",
+  "schema_version": "candidate-v12-historical-frame-taxonomy-v1",
+  "source": {
+    "answerable_count": 260,
+    "benchmark_path": "experiments/benchmarks/candidate-v11-protected-v1.json",
+    "benchmark_sha256": "f3b2b5cfbfe855b878960cd1c2f556d5868c175b93e9aed0d02ba02d7eb68434",
+    "case_count": 420,
+    "no_evidence_count": 160
+  },
+  "subject_anchor_contamination": {
+    "category_counts": {
+      "discourse-introducer-tokens": 260,
+      "generic-record-nouns": 130,
+      "mixed-with-preceding-discourse-tokens": 260,
+      "prepositional-framing": 390,
+      "section-label-or-lookup-framing": 130
+    },
+    "counts": {
+      "answerable_cases": 260,
+      "cases_with_extra_anchor": 260,
+      "cases_with_incorrect_mandatory_anchor": 260,
+      "cases_with_missing_anchor": 0,
+      "extra_anchor_count": 260,
+      "missing_anchor_count": 0,
+      "raw_anchor_count": 780,
+      "semantic_anchor_count": 520
+    },
+    "extra_anchor_rate": 1.0,
+    "incorrect_mandatory_anchor_rate": 1.0,
+    "missing_anchor_rate": 0.0
+  },
+  "temporal_interpretation": {
+    "unspecified": 260
+  }
+}

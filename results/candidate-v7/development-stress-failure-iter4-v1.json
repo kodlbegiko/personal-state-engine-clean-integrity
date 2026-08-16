@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate-v7-development-stress-failure-iter4-v1",
+  "execution_surface": "github_actions_reproducible",
+  "workflow_run_id": 31805282950,
+  "job_id": 94782606426,
+  "candidate_v7_source_sha256": "abf570edc227443035edeb5cf67f6c1a9b8ee006f92ad57ba9824d57d9a52df2",
+  "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "stress_benchmark_sha256": "1ed2b419b4dfa2f4fc74f8f3c2363c1d379db168eca8cf2a3686ad909f75aed9",
+  "original_development_tests": {
+    "passed": 210,
+    "failed": 0,
+    "total": 210
+  },
+  "stress": {
+    "answerable_supported_and_ranking_preserved": 19,
+    "answerable_total": 20,
+    "answerable_rate": 0.95,
+    "negative_correct_abstention": 18,
+    "negative_total": 20,
+    "negative_abstention_rate": 0.90,
+    "verdict": "FAIL"
+  },
+  "failures": [
+    {
+      "case_id": "CV7STRESS-A-006",
+      "category": "color",
+      "failure_class": "DIRECT_ATTRIBUTE_FACT_FALSE_ABSTENTION",
+      "diagnosis": "The query explicitly names an identity/attribute relation, but the direct copular memory expresses only entity + value and does not repeat the relation token, so family intersection is empty."
+    },
+    {
+      "case_id": "CV7STRESS-N-011",
+      "category": "wrong_relation_course",
+      "failure_class": "BROAD_EDUCATION_CUE_FALSE_SUPPORT",
+      "diagnosis": "The query asks for a course, while the memory only states that the subject lives near a university. A broad education-family overlap is insufficient relation evidence."
+    },
+    {
+      "case_id": "CV7STRESS-N-016",
+      "category": "no_value_bus",
+      "failure_class": "GENERIC_UNKNOWN_VALUE_FALSE_SUPPORT",
+      "diagnosis": "The phrase 'route is unknown' is an explicit no-value statement but was outside the hard-reject no-value grammar."
+    }
+  ],
+  "status": "FAILED_RETAINED",
+  "candidate_v7_frozen": false
+}

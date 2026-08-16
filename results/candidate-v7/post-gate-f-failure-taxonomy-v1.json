@@ -1,0 +1,53 @@
+{
+  "schema_version": "candidate-v7-post-gate-f-failure-taxonomy-v1",
+  "evidence_boundary": "aggregate-only Gate F facts plus frozen Candidate-v6 source/design; no retired semantic case payload used",
+  "aggregate_facts": {
+    "candidate_v6_answerable_abstained": "93/93",
+    "candidate_v6_no_evidence_correct_abstention": "6/6",
+    "candidate_v6_answerable_recall": 0.0,
+    "candidate_v6_abstention_accuracy": 1.0,
+    "candidate_v2_answerable_retrieval": "nonzero"
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "name": "NARROW_ASSERTION_GRAMMAR_COVERAGE_FAILURE",
+      "supporting_aggregate_evidence": ["Candidate-v6 abstained on all 93 answerable cases", "Candidate-v6 source gates support through a finite relation ontology and explicit assertion patterns"],
+      "counterevidence": ["The same strict path correctly abstained on all 6 no-evidence cases, so the grammar is useful as a precision path"],
+      "development_testable_prediction": "A benchmark-agnostic generic factual-evidence path should recover natural conversational assertions that fail the strict parser while preserving strict-path accepts.",
+      "sealed_final_independent_test_design": "Synthetic nonsealed first-person, implicit-predicate, multi-clause, paraphrastic and relation-free factual cases."
+    },
+    {
+      "id": "H2",
+      "name": "DISCOURSE_GATE_OVER_REJECTION",
+      "supporting_aggregate_evidence": ["Candidate-v6 answerable recall is 0 despite nonzero Candidate-v2 retrieval", "Candidate-v6 source rejects question/meta/inference cues before value extraction"],
+      "counterevidence": ["Early discourse rejection is a plausible contributor to the observed 1.0 abstention accuracy"],
+      "development_testable_prediction": "Contextual factual assertions containing benign discussion/question-like vocabulary can be supported if non-assertion patterns are applied at clause/evidence level rather than as universal lexical vetoes.",
+      "sealed_final_independent_test_design": "Fresh mixed-clause assertions contrasted with question-only, agenda, review and meta-only negatives."
+    },
+    {
+      "id": "H3",
+      "name": "RELATION_ONTOLOGY_COVERAGE_FAILURE",
+      "supporting_aggregate_evidence": ["Candidate-v6 requires predicates drawn from a finite RELATION_ALIASES map", "All answerable cases were rejected in aggregate"],
+      "counterevidence": ["Finite typed relations can still provide high-precision support for covered relations"],
+      "development_testable_prediction": "Open lexical compatibility plus broad benchmark-agnostic cue families will recover evidence outside the finite ontology.",
+      "sealed_final_independent_test_design": "Fresh public/synthetic facts spanning preference, possession, activity, travel, schedule, work, location, relationship and free-form states."
+    },
+    {
+      "id": "H4",
+      "name": "STRUCTURED_VALUE_EXTRACTION_BRITTLENESS",
+      "supporting_aggregate_evidence": ["Candidate-v6 only returns retrieval when structured assertion verification succeeds", "Aggregate answerable recall is 0"],
+      "counterevidence": ["Structured extraction gives interpretable evidence objects and contradiction handling"],
+      "development_testable_prediction": "Direct factual specificity can be recognized without requiring SUBJECT + RELATION + COPULA + VALUE surface form.",
+      "sealed_final_independent_test_design": "Fresh implicit-copula, verb-predicate, appositive and first-person declarative cases with matched adversarial controls."
+    },
+    {
+      "id": "H5",
+      "name": "ABSTENTION_POLICY_TOO_TIGHT",
+      "supporting_aggregate_evidence": ["Candidate-v6 false abstention is 1.0 on answerable cases", "Candidate-v6 abstention accuracy is 1.0 on no-evidence cases"],
+      "counterevidence": ["The safety benefit is real and must not be discarded merely to recover recall"],
+      "development_testable_prediction": "A two-path verifier can retain hard rejects for explicit absence/non-assertion/contradiction while allowing generic direct factual support.",
+      "sealed_final_independent_test_design": "Balanced fresh answerable and adversarial/no-evidence benchmark with recall and false-retrieval guardrails frozen before evaluation."
+    }
+  ]
+}

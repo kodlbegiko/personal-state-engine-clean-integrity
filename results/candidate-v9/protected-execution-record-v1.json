@@ -1,0 +1,30 @@
+{
+  "authorization_commit": "020cfa31f36ced883ef0b709d8160283dda20967",
+  "dataset_sha256": "befa56dc8f97c9045a6163e02d4980b5682af46b01f94204c216801506c9bde6",
+  "executed_at": "2026-08-15T11:20:51.799419+00:00",
+  "formal_execution_count": 1,
+  "frozen_hashes": {
+    "architecture_selection": "c8b0bfdaa1153585213d934799c4683114969847b05572f40c65dad6f1418462",
+    "benchmark_design": "0d80a0c8e50ce17b851dbff73c02d7165a37d42472129faf5df1720af00d6171",
+    "config": "483137ad61fff3e5a4fedfe4b22673931d122729b4045168771d934d592405a5",
+    "development_dataset": "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704",
+    "development_result": "4981eeac98543e9aa7589892bce94550d5e778342a7f8aaa40d21c1bcca7b0eb",
+    "evaluation_protocol": "14deb4dfd79283f8fc5bd732a8841a7092c15f3dc85e7d3bcb8d65b405eb1a9a",
+    "evaluator": "2ff3327d3ed7f7081aaf3ad28ac28110af127ef2307c3e500d670d8dfdb3aa8a",
+    "formal_runner": "dd4acea1b1029af5a0a8e17ef8e45097160489bf381339a7c619edb943274e18",
+    "generator": "abda84c620c10414011db3fa10a54b8504f6e3fdc7aae1f94233856681392d55",
+    "preregistration": "cded36e4a456f49868b11ac84c79a56e4751a5b99ab4b2617da7e27a2bcfc2f5",
+    "source": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f"
+  },
+  "lock_commit": "99d15c505c4418eb5e9697b3ef304e7fb66d03e1",
+  "materialization_commit": "b031cf5dc8dc1038c6224cc94650f66f4a63e133",
+  "monetary_cost_usd": 0,
+  "payload_manually_inspected": false,
+  "rerun": false,
+  "result_sha256": "05a9979b39dda9e3288f926fcf56979ed5d1cd8127bbcad15317cc13f4544569",
+  "schema_version": "candidate-v9-protected-execution-record-v1",
+  "semantic_payload_executed": true,
+  "stage": "protected",
+  "verdict": "PASS",
+  "workflow_run_id": "31881794343"
+}

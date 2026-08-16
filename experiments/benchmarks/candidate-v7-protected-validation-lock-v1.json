@@ -1,0 +1,21 @@
+{
+  "schema_version": "candidate-v7-protected-validation-lock-v1",
+  "status": "FROZEN_BEFORE_FORMAL_EXECUTION",
+  "materialization_commit": "f882913899c3090d66ac42a01ed8f417a0ff9394",
+  "seed": 20260814,
+  "case_count": 120,
+  "answerable_count": 70,
+  "no_evidence_count": 50,
+  "schema": "candidate-v7-protected-validation-v1",
+  "dataset_sha256": "a292ff7b64c08d62ede076bfe61a739b7ba9ca0dea263aaccd58168d06bc6017",
+  "generator_path": "scripts/materialize_candidate_v7_protected.py",
+  "generator_sha256": "5787349595c07cb865b73f4fdfcc7e676e73ba6018a4cd5c39b3461bbb895a82",
+  "evaluator_path": "scripts/evaluate_candidate_v7_protected.py",
+  "evaluator_sha256": "f6e93318cb656a8c8bc774f7d6b8418e1e7355cb88ddeddbaeba9ba90b916e5b",
+  "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62",
+  "formal_execution_count_before_run": 0,
+  "formal_execution_allowed_count": 1,
+  "post_result_editing": false,
+  "rerun": false
+}

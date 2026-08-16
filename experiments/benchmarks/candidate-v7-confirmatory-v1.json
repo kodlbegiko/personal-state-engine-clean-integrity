@@ -1,0 +1,5504 @@
+{
+  "schema_version": "candidate-v7-confirmatory-v1",
+  "name": "candidate-v7-confirmatory-v1",
+  "designation": "CONFIRMATORY",
+  "seed": 20260815,
+  "namespace": "CV7CONF-",
+  "case_count": 140,
+  "answerable_count": 85,
+  "no_evidence_count": 55,
+  "candidate_frozen_before_materialization": true,
+  "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "cases": [
+    {
+      "id": "CV7CONF-A-000",
+      "query": "What drink does Adele reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-000-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-000-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-000-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-000-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-000-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-000-rel",
+          "text": "During breaks, Adele usually chooses genmaicha without hesitation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-000-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-001",
+      "query": "Where does Boris live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-001-rel",
+          "text": "Since changing apartments, Boris now lives in Kanazawa.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-001-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-001-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-001-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-001-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-001-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-001-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-002",
+      "query": "What kind of work does Chandra do?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-002-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-002-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-002-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-002-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-002-rel",
+          "text": "Chandra works as an museum registrar in the regional office.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-002-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-002-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-003",
+      "query": "What pet does Diego own?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-003-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-003-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-003-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-003-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-003-rel",
+          "text": "At home, Diego has a mini rex rabbit named Moss.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-003-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-003-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-004",
+      "query": "What hobby does Elowen practice?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-004-rel",
+          "text": "Most Saturdays, Elowen practices trail cycling.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-004-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-004-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-004-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-004-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-004-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-004-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-005",
+      "query": "Which language can Faris speak?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-005-rel",
+          "text": "Faris speaks Mandarin comfortably in everyday conversation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-005-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-005-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-005-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-005-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-005-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-005-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-006",
+      "query": "Which university or college does Gianna attend?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-006-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-006-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-006-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-006-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-006-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-006-rel",
+          "text": "Gianna studies at Pinecrest University this academic year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-006-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-007",
+      "query": "What class is Hugo enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-007-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-007-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-007-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-007-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-007-rel",
+          "text": "This semester Hugo is enrolled in museum studies.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-007-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-007-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-008",
+      "query": "What music does Ilse listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-008-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-008-rel",
+          "text": "On the commute, Ilse listens to lo-fi hip-hop most days.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-008-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-008-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-008-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-008-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-008-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-009",
+      "query": "What computer does Joon use?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-009-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-009-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-009-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-009-rel",
+          "text": "For daily tasks, Joon uses a Spectre 14.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-009-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-009-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-009-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-010",
+      "query": "What goal is Katia preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-010-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-010-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-010-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-010-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-010-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-010-rel",
+          "text": "Katia is training toward a sprint triathlon this year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-010-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-011",
+      "query": "Which public transport does Lars take?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-011-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-011-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-011-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-011-rel",
+          "text": "Lars rides bus 119 to work each weekday.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-011-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-011-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-011-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-012",
+      "query": "Who is Mei married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-012-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-012-rel",
+          "text": "Mei is married to Lea.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-012-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-012-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-012-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-012-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-012-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-013",
+      "query": "What color is Navid's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-013-rel",
+          "text": "Navid's travel bag is rust orange.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-013-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-013-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-013-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-013-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-013-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-013-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-014",
+      "query": "Which club is Opal a member of?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-014-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-014-rel",
+          "text": "Earlier this year, Opal joined the makers collective.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-014-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-014-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-014-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-014-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-014-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-015",
+      "query": "What is Piero's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-015-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-015-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-015-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-015-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-015-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-015-rel",
+          "text": "A correction was filed: Piero's application status is now scheduled.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-015-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-016",
+      "query": "What beverage do I tend to order after work?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-016-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-016-rel",
+          "text": "I almost always order chamomile tea after work.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-016-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-016-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-016-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-016-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-016-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-017",
+      "query": "Where does Sven currently live?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-017-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-017-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-017-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-017-rel",
+          "text": "The previous address is obsolete; after relocating, Sven now lives in Graz.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-017-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-017-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-017-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-018",
+      "query": "What version is Thalia's tablet using?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-018-rel",
+          "text": "Thalia's tablet is running NovaOS 4.8.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-018-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-018-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-018-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-018-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-018-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-018-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-019",
+      "query": "What is Umit's favorite drink these days?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-019-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-019-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-019-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-019-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-019-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-019-rel",
+          "text": "The preference changed recently, and Umit now prefers soy latte.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-019-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-020",
+      "query": "What activity does Viola enjoy?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-020-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-020-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-020-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-020-rel",
+          "text": "Although the week is busy, Viola makes time for linocut printing and really enjoys it.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-020-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-020-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-020-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-021",
+      "query": "When is Wade's recurring check-in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-021-rel",
+          "text": "The check-in was rescheduled; Wade now meets on Tuesday morning.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-021-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-021-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-021-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-021-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-021-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-021-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-022",
+      "query": "What drink does Yuna reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-022-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-022-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-022-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-022-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-022-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-022-rel",
+          "text": "During breaks, Yuna usually chooses flat white without hesitation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-022-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-023",
+      "query": "Where does Zahir live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-023-rel",
+          "text": "Since changing apartments, Zahir now lives in Aarhus.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-023-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-023-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-023-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-023-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-023-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-023-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-024",
+      "query": "What kind of work does Clio do?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-024-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-024-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-024-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-024-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-024-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-024-rel",
+          "text": "Clio works as an speech therapist in the regional office.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-024-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-025",
+      "query": "What pet does Damon own?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-025-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-025-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-025-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-025-rel",
+          "text": "At home, Damon has a goldfish named Moss.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-025-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-025-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-025-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-026",
+      "query": "What hobby does Eira practice?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-026-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-026-rel",
+          "text": "Most Saturdays, Eira practices indoor climbing.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-026-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-026-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-026-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-026-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-026-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-027",
+      "query": "Which language can Fynn speak?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-027-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-027-rel",
+          "text": "Fynn speaks German comfortably in everyday conversation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-027-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-027-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-027-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-027-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-027-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-028",
+      "query": "Which university or college does Gala attend?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-028-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-028-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-028-rel",
+          "text": "Gala studies at Meadow Institute this academic year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-028-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-028-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-028-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-028-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-029",
+      "query": "What class is Hector enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-029-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-029-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-029-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-029-rel",
+          "text": "This semester Hector is enrolled in visual anthropology.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-029-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-029-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-029-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-030",
+      "query": "What music does Adele listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-030-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-030-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-030-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-030-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-030-rel",
+          "text": "On the commute, Adele listens to bebop jazz most days.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-030-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-030-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-031",
+      "query": "What computer does Boris use?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-031-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-031-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-031-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-031-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-031-rel",
+          "text": "For daily tasks, Boris uses a MacBook Air.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-031-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-031-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-032",
+      "query": "What goal is Chandra preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-032-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-032-rel",
+          "text": "Chandra is training toward a pottery exhibition this year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-032-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-032-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-032-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-032-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-032-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-033",
+      "query": "Which public transport does Diego take?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-033-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-033-rel",
+          "text": "Diego rides route 26 to work each weekday.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-033-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-033-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-033-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-033-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-033-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-034",
+      "query": "Who is Elowen married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-034-rel",
+          "text": "Elowen is married to Nadia.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-034-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-034-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-034-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-034-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-034-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-034-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-035",
+      "query": "What color is Faris's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-035-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-035-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-035-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-035-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-035-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-035-rel",
+          "text": "Faris's travel bag is slate gray.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-035-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-036",
+      "query": "Which club is Gianna a member of?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-036-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-036-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-036-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-036-rel",
+          "text": "Earlier this year, Gianna joined the photography circle.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-036-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-036-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-036-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-037",
+      "query": "What is Hugo's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-037-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-037-rel",
+          "text": "A correction was filed: Hugo's application status is now archived.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-037-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-037-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-037-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-037-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-037-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-038",
+      "query": "What beverage do I tend to order after work?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-038-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-038-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-038-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-038-rel",
+          "text": "I almost always order espresso tonic after work.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-038-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-038-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-038-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-039",
+      "query": "Where does Joon currently live?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-039-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-039-rel",
+          "text": "The previous address is obsolete; after relocating, Joon now lives in Fukuoka.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-039-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-039-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-039-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-039-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-039-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-040",
+      "query": "What version is Katia's tablet using?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-040-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-040-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-040-rel",
+          "text": "Katia's tablet is running NovaOS 4.0.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-040-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-040-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-040-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-040-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-041",
+      "query": "What is Lars's favorite drink these days?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-041-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-041-rel",
+          "text": "The preference changed recently, and Lars now prefers lime seltzer.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-041-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-041-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-041-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-041-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-041-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-042",
+      "query": "What activity does Mei enjoy?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-042-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-042-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-042-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-042-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-042-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-042-rel",
+          "text": "Although the week is busy, Mei makes time for glassblowing and really enjoys it.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-042-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-043",
+      "query": "When is Navid's recurring check-in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-043-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-043-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-043-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-043-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-043-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-043-rel",
+          "text": "The check-in was rescheduled; Navid now meets on Thursday morning.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-043-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-044",
+      "query": "What drink does Opal reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-044-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-044-rel",
+          "text": "During breaks, Opal usually chooses ginger ale without hesitation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-044-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-044-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-044-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-044-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-044-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-045",
+      "query": "Where does Piero live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-045-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-045-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-045-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-045-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-045-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-045-rel",
+          "text": "Since changing apartments, Piero now lives in Tainan.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-045-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-046",
+      "query": "What kind of work does Romy do?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-046-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-046-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-046-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-046-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-046-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-046-rel",
+          "text": "Romy works as an policy researcher in the regional office.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-046-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-047",
+      "query": "What pet does Sven own?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-047-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-047-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-047-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-047-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-047-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-047-rel",
+          "text": "At home, Sven has a leopard gecko named Moss.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-047-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-048",
+      "query": "What hobby does Thalia practice?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-048-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-048-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-048-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-048-rel",
+          "text": "Most Saturdays, Thalia practices table tennis.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-048-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-048-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-048-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-049",
+      "query": "Which language can Umit speak?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-049-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-049-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-049-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-049-rel",
+          "text": "Umit speaks Japanese comfortably in everyday conversation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-049-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-049-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-049-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-050",
+      "query": "Which university or college does Viola attend?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-050-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-050-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-050-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-050-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-050-rel",
+          "text": "Viola studies at Maple Coast University this academic year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-050-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-050-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-051",
+      "query": "What class is Wade enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-051-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-051-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-051-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-051-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-051-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-051-rel",
+          "text": "This semester Wade is enrolled in graph theory.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-051-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-052",
+      "query": "What music does Yuna listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-052-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-052-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-052-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-052-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-052-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-052-rel",
+          "text": "On the commute, Yuna listens to trip-hop most days.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-052-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-053",
+      "query": "What computer does Zahir use?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-053-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-053-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-053-rel",
+          "text": "For daily tasks, Zahir uses a Framework Laptop 13.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-053-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-053-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-053-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-053-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-054",
+      "query": "What goal is Clio preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-054-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-054-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-054-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-054-rel",
+          "text": "Clio is training toward a 100-km cycling event this year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-054-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-054-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-054-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-055",
+      "query": "Which public transport does Damon take?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-055-rel",
+          "text": "Damon rides tram 2 to work each weekday.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-055-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-055-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-055-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-055-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-055-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-055-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-056",
+      "query": "Who is Eira married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-056-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-056-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-056-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-056-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-056-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-056-rel",
+          "text": "Eira is married to Sara.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-056-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-057",
+      "query": "What color is Fynn's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-057-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-057-rel",
+          "text": "Fynn's travel bag is seafoam.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-057-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-057-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-057-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-057-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-057-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-058",
+      "query": "Which club is Gala a member of?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-058-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-058-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-058-rel",
+          "text": "Earlier this year, Gala joined the historical society.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-058-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-058-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-058-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-058-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-059",
+      "query": "What is Hector's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-059-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-059-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-059-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-059-rel",
+          "text": "A correction was filed: Hector's application status is now completed.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-059-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-059-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-059-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-060",
+      "query": "What beverage do I tend to order after work?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-060-rel",
+          "text": "I almost always order genmaicha after work.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-060-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-060-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-060-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-060-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-060-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-060-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-061",
+      "query": "Where does Boris currently live?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-061-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-061-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-061-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-061-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-061-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-061-rel",
+          "text": "The previous address is obsolete; after relocating, Boris now lives in Kanazawa.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-061-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-062",
+      "query": "What version is Chandra's tablet using?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-062-rel",
+          "text": "Chandra's tablet is running NovaOS 6.2.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-062-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-062-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-062-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-062-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-062-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-062-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-063",
+      "query": "What is Diego's favorite drink these days?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-063-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-063-rel",
+          "text": "The preference changed recently, and Diego now prefers hibiscus tea.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-063-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-063-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-063-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-063-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-063-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-064",
+      "query": "What activity does Elowen enjoy?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-064-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-064-rel",
+          "text": "Although the week is busy, Elowen makes time for trail cycling and really enjoys it.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-064-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-064-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-064-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-064-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-064-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-065",
+      "query": "When is Faris's recurring check-in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-065-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-065-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-065-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-065-rel",
+          "text": "The check-in was rescheduled; Faris now meets on Monday morning.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-065-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-065-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-065-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-066",
+      "query": "What drink does Gianna reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-066-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-066-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-066-rel",
+          "text": "During breaks, Gianna usually chooses chamomile tea without hesitation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-066-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-066-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-066-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-066-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-067",
+      "query": "Where does Hugo live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-067-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-067-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-067-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-067-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-067-rel",
+          "text": "Since changing apartments, Hugo now lives in Graz.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-067-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-067-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-068",
+      "query": "What kind of work does Ilse do?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-068-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-068-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-068-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-068-rel",
+          "text": "Ilse works as an horticulturist in the regional office.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-068-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-068-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-068-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-069",
+      "query": "What pet does Joon own?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-069-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-069-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-069-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-069-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-069-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-069-rel",
+          "text": "At home, Joon has a papillon named Moss.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-069-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-070",
+      "query": "What hobby does Katia practice?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-070-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-070-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-070-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-070-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-070-rel",
+          "text": "Most Saturdays, Katia practices linocut printing.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-070-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-070-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-071",
+      "query": "Which language can Lars speak?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-071-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-071-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-071-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-071-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-071-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-071-rel",
+          "text": "Lars speaks Japanese comfortably in everyday conversation.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-071-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-072",
+      "query": "Which university or college does Mei attend?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-072-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-072-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-072-rel",
+          "text": "Mei studies at Juniper Institute this academic year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-072-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-072-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-072-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-072-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-073",
+      "query": "What class is Navid enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-073-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-073-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-073-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-073-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-073-rel",
+          "text": "This semester Navid is enrolled in renewable energy systems.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-073-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-073-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-074",
+      "query": "What music does Opal listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-074-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-074-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-074-rel",
+          "text": "On the commute, Opal listens to electro swing most days.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-074-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-074-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-074-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-074-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-075",
+      "query": "What computer does Piero use?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-075-rel",
+          "text": "For daily tasks, Piero uses a Latitude 7350.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-075-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-075-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-075-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-075-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-075-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-075-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-076",
+      "query": "What goal is Romy preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-076-rel",
+          "text": "Romy is training toward a design portfolio review this year.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-076-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-076-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-076-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-076-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-076-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-076-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-077",
+      "query": "Which public transport does Sven take?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-077-rel",
+          "text": "Sven rides line M3 to work each weekday.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-077-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-077-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-077-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-077-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-077-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-077-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-078",
+      "query": "Who is Thalia married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-078-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-078-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-078-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-078-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-078-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-078-rel",
+          "text": "Thalia is married to Aya.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-078-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-079",
+      "query": "What color is Umit's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-079-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-079-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-079-rel",
+          "text": "Umit's travel bag is aubergine.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-079-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-079-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-079-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-079-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-080",
+      "query": "Which club is Viola a member of?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-080-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-080-rel",
+          "text": "Earlier this year, Viola joined the geology society.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-080-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-080-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-080-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-080-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-080-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-081",
+      "query": "What is Wade's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-081-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-081-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-081-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-081-rel",
+          "text": "A correction was filed: Wade's application status is now active.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-081-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-081-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-081-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-082",
+      "query": "What beverage do I tend to order after work?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-082-rel",
+          "text": "I almost always order flat white after work.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-082-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-082-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-082-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-082-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-082-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-082-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-083",
+      "query": "Where does Zahir currently live?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-083-rel",
+          "text": "The previous address is obsolete; after relocating, Zahir now lives in Aarhus.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-083-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-083-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-083-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-083-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-083-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-083-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-A-084",
+      "query": "What version is Clio's tablet using?",
+      "memories": [
+        {
+          "id": "CV7CONF-A-084-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-084-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-084-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-084-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-084-rel",
+          "text": "Clio's tablet is running NovaOS 4.4.",
+          "timestamp": "2026-09-15T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-A-084-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7CONF-A-084-rel"
+      ],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-000",
+      "query": "What drink does Adele reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-000-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-000-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-000-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-000-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-000-x",
+          "text": "Nora usually chooses genmaicha during breaks.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-000-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-001",
+      "query": "What class is Boris enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-001-x",
+          "text": "Boris lives across the street from Maple Coast University.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-001-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-001-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-001-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-001-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-001-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-002",
+      "query": "What computer does Chandra use?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-002-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-002-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-002-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-002-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-002-x",
+          "text": "What computer does Chandra use?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-002-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-003",
+      "query": "Who is Diego married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-003-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-003-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-003-x",
+          "text": "Action item: discuss Diego's relationship status at a later meeting.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-003-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-003-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-003-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-004",
+      "query": "What music does Elowen listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-004-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-004-x",
+          "text": "The notes only discuss the question about Elowen's music taste.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-004-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-004-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-004-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-004-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-005",
+      "query": "What medication does Faris take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-005-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-005-x",
+          "text": "No verified information about Faris's medication is available.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-005-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-005-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-005-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-005-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-006",
+      "query": "What goal is Gianna preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-006-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-006-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-006-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-006-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-006-x",
+          "text": "Gianna might be preparing for something, but the goal remains uncertain.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-006-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-007",
+      "query": "What is Hugo's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-007-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-007-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-007-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-007-x",
+          "text": "The records conflict about Hugo's application status and cannot be reconciled.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-007-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-007-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-008",
+      "query": "Where does Ilse live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-008-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-008-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-008-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-008-x",
+          "text": "Ilse formerly lived in Granada but no longer lives there.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-008-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-008-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-009",
+      "query": "What color is Joon's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-009-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-009-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-009-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-009-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-009-x",
+          "text": "Incorrect value record: Joon's travel bag is teal. Do not use this record.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-009-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-010",
+      "query": "Which public transport does Katia take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-010-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-010-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-010-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-010-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-010-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-010-x",
+          "text": "Katia's transit route is unknown.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-011",
+      "query": "What drink does Lars reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-011-x",
+          "text": "Pavel usually chooses genmaicha during breaks.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-011-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-011-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-011-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-011-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-011-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-012",
+      "query": "What class is Mei enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-012-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-012-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-012-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-012-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-012-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-012-x",
+          "text": "Mei lives across the street from Maple Coast University.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-013",
+      "query": "What computer does Navid use?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-013-x",
+          "text": "What computer does Navid use?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-013-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-013-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-013-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-013-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-013-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-014",
+      "query": "Who is Opal married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-014-x",
+          "text": "Action item: discuss Opal's relationship status at a later meeting.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-014-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-014-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-014-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-014-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-014-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-015",
+      "query": "What music does Piero listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-015-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-015-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-015-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-015-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-015-x",
+          "text": "The notes only discuss the question about Piero's music taste.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-015-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-016",
+      "query": "What medication does Romy take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-016-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-016-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-016-x",
+          "text": "No verified information about Romy's medication is available.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-016-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-016-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-016-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-017",
+      "query": "What goal is Sven preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-017-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-017-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-017-x",
+          "text": "Sven might be preparing for something, but the goal remains uncertain.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-017-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-017-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-017-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-018",
+      "query": "What is Thalia's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-018-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-018-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-018-x",
+          "text": "The records conflict about Thalia's application status and cannot be reconciled.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-018-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-018-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-018-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-019",
+      "query": "Where does Umit live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-019-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-019-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-019-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-019-x",
+          "text": "Umit formerly lived in Granada but no longer lives there.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-019-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-019-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-020",
+      "query": "What color is Adele's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-020-x",
+          "text": "Incorrect value record: Adele's travel bag is teal. Do not use this record.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-020-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-020-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-020-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-020-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-020-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-021",
+      "query": "Which public transport does Boris take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-021-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-021-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-021-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-021-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-021-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-021-x",
+          "text": "Boris's transit route is unknown.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-022",
+      "query": "What drink does Chandra reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-022-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-022-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-022-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-022-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-022-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-022-x",
+          "text": "Sumi usually chooses genmaicha during breaks.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-023",
+      "query": "What class is Diego enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-023-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-023-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-023-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-023-x",
+          "text": "Diego lives across the street from Maple Coast University.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-023-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-023-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-024",
+      "query": "What computer does Elowen use?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-024-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-024-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-024-x",
+          "text": "What computer does Elowen use?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-024-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-024-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-024-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-025",
+      "query": "Who is Faris married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-025-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-025-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-025-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-025-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-025-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-025-x",
+          "text": "Action item: discuss Faris's relationship status at a later meeting.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-026",
+      "query": "What music does Gianna listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-026-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-026-x",
+          "text": "The notes only discuss the question about Gianna's music taste.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-026-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-026-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-026-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-026-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-027",
+      "query": "What medication does Hugo take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-027-x",
+          "text": "No verified information about Hugo's medication is available.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-027-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-027-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-027-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-027-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-027-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-028",
+      "query": "What goal is Ilse preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-028-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-028-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-028-x",
+          "text": "Ilse might be preparing for something, but the goal remains uncertain.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-028-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-028-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-028-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-029",
+      "query": "What is Joon's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-029-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-029-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-029-x",
+          "text": "The records conflict about Joon's application status and cannot be reconciled.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-029-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-029-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-029-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-030",
+      "query": "Where does Katia live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-030-x",
+          "text": "Katia formerly lived in Granada but no longer lives there.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-030-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-030-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-030-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-030-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-030-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-031",
+      "query": "What color is Lars's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-031-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-031-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-031-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-031-x",
+          "text": "Incorrect value record: Lars's travel bag is teal. Do not use this record.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-031-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-031-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-032",
+      "query": "Which public transport does Mei take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-032-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-032-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-032-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-032-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-032-x",
+          "text": "Mei's transit route is unknown.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-032-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-033",
+      "query": "What drink does Navid reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-033-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-033-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-033-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-033-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-033-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-033-x",
+          "text": "Tariq usually chooses genmaicha during breaks.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-034",
+      "query": "What class is Opal enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-034-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-034-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-034-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-034-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-034-x",
+          "text": "Opal lives across the street from Maple Coast University.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-034-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-035",
+      "query": "What computer does Piero use?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-035-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-035-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-035-x",
+          "text": "What computer does Piero use?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-035-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-035-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-035-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-036",
+      "query": "Who is Romy married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-036-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-036-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-036-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-036-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-036-x",
+          "text": "Action item: discuss Romy's relationship status at a later meeting.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-036-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-037",
+      "query": "What music does Sven listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-037-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-037-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-037-x",
+          "text": "The notes only discuss the question about Sven's music taste.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-037-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-037-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-037-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-038",
+      "query": "What medication does Thalia take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-038-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-038-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-038-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-038-x",
+          "text": "No verified information about Thalia's medication is available.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-038-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-038-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-039",
+      "query": "What goal is Umit preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-039-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-039-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-039-x",
+          "text": "Umit might be preparing for something, but the goal remains uncertain.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-039-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-039-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-039-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-040",
+      "query": "What is Adele's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-040-x",
+          "text": "The records conflict about Adele's application status and cannot be reconciled.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-040-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-040-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-040-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-040-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-040-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-041",
+      "query": "Where does Boris live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-041-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-041-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-041-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-041-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-041-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-041-x",
+          "text": "Boris formerly lived in Granada but no longer lives there.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-042",
+      "query": "What color is Chandra's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-042-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-042-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-042-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-042-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-042-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-042-x",
+          "text": "Incorrect value record: Chandra's travel bag is teal. Do not use this record.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-043",
+      "query": "Which public transport does Diego take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-043-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-043-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-043-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-043-x",
+          "text": "Diego's transit route is unknown.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-043-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-043-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-044",
+      "query": "What drink does Elowen reach for most often?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-044-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-044-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-044-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-044-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-044-x",
+          "text": "Uma usually chooses genmaicha during breaks.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-044-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-045",
+      "query": "What class is Faris enrolled in?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-045-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-045-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-045-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-045-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-045-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-045-x",
+          "text": "Faris lives across the street from Maple Coast University.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-046",
+      "query": "What computer does Gianna use?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-046-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-046-x",
+          "text": "What computer does Gianna use?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-046-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-046-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-046-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-046-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-047",
+      "query": "Who is Hugo married to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-047-x",
+          "text": "Action item: discuss Hugo's relationship status at a later meeting.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-047-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-047-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-047-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-047-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-047-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-048",
+      "query": "What music does Ilse listen to?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-048-x",
+          "text": "The notes only discuss the question about Ilse's music taste.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-048-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-048-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-048-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-048-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-048-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-049",
+      "query": "What medication does Joon take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-049-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-049-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-049-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-049-x",
+          "text": "No verified information about Joon's medication is available.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-049-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-049-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-050",
+      "query": "What goal is Katia preparing for?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-050-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-050-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-050-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-050-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-050-x",
+          "text": "Katia might be preparing for something, but the goal remains uncertain.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-050-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-051",
+      "query": "What is Lars's current application status?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-051-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-051-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-051-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-051-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-051-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-051-x",
+          "text": "The records conflict about Lars's application status and cannot be reconciled.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-052",
+      "query": "Where does Mei live now?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-052-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-052-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-052-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-052-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-052-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-052-x",
+          "text": "Mei formerly lived in Granada but no longer lives there.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-053",
+      "query": "What color is Navid's travel bag?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-053-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-053-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-053-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-053-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-053-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-053-x",
+          "text": "Incorrect value record: Navid's travel bag is teal. Do not use this record.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    },
+    {
+      "id": "CV7CONF-N-054",
+      "query": "Which public transport does Opal take?",
+      "memories": [
+        {
+          "id": "CV7CONF-N-054-n4",
+          "text": "A tentative note about another topic is still unresolved.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-054-n5",
+          "text": "This unrelated decoy record should not be used as an answer.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-054-n1",
+          "text": "The team penciled in a future discussion about an unrelated administrative item.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-054-n3",
+          "text": "Could someone clarify the separate planning question later?",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-054-x",
+          "text": "Opal's transit route is unknown.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        },
+        {
+          "id": "CV7CONF-N-054-n2",
+          "text": "No verified value was entered for the unrelated field.",
+          "timestamp": "2026-09-14T11:40:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "CONFIRMATORY"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "candidate-v8-historical-diagnostic-access-v1",
+  "surface": "candidate-v7-confirmatory-v1",
+  "previous_classification": "CANDIDATE_V7_CONFIRMATORY_FROZEN",
+  "new_classification": "HISTORICAL_DIAGNOSTIC_ONLY",
+  "access_timestamp": "2026-08-15T10:18:00Z",
+  "purpose": "Evidence-backed qualitative classification of Candidate-v7 confirmatory false abstentions and false retrievals after Candidate-v8 architecture hypotheses and development protocol were preregistered.",
+  "accessed_files": [
+    "experiments/benchmarks/candidate-v7-confirmatory-v1.json"
+  ],
+  "preregistration_commit": "182eb1da70bf33952e2cdf3091f2c4e73fef05f3",
+  "why_access_was_necessary": "Aggregate statistics establish 7 answerable false abstentions and 10 no-evidence false retrievals but cannot identify causal language/structure classes. Semantic inspection is required only to validate or reject preregistered root-cause hypotheses.",
+  "permanent_exclusions": [
+    "candidate-v8 development pass gate",
+    "candidate-v8 threshold tuning",
+    "candidate-v8 architecture selection after diagnostic classification",
+    "candidate-v8 protected validation",
+    "candidate-v8 confirmatory",
+    "candidate-v8 final Gate F"
+  ],
+  "case_patch_prohibited": true,
+  "retired_99_case_semantic_payload_opened": false,
+  "monetary_cost_usd": 0
+}

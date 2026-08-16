@@ -1,0 +1,59 @@
+{
+  "schema_version": "candidate-v9-evaluation-v1",
+  "stage": "development",
+  "benchmark_name": "candidate-v9-development-v1",
+  "benchmark_sha256": "a398b718bd961482e7817b65f38e784ff43f5849301291ffd985485a921fd704",
+  "candidate_v9_source_sha256": "f8b64f3ef8fcdeb97f8e045903914cf427ce513c85a1c583736d34db8194ec3f",
+  "candidate_v2": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_retrieval": 1.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 210,
+    "no_evidence_count": 150
+  },
+  "candidate_v9": {
+    "MRR": 1.0,
+    "R@1": 1.0,
+    "R@3": 1.0,
+    "R@5": 1.0,
+    "answerable_recall": 1.0,
+    "false_abstention": 0.0,
+    "abstention_accuracy": 1.0,
+    "false_retrieval": 0.0,
+    "order_preservation_violations": 0,
+    "answerable_count": 210,
+    "no_evidence_count": 150
+  },
+  "candidate_v9_absolute_false_retrieval_reduction_vs_candidate_v2": 1.0,
+  "paired_bootstrap": {
+    "iterations": 10000,
+    "seed": 2026081510,
+    "delta": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "margin": -0.03,
+    "noninferiority": true
+  },
+  "checks": {
+    "mrr": true,
+    "r1": true,
+    "r3": true,
+    "r5": true,
+    "answerable_recall": true,
+    "false_abstention": true,
+    "false_retrieval": true,
+    "abstention_accuracy": true,
+    "order_preservation": true,
+    "paired_bootstrap_noninferiority": true
+  },
+  "verdict": "PASS",
+  "monetary_cost_usd": 0
+}

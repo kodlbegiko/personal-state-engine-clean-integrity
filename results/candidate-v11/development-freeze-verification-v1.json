@@ -1,0 +1,15 @@
+{
+  "development_surface_hash_pass": true,
+  "formal_counts": {
+    "confirmatory": 0,
+    "final": 0,
+    "protected": 0
+  },
+  "frozen_component_count": 19,
+  "hash_mismatch_count": 0,
+  "hash_mismatches": [],
+  "schema_version": "candidate-v11-freeze-verification-v1",
+  "verdict": "PASS",
+  "zero_count_guard_pass": true,
+  "zero_count_guard_required": true
+}

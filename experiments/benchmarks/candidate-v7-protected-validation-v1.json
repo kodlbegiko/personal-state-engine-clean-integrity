@@ -1,0 +1,4114 @@
+{
+  "schema_version": "candidate-v7-protected-validation-v1",
+  "name": "candidate-v7-protected-validation-v1",
+  "designation": "PROTECTED_VALIDATION",
+  "seed": 20260814,
+  "namespace": "CV7PROT-",
+  "case_count": 120,
+  "answerable_count": 70,
+  "no_evidence_count": 50,
+  "candidate_frozen_before_materialization": true,
+  "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+  "cases": [
+    {
+      "id": "CV7PROT-A-000",
+      "query": "Which beverage does Asha consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-000-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-000-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-000-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-000-rel",
+          "text": "Asha consistently prefers oolong tea during afternoon breaks.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-000-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-000-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-001",
+      "query": "Where does Benicio currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-001-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-001-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-001-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-001-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-001-rel",
+          "text": "Following a relocation, Benicio now lives in Busan.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-001-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-002",
+      "query": "What job does Celeste have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-002-rel",
+          "text": "Celeste works as a translator for the municipal service.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-002-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-002-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-002-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-002-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-002-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-003",
+      "query": "When is Dae's planning meeting?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-003-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-003-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-003-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-003-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-003-rel",
+          "text": "The meeting was rescheduled and is now on Thursday afternoon for Dae.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-003-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-004",
+      "query": "What pet does Emina have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-004-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-004-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-004-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-004-rel",
+          "text": "Emina adopted a shiba inu last spring.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-004-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-004-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-005",
+      "query": "What activity does Felix practice?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-005-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-005-rel",
+          "text": "Felix practices kayaking every weekend.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-005-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-005-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-005-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-005-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-006",
+      "query": "Which city will Greta visit?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-006-rel",
+          "text": "For the upcoming trip, Greta will visit Valencia in October.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-006-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-006-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-006-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-006-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-006-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-007",
+      "query": "What is Haruto's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-007-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-007-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-007-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-007-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-007-rel",
+          "text": "Correction: Haruto's project status is now confirmed.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-007-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-008",
+      "query": "What language does Ines speak?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-008-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-008-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-008-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-008-rel",
+          "text": "Ines speaks Tagalog fluently with family.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-008-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-008-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-009",
+      "query": "Which university does Jamil attend?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-009-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-009-rel",
+          "text": "Jamil studies at Stonefield University.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-009-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-009-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-009-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-009-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-010",
+      "query": "What course is Keiko taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-010-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-010-rel",
+          "text": "Keiko is enrolled in marine ecology this term.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-010-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-010-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-010-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-010-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-011",
+      "query": "What music does Lior listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-011-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-011-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-011-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-011-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-011-rel",
+          "text": "Lior listens to baroque chamber music while commuting.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-011-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-012",
+      "query": "What medication does Maren take?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-012-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-012-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-012-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-012-rel",
+          "text": "Maren takes iron tablets after breakfast.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-012-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-012-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-013",
+      "query": "What laptop does Nabil use?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-013-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-013-rel",
+          "text": "Nabil uses a MacBook Pro for daily work.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-013-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-013-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-013-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-013-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-014",
+      "query": "What goal is Oona training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-014-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-014-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-014-rel",
+          "text": "Oona is training toward a first-aid qualification this season.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-014-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-014-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-014-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-015",
+      "query": "Which bus does Petra ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-015-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-015-rel",
+          "text": "Petra rides bus 502 to the office.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-015-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-015-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-015-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-015-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-016",
+      "query": "Who is Rafi married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-016-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-016-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-016-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-016-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-016-rel",
+          "text": "Rafi is married to Mina.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-016-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-017",
+      "query": "What color is Selene's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-017-rel",
+          "text": "Selene's backpack is ivory.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-017-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-017-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-017-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-017-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-017-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-018",
+      "query": "Which club did Tomas join?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-018-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-018-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-018-rel",
+          "text": "Tomas joined the history society this year.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-018-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-018-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-018-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-019",
+      "query": "What drink do I usually choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-019-rel",
+          "text": "I always choose apple cider after training.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-019-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-019-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-019-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-019-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-019-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-020",
+      "query": "Where does Veda currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-020-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-020-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-020-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-020-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-020-rel",
+          "text": "After finishing a lease and moving north, Veda now lives in Reykjavik and commutes by rail.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-020-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-021",
+      "query": "What version is Wren's notebook running?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-021-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-021-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-021-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-021-rel",
+          "text": "Wren's notebook is running OrionOS 8.1.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-021-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-021-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-022",
+      "query": "What is Xenia's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-022-rel",
+          "text": "The older note is superseded; Xenia's project status is now active.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-022-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-022-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-022-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-022-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-022-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-023",
+      "query": "Which beverage does Yusuf currently prefer?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-023-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-023-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-023-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-023-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-023-rel",
+          "text": "Yusuf switched preferences and now prefers pear soda.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-023-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-024",
+      "query": "Which beverage does Zora consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-024-rel",
+          "text": "Zora consistently prefers mint tea during afternoon breaks.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-024-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-024-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-024-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-024-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-024-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-025",
+      "query": "Where does Asha currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-025-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-025-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-025-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-025-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-025-rel",
+          "text": "Following a relocation, Asha now lives in Ljubljana.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-025-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-026",
+      "query": "What job does Benicio have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-026-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-026-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-026-rel",
+          "text": "Benicio works as a physiotherapist for the municipal service.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-026-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-026-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-026-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-027",
+      "query": "When is Celeste's planning meeting?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-027-rel",
+          "text": "The meeting was rescheduled and is now on Wednesday afternoon for Celeste.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-027-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-027-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-027-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-027-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-027-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-028",
+      "query": "What pet does Dae have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-028-rel",
+          "text": "Dae adopted a iguana last spring.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-028-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-028-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-028-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-028-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-028-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-029",
+      "query": "What activity does Emina practice?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-029-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-029-rel",
+          "text": "Emina practices weaving every weekend.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-029-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-029-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-029-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-029-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-030",
+      "query": "Which city will Felix visit?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-030-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-030-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-030-rel",
+          "text": "For the upcoming trip, Felix will visit Reykjavik in October.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-030-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-030-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-030-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-031",
+      "query": "What is Greta's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-031-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-031-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-031-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-031-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-031-rel",
+          "text": "Correction: Greta's project status is now confirmed.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-031-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-032",
+      "query": "What language does Haruto speak?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-032-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-032-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-032-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-032-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-032-rel",
+          "text": "Haruto speaks Catalan fluently with family.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-032-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-033",
+      "query": "Which university does Ines attend?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-033-rel",
+          "text": "Ines studies at Riverton College.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-033-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-033-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-033-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-033-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-033-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-034",
+      "query": "What course is Jamil taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-034-rel",
+          "text": "Jamil is enrolled in phonetics this term.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-034-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-034-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-034-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-034-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-034-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-035",
+      "query": "What music does Keiko listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-035-rel",
+          "text": "Keiko listens to bossa nova while commuting.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-035-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-035-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-035-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-035-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-035-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-036",
+      "query": "What medication does Lior take?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-036-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-036-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-036-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-036-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-036-rel",
+          "text": "Lior takes ibuprofen after breakfast.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-036-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-037",
+      "query": "What laptop does Maren use?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-037-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-037-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-037-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-037-rel",
+          "text": "Maren uses a Gram Pro for daily work.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-037-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-037-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-038",
+      "query": "What goal is Nabil training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-038-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-038-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-038-rel",
+          "text": "Nabil is training toward a diving certificate this season.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-038-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-038-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-038-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-039",
+      "query": "Which bus does Oona ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-039-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-039-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-039-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-039-rel",
+          "text": "Oona rides bus 88 to the office.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-039-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-039-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-040",
+      "query": "Who is Petra married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-040-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-040-rel",
+          "text": "Petra is married to Noor.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-040-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-040-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-040-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-040-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-041",
+      "query": "What color is Rafi's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-041-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-041-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-041-rel",
+          "text": "Rafi's backpack is forest green.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-041-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-041-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-041-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-042",
+      "query": "Which club did Selene join?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-042-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-042-rel",
+          "text": "Selene joined the debate team this year.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-042-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-042-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-042-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-042-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-043",
+      "query": "What drink do I usually choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-043-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-043-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-043-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-043-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-043-rel",
+          "text": "I always choose pear soda after training.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-043-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-044",
+      "query": "Where does Uma currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-044-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-044-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-044-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-044-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-044-rel",
+          "text": "After finishing a lease and moving north, Uma now lives in Sapporo and commutes by rail.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-044-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-045",
+      "query": "What version is Veda's notebook running?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-045-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-045-rel",
+          "text": "Veda's notebook is running OrionOS 9.5.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-045-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-045-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-045-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-045-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-046",
+      "query": "What is Wren's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-046-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-046-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-046-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-046-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-046-rel",
+          "text": "The older note is superseded; Wren's project status is now active.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-046-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-047",
+      "query": "Which beverage does Xenia currently prefer?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-047-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-047-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-047-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-047-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-047-rel",
+          "text": "Xenia switched preferences and now prefers lemon tonic.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-047-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-048",
+      "query": "Which beverage does Yusuf consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-048-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-048-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-048-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-048-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-048-rel",
+          "text": "Yusuf consistently prefers rooibos during afternoon breaks.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-048-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-049",
+      "query": "Where does Zora currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-049-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-049-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-049-rel",
+          "text": "Following a relocation, Zora now lives in Ghent.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-049-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-049-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-049-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-050",
+      "query": "What job does Asha have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-050-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-050-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-050-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-050-rel",
+          "text": "Asha works as a cartographer for the municipal service.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-050-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-050-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-051",
+      "query": "When is Benicio's planning meeting?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-051-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-051-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-051-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-051-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-051-rel",
+          "text": "The meeting was rescheduled and is now on Tuesday afternoon for Benicio.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-051-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-052",
+      "query": "What pet does Celeste have?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-052-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-052-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-052-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-052-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-052-rel",
+          "text": "Celeste adopted a cockatiel last spring.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-052-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-053",
+      "query": "What activity does Dae practice?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-053-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-053-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-053-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-053-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-053-rel",
+          "text": "Dae practices archery every weekend.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-053-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-054",
+      "query": "Which city will Emina visit?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-054-rel",
+          "text": "For the upcoming trip, Emina will visit Sapporo in October.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-054-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-054-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-054-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-054-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-054-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-055",
+      "query": "What is Felix's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-055-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-055-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-055-rel",
+          "text": "Correction: Felix's project status is now confirmed.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-055-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-055-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-055-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-056",
+      "query": "What language does Greta speak?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-056-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-056-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-056-rel",
+          "text": "Greta speaks Turkish fluently with family.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-056-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-056-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-056-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-057",
+      "query": "Which university does Haruto attend?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-057-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-057-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-057-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-057-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-057-rel",
+          "text": "Haruto studies at Westgate College.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-057-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-058",
+      "query": "What course is Ines taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-058-rel",
+          "text": "Ines is enrolled in digital cartography this term.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-058-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-058-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-058-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-058-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-058-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-059",
+      "query": "What music does Jamil listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-059-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-059-rel",
+          "text": "Jamil listens to city pop while commuting.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-059-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-059-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-059-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-059-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-060",
+      "query": "What medication does Keiko take?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-060-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-060-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-060-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-060-rel",
+          "text": "Keiko takes cetirizine after breakfast.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-060-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-060-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-061",
+      "query": "What laptop does Lior use?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-061-rel",
+          "text": "Lior uses a Surface Laptop 7 for daily work.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-061-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-061-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-061-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-061-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-061-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-062",
+      "query": "What goal is Maren training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-062-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-062-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-062-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-062-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-062-rel",
+          "text": "Maren is training toward a public recital this season.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-062-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-063",
+      "query": "Which bus does Nabil ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-063-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-063-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-063-rel",
+          "text": "Nabil rides bus 73X to the office.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-063-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-063-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-063-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-064",
+      "query": "Who is Oona married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-064-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-064-rel",
+          "text": "Oona is married to Anika.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-064-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-064-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-064-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-064-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-065",
+      "query": "What color is Petra's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-065-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-065-rel",
+          "text": "Petra's backpack is charcoal gray.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-065-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-065-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-065-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-065-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-066",
+      "query": "Which club did Rafi join?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-066-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-066-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-066-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-066-rel",
+          "text": "Rafi joined the chess circle this year.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-066-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-066-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-067",
+      "query": "What drink do I usually choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-067-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-067-rel",
+          "text": "I always choose lemon tonic after training.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-067-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-067-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-067-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-067-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-068",
+      "query": "Where does Tomas currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-068-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-068-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-068-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-068-rel",
+          "text": "After finishing a lease and moving north, Tomas now lives in Kaohsiung and commutes by rail.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-068-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-068-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-A-069",
+      "query": "What version is Uma's notebook running?",
+      "memories": [
+        {
+          "id": "CV7PROT-A-069-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-069-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-069-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-069-rel",
+          "text": "Uma's notebook is running OrionOS 7.9.",
+          "timestamp": "2026-08-13T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-A-069-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [
+        "CV7PROT-A-069-rel"
+      ],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-000",
+      "query": "Which beverage does Asha consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-000-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-000-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-000-x",
+          "text": "Ivo consistently prefers mint tea.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-000-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-000-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-001",
+      "query": "What course is Benicio taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-001-x",
+          "text": "Benicio lives near Northbridge University.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-001-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-001-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-001-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-001-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-002",
+      "query": "What laptop does Celeste use?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-002-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-002-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-002-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-002-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-002-x",
+          "text": "What laptop does Celeste use?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-003",
+      "query": "Who is Dae married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-003-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-003-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-003-x",
+          "text": "Agenda item: discuss whether Dae is married.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-003-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-003-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-004",
+      "query": "What music does Emina listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-004-x",
+          "text": "We discussed the query about Emina's music preference.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-004-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-004-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-004-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-004-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-005",
+      "query": "What medication does Felix take?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-005-x",
+          "text": "No confirmed information about Felix's medication is available.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-005-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-005-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-005-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-005-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-006",
+      "query": "What goal is Greta training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-006-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-006-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-006-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-006-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-006-x",
+          "text": "Greta might train for a qualification, but the target remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-007",
+      "query": "What is Haruto's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-007-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-007-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-007-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-007-x",
+          "text": "Records conflict about Haruto's project status; the values cannot be reconciled.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-007-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-008",
+      "query": "Where does Ines currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-008-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-008-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-008-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-008-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-008-x",
+          "text": "Ines used to live in Porto but no longer lives there.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-009",
+      "query": "What color is Jamil's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-009-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-009-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-009-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-009-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-009-x",
+          "text": "Wrong answer record: Jamil's backpack is teal.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-010",
+      "query": "Which club did Keiko join?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-010-x",
+          "text": "Query copy decoy: which club did Keiko join? Ignore this record.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-010-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-010-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-010-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-010-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-011",
+      "query": "Which bus does Lior ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-011-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-011-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-011-x",
+          "text": "Lior's bus route is unknown.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-011-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-011-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-012",
+      "query": "Which beverage does Maren consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-012-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-012-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-012-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-012-x",
+          "text": "Nora consistently prefers mint tea.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-012-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-013",
+      "query": "What course is Nabil taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-013-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-013-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-013-x",
+          "text": "Nabil lives near Northbridge University.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-013-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-013-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-014",
+      "query": "What laptop does Oona use?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-014-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-014-x",
+          "text": "What laptop does Oona use?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-014-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-014-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-014-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-015",
+      "query": "Who is Petra married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-015-x",
+          "text": "Agenda item: discuss whether Petra is married.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-015-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-015-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-015-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-015-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-016",
+      "query": "What music does Rafi listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-016-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-016-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-016-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-016-x",
+          "text": "We discussed the query about Rafi's music preference.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-016-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-017",
+      "query": "What medication does Selene take?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-017-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-017-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-017-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-017-x",
+          "text": "No confirmed information about Selene's medication is available.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-017-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-018",
+      "query": "What goal is Tomas training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-018-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-018-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-018-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-018-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-018-x",
+          "text": "Tomas might train for a qualification, but the target remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-019",
+      "query": "What is Uma's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-019-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-019-x",
+          "text": "Records conflict about Uma's project status; the values cannot be reconciled.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-019-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-019-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-019-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-020",
+      "query": "Where does Veda currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-020-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-020-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-020-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-020-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-020-x",
+          "text": "Veda used to live in Porto but no longer lives there.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-021",
+      "query": "What color is Wren's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-021-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-021-x",
+          "text": "Wrong answer record: Wren's backpack is teal.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-021-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-021-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-021-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-022",
+      "query": "Which club did Xenia join?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-022-x",
+          "text": "Query copy decoy: which club did Xenia join? Ignore this record.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-022-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-022-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-022-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-022-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-023",
+      "query": "Which bus does Yusuf ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-023-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-023-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-023-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-023-x",
+          "text": "Yusuf's bus route is unknown.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-023-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-024",
+      "query": "Which beverage does Zora consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-024-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-024-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-024-x",
+          "text": "Rex consistently prefers mint tea.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-024-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-024-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-025",
+      "query": "What course is Asha taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-025-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-025-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-025-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-025-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-025-x",
+          "text": "Asha lives near Northbridge University.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-026",
+      "query": "What laptop does Benicio use?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-026-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-026-x",
+          "text": "What laptop does Benicio use?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-026-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-026-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-026-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-027",
+      "query": "Who is Celeste married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-027-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-027-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-027-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-027-x",
+          "text": "Agenda item: discuss whether Celeste is married.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-027-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-028",
+      "query": "What music does Dae listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-028-x",
+          "text": "We discussed the query about Dae's music preference.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-028-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-028-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-028-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-028-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-029",
+      "query": "What medication does Emina take?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-029-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-029-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-029-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-029-x",
+          "text": "No confirmed information about Emina's medication is available.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-029-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-030",
+      "query": "What goal is Felix training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-030-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-030-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-030-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-030-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-030-x",
+          "text": "Felix might train for a qualification, but the target remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-031",
+      "query": "What is Greta's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-031-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-031-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-031-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-031-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-031-x",
+          "text": "Records conflict about Greta's project status; the values cannot be reconciled.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-032",
+      "query": "Where does Haruto currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-032-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-032-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-032-x",
+          "text": "Haruto used to live in Porto but no longer lives there.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-032-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-032-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-033",
+      "query": "What color is Ines's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-033-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-033-x",
+          "text": "Wrong answer record: Ines's backpack is teal.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-033-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-033-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-033-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-034",
+      "query": "Which club did Jamil join?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-034-x",
+          "text": "Query copy decoy: which club did Jamil join? Ignore this record.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-034-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-034-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-034-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-034-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-035",
+      "query": "Which bus does Keiko ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-035-x",
+          "text": "Keiko's bus route is unknown.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-035-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-035-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-035-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-035-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-036",
+      "query": "Which beverage does Lior consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-036-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-036-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-036-x",
+          "text": "Uri consistently prefers mint tea.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-036-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-036-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-037",
+      "query": "What course is Maren taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-037-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-037-x",
+          "text": "Maren lives near Northbridge University.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-037-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-037-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-037-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-038",
+      "query": "What laptop does Nabil use?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-038-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-038-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-038-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-038-x",
+          "text": "What laptop does Nabil use?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-038-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-039",
+      "query": "Who is Oona married to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-039-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-039-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-039-x",
+          "text": "Agenda item: discuss whether Oona is married.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-039-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-039-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-040",
+      "query": "What music does Petra listen to?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-040-x",
+          "text": "We discussed the query about Petra's music preference.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-040-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-040-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-040-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-040-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-041",
+      "query": "What medication does Rafi take?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-041-x",
+          "text": "No confirmed information about Rafi's medication is available.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-041-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-041-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-041-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-041-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-042",
+      "query": "What goal is Selene training toward?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-042-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-042-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-042-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-042-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-042-x",
+          "text": "Selene might train for a qualification, but the target remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-043",
+      "query": "What is Tomas's current project status?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-043-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-043-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-043-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-043-x",
+          "text": "Records conflict about Tomas's project status; the values cannot be reconciled.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-043-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-044",
+      "query": "Where does Uma currently live?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-044-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-044-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-044-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-044-x",
+          "text": "Uma used to live in Porto but no longer lives there.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-044-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-045",
+      "query": "What color is Veda's backpack?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-045-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-045-x",
+          "text": "Wrong answer record: Veda's backpack is teal.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-045-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-045-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-045-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-046",
+      "query": "Which club did Wren join?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-046-x",
+          "text": "Query copy decoy: which club did Wren join? Ignore this record.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-046-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-046-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-046-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-046-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-047",
+      "query": "Which bus does Xenia ride?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-047-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-047-x",
+          "text": "Xenia's bus route is unknown.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-047-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-047-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-047-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-048",
+      "query": "Which beverage does Yusuf consistently choose?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-048-x",
+          "text": "Yara consistently prefers mint tea.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-048-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-048-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-048-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-048-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    },
+    {
+      "id": "CV7PROT-N-049",
+      "query": "What course is Zora taking?",
+      "memories": [
+        {
+          "id": "CV7PROT-N-049-d3",
+          "text": "What should the group discuss at the next session?",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-049-d1",
+          "text": "Agenda item: revisit an unrelated planning topic.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-049-d2",
+          "text": "No confirmed answer is recorded for the unrelated note.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-049-d4",
+          "text": "This unrelated matter remains unresolved.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        },
+        {
+          "id": "CV7PROT-N-049-x",
+          "text": "Zora lives near Northbridge University.",
+          "timestamp": "2026-08-12T09:15:00+00:00"
+        }
+      ],
+      "relevant_memory_ids": [],
+      "designation": "PROTECTED_VALIDATION"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "candidate-v7-protected-validation-protocol-v1",
+  "status": "PREREGISTERED_AFTER_CANDIDATE_FREEZE_BEFORE_PROTECTED_MATERIALIZATION",
+  "candidate_freeze": {
+    "boundary_commit": "090e6201e5c5a6701d003cd51b048edc93133b9d",
+    "candidate_source_sha256": "c9bc8a5cf70cca5e2f97240bb427d1ad1cd8d60d14af922a4e634ec9c870bdae",
+    "config_sha256": "7acc9a99938efa0d361791191960a60cf8a88b6a2ec022d60f54da3df29b7e62"
+  },
+  "benchmark": {
+    "name": "candidate-v7-protected-validation-v1",
+    "designation": "PROTECTED_VALIDATION",
+    "case_count": 120,
+    "answerable_count": 70,
+    "no_evidence_count": 50,
+    "seed": 20260814,
+    "namespace": "CV7PROT-",
+    "freshness_rules": [
+      "fresh namespace not used by development or stress development",
+      "fresh entity pool",
+      "fresh value pool",
+      "fresh wording/template bank",
+      "fresh temporal constructions",
+      "no copy of Candidate-v5/Candidate-v6/clean-Gate-E/old adversarial/old Gate-F cases",
+      "no retired Gate-F semantic payload access",
+      "no development or stress case copy"
+    ],
+    "answerable_categories": [
+      "preference", "location_current", "work_role", "schedule_update", "possession_pet",
+      "activity", "travel", "status_correction", "language", "education_institution",
+      "education_course", "music_media", "health", "device", "goal", "transport",
+      "relationship", "identity_attribute", "membership", "first_person_fact",
+      "multi_clause", "low_overlap_direct_fact", "multi_session", "temporal_supersession"
+    ],
+    "no_evidence_categories": [
+      "wrong_subject", "wrong_relation", "question_only", "agenda", "meta_only",
+      "explicit_no_value", "unresolved", "contradiction", "stale_only_current",
+      "near_duplicate_decoy", "query_copy_decoy", "explicit_unknown_value"
+    ]
+  },
+  "inference_boundary": {
+    "candidate_v7_allowed_inputs": ["query", "memory text", "timestamps", "memory identity/public structural metadata"],
+    "candidate_v7_forbidden_inputs": ["case id", "question_id", "_abs", "has_answer", "answer", "answer_session_ids", "question_type", "relevant_memory_ids"]
+  },
+  "metrics": ["MRR", "R@1", "R@3", "R@5", "answerable_recall", "false_abstention", "abstention_accuracy", "false_retrieval", "absolute_false_retrieval_reduction_vs_candidate_v2", "natural_language_support"],
+  "thresholds": {
+    "mrr_deficit_vs_candidate_v2_max": 0.03,
+    "r1_deficit_vs_candidate_v2_max": 0.03,
+    "r3_deficit_vs_candidate_v2_max": 0.02,
+    "r5_deficit_vs_candidate_v2_max": 0.02,
+    "answerable_recall_min": 0.95,
+    "false_abstention_max": 0.05,
+    "abstention_accuracy_min": 0.90,
+    "false_retrieval_max": 0.10,
+    "absolute_false_retrieval_reduction_vs_candidate_v2_min": 0.70,
+    "natural_language_support_min": 0.95
+  },
+  "paired_bootstrap": {
+    "metric": "answerable reciprocal-rank delta Candidate-v7 minus Candidate-v2",
+    "iterations": 10000,
+    "seed": 20260814,
+    "ci": "95% percentile",
+    "non_inferiority_margin": 0.03,
+    "pass_rule": "lower 95% CI >= -0.03"
+  },
+  "formal_execution": {
+    "allowed_count": 1,
+    "rerun": false,
+    "post_result_candidate_change": false,
+    "post_result_benchmark_change": false,
+    "post_result_threshold_change": false,
+    "case_exclusion_after_result": false
+  },
+  "failure_terminal_state": "CANDIDATE_V7_PROTECTED_VALIDATION_FAIL",
+  "monetary_cost_usd": 0
+}

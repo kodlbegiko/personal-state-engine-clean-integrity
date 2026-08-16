@@ -1,0 +1,70 @@
+{
+  "aggregate_counts": {
+    "dialogues": 22825,
+    "eligible_carryover_relations": 279263,
+    "gold_prior_turn_distance_max": 48,
+    "gold_prior_turn_distance_sum": 1818158
+  },
+  "archive_sha256": "19da4aa3159d113a073ae1bce75ae46c290323d73e512df7d58c8e616dc776b9",
+  "candidate_v13_invoked": false,
+  "dialogue_file_count": 181,
+  "dialogue_files_combined_sha256": "8da191527d0dc4ec44800a607e74243f2d630d34a6c1f90f84a70b923aeafb25",
+  "domain_eligible_counts": {
+    "D3": 46820,
+    "D4": 71198,
+    "D5": 161245
+  },
+  "domain_rule": {
+    "Banks": "D4",
+    "Buses": "D5",
+    "Calendar": "D3",
+    "Events": "D3",
+    "Flights": "D5",
+    "Hotels": "D5",
+    "Media": "D4",
+    "Messaging": "D4",
+    "Movies": "D4",
+    "Music": "D4",
+    "Payment": "D4",
+    "RentalCars": "D5",
+    "Ridesharing": "D5",
+    "Services": "D4",
+    "Trains": "D5",
+    "Travel": "D5"
+  },
+  "formal_case_materialized": false,
+  "gold_rule": "For a USER turn/frame, a carried slot/value is eligible when it is present in source-native state.slot_values but the slot is absent from the current frame.slots; gold is the nearest earlier USER turn in the same dialogue/service where frame.slots explicitly names that slot and source-native state.slot_values contains the same normalized value. No language-model inference or text-semantic matching is used.",
+  "repository": "google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "schema_version": "candidate-v13-external-sgd-carryover-probe-v1",
+  "service_prefix_eligible_counts": {
+    "Banks": 2061,
+    "Buses": 33083,
+    "Calendar": 5571,
+    "Events": 41249,
+    "Flights": 50205,
+    "Hotels": 25956,
+    "Media": 12215,
+    "Messaging": 1096,
+    "Movies": 18377,
+    "Music": 8998,
+    "Payment": 1080,
+    "RentalCars": 44701,
+    "Services": 27371,
+    "Trains": 4485,
+    "Travel": 2815
+  },
+  "split_dialogue_counts": {
+    "dev": 2482,
+    "test": 4201,
+    "train": 16142
+  },
+  "structural_eligibility_counts": {
+    "N11": 279263,
+    "N11_no_terminal_question": 201898,
+    "N11_short_le_12": 236082,
+    "N2": 18877,
+    "N4_multi_relation_turn": 238636,
+    "N5": 116980
+  }
+}

@@ -1,0 +1,92 @@
+name: Candidate-v10 Development
+
+on:
+  push:
+    branches:
+      - research/candidate-v10-fresh-lineage
+    paths:
+      - src/personal_state_engine/candidate_v10.py
+      - scripts/generate_candidate_v10_benchmark.py
+      - scripts/generate_candidate_v10_benchmark_v2.py
+      - scripts/evaluate_candidate_v10.py
+      - tests/test_candidate_v10.py
+      - experiments/configs/candidate-v10-v1.json
+      - .github/workflows/candidate-v10-development.yml
+
+permissions:
+  contents: write
+
+jobs:
+  development:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/candidate-v10-fresh-lineage
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Run full test suite
+        run: |
+          set -o pipefail
+          pytest -q | tee /tmp/candidate-v10-tests.txt
+      - name: Generate fresh development surface
+        run: |
+          python scripts/generate_candidate_v10_benchmark_v2.py \
+            --stage development \
+            --output experiments/benchmarks/candidate-v10-development-v1.json \
+            --audit results/candidate-v10/freshness-audit-development-v1.json
+      - name: Evaluate development
+        run: |
+          python scripts/evaluate_candidate_v10.py \
+            experiments/benchmarks/candidate-v10-development-v1.json \
+            results/candidate-v10/development-summary-v1.json \
+            --stage development --no-fail
+      - name: Record tests and ledger
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess
+          root = pathlib.Path('.')
+          out = pathlib.Path('/tmp/candidate-v10-tests.txt').read_text()
+          result = json.loads((root/'results/candidate-v10/development-summary-v1.json').read_text())
+          ledger = root/'results/candidate-v10/development-ledger.jsonl'
+          existing = []
+          if ledger.exists():
+              existing = [json.loads(line) for line in ledger.read_text().splitlines() if line.strip()]
+          iteration = (max((row.get('iteration', -1) for row in existing), default=-1) + 1)
+          record = {
+              'schema_version':'candidate-v10-development-test-record-v1',
+              'tests':out.strip(),
+              'verdict':result['verdict'],
+              'iteration':iteration,
+              'source_commit':subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip(),
+              'monetary_cost_usd':0,
+          }
+          (root/'results/candidate-v10/development-test-record-v1.json').write_text(json.dumps(record,indent=2)+'\n')
+          entry = {
+              'iteration':iteration,
+              'benchmark_sha256':result['benchmark_sha256'],
+              'candidate_v10_source_sha256':result['candidate_v10_source_sha256'],
+              'metrics':result['candidate_v10'],
+              'checks':result['checks'],
+              'verdict':result['verdict'],
+              'monetary_cost_usd':0,
+          }
+          existing.append(entry)
+          ledger.write_text(''.join(json.dumps(row,sort_keys=True)+'\n' for row in existing))
+          PY
+      - name: Commit development evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/benchmarks/candidate-v10-development-v1.json \
+            results/candidate-v10/freshness-audit-development-v1.json \
+            results/candidate-v10/development-summary-v1.json \
+            results/candidate-v10/development-test-record-v1.json \
+            results/candidate-v10/development-ledger.jsonl
+          git commit -m "candidate-v10: record development iteration"
+          git push origin HEAD:research/candidate-v10-fresh-lineage
